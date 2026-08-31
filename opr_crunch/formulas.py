@@ -25,6 +25,8 @@ class Refs:
     blast: str
     deadly: str
     impact: str
+    ravage: str
+    tough: str
     att_rules: str
     def_rules: str
     is_melee: str
@@ -55,6 +57,15 @@ def _block(refs: Refs, target: str) -> str:
         f"{p_block_no6(target)}+(1/6)*{p_success(target)},"
         f"{p_success(target)})"
     )
+
+
+#: Wound-ignoring rules, as (rule, threshold). A unit with several does not get
+#: several rolls, so the best threshold wins; 99 stands in for "absent".
+IGNORE_RULES = [
+    ("Self-Repair Boost", 5),
+    ("Self-Repair", 6),
+    ("Protected", 6),
+]
 
 
 Builder = Callable[[Refs, Dict[str, str]], str]
@@ -112,10 +123,20 @@ CALC_STEPS: List[Tuple[str, Builder]] = [
         ),
     ),
     ("hits_impact", lambda r, c: f"={c['impact_dice']}*5/6"),
-    ("ap_base", lambda r, c: f"={r.ap}+{c['thrusting']}"),
     (
+        "piercing",
+        lambda r, c: (
+            f"=IF(AND({has(r.att_rules, 'Piercing Assault')},{r.is_charging}),1,0)"
+        ),
+    ),
+    ("ap_base", lambda r, c: f"={r.ap}+{c['thrusting']}+{c['piercing']}"),
+    (
+        # Rending and Destructive both give unmodified 6s AP(+4).
         "ap_6",
-        lambda r, c: f"={c['ap_base']}+IF({has(r.att_rules, 'Rending')},4,0)",
+        lambda r, c: (
+            f"={c['ap_base']}+IF(OR({has(r.att_rules, 'Rending')},"
+            f"{has(r.att_rules, 'Destructive')}),4,0)"
+        ),
     ),
     (
         "cover",
@@ -123,25 +144,57 @@ CALC_STEPS: List[Tuple[str, Builder]] = [
             f"=IF(AND(NOT({r.is_melee}),{r.in_cover},{r.blast}<1),1,0)"
         ),
     ),
+    ("shielded", lambda r, c: f"=IF({has(r.def_rules, 'Shielded')},1,0)"),
     (
         "block_normal",
-        lambda r, c: f"={_block(r, f'{r.defense}+{c["ap_base"]}-{c["cover"]}')}",
+        lambda r, c: f"={_block(r, f'{r.defense}+{c["ap_base"]}-{c["cover"]}-{c["shielded"]}')}",
     ),
     (
         "block_6",
-        lambda r, c: f"={_block(r, f'{r.defense}+{c["ap_6"]}-{c["cover"]}')}",
+        lambda r, c: f"={_block(r, f'{r.defense}+{c["ap_6"]}-{c["cover"]}-{c["shielded"]}')}",
     ),
     (
         "block_impact",
-        lambda r, c: f"={_block(r, f'{r.defense}-{c["cover"]}')}",
+        lambda r, c: f"={_block(r, f'{r.defense}-{c["cover"]}-{c["shielded"]}')}",
     ),
-    ("deadly_mult", lambda r, c: f"=IF({r.deadly}>=1,{r.deadly},1)"),
     (
-        "regen_mult",
+        # Deadly's wounds do not carry over, so the target absorbs at most as
+        # many as it has: one, unless it has Tough.
+        "deadly_mult",
+        lambda r, c: f"=IF({r.deadly}>=1,MIN({r.deadly},MAX({r.tough},1)),1)",
+    ),
+    (
+        # An unmodified 1 to block is unaffected by AP, so Shred is a flat 1/6.
+        "shred_wounds",
         lambda r, c: (
-            f"=IF(AND({has(r.def_rules, 'Regeneration')},"
-            f"NOT(OR({has(r.att_rules, 'Bane')},{has(r.att_rules, 'Rending')},"
-            f"{has(r.att_rules, 'Unstoppable')}))),2/3,1)"
+            f"=IF({has(r.att_rules, 'Shred')},"
+            f"({c['hits_6']}+{c['hits_normal']})/6,0)"
+        ),
+    ),
+    (
+        # Ravage inflicts wounds directly, bypassing the Defense roll.
+        "ravage_wounds",
+        lambda r, c: (
+            f"=IF(AND({r.is_melee},{r.ravage}>=1),{r.models}*{r.ravage}/6,0)"
+        ),
+    ),
+    (
+        "ignore_best",
+        lambda r, c: (
+            "=MIN(IF(AND("
+            f"{has(r.def_rules, 'Regeneration')},NOT(OR({has(r.att_rules, 'Bane')},"
+            f"{has(r.att_rules, 'Rending')},{has(r.att_rules, 'Unstoppable')}))),5,99)"
+            + "".join(
+                f",IF({has(r.def_rules, rule)},{threshold},99)"
+                for rule, threshold in IGNORE_RULES
+            )
+            + ")"
+        ),
+    ),
+    (
+        "ignore_mult",
+        lambda r, c: (
+            f"=IF({c['ignore_best']}>6,1,1-{p_success(c['ignore_best'])})"
         ),
     ),
     (
@@ -153,7 +206,9 @@ CALC_STEPS: List[Tuple[str, Builder]] = [
         lambda r, c: (
             f"=(({c['hits_6']}*(1-{c['block_6']})"
             f"+{c['hits_normal']}*(1-{c['block_normal']}))*{c['deadly_mult']}"
-            f"+{c['hits_impact']}*(1-{c['block_impact']}))*{c['regen_mult']}"
+            f"+{c['shred_wounds']}"
+            f"+{c['hits_impact']}*(1-{c['block_impact']})"
+            f"+{c['ravage_wounds']})*{c['ignore_mult']}"
         ),
     ),
 ]

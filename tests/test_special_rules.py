@@ -119,13 +119,13 @@ class TestBlast:
 
 
 class TestDeadly:
-    """Deadly(X): each wound is multiplied by X."""
+    """Deadly(X): each wound is multiplied by X, up to the target's Tough value."""
 
     def test_multiplies_wounds(self):
-        assert resolve(shooting(deadly=2)).wounds == 2 * resolve(shooting()).wounds
+        assert resolve(shooting(deadly=2, tough=6)).wounds == 2 * resolve(shooting()).wounds
 
     def test_does_not_change_hits(self):
-        assert resolve(shooting(deadly=3)).hits == Fraction(5)
+        assert resolve(shooting(deadly=3, tough=6)).hits == Fraction(5)
 
 
 class TestRegeneration:

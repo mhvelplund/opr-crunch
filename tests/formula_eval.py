@@ -176,28 +176,33 @@ class WorkbookEvaluator:
     # -- translation -------------------------------------------------------
 
     def translate(self, formula: str, sheet: str) -> str:
+        """Translate one Excel formula into a Python expression.
+
+        Resolved values are parked behind placeholders rather than spliced in
+        directly. A weapon called "CCW (A1)" would otherwise be re-scanned and
+        its name mistaken for a cell reference.
+        """
         body = formula[1:] if formula.startswith("=") else formula
+        parked: List[str] = []
 
-        literals = []
+        def park(text: str) -> str:
+            parked.append(text)
+            return f"\x00{len(parked) - 1}\x00"
 
-        def stash(match):
-            literals.append(match.group(0))
-            return f"\x00{len(literals) - 1}\x00"
-
-        body = STRING.sub(stash, body)
+        body = STRING.sub(lambda m: park(m.group(0)), body)
         body = COMPARISON.sub("==", body)
         body = body.replace("<>", "!=")
 
         def on_range(m):
             target = m.group(1) or m.group(2) or sheet
-            return repr(self.column(target, m.group(3)))
+            return park(repr(self.column(target, m.group(3))))
 
         def on_qualified(m):
             target = m.group(1) or m.group(2)
-            return repr(self.cell(target, f"{m.group(3)}{m.group(4)}"))
+            return park(repr(self.cell(target, f"{m.group(3)}{m.group(4)}")))
 
         def on_local(m):
-            return repr(self.cell(sheet, f"{m.group(1)}{m.group(2)}"))
+            return park(repr(self.cell(sheet, f"{m.group(1)}{m.group(2)}")))
 
         body = COLUMN_RANGE.sub(on_range, body)
         body = QUALIFIED_CELL.sub(on_qualified, body)
@@ -207,7 +212,7 @@ class WorkbookEvaluator:
             body = re.sub(rf"\b{name}\(", f"_{name}(", body)
         body = body.replace("&", "+")
 
-        return re.sub(r"\x00(\d+)\x00", lambda m: literals[int(m.group(1))], body)
+        return re.sub(r"\x00(\d+)\x00", lambda m: parked[int(m.group(1))], body)
 
 
 class SheetEvaluator:

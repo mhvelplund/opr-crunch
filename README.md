@@ -53,8 +53,30 @@ Add and remove *rows* freely. Do not reorder or rename *columns* — the lookups
 against fixed column positions, so the build validates each header against `layout.py`
 and fails with a diff rather than producing wrong numbers.
 
-Seed data is illustrative only; replace it with real army-list entries. **Names must be
-unique** within `Units`, `Weapons` and `Upgrades`, because lookups match on name alone.
+**Names must be unique** within `Units`, `Weapons` and `Upgrades`, because lookups match
+on name alone.
+
+## Importing an army book
+
+```sh
+./.venv/Scripts/python.exe tools/import_army_book.py <url-or-book.pdf>
+```
+
+Takes an army-forge URL or a local file. The faction is read from the book's page
+header (`GF - ROBOT LEGIONS V3.5.3` -> `Robot Legions`); `--faction` overrides it.
+Downloads cache in `books/` (gitignored), `--refresh` re-fetches. Needs `pdftotext`
+(poppler) on PATH.
+
+Replaces every row for that faction across the CSVs and leaves other factions alone;
+special rules are merged, since the core rules share that tab. Re-run the build
+afterwards.
+
+The `importing-army-books` skill in `.claude/skills/` walks the whole job, including
+the checks for the failures that happen silently.
+
+Rules the engine computes are flagged `Modelled = Yes` on the `Special rules` tab.
+Everything else a book defines — deployment, movement, morale, spells — is imported as
+reference text, because it cannot change a single round's hits or wounds.
 
 ## How it works
 

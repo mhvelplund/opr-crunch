@@ -1,7 +1,29 @@
 Name,Faction,AP,Blast,Deadly,Impact,Special Rules
-Living metal,Robot Legions,0,0,0,0,Regeneration
-Phase shift,Robot Legions,0,0,0,0,Unstoppable
-Targeting matrix,Robot Legions,0,0,0,0,Relentless
 Captain,Havoc Brothers,0,0,0,0,Furious
 Veteran,Havoc Brothers,0,0,0,0,Reliable
 Shield wall,Havoc Brothers,0,0,0,0,Counter
+Chronomancer,Robot Legions,0,0,0,0,Ambush Aura
+Combat Shield,Robot Legions,0,0,0,0,Shielded
+Combat Shields,Robot Legions,0,0,0,0,Shielded
+Controller,Robot Legions,0,0,0,0,Piercing Assault Aura
+Cyber-Palps,Robot Legions,0,0,0,0,Mend
+Elite Vanguard,Robot Legions,0,0,0,0,Scout
+Hyperspace Reapers,Robot Legions,0,0,0,0,Ambushing Piercing Shot
+Jetpack,Robot Legions,0,0,0,0,"Ambush, Flying, Swift"
+Jetpacks,Robot Legions,0,0,0,0,"Ambush, Flying, Swift"
+Machine-Horror,Robot Legions,0,0,0,0,Fear(1)
+Networked Target Lock,Robot Legions,0,0,0,0,Indirect Mark
+Overseer,Robot Legions,0,0,0,0,No Retreat Aura
+Pet Technoaide,Robot Legions,0,0,0,0,Repel Ambushers
+Phase Core,Robot Legions,0,0,0,0,Ambush
+Plasmabot,Robot Legions,0,0,0,0,Rending in Melee
+Psychomancer,Robot Legions,0,0,0,0,Stealth Aura
+Re-Animator,Robot Legions,0,0,0,0,Reanimation Aura
+Repair Nanobots,Robot Legions,0,0,0,0,Self-Repair Boost Buff
+Technomancer,Robot Legions,0,0,0,0,Caster(2)
+Technoward,Robot Legions,0,0,0,0,Casting Buff
+Tripod Queen,Robot Legions,0,0,0,0,Swift Buff
+Warden,Robot Legions,0,0,0,0,Relentless Aura
+Warp Gate,Robot Legions,0,0,0,0,Transport(21)
+Widowmaker,Robot Legions,0,0,0,0,Ambush
+Wraith-Shard Vault,Robot Legions,0,0,0,0,"Caster(4), Tough(6)"

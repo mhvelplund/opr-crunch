@@ -3,8 +3,15 @@
 import pytest
 from openpyxl import load_workbook
 
+from opr_crunch import csvdata
 from opr_crunch.build import build_workbook
-from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS
+from opr_crunch.layout import (
+    SIMULATION_COLUMNS,
+    SIM_FIRST_ROW,
+    SIM_ROWS,
+    SOURCE_LAST_ROW,
+)
+from opr_crunch.model import MODELLED_RULES
 
 
 @pytest.fixture(scope="module")
@@ -65,11 +72,14 @@ class TestSimulationTab:
 
 class TestDataTabs:
     def test_units_headers(self, wb):
-        assert headers(wb["Units"]) == ["Name", "Faction", "Quality", "Defense", "Special Rules"]
+        assert headers(wb["Units"]) == [
+            "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules",
+        ]
 
     def test_weapons_headers(self, wb):
         assert headers(wb["Weapons"]) == [
-            "Name", "Faction", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+            "Name", "Faction", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
+            "Special Rules",
         ]
 
     def test_upgrades_headers(self, wb):
@@ -81,13 +91,25 @@ class TestDataTabs:
         names = [r[0].value for r in wb["Factions"].iter_rows(min_row=2) if r[0].value]
         assert "Robot Legions" in names
 
-    def test_all_fourteen_special_rules_are_listed(self, wb):
-        names = {r[0].value for r in wb["Special rules"].iter_rows(min_row=2) if r[0].value}
-        assert names == {
-            "AP", "Bane", "Blast", "Counter", "Deadly", "Furious", "Impact",
-            "Regeneration", "Relentless", "Reliable", "Rending", "Surge",
-            "Thrust", "Unstoppable",
-        }
+    def test_every_modelled_rule_is_documented(self, wb):
+        """The tab is the user's reference for what the sheet actually computes."""
+        rows = [r for r in wb["Special rules"].iter_rows(min_row=2) if r[0].value]
+        listed = {r[0].value for r in rows}
+        assert set(MODELLED_RULES) <= listed
+
+    def test_modelled_rules_are_flagged_as_such(self, wb):
+        cols = headers(wb["Special rules"])
+        name_i, flag_i = cols.index("Name"), cols.index("Modelled")
+        for row in wb["Special rules"].iter_rows(min_row=2):
+            if not row[name_i].value:
+                continue
+            expected = "Yes" if row[name_i].value in MODELLED_RULES else "No"
+            assert row[flag_i].value == expected, row[name_i].value
+
+    def test_reference_only_rules_are_listed_too(self, wb):
+        """Scraped army-book rules the engine ignores still belong in the tab."""
+        listed = {r[0].value for r in wb["Special rules"].iter_rows(min_row=2) if r[0].value}
+        assert "Infiltrate" in listed and "Infiltrate" not in MODELLED_RULES
 
     def test_seeded_unit_names_are_unique(self, wb):
         """Lookups match on name alone, so names must not collide."""
@@ -97,6 +119,58 @@ class TestDataTabs:
     def test_seeded_weapon_names_are_unique(self, wb):
         names = [r[0].value for r in wb["Weapons"].iter_rows(min_row=2) if r[0].value]
         assert len(names) == len(set(names))
+
+
+class TestDropdownCapacity:
+    """The cascading dropdowns scan a fixed range; the data must fit inside it.
+
+    Importing an army book grows these tabs, and a row past the end of the
+    range simply never appears in the dropdown - silently.
+    """
+
+    @pytest.mark.parametrize(
+        "tab,loader",
+        [
+            ("Units", csvdata.units),
+            ("Weapons", csvdata.weapons),
+            ("Upgrades", csvdata.upgrades),
+            ("Factions", csvdata.factions),
+        ],
+    )
+    def test_every_row_is_reachable_from_a_dropdown(self, tab, loader):
+        last_used = len(loader()) + 1  # +1 for the header row
+        assert last_used <= SOURCE_LAST_ROW, (
+            f"{tab} reaches row {last_used} but dropdowns only scan to "
+            f"{SOURCE_LAST_ROW}; raise layout.SOURCE_CAPACITY"
+        )
+
+
+class TestSeededRowsResolve:
+    """Importing a faction deletes its old rows, which can orphan a seeded pick.
+
+    A Simulation row naming a unit or weapon that no longer exists still looks
+    fine - the lookups just return nothing and the row quietly reads zero.
+    """
+
+    @pytest.mark.parametrize(
+        "column,loader",
+        [
+            ("Attacker", csvdata.units),
+            ("Defender", csvdata.units),
+            ("Weapon", csvdata.weapons),
+            ("Att. upgrades", csvdata.upgrades),
+            ("Def. upgrades", csvdata.upgrades),
+        ],
+    )
+    def test_every_seeded_pick_exists(self, column, loader):
+        known = {row[0] for row in loader()}
+        index = SIMULATION_COLUMNS.index(column)
+        for number, row in enumerate(csvdata.simulation(), start=2):
+            picked = row[index]
+            assert not picked or picked in known, (
+                f"csv/simulation.csv row {number}: {column}={picked!r} "
+                f"is not in the data"
+            )
 
 
 class TestValidation:

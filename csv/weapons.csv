@@ -1,11 +1,94 @@
-Name,Faction,Attacks,AP,Blast,Deadly,Impact,Special Rules
-Reaper rifle,Robot Legions,1,1,0,0,0,
-Gauss blaster,Robot Legions,2,1,0,0,0,Rending
-Tesla carbine,Robot Legions,1,0,0,0,0,Surge
-Smashing fists,Robot Legions,2,1,0,0,1,
-Assault rifle,Havoc Brothers,2,0,0,0,0,
-Plasma gun,Havoc Brothers,1,2,0,3,0,
-Frag grenade,Havoc Brothers,1,0,3,0,0,
-Heavy flamer,Havoc Brothers,1,0,6,0,0,Reliable
-Energy sword,Havoc Brothers,3,1,0,0,0,Thrust
-Chain fist,Havoc Brothers,2,2,0,0,0,Bane
+Name,Faction,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules
+Assault rifle,Havoc Brothers,,2,0,0,0,0,
+Plasma gun,Havoc Brothers,,1,2,0,3,0,
+Frag grenade,Havoc Brothers,,1,0,3,0,0,
+Heavy flamer,Havoc Brothers,,1,0,6,0,0,Reliable
+Energy sword,Havoc Brothers,,3,1,0,0,0,Thrust
+Chain fist,Havoc Brothers,,2,2,0,0,0,Bane
+Annihilation Gun,Robot Legions,18,2,1,3,0,0,
+Atom-Beamer,Robot Legions,24,3,1,0,0,0,
+Atom-Casters,Robot Legions,12,1,1,0,0,0,
+Atom-Scourge,Robot Legions,24,9,4,0,0,0,
+CCW (A1),Robot Legions,0,1,0,0,0,0,
+CCW (A2),Robot Legions,0,2,0,0,0,0,
+CCW (A3),Robot Legions,0,3,0,0,0,0,
+CCWs (A1),Robot Legions,0,1,0,0,0,0,
+CCWs (A2),Robot Legions,0,2,0,0,0,0,
+Close-Range Gauss Array,Robot Legions,12,6,0,0,0,0,Destructive
+Combat Staff,Robot Legions,0,3,1,0,0,0,
+Crushing Legs (A2),Robot Legions,0,2,2,0,0,0,
+Crushing Legs (A6),Robot Legions,0,6,2,0,0,0,
+D-Marks,Robot Legions,24,1,1,0,0,0,"Reliable, Takedown"
+Death Gaze,Robot Legions,12,2,4,0,0,0,
+Destruction Pulse,Robot Legions,30,2,3,0,6,0,
+Disintegration Pistol,Robot Legions,12,6,1,0,0,0,
+Doom Cannon,Robot Legions,30,3,2,3,0,0,
+Doom Ray,Robot Legions,24,4,4,0,0,0,Unstoppable
+Doom Scythe,Robot Legions,0,1,2,0,3,0,
+Dual Hyper Swords,Robot Legions,0,4,1,0,0,0,Rending
+Dual Reaper Blades,Robot Legions,0,4,1,0,0,0,Shred
+Exterminator Cannon,Robot Legions,30,2,2,3,0,0,
+Flame Caster,Robot Legions,12,1,0,3,0,0,Reliable
+Flux Cannon,Robot Legions,24,3,1,0,0,0,Surge
+Flux Carbines,Robot Legions,18,2,0,0,0,0,Surge
+Flux Sphere Array,Robot Legions,24,9,1,0,0,0,Surge
+Fusion Caster,Robot Legions,12,1,4,0,3,0,
+Gauss Arc Array,Robot Legions,24,12,0,0,0,0,Destructive
+Gauss Blaster,Robot Legions,18,4,0,0,0,0,Destructive
+Gauss Cannon,Robot Legions,24,4,0,0,0,0,Destructive
+Gauss Rifle,Robot Legions,24,1,0,0,0,0,Destructive
+Gauss Rifle Array,Robot Legions,24,3,0,0,0,0,Destructive
+Great Wraith,Robot Legions,0,0,0,0,0,0,Flying
+Great Wraith Strike,Robot Legions,0,12,0,0,0,0,Rending
+Harvest Blade,Robot Legions,0,2,2,0,3,0,
+Heavy CCW,Robot Legions,0,2,1,0,0,0,
+Heavy Doom Cannon,Robot Legions,30,3,3,0,3,0,
+Heavy Gauss Cannon,Robot Legions,30,6,0,0,0,0,Destructive
+Heavy Gauss Rifle,Robot Legions,24,2,0,0,0,0,Destructive
+Heavy Ray Cannon,Robot Legions,24,4,4,0,0,0,Unstoppable
+Heavy Reaper Blade,Robot Legions,0,1,3,0,6,0,Shred
+Hyper Sword (A2),Robot Legions,0,2,1,0,0,0,Rending
+Hyper Sword (A3),Robot Legions,0,3,1,0,0,0,Rending
+Lord Gauss Pistol,Robot Legions,12,2,0,0,0,0,Destructive
+Lord Gauss Rifle,Robot Legions,24,2,0,0,0,0,Destructive
+Lord Reaper Rifle,Robot Legions,18,2,1,0,0,0,Shred
+Metal Claws,Robot Legions,0,2,1,0,0,0,
+Metal Fangs,Robot Legions,0,2,0,0,0,0,Rending
+Monolith Beam,Robot Legions,18,3,3,0,6,0,
+Monolith Blast,Robot Legions,24,4,1,3,0,0,
+Nanobot Shards,Robot Legions,18,4,3,0,3,0,
+Phase Glaive,Robot Legions,0,3,4,0,0,0,
+Plasma Caster,Robot Legions,24,1,4,0,0,0,
+Rapid Doom Blaster,Robot Legions,24,2,1,3,0,0,
+Rapid Flux Carbines,Robot Legions,18,4,0,0,0,0,Surge
+Rapid Gauss Rifle,Robot Legions,24,3,0,0,0,0,Destructive
+Rapid Particle Beam,Robot Legions,12,2,1,3,0,0,Reliable
+Rapid Ray Caster,Robot Legions,18,4,4,0,0,0,Unstoppable
+Ray Cannon,Robot Legions,24,2,4,0,0,0,Unstoppable
+Ray Caster,Robot Legions,18,2,4,0,0,0,Unstoppable
+Reaper Rifles,Robot Legions,18,1,1,0,0,0,Shred
+Rod,Robot Legions,0,1,0,0,0,0,
+Rod-Shots,Robot Legions,12,2,1,0,0,0,
+Shock Whips,Robot Legions,0,4,1,0,0,0,Surge
+Spider Fangs,Robot Legions,0,6,0,0,0,0,Bane
+Spike Whips,Robot Legions,0,1,2,0,3,0,
+Staff-Shots,Robot Legions,12,3,1,0,0,0,
+Stomp (A2),Robot Legions,0,2,1,0,0,0,
+Stomp (A4),Robot Legions,0,4,1,0,0,0,
+Stomp (A6),Robot Legions,0,6,2,0,0,0,
+Swarm Attacks,Robot Legions,0,3,0,0,0,0,Rending
+Twin Atom-Beamer,Robot Legions,24,6,1,0,0,0,
+Twin Atom-Caster,Robot Legions,12,2,1,0,0,0,
+Twin Atom-Shredder,Robot Legions,24,12,1,0,0,0,
+Twin Exterminator Cannon,Robot Legions,30,4,2,3,0,0,
+Twin Flux Cannon,Robot Legions,24,6,1,0,0,0,Surge
+Twin Fusion Ray,Robot Legions,18,2,4,0,6,0,
+Twin Gauss Rifle,Robot Legions,24,2,0,0,0,0,Destructive
+Twin Heavy Gauss Cannon,Robot Legions,24,12,0,0,0,0,Destructive
+Void Blades,Robot Legions,0,2,0,0,0,0,
+Void Shard,Robot Legions,24,12,2,0,0,0,
+Void Sword,Robot Legions,0,1,0,3,0,0,
+War Scythe,Robot Legions,0,2,2,0,0,0,
+Wraith Strike,Robot Legions,0,8,0,0,0,0,Rending
+Wrist-Flamer,Robot Legions,12,1,0,3,0,0,Reliable
+Wrist-Plasma,Robot Legions,24,1,4,0,0,0,

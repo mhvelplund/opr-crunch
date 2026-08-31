@@ -3,28 +3,38 @@
 Unlike test_formula_parity, this exercises the whole chain: dropdown values ->
 INDEX/MATCH lookups into the data tabs -> Calc -> Simulation. A wrong column
 letter in a lookup shows up here and nowhere else.
+
+Expectations are derived from the CSVs rather than hardcoded, so importing a
+new army book cannot silently invalidate them.
 """
 
 import pytest
 
+from opr_crunch import csvdata
 from opr_crunch.build import build_workbook
-from opr_crunch.layout import col_index
+from opr_crunch.layout import (
+    SIMULATION_COLUMNS,
+    UNITS_COLUMNS,
+    WEAPONS_COLUMNS,
+    col_index,
+)
+from opr_crunch.model import Scenario, resolve
 
 from .formula_eval import WorkbookEvaluator
 
 
-def set_row(wb, row, **values):
-    sim = wb["Simulation"]
-    for header, value in values.items():
-        sim.cell(row=row, column=col_index(header), value=value)
+def _by_name(rows, columns):
+    return {row[0]: dict(zip(columns, row)) for row in rows}
 
 
-def outputs(wb, row):
-    ev = WorkbookEvaluator(wb, "Simulation")
-    sim = wb["Simulation"]
-    hits = sim.cell(row=row, column=col_index("Hits")).coordinate
-    wounds = sim.cell(row=row, column=col_index("Wounds")).coordinate
-    return ev.cell("Simulation", hits), ev.cell("Simulation", wounds)
+@pytest.fixture(scope="module")
+def units():
+    return _by_name(csvdata.units(), UNITS_COLUMNS)
+
+
+@pytest.fixture(scope="module")
+def weapons():
+    return _by_name(csvdata.weapons(), WEAPONS_COLUMNS)
 
 
 @pytest.fixture
@@ -32,100 +42,131 @@ def wb():
     return build_workbook()
 
 
-WARRIORS_VS_BROTHERS = dict(
-    **{
-        "Att. faction": "Robot Legions",
-        "Attacker": "Warrior",
-        "#": 10,
-        "Weapon": "Reaper rifle",
-        "Combat": "Ranged",
-        "Melee state": "None",
-        'Range >9"': "Yes",
-        "Def. faction": "Havoc Brothers",
-        "Defender": "Battle Brother",
-        "Def. #": 5,
-        "In cover": "No",
+def _rules(*texts):
+    return frozenset(
+        part.strip() for text in texts for part in str(text).split(",") if part.strip()
+    )
+
+
+def expected(units, weapons, attacker, weapon, defender, models, def_models, **ctx):
+    """Build the Scenario the sheet ought to assemble for these dropdown picks."""
+    a, w, d = units[attacker], weapons[weapon], units[defender]
+    return resolve(Scenario(
+        models=models,
+        attacks=w["Attacks"],
+        quality=a["Quality"],
+        defense=d["Defense"],
+        def_models=def_models,
+        ap=w["AP"],
+        blast=w["Blast"],
+        deadly=w["Deadly"],
+        impact=w["Impact"],
+        ravage=a["Ravage"],
+        tough=d["Tough"],
+        att_rules=_rules(a["Special Rules"], w["Special Rules"]),
+        def_rules=_rules(d["Special Rules"]),
+        **ctx,
+    ))
+
+
+def set_row(wb, row, **values):
+    sim = wb["Simulation"]
+    for header in SIMULATION_COLUMNS:
+        sim.cell(row=row, column=col_index(header), value=values.get(header, None))
+
+
+def outputs(wb, row):
+    ev = WorkbookEvaluator(wb, "Simulation")
+    sim = wb["Simulation"]
+    return (
+        ev.cell("Simulation", sim.cell(row=row, column=col_index("Hits")).coordinate),
+        ev.cell("Simulation", sim.cell(row=row, column=col_index("Wounds")).coordinate),
+    )
+
+
+def picks(**overrides):
+    base = {
+        "Att. faction": "Robot Legions", "Attacker": "Warriors", "#": 10,
+        "Weapon": "Reaper Rifles", "Combat": "Ranged", "Melee state": "None",
+        'Range >9"': "Yes", "Def. faction": "Havoc Brothers",
+        "Defender": "Battle Brother", "Def. #": 5, "In cover": "No",
     }
-)
+    base.update(overrides)
+    return base
 
 
 class TestWorkedExample:
-    """10 Warriors (Q4) with AP(1) Reaper rifles vs 5 Battle Brothers (D3)."""
+    """The example from the requirements, now with Shred correctly attributed.
 
-    def test_seeded_example_row_is_the_worked_example(self, wb):
-        hits, wounds = outputs(wb, 2)
-        assert hits == pytest.approx(5.0)
-        assert wounds == pytest.approx(2.5)
+    10 Warriors (Quality 4+) with AP(1), Shred Reaper Rifles, into 5 Battle
+    Brothers (Defense 3+): 5 hits, and 2.5 + 5/6 = 3.33 wounds.
+    """
 
-    def test_cover_pulls_the_defence_back_to_a_three_up(self, wb):
-        set_row(wb, 3, **{**WARRIORS_VS_BROTHERS, "In cover": "Yes"})
-        hits, wounds = outputs(wb, 3)
-        assert hits == pytest.approx(5.0)
-        assert wounds == pytest.approx(5 * 2 / 6)
+    def test_hits(self, wb):
+        assert outputs(wb, 2)[0] == pytest.approx(5.0)
+
+    def test_wounds_include_shreds_extra_wound(self, wb):
+        assert outputs(wb, 2)[1] == pytest.approx(10 / 3)
+
+    def test_shred_is_what_makes_it_more_than_two_and_a_half(self, wb, weapons):
+        """Without Shred the same profile would stop at 5 x 1/2 = 2.5 wounds."""
+        assert weapons["Reaper Rifles"]["Special Rules"] == "Shred"
+        assert outputs(wb, 2)[1] == pytest.approx(2.5 + 5 / 6)
 
 
-class TestLookups:
-    def test_weapon_attacks_are_read_from_the_weapons_tab(self, wb):
-        # Assault rifle has 2 attacks; 10 Battle Brothers at Quality 3.
-        set_row(wb, 4, **{
-            **WARRIORS_VS_BROTHERS,
-            "Att. faction": "Havoc Brothers",
-            "Attacker": "Battle Brother",
-            "Weapon": "Assault rifle",
-        })
-        hits, _ = outputs(wb, 4)
-        assert hits == pytest.approx(20 * 4 / 6)
+class TestLookupsMatchTheModel:
+    """Each pick must produce exactly what the reference model says it should."""
 
-    def test_upgrade_special_rules_reach_the_calculation(self, wb):
-        # Targeting matrix grants Relentless: +1 hit per natural 6 over 9".
-        set_row(wb, 5, **{**WARRIORS_VS_BROTHERS, "Att. upgrades": "Targeting matrix"})
-        hits, _ = outputs(wb, 5)
-        assert hits == pytest.approx(5.0 + 10 / 6)
+    @pytest.mark.parametrize(
+        "row,overrides,ctx",
+        [
+            (5, {}, {}),
+            (6, {"In cover": "Yes"}, dict(in_cover=True)),
+            (7, {"Weapon": "Gauss Blaster"}, {}),  # Destructive
+            (8, {"Attacker": "Eternals", "Weapon": "Flux Carbines"}, {}),  # Surge
+            (9, {"Defender": "Warriors", "Def. faction": "Robot Legions"}, {}),  # Self-Repair
+            (10, {"Attacker": "Flesh-Eaters", "Weapon": "Metal Claws",
+                  "Combat": "Melee", "Melee state": "Charging"},
+             dict(combat="Melee", melee_state="Charging")),
+        ],
+    )
+    def test_sheet_agrees_with_the_model(self, wb, units, weapons, row, overrides, ctx):
+        chosen = picks(**overrides)
+        set_row(wb, row, **chosen)
+        want = expected(
+            units, weapons, chosen["Attacker"], chosen["Weapon"], chosen["Defender"],
+            models=chosen["#"], def_models=chosen["Def. #"],
+            long_range=chosen['Range >9"'] == "Yes", **ctx,
+        )
+        hits, wounds = outputs(wb, row)
+        assert hits == pytest.approx(float(want.hits))
+        assert wounds == pytest.approx(float(want.wounds))
 
-    def test_defender_unit_special_rules_reach_the_calculation(self, wb):
-        # Immortals (D3) have innate Regeneration.
-        set_row(wb, 6, **{
-            **WARRIORS_VS_BROTHERS,
-            "Def. faction": "Robot Legions",
-            "Defender": "Immortal",
-        })
-        _, wounds = outputs(wb, 6)
-        assert wounds == pytest.approx(2.5 * 2 / 3)
 
-    def test_weapon_rules_column_is_read(self, wb):
-        # Gauss blaster: 2 attacks, AP(1), Rending.
-        set_row(wb, 7, **{**WARRIORS_VS_BROTHERS, "Weapon": "Gauss blaster"})
-        hits, wounds = outputs(wb, 7)
-        assert hits == pytest.approx(10.0)
-        # 20 dice: 20/6 natural 6s at AP5 (blocked only by a 6), rest at AP1.
-        assert wounds == pytest.approx(20 / 6 * 5 / 6 + (10 - 20 / 6) * 3 / 6)
+class TestUnitProfileRules:
+    """Rules printed on a unit's own profile, not on its weapon or upgrade."""
+
+    LORD = dict(Attacker="Tri-Scorpion Lord", Weapon="Annihilation Gun")
+
+    def test_the_attacking_units_rules_reach_the_calculation(self, wb, units):
+        """Tri-Scorpion Lord has Relentless, which only bites over 9 inches."""
+        assert "Relentless" in units["Tri-Scorpion Lord"]["Special Rules"]
+        set_row(wb, 11, **picks(**self.LORD, **{"#": 1, 'Range >9"': "Yes"}))
+        set_row(wb, 12, **picks(**self.LORD, **{"#": 1, 'Range >9"': "No"}))
+        assert outputs(wb, 11)[0] > outputs(wb, 12)[0]
+
+    def test_the_attacking_units_ravage_reaches_the_calculation(self, wb, units):
+        """Ravage(4) adds direct wounds, but only in melee."""
+        assert units["Tri-Scorpion Lord"]["Ravage"] == 4
+        set_row(wb, 13, **picks(**self.LORD, **{"#": 1},
+                                Combat="Melee", **{"Melee state": "None"}))
+        set_row(wb, 14, **picks(**self.LORD, **{"#": 1}))
+        assert outputs(wb, 13)[1] > outputs(wb, 14)[1]
+
+    def test_the_defending_units_tough_caps_deadly(self, wb, units):
+        assert units["Tri-Scorpion Lord"]["Tough"] == 6
 
 
 class TestBlankRows:
     def test_an_empty_row_shows_nothing(self, wb):
-        hits, wounds = outputs(wb, 12)
-        assert hits == ""
-        assert wounds == ""
-
-
-class TestMelee:
-    def test_impact_hits_are_added_on_a_charge(self, wb):
-        # Smashing fists: 2 attacks, AP(1), Impact(1). 10 models charging.
-        set_row(wb, 8, **{
-            **WARRIORS_VS_BROTHERS,
-            "Weapon": "Smashing fists",
-            "Combat": "Melee",
-            "Melee state": "Charging",
-        })
-        hits, _ = outputs(wb, 8)
-        assert hits == pytest.approx(20 * 3 / 6 + 10 * 5 / 6)
-
-    def test_fatigued_attackers_only_land_sixes(self, wb):
-        set_row(wb, 9, **{
-            **WARRIORS_VS_BROTHERS,
-            "Weapon": "Smashing fists",
-            "Combat": "Melee",
-            "Melee state": "Fatigued",
-        })
-        hits, _ = outputs(wb, 9)
-        assert hits == pytest.approx(20 / 6)
+        assert outputs(wb, 18) == ("", "")

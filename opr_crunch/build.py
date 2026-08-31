@@ -24,7 +24,7 @@ OUTPUT_FILL = PatternFill("solid", fgColor="E2EFDA")
 #: on Tests they are literals. Either way the step formulas are identical.
 INPUT_HEADERS = [
     "models", "attacks", "quality", "defense", "def_models",
-    "ap", "blast", "deadly", "impact", "att_rules", "def_rules",
+    "ap", "blast", "deadly", "impact", "ravage", "tough", "att_rules", "def_rules",
     "is_melee", "is_charging", "is_fatigued", "long_range", "in_cover",
 ]
 
@@ -112,9 +112,9 @@ def build_data_tab(
 #: (title, columns, loader, kwargs) for every tab sourced from csv/.
 DATA_TABS = [
     ("Units", layout.UNITS_COLUMNS, csvdata.units,
-     dict(widths={"A": 22, "E": 34}, faction_column=2)),
+     dict(widths={"A": 22, "H": 34}, faction_column=2)),
     ("Weapons", layout.WEAPONS_COLUMNS, csvdata.weapons,
-     dict(width=11, widths={"A": 22, "H": 34}, faction_column=2)),
+     dict(width=11, widths={"A": 22, "I": 34}, faction_column=2)),
     ("Upgrades", layout.UPGRADES_COLUMNS, csvdata.upgrades,
      dict(width=11, widths={"A": 22, "G": 34}, faction_column=2)),
     ("Special rules", layout.SPECIAL_RULES_COLUMNS, csvdata.special_rules,
@@ -182,19 +182,25 @@ def calc_inputs_for(row: int) -> List[str]:
             f"{lookup('Upgrades', upgrade_col, att_up)})"
         )
 
+    attacker = sim("Attacker", row)
     return [
         f"={sim('#', row)}",
-        f"={lookup('Weapons', 'C', weapon)}",
-        f"={lookup('Units', 'C', sim('Attacker', row))}",
+        f"={lookup('Weapons', 'D', weapon)}",
+        f"={lookup('Units', 'C', attacker)}",
         f"={lookup('Units', 'D', defender)}",
         f"={sim('Def. #', row)}",
-        f"={lookup('Weapons', 'D', weapon)}+{lookup('Upgrades', 'C', att_up)}",
-        pair("E", "D"),
-        pair("F", "E"),
-        pair("G", "F"),
-        f'={lookup("Weapons", "H", weapon, chr(34) * 2)}&", "'
+        f"={lookup('Weapons', 'E', weapon)}+{lookup('Upgrades', 'C', att_up)}",
+        pair("F", "D"),
+        pair("G", "E"),
+        pair("H", "F"),
+        f"={lookup('Units', 'G', attacker)}",
+        f"={lookup('Units', 'F', defender)}",
+        # The attacking unit's own profile grants rules too (Relentless,
+        # Piercing Assault, ...), so it joins the weapon's and the upgrade's.
+        f'={lookup("Units", "H", attacker, chr(34) * 2)}&", "'
+        f'&{lookup("Weapons", "I", weapon, chr(34) * 2)}&", "'
         f'&{lookup("Upgrades", "G", att_up, chr(34) * 2)}',
-        f'={lookup("Units", "E", defender, chr(34) * 2)}&", "'
+        f'={lookup("Units", "H", defender, chr(34) * 2)}&", "'
         f'&{lookup("Upgrades", "G", def_up, chr(34) * 2)}',
         f'=({combat}="Melee")',
         f'=AND({combat}="Melee",{state}="Charging")',
@@ -311,7 +317,7 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
 def scenario_inputs(s: Scenario) -> List:
     return [
         s.models, s.attacks, s.quality, s.defense, s.def_models,
-        s.ap, s.blast, s.deadly, s.impact,
+        s.ap, s.blast, s.deadly, s.impact, s.ravage, s.tough,
         ", ".join(sorted(s.att_rules)), ", ".join(sorted(s.def_rules)),
         s.is_melee, s.is_charging,
         s.is_melee and s.melee_state == "Fatigued",

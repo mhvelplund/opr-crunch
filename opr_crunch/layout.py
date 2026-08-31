@@ -18,18 +18,22 @@ SIMULATION_COLUMNS = [
     "Wounds",
 ]
 
-UNITS_COLUMNS = ["Name", "Faction", "Quality", "Defense", "Special Rules"]
-WEAPONS_COLUMNS = ["Name", "Faction", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules"]
+UNITS_COLUMNS = ["Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules"]
+WEAPONS_COLUMNS = [
+    "Name", "Faction", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+]
 UPGRADES_COLUMNS = ["Name", "Faction", "AP", "Blast", "Deadly", "Impact", "Special Rules"]
-SPECIAL_RULES_COLUMNS = ["Name", "Parameterised", "Applies to", "Text"]
+SPECIAL_RULES_COLUMNS = ["Name", "Parameterised", "Applies to", "Modelled", "Text"]
 FACTIONS_COLUMNS = ["Name"]
 
 SIM_FIRST_ROW = 2
 SIM_ROWS = 20
 
 #: Rows of the Units/Weapons/Upgrades tabs that the cascading dropdowns scan.
-#: Sized well past the seed data so rows can be added without a rebuild.
-SOURCE_CAPACITY = 60
+#: Sized well past the imported data so rows can be added without a rebuild.
+#: A tab that outgrows this loses its extra rows from the dropdowns silently,
+#: so tests/test_build.py guards it.
+SOURCE_CAPACITY = 160
 SOURCE_FIRST_ROW = 2
 SOURCE_LAST_ROW = SOURCE_FIRST_ROW + SOURCE_CAPACITY - 1
 

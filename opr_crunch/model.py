@@ -18,6 +18,38 @@ FATIGUED = "Fatigued"
 
 IGNORES_REGENERATION = frozenset({"Bane", "Rending", "Unstoppable"})
 
+#: Rules this engine actually computes, and which side they act on. Anything
+#: else an army book defines is carried as reference text only, because it
+#: cannot change a single round's hits or wounds.
+MODELLED_RULES = {
+    "AP": "Attacker",
+    "Bane": "Attacker",
+    "Blast": "Attacker",
+    "Counter": "Defender",
+    "Deadly": "Attacker",
+    "Destructive": "Attacker",
+    "Furious": "Attacker",
+    "Impact": "Attacker",
+    "Piercing Assault": "Attacker",
+    "Protected": "Defender",
+    "Ravage": "Attacker",
+    "Regeneration": "Defender",
+    "Relentless": "Attacker",
+    "Reliable": "Attacker",
+    "Rending": "Attacker",
+    "Self-Repair": "Defender",
+    "Self-Repair Boost": "Defender",
+    "Shielded": "Defender",
+    "Shred": "Attacker",
+    "Surge": "Attacker",
+    "Thrust": "Attacker",
+    "Tough": "Defender",
+    "Unstoppable": "Attacker",
+}
+
+#: Modelled rules that carry a value, and so get their own numeric column.
+PARAMETERISED_RULES = frozenset({"AP", "Blast", "Deadly", "Impact", "Ravage", "Tough"})
+
 
 @dataclass(frozen=True)
 class Scenario:
@@ -32,6 +64,8 @@ class Scenario:
     blast: int = 0
     deadly: int = 0
     impact: int = 0
+    ravage: int = 0
+    tough: int = 0
     att_rules: frozenset = field(default_factory=frozenset)
     def_rules: frozenset = field(default_factory=frozenset)
     combat: str = RANGED
@@ -52,6 +86,16 @@ class Scenario:
 class Result:
     hits: Fraction
     wounds: Fraction
+
+
+def has(rules, name: str) -> bool:
+    """Whether ``rules`` grants ``name``.
+
+    Matching is by substring, exactly as the sheet's SEARCH-based detection
+    works, so the two cannot disagree. It is also what the army books mean:
+    a model with "Relentless Aura" or "Unstoppable when Shooting" has that rule.
+    """
+    return any(name in rule for rule in rules)
 
 
 def p_success(target: int) -> Fraction:
@@ -81,11 +125,11 @@ def resolve(s: Scenario) -> Result:
     6s to hit, and Rending resolves exactly those hits at a different AP.
     """
     att, dfn = set(s.att_rules), set(s.def_rules)
-    unstoppable = "Unstoppable" in att
-    thrusting = "Thrust" in att and s.is_charging
+    unstoppable = has(att, "Unstoppable")
+    thrusting = has(att, "Thrust") and s.is_charging
 
     # --- to hit -----------------------------------------------------------
-    quality = 2 if "Reliable" in att else s.quality
+    quality = 2 if has(att, "Reliable") else s.quality
     fatigued = s.is_melee and s.melee_state == FATIGUED and not unstoppable
     dice = s.models * s.attacks
     p_hit = SIX if fatigued else p_success(quality - (1 if thrusting else 0))
@@ -95,9 +139,9 @@ def resolve(s: Scenario) -> Result:
 
     extra_per_6 = sum(
         (
-            "Surge" in att,
-            "Relentless" in att and not s.is_melee and s.long_range,
-            "Furious" in att and s.is_charging,
+            has(att, "Surge"),
+            has(att, "Relentless") and not s.is_melee and s.long_range,
+            has(att, "Furious") and s.is_charging,
         )
     )
     normal += natural_6 * extra_per_6
@@ -110,29 +154,66 @@ def resolve(s: Scenario) -> Result:
     # --- Impact -----------------------------------------------------------
     impact_hits = Fraction(0)
     if s.is_charging and not fatigued and s.impact >= 1:
-        counter = s.def_models if "Counter" in dfn else 0
+        counter = s.def_models if has(dfn, "Counter") else 0
         impact_dice = max(0, s.models * s.impact - counter)
         impact_hits = impact_dice * Fraction(5, 6)
 
     # --- to block ---------------------------------------------------------
-    ap_base = s.ap + (1 if thrusting else 0)
+    piercing = has(att, "Piercing Assault") and s.is_charging
+    ap_base = s.ap + (1 if thrusting else 0) + (1 if piercing else 0)
     cover = 1 if (not s.is_melee and s.in_cover and s.blast < 1) else 0
+    shielded = 1 if has(dfn, "Shielded") else 0
 
     def wounds_from(hits: Fraction, ap: int) -> Fraction:
-        target = s.defense + ap - cover
-        if "Bane" in att:
+        target = s.defense + ap - cover - shielded
+        if has(att, "Bane"):
             block = p_block_no6(target) + SIX * p_success(target)
         else:
             block = p_success(target)
         return hits * (1 - block)
 
-    ap_6 = ap_base + (4 if "Rending" in att else 0)
-    deadly_mult = s.deadly if s.deadly >= 1 else 1
+    # Rending and Destructive both give unmodified 6s to hit AP(+4); only
+    # Rending also ignores Regeneration.
+    ap_6 = ap_base + (4 if has(att, "Rending") or has(att, "Destructive") else 0)
 
+    # Deadly's wounds do not carry over, so a target can only absorb as many as
+    # it has wounds to give: one, unless it has Tough.
+    deadly_mult = min(s.deadly, max(s.tough, 1)) if s.deadly >= 1 else 1
+
+    weapon_hits = natural_6 + normal
     wounds = (wounds_from(natural_6, ap_6) + wounds_from(normal, ap_base)) * deadly_mult
+    if has(att, "Shred"):
+        # An unmodified 1 to block is unaffected by AP, so this is a flat 1/6.
+        wounds += weapon_hits * SIX
     wounds += wounds_from(impact_hits, 0)
 
-    if "Regeneration" in dfn and not att & IGNORES_REGENERATION:
-        wounds *= Fraction(2, 3)
+    # Ravage inflicts wounds directly, bypassing the Defense roll entirely.
+    if s.is_melee and s.ravage >= 1:
+        wounds += s.models * s.ravage * SIX
+
+    wounds *= _ignore_multiplier(att, dfn)
 
     return Result(hits=natural_6 + normal + impact_hits, wounds=wounds)
+
+
+def _ignore_multiplier(att: set, dfn: set) -> Fraction:
+    """Chance a wound survives the defender's best wound-ignoring rule.
+
+    Regeneration, Self-Repair and friends all roll one die per wound, so a unit
+    with several does not get several rolls — the best threshold applies once.
+    Only Regeneration can be switched off by Bane, Rending or Unstoppable; the
+    army-book rules keep working.
+    """
+    thresholds = []
+    if has(dfn, "Regeneration") and not any(has(att, r) for r in IGNORES_REGENERATION):
+        thresholds.append(5)
+    if has(dfn, "Self-Repair Boost"):
+        thresholds.append(5)
+    elif has(dfn, "Self-Repair"):
+        thresholds.append(6)
+    if has(dfn, "Protected"):
+        thresholds.append(6)
+
+    if not thresholds:
+        return Fraction(1)
+    return 1 - p_success(min(thresholds))

@@ -225,3 +225,44 @@ that is out of scope here. `Rending` is AP(+4) on unmodified 6s to hit, per v3.5
 - `tests/` — pytest, hand-verified cases per rule plus the §6 example.
 - The `Tests` tab carries the same scenarios into the delivered sheet so the
   formula translation can be verified in Google Sheets after import.
+
+
+---
+
+## 9. Amendment: Robot Legions army book (2026-08-31)
+
+The Robot Legions book (v3.5.3) was imported, which changed the model in three ways
+beyond adding data.
+
+**`Shred` resolves the original worked example.** "On unmodified results of 1 to block
+hits, this weapon deals 1 extra wound." A 1 is unmodified, so the extra wound is a flat
+`hits x 1/6` regardless of AP. Applied to the requirements' example that gives
+`2.5 + 5/6 = 3.33` — the figure in the first draft was correct all along, and only the
+rule's name was wrong.
+
+**Rules are matched by substring, in both the model and the sheet.** The sheet detects
+rules with `SEARCH`, so `Self-Repair Boost Buff` matches `Self-Repair Boost`. The Python
+model originally used exact set membership and would have disagreed on precisely the
+units that carry wrapper rules. `model.has()` now mirrors the sheet. This is also what
+the books mean: a model with `Relentless Aura` has `Relentless`.
+
+**Wound-ignoring rules take the best threshold once.** `Regeneration`, `Self-Repair`,
+`Self-Repair Boost` and `Protected` each say "roll one die for each wound", so a unit
+with two of them does not get two rolls. Only `Regeneration` is switched off by `Bane`,
+`Rending` and `Unstoppable`.
+
+Newly modelled: `Destructive`, `Piercing Assault`, `Protected`, `Ravage(X)`,
+`Self-Repair`, `Self-Repair Boost`, `Shielded`, `Shred`, `Tough(X)`.
+
+New columns: `Units.Size`, `Units.Tough`, `Units.Ravage`, `Weapons.Range`,
+`Special rules.Modelled`.
+
+Two defects the import exposed, both fixed:
+
+* the attacking unit's own profile rules never reached `att_rules`, which was built from
+  the weapon and upgrade only;
+* `SOURCE_CAPACITY` was 60, but the book brings 93 weapons — rows past the end of the
+  dropdown range vanish silently, so `tests/test_build.py` now guards it.
+
+§7's first accepted deviation is withdrawn: `Deadly(X)` is now `MIN(X, Tough)` rather
+than a flat multiplier, which is what the rule actually says.

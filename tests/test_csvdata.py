@@ -5,35 +5,44 @@ import pytest
 from opr_crunch import csvdata, layout
 
 
+def field(row, columns, name):
+    return row[columns.index(name)]
+
+
+def find(rows, name):
+    return next(r for r in rows if r[0] == name)
+
+
 class TestLoading:
     def test_factions_are_read(self):
         assert ["Robot Legions"] in csvdata.factions()
 
     def test_units_are_read(self):
         names = [row[0] for row in csvdata.units()]
-        assert "Warrior" in names
+        assert "Warriors" in names
 
     def test_numeric_columns_become_integers(self):
-        warrior = next(r for r in csvdata.units() if r[0] == "Warrior")
-        quality = warrior[layout.UNITS_COLUMNS.index("Quality")]
+        warriors = find(csvdata.units(), "Warriors")
+        quality = field(warriors, layout.UNITS_COLUMNS, "Quality")
         assert quality == 4
         assert isinstance(quality, int)
 
     def test_text_columns_stay_text(self):
-        immortal = next(r for r in csvdata.units() if r[0] == "Immortal")
-        assert immortal[layout.UNITS_COLUMNS.index("Special Rules")] == "Regeneration"
+        warriors = find(csvdata.units(), "Warriors")
+        assert field(warriors, layout.UNITS_COLUMNS, "Special Rules") == "Self-Repair, Slow"
 
     def test_blank_numeric_cells_become_zero(self):
-        rifle = next(r for r in csvdata.weapons() if r[0] == "Reaper rifle")
-        assert rifle[layout.WEAPONS_COLUMNS.index("Blast")] == 0
+        rifles = find(csvdata.weapons(), "Reaper Rifles")
+        assert field(rifles, layout.WEAPONS_COLUMNS, "Blast") == 0
 
     def test_blank_text_cells_become_empty_string(self):
-        warrior = next(r for r in csvdata.units() if r[0] == "Warrior")
-        assert warrior[layout.UNITS_COLUMNS.index("Special Rules")] == ""
+        brother = find(csvdata.units(), "Battle Brother")
+        assert field(brother, layout.UNITS_COLUMNS, "Special Rules") == ""
 
     def test_commas_inside_rule_text_survive(self):
-        bane = next(r for r in csvdata.special_rules() if r[0] == "Bane")
-        assert bane[3].startswith("Ignores Regeneration, and when attacking")
+        bane = find(csvdata.special_rules(), "Bane")
+        text = field(bane, layout.SPECIAL_RULES_COLUMNS, "Text")
+        assert text.startswith("Ignores Regeneration, and when attacking")
 
     def test_quotes_inside_headers_survive(self):
         """The Simulation tab has a column literally named 'Range >9"'."""
@@ -42,7 +51,7 @@ class TestLoading:
 
     def test_simulation_carries_the_worked_example(self):
         row = csvdata.simulation()[0]
-        assert row[layout.SIMULATION_COLUMNS.index("Attacker")] == "Warrior"
+        assert row[layout.SIMULATION_COLUMNS.index("Attacker")] == "Warriors"
         assert row[layout.SIMULATION_COLUMNS.index("#")] == 10
 
     def test_generated_output_columns_are_left_blank(self):
@@ -71,32 +80,29 @@ class TestHeaderValidation:
         with pytest.raises(ValueError, match="Defence"):
             csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"})
 
+    @staticmethod
+    def _write(path, *lines):
+        """Write a units CSV whose header always matches the current layout."""
+        header = ",".join(layout.UNITS_COLUMNS)
+        path.write_text("\n".join([header, *lines]) + "\n", encoding="utf-8")
+
     def test_a_matching_header_is_accepted(self, tmp_path):
         path = tmp_path / "units.csv"
-        path.write_text(
-            "Name,Faction,Quality,Defense,Special Rules\nOrk,Greenskins,4,4,\n",
-            encoding="utf-8",
-        )
+        self._write(path, "Ork,Greenskins,4,4,5,3,0,")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 4, "4", ""]
+            ["Ork", "Greenskins", 4, "4", "5", "3", "0", ""]
         ]
 
     def test_short_rows_are_padded(self, tmp_path):
         path = tmp_path / "units.csv"
-        path.write_text(
-            "Name,Faction,Quality,Defense,Special Rules\nOrk,Greenskins\n",
-            encoding="utf-8",
-        )
+        self._write(path, "Ork,Greenskins")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 0, "", ""]
+            ["Ork", "Greenskins", 0, "", "", "", "", ""]
         ]
 
     def test_blank_lines_are_skipped(self, tmp_path):
         path = tmp_path / "units.csv"
-        path.write_text(
-            "Name,Faction,Quality,Defense,Special Rules\n\nOrk,Greenskins,4,4,\n\n",
-            encoding="utf-8",
-        )
+        self._write(path, "", "Ork,Greenskins,4,4,5,3,0,", "")
         assert len(csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"})) == 1
 
 

@@ -43,4 +43,36 @@ TEST_SCENARIOS = [
         "Unstoppable ignores fatigue",
         _s(combat="Melee", melee_state="Fatigued", att_rules={"Unstoppable"}),
     ),
+    # --- Robot Legions army book -----------------------------------------
+    ("Shred: extra wound on a Defense roll of 1", _s(att_rules={"Shred"})),
+    ("Shred with AP(1): the original 3.33", _s(ap=1, att_rules={"Shred"})),
+    ("Destructive gives natural 6s AP(+4)", _s(att_rules={"Destructive"})),
+    (
+        "Destructive does not bypass Regeneration",
+        _s(att_rules={"Destructive"}, def_rules={"Regeneration"}),
+    ),
+    ("Self-Repair ignores wounds on 6+", _s(def_rules={"Self-Repair"})),
+    (
+        "Self-Repair survives Rending",
+        _s(att_rules={"Rending"}, def_rules={"Self-Repair"}),
+    ),
+    (
+        "Self-Repair Boost ignores on 5+",
+        _s(def_rules={"Self-Repair", "Self-Repair Boost"}),
+    ),
+    ("Protected ignores wounds on 6+", _s(def_rules={"Protected"})),
+    (
+        "Stacked ignore rules take the best once",
+        _s(def_rules={"Protected", "Regeneration"}),
+    ),
+    ("Shielded gives +1 to Defense", _s(def_rules={"Shielded"})),
+    ("Ravage(2) in melee", _s(combat="Melee", ravage=2)),
+    ("Ravage does nothing at range", _s(ravage=2)),
+    (
+        "Piercing Assault adds AP on a charge",
+        _s(combat="Melee", melee_state="Charging", att_rules={"Piercing Assault"}),
+    ),
+    ("Deadly(3) capped by Tough(2)", _s(deadly=3, tough=2)),
+    ("Deadly(3) against Tough(6)", _s(deadly=3, tough=6)),
+    ("Deadly(3) wasted on a 1-wound model", _s(deadly=3)),
 ]

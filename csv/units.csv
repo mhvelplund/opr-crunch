@@ -1,7 +1,35 @@
-Name,Faction,Quality,Defense,Special Rules
-Warrior,Robot Legions,4,4,
-Immortal,Robot Legions,3,3,Regeneration
-Wraith,Robot Legions,3,3,
-Battle Brother,Havoc Brothers,3,3,
-Havoc Champion,Havoc Brothers,3,2,
-Cultist,Havoc Brothers,5,5,
+Name,Faction,Quality,Defense,Size,Tough,Ravage,Special Rules
+Battle Brother,Havoc Brothers,3,3,,,,
+Havoc Champion,Havoc Brothers,3,2,,,,
+Cultist,Havoc Brothers,5,5,,,,
+Annihilator Lord,Robot Legions,3,3,1,6,0,"Hero, Self-Repair, Strider"
+Annihilators,Robot Legions,3,3,3,3,0,"Self-Repair, Strider"
+Bot Swarms,Robot Legions,5,6,3,3,0,"Self-Repair, Strider"
+Death Fortress,Robot Legions,3,2,1,18,0,"Fear(3), Fearless, Self-Repair, Strider"
+Destroyer Snakes,Robot Legions,3,4,3,3,0,"Self-Repair, Strider"
+Doom Fighter,Robot Legions,3,2,1,6,0,"Aircraft, Self-Repair"
+Doom Tank,Robot Legions,3,2,1,9,0,"Self-Repair, Strider"
+Echo-3G01,Robot Legions,3,3,1,3,0,"Caster(1), Hero, Self-Repair, Slow, Stealth Aura, Unique"
+Eternals,Robot Legions,3,2,5,0,0,"Self-Repair, Slow"
+Flesh-Eaters,Robot Legions,3,4,5,0,0,"Infiltrate, Self-Repair, Slow"
+Forge Spider,Robot Legions,4,3,1,6,0,"Self-Repair, Strider"
+Great Monolith,Robot Legions,3,2,1,18,0,"Caster(3), Fear(3), Fearless, Self-Repair, Strider"
+Great Wraith-Shard,Robot Legions,2,2,1,18,0,"Caster(4), Fear(3), Fearless, Self-Repair, Self-Repair Boost Buff"
+Guardians,Robot Legions,3,3,5,0,0,"Self-Repair, Slow"
+Heavy Annihilator,Robot Legions,3,3,1,6,0,"Self-Repair, Strider"
+Hover Bikes,Robot Legions,4,4,3,3,0,"Fast, Self-Repair, Strider"
+Night Transport,Robot Legions,3,2,1,6,0,"Aircraft, Self-Repair, Transport(11)"
+Oath-U7X1,Robot Legions,3,3,1,6,0,"Hero, Protection Feat Aura, Self-Repair, Strider, Unique"
+Robot Lord,Robot Legions,3,3,1,3,0,"Hero, Self-Repair, Shielded, Slow"
+Robot Snakes,Robot Legions,4,4,3,3,0,"Fast, Self-Repair, Strider"
+Snipers,Robot Legions,4,4,3,0,0,"Self-Repair, Slow"
+Spider Walker,Robot Legions,3,2,1,12,0,"Fear(2), Self-Repair, Strider"
+Support Platform,Robot Legions,3,2,1,6,0,"Mobile Artillery, Self-Repair, Strider, Swift Buff"
+Transport Tank,Robot Legions,3,2,1,6,0,"Self-Repair, Strider, Transport(11)"
+Tri-Scorpion Lord,Robot Legions,3,3,1,6,4,"Hero, Relentless, Self-Repair, Strider"
+Tri-Scorpion Pistoleer,Robot Legions,3,3,1,6,0,"Ambushing Piercing Shot, Relentless, Self-Repair, Strider"
+Tri-Scorpions,Robot Legions,3,3,3,3,2,"Self-Repair, Strider"
+Tripod Walker,Robot Legions,3,2,1,6,0,"Fear(1), Self-Repair, Strider"
+Warriors,Robot Legions,4,4,5,0,0,"Self-Repair, Slow"
+Wraith-Shard,Robot Legions,2,2,1,12,0,"Caster(3), Fear(2), Fearless, Flying, Self-Repair"
+Xyros-Z320,Robot Legions,3,3,1,3,0,"Hero, Self-Repair, Slow, Unique, Unstoppable when Shooting"
