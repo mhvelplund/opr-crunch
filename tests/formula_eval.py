@@ -23,8 +23,9 @@ FUNCTIONS = [
     "IF", "AND", "OR", "NOT", "MIN", "MAX", "ABS",
 ]
 
-#: Rows of a whole-column reference the evaluator materialises.
-COLUMN_DEPTH = 70
+#: Rows of a whole-column reference the evaluator materialises. Must reach
+#: past the largest data tab, or lookups silently miss their target rows.
+COLUMN_DEPTH = 340
 
 
 class Err:
@@ -169,9 +170,14 @@ class WorkbookEvaluator:
         return result
 
     def column(self, sheet: str, letter: str):
-        ws = self.wb[sheet]
-        values = [ws[f"{letter}{row}"].value for row in range(1, COLUMN_DEPTH + 1)]
-        return [BLANK if v is None else v for v in values]
+        """A whole-column reference, with formula cells evaluated.
+
+        The generated Key columns are formulas, so returning raw cell contents
+        would make every keyed lookup miss.
+        """
+        return [
+            self.cell(sheet, f"{letter}{row}") for row in range(1, COLUMN_DEPTH + 1)
+        ]
 
     # -- translation -------------------------------------------------------
 

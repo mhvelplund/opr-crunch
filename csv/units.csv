@@ -1,7 +1,4 @@
 Name,Faction,Quality,Defense,Size,Tough,Ravage,Special Rules
-Battle Brother,Havoc Brothers,3,3,,,,
-Havoc Champion,Havoc Brothers,3,2,,,,
-Cultist,Havoc Brothers,5,5,,,,
 Annihilator Lord,Robot Legions,3,3,1,6,0,"Hero, Self-Repair, Strider"
 Annihilators,Robot Legions,3,3,3,3,0,"Self-Repair, Strider"
 Bot Swarms,Robot Legions,5,6,3,3,0,"Self-Repair, Strider"
@@ -33,3 +30,29 @@ Tripod Walker,Robot Legions,3,2,1,6,0,"Fear(1), Self-Repair, Strider"
 Warriors,Robot Legions,4,4,5,0,0,"Self-Repair, Slow"
 Wraith-Shard,Robot Legions,2,2,1,12,0,"Caster(3), Fear(2), Fearless, Flying, Self-Repair"
 Xyros-Z320,Robot Legions,3,3,1,3,0,"Hero, Self-Repair, Slow, Unique, Unstoppable when Shooting"
+Chosen Havoc Brothers,Havoc Brothers,3,3,3,0,0,"Havocbound, Versatile Attack"
+Chosen Havoc Champion,Havoc Brothers,3,3,1,3,0,"Havocbound, Hero, Versatile Attack"
+Cultist Champion,Havoc Brothers,5,5,1,3,0,"Havocbound, Hero"
+Cultists,Havoc Brothers,5,5,10,0,0,
+Despoiler Walker,Havoc Brothers,3,2,1,18,0,"Fear(3), Havocbound, Regeneration"
+Greater Mutated,Havoc Brothers,3,4,3,3,0,"Fast, Havocbound, Unpredictable Fighter"
+Harbinger of Havoc,Havoc Brothers,3,3,1,6,0,"Fear(1), Havocbound, Hero"
+Havoc APC,Havoc Brothers,3,2,1,6,0,"Fast, Havocbound, Transport(11)"
+Havoc Bikers,Havoc Brothers,3,3,3,3,0,"Fast, Havocbound"
+Havoc Brothers,Havoc Brothers,3,3,5,0,0,
+Havoc Champion,Havoc Brothers,3,3,1,3,0,"Havocbound, Hero"
+Havoc Destroyer Champion,Havoc Brothers,3,3,1,6,0,"Ambush, Havocbound, Hero"
+Havoc Destroyers,Havoc Brothers,3,3,3,3,0,"Ambush, Havocbound"
+Havoc Dragon,Havoc Brothers,3,2,1,6,0,"Aircraft, Havocbound, Regeneration"
+Havoc Heavy Tank,Havoc Brothers,3,2,1,18,0,"Fast, Havocbound, Transport(11)"
+Havoc Mech-Fiend,Havoc Brothers,3,2,1,12,0,"Fear(2), Havocbound, Regeneration"
+Havoc Soul Spawn,Havoc Brothers,4,4,3,3,0,"Havocbound, Scout, Strider"
+Havoc Support,Havoc Brothers,3,3,3,0,0,"Havocbound, Relentless"
+Havoc Tank,Havoc Brothers,3,2,1,12,0,"Fast, Havocbound"
+Infernal Brute,Havoc Brothers,3,2,1,12,0,"Fear(2), Havocbound"
+Infernal Stalker,Havoc Brothers,3,2,1,12,0,"Fear(2), Havocbound, Strider"
+Mutated Brothers,Havoc Brothers,3,4,5,0,0,"Fast, Havocbound, Unpredictable Fighter"
+Mutated Cultists,Havoc Brothers,5,6,10,0,0,"Havocbound, Unpredictable Fighter"
+Mutated Destroyer,Havoc Brothers,3,4,1,6,0,"Ambush, Havocbound, Unpredictable"
+Spider Walker,Havoc Brothers,3,2,1,12,0,"Fear(2), Havocbound, Regeneration, Strider"
+Talon Raptors,Havoc Brothers,3,3,5,0,0,"Ambush, Flying, Furious, Havocbound"

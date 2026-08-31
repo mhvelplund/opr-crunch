@@ -29,6 +29,7 @@ MODELLED_RULES = {
     "Deadly": "Attacker",
     "Destructive": "Attacker",
     "Furious": "Attacker",
+    "Havocbound": "Attacker",
     "Impact": "Attacker",
     "Piercing Assault": "Attacker",
     "Protected": "Defender",
@@ -44,7 +45,10 @@ MODELLED_RULES = {
     "Surge": "Attacker",
     "Thrust": "Attacker",
     "Tough": "Defender",
+    "Unpredictable": "Attacker",
+    "Unpredictable Fighter": "Attacker",
     "Unstoppable": "Attacker",
+    "Versatile Attack": "Attacker",
 }
 
 #: Modelled rules that carry a value, and so get their own numeric column.
@@ -72,6 +76,7 @@ class Scenario:
     melee_state: str = "None"
     long_range: bool = True
     in_cover: bool = False
+    variable_choice: str = "AP"
 
     @property
     def is_melee(self) -> bool:
@@ -118,8 +123,44 @@ def p_block_no6(target: int) -> Fraction:
     return Fraction(faces, 6)
 
 
+def variable_effect(s: Scenario) -> tuple:
+    """Rules granting "either AP(+1) or +1 to hit", as (active, weight on AP).
+
+    Unpredictable rolls a die, so its two outcomes are averaged. Versatile
+    Attack is a player's choice, so the pick is taken at face value. When no
+    such rule applies the weight is 1, which collapses the mixture back onto
+    the plain resolution.
+    """
+    att = set(s.att_rules)
+    # "Unpredictable Fighter" contains "Unpredictable"; only the longer name
+    # applies when it is the one printed on the profile.
+    fighter = has(att, "Unpredictable Fighter")
+    unpredictable = (fighter and s.is_melee) or (has(att, "Unpredictable") and not fighter)
+    versatile = has(att, "Versatile Attack") and s.long_range
+
+    if versatile:
+        return True, Fraction(1) if s.variable_choice == "AP" else Fraction(0)
+    if unpredictable:
+        return True, Fraction(1, 2)  # 1-3 gives AP, 4-6 gives to-hit
+    return False, Fraction(1)
+
+
 def resolve(s: Scenario) -> Result:
-    """Project hits and wounds for a single round of one unit attacking another.
+    """Project hits and wounds, averaging over any either/or rule in play."""
+    active, weight = variable_effect(s)
+    if not active:
+        return _resolve_branch(s, 0, 0)
+
+    with_ap = _resolve_branch(s, 1, 0)
+    with_hit = _resolve_branch(s, 0, 1)
+    return Result(
+        hits=weight * with_ap.hits + (1 - weight) * with_hit.hits,
+        wounds=weight * with_ap.wounds + (1 - weight) * with_hit.wounds,
+    )
+
+
+def _resolve_branch(s: Scenario, extra_ap: int, extra_hit: int) -> Result:
+    """One resolution at a fixed set of modifiers.
 
     Dice are split into three pools because several rules key off *unmodified*
     6s to hit, and Rending resolves exactly those hits at a different AP.
@@ -132,7 +173,7 @@ def resolve(s: Scenario) -> Result:
     quality = 2 if has(att, "Reliable") else s.quality
     fatigued = s.is_melee and s.melee_state == FATIGUED and not unstoppable
     dice = s.models * s.attacks
-    p_hit = SIX if fatigued else p_success(quality - (1 if thrusting else 0))
+    p_hit = SIX if fatigued else p_success(quality - (1 if thrusting else 0) - extra_hit)
 
     natural_6 = Fraction(dice, 6)
     normal = dice * p_hit - natural_6
@@ -160,7 +201,16 @@ def resolve(s: Scenario) -> Result:
 
     # --- to block ---------------------------------------------------------
     piercing = has(att, "Piercing Assault") and s.is_charging
-    ap_base = s.ap + (1 if thrusting else 0) + (1 if piercing else 0)
+    havocbound = has(att, "Havocbound") and (
+        (not s.is_melee and s.long_range) or s.is_charging
+    )
+    ap_base = (
+        s.ap
+        + (1 if thrusting else 0)
+        + (1 if piercing else 0)
+        + (1 if havocbound else 0)
+        + extra_ap
+    )
     cover = 1 if (not s.is_melee and s.in_cover and s.blast < 1) else 0
     shielded = 1 if has(dfn, "Shielded") else 0
 

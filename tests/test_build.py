@@ -5,12 +5,7 @@ from openpyxl import load_workbook
 
 from opr_crunch import csvdata
 from opr_crunch.build import build_workbook
-from opr_crunch.layout import (
-    SIMULATION_COLUMNS,
-    SIM_FIRST_ROW,
-    SIM_ROWS,
-    SOURCE_LAST_ROW,
-)
+from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS, last_row
 from opr_crunch.model import MODELLED_RULES
 
 
@@ -73,18 +68,19 @@ class TestSimulationTab:
 class TestDataTabs:
     def test_units_headers(self, wb):
         assert headers(wb["Units"]) == [
-            "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules",
+            "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage",
+            "Special Rules", "Key",
         ]
 
     def test_weapons_headers(self, wb):
         assert headers(wb["Weapons"]) == [
             "Name", "Faction", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
-            "Special Rules",
+            "Special Rules", "Key",
         ]
 
     def test_upgrades_headers(self, wb):
         assert headers(wb["Upgrades"]) == [
-            "Name", "Faction", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+            "Name", "Faction", "AP", "Blast", "Deadly", "Impact", "Special Rules", "Key",
         ]
 
     def test_factions_are_seeded(self, wb):
@@ -111,14 +107,27 @@ class TestDataTabs:
         listed = {r[0].value for r in wb["Special rules"].iter_rows(min_row=2) if r[0].value}
         assert "Infiltrate" in listed and "Infiltrate" not in MODELLED_RULES
 
-    def test_seeded_unit_names_are_unique(self, wb):
-        """Lookups match on name alone, so names must not collide."""
-        names = [r[0].value for r in wb["Units"].iter_rows(min_row=2) if r[0].value]
-        assert len(names) == len(set(names))
+    @pytest.mark.parametrize("tab", ["Units", "Weapons", "Upgrades"])
+    def test_lookup_keys_are_unique(self, wb, tab):
+        """Names repeat across army books; Name|Faction is what must not.
 
-    def test_seeded_weapon_names_are_unique(self, wb):
-        names = [r[0].value for r in wb["Weapons"].iter_rows(min_row=2) if r[0].value]
-        assert len(names) == len(set(names))
+        Several books print a CCW or a Stomp, so lookups match on the pair.
+        """
+        keys = [
+            (r[0].value, r[1].value)
+            for r in wb[tab].iter_rows(min_row=2)
+            if r[0].value
+        ]
+        assert len(keys) == len(set(keys)), tab
+
+    def test_a_name_shared_by_two_factions_is_kept_distinct(self, wb):
+        rows = [
+            (r[0].value, r[1].value)
+            for r in wb["Weapons"].iter_rows(min_row=2)
+            if r[0].value
+        ]
+        shared = {n for n, f in rows if sum(1 for m, _ in rows if m == n) > 1}
+        assert shared, "expected at least one name shared across factions"
 
 
 class TestDropdownCapacity:
@@ -139,9 +148,9 @@ class TestDropdownCapacity:
     )
     def test_every_row_is_reachable_from_a_dropdown(self, tab, loader):
         last_used = len(loader()) + 1  # +1 for the header row
-        assert last_used <= SOURCE_LAST_ROW, (
+        assert last_used <= last_row(tab), (
             f"{tab} reaches row {last_used} but dropdowns only scan to "
-            f"{SOURCE_LAST_ROW}; raise layout.SOURCE_CAPACITY"
+            f"{last_row(tab)}; raise layout.CAPACITY[{tab!r}]"
         )
 
 

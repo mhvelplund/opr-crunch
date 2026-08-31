@@ -1,7 +1,4 @@
 Name,Faction,AP,Blast,Deadly,Impact,Special Rules
-Captain,Havoc Brothers,0,0,0,0,Furious
-Veteran,Havoc Brothers,0,0,0,0,Reliable
-Shield wall,Havoc Brothers,0,0,0,0,Counter
 Chronomancer,Robot Legions,0,0,0,0,Ambush Aura
 Combat Shield,Robot Legions,0,0,0,0,Shielded
 Combat Shields,Robot Legions,0,0,0,0,Shielded
@@ -27,3 +24,23 @@ Warden,Robot Legions,0,0,0,0,Relentless Aura
 Warp Gate,Robot Legions,0,0,0,0,Transport(21)
 Widowmaker,Robot Legions,0,0,0,0,Ambush
 Wraith-Shard Vault,Robot Legions,0,0,0,0,"Caster(4), Tough(6)"
+Agitator,Havoc Brothers,0,0,0,0,Scout Aura
+Apostle,Havoc Brothers,0,0,0,0,Relentless Aura
+Daemon Engine,Havoc Brothers,0,0,0,0,Resistance
+Daemonic Incursion,Havoc Brothers,0,0,0,0,Ambush
+Dark Smith,Havoc Brothers,0,0,0,0,Mend
+Dozer Blade,Havoc Brothers,0,0,0,0,Strider
+Executioner,Havoc Brothers,0,0,0,0,Furious Aura
+Havoc Favour,Havoc Brothers,0,0,0,0,Steadfast Aura
+Icon Bearer,Havoc Brothers,0,0,0,0,Resistance Aura
+Icon of Havoc,Havoc Brothers,0,0,0,0,Versatile Defense Aura
+Jetpack,Havoc Brothers,0,0,0,0,"Ambush, Flying"
+Lord of Havoc,Havoc Brothers,0,0,0,0,Havocbound Boost Aura
+Lore of Havoc,Havoc Brothers,0,0,0,0,Caster(3)
+Master Warlock,Havoc Brothers,0,0,0,0,Caster(3)
+Mutant Wings,Havoc Brothers,0,0,0,0,"Ambush, Flying"
+Psy-Witch,Havoc Brothers,0,0,0,0,Caster(2)
+Spiked Ram,Havoc Brothers,0,0,0,0,Impact(2)
+Summoned Tendrils,Havoc Brothers,0,0,0,0,Dangerous Terrain Debuff
+Warlock,Havoc Brothers,0,0,0,0,Caster(2)
+Wings,Havoc Brothers,0,0,0,0,Flying

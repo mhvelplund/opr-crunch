@@ -29,6 +29,8 @@ class Refs:
     tough: str
     att_rules: str
     def_rules: str
+    extra_ap: str
+    extra_hit: str
     is_melee: str
     is_charging: str
     is_fatigued: str
@@ -89,7 +91,7 @@ CALC_STEPS: List[Tuple[str, Builder]] = [
         "p_hit",
         lambda r, c: (
             f"=IF({c['fatigued']}=1,1/6,"
-            f"{p_success(f'{c['quality_eff']}-{c['thrusting']}')})"
+            f"{p_success(f'{c['quality_eff']}-{c['thrusting']}-{r.extra_hit}')})"
         ),
     ),
     ("natural_6", lambda r, c: f"={c['dice']}/6"),
@@ -129,7 +131,20 @@ CALC_STEPS: List[Tuple[str, Builder]] = [
             f"=IF(AND({has(r.att_rules, 'Piercing Assault')},{r.is_charging}),1,0)"
         ),
     ),
-    ("ap_base", lambda r, c: f"={r.ap}+{c['thrusting']}+{c['piercing']}"),
+    (
+        # AP(+1) when shooting past 9" or when charging.
+        "havocbound",
+        lambda r, c: (
+            f"=IF(AND({has(r.att_rules, 'Havocbound')},"
+            f"OR(AND(NOT({r.is_melee}),{r.long_range}),{r.is_charging})),1,0)"
+        ),
+    ),
+    (
+        "ap_base",
+        lambda r, c: (
+            f"={r.ap}+{c['thrusting']}+{c['piercing']}+{c['havocbound']}+{r.extra_ap}"
+        ),
+    ),
     (
         # Rending and Destructive both give unmodified 6s AP(+4).
         "ap_6",

@@ -75,4 +75,32 @@ TEST_SCENARIOS = [
     ("Deadly(3) capped by Tough(2)", _s(deadly=3, tough=2)),
     ("Deadly(3) against Tough(6)", _s(deadly=3, tough=6)),
     ("Deadly(3) wasted on a 1-wound model", _s(deadly=3)),
+    # --- Havoc Brothers army book ----------------------------------------
+    ("Havocbound past 9 inches", _s(att_rules={"Havocbound"}, long_range=True)),
+    ("Havocbound inside 9 inches", _s(att_rules={"Havocbound"}, long_range=False)),
+    (
+        "Havocbound on the charge",
+        _s(combat="Melee", melee_state="Charging", att_rules={"Havocbound"}),
+    ),
+    ("Unpredictable averages both branches", _s(att_rules={"Unpredictable"})),
+    (
+        "Unpredictable Fighter in melee",
+        _s(combat="Melee", att_rules={"Unpredictable Fighter"}),
+    ),
+    (
+        "Unpredictable Fighter is inert at range",
+        _s(att_rules={"Unpredictable Fighter"}),
+    ),
+    (
+        "Versatile Attack, AP chosen",
+        _s(att_rules={"Versatile Attack"}, variable_choice="AP"),
+    ),
+    (
+        "Versatile Attack, to-hit chosen",
+        _s(att_rules={"Versatile Attack"}, variable_choice="To-hit"),
+    ),
+    (
+        "Versatile Attack is inert inside 9 inches",
+        _s(att_rules={"Versatile Attack"}, long_range=False),
+    ),
 ]

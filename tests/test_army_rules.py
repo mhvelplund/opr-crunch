@@ -189,3 +189,92 @@ class TestTough:
 
     def test_tough_alone_does_not_change_wounds(self):
         assert resolve(shooting(tough=6)).wounds == BASE_WOUNDS
+
+
+# ---------------------------------------------------------------------------
+# Havoc Brothers army book
+# ---------------------------------------------------------------------------
+
+# Branch A is AP(+1): Defense 3 becomes a 4+, so half the hits wound.
+BRANCH_AP_HITS, BRANCH_AP_WOUNDS = Fraction(5), Fraction(5, 2)
+# Branch B is +1 to hit: Quality 4 becomes a 3+, and Defense stays a 3+.
+BRANCH_HIT_HITS, BRANCH_HIT_WOUNDS = Fraction(20, 3), Fraction(20, 9)
+
+
+class TestHavocbound:
+    """AP(+1) when shooting at enemies over 9" away, or when charging."""
+
+    def test_applies_when_shooting_beyond_nine_inches(self):
+        got = resolve(shooting(att_rules={"Havocbound"}, long_range=True))
+        assert got.wounds == BRANCH_AP_WOUNDS
+
+    def test_does_not_apply_inside_nine_inches(self):
+        got = resolve(shooting(att_rules={"Havocbound"}, long_range=False))
+        assert got.wounds == BASE_WOUNDS
+
+    def test_applies_when_charging(self):
+        got = resolve(melee(melee_state="Charging", att_rules={"Havocbound"}))
+        assert got.wounds == BRANCH_AP_WOUNDS
+
+    def test_does_not_apply_in_melee_without_a_charge(self):
+        assert resolve(melee(att_rules={"Havocbound"})).wounds == BASE_WOUNDS
+
+    def test_an_aura_that_names_it_grants_it(self):
+        got = resolve(shooting(att_rules={"Havocbound Boost Aura"}, long_range=True))
+        assert got.wounds == BRANCH_AP_WOUNDS
+
+
+class TestUnpredictable:
+    """A die decides: on 1-3 AP(+1), on 4-6 +1 to hit. So a 50/50 average."""
+
+    def test_hits_are_the_average_of_both_branches(self):
+        got = resolve(shooting(att_rules={"Unpredictable"}))
+        assert got.hits == (BRANCH_AP_HITS + BRANCH_HIT_HITS) / 2
+
+    def test_wounds_are_the_average_of_both_branches(self):
+        got = resolve(shooting(att_rules={"Unpredictable"}))
+        assert got.wounds == (BRANCH_AP_WOUNDS + BRANCH_HIT_WOUNDS) / 2
+
+    def test_it_applies_in_melee_too(self):
+        got = resolve(melee(att_rules={"Unpredictable"}))
+        assert got.hits == (BRANCH_AP_HITS + BRANCH_HIT_HITS) / 2
+
+
+class TestUnpredictableFighter:
+    """The same die, but only in melee - and its name contains Unpredictable."""
+
+    def test_applies_in_melee(self):
+        got = resolve(melee(att_rules={"Unpredictable Fighter"}))
+        assert got.wounds == (BRANCH_AP_WOUNDS + BRANCH_HIT_WOUNDS) / 2
+
+    def test_does_nothing_at_range(self):
+        """Substring matching must not let it stand in for plain Unpredictable."""
+        got = resolve(shooting(att_rules={"Unpredictable Fighter"}))
+        assert got.wounds == BASE_WOUNDS
+        assert got.hits == Fraction(5)
+
+
+class TestVersatileAttack:
+    """The player picks the effect, so the sheet takes the pick rather than averaging."""
+
+    def test_choosing_ap(self):
+        got = resolve(shooting(att_rules={"Versatile Attack"}, variable_choice="AP"))
+        assert (got.hits, got.wounds) == (BRANCH_AP_HITS, BRANCH_AP_WOUNDS)
+
+    def test_choosing_to_hit(self):
+        got = resolve(shooting(att_rules={"Versatile Attack"}, variable_choice="To-hit"))
+        assert (got.hits, got.wounds) == (BRANCH_HIT_HITS, BRANCH_HIT_WOUNDS)
+
+    def test_only_applies_beyond_nine_inches(self):
+        got = resolve(shooting(att_rules={"Versatile Attack"}, long_range=False))
+        assert got.wounds == BASE_WOUNDS
+
+    def test_a_defensive_aura_of_a_similar_name_does_not_trigger_it(self):
+        got = resolve(shooting(att_rules={"Versatile Defense Aura"}))
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestNoVariableRule:
+    def test_the_choice_column_is_inert_without_one_of_these_rules(self):
+        for choice in ("AP", "To-hit"):
+            assert resolve(shooting(variable_choice=choice)).wounds == BASE_WOUNDS

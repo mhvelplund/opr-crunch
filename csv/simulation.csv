@@ -1,4 +1,4 @@
-Att. faction,Attacker,Att. upgrades,#,Weapon,Combat,Melee state,"Range >9""",Def. faction,Defender,Def. upgrades,Def. #,In cover,Hits,Wounds
-Robot Legions,Warriors,,10,Reaper Rifles,Ranged,None,Yes,Havoc Brothers,Battle Brother,,5,No,,
-Robot Legions,Flesh-Eaters,,5,Metal Claws,Melee,Charging,No,Robot Legions,Eternals,,5,No,,
-Robot Legions,Guardians,,5,Gauss Blaster,Ranged,None,Yes,Havoc Brothers,Havoc Champion,,5,Yes,,
+Att. faction,Attacker,Att. upgrades,#,Weapon,Combat,Melee state,"Range >9""",Def. faction,Defender,Def. upgrades,Def. #,In cover,Variable effect,Hits,Wounds
+Robot Legions,Warriors,,10,Reaper Rifles,Ranged,None,Yes,Havoc Brothers,Havoc Brothers,,5,No,AP,,
+Havoc Brothers,Chosen Havoc Brothers,,3,Champion Storm Rifle,Ranged,None,Yes,Robot Legions,Warriors,,5,No,AP,,
+Havoc Brothers,Mutated Brothers,,5,CCW (A2),Melee,Charging,No,Robot Legions,Warriors,,5,No,AP,,

@@ -53,8 +53,9 @@ Add and remove *rows* freely. Do not reorder or rename *columns* — the lookups
 against fixed column positions, so the build validates each header against `layout.py`
 and fails with a diff rather than producing wrong numbers.
 
-**Names must be unique** within `Units`, `Weapons` and `Upgrades`, because lookups match
-on name alone.
+Names may repeat **across** factions — several books print a `CCW` or a `Stomp` — because
+lookups match on `Name` plus `Faction` via a generated `Key` column. Within one faction,
+names must still be unique.
 
 ## Importing an army book
 

@@ -24,7 +24,8 @@ from .formula_eval import WorkbookEvaluator
 
 
 def _by_name(rows, columns):
-    return {row[0]: dict(zip(columns, row)) for row in rows}
+    """Keyed by (name, faction): army books share generic weapon names."""
+    return {(row[0], row[1]): dict(zip(columns, row)) for row in rows}
 
 
 @pytest.fixture(scope="module")
@@ -48,9 +49,12 @@ def _rules(*texts):
     )
 
 
-def expected(units, weapons, attacker, weapon, defender, models, def_models, **ctx):
+def expected(units, weapons, chosen, models, def_models, **ctx):
     """Build the Scenario the sheet ought to assemble for these dropdown picks."""
-    a, w, d = units[attacker], weapons[weapon], units[defender]
+    att_fac, def_fac = chosen["Att. faction"], chosen["Def. faction"]
+    a = units[(chosen["Attacker"], att_fac)]
+    w = weapons[(chosen["Weapon"], att_fac)]
+    d = units[(chosen["Defender"], def_fac)]
     return resolve(Scenario(
         models=models,
         attacks=w["Attacks"],
@@ -89,7 +93,8 @@ def picks(**overrides):
         "Att. faction": "Robot Legions", "Attacker": "Warriors", "#": 10,
         "Weapon": "Reaper Rifles", "Combat": "Ranged", "Melee state": "None",
         'Range >9"': "Yes", "Def. faction": "Havoc Brothers",
-        "Defender": "Battle Brother", "Def. #": 5, "In cover": "No",
+        "Defender": "Havoc Brothers", "Def. #": 5, "In cover": "No",
+        "Variable effect": "AP",
     }
     base.update(overrides)
     return base
@@ -98,7 +103,7 @@ def picks(**overrides):
 class TestWorkedExample:
     """The example from the requirements, now with Shred correctly attributed.
 
-    10 Warriors (Quality 4+) with AP(1), Shred Reaper Rifles, into 5 Battle
+    10 Warriors (Quality 4+) with AP(1), Shred Reaper Rifles, into 5 Havoc
     Brothers (Defense 3+): 5 hits, and 2.5 + 5/6 = 3.33 wounds.
     """
 
@@ -110,7 +115,7 @@ class TestWorkedExample:
 
     def test_shred_is_what_makes_it_more_than_two_and_a_half(self, wb, weapons):
         """Without Shred the same profile would stop at 5 x 1/2 = 2.5 wounds."""
-        assert weapons["Reaper Rifles"]["Special Rules"] == "Shred"
+        assert weapons[("Reaper Rifles", "Robot Legions")]["Special Rules"] == "Shred"
         assert outputs(wb, 2)[1] == pytest.approx(2.5 + 5 / 6)
 
 
@@ -134,9 +139,10 @@ class TestLookupsMatchTheModel:
         chosen = picks(**overrides)
         set_row(wb, row, **chosen)
         want = expected(
-            units, weapons, chosen["Attacker"], chosen["Weapon"], chosen["Defender"],
+            units, weapons, chosen,
             models=chosen["#"], def_models=chosen["Def. #"],
-            long_range=chosen['Range >9"'] == "Yes", **ctx,
+            long_range=chosen['Range >9"'] == "Yes",
+            variable_choice=chosen["Variable effect"], **ctx,
         )
         hits, wounds = outputs(wb, row)
         assert hits == pytest.approx(float(want.hits))
@@ -150,23 +156,71 @@ class TestUnitProfileRules:
 
     def test_the_attacking_units_rules_reach_the_calculation(self, wb, units):
         """Tri-Scorpion Lord has Relentless, which only bites over 9 inches."""
-        assert "Relentless" in units["Tri-Scorpion Lord"]["Special Rules"]
+        assert "Relentless" in units[("Tri-Scorpion Lord", "Robot Legions")]["Special Rules"]
         set_row(wb, 11, **picks(**self.LORD, **{"#": 1, 'Range >9"': "Yes"}))
         set_row(wb, 12, **picks(**self.LORD, **{"#": 1, 'Range >9"': "No"}))
         assert outputs(wb, 11)[0] > outputs(wb, 12)[0]
 
     def test_the_attacking_units_ravage_reaches_the_calculation(self, wb, units):
         """Ravage(4) adds direct wounds, but only in melee."""
-        assert units["Tri-Scorpion Lord"]["Ravage"] == 4
+        assert units[("Tri-Scorpion Lord", "Robot Legions")]["Ravage"] == 4
         set_row(wb, 13, **picks(**self.LORD, **{"#": 1},
                                 Combat="Melee", **{"Melee state": "None"}))
         set_row(wb, 14, **picks(**self.LORD, **{"#": 1}))
         assert outputs(wb, 13)[1] > outputs(wb, 14)[1]
 
     def test_the_defending_units_tough_caps_deadly(self, wb, units):
-        assert units["Tri-Scorpion Lord"]["Tough"] == 6
+        assert units[("Tri-Scorpion Lord", "Robot Legions")]["Tough"] == 6
 
 
 class TestBlankRows:
     def test_an_empty_row_shows_nothing(self, wb):
         assert outputs(wb, 18) == ("", "")
+
+
+class TestNamesSharedAcrossFactions:
+    """Several books print a Spider Fangs; they are not the same weapon.
+
+    Robot Legions' is A6 with Bane, Havoc Brothers' is A8 with Rending. Looking
+    up by name alone returned whichever the import happened to write first.
+    """
+
+    SHARED = "Spider Fangs"
+
+    def test_the_two_profiles_really_do_differ(self, weapons):
+        legions = weapons[(self.SHARED, "Robot Legions")]
+        havoc = weapons[(self.SHARED, "Havoc Brothers")]
+        assert (legions["Attacks"], legions["Special Rules"]) != (
+            havoc["Attacks"], havoc["Special Rules"]
+        )
+
+    @pytest.mark.parametrize(
+        "faction,attacker",
+        [("Robot Legions", "Warriors"), ("Havoc Brothers", "Havoc Brothers")],
+    )
+    def test_each_faction_gets_its_own_profile(self, wb, units, weapons, faction, attacker):
+        chosen = picks(**{
+            "Att. faction": faction, "Attacker": attacker, "Weapon": self.SHARED,
+            "#": 1, "Combat": "Melee", "Melee state": "None",
+        })
+        set_row(wb, 15, **chosen)
+        want = expected(
+            units, weapons, chosen,
+            models=1, def_models=chosen["Def. #"],
+            combat="Melee", long_range=False,
+        )
+        hits, wounds = outputs(wb, 15)
+        assert hits == pytest.approx(float(want.hits))
+        assert wounds == pytest.approx(float(want.wounds))
+
+    def test_the_havoc_profile_is_not_the_legions_one(self, wb):
+        """Pins the number: 8 attacks at Quality 3+, not the Legions' 6.
+
+        Comparing the two factions' rows to each other would not do - their
+        attackers differ in Quality, so the totals differ either way.
+        """
+        set_row(wb, 16, **picks(**{
+            "Att. faction": "Havoc Brothers", "Attacker": "Havoc Brothers",
+            "Weapon": self.SHARED, "#": 1, "Combat": "Melee", "Melee state": "None",
+        }))
+        assert outputs(wb, 16)[0] == pytest.approx(8 * 4 / 6)

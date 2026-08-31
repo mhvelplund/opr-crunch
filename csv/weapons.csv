@@ -1,10 +1,4 @@
 Name,Faction,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules
-Assault rifle,Havoc Brothers,,2,0,0,0,0,
-Plasma gun,Havoc Brothers,,1,2,0,3,0,
-Frag grenade,Havoc Brothers,,1,0,3,0,0,
-Heavy flamer,Havoc Brothers,,1,0,6,0,0,Reliable
-Energy sword,Havoc Brothers,,3,1,0,0,0,Thrust
-Chain fist,Havoc Brothers,,2,2,0,0,0,Bane
 Annihilation Gun,Robot Legions,18,2,1,3,0,0,
 Atom-Beamer,Robot Legions,24,3,1,0,0,0,
 Atom-Casters,Robot Legions,12,1,1,0,0,0,
@@ -92,3 +86,115 @@ War Scythe,Robot Legions,0,2,2,0,0,0,
 Wraith Strike,Robot Legions,0,8,0,0,0,0,Rending
 Wrist-Flamer,Robot Legions,12,1,0,3,0,0,Reliable
 Wrist-Plasma,Robot Legions,24,1,4,0,0,0,
+Anti-Tank Cannon,Havoc Brothers,30,1,3,0,6,0,
+Autocannon,Havoc Brothers,36,3,2,0,0,0,
+Bane Flamethrower,Havoc Brothers,18,1,1,3,0,0,Reliable
+Brute Axe,Havoc Brothers,0,2,2,0,3,0,
+Brute Fist,Havoc Brothers,0,4,4,0,0,0,
+Brute Flail,Havoc Brothers,0,4,1,0,0,0,Rending
+Brute Hammers,Havoc Brothers,0,2,0,3,0,0,
+CCW (A1),Havoc Brothers,0,1,0,0,0,0,
+CCW (A2),Havoc Brothers,0,2,0,0,0,0,
+CCW (A4),Havoc Brothers,0,4,0,0,0,0,
+CCWs (A1),Havoc Brothers,0,1,0,0,0,0,
+CCWs (A2),Havoc Brothers,0,2,0,0,0,0,
+Champion Heavy Pistol,Havoc Brothers,12,2,1,0,0,0,
+Champion Heavy Rifle,Havoc Brothers,24,2,1,0,0,0,
+Champion Pistol,Havoc Brothers,12,2,0,0,0,0,
+Champion Plasma Pistol,Havoc Brothers,12,2,4,0,0,0,
+Champion Rifle,Havoc Brothers,24,2,0,0,0,0,
+Champion Shotgun,Havoc Brothers,12,4,1,0,0,0,
+Champion Shred Pistol,Havoc Brothers,9,3,0,0,0,0,Rending
+Champion Sniper Rifle,Havoc Brothers,30,2,1,0,0,0,"Reliable, Takedown"
+Champion Storm Rifle,Havoc Brothers,24,4,1,0,0,0,
+Claws,Havoc Brothers,0,2,0,0,0,0,
+Combat Bike (A0),Havoc Brothers,0,0,0,0,0,0,Fast
+Cursed Blade,Havoc Brothers,0,3,2,0,0,0,Rending
+Daemon Chain,Havoc Brothers,12,3,0,0,0,0,
+Daemon Gauntlet,Havoc Brothers,0,3,4,0,0,0,
+Daemon Hammers,Havoc Brothers,0,1,0,3,0,0,
+Daemon Spear,Havoc Brothers,0,1,2,0,3,0,
+Daemon Sword,Havoc Brothers,0,3,1,0,0,0,Rending
+Demolition Cannon,Havoc Brothers,24,1,4,6,0,0,"Fear(3), Havocbound, Regeneration"
+Despoiler Claws,Havoc Brothers,0,4,3,0,0,0,
+Dual Energy Claws (A2),Havoc Brothers,0,2,0,0,0,0,Rending
+Dual Energy Claws (A4),Havoc Brothers,0,4,0,0,0,0,Rending
+Dual Energy Claws (A8),Havoc Brothers,0,8,0,0,0,0,Rending
+Dual Maul Cutters,Havoc Brothers,0,6,3,0,0,0,
+Dual Mutated Claws,Havoc Brothers,0,6,1,0,0,0,
+Energy Axe (A1),Havoc Brothers,0,1,2,0,3,0,
+Energy Axe (A2),Havoc Brothers,0,2,2,0,3,0,
+Energy Fist (A2),Havoc Brothers,0,2,4,0,0,0,
+Energy Fist (A3),Havoc Brothers,0,3,4,0,0,0,
+Energy Fist (A4),Havoc Brothers,0,4,4,0,0,0,
+Energy Hammer (A1),Havoc Brothers,0,1,0,3,0,0,
+Energy Hammer (A2),Havoc Brothers,0,2,0,3,0,0,
+Energy Sword (A2),Havoc Brothers,0,2,1,0,0,0,
+Energy Sword (A3),Havoc Brothers,0,3,1,0,0,0,Rending
+Energy Sword (A4),Havoc Brothers,0,4,1,0,0,0,Rending
+Fiend Claws,Havoc Brothers,0,4,0,0,0,0,Rending
+Flamer,Havoc Brothers,12,1,0,3,0,0,Reliable
+Flamer Pistol,Havoc Brothers,6,1,0,3,0,0,Reliable
+Flamer-Mod (A1),Havoc Brothers,12,1,0,0,0,0,"Limited, Reliable"
+Forge Cannon,Havoc Brothers,30,8,3,0,0,0,
+Forge Flamethrower,Havoc Brothers,18,2,1,3,0,0,Reliable
+Fusion Rifle,Havoc Brothers,12,1,4,0,3,0,
+Fusion-Mod (A1),Havoc Brothers,12,1,4,0,0,0,Limited
+Grenade Launcher,Havoc Brothers,24,1,0,3,0,0,
+Havoc Missiles (A1),Havoc Brothers,24,1,2,0,3,0,Unstoppable
+Havoc Missiles (A2),Havoc Brothers,24,2,2,0,3,0,Unstoppable
+Heavy CCW,Havoc Brothers,0,2,1,0,0,0,
+Heavy Claws (A2),Havoc Brothers,0,2,1,0,0,0,
+Heavy Claws (A4),Havoc Brothers,0,4,1,0,0,0,
+Heavy Flamer,Havoc Brothers,12,1,1,3,0,0,Reliable
+Heavy Flamers,Havoc Brothers,12,1,1,3,0,0,Reliable
+Heavy Fusion Rifle,Havoc Brothers,18,1,4,0,3,0,
+Heavy Havoc Sword,Havoc Brothers,0,3,0,0,0,0,Rending
+Heavy Machinegun,Havoc Brothers,30,3,1,0,0,0,
+Heavy Maul Cutter,Havoc Brothers,0,9,3,0,0,0,
+Heavy Pistol,Havoc Brothers,12,1,1,0,0,0,
+Heavy Pistols,Havoc Brothers,12,1,1,0,0,0,
+Heavy Plasma Cannon,Havoc Brothers,30,1,4,6,0,0,
+Heavy Reaper Cannon,Havoc Brothers,24,6,1,0,0,0,Shred
+Heavy Rifle,Havoc Brothers,24,1,1,0,0,0,
+Heavy Rifles,Havoc Brothers,24,1,1,0,0,0,
+Hell Flails,Havoc Brothers,0,4,0,0,0,0,
+Laser Cannon,Havoc Brothers,36,1,3,0,3,0,
+Machinegun,Havoc Brothers,30,3,0,0,0,0,
+Missile Array,Havoc Brothers,30,4,2,0,0,0,Unstoppable
+Missile Launcher,Havoc Brothers,30,1,2,0,3,0,Unstoppable
+Mutated Claw,Havoc Brothers,0,3,1,0,0,0,
+Mutated Claws,Havoc Brothers,0,4,0,0,0,0,
+Mutated Gun,Havoc Brothers,24,6,1,0,0,0,
+Pistol,Havoc Brothers,12,1,0,0,0,0,
+Plasma Cannon,Havoc Brothers,30,1,4,3,0,0,
+Plasma Pistol,Havoc Brothers,12,1,4,0,0,0,
+Plasma Rifle,Havoc Brothers,24,1,4,0,0,0,
+Plasma-Mod,Havoc Brothers,24,1,4,0,0,0,Limited
+Quad Laser Cannon,Havoc Brothers,36,4,3,0,3,0,
+Rapid Autocannon,Havoc Brothers,36,6,2,0,0,0,
+Rapid Heavy Rifle (A0),Havoc Brothers,24,0,1,0,0,0,
+Rapid Heavy Rifle (A2),Havoc Brothers,24,2,1,0,0,0,
+Rapid Storm Rifle,Havoc Brothers,24,6,1,0,0,0,
+Reaper Cannon,Havoc Brothers,24,4,0,0,0,0,Shred
+Rifles,Havoc Brothers,24,1,0,0,0,0,
+Sgt. Heavy Pistol,Havoc Brothers,12,1,1,0,0,0,
+Shotgun,Havoc Brothers,12,2,1,0,0,0,
+Shred Rifle,Havoc Brothers,18,2,0,0,0,0,Rending
+Shred-Mod (A2),Havoc Brothers,18,2,0,0,0,0,Limited
+Sniper Rifle,Havoc Brothers,30,1,1,0,0,0,"Reliable, Takedown"
+Spider Fangs,Havoc Brothers,0,8,0,0,0,0,Rending
+Steel Tails,Havoc Brothers,0,8,1,0,0,0,
+Stomp (A2),Havoc Brothers,0,2,1,0,0,0,
+Stomp (A4),Havoc Brothers,0,4,1,0,0,0,
+Stomp (A6),Havoc Brothers,0,6,2,0,0,0,
+Storm Rifle,Havoc Brothers,24,3,1,0,0,0,
+Super-Heavy Fusion Rifle,Havoc Brothers,18,1,4,0,6,0,
+Twin Ecto-Cannons,Havoc Brothers,24,4,4,3,0,0,
+Twin Fiend Autocannon,Havoc Brothers,36,8,2,0,0,0,
+Twin Heavy Flamer,Havoc Brothers,12,2,1,3,0,0,Reliable
+Twin Heavy Machinegun,Havoc Brothers,30,6,1,0,0,0,
+Twin Heavy Rifles,Havoc Brothers,24,2,1,0,0,0,
+Twin Laser Cannon,Havoc Brothers,36,2,3,0,3,0,
+Twin Pain Cannons,Havoc Brothers,24,2,0,3,0,0,
+Virus Injector,Havoc Brothers,0,3,3,0,3,0,

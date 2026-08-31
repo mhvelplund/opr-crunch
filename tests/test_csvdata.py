@@ -36,8 +36,8 @@ class TestLoading:
         assert field(rifles, layout.WEAPONS_COLUMNS, "Blast") == 0
 
     def test_blank_text_cells_become_empty_string(self):
-        brother = find(csvdata.units(), "Battle Brother")
-        assert field(brother, layout.UNITS_COLUMNS, "Special Rules") == ""
+        plain = find(csvdata.units(), "Havoc Brothers")
+        assert field(plain, layout.UNITS_COLUMNS, "Special Rules") == ""
 
     def test_commas_inside_rule_text_survive(self):
         bane = find(csvdata.special_rules(), "Bane")

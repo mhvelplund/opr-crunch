@@ -14,6 +14,7 @@ SIMULATION_COLUMNS = [
     "Def. upgrades",
     "Def. #",
     "In cover",
+    "Variable effect",
     "Hits",
     "Wounds",
 ]
@@ -29,15 +30,30 @@ FACTIONS_COLUMNS = ["Name"]
 SIM_FIRST_ROW = 2
 SIM_ROWS = 20
 
-#: Rows of the Units/Weapons/Upgrades tabs that the cascading dropdowns scan.
-#: Sized well past the imported data so rows can be added without a rebuild.
-#: A tab that outgrows this loses its extra rows from the dropdowns silently,
-#: so tests/test_build.py guards it.
-SOURCE_CAPACITY = 160
+#: Rows of each data tab that the cascading dropdowns scan, sized per tab so a
+#: large Weapons tab does not inflate every other dropdown's helper range.
+#: A tab that outgrows its capacity loses the extra rows from the dropdowns
+#: silently, so tests/test_build.py guards it.
+CAPACITY = {
+    "Units": 120,
+    "Weapons": 320,
+    "Upgrades": 120,
+    "Factions": 40,
+}
 SOURCE_FIRST_ROW = 2
-SOURCE_LAST_ROW = SOURCE_FIRST_ROW + SOURCE_CAPACITY - 1
+
+
+def last_row(tab: str) -> int:
+    """Last row of ``tab`` that dropdowns and lookups reach."""
+    return SOURCE_FIRST_ROW + CAPACITY[tab] - 1
+
+
+def key_column(columns) -> int:
+    """Index of the generated Name|Faction column, one past the CSV's own."""
+    return len(columns) + 1
 
 COMBAT_OPTIONS = ["Ranged", "Melee"]
+VARIABLE_EFFECT_OPTIONS = ["AP", "To-hit"]
 MELEE_STATE_OPTIONS = ["None", "Charging", "Being charged", "Fatigued"]
 YES_NO = ["Yes", "No"]
 

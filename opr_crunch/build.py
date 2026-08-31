@@ -12,8 +12,8 @@ from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.worksheet import Worksheet
 
 from opr_crunch import csvdata, layout
-from opr_crunch.formulas import CALC_STEPS, Refs
-from opr_crunch.model import Scenario, resolve
+from opr_crunch.formulas import CALC_STEPS, Refs, has
+from opr_crunch.model import Scenario, resolve, variable_effect
 from opr_crunch.scenarios import TEST_SCENARIOS
 
 HEADER_FILL = PatternFill("solid", fgColor="1F3864")
@@ -25,11 +25,24 @@ OUTPUT_FILL = PatternFill("solid", fgColor="E2EFDA")
 INPUT_HEADERS = [
     "models", "attacks", "quality", "defense", "def_models",
     "ap", "blast", "deadly", "impact", "ravage", "tough", "att_rules", "def_rules",
+    "var_active", "w_ap",
     "is_melee", "is_charging", "is_fatigued", "long_range", "in_cover",
 ]
 
+#: The subset the step formulas read. var_active and w_ap drive the weighted
+#: sum of the two branches instead, so they sit outside the block.
+REF_INPUTS = [h for h in INPUT_HEADERS if h not in ("var_active", "w_ap")]
+
 LAST_SIM_ROW = layout.SIM_FIRST_ROW + layout.SIM_ROWS - 1
-SRC_FIRST, SRC_LAST = layout.SOURCE_FIRST_ROW, layout.SOURCE_LAST_ROW
+SRC_FIRST = layout.SOURCE_FIRST_ROW
+
+#: Generated Name|Faction column on each data tab. Lookups match on it rather
+#: than on the name, because army books share generic names across factions.
+KEY_COL = {
+    "Units": get_column_letter(layout.key_column(layout.UNITS_COLUMNS)),
+    "Weapons": get_column_letter(layout.key_column(layout.WEAPONS_COLUMNS)),
+    "Upgrades": get_column_letter(layout.key_column(layout.UPGRADES_COLUMNS)),
+}
 
 
 # --------------------------------------------------------------------------
@@ -46,11 +59,18 @@ def write_headers(ws: Worksheet, headers: List[str], width: int = 16) -> None:
     ws.freeze_panes = "A2"
 
 
-def lookup(sheet: str, value_col: str, key_ref: str, default: str = "0") -> str:
-    """INDEX/MATCH on the Name column. Names are unique across a data tab."""
+def lookup(
+    sheet: str, value_col: str, name_ref: str, faction_ref: str, default: str = "0"
+) -> str:
+    """INDEX/MATCH on the tab's Name|Faction key.
+
+    Matching on the name alone would be ambiguous: a CCW or a Stomp exists in
+    several army books, and the wrong faction's profile would be returned.
+    """
+    key = KEY_COL[sheet]
     return (
         f"IFERROR(INDEX('{sheet}'!${value_col}:${value_col},"
-        f"MATCH({key_ref},'{sheet}'!$A:$A,0)),{default})"
+        f"MATCH({name_ref}&\"|\"&{faction_ref},'{sheet}'!${key}:${key},0)),{default})"
     )
 
 
@@ -76,11 +96,11 @@ def inline_validation(options: List[str]) -> DataValidation:
 # data tabs
 # --------------------------------------------------------------------------
 
-def _faction_dropdown(ws: Worksheet, column: int) -> None:
-    dv = list_validation(f"Factions!$A${SRC_FIRST}:$A${SRC_LAST}")
+def _faction_dropdown(ws: Worksheet, column: int, tab: str) -> None:
+    dv = list_validation(f"Factions!$A${SRC_FIRST}:$A${layout.last_row('Factions')}")
     ws.add_data_validation(dv)
     letter = get_column_letter(column)
-    dv.add(f"{letter}{SRC_FIRST}:{letter}{SRC_LAST}")
+    dv.add(f"{letter}{SRC_FIRST}:{letter}{layout.last_row(tab)}")
 
 
 def build_data_tab(
@@ -106,7 +126,15 @@ def build_data_tab(
                 cell.alignment = Alignment(wrap_text=True)
 
     if faction_column:
-        _faction_dropdown(ws, faction_column)
+        _faction_dropdown(ws, faction_column, title)
+
+    if title in KEY_COL:
+        key = layout.key_column(columns)
+        cell = ws.cell(row=1, column=key, value="Key")
+        cell.fill, cell.font = HEADER_FILL, HEADER_FONT
+        for i in range(2, len(rows) + 2):
+            ws.cell(row=i, column=key, value=f'=$A{i}&"|"&$B{i}')
+        ws.column_dimensions[get_column_letter(key)].width = 28
 
 
 #: (title, columns, loader, kwargs) for every tab sourced from csv/.
@@ -155,14 +183,14 @@ def build_lists(wb: Workbook) -> Dict[int, Dict[str, str]]:
             letter = get_column_letter(column)
             ws.cell(row=1, column=column, value=f"{label} r{row}")
             key = sim(faction_col, row)
-            for offset in range(layout.SOURCE_CAPACITY):
-                src = SRC_FIRST + offset
+            last = layout.last_row(source)
+            for src in range(SRC_FIRST, last + 1):
                 ws.cell(
-                    row=SRC_FIRST + offset,
+                    row=src,
                     column=column,
                     value=f"=IF('{source}'!$B{src}={key},'{source}'!$A{src},\"\")",
                 )
-            ranges[row][label] = f"Lists!${letter}${SRC_FIRST}:${letter}${SRC_LAST}"
+            ranges[row][label] = f"Lists!${letter}${SRC_FIRST}:${letter}${last}"
     return ranges
 
 
@@ -175,50 +203,81 @@ def calc_inputs_for(row: int) -> List[str]:
     weapon, att_up = sim("Weapon", row), sim("Att. upgrades", row)
     defender, def_up = sim("Defender", row), sim("Def. upgrades", row)
     combat, state = sim("Combat", row), sim("Melee state", row)
+    attacker = sim("Attacker", row)
+    att_fac, def_fac = sim("Att. faction", row), sim("Def. faction", row)
+    blank = chr(34) * 2
 
     def pair(weapon_col: str, upgrade_col: str) -> str:
         return (
-            f"=MAX({lookup('Weapons', weapon_col, weapon)},"
-            f"{lookup('Upgrades', upgrade_col, att_up)})"
+            f"=MAX({lookup('Weapons', weapon_col, weapon, att_fac)},"
+            f"{lookup('Upgrades', upgrade_col, att_up, att_fac)})"
         )
 
-    attacker = sim("Attacker", row)
+    def input_cell(name: str) -> str:
+        return f"${get_column_letter(INPUT_HEADERS.index(name) + 1)}{row}"
+
+    att = input_cell("att_rules")
+    melee = f'({combat}="Melee")'
+    far = f'({sim(RANGE_COL, row)}="Yes")'
+    fighter = has(att, "Unpredictable Fighter")
+    versatile = f'AND({has(att, "Versatile Attack")},{far})'
+
     return [
         f"={sim('#', row)}",
-        f"={lookup('Weapons', 'D', weapon)}",
-        f"={lookup('Units', 'C', attacker)}",
-        f"={lookup('Units', 'D', defender)}",
+        f"={lookup('Weapons', 'D', weapon, att_fac)}",
+        f"={lookup('Units', 'C', attacker, att_fac)}",
+        f"={lookup('Units', 'D', defender, def_fac)}",
         f"={sim('Def. #', row)}",
-        f"={lookup('Weapons', 'E', weapon)}+{lookup('Upgrades', 'C', att_up)}",
+        f"={lookup('Weapons', 'E', weapon, att_fac)}"
+        f"+{lookup('Upgrades', 'C', att_up, att_fac)}",
         pair("F", "D"),
         pair("G", "E"),
         pair("H", "F"),
-        f"={lookup('Units', 'G', attacker)}",
-        f"={lookup('Units', 'F', defender)}",
+        f"={lookup('Units', 'G', attacker, att_fac)}",
+        f"={lookup('Units', 'F', defender, def_fac)}",
         # The attacking unit's own profile grants rules too (Relentless,
         # Piercing Assault, ...), so it joins the weapon's and the upgrade's.
-        f'={lookup("Units", "H", attacker, chr(34) * 2)}&", "'
-        f'&{lookup("Weapons", "I", weapon, chr(34) * 2)}&", "'
-        f'&{lookup("Upgrades", "G", att_up, chr(34) * 2)}',
-        f'={lookup("Units", "H", defender, chr(34) * 2)}&", "'
-        f'&{lookup("Upgrades", "G", def_up, chr(34) * 2)}',
-        f'=({combat}="Melee")',
+        f'={lookup("Units", "H", attacker, att_fac, blank)}&", "'
+        f'&{lookup("Weapons", "I", weapon, att_fac, blank)}&", "'
+        f'&{lookup("Upgrades", "G", att_up, att_fac, blank)}',
+        f'={lookup("Units", "H", defender, def_fac, blank)}&", "'
+        f'&{lookup("Upgrades", "G", def_up, def_fac, blank)}',
+        # Rules granting "either AP(+1) or +1 to hit". Unpredictable Fighter
+        # contains Unpredictable, so the longer name is excluded explicitly.
+        f"=IF(OR(AND({fighter},{melee}),"
+        f"AND({has(att, 'Unpredictable')},NOT({fighter})),"
+        f"{versatile}),1,0)",
+        f"=IF({input_cell('var_active')}=0,1,"
+        f'IF({versatile},IF({sim("Variable effect", row)}="To-hit",0,1),0.5))',
+        f"={melee}",
         f'=AND({combat}="Melee",{state}="Charging")',
         f'=AND({combat}="Melee",{state}="Fatigued")',
-        f'=({sim(RANGE_COL, row)}="Yes")',
+        f"={far}",
         f'=({sim("In cover", row)}="Yes")',
     ]
 
 
-def write_calc_block(ws: Worksheet, row: int, first_col: int) -> Dict[str, str]:
-    """Emit the resolution steps and return each step's cell address."""
-    letters = {}
-    for offset, name in enumerate(INPUT_HEADERS):
-        letters[name] = f"${get_column_letter(first_col + offset)}{row}"
+STEP_NAMES = [name for name, _ in CALC_STEPS]
 
-    refs = Refs(**{name: letters[name] for name in INPUT_HEADERS})
 
-    step_col = first_col + len(INPUT_HEADERS)
+def input_letters(row: int, first_col: int) -> Dict[str, str]:
+    return {
+        name: f"${get_column_letter(first_col + offset)}{row}"
+        for offset, name in enumerate(INPUT_HEADERS)
+    }
+
+
+def write_calc_block(
+    ws: Worksheet, row: int, first_col: int, step_col: int, extra_ap: str, extra_hit: str
+) -> Dict[str, str]:
+    """Emit one branch of the resolution and return each step's cell address."""
+    letters = input_letters(row, first_col)
+    refs = Refs(
+        extra_ap=extra_ap,
+        extra_hit=extra_hit,
+        **{name: letters[name] for name in REF_INPUTS},
+    )
+
     cells: Dict[str, str] = {}
     for offset, (name, builder) in enumerate(CALC_STEPS):
         column = step_col + offset
@@ -228,21 +287,56 @@ def write_calc_block(ws: Worksheet, row: int, first_col: int) -> Dict[str, str]:
     return cells
 
 
+def write_both_branches(ws: Worksheet, row: int, first_col: int) -> Dict[str, str]:
+    """Emit both branches and average them by the AP branch's weight.
+
+    Rules like Unpredictable grant "either AP(+1) or +1 to hit", which cannot
+    be folded into one pass. When no such rule is in play var_active is 0, both
+    branches collapse onto the plain resolution and the weight is 1.
+    """
+    letters = input_letters(row, first_col)
+    active, weight = letters["var_active"], letters["w_ap"]
+
+    step_col = first_col + len(INPUT_HEADERS)
+    ap_branch = write_calc_block(ws, row, first_col, step_col, active, "0")
+    hit_col = step_col + len(CALC_STEPS)
+    hit_branch = write_calc_block(ws, row, first_col, hit_col, "0", active)
+
+    final = hit_col + len(CALC_STEPS)
+    out = {}
+    for offset, name in enumerate(("hits", "wounds")):
+        column = final + offset
+        ws.cell(
+            row=row,
+            column=column,
+            value=f"={weight}*{ap_branch[name]}+(1-{weight})*{hit_branch[name]}",
+        )
+        out[name] = f"${get_column_letter(column)}{row}"
+    return out
+
+
+def calc_headers() -> List[str]:
+    return (
+        INPUT_HEADERS
+        + [f"ap:{n}" for n in STEP_NAMES]
+        + [f"hit:{n}" for n in STEP_NAMES]
+        + ["hits", "wounds"]
+    )
+
+
 def build_calc(wb: Workbook) -> Dict[str, str]:
     ws = wb.create_sheet("Calc")
-    headers = INPUT_HEADERS + [name for name, _ in CALC_STEPS]
-    write_headers(ws, headers, width=13)
+    write_headers(ws, calc_headers(), width=13)
 
     for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
         for offset, formula in enumerate(calc_inputs_for(row)):
             ws.cell(row=row, column=offset + 1, value=formula)
-        write_calc_block(ws, row, first_col=1)
+        write_both_branches(ws, row, first_col=1)
 
-    step_start = len(INPUT_HEADERS) + 1
-    names = [name for name, _ in CALC_STEPS]
+    final = len(INPUT_HEADERS) + 2 * len(CALC_STEPS) + 1
     return {
-        "hits": get_column_letter(step_start + names.index("hits")),
-        "wounds": get_column_letter(step_start + names.index("wounds")),
+        "hits": get_column_letter(final),
+        "wounds": get_column_letter(final + 1),
     }
 
 
@@ -277,7 +371,9 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
 
     # faction dropdowns
     for header in ("Att. faction", "Def. faction"):
-        dv = list_validation(f"Factions!$A${SRC_FIRST}:$A${SRC_LAST}")
+        dv = list_validation(
+            f"Factions!$A${SRC_FIRST}:$A${layout.last_row('Factions')}"
+        )
         ws.add_data_validation(dv)
         letter = get_column_letter(layout.col_index(header))
         dv.add(f"{letter}{layout.SIM_FIRST_ROW}:{letter}{LAST_SIM_ROW}")
@@ -303,6 +399,7 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
         ("Melee state", layout.MELEE_STATE_OPTIONS),
         ('Range >9"', layout.YES_NO),
         ("In cover", layout.YES_NO),
+        ("Variable effect", layout.VARIABLE_EFFECT_OPTIONS),
     ):
         dv = inline_validation(options)
         ws.add_data_validation(dv)
@@ -315,10 +412,12 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
 # --------------------------------------------------------------------------
 
 def scenario_inputs(s: Scenario) -> List:
+    active, weight = variable_effect(s)
     return [
         s.models, s.attacks, s.quality, s.defense, s.def_models,
         s.ap, s.blast, s.deadly, s.impact, s.ravage, s.tough,
         ", ".join(sorted(s.att_rules)), ", ".join(sorted(s.def_rules)),
+        1 if active else 0, float(weight),
         s.is_melee, s.is_charging,
         s.is_melee and s.melee_state == "Fatigued",
         s.long_range, s.in_cover,
@@ -328,11 +427,9 @@ def scenario_inputs(s: Scenario) -> List:
 def build_tests(wb: Workbook) -> None:
     """Carry the pytest scenarios into the sheet so the formulas self-check."""
     ws = wb.create_sheet("Tests")
-    step_names = [name for name, _ in CALC_STEPS]
     headers = (
         ["Scenario"]
-        + INPUT_HEADERS
-        + step_names
+        + calc_headers()
         + ["Expected hits", "Actual hits", "Expected wounds", "Actual wounds", "Result"]
     )
     write_headers(ws, headers, width=13)
@@ -344,10 +441,10 @@ def build_tests(wb: Workbook) -> None:
         for offset, value in enumerate(scenario_inputs(scenario)):
             ws.cell(row=row, column=2 + offset, value=value)
 
-        cells = write_calc_block(ws, row, first_col=2)
+        cells = write_both_branches(ws, row, first_col=2)
         expected = resolve(scenario)
 
-        base = 2 + len(INPUT_HEADERS) + len(step_names)
+        base = 1 + len(calc_headers()) + 1
         ws.cell(row=row, column=base, value=float(expected.hits))
         ws.cell(row=row, column=base + 1, value=f"={cells['hits']}")
         ws.cell(row=row, column=base + 2, value=float(expected.wounds))
