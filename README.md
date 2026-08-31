@@ -37,6 +37,22 @@ dropdowns filter to that faction. `Hits` and `Wounds` update as you go.
 | `Factions` | Legal faction names |
 | `Lists`, `Calc`, `Tests` | Hidden — dropdown sources, working, self-check |
 
+## Editing the data
+
+Every tab's contents come from `csv/`, one file per tab:
+
+```
+csv/simulation.csv     csv/units.csv     csv/weapons.csv
+csv/upgrades.csv       csv/special_rules.csv                csv/factions.csv
+```
+
+Edit a CSV and re-run the build. `csv/simulation.csv` seeds starting rows on the entry
+tab; its `Hits` and `Wounds` columns stay blank, since the build writes formulas there.
+
+Add and remove *rows* freely. Do not reorder or rename *columns* — the lookups compile
+against fixed column positions, so the build validates each header against `layout.py`
+and fails with a diff rather than producing wrong numbers.
+
 Seed data is illustrative only; replace it with real army-list entries. **Names must be
 unique** within `Units`, `Weapons` and `Upgrades`, because lookups match on name alone.
 

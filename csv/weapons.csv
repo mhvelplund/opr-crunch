@@ -1,0 +1,11 @@
+Name,Faction,Attacks,AP,Blast,Deadly,Impact,Special Rules
+Reaper rifle,Robot Legions,1,1,0,0,0,
+Gauss blaster,Robot Legions,2,1,0,0,0,Rending
+Tesla carbine,Robot Legions,1,0,0,0,0,Surge
+Smashing fists,Robot Legions,2,1,0,0,1,
+Assault rifle,Havoc Brothers,2,0,0,0,0,
+Plasma gun,Havoc Brothers,1,2,0,3,0,
+Frag grenade,Havoc Brothers,1,0,3,0,0,
+Heavy flamer,Havoc Brothers,1,0,6,0,0,Reliable
+Energy sword,Havoc Brothers,3,1,0,0,0,Thrust
+Chain fist,Havoc Brothers,2,2,0,0,0,Bane

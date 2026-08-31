@@ -11,7 +11,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.worksheet import Worksheet
 
-from opr_crunch import data, layout
+from opr_crunch import csvdata, layout
 from opr_crunch.formulas import CALC_STEPS, Refs
 from opr_crunch.model import Scenario, resolve
 from opr_crunch.scenarios import TEST_SCENARIOS
@@ -76,13 +76,6 @@ def inline_validation(options: List[str]) -> DataValidation:
 # data tabs
 # --------------------------------------------------------------------------
 
-def build_factions(wb: Workbook) -> None:
-    ws = wb.create_sheet("Factions")
-    write_headers(ws, layout.FACTIONS_COLUMNS, width=22)
-    for i, name in enumerate(data.FACTIONS, start=2):
-        ws.cell(row=i, column=1, value=name)
-
-
 def _faction_dropdown(ws: Worksheet, column: int) -> None:
     dv = list_validation(f"Factions!$A${SRC_FIRST}:$A${SRC_LAST}")
     ws.add_data_validation(dv)
@@ -90,49 +83,44 @@ def _faction_dropdown(ws: Worksheet, column: int) -> None:
     dv.add(f"{letter}{SRC_FIRST}:{letter}{SRC_LAST}")
 
 
-def build_units(wb: Workbook) -> None:
-    ws = wb.create_sheet("Units")
-    write_headers(ws, layout.UNITS_COLUMNS)
-    ws.column_dimensions["A"].width = 22
-    ws.column_dimensions["E"].width = 34
-    for i, row in enumerate(data.UNITS, start=2):
+def build_data_tab(
+    wb: Workbook,
+    title: str,
+    columns: List[str],
+    rows: List[list],
+    width: int = 16,
+    widths: Dict[str, int] | None = None,
+    faction_column: int | None = None,
+    wrap_column: int | None = None,
+) -> None:
+    """Write one CSV-sourced tab: header, rows, widths and faction dropdown."""
+    ws = wb.create_sheet(title)
+    write_headers(ws, columns, width=width)
+    for letter, size in (widths or {}).items():
+        ws.column_dimensions[letter].width = size
+
+    for i, row in enumerate(rows, start=2):
         for j, value in enumerate(row, start=1):
-            ws.cell(row=i, column=j, value=value)
-    _faction_dropdown(ws, 2)
+            cell = ws.cell(row=i, column=j, value=value)
+            if j == wrap_column:
+                cell.alignment = Alignment(wrap_text=True)
+
+    if faction_column:
+        _faction_dropdown(ws, faction_column)
 
 
-def build_weapons(wb: Workbook) -> None:
-    ws = wb.create_sheet("Weapons")
-    write_headers(ws, layout.WEAPONS_COLUMNS, width=11)
-    ws.column_dimensions["A"].width = 22
-    ws.column_dimensions["H"].width = 34
-    for i, row in enumerate(data.WEAPONS, start=2):
-        for j, value in enumerate(row, start=1):
-            ws.cell(row=i, column=j, value=value)
-    _faction_dropdown(ws, 2)
-
-
-def build_upgrades(wb: Workbook) -> None:
-    ws = wb.create_sheet("Upgrades")
-    write_headers(ws, layout.UPGRADES_COLUMNS, width=11)
-    ws.column_dimensions["A"].width = 22
-    ws.column_dimensions["G"].width = 34
-    for i, row in enumerate(data.UPGRADES, start=2):
-        for j, value in enumerate(row, start=1):
-            ws.cell(row=i, column=j, value=value)
-    _faction_dropdown(ws, 2)
-
-
-def build_special_rules(wb: Workbook) -> None:
-    ws = wb.create_sheet("Special rules")
-    write_headers(ws, layout.SPECIAL_RULES_COLUMNS, width=14)
-    ws.column_dimensions["A"].width = 16
-    ws.column_dimensions["D"].width = 90
-    for i, (name, param, side, text) in enumerate(data.SPECIAL_RULES, start=2):
-        ws.cell(row=i, column=1, value=name)
-        ws.cell(row=i, column=2, value="Yes" if param else "No")
-        ws.cell(row=i, column=3, value=side)
-        ws.cell(row=i, column=4, value=text).alignment = Alignment(wrap_text=True)
+#: (title, columns, loader, kwargs) for every tab sourced from csv/.
+DATA_TABS = [
+    ("Units", layout.UNITS_COLUMNS, csvdata.units,
+     dict(widths={"A": 22, "E": 34}, faction_column=2)),
+    ("Weapons", layout.WEAPONS_COLUMNS, csvdata.weapons,
+     dict(width=11, widths={"A": 22, "H": 34}, faction_column=2)),
+    ("Upgrades", layout.UPGRADES_COLUMNS, csvdata.upgrades,
+     dict(width=11, widths={"A": 22, "G": 34}, faction_column=2)),
+    ("Special rules", layout.SPECIAL_RULES_COLUMNS, csvdata.special_rules,
+     dict(width=14, widths={"A": 16, "D": 90}, wrap_column=4)),
+    ("Factions", layout.FACTIONS_COLUMNS, csvdata.factions, dict(width=22)),
+]
 
 
 # --------------------------------------------------------------------------
@@ -262,8 +250,13 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
     ws.column_dimensions[get_column_letter(layout.col_index("Attacker"))].width = 20
     ws.column_dimensions[get_column_letter(layout.col_index("Defender"))].width = 20
 
-    for header, value in data.EXAMPLE_ROW.items():
-        ws.cell(row=layout.SIM_FIRST_ROW, column=layout.col_index(header), value=value)
+    for offset, seeded in enumerate(csvdata.simulation()):
+        row = layout.SIM_FIRST_ROW + offset
+        if row > LAST_SIM_ROW:
+            break
+        for column, value in enumerate(seeded, start=1):
+            if value != "":
+                ws.cell(row=row, column=column, value=value)
 
     hits_col = layout.col_index("Hits")
     wounds_col = layout.col_index("Wounds")
@@ -384,11 +377,8 @@ def build_workbook() -> Workbook:
     wb = Workbook()
     wb.active.title = "Simulation"
 
-    build_units(wb)
-    build_weapons(wb)
-    build_upgrades(wb)
-    build_special_rules(wb)
-    build_factions(wb)
+    for title, columns, loader, options in DATA_TABS:
+        build_data_tab(wb, title, columns, loader(), **options)
     ranges = build_lists(wb)
     calc_cols = build_calc(wb)
     build_tests(wb)
