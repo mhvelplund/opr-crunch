@@ -51,7 +51,7 @@ class TestLoading:
 
     def test_simulation_carries_the_worked_example(self):
         row = csvdata.simulation()[0]
-        assert row[layout.SIMULATION_COLUMNS.index("Attacker")] == "Eternals"
+        assert row[layout.SIMULATION_COLUMNS.index("Attacker")] == "Warriors"
         assert row[layout.SIMULATION_COLUMNS.index("#")] == 10
 
     def test_generated_output_columns_are_left_blank(self):

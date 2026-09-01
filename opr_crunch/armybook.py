@@ -15,7 +15,7 @@ Two patterns carry almost all the information and survive the layout intact:
 
 import re
 from pathlib import PurePosixPath
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
 
 #: Every page of an army book carries "<system> - <FACTION> V<version>".
@@ -255,58 +255,90 @@ def _partition(pages: List[str]) -> Tuple[List[Tuple[str, str]], str]:
     return spans, "\n".join(leftovers)
 
 
-def _roster_linked(text: str, known_units: Iterable[str]) -> List[Tuple[str, str, dict]]:
-    """Weapons on the roster page, attributed to the unit each row is under.
+WEAPON_TABLE_HEADER = re.compile(r"\bWeapon\b.*\bATK\b")
 
-    A unit's starting weapon(s) only ever appear in the inline ``Name (...)``
-    form ``find_weapons`` can match on the roster page - the per-unit cards
-    print them as a plain table with no parentheses at all, so they never
-    show up as a weapon match there. Card boundaries in the CARD/[size]-Npts
-    sense don't exist on the roster, but each row still starts with a known
-    unit's name, wrapping onto the next line for a second weapon - so the
-    most recently seen name is enough to attribute a row correctly.
 
-    Lines are grouped into one block per run of a unit's name before being
-    handed to ``find_weapons``, rather than matched one line at a time: some
-    books repeat an identical weapon across several of a unit's lines (a
-    multi-mount vehicle listing the same gun per hardpoint), and only a
-    single call sees enough of the text at once to dedupe that the way
-    ``find_weapons`` already does within a call.
+def _default_weapon_names(card_text: str) -> List[str]:
+    """A card's own starting weapons, name only, no profile.
+
+    A unit's starting weapon(s) only ever appear in the card's Weapon table as
+    a plain grid - no parentheses at all - so ``find_weapons`` can't read a
+    profile from it. Worse, ``pdftotext -layout`` frequently lands a row's RNG
+    /ATK/AP/SPE cells one line away from its own name (the same column-flow
+    quirk that makes the roster unreliable for weapon *profiles*), so this
+    reads only the leftmost cell of each row and ignores the numbers - the
+    profile comes from cross-referencing this name against
+    ``find_weapons(roster_text)`` instead, which doesn't depend on row
+    position at all. Stops at the first ``Replace``/``Upgrade`` line, since
+    those are optional swaps handled by the normal inline-profile path.
     """
-    names = sorted(set(known_units), key=len, reverse=True)
-    rows: List[Tuple[str, str, dict]] = []
-    current, block = "", []
+    lines = card_text.split("\n")
+    header = next((i for i, line in enumerate(lines) if WEAPON_TABLE_HEADER.search(line)), None)
+    if header is None:
+        return []
 
-    def flush():
-        if block:
-            rows.extend((current, n, p) for n, p in find_weapons("\n".join(block)).items())
-
-    for line in text.split("\n"):
-        stripped = line.strip()
-        matched = next((n for n in names if stripped.startswith(n)), None)
-        if matched and matched != current:
-            flush()
-            current, block = matched, []
-        block.append(line)
-    flush()
-    return rows
+    names = []
+    for line in lines[header + 1:]:
+        if re.match(r"^\s*(Replace|Upgrade)\b", line):
+            break
+        cells = _chunks(line)
+        if not cells:
+            continue
+        cell = COUNT_PREFIX.sub("", cells[0][1])
+        if re.fullmatch(r"[A-Z][\w'\-]*(?:[ \-][\w'\-]+)*", cell):
+            names.append(cell)
+    return names
 
 
-def linked_weapons(pages: List[str], known_units: Iterable[str] = ()) -> List[Tuple[str, str, dict]]:
+def _pick_variant(name: str, pool: Dict[str, dict], hint_text: str) -> Optional[dict]:
+    """The right profile for ``name`` out of a pool that may hold variants.
+
+    ``find_weapons`` suffixes a name with its attacks, e.g. ``CCW (A2)``, when
+    the pool's source text (the whole roster) carries more than one profile
+    under that name - different units' CCWs have different Attacks. This
+    prefers whichever variant's attack count is actually written somewhere in
+    the card's own text, falling back to a deterministic pick so the same
+    input always produces the same (if unverified) output.
+    """
+    if name in pool:
+        return pool[name]
+    variants = {n: p for n, p in pool.items() if n.startswith(f"{name} (A")}
+    if not variants:
+        return None
+    for profile in variants.values():
+        if re.search(rf"\bA{profile['attacks']}\b", hint_text):
+            return profile
+    return variants[sorted(variants)[0]]
+
+
+def linked_weapons(pages: List[str]) -> List[Tuple[str, str, dict]]:
     """(unit name or "", weapon name, profile) for every profile in the book.
 
-    Scoped to the card - or, for a starting weapon, the roster row - it's
-    printed under, so the same name under two units becomes two rows rather
-    than one profile guessed to cover both. A profile found outside any of
-    that - e.g. on a shared armoury page - is generic and comes back with an
-    empty unit name.
+    Scoped to the card it's printed under, so the same name under two units
+    becomes two rows rather than one profile guessed to cover both. A profile
+    found outside any card - e.g. on a shared armoury page - is generic and
+    comes back with an empty unit name.
+
+    A starting weapon is the exception: its name lives on the unit's own
+    card, but its profile only ever appears, unattributed, in inline
+    ``Name (...)`` form on the roster page - the two are stitched back
+    together by name via ``_default_weapon_names``/``_pick_variant`` rather
+    than by the roster's row order, which ``pdftotext -layout`` does not
+    reliably preserve for a wrapped entry.
     """
     spans, leftover = _partition(pages[3:])
     rows = [
         (unit, name, profile)
         for unit, text in spans for name, profile in find_weapons(text).items()
     ]
-    rows += _roster_linked("\n".join(pages[:3]), known_units)
+
+    roster_pool = find_weapons("\n".join(pages[:3]))
+    for unit, text in spans:
+        for name in _default_weapon_names(text):
+            profile = _pick_variant(name, roster_pool, text)
+            if profile is not None:
+                rows.append((unit, name, profile))
+
     rows += [("", name, profile) for name, profile in find_weapons(leftover).items()]
 
     # The roster's base-weapon line and a card's own options can both name the

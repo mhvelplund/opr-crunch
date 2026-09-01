@@ -2,37 +2,33 @@ Name,Faction,Unit,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules
 Annihilation Gun,Robot Legions,Tri-Scorpion Lord,18,2,1,3,0,0,
 Atom-Beamer,Robot Legions,Forge Spider,24,3,1,0,0,0,
 Atom-Beamer,Robot Legions,Hover Bikes,24,3,1,0,0,0,
-Atom-Casters,Robot Legions,Bot Swarms,12,1,1,0,0,0,
+Atom-Casters,Robot Legions,Guardians,12,1,1,0,0,0,
 Atom-Scourge,Robot Legions,Death Fortress,24,9,4,0,0,0,
 CCW,Robot Legions,Annihilators,0,1,0,0,0,0,
-CCW,Robot Legions,Flesh-Eaters,0,2,0,0,0,0,
-CCW,Robot Legions,Wraith-Shard,0,3,0,0,0,0,
-CCWs,Robot Legions,Forge Spider,0,1,0,0,0,0,
-CCWs,Robot Legions,Hover Bikes,0,1,0,0,0,0,
+CCWs,Robot Legions,Annihilator Lord,0,2,0,0,0,0,
+CCWs,Robot Legions,Eternals,0,2,0,0,0,0,
+CCWs,Robot Legions,Hover Bikes,0,2,0,0,0,0,
 CCWs,Robot Legions,Snipers,0,1,0,0,0,0,
-CCWs,Robot Legions,Spider Walker,0,2,0,0,0,0,
 CCWs,Robot Legions,Warriors,0,2,0,0,0,0,
 Close-Range Gauss Array,Robot Legions,Night Transport,12,6,0,0,0,0,Destructive
 Combat Staff,Robot Legions,Annihilator Lord,0,3,1,0,0,0,
 Combat Staff,Robot Legions,Robot Lord,0,3,1,0,0,0,
-Crushing Legs,Robot Legions,Great Monolith,0,6,2,0,0,0,
-Crushing Legs,Robot Legions,Wraith-Shard,0,2,2,0,0,0,
-D-Marks,Robot Legions,Hover Bikes,24,1,1,0,0,0,"Reliable, Takedown"
+Crushing Legs,Robot Legions,Spider Walker,0,2,2,0,0,0,
+D-Marks,Robot Legions,Snipers,24,1,1,0,0,0,"Reliable, Takedown"
 Death Gaze,Robot Legions,Robot Snakes,12,2,4,0,0,0,
 Destruction Pulse,Robot Legions,Death Fortress,30,2,3,0,6,0,
-Disintegration Pistol,Robot Legions,Wraith-Shard,12,6,1,0,0,0,
-Doom Cannon,Robot Legions,Wraith-Shard,30,3,2,3,0,0,
+Doom Cannon,Robot Legions,Doom Tank,30,3,2,3,0,0,
 Doom Ray,Robot Legions,Doom Fighter,24,4,4,0,0,0,Unstoppable
 Doom Scythe,Robot Legions,Annihilator Lord,0,1,2,0,3,0,
 Doom Scythe,Robot Legions,Robot Lord,0,1,2,0,3,0,
 Dual Hyper Swords,Robot Legions,Annihilator Lord,0,4,1,0,0,0,Rending
-Dual Hyper Swords,Robot Legions,Tripod Walker,0,4,1,0,0,0,Rending
-Dual Reaper Blades,Robot Legions,Doom Tank,0,4,1,0,0,0,Shred
-Dual Reaper Blades,Robot Legions,Transport Tank,0,4,1,0,0,0,Shred
+Dual Hyper Swords,Robot Legions,Annihilators,0,4,1,0,0,0,Rending
+Dual Reaper Blades,Robot Legions,Destroyer Snakes,0,4,1,0,0,0,Shred
+Dual Reaper Blades,Robot Legions,Tri-Scorpions,0,4,1,0,0,0,Shred
 Exterminator Cannon,Robot Legions,Heavy Annihilator,30,2,2,3,0,0,
 Flame Caster,Robot Legions,Warriors,12,1,0,3,0,0,Reliable
 Flux Cannon,Robot Legions,Support Platform,24,3,1,0,0,0,Surge
-Flux Carbines,Robot Legions,Tri-Scorpions,18,2,0,0,0,0,Surge
+Flux Carbines,Robot Legions,Eternals,18,2,0,0,0,0,Surge
 Flux Sphere Array,Robot Legions,Death Fortress,24,9,1,0,0,0,Surge
 Fusion Caster,Robot Legions,Warriors,12,1,4,0,3,0,
 Gauss Arc Array,Robot Legions,Death Fortress,24,12,0,0,0,0,Destructive
@@ -40,15 +36,16 @@ Gauss Blaster,Robot Legions,Robot Lord,18,4,0,0,0,0,Destructive
 Gauss Cannon,Robot Legions,Annihilators,24,4,0,0,0,0,Destructive
 Gauss Cannon,Robot Legions,Support Platform,24,4,0,0,0,0,Destructive
 Gauss Rifle,Robot Legions,Warriors,24,1,0,0,0,0,Destructive
-Gauss Rifle Array,Robot Legions,Wraith-Shard,24,3,0,0,0,0,Destructive
+Gauss Rifle Array,Robot Legions,Doom Tank,24,3,0,0,0,0,Destructive
+Gauss Rifle Array,Robot Legions,Transport Tank,24,3,0,0,0,0,Destructive
 Great Wraith,Robot Legions,Great Wraith-Shard,0,0,0,0,0,0,Flying
 Great Wraith Strike,Robot Legions,Great Wraith-Shard,0,12,0,0,0,0,Rending
-Harvest Blade,Robot Legions,Annihilator Lord,0,2,2,0,3,0,
-Heavy CCW,Robot Legions,Wraith-Shard,0,2,1,0,0,0,
+Harvest Blade,Robot Legions,Tri-Scorpion Lord,0,2,2,0,3,0,
+Heavy CCW,Robot Legions,Heavy Annihilator,0,2,1,0,0,0,
 Heavy Doom Cannon,Robot Legions,Doom Tank,30,3,3,0,3,0,
 Heavy Gauss Cannon,Robot Legions,Annihilator Lord,30,6,0,0,0,0,Destructive
 Heavy Gauss Cannon,Robot Legions,Annihilators,30,6,0,0,0,0,Destructive
-Heavy Gauss Cannon,Robot Legions,Wraith-Shard,30,6,0,0,0,0,Destructive
+Heavy Gauss Cannon,Robot Legions,Heavy Annihilator,30,6,0,0,0,0,Destructive
 Heavy Gauss Rifle,Robot Legions,Eternals,24,2,0,0,0,0,Destructive
 Heavy Ray Cannon,Robot Legions,Heavy Annihilator,24,4,4,0,0,0,Unstoppable
 Heavy Reaper Blade,Robot Legions,Destroyer Snakes,0,1,3,0,6,0,Shred
@@ -56,51 +53,49 @@ Heavy Reaper Blade,Robot Legions,Tri-Scorpions,0,1,3,0,6,0,Shred
 Hyper Sword,Robot Legions,Annihilator Lord,0,3,1,0,0,0,Rending
 Hyper Sword,Robot Legions,Guardians,0,2,1,0,0,0,Rending
 Hyper Sword,Robot Legions,Robot Lord,0,3,1,0,0,0,Rending
+Lord Gauss Pistol,Robot Legions,Annihilator Lord,12,2,0,0,0,0,Destructive
 Lord Gauss Pistol,Robot Legions,Robot Lord,12,2,0,0,0,0,Destructive
-Lord Gauss Pistol,Robot Legions,Warriors,12,2,0,0,0,0,Destructive
+Lord Gauss Pistol,Robot Legions,Support Platform,12,2,0,0,0,0,Destructive
 Lord Gauss Rifle,Robot Legions,Robot Lord,24,2,0,0,0,0,Destructive
 Lord Reaper Rifle,Robot Legions,Robot Lord,18,2,1,0,0,0,Shred
-Metal Claws,Robot Legions,Annihilators,0,2,1,0,0,0,
+Metal Claws,Robot Legions,Flesh-Eaters,0,2,1,0,0,0,
 Metal Fangs,Robot Legions,Robot Snakes,0,2,0,0,0,0,Rending
 Monolith Beam,Robot Legions,Great Monolith,18,3,3,0,6,0,
-Monolith Blast,Robot Legions,Great Monolith,24,4,1,3,0,0,
-Nanobot Shards,Robot Legions,Death Fortress,18,4,3,0,3,0,
+Nanobot Shards,Robot Legions,Great Wraith-Shard,18,4,3,0,3,0,
 Nanobot Shards,Robot Legions,Wraith-Shard,18,4,3,0,3,0,
 Phase Glaive,Robot Legions,Annihilator Lord,0,3,4,0,0,0,
 Phase Glaive,Robot Legions,Robot Lord,0,3,4,0,0,0,
 Plasma Caster,Robot Legions,Warriors,24,1,4,0,0,0,
 Rapid Doom Blaster,Robot Legions,Tripod Walker,24,2,1,3,0,0,
-Rapid Flux Carbines,Robot Legions,Doom Tank,18,4,0,0,0,0,Surge
+Rapid Flux Carbines,Robot Legions,Hover Bikes,18,4,0,0,0,0,Surge
 Rapid Gauss Rifle,Robot Legions,Hover Bikes,24,3,0,0,0,0,Destructive
-Rapid Particle Beam,Robot Legions,Wraith-Shard,12,2,1,3,0,0,Reliable
+Rapid Particle Beam,Robot Legions,Tripod Walker,12,2,1,3,0,0,Reliable
 Rapid Ray Caster,Robot Legions,Tripod Walker,18,4,4,0,0,0,Unstoppable
 Ray Cannon,Robot Legions,Annihilators,24,2,4,0,0,0,Unstoppable
 Ray Caster,Robot Legions,Support Platform,18,2,4,0,0,0,Unstoppable
 Ray Caster,Robot Legions,Warriors,18,2,4,0,0,0,Unstoppable
-Reaper Rifles,Robot Legions,Eternals,18,1,1,0,0,0,Shred
+Reaper Rifles,Robot Legions,Warriors,18,1,1,0,0,0,Shred
 Rod,Robot Legions,Guardians,0,1,0,0,0,0,
 Rod-Shots,Robot Legions,Guardians,12,2,1,0,0,0,
 Shock Whips,Robot Legions,Robot Snakes,0,4,1,0,0,0,Surge
-Spider Fangs,Robot Legions,Wraith-Shard,0,6,0,0,0,0,Bane
-Spike Whips,Robot Legions,Transport Tank,0,1,2,0,3,0,
+Spider Fangs,Robot Legions,Forge Spider,0,6,0,0,0,0,Bane
 Staff-Shots,Robot Legions,Annihilator Lord,12,3,1,0,0,0,
 Staff-Shots,Robot Legions,Robot Lord,12,3,1,0,0,0,
-Stomp,Robot Legions,Great Monolith,0,6,2,0,0,0,
-Stomp,Robot Legions,Great Wraith-Shard,0,6,2,0,0,0,
-Stomp (A2),Robot Legions,Wraith-Shard,0,2,1,0,0,0,
-Stomp (A4),Robot Legions,Wraith-Shard,0,4,1,0,0,0,
-Swarm Attacks,Robot Legions,Heavy Annihilator,0,3,0,0,0,0,Rending
-Twin Atom-Beamer,Robot Legions,Wraith-Shard,24,6,1,0,0,0,
+Stomp,Robot Legions,Great Wraith-Shard,0,2,1,0,0,0,
+Stomp,Robot Legions,Spider Walker,0,2,1,0,0,0,
+Stomp,Robot Legions,Tripod Walker,0,2,1,0,0,0,
+Stomp,Robot Legions,Wraith-Shard,0,4,1,0,0,0,
+Swarm Attacks,Robot Legions,Bot Swarms,0,3,0,0,0,0,Rending
+Twin Atom-Beamer,Robot Legions,Forge Spider,24,6,1,0,0,0,
 Twin Atom-Caster,Robot Legions,Robot Snakes,12,2,1,0,0,0,
 Twin Atom-Shredder,Robot Legions,Spider Walker,24,12,1,0,0,0,
 Twin Exterminator Cannon,Robot Legions,Spider Walker,30,4,2,3,0,0,
-Twin Flux Cannon,Robot Legions,Doom Fighter,24,6,1,0,0,0,Surge
 Twin Flux Cannon,Robot Legions,Night Transport,24,6,1,0,0,0,Surge
 Twin Flux Cannon,Robot Legions,Support Platform,24,6,1,0,0,0,Surge
-Twin Fusion Ray,Robot Legions,Wraith-Shard,18,2,4,0,6,0,
+Twin Fusion Ray,Robot Legions,Spider Walker,18,2,4,0,6,0,
 Twin Gauss Rifle,Robot Legions,Tripod Walker,24,2,0,0,0,0,Destructive
 Twin Heavy Gauss Cannon,Robot Legions,Spider Walker,24,12,0,0,0,0,Destructive
-Void Blades,Robot Legions,Destroyer Snakes,0,2,0,0,0,0,
+Void Blades,Robot Legions,Guardians,0,2,0,0,0,0,
 Void Shard,Robot Legions,Great Wraith-Shard,24,12,2,0,0,0,
 Void Shard,Robot Legions,Wraith-Shard,24,12,2,0,0,0,
 Void Sword,Robot Legions,Annihilator Lord,0,1,0,3,0,0,
@@ -115,30 +110,27 @@ Anti-Tank Cannon,Havoc Brothers,Despoiler Walker,30,1,3,0,6,0,
 Autocannon,Havoc Brothers,Chosen Havoc Brothers,36,3,2,0,0,0,
 Autocannon,Havoc Brothers,Havoc Brothers,36,3,2,0,0,0,
 Autocannon,Havoc Brothers,Havoc Support,36,3,2,0,0,0,
-Bane Flamethrower,Havoc Brothers,Havoc Dragon,18,1,1,3,0,0,Reliable
+Bane Flamethrower,Havoc Brothers,Infernal Stalker,18,1,1,3,0,0,Reliable
 Brute Axe,Havoc Brothers,Infernal Brute,0,2,2,0,3,0,
 Brute Fist,Havoc Brothers,Infernal Brute,0,4,4,0,0,0,
 Brute Flail,Havoc Brothers,Infernal Brute,0,4,1,0,0,0,Rending
-Brute Hammers,Havoc Brothers,Havoc Dragon,0,2,0,3,0,0,
-CCW,Havoc Brothers,Chosen Havoc Brothers,0,2,0,0,0,0,
-CCW,Havoc Brothers,Chosen Havoc Champion,0,4,0,0,0,0,
+Brute Hammers,Havoc Brothers,Infernal Brute,0,2,0,3,0,0,
+CCW,Havoc Brothers,Cultist Champion,0,4,0,0,0,0,
 CCW,Havoc Brothers,Cultists,0,2,0,0,0,0,
-CCW,Havoc Brothers,Harbinger of Havoc,0,2,0,0,0,0,
 CCW,Havoc Brothers,Havoc Bikers,0,1,0,0,0,0,
+CCW,Havoc Brothers,Havoc Champion,0,4,0,0,0,0,
 CCW,Havoc Brothers,Havoc Destroyer Champion,0,4,0,0,0,0,
 CCW,Havoc Brothers,Havoc Destroyers,0,1,0,0,0,0,
-CCW,Havoc Brothers,Havoc Support,0,2,0,0,0,0,
-CCWs,Havoc Brothers,Havoc Dragon,0,2,0,0,0,0,
-CCWs,Havoc Brothers,Havoc Tank,0,1,0,0,0,0,
-CCWs,Havoc Brothers,Infernal Brute,0,1,0,0,0,0,
-CCWs,Havoc Brothers,Mutated Destroyer,0,1,0,0,0,0,
-CCWs,Havoc Brothers,Spider Walker,0,1,0,0,0,0,
+CCWs,Havoc Brothers,Cultists,0,1,0,0,0,0,
+CCWs,Havoc Brothers,Havoc Bikers,0,1,0,0,0,0,
+CCWs,Havoc Brothers,Havoc Brothers,0,1,0,0,0,0,
+CCWs,Havoc Brothers,Havoc Support,0,1,0,0,0,0,
 Champion Heavy Pistol,Havoc Brothers,Chosen Havoc Champion,12,2,1,0,0,0,
 Champion Heavy Pistol,Havoc Brothers,Havoc Champion,12,2,1,0,0,0,
 Champion Heavy Rifle,Havoc Brothers,Chosen Havoc Champion,24,2,1,0,0,0,
-Champion Heavy Rifle,Havoc Brothers,Havoc Brothers,24,2,1,0,0,0,
 Champion Heavy Rifle,Havoc Brothers,Havoc Champion,24,2,1,0,0,0,
-Champion Pistol,Havoc Brothers,Havoc Soul Spawn,12,2,0,0,0,0,
+Champion Heavy Rifle,Havoc Brothers,Havoc Destroyer Champion,24,2,1,0,0,0,
+Champion Pistol,Havoc Brothers,Cultist Champion,12,2,0,0,0,0,
 Champion Plasma Pistol,Havoc Brothers,Chosen Havoc Champion,12,2,4,0,0,0,
 Champion Plasma Pistol,Havoc Brothers,Havoc Champion,12,2,4,0,0,0,
 Champion Rifle,Havoc Brothers,Cultist Champion,24,2,0,0,0,0,
@@ -147,26 +139,24 @@ Champion Shred Pistol,Havoc Brothers,Cultist Champion,9,3,0,0,0,0,Rending
 Champion Sniper Rifle,Havoc Brothers,Cultist Champion,30,2,1,0,0,0,"Reliable, Takedown"
 Champion Storm Rifle,Havoc Brothers,Chosen Havoc Champion,24,4,1,0,0,0,
 Champion Storm Rifle,Havoc Brothers,Havoc Champion,24,4,1,0,0,0,
-Claws,Havoc Brothers,Despoiler Walker,0,2,0,0,0,0,
+Claws,Havoc Brothers,Mutated Cultists,0,2,0,0,0,0,
 Combat Bike,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,0,0,Fast
 Combat Bike,Havoc Brothers,Havoc Champion,0,0,0,0,0,0,Fast
 Cursed Blade,Havoc Brothers,Cultist Champion,0,3,2,0,0,0,Rending
 Daemon Chain,Havoc Brothers,Harbinger of Havoc,12,3,0,0,0,0,
 Daemon Gauntlet,Havoc Brothers,Harbinger of Havoc,0,3,4,0,0,0,
-Daemon Hammers,Havoc Brothers,Mutated Cultists,0,1,0,3,0,0,
+Daemon Hammers,Havoc Brothers,Harbinger of Havoc,0,1,0,3,0,0,
 Daemon Spear,Havoc Brothers,Harbinger of Havoc,0,1,2,0,3,0,
 Daemon Sword,Havoc Brothers,Harbinger of Havoc,0,3,1,0,0,0,Rending
-Demolition Cannon,Havoc Brothers,Havoc Dragon,24,1,4,6,0,0,"Fear(3), Havocbound, Regeneration"
-Despoiler Claws,Havoc Brothers,Havoc Dragon,0,4,3,0,0,0,
+Despoiler Claws,Havoc Brothers,Despoiler Walker,0,4,3,0,0,0,
 Dual Energy Claws,Havoc Brothers,Chosen Havoc Brothers,0,4,0,0,0,0,Rending
 Dual Energy Claws,Havoc Brothers,Chosen Havoc Champion,0,4,0,0,0,0,Rending
 Dual Energy Claws,Havoc Brothers,Havoc Champion,0,4,0,0,0,0,Rending
 Dual Energy Claws,Havoc Brothers,Havoc Destroyer Champion,0,8,0,0,0,0,Rending
-Dual Energy Claws,Havoc Brothers,Havoc Heavy Tank,0,4,0,0,0,0,Rending
-Dual Energy Claws,Havoc Brothers,Havoc Mech-Fiend,0,2,0,0,0,0,Rending
+Dual Energy Claws,Havoc Brothers,Talon Raptors,0,2,0,0,0,0,Rending
 Dual Maul Cutters,Havoc Brothers,Despoiler Walker,0,6,3,0,0,0,
 Dual Maul Cutters,Havoc Brothers,Havoc Mech-Fiend,0,6,3,0,0,0,
-Dual Mutated Claws,Havoc Brothers,Havoc Dragon,0,6,1,0,0,0,
+Dual Mutated Claws,Havoc Brothers,Mutated Destroyer,0,6,1,0,0,0,
 Energy Axe,Havoc Brothers,Chosen Havoc Champion,0,1,2,0,3,0,
 Energy Axe,Havoc Brothers,Havoc Champion,0,1,2,0,3,0,
 Energy Axe,Havoc Brothers,Havoc Destroyer Champion,0,2,2,0,3,0,
@@ -190,14 +180,14 @@ Energy Sword,Havoc Brothers,Havoc Brothers,0,2,1,0,0,0,Rending
 Energy Sword,Havoc Brothers,Havoc Champion,0,2,1,0,0,0,Rending
 Energy Sword,Havoc Brothers,Havoc Destroyer Champion,0,4,1,0,0,0,Rending
 Energy Sword,Havoc Brothers,Havoc Destroyers,0,3,1,0,0,0,Rending
-Fiend Claws,Havoc Brothers,Havoc Dragon,0,4,0,0,0,0,Rending
+Fiend Claws,Havoc Brothers,Havoc Mech-Fiend,0,4,0,0,0,0,Rending
 Flamer,Havoc Brothers,Chosen Havoc Brothers,12,1,0,3,0,0,Reliable
 Flamer,Havoc Brothers,Cultists,12,1,0,3,0,0,Reliable
 Flamer,Havoc Brothers,Havoc Bikers,12,1,0,3,0,0,Reliable
 Flamer,Havoc Brothers,Havoc Brothers,12,1,0,3,0,0,Reliable
 Flamer,Havoc Brothers,Talon Raptors,12,1,0,3,0,0,Reliable
 Flamer Pistol,Havoc Brothers,Cultist Champion,6,1,0,3,0,0,Reliable
-Flamer Pistol,Havoc Brothers,Havoc Brothers,6,1,0,3,0,0,Reliable
+Flamer Pistol,Havoc Brothers,Havoc Champion,6,1,0,3,0,0,Reliable
 Flamer-Mod,Havoc Brothers,Chosen Havoc Brothers,12,1,0,3,0,0,"Limited, Reliable"
 Flamer-Mod,Havoc Brothers,Chosen Havoc Champion,12,1,0,3,0,0,"Limited, Reliable"
 Flamer-Mod,Havoc Brothers,Havoc APC,12,1,0,0,0,0,"Limited, Reliable"
@@ -207,7 +197,6 @@ Flamer-Mod,Havoc Brothers,Havoc Destroyers,12,1,0,3,0,0,"Limited, Reliable"
 Flamer-Mod,Havoc Brothers,Havoc Heavy Tank,12,1,0,0,0,0,"Limited, Reliable"
 Flamer-Mod,Havoc Brothers,Havoc Tank,12,1,0,0,0,0,"Limited, Reliable"
 Forge Cannon,Havoc Brothers,Havoc Dragon,30,8,3,0,0,0,
-Forge Flamethrower,Havoc Brothers,Havoc Dragon,18,2,1,3,0,0,Reliable
 Fusion Rifle,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,3,0,
 Fusion Rifle,Havoc Brothers,Havoc Bikers,12,1,4,0,3,0,
 Fusion Rifle,Havoc Brothers,Havoc Brothers,12,1,4,0,3,0,
@@ -228,10 +217,10 @@ Havoc Missiles,Havoc Brothers,Havoc Tank,24,1,2,0,3,0,Unstoppable
 Heavy CCW,Havoc Brothers,Chosen Havoc Brothers,0,2,1,0,0,0,
 Heavy CCW,Havoc Brothers,Havoc Brothers,0,2,1,0,0,0,
 Heavy CCW,Havoc Brothers,Talon Raptors,0,2,1,0,0,0,
-Heavy Claws,Havoc Brothers,Despoiler Walker,0,2,1,0,0,0,
-Heavy Claws,Havoc Brothers,Havoc Dragon,0,4,1,0,0,0,
+Heavy Claws,Havoc Brothers,Greater Mutated,0,4,1,0,0,0,
+Heavy Claws,Havoc Brothers,Mutated Brothers,0,2,1,0,0,0,
 Heavy Flamer,Havoc Brothers,Infernal Brute,12,1,1,3,0,0,Reliable
-Heavy Flamers,Havoc Brothers,Spider Walker,12,1,1,3,0,0,Reliable
+Heavy Flamers,Havoc Brothers,Havoc Support,12,1,1,3,0,0,Reliable
 Heavy Fusion Rifle,Havoc Brothers,Havoc Support,18,1,4,0,3,0,
 Heavy Havoc Sword,Havoc Brothers,Havoc Soul Spawn,0,3,0,0,0,0,Rending
 Heavy Machinegun,Havoc Brothers,Chosen Havoc Brothers,30,3,1,0,0,0,
@@ -241,15 +230,14 @@ Heavy Maul Cutter,Havoc Brothers,Infernal Stalker,0,9,3,0,0,0,
 Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,
 Heavy Pistol,Havoc Brothers,Havoc Brothers,12,1,1,0,0,0,
 Heavy Pistol,Havoc Brothers,Talon Raptors,12,1,1,0,0,0,
-Heavy Pistols,Havoc Brothers,Havoc Dragon,12,1,1,0,0,0,
-Heavy Plasma Cannon,Havoc Brothers,Havoc Dragon,30,1,4,6,0,0,
+Heavy Pistols,Havoc Brothers,Havoc Bikers,12,1,1,0,0,0,
+Heavy Plasma Cannon,Havoc Brothers,Despoiler Walker,30,1,4,6,0,0,
 Heavy Plasma Cannon,Havoc Brothers,Infernal Brute,30,1,4,6,0,0,
 Heavy Reaper Cannon,Havoc Brothers,Despoiler Walker,24,6,1,0,0,0,Shred
 Heavy Reaper Cannon,Havoc Brothers,Infernal Brute,24,6,1,0,0,0,Shred
 Heavy Rifle,Havoc Brothers,Havoc Bikers,24,1,1,0,0,0,
-Heavy Rifles,Havoc Brothers,Havoc APC,24,1,1,0,0,0,
-Heavy Rifles,Havoc Brothers,Infernal Brute,24,1,1,0,0,0,
-Hell Flails,Havoc Brothers,Havoc Dragon,0,4,0,0,0,0,
+Heavy Rifles,Havoc Brothers,Havoc Brothers,24,1,1,0,0,0,
+Hell Flails,Havoc Brothers,Despoiler Walker,0,4,0,0,0,0,
 Laser Cannon,Havoc Brothers,Chosen Havoc Brothers,36,1,3,0,3,0,
 Laser Cannon,Havoc Brothers,Havoc Brothers,36,1,3,0,3,0,
 Laser Cannon,Havoc Brothers,Havoc Support,36,1,3,0,3,0,
@@ -259,7 +247,7 @@ Missile Launcher,Havoc Brothers,Chosen Havoc Brothers,30,1,2,0,3,0,Unstoppable
 Missile Launcher,Havoc Brothers,Havoc Brothers,30,1,2,0,3,0,Unstoppable
 Missile Launcher,Havoc Brothers,Havoc Support,30,1,2,0,3,0,Unstoppable
 Mutated Claw,Havoc Brothers,Mutated Destroyer,0,3,1,0,0,0,
-Mutated Claws,Havoc Brothers,Infernal Stalker,0,4,0,0,0,0,
+Mutated Claws,Havoc Brothers,Havoc Soul Spawn,0,4,0,0,0,0,
 Mutated Gun,Havoc Brothers,Mutated Destroyer,24,6,1,0,0,0,
 Pistol,Havoc Brothers,Cultists,12,1,0,0,0,0,
 Plasma Cannon,Havoc Brothers,Havoc Support,30,1,4,3,0,0,
@@ -280,7 +268,7 @@ Plasma-Mod,Havoc Brothers,Havoc Destroyer Champion,24,1,4,0,0,0,Limited
 Plasma-Mod,Havoc Brothers,Havoc Destroyers,24,1,4,0,0,0,Limited
 Plasma-Mod,Havoc Brothers,Havoc Heavy Tank,24,1,4,0,0,0,Limited
 Plasma-Mod,Havoc Brothers,Havoc Tank,24,1,4,0,0,0,Limited
-Quad Laser Cannon,Havoc Brothers,Havoc Dragon,36,4,3,0,3,0,
+Quad Laser Cannon,Havoc Brothers,Havoc Heavy Tank,36,4,3,0,3,0,
 Rapid Autocannon,Havoc Brothers,Havoc Tank,36,6,2,0,0,0,
 Rapid Autocannon,Havoc Brothers,Infernal Stalker,36,6,2,0,0,0,
 Rapid Heavy Rifle,Havoc Brothers,Havoc Destroyers,24,2,1,0,0,0,
@@ -294,7 +282,7 @@ Reaper Cannon,Havoc Brothers,Chosen Havoc Brothers,24,4,0,0,0,0,Shred
 Reaper Cannon,Havoc Brothers,Havoc Brothers,24,4,0,0,0,0,Shred
 Reaper Cannon,Havoc Brothers,Havoc Destroyers,24,4,0,0,0,0,Shred
 Reaper Cannon,Havoc Brothers,Havoc Support,24,4,0,0,0,0,Shred
-Rifles,Havoc Brothers,Havoc Bikers,24,1,0,0,0,0,
+Rifles,Havoc Brothers,Cultists,24,1,0,0,0,0,
 Sgt. Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,
 Sgt. Heavy Pistol,Havoc Brothers,Havoc Bikers,12,1,1,0,0,0,
 Sgt. Heavy Pistol,Havoc Brothers,Havoc Brothers,12,1,1,0,0,0,
@@ -311,14 +299,15 @@ Shred-Mod,Havoc Brothers,Havoc Destroyers,18,2,0,0,0,0,"Limited, Rending"
 Shred-Mod,Havoc Brothers,Havoc Heavy Tank,18,2,0,0,0,0,"Limited, Rending"
 Shred-Mod,Havoc Brothers,Havoc Tank,18,2,0,0,0,0,Limited
 Sniper Rifle,Havoc Brothers,Cultists,30,1,1,0,0,0,"Reliable, Takedown"
-Spider Fangs,Havoc Brothers,Havoc Dragon,0,8,0,0,0,0,Rending
-Steel Tails,Havoc Brothers,Havoc Dragon,0,8,1,0,0,0,
-Stomp,Havoc Brothers,Mutated Brothers,0,2,1,0,0,0,
-Stomp (A4),Havoc Brothers,Havoc Dragon,0,4,1,0,0,0,
-Stomp (A6),Havoc Brothers,Havoc Dragon,0,6,2,0,0,0,
+Spider Fangs,Havoc Brothers,Spider Walker,0,8,0,0,0,0,Rending
+Steel Tails,Havoc Brothers,Havoc Mech-Fiend,0,8,1,0,0,0,
+Stomp,Havoc Brothers,Despoiler Walker,0,2,1,0,0,0,
+Stomp,Havoc Brothers,Havoc Mech-Fiend,0,4,1,0,0,0,
+Stomp,Havoc Brothers,Infernal Brute,0,2,1,0,0,0,
+Stomp,Havoc Brothers,Infernal Stalker,0,4,1,0,0,0,
+Stomp,Havoc Brothers,Spider Walker,0,2,1,0,0,0,
 Storm Rifle,Havoc Brothers,Havoc APC,24,3,1,0,0,0,
 Storm Rifle,Havoc Brothers,Havoc Destroyers,24,3,1,0,0,0,
-Storm Rifle,Havoc Brothers,Havoc Dragon,24,3,1,0,0,0,
 Storm Rifle,Havoc Brothers,Havoc Heavy Tank,24,3,1,0,0,0,
 Storm Rifle,Havoc Brothers,Havoc Tank,24,3,1,0,0,0,
 Storm Rifle,Havoc Brothers,Infernal Brute,24,3,1,0,0,0,
@@ -328,12 +317,12 @@ Twin Fiend Autocannon,Havoc Brothers,Havoc Mech-Fiend,36,8,2,0,0,0,
 Twin Heavy Flamer,Havoc Brothers,Despoiler Walker,12,2,1,3,0,0,Reliable
 Twin Heavy Flamer,Havoc Brothers,Havoc Destroyers,12,2,1,3,0,0,Reliable
 Twin Heavy Machinegun,Havoc Brothers,Despoiler Walker,30,6,1,0,0,0,
-Twin Heavy Machinegun,Havoc Brothers,Havoc Dragon,30,6,1,0,0,0,
+Twin Heavy Machinegun,Havoc Brothers,Havoc Tank,30,6,1,0,0,0,
 Twin Heavy Machinegun,Havoc Brothers,Infernal Brute,30,6,1,0,0,0,
-Twin Heavy Rifles,Havoc Brothers,Havoc Dragon,24,2,1,0,0,0,
+Twin Heavy Rifles,Havoc Brothers,Havoc Bikers,24,2,1,0,0,0,
 Twin Laser Cannon,Havoc Brothers,Despoiler Walker,36,2,3,0,3,0,
 Twin Laser Cannon,Havoc Brothers,Havoc Tank,36,2,3,0,3,0,
 Twin Laser Cannon,Havoc Brothers,Infernal Brute,36,2,3,0,3,0,
 Twin Pain Cannons,Havoc Brothers,Despoiler Walker,24,2,0,3,0,0,
-Twin Pain Cannons,Havoc Brothers,Havoc Dragon,24,2,0,3,0,0,
-Virus Injector,Havoc Brothers,Havoc Dragon,0,3,3,0,3,0,
+Twin Pain Cannons,Havoc Brothers,Spider Walker,24,2,0,3,0,0,
+Virus Injector,Havoc Brothers,Infernal Stalker,0,3,3,0,3,0,

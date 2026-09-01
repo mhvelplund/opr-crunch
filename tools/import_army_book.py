@@ -88,7 +88,7 @@ def import_book(text: str, faction: str) -> None:
     # A weapon a book gives to more than one unit is written as one row per
     # unit, not merged, so the Simulation dropdowns can offer each unit only
     # the weapons it can actually take.
-    weapon_links = armybook.linked_weapons(pages, known_units=[u["name"] for u in units])
+    weapon_links = armybook.linked_weapons(pages)
     weapon_rows = [
         [name, faction, unit, w["range"], w["attacks"], w["ap"], w["blast"],
          w["deadly"], w["impact"], ", ".join(w["rules"])]

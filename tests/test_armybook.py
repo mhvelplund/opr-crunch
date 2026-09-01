@@ -189,12 +189,16 @@ class TestLinkedWeaponsAndUpgrades:
         assert not any(unit == "Eternals" and name == "Sergeant" for unit, name in rows)
 
 
-class TestRosterLinkedWeapons:
-    """A starting weapon only ever appears in ``Name (...)`` form on the roster.
-
-    The per-unit cards later in the book print it as a plain table row with
-    no parentheses, so ``find_weapons`` can't see it there at all - the
-    roster page is copied verbatim below, from Robot Legions v3.5.3.
+class TestStartingWeapons:
+    """A starting weapon's name lives on the unit's own card; its profile only
+    ever appears, unattributed, as inline ``Name (...)`` text on the roster
+    page. ``pdftotext -layout`` does not reliably keep the roster's rows in
+    step with the unit each is meant to be under - see the fixture below,
+    copied verbatim from Robot Legions v3.5.3: "Warriors" visually carries
+    "Lord Gauss Pistol", which actually belongs to a different unit's row
+    that wrapped. Cross-referencing the card's name against the roster's
+    profiles by name, rather than trusting row position, recovers the real
+    pairing (Warriors -> Reaper Rifles) instead of the wrong one.
     """
 
     ROSTER_PAGE = "\n".join([
@@ -205,17 +209,34 @@ class TestRosterLinkedWeapons:
         'Eternals [5]            4+ 4+ 5x Reaper Rifles (18", A1, AP(1), Shred)      Self-Repair, Slow   150pts',
     ])
 
+    CARD_PAGE = "\n".join([
+        "GF - ROBOT LEGIONS V3.5.3",
+        "",
+        "                               Warriors [5] - 100pts",
+        "                   Quality 4+               Defense 4+",
+        "Self-Repair, Slow",
+        "Weapon                              RNG     ATK           AP SPE",
+        "5x Reaper Rifles",
+        '5x CCWs                             18"     A1            1      Shred',
+        "",
+        '                                    -       A1            -      -',
+    ])
+
     def weapons(self):
-        pages = ["", "", self.ROSTER_PAGE, ""]
-        return armybook.linked_weapons(pages, known_units=["Warriors", "Eternals"])
+        return armybook.linked_weapons(["", "", self.ROSTER_PAGE, self.CARD_PAGE])
 
-    def test_a_starting_weapon_is_linked_to_its_row(self):
+    def test_the_roster_row_shift_does_not_misattribute_the_weapon(self):
         owners = {(unit, name) for unit, name, _ in self.weapons()}
-        assert ("Warriors", "Lord Gauss Pistol") in owners
-        assert ("Eternals", "Reaper Rifles") in owners
+        assert ("Warriors", "Reaper Rifles") in owners
+        assert ("Warriors", "Lord Gauss Pistol") not in owners
 
-    def test_a_wrapped_second_weapon_stays_with_the_same_unit(self):
-        """CCWs wraps onto its own line below Warriors' row, with no name to anchor it."""
+    def test_the_profile_still_comes_from_the_roster_despite_the_shift(self):
+        profiles = {(unit, name): p for unit, name, p in self.weapons()}
+        reaper = profiles["Warriors", "Reaper Rifles"]
+        assert (reaper["range"], reaper["attacks"], reaper["ap"]) == (18, 1, 1)
+        assert reaper["rules"] == ["Shred"]
+
+    def test_a_second_weapon_named_on_the_cards_own_line_is_also_found(self):
         owners = {(unit, name) for unit, name, _ in self.weapons()}
         assert ("Warriors", "CCWs") in owners
 

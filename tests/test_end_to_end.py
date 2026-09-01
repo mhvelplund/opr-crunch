@@ -109,7 +109,7 @@ def rules_shown(wb, row):
 
 def picks(**overrides):
     base = {
-        "Att. faction": "Robot Legions", "Attacker": "Eternals", "#": 10,
+        "Att. faction": "Robot Legions", "Attacker": "Warriors", "#": 10,
         "Weapon": "Reaper Rifles", STATE_COL: "Yes", "Def. faction": "Havoc Brothers",
         "Defender": "Havoc Brothers", "Def. #": 5, "In cover": "No",
         "Variable effect": "AP",
@@ -119,22 +119,24 @@ def picks(**overrides):
 
 
 class TestWorkedExample:
-    """The example from the requirements, now with Shred correctly attributed.
+    """The example from the requirements: Reaper Rifles belong to Warriors,
+    not Eternals - a book-import bug briefly attributed them to the wrong
+    unit; fixed, this now matches the requirements' own worked example.
 
-    10 Eternals (Quality 3+) with AP(1), Shred Reaper Rifles, into 5 Havoc
-    Brothers (Defense 3+): 20/3 = 6.67 hits, and 40/9 = 4.44 wounds.
+    10 Warriors (Quality 4+) with AP(1), Shred Reaper Rifles, into 5 Havoc
+    Brothers (Defense 3+): 5 hits, and 10/3 = 3.33 wounds.
     """
 
     def test_hits(self, wb):
-        assert outputs(wb, 2)[0] == pytest.approx(20 / 3)
+        assert outputs(wb, 2)[0] == pytest.approx(5)
 
     def test_wounds_include_shreds_extra_wound(self, wb):
-        assert outputs(wb, 2)[1] == pytest.approx(40 / 9)
+        assert outputs(wb, 2)[1] == pytest.approx(10 / 3)
 
     def test_shred_is_what_makes_it_higher_than_without(self, wb, weapons):
-        """Without Shred the same profile would stop at 10/3 wounds."""
-        assert weapons[("Reaper Rifles", "Robot Legions", "Eternals")]["Special Rules"] == "Shred"
-        assert outputs(wb, 2)[1] > 10 / 3
+        """Without Shred the same profile would stop at 5/2 wounds."""
+        assert weapons[("Reaper Rifles", "Robot Legions", "Warriors")]["Special Rules"] == "Shred"
+        assert outputs(wb, 2)[1] > 5 / 2
 
     def test_the_att_special_rules_column_shows_the_unit_and_weapons_rules(self, wb):
         att, defn = rules_shown(wb, 2)
@@ -167,9 +169,9 @@ class TestLookupsMatchTheModel:
             (5, {}, {}),
             (6, {"In cover": "Yes"}, dict(in_cover=True)),
             (7, {"Attacker": "Robot Lord", "Weapon": "Gauss Blaster"}, {}),  # Destructive
-            (8, {"Attacker": "Tri-Scorpions", "Weapon": "Flux Carbines"}, {}),  # Surge
+            (8, {"Attacker": "Eternals", "Weapon": "Flux Carbines"}, {}),  # Surge
             (9, {"Defender": "Warriors", "Def. faction": "Robot Legions"}, {}),  # Self-Repair
-            (10, {"Attacker": "Annihilators", "Weapon": "Metal Claws",
+            (10, {"Attacker": "Flesh-Eaters", "Weapon": "Metal Claws",
                   STATE_COL: "Charging"},
              dict(combat="Melee", melee_state="Charging")),
         ],
@@ -200,21 +202,30 @@ class TestUnitProfileRules:
         set_row(wb, 12, **picks(**self.LORD, **{"#": 1, STATE_COL: "No"}))
         assert outputs(wb, 11)[0] > outputs(wb, 12)[0]
 
-    def test_the_attacking_units_ravage_reaches_the_calculation(self, wb, units):
-        """Ravage(2) adds direct wounds, but only in melee.
+    def test_the_attacking_units_ravage_reaches_the_calculation(self, wb, units, weapons):
+        """Ravage(4) adds direct wounds, but only in melee.
 
-        Combat is now derived from the weapon, so the two rows compare the
-        unit's own melee and ranged weapons rather than forcing one weapon
-        into both modes.
+        Combat is now derived from the weapon, so a melee weapon can't be
+        forced through a ranged row to isolate Ravage by comparison anymore.
+        Instead this compares the sheet's melee-row wounds against the same
+        profile resolved with ravage=0, via the reference model directly.
         """
-        assert units[("Tri-Scorpions", "Robot Legions")]["Ravage"] == 2
-        set_row(wb, 13, **picks(
-            **{"Attacker": "Tri-Scorpions", "Weapon": "Heavy Reaper Blade", "#": 1, STATE_COL: "None"},
+        lord = units[("Tri-Scorpion Lord", "Robot Legions")]
+        assert lord["Ravage"] == 4
+        w = _weapon(weapons, "Harvest Blade", "Robot Legions", "Tri-Scorpion Lord")
+        defender = units[("Havoc Brothers", "Havoc Brothers")]
+
+        set_row(wb, 13, **picks(Attacker="Tri-Scorpion Lord", Weapon="Harvest Blade", **{"#": 1}))
+        _, wounds = outputs(wb, 13)
+
+        without_ravage = resolve(Scenario(
+            models=1, attacks=w["Attacks"], quality=lord["Quality"], defense=defender["Defense"],
+            def_models=5, ap=w["AP"], blast=w["Blast"], deadly=w["Deadly"], impact=w["Impact"],
+            ravage=0, tough=defender["Tough"],
+            att_rules=_rules(lord["Special Rules"], w["Special Rules"]),
+            def_rules=_rules(defender["Special Rules"]), combat="Melee",
         ))
-        set_row(wb, 14, **picks(
-            **{"Attacker": "Tri-Scorpions", "Weapon": "Flux Carbines", "#": 1},
-        ))
-        assert outputs(wb, 13)[1] > outputs(wb, 14)[1]
+        assert wounds > float(without_ravage.wounds)
 
     def test_the_defending_units_tough_caps_deadly(self, wb, units):
         assert units[("Tri-Scorpion Lord", "Robot Legions")]["Tough"] == 6
@@ -235,15 +246,15 @@ class TestNamesSharedAcrossFactions:
     SHARED = "Spider Fangs"
 
     def test_the_two_profiles_really_do_differ(self, weapons):
-        legions = weapons[(self.SHARED, "Robot Legions", "Wraith-Shard")]
-        havoc = weapons[(self.SHARED, "Havoc Brothers", "Havoc Dragon")]
+        legions = weapons[(self.SHARED, "Robot Legions", "Forge Spider")]
+        havoc = weapons[(self.SHARED, "Havoc Brothers", "Spider Walker")]
         assert (legions["Attacks"], legions["Special Rules"]) != (
             havoc["Attacks"], havoc["Special Rules"]
         )
 
     @pytest.mark.parametrize(
         "faction,attacker",
-        [("Robot Legions", "Wraith-Shard"), ("Havoc Brothers", "Havoc Dragon")],
+        [("Robot Legions", "Forge Spider"), ("Havoc Brothers", "Spider Walker")],
     )
     def test_each_faction_gets_its_own_profile(self, wb, units, weapons, faction, attacker):
         chosen = picks(**{
@@ -267,7 +278,7 @@ class TestNamesSharedAcrossFactions:
         attackers differ in Quality, so the totals differ either way.
         """
         set_row(wb, 16, **picks(**{
-            "Att. faction": "Havoc Brothers", "Attacker": "Havoc Dragon",
+            "Att. faction": "Havoc Brothers", "Attacker": "Spider Walker",
             "Weapon": self.SHARED, "#": 1, STATE_COL: "None",
         }))
         assert outputs(wb, 16)[0] == pytest.approx(8 * 4 / 6)

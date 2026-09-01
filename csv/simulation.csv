@@ -1,4 +1,4 @@
 Att. faction,Attacker,Att. upgrades,#,Weapon,Weapon stats,Combat,"Melee state / Range >9""",Def. faction,Defender,Def. upgrades,Def. #,In cover,Variable effect,Hits,Wounds,Att. Special Rules,Def. Special Rules
-Robot Legions,Eternals,,10,Reaper Rifles,,,Yes,Havoc Brothers,Havoc Brothers,,5,No,AP,,,,
+Robot Legions,Warriors,,10,Reaper Rifles,,,Yes,Havoc Brothers,Havoc Brothers,,5,No,AP,,,,
 Havoc Brothers,Chosen Havoc Champion,,3,Champion Storm Rifle,,,Yes,Robot Legions,Warriors,,5,No,AP,,,,
-Havoc Brothers,Mutated Brothers,,5,Stomp,,,Charging,Robot Legions,Warriors,,5,No,AP,,,,
+Havoc Brothers,Mutated Brothers,,5,Heavy Claws,,,Charging,Robot Legions,Warriors,,5,No,AP,,,,
