@@ -326,3 +326,283 @@ Twin Laser Cannon,Havoc Brothers,Infernal Brute,36,2,3,0,3,0,
 Twin Pain Cannons,Havoc Brothers,Despoiler Walker,24,2,0,3,0,0,
 Twin Pain Cannons,Havoc Brothers,Spider Walker,24,2,0,3,0,0,
 Virus Injector,Havoc Brothers,Infernal Stalker,0,3,3,0,3,0,
+CCW,Battle Brothers,Brother Bikers,0,1,0,0,0,0,
+CCW,Battle Brothers,Destroyers,0,1,0,0,0,0,
+CCW,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,
+CCW,Battle Brothers,Master Brother,0,4,0,0,0,0,
+CCW,Battle Brothers,Master Destroyer,0,4,0,0,0,0,
+CCW,Battle Brothers,Pathfinder Bikers,0,1,0,0,0,0,
+CCW,Battle Brothers,Pathfinders,0,1,0,0,0,0,
+CCW,Battle Brothers,Veteran Master Brother,0,2,0,0,0,0,
+CCWs,Battle Brothers,Brother Bikers,0,2,0,0,0,0,
+CCWs,Battle Brothers,Pathfinder Bikers,0,2,0,0,0,0,
+CCWs,Battle Brothers,Pathfinders,0,2,0,0,0,0,
+CCWs,Battle Brothers,Veteran Battle Brothers,0,2,0,0,0,0,
+Chain-Fist,Battle Brothers,Destroyers,0,1,2,0,3,0,
+Chain-Fist,Battle Brothers,Elite Pathfinder,0,1,2,0,3,0,
+Chain-Fist,Battle Brothers,Master Brother,0,1,2,0,3,0,
+Chain-Fist,Battle Brothers,Master Destroyer,0,2,2,0,3,0,
+Chain-Fist,Battle Brothers,Veteran Master Brother,0,1,2,0,3,0,
+Chest Missiles,Battle Brothers,Heavy Exo-Suit,24,1,2,0,0,0,Unstoppable
+Chest-Rifles,Battle Brothers,Heavy Exo-Suit,24,2,1,0,0,0,
+Combat Bike,Battle Brothers,Elite Pathfinder,0,0,0,0,0,0,Fast
+Combat Bike,Battle Brothers,Master Brother,0,0,0,0,0,0,Fast
+Combat Bike,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Fast
+Combat Shield,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Shielded
+Crew,Battle Brothers,Artillery Gun,0,3,0,0,0,0,
+Cyclone Missiles,Battle Brothers,Destroyers,24,1,2,0,3,0,Unstoppable
+Death Launcher,Battle Brothers,Drop Pod,18,1,0,6,0,0,
+Demolition Cannon,Battle Brothers,Battle Tank,24,1,4,6,0,0,Indirect
+Dual Combat Drills,Battle Brothers,Heavy Exo-Suit,0,4,4,0,0,0,
+Dual Energy Claws,Battle Brothers,Assault Brothers,0,4,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Destroyers,0,4,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Master Brother,0,4,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Master Destroyer,0,8,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Veteran Assault Brothers,0,4,0,0,0,0,Rending
+Dual Energy Claws,Battle Brothers,Veteran Master Brother,0,4,0,0,0,0,Rending
+Dual Heavy Fists,Battle Brothers,Heavy Exo-Suit,0,2,0,3,0,0,
+Energy Fist,Battle Brothers,Assault Brothers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Battle Brothers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Brother Bikers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Destroyers,0,3,4,0,0,0,
+Energy Fist,Battle Brothers,Elite Pathfinder,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Master Brother,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Master Destroyer,0,4,4,0,0,0,
+Energy Fist,Battle Brothers,Pathfinder Bikers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Pathfinders,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Veteran Assault Brothers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Veteran Battle Brothers,0,2,4,0,0,0,
+Energy Fist,Battle Brothers,Veteran Master Brother,0,2,4,0,0,0,
+Energy Hammer,Battle Brothers,Assault Brothers,0,1,0,3,0,0,
+Energy Hammer,Battle Brothers,Destroyers,0,1,0,3,0,0,
+Energy Hammer,Battle Brothers,Elite Pathfinder,0,1,0,3,0,0,
+Energy Hammer,Battle Brothers,Master Brother,0,1,0,3,0,0,
+Energy Hammer,Battle Brothers,Master Destroyer,0,2,0,3,0,0,
+Energy Hammer,Battle Brothers,Veteran Master Brother,0,1,0,3,0,0,
+Energy Sword,Battle Brothers,Assault Brothers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Battle Brothers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Brother Bikers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Destroyers,0,3,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Elite Pathfinder,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Master Brother,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Master Destroyer,0,4,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Pathfinder Bikers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Pathfinders,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Veteran Battle Brothers,0,2,1,0,0,0,Rending
+Energy Sword,Battle Brothers,Veteran Master Brother,0,2,1,0,0,0,Rending
+Flamer,Battle Brothers,Assault Brothers,12,1,0,3,0,0,Reliable
+Flamer,Battle Brothers,Battle Brothers,12,1,0,3,0,0,Reliable
+Flamer,Battle Brothers,Brother Bikers,12,1,0,3,0,0,Reliable
+Flamer,Battle Brothers,Pathfinders,12,1,0,3,0,0,Reliable
+Flamer,Battle Brothers,Veteran Battle Brothers,12,1,0,3,0,0,Reliable
+Flamer Pistol,Battle Brothers,Elite Pathfinder,6,1,0,3,0,0,Reliable
+Flamer Pistol,Battle Brothers,Master Brother,6,1,0,3,0,0,Reliable
+Flamer Pistol,Battle Brothers,Veteran Assault Brothers,6,1,0,3,0,0,Reliable
+Flamer Pistol,Battle Brothers,Veteran Master Brother,6,1,0,3,0,0,Reliable
+Flamer-Mod,Battle Brothers,Elite Pathfinder,12,1,0,3,0,0,"Limited, Reliable"
+Flamer-Mod,Battle Brothers,Master Brother,12,1,0,3,0,0,"Limited, Reliable"
+Flamer-Mod,Battle Brothers,Veteran Battle Brothers,12,1,0,3,0,0,"Limited, Reliable"
+Flamer-Mod,Battle Brothers,Veteran Master Brother,12,1,0,3,0,0,"Limited, Reliable"
+Fusion Pistol,Battle Brothers,Elite Pathfinder,6,1,4,0,3,0,
+Fusion Pistol,Battle Brothers,Master Brother,6,1,4,0,3,0,
+Fusion Pistol,Battle Brothers,Veteran Master Brother,6,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Assault Brothers,12,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Battle Brothers,12,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Brother Bikers,12,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Combat Walker,12,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,
+Fusion Rifle,Battle Brothers,Veteran Combat Walker,12,1,4,0,3,0,
+Fusion-Mod,Battle Brothers,Elite Pathfinder,12,1,4,0,3,0,Limited
+Fusion-Mod,Battle Brothers,Master Brother,12,1,4,0,3,0,Limited
+Fusion-Mod,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,Limited
+Fusion-Mod,Battle Brothers,Veteran Master Brother,12,1,4,0,3,0,Limited
+Gravity Cannon,Battle Brothers,Battle Brothers,24,1,2,3,0,0,Lacerate
+Gravity Cannon,Battle Brothers,Support Brothers,24,1,2,3,0,0,Lacerate
+Gravity Cannon,Battle Brothers,Veteran Battle Brothers,24,1,2,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Assault Brothers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Battle Brothers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Brother Bikers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Elite Pathfinder,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Master Brother,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Pathfinder Bikers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Pathfinders,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Veteran Assault Brothers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Veteran Battle Brothers,9,1,1,3,0,0,Lacerate
+Gravity Pistol,Battle Brothers,Veteran Master Brother,9,1,1,3,0,0,Lacerate
+Gravity Rifle,Battle Brothers,Battle Brothers,18,1,1,3,0,0,Lacerate
+Gravity Rifle,Battle Brothers,Brother Bikers,18,1,1,3,0,0,Lacerate
+Gravity Rifle,Battle Brothers,Pathfinders,18,1,1,3,0,0,Lacerate
+Gravity Rifle,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,Lacerate
+Gravity-Mod,Battle Brothers,Elite Pathfinder,18,1,1,3,0,0,"Limited, Lacerate"
+Gravity-Mod,Battle Brothers,Master Brother,18,1,1,3,0,0,"Limited, Lacerate"
+Gravity-Mod,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,"Limited, Lacerate"
+Gravity-Mod,Battle Brothers,Veteran Master Brother,18,1,1,3,0,0,"Limited, Lacerate"
+Grenade Launchers,Battle Brothers,Pathfinder Bikers,24,1,0,3,0,0,
+Heavy CCW,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,
+Heavy CCWs,Battle Brothers,Assault Brothers,0,2,1,0,0,0,
+Heavy Chainsaw Sword,Battle Brothers,Assault Brothers,0,4,1,0,0,0,
+Heavy Chainsaw Sword,Battle Brothers,Elite Pathfinder,0,4,1,0,0,0,
+Heavy Chainsaw Sword,Battle Brothers,Master Brother,0,4,1,0,0,0,
+Heavy Chainsaw Sword,Battle Brothers,Veteran Assault Brothers,0,4,1,0,0,0,
+Heavy Chainsaw Sword,Battle Brothers,Veteran Master Brother,0,4,1,0,0,0,
+Heavy Crack Cannon,Battle Brothers,Artillery Gun,30,6,1,0,0,0,"Indirect, Rending"
+Heavy Flak Cannon,Battle Brothers,Artillery Gun,30,2,3,0,3,0,Unstoppable
+Heavy Flamer,Battle Brothers,Battle Brothers,12,1,1,3,0,0,Reliable
+Heavy Flamer,Battle Brothers,Combat Walker,12,1,1,3,0,0,Reliable
+Heavy Flamer,Battle Brothers,Veteran Battle Brothers,12,1,1,3,0,0,Reliable
+Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,1,1,3,0,0,Reliable
+Heavy Flamers,Battle Brothers,Attack Speeder,12,1,1,3,0,0,Reliable
+Heavy Fusion Rifle,Battle Brothers,APC,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Attack Speeder,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Battle Brothers,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Battle Tank,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Heavy Gunship,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Heavy Tank,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Support Bike,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Support Brothers,18,1,4,0,3,0,
+Heavy Fusion Rifle,Battle Brothers,Veteran Battle Brothers,18,1,4,0,3,0,
+Heavy Gatling Cannon,Battle Brothers,Artillery Gun,24,6,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Attack Speeder,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Battle Brothers,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Heavy Gunship,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Pathfinders,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Support Bike,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Support Brothers,30,3,1,0,0,0,
+Heavy Machinegun,Battle Brothers,Veteran Battle Brothers,30,3,1,0,0,0,
+Heavy Minigun,Battle Brothers,Combat Walker,24,6,2,0,0,0,
+Heavy Minigun,Battle Brothers,Veteran Combat Walker,24,6,2,0,0,0,
+Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,
+Heavy Pistol,Battle Brothers,Support Bike,12,1,1,0,0,0,
+Heavy Pistol,Battle Brothers,Veteran Assault Brothers,12,1,1,0,0,0,
+Heavy Pistols,Battle Brothers,Assault Brothers,12,1,1,0,0,0,
+Heavy Pistols,Battle Brothers,Brother Bikers,12,1,1,0,0,0,
+Heavy Pistols,Battle Brothers,Pathfinder Bikers,12,1,1,0,0,0,
+Heavy Pistols,Battle Brothers,Pathfinders,12,1,1,0,0,0,
+Heavy Plasma Cannon,Battle Brothers,Combat Walker,30,1,4,6,0,0,
+Heavy Plasma Cannon,Battle Brothers,Veteran Combat Walker,30,1,4,6,0,0,
+Heavy Rifle,Battle Brothers,Brother Bikers,24,1,1,0,0,0,
+Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,1,1,0,0,0,
+Heavy Rifle,Battle Brothers,Pathfinders,24,1,1,0,0,0,
+Heavy Rifle,Battle Brothers,Support Bike,24,1,1,0,0,0,
+Heavy Rifle Array,Battle Brothers,Combat Walker,24,6,1,0,0,0,
+Heavy Rifle Array,Battle Brothers,Veteran Combat Walker,24,6,1,0,0,0,
+Heavy Rifles,Battle Brothers,Veteran Battle Brothers,24,1,1,0,0,0,
+Heavy Thunder Cannon,Battle Brothers,Artillery Gun,30,2,2,3,0,0,Indirect
+Hunter Missiles,Battle Brothers,APC,24,1,2,0,3,0,"Limited, Unstoppable"
+Hunter Missiles,Battle Brothers,Battle Tank,24,1,2,0,3,0,Limited
+Hunter Missiles,Battle Brothers,Heavy Tank,24,1,2,0,3,0,Limited
+Laser Cannon,Battle Brothers,Attack APC,36,1,3,0,3,0,
+Laser Cannon,Battle Brothers,Battle Brothers,36,1,3,0,3,0,
+Laser Cannon,Battle Brothers,Support Brothers,36,1,3,0,3,0,
+Laser Cannon,Battle Brothers,Veteran Battle Brothers,36,1,3,0,3,0,
+Laser Talon,Battle Brothers,Light Gunship,24,2,3,0,0,0,
+Light Heavy Rifle Array,Battle Brothers,Heavy Gunship,24,4,1,0,0,0,
+Master Heavy Pistol,Battle Brothers,Elite Pathfinder,12,2,1,0,0,0,
+Master Heavy Pistol,Battle Brothers,Master Brother,12,2,1,0,0,0,
+Master Heavy Pistol,Battle Brothers,Veteran Master Brother,12,2,1,0,0,0,
+Master Heavy Rifle,Battle Brothers,Elite Pathfinder,24,2,1,0,0,0,
+Master Heavy Rifle,Battle Brothers,Master Brother,24,2,1,0,0,0,
+Master Heavy Rifle,Battle Brothers,Veteran Master Brother,24,2,1,0,0,0,
+Master Plasma Pistol,Battle Brothers,Elite Pathfinder,12,2,4,0,0,0,
+Master Plasma Pistol,Battle Brothers,Master Brother,12,2,4,0,0,0,
+Master Plasma Pistol,Battle Brothers,Veteran Master Brother,12,2,4,0,0,0,
+Master Shotgun,Battle Brothers,Elite Pathfinder,12,3,1,0,0,0,
+Master Sniper Rifle,Battle Brothers,Elite Pathfinder,30,2,1,0,0,0,"Reliable, Takedown"
+Master Storm Rifle,Battle Brothers,Elite Pathfinder,24,4,1,0,0,0,
+Master Storm Rifle,Battle Brothers,Master Brother,24,4,1,0,0,0,
+Master Storm Rifle,Battle Brothers,Veteran Master Brother,24,4,1,0,0,0,
+Minigun,Battle Brothers,Attack Speeder,24,4,1,0,0,0,
+Minigun,Battle Brothers,Destroyers,24,4,1,0,0,0,
+Minigun,Battle Brothers,Light Gunship,24,4,1,0,0,0,
+Missile Array,Battle Brothers,Combat Walker,30,4,2,0,0,0,Unstoppable
+Missile Array,Battle Brothers,Veteran Combat Walker,30,4,2,0,0,0,Unstoppable
+Missile Launcher,Battle Brothers,Battle Brothers,30,1,2,0,3,0,Unstoppable
+Missile Launcher,Battle Brothers,Pathfinders,30,1,2,0,3,0,Unstoppable
+Missile Launcher,Battle Brothers,Support Brothers,30,1,2,0,3,0,Unstoppable
+Missile Launcher,Battle Brothers,Veteran Battle Brothers,30,1,2,0,3,0,Unstoppable
+Plasma Cannon,Battle Brothers,Battle Brothers,30,1,4,3,0,0,
+Plasma Cannon,Battle Brothers,Support Brothers,30,1,4,3,0,0,
+Plasma Cannon,Battle Brothers,Veteran Battle Brothers,30,1,4,3,0,0,
+Plasma Pistol,Battle Brothers,Assault Brothers,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Battle Brothers,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Brother Bikers,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Pathfinder Bikers,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Pathfinders,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Veteran Assault Brothers,12,1,4,0,0,0,
+Plasma Pistol,Battle Brothers,Veteran Battle Brothers,12,1,4,0,0,0,
+Plasma Rifle,Battle Brothers,Assault Brothers,24,1,4,0,0,0,
+Plasma Rifle,Battle Brothers,Battle Brothers,24,1,4,0,0,0,
+Plasma Rifle,Battle Brothers,Brother Bikers,24,1,4,0,0,0,
+Plasma Rifle,Battle Brothers,Pathfinders,24,1,4,0,0,0,
+Plasma Rifle,Battle Brothers,Veteran Battle Brothers,24,1,4,0,0,0,
+Plasma-Mod,Battle Brothers,Elite Pathfinder,24,1,4,0,0,0,Limited
+Plasma-Mod,Battle Brothers,Master Brother,24,1,4,0,0,0,Limited
+Plasma-Mod,Battle Brothers,Veteran Battle Brothers,24,1,4,0,0,0,Limited
+Plasma-Mod,Battle Brothers,Veteran Master Brother,24,1,4,0,0,0,Limited
+Quad Laser Cannon,Battle Brothers,Heavy Tank,36,4,3,0,3,0,
+Rapid Autocannon,Battle Brothers,Battle Tank,36,6,2,0,0,0,
+Rapid Storm Rifle,Battle Brothers,Drop Pod,24,6,1,0,0,0,
+Rapid Storm Rifle,Battle Brothers,Master Destroyer,24,6,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Battle Brothers,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Brother Bikers,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Pathfinder Bikers,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Pathfinders,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Veteran Assault Brothers,12,1,1,0,0,0,
+Sgt. Heavy Pistol,Battle Brothers,Veteran Battle Brothers,12,1,1,0,0,0,
+Shotgun,Battle Brothers,Pathfinders,12,2,1,0,0,0,
+Sniper Rifle,Battle Brothers,Pathfinders,30,1,1,0,0,0,"Reliable, Takedown"
+Spear Missile Launcher,Battle Brothers,Battle Tank,30,1,3,0,6,0,
+Stomp,Battle Brothers,Combat Walker,0,2,1,0,0,0,
+Stomp,Battle Brothers,Heavy Exo-Suit,0,2,1,0,0,0,
+Stomp,Battle Brothers,Veteran Combat Walker,0,2,1,0,0,0,
+Storm Cannon,Battle Brothers,Light Gunship,30,2,2,0,0,0,Unstoppable
+Storm Missiles,Battle Brothers,Heavy Gunship,36,1,3,0,3,0,
+Storm Rifle,Battle Brothers,APC,24,3,1,0,0,0,
+Storm Rifle,Battle Brothers,Battle Tank,24,3,1,0,0,0,
+Storm Rifle,Battle Brothers,Combat Walker,24,3,1,0,0,0,
+Storm Rifle,Battle Brothers,Destroyers,24,3,1,0,0,0,
+Storm Rifle,Battle Brothers,Heavy Tank,24,3,1,0,0,0,
+Storm Rifle,Battle Brothers,Veteran Combat Walker,24,3,1,0,0,0,
+Super-Heavy Fusion Rifle,Battle Brothers,Combat Walker,18,1,4,0,6,0,
+Super-Heavy Fusion Rifle,Battle Brothers,Veteran Combat Walker,18,1,4,0,6,0,
+Twin Autocannon,Battle Brothers,Combat Walker,36,6,2,0,0,0,
+Twin Autocannon,Battle Brothers,Veteran Combat Walker,36,6,2,0,0,0,
+Twin Flamer,Battle Brothers,Heavy Exo-Suit,12,2,0,3,0,0,Reliable
+Twin Fusion Rifle,Battle Brothers,Heavy Exo-Suit,12,2,4,0,3,0,
+Twin Hammer Missiles,Battle Brothers,Light Gunship,36,2,3,0,3,0,Unstoppable
+Twin Heavy Flamer,Battle Brothers,Attack APC,12,2,1,3,0,0,"Battleborn, Fear(2), Fearless"
+Twin Heavy Flamer,Battle Brothers,Combat Walker,12,2,1,3,0,0,Reliable
+Twin Heavy Flamer,Battle Brothers,Destroyers,12,2,1,3,0,0,Reliable
+Twin Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,2,1,3,0,0,Reliable
+Twin Heavy Machinegun,Battle Brothers,Attack APC,30,6,1,0,0,0,
+Twin Heavy Machinegun,Battle Brothers,Battle Tank,30,6,1,0,0,0,
+Twin Heavy Machinegun,Battle Brothers,Combat Walker,30,6,1,0,0,0,
+Twin Heavy Machinegun,Battle Brothers,Heavy Exo-Suit,30,6,1,0,0,0,
+Twin Heavy Machinegun,Battle Brothers,Light Gunship,30,6,1,0,0,0,
+Twin Heavy Machinegun,Battle Brothers,Veteran Combat Walker,30,6,1,0,0,0,
+Twin Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,2,1,0,0,0,
+Twin Heavy Rifle,Battle Brothers,Support Bike,24,2,1,0,0,0,
+Twin Heavy Rifle Array,Battle Brothers,Heavy Tank,24,12,1,0,0,0,
+Twin Heavy Rifles,Battle Brothers,Brother Bikers,24,2,1,0,0,0,
+Twin Laser Cannon,Battle Brothers,Attack APC,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Battle Tank,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Combat Walker,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Heavy Exo-Suit,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Heavy Gunship,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Light Gunship,36,2,3,0,3,0,
+Twin Laser Cannon,Battle Brothers,Veteran Combat Walker,36,2,3,0,3,0,
+Twin Light Gravity Cannon,Battle Brothers,Heavy Exo-Suit,24,2,2,3,0,0,Lacerate
+Twin Minigun,Battle Brothers,Attack APC,24,8,1,0,0,0,
+Twin Minigun,Battle Brothers,Heavy Gunship,24,8,1,0,0,0,
+Twin Minigun,Battle Brothers,Heavy Tank,24,8,1,0,0,0,
+Twin Plasma Cannon,Battle Brothers,Heavy Gunship,30,2,4,3,0,0,
+Twin Storm Cannon,Battle Brothers,Battle Tank,30,4,2,0,0,0,Unstoppable
+Twin Typhoon Missiles,Battle Brothers,Attack Speeder,24,4,2,0,0,0,Unstoppable
+Twin Typhoon Missiles,Battle Brothers,Light Gunship,24,4,2,0,0,0,Unstoppable
+Typhoon Missiles,Battle Brothers,Heavy Gunship,24,2,2,0,0,0,Unstoppable
+Walker Fists,Battle Brothers,Combat Walker,0,4,4,0,0,0,
+Walker Fists,Battle Brothers,Veteran Combat Walker,0,4,4,0,0,0,
+Wind Missile Launcher,Battle Brothers,Battle Tank,36,2,1,3,0,0,Indirect

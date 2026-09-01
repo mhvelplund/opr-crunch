@@ -150,6 +150,22 @@ class TestPiercingAssault:
         assert resolve(melee(att_rules={"Piercing Assault"})).wounds == BASE_WOUNDS
 
 
+class TestLacerate:
+    """Lacerate: the target must re-roll unmodified Defense results of 6.
+
+    Same maths as Bane, but Lacerate does not bypass Regeneration.
+    """
+
+    def test_natural_six_is_rerolled_rather_than_blocking(self):
+        block = Fraction(3, 6) + Fraction(1, 6) * Fraction(4, 6)
+        assert resolve(shooting(att_rules={"Lacerate"})).wounds == Fraction(5) * (1 - block)
+
+    def test_does_not_bypass_regeneration(self):
+        with_regen = resolve(shooting(def_rules={"Regeneration"}, att_rules={"Lacerate"}))
+        without = resolve(shooting(att_rules={"Lacerate"}))
+        assert with_regen.wounds == without.wounds * Fraction(2, 3)
+
+
 class TestRuleNamesThatContainOtherRules:
     """The sheet detects rules by substring, so the model must agree.
 

@@ -31,6 +31,7 @@ MODELLED_RULES = {
     "Furious": "Attacker",
     "Havocbound": "Attacker",
     "Impact": "Attacker",
+    "Lacerate": "Attacker",
     "Piercing Assault": "Attacker",
     "Protected": "Defender",
     "Ravage": "Attacker",
@@ -116,8 +117,8 @@ def p_success(target: int) -> Fraction:
 def p_block_no6(target: int) -> Fraction:
     """Chance a d6 meets ``target`` on faces 2-5 only, ignoring the natural 6.
 
-    Bane re-rolls unmodified Defense results of 6, so the 6 face stops being an
-    automatic block and is accounted for separately by the caller.
+    Bane and Lacerate re-roll unmodified Defense results of 6, so the 6 face
+    stops being an automatic block and is accounted for separately by the caller.
     """
     faces = min(4, max(0, 6 - max(2, target)))
     return Fraction(faces, 6)
@@ -216,7 +217,7 @@ def _resolve_branch(s: Scenario, extra_ap: int, extra_hit: int) -> Result:
 
     def wounds_from(hits: Fraction, ap: int) -> Fraction:
         target = s.defense + ap - cover - shielded
-        if has(att, "Bane"):
+        if has(att, "Bane") or has(att, "Lacerate"):
             block = p_block_no6(target) + SIX * p_success(target)
         else:
             block = p_success(target)

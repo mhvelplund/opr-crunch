@@ -93,3 +93,62 @@ Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(2)
 Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(2)
 Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(2)
 Wings,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Flying
+Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(2)
+Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(2)
+Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(2)
+Artillerist,Battle Brothers,Master Brother,0,0,0,0,Re-Position Artillery
+Artillerist,Battle Brothers,Veteran Master Brother,0,0,0,0,Re-Position Artillery
+Camo Cloak,Battle Brothers,Elite Pathfinder,0,0,0,0,Stealth
+Camo Cloaks,Battle Brothers,Pathfinders,0,0,0,0,Stealth
+Captain,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane when Shooting Aura
+Captain,Battle Brothers,Master Brother,0,0,0,0,Bane when Shooting Aura
+Captain,Battle Brothers,Master Destroyer,0,0,0,0,Bane when Shooting Aura
+Captain,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane when Shooting Aura
+Combat Shield,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Shielded
+Commander,Battle Brothers,Elite Pathfinder,0,0,0,0,Re-Deployment
+Commander,Battle Brothers,Master Brother,0,0,0,0,Re-Deployment
+Commander,Battle Brothers,Veteran Master Brother,0,0,0,0,Re-Deployment
+Detachment Banner,Battle Brothers,Assault Brothers,0,0,0,0,Courage Aura
+Detachment Banner,Battle Brothers,Battle Brothers,0,0,0,0,Courage Aura
+Detachment Banner,Battle Brothers,Destroyers,0,0,0,0,Courage Aura
+Detachment Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Courage Aura
+Detachment Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Courage Aura
+Dozer Blade,Battle Brothers,APC,0,0,0,0,Strider
+Dozer Blade,Battle Brothers,Attack APC,0,0,0,0,Strider
+Dozer Blade,Battle Brothers,Battle Tank,0,0,0,0,Strider
+Dozer Blade,Battle Brothers,Heavy Tank,0,0,0,0,Strider
+Engineer,Battle Brothers,Master Brother,0,0,0,0,Mend
+Engineer,Battle Brothers,Veteran Master Brother,0,0,0,0,Mend
+Forward Sentries,Battle Brothers,Pathfinders,0,0,0,0,Scout
+Forward Sentry,Battle Brothers,Elite Pathfinder,0,0,0,0,Scout
+Guardian,Battle Brothers,Elite Pathfinder,0,0,0,0,Melee Shrouding Aura
+Guardian,Battle Brothers,Master Destroyer,0,0,0,0,Melee Shrouding Aura
+Jetpack,Battle Brothers,Master Brother,0,0,0,0,"Ambush, Flying"
+Jetpack,Battle Brothers,Veteran Master Brother,0,0,0,0,"Ambush, Flying"
+Jetpacks,Battle Brothers,Assault Brothers,0,0,0,0,"Ambush, Flying"
+Jetpacks,Battle Brothers,Veteran Assault Brothers,0,0,0,0,"Ambush, Flying"
+Lieutenant,Battle Brothers,Master Brother,0,0,0,0,Rapid Rush Aura
+Lieutenant,Battle Brothers,Master Destroyer,0,0,0,0,Rapid Rush Aura
+Lieutenant,Battle Brothers,Veteran Master Brother,0,0,0,0,Rapid Rush Aura
+Master Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(3)
+Master Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(3)
+Master Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(3)
+Medical Training,Battle Brothers,Assault Brothers,0,0,0,0,Regeneration Aura
+Medical Training,Battle Brothers,Battle Brothers,0,0,0,0,Regeneration Aura
+Medical Training,Battle Brothers,Destroyers,0,0,0,0,Regeneration Aura
+Medical Training,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Regeneration Aura
+Medical Training,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Regeneration Aura
+Off-Road Tires,Battle Brothers,Pathfinder Bikers,0,0,0,0,"Scout, Strider"
+Open Sides,Battle Brothers,Attack Speeder,0,0,0,0,Transport(6)
+Preacher,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane in Melee Aura
+Preacher,Battle Brothers,Master Brother,0,0,0,0,Bane in Melee Aura
+Preacher,Battle Brothers,Master Destroyer,0,0,0,0,Bane in Melee Aura
+Preacher,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane in Melee Aura
+Targeting Array,Battle Brothers,Attack Speeder,0,0,0,0,Unstoppable Mark
+Targeting Array,Battle Brothers,Drop Pod,0,0,0,0,Unstoppable Mark
+Targeting Array,Battle Brothers,Support Bike,0,0,0,0,Unstoppable Mark
+The Founder's Banner,Battle Brothers,Assault Brothers,0,0,0,0,Versatile Reach Aura
+The Founder's Banner,Battle Brothers,Battle Brothers,0,0,0,0,Versatile Reach Aura
+The Founder's Banner,Battle Brothers,Destroyers,0,0,0,0,Versatile Reach Aura
+The Founder's Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Versatile Reach Aura
+The Founder's Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Versatile Reach Aura

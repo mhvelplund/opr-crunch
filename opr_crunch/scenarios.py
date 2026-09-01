@@ -25,6 +25,8 @@ TEST_SCENARIOS = [
     ("Relentless inside 9 inches", _s(att_rules={"Relentless"}, long_range=False)),
     ("Rending gives natural 6s AP(+4)", _s(att_rules={"Rending"})),
     ("Bane re-rolls the defender's 6s", _s(att_rules={"Bane"})),
+    ("Lacerate re-rolls the defender's 6s", _s(att_rules={"Lacerate"})),
+    ("Lacerate does not bypass Regeneration", _s(att_rules={"Lacerate"}, def_rules={"Regeneration"})),
     ("Blast(3) multiplies hits", _s(blast=3)),
     ("Blast(7) capped at 5 defenders", _s(blast=7)),
     ("Deadly(2) doubles wounds", _s(deadly=2)),

@@ -47,8 +47,8 @@ SIM_ROWS = 20
 #: silently, so tests/test_build.py guards it.
 CAPACITY = {
     "Units": 120,
-    "Weapons": 400,
-    "Upgrades": 120,
+    "Weapons": 650,
+    "Upgrades": 170,
     "Factions": 40,
 }
 SOURCE_FIRST_ROW = 2

@@ -49,13 +49,13 @@ def p_success(target: str) -> str:
 
 
 def p_block_no6(target: str) -> str:
-    """As p_success but without the natural 6, which Bane re-rolls away."""
+    """As p_success but without the natural 6, which Bane/Lacerate re-roll away."""
     return f"MIN(4,MAX(0,6-MAX(2,{target})))/6"
 
 
 def _block(refs: Refs, target: str) -> str:
     return (
-        f"IF({has(refs.att_rules, 'Bane')},"
+        f"IF(OR({has(refs.att_rules, 'Bane')},{has(refs.att_rules, 'Lacerate')}),"
         f"{p_block_no6(target)}+(1/6)*{p_success(target)},"
         f"{p_success(target)})"
     )
