@@ -98,6 +98,15 @@ def outputs(wb, row):
     )
 
 
+def rules_shown(wb, row):
+    ev = WorkbookEvaluator(wb, "Simulation")
+    sim = wb["Simulation"]
+    return (
+        ev.cell("Simulation", sim.cell(row=row, column=col_index("Att. Special Rules")).coordinate),
+        ev.cell("Simulation", sim.cell(row=row, column=col_index("Def. Special Rules")).coordinate),
+    )
+
+
 def picks(**overrides):
     base = {
         "Att. faction": "Robot Legions", "Attacker": "Eternals", "#": 10,
@@ -127,6 +136,27 @@ class TestWorkedExample:
         """Without Shred the same profile would stop at 10/3 wounds."""
         assert weapons[("Reaper Rifles", "Robot Legions", "Eternals")]["Special Rules"] == "Shred"
         assert outputs(wb, 2)[1] > 10 / 3
+
+    def test_the_att_special_rules_column_shows_the_unit_and_weapons_rules(self, wb):
+        att, defn = rules_shown(wb, 2)
+        assert att == "Self-Repair, Slow, Shred"
+        assert defn == ""
+
+
+class TestSpecialRulesColumns:
+    """The Att./Def. Special Rules columns join the unit's, weapon's and
+
+    upgrade's rules into one comma-separated list, skipping whichever of the
+    three has none.
+    """
+
+    def test_an_upgrades_granted_rule_is_included(self, wb):
+        set_row(wb, 17, **picks(
+            Attacker="Tri-Scorpion Lord", **{"Att. upgrades": "Chronomancer"},
+            Weapon="Annihilation Gun", **{"#": 1},
+        ))
+        att, _ = rules_shown(wb, 17)
+        assert att == "Hero, Relentless, Self-Repair, Strider, Ambush Aura"
 
 
 class TestLookupsMatchTheModel:

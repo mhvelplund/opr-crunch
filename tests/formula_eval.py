@@ -5,8 +5,9 @@ Google Sheets, no LibreOffice), so this interprets the formula strings directly
 and lets the suite prove the spreadsheet translation matches the reference model.
 
 Supports exactly what opr_crunch.formulas and opr_crunch.build produce: IF, AND,
-OR, NOT, MIN, MAX, ABS, ISNUMBER, SEARCH, INDEX, MATCH, IFERROR, comparisons,
-arithmetic, & concatenation, and cross-sheet cell and whole-column references.
+OR, NOT, MIN, MAX, ABS, ISNUMBER, SEARCH, INDEX, MATCH, IFERROR, TEXTJOIN,
+comparisons, arithmetic, & concatenation, and cross-sheet cell and whole-column
+references.
 """
 
 import re
@@ -20,7 +21,7 @@ COMPARISON = re.compile(r"(?<![<>=!])=(?!=)")
 
 FUNCTIONS = [
     "ISNUMBER", "SEARCH", "IFERROR", "INDEX", "MATCH",
-    "IF", "AND", "OR", "NOT", "MIN", "MAX", "ABS",
+    "IF", "AND", "OR", "NOT", "MIN", "MAX", "ABS", "TEXTJOIN",
 ]
 
 #: Rows of a whole-column reference the evaluator materialises. Must reach
@@ -126,6 +127,11 @@ def _isnumber(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool)
 
 
+def _textjoin(delimiter, ignore_empty, *values):
+    parts = [v for v in values if not (ignore_empty and (v == "" or v is BLANK))]
+    return delimiter.join(str(p) for p in parts)
+
+
 ENV = {
     "_ERR": ERR,
     "_BLANK": BLANK,
@@ -141,6 +147,9 @@ ENV = {
     "_MIN": min,
     "_MAX": max,
     "_ABS": abs,
+    "_TEXTJOIN": _textjoin,
+    "TRUE": True,
+    "FALSE": False,
 }
 
 

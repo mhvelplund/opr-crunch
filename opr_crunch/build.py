@@ -267,11 +267,16 @@ def calc_inputs_for(row: int) -> List[str]:
         f"={lookup('Units', 'F', defender, def_fac)}",
         # The attacking unit's own profile grants rules too (Relentless,
         # Piercing Assault, ...), so it joins the weapon's and the upgrade's.
-        f'={lookup("Units", "H", attacker, att_fac, blank)}&", "'
-        f'&{lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker)}&", "'
-        f'&{lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker)}',
-        f'={lookup("Units", "H", defender, def_fac, blank)}&", "'
-        f'&{lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender)}',
+        # TEXTJOIN drops blank parts, so this also reads cleanly as the
+        # Simulation tab's "Att./Def. Special Rules" columns, not just an
+        # internal has()-searched blob.
+        f'=TEXTJOIN(", ",TRUE,'
+        f'{lookup("Units", "H", attacker, att_fac, blank)},'
+        f'{lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker)},'
+        f'{lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker)})',
+        f'=TEXTJOIN(", ",TRUE,'
+        f'{lookup("Units", "H", defender, def_fac, blank)},'
+        f'{lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender)})',
         # Rules granting "either AP(+1) or +1 to hit". Unpredictable Fighter
         # contains Unpredictable, so the longer name is excluded explicitly.
         f"=IF(OR(AND({fighter},{melee}),"
@@ -365,6 +370,8 @@ def build_calc(wb: Workbook) -> Dict[str, str]:
 
     final = len(INPUT_HEADERS) + 2 * len(CALC_STEPS) + 1
     return {
+        "att_rules": get_column_letter(INPUT_HEADERS.index("att_rules") + 1),
+        "def_rules": get_column_letter(INPUT_HEADERS.index("def_rules") + 1),
         "hits": get_column_letter(final),
         "wounds": get_column_letter(final + 1),
     }
@@ -379,6 +386,8 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
     write_headers(ws, layout.SIMULATION_COLUMNS, width=15)
     ws.column_dimensions[get_column_letter(layout.col_index("Attacker"))].width = 20
     ws.column_dimensions[get_column_letter(layout.col_index("Defender"))].width = 20
+    ws.column_dimensions[get_column_letter(layout.col_index("Att. Special Rules"))].width = 28
+    ws.column_dimensions[get_column_letter(layout.col_index("Def. Special Rules"))].width = 28
 
     for offset, seeded in enumerate(csvdata.simulation()):
         row = layout.SIM_FIRST_ROW + offset
@@ -388,15 +397,25 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
             if value != "":
                 ws.cell(row=row, column=column, value=value)
 
-    hits_col = layout.col_index("Hits")
-    wounds_col = layout.col_index("Wounds")
     attacker = get_column_letter(layout.col_index("Attacker"))
+    numeric_outputs = (
+        (layout.col_index("Hits"), calc_cols["hits"]),
+        (layout.col_index("Wounds"), calc_cols["wounds"]),
+    )
+    text_outputs = (
+        (layout.col_index("Att. Special Rules"), calc_cols["att_rules"]),
+        (layout.col_index("Def. Special Rules"), calc_cols["def_rules"]),
+    )
 
     for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
         guard = f'IF(${attacker}{row}="","",'
-        for column, letter in ((hits_col, calc_cols["hits"]), (wounds_col, calc_cols["wounds"])):
+        for column, letter in numeric_outputs:
             cell = ws.cell(row=row, column=column, value=f"={guard}Calc!${letter}{row})")
             cell.number_format = "0.00"
+            cell.fill = OUTPUT_FILL
+        for column, letter in text_outputs:
+            cell = ws.cell(row=row, column=column, value=f"={guard}Calc!${letter}{row})")
+            cell.alignment = Alignment(wrap_text=True)
             cell.fill = OUTPUT_FILL
 
     # faction dropdowns

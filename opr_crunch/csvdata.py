@@ -26,7 +26,7 @@ NUMERIC = {
 }
 
 #: Columns the build fills with formulas, so the CSV leaves them blank.
-GENERATED = {"Hits", "Wounds"}
+GENERATED = {"Att. Special Rules", "Def. Special Rules", "Hits", "Wounds"}
 
 
 def _coerce(value: str, header: str, numeric: Set[str]):

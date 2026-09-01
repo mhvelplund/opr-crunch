@@ -23,7 +23,8 @@ That writes `dist/opr_crunch.xlsx`.
    `ALL PASS`. That verifies the formulas survived the conversion.
 
 Then use the **Simulation** tab: pick a faction and a unit, and the weapon and upgrade dropdowns filter to what that
-unit can actually take. `Hits` and `Wounds` update as you go.
+unit can actually take. `Att./Def. Special Rules` show the combined rules driving the calculation — from the unit's
+own profile, its weapon and its upgrade — and `Hits` and `Wounds` update as you go.
 
 ## Layout
 

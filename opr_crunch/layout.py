@@ -15,6 +15,8 @@ SIMULATION_COLUMNS = [
     "Def. #",
     "In cover",
     "Variable effect",
+    "Att. Special Rules",
+    "Def. Special Rules",
     "Hits",
     "Wounds",
 ]
