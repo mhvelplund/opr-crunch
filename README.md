@@ -13,7 +13,7 @@ python -m venv .venv
 ./.venv/Scripts/python.exe -m opr_crunch.build
 ```
 
-That writes `dist/opr_crunch.xlsx`.
+That writes `dist/opr_crunch.xlsx`. Once the venv is set up, `mise run build` does the same thing.
 
 ## Import
 
