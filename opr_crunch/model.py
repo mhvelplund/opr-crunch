@@ -268,3 +268,41 @@ def _ignore_multiplier(att: set, dfn: set) -> Fraction:
     if not thresholds:
         return Fraction(1)
     return 1 - p_success(min(thresholds))
+
+
+# --------------------------------------------------------------------------
+# points cost
+# --------------------------------------------------------------------------
+
+def valid_model_counts(size: int) -> list:
+    """The model counts a unit of ``size`` may be fielded at.
+
+    A unit is taken as the book lists it, or as the doubled version of it. A
+    single-model unit has no doubled form. Size 0 means the unit lookup found
+    nothing, which offers no counts rather than defaulting to one model.
+    """
+    if size < 1:
+        return []
+    return [size] if size == 1 else [size, size * 2]
+
+
+def unit_cost(base: int, weapon: int, upgrade: int, size: int, models: int) -> Fraction:
+    """Points for ``models`` models, from the book's price for ``size`` of them.
+
+    A book prices the unit with its starting weapons already included, so a
+    starting weapon costs nothing here and only a swap or an upgrade adds to
+    the bill. Both are priced for one unit, so the doubled unit pays twice:
+    5 Warriors with Gauss Rifles cost 110, and 10 of them cost 220.
+    """
+    if size < 1:
+        return Fraction(0)
+    return Fraction((base + weapon + upgrade) * models, size)
+
+
+def cost_per_wound(cost: Fraction, wounds: Fraction):
+    """Points spent per projected wound, or None when none are projected.
+
+    None is the "cannot hurt it at all" case, which the sheet shows as an
+    infinity marker rather than a division error.
+    """
+    return None if wounds == 0 else cost / wounds

@@ -8,6 +8,8 @@ Expectations are derived from the CSVs rather than hardcoded, so importing a
 new army book cannot silently invalidate them.
 """
 
+from fractions import Fraction
+
 import pytest
 
 from opr_crunch import csvdata
@@ -18,7 +20,7 @@ from opr_crunch.layout import (
     WEAPONS_COLUMNS,
     col_index,
 )
-from opr_crunch.model import Scenario, resolve
+from opr_crunch.model import Scenario, cost_per_wound, resolve, unit_cost
 
 from .formula_eval import WorkbookEvaluator
 
@@ -282,3 +284,66 @@ class TestNamesSharedAcrossFactions:
             "Weapon": self.SHARED, "#": 1, STATE_COL: "None",
         }))
         assert outputs(wb, 16)[0] == pytest.approx(8 * 4 / 6)
+
+
+def cost_shown(wb, row):
+    ev = WorkbookEvaluator(wb, "Simulation")
+    sim = wb["Simulation"]
+    return ev.cell("Simulation", sim.cell(row=row, column=col_index("Cost/Wound")).coordinate)
+
+
+class TestCostPerWound:
+    """The sheet's Cost/Wound must agree with the reference model.
+
+    The cost formulas are not part of CALC_STEPS - they divide by the averaged
+    wounds rather than running per branch - so test_formula_parity does not
+    reach them. This is what covers them instead.
+    """
+
+    def test_it_matches_the_reference_model(self, wb, units, weapons):
+        chosen = picks()
+        set_row(wb, 5, **chosen)
+
+        unit = units[(chosen["Attacker"], chosen["Att. faction"])]
+        weapon = _weapon(weapons, chosen["Weapon"], chosen["Att. faction"], chosen["Attacker"])
+        cost = unit_cost(
+            base=unit["Cost"], weapon=weapon["Cost"], upgrade=0,
+            size=unit["Size"], models=chosen["#"],
+        )
+        _, wounds = outputs(wb, 5)
+        want = cost_per_wound(cost, Fraction(wounds).limit_denominator(10**6))
+
+        assert cost_shown(wb, 5) == pytest.approx(float(want))
+
+    def test_a_starting_weapon_costs_the_unit_price(self, wb, units):
+        """Reaper Rifles are what Warriors come with, so 10 of them cost 200."""
+        set_row(wb, 6, **picks(**{"#": 10}))
+        _, wounds = outputs(wb, 6)
+        assert cost_shown(wb, 6) == pytest.approx(200 / wounds)
+
+    def test_doubling_the_models_doubles_the_cost_per_wound(self, wb):
+        """Twice the models deal twice the wounds for twice the price, so the
+        ratio is unchanged - the check that the doubling is applied to cost and
+        not only to output."""
+        set_row(wb, 7, **picks(**{"#": 5}))
+        set_row(wb, 8, **picks(**{"#": 10}))
+        assert cost_shown(wb, 7) == pytest.approx(cost_shown(wb, 8))
+
+    def test_a_swap_weapon_adds_its_price(self, wb):
+        """Gauss Rifles are a swap, so 5 Warriors carrying them cost 110."""
+        set_row(wb, 9, **picks(**{"#": 5, "Weapon": "Gauss Rifle"}))
+        _, wounds = outputs(wb, 9)
+        assert cost_shown(wb, 9) == pytest.approx(110 / wounds)
+
+    def test_an_empty_row_shows_nothing(self, wb):
+        assert cost_shown(wb, 19) == ""
+
+    def test_no_projected_wounds_shows_infinity(self, wb):
+        """Bot Swarms' Swarm Attacks cannot dent Defense 2+ armour at AP 0...
+
+        ...except they can, on a natural 6. Zero wounds needs a matchup where
+        nothing gets through at all, which the model reaches only when the
+        attack pool itself is empty - a unit with no attacks.
+        """
+        set_row(wb, 20, **picks(**{"Weapon": "", "#": 5}))
+        assert cost_shown(wb, 20) == "∞"

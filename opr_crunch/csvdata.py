@@ -18,9 +18,9 @@ CSV_DIR = Path(__file__).resolve().parent.parent / "csv"
 #: Columns parsed as integers. Everything else is kept as text.
 NUMERIC = {
     "simulation": {"#", "Def. #"},
-    "units": {"Quality", "Defense", "Size", "Tough", "Ravage"},
-    "weapons": {"Range", "Attacks", "AP", "Blast", "Deadly", "Impact"},
-    "upgrades": {"AP", "Blast", "Deadly", "Impact"},
+    "units": {"Quality", "Defense", "Size", "Tough", "Ravage", "Cost"},
+    "weapons": {"Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Cost"},
+    "upgrades": {"AP", "Blast", "Deadly", "Impact", "Cost"},
     "special_rules": set(),
     "factions": set(),
 }
@@ -28,6 +28,7 @@ NUMERIC = {
 #: Columns the build fills with formulas, so the CSV leaves them blank.
 GENERATED = {
     "Weapon stats", "Combat", "Att. Special Rules", "Def. Special Rules", "Hits", "Wounds",
+    "Cost/Wound",
 }
 
 

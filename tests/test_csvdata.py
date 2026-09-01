@@ -90,14 +90,14 @@ class TestHeaderValidation:
         path = tmp_path / "units.csv"
         self._write(path, "Ork,Greenskins,4,4,5,3,0,")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 4, "4", "5", "3", "0", ""]
+            ["Ork", "Greenskins", 4, "4", "5", "3", "0", "", ""]
         ]
 
     def test_short_rows_are_padded(self, tmp_path):
         path = tmp_path / "units.csv"
         self._write(path, "Ork,Greenskins")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 0, "", "", "", "", ""]
+            ["Ork", "Greenskins", 0, "", "", "", "", "", ""]
         ]
 
     def test_blank_lines_are_skipped(self, tmp_path):

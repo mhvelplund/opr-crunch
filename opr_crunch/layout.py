@@ -17,15 +17,24 @@ SIMULATION_COLUMNS = [
     "Variable effect",
     "Hits",
     "Wounds",
+    "Cost/Wound",
     "Att. Special Rules",
     "Def. Special Rules",
 ]
 
-UNITS_COLUMNS = ["Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules"]
-WEAPONS_COLUMNS = [
-    "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+#: "Cost" is appended last on each data tab, and must stay there: build.py
+#: compiles lookups against fixed column letters, so inserting one anywhere
+#: else would silently repoint every lookup after it.
+UNITS_COLUMNS = [
+    "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules", "Cost",
 ]
-UPGRADES_COLUMNS = ["Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules"]
+WEAPONS_COLUMNS = [
+    "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
+    "Special Rules", "Cost",
+]
+UPGRADES_COLUMNS = [
+    "Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules", "Cost",
+]
 
 #: Tabs whose lookup key includes the owning Unit, not just Name|Faction.
 #: A weapon or upgrade option can belong to more than one unit; those are

@@ -10,7 +10,10 @@ comparisons, arithmetic, & concatenation, and cross-sheet cell and whole-column
 references.
 """
 
+import ast
 import re
+
+from opr_crunch import layout
 
 SHEET = r"(?:'([^']+)'|([A-Za-z_][A-Za-z0-9_]*))!"
 COLUMN_RANGE = re.compile(rf"(?:{SHEET})?\$([A-Z]{{1,3}}):\$([A-Z]{{1,3}})")
@@ -26,9 +29,13 @@ FUNCTIONS = [
     "IF", "AND", "OR", "NOT", "MIN", "MAX", "ABS", "TEXTJOIN",
 ]
 
-#: Rows of a whole-column reference the evaluator materialises. Must reach
-#: past the largest data tab, or lookups silently miss their target rows.
-COLUMN_DEPTH = 340
+#: Rows of a whole-column reference the evaluator materialises. Must reach as
+#: far as the sheet's own lookups do, or a row past the end is invisible here
+#: and the test passes on data the workbook would have found. Derived from
+#: layout rather than written down, because a hardcoded depth silently falls
+#: behind as army-book imports grow the data tabs - which is exactly what it
+#: did, leaving every Weapons row past 340 unverified.
+COLUMN_DEPTH = max(layout.last_row(tab) for tab in layout.CAPACITY)
 
 
 class Err:
@@ -152,6 +159,52 @@ def _iferror(value, fallback):
     return fallback if value is ERR else value
 
 
+def _div(numerator, denominator):
+    """Division as a sheet does it: by zero yields an error value, not a raise.
+
+    A sheet's IF only evaluates the branch it takes, so a guarded division
+    like IF(w=0,"...",c/w) never divides by zero. Python evaluates both
+    branches before calling, so without this the guard would still raise and
+    a correct formula would look broken.
+    """
+    try:
+        return numerator / denominator
+    except ZeroDivisionError:
+        return ERR
+
+
+class _SafeDivision(ast.NodeTransformer):
+    """Rewrites every ``a / b`` in a translated formula into ``_DIV(a, b)``."""
+
+    def visit_BinOp(self, node):
+        self.generic_visit(node)
+        if not isinstance(node.op, ast.Div):
+            return node
+        return ast.Call(
+            func=ast.Name(id="_DIV", ctx=ast.Load()),
+            args=[node.left, node.right],
+            keywords=[],
+        )
+
+
+def _compile(expression: str):
+    """One translated formula, ready for ``eval``, with division made sheet-like.
+
+    A formula with no division is handed back as source for ``eval`` to parse
+    itself. That fast path is worth keeping: a whole-column reference resolves
+    to a literal list of every row it spans, so a lookup's source text is
+    enormous, and parsing it twice - once here, once in ``eval`` - is the most
+    expensive thing the evaluator does. Those lookups never divide.
+
+    The rewrite runs on the parsed tree rather than over the text, so operand
+    boundaries are the ones Python itself sees.
+    """
+    if "/" not in expression:
+        return expression
+    tree = _SafeDivision().visit(ast.parse(expression, mode="eval"))
+    return compile(ast.fix_missing_locations(tree), "<formula>", "eval")
+
+
 def _isnumber(value):
     return isinstance(value, (int, float)) and not isinstance(value, bool)
 
@@ -170,6 +223,7 @@ ENV = {
     "_MATCH": _match,
     "_INDEX": _index,
     "_IFERROR": _iferror,
+    "_DIV": _div,
     "_IF": lambda c, a, b: a if c else b,
     "_AND": lambda *a: all(a),
     "_OR": lambda *a: any(a),
@@ -203,7 +257,7 @@ class WorkbookEvaluator:
             result = BLANK if raw is None else raw
         else:
             self._cache[key] = 0  # guard against accidental cycles
-            result = eval(self.translate(raw, sheet), dict(ENV))  # noqa: S307
+            result = eval(_compile(self.translate(raw, sheet)), dict(ENV))  # noqa: S307
 
         self._cache[key] = result
         return result

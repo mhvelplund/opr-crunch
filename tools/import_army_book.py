@@ -64,11 +64,19 @@ def write_csv(name: str, header: list[str], rows: list[list]) -> None:
     print(f"  csv/{name}: {len(rows)} rows")
 
 
-def replace_faction(name: str, faction: str, new_rows: list[list]) -> None:
-    """Swap out every row belonging to ``faction``, keeping the others."""
-    header, rows = read_csv(name)
-    kept = [r for r in rows if len(r) > 1 and r[1] != faction]
-    write_csv(name, header, kept + new_rows)
+def replace_faction(name: str, faction: str, columns: list[str], new_rows: list[list]) -> None:
+    """Swap out every row belonging to ``faction``, keeping the others.
+
+    The header is written from ``layout`` rather than copied from the file, so
+    a tab that gained a column since the last import is migrated rather than
+    left with rows wider than their own header. Kept rows are padded to match.
+    """
+    _, rows = read_csv(name)
+    kept = [
+        r + [""] * (len(columns) - len(r))
+        for r in rows if len(r) > 1 and r[1] != faction
+    ]
+    write_csv(name, columns, kept + new_rows)
 
 
 def import_book(text: str, faction: str) -> None:
@@ -79,10 +87,10 @@ def import_book(text: str, faction: str) -> None:
     units = armybook.parse_units(unit_pages)
     unit_rows = [
         [u["name"], faction, u["quality"], u["defense"], u["size"],
-         u["tough"], u["ravage"], ", ".join(u["rules"])]
+         u["tough"], u["ravage"], ", ".join(u["rules"]), u["cost"]]
         for u in sorted(units, key=lambda u: u["name"])
     ]
-    replace_faction("units.csv", faction, unit_rows)
+    replace_faction("units.csv", faction, layout.UNITS_COLUMNS, unit_rows)
 
     # --- weapons ------------------------------------------------------
     # A weapon a book gives to more than one unit is written as one row per
@@ -91,18 +99,18 @@ def import_book(text: str, faction: str) -> None:
     weapon_links = armybook.linked_weapons(pages)
     weapon_rows = [
         [name, faction, unit, w["range"], w["attacks"], w["ap"], w["blast"],
-         w["deadly"], w["impact"], ", ".join(w["rules"])]
+         w["deadly"], w["impact"], ", ".join(w["rules"]), w["cost"]]
         for unit, name, w in sorted(weapon_links, key=lambda t: (t[1], t[0]))
     ]
-    replace_faction("weapons.csv", faction, weapon_rows)
+    replace_faction("weapons.csv", faction, layout.WEAPONS_COLUMNS, weapon_rows)
 
     # --- upgrades -----------------------------------------------------
     upgrade_links = armybook.linked_upgrades(pages)
     upgrade_rows = [
-        [name, faction, unit, 0, 0, 0, 0, ", ".join(granted)]
+        [name, faction, unit, 0, 0, 0, 0, ", ".join(granted), armybook.UPGRADE_COST]
         for unit, name, granted in sorted(upgrade_links, key=lambda t: (t[1], t[0]))
     ]
-    replace_faction("upgrades.csv", faction, upgrade_rows)
+    replace_faction("upgrades.csv", faction, layout.UPGRADES_COLUMNS, upgrade_rows)
 
     # --- special rules (merged, not replaced) -----------------------------
     header, rows = read_csv("special_rules.csv")

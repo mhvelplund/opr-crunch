@@ -78,6 +78,16 @@ the actual procedure, not just running the script.
 
 ## Editing data
 
-Edit a CSV and re-run the build; add/remove *rows* freely but never reorder or rename *columns*.
-`csv/simulation.csv` seeds starting rows on the `Simulation` tab — its `Hits`/`Wounds` columns stay blank since the
-build writes formulas there.
+Edit a CSV and re-run the build; add/remove *rows* freely but never reorder or rename *columns*. A genuinely new
+column goes on the *end* of a data tab, never in the middle — `build.py` compiles lookups against fixed column
+letters, so an inserted column silently repoints every lookup after it.
+
+`csv/simulation.csv` seeds starting rows on the `Simulation` tab — its `Hits`, `Wounds` and `Cost/Wound` columns stay
+blank since the build writes formulas there. A seeded `#`/`Def. #` must be one of the counts the unit's `Size`
+allows (`Size`, or double it; a single-model unit only ever 1), or the shipped workbook opens with the row already
+flagged red — `tests/test_build.py::TestSeededModelCounts` guards that.
+
+Points costs live in the `Cost` column of `units`, `weapons` and `upgrades`. Unit costs are scraped from the book;
+weapon and upgrade prices are **placeholders** (0 for a weapon the unit starts with, since the unit's own price
+already covers it, and 10 for anything optional), because the `+Npts` column does not survive `pdftotext -layout`
+attached to the row it prices. See `docs/superpowers/specs/2026-09-01-unit-costs-and-model-counts-design.md`.

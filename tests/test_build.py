@@ -7,7 +7,9 @@ from openpyxl.utils import get_column_letter
 from opr_crunch import csvdata, layout
 from opr_crunch.build import build_workbook
 from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS, last_row
-from opr_crunch.model import MODELLED_RULES
+from opr_crunch.model import MODELLED_RULES, valid_model_counts
+
+from .formula_eval import WorkbookEvaluator
 
 
 @pytest.fixture(scope="module")
@@ -55,7 +57,10 @@ class TestSimulationTab:
         assert SIMULATION_COLUMNS[-2:] == ["Att. Special Rules", "Def. Special Rules"]
 
     def test_hits_and_wounds_precede_special_rules(self, wb):
-        assert SIMULATION_COLUMNS[-4:-2] == ["Hits", "Wounds"]
+        assert SIMULATION_COLUMNS[-5:-2] == ["Hits", "Wounds", "Cost/Wound"]
+
+    def test_cost_per_wound_follows_wounds(self, wb):
+        assert SIMULATION_COLUMNS[SIMULATION_COLUMNS.index("Wounds") + 1] == "Cost/Wound"
 
     def test_every_row_has_a_hits_formula(self, wb):
         sim = wb["Simulation"]
@@ -73,18 +78,19 @@ class TestDataTabs:
     def test_units_headers(self, wb):
         assert headers(wb["Units"]) == [
             "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage",
-            "Special Rules", "Key",
+            "Special Rules", "Cost", "Key",
         ]
 
     def test_weapons_headers(self, wb):
         assert headers(wb["Weapons"]) == [
             "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
-            "Special Rules", "Key",
+            "Special Rules", "Cost", "Key",
         ]
 
     def test_upgrades_headers(self, wb):
         assert headers(wb["Upgrades"]) == [
-            "Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules", "Key",
+            "Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+            "Cost", "Key",
         ]
 
     def test_factions_are_seeded(self, wb):
@@ -190,6 +196,36 @@ class TestSeededRowsResolve:
             )
 
 
+class TestSeededModelCounts:
+    """A seeded count must be legal for the unit it is paired with.
+
+    Re-importing a book can change a unit's size, which would leave the
+    shipped workbook opening with rows already flagged red.
+    """
+
+    @pytest.mark.parametrize(
+        "unit_column,count_column",
+        [("Attacker", "#"), ("Defender", "Def. #")],
+    )
+    def test_every_seeded_count_is_legal(self, unit_column, count_column):
+        sizes = {(row[0], row[1]): row[4] for row in csvdata.units()}
+        unit_i = SIMULATION_COLUMNS.index(unit_column)
+        count_i = SIMULATION_COLUMNS.index(count_column)
+        faction_i = SIMULATION_COLUMNS.index(
+            "Att. faction" if unit_column == "Attacker" else "Def. faction"
+        )
+
+        for number, row in enumerate(csvdata.simulation(), start=2):
+            if not row[unit_i]:
+                continue
+            size = sizes[(row[unit_i], row[faction_i])]
+            allowed = valid_model_counts(size)
+            assert row[count_i] in allowed, (
+                f"csv/simulation.csv row {number}: {count_column}={row[count_i]} "
+                f"but {row[unit_i]} is size {size}, so only {allowed} are legal"
+            )
+
+
 class TestValidation:
     def test_dropdowns_are_attached_to_the_simulation_tab(self, wb):
         assert len(wb["Simulation"].data_validations.dataValidation) > 0
@@ -245,6 +281,92 @@ class TestStaleDependentPicks:
         }
         formula = rules_by_range[f"{col}{SIM_FIRST_ROW}"][0].formula[0]
         assert formula == f'AND(${col}{SIM_FIRST_ROW}<>"",COUNTIF(Lists!$A$2:$A$121,${col}{SIM_FIRST_ROW})=0)'
+
+
+class TestModelCountDropdowns:
+    """A unit is fielded at its listed size or double it, so the count is a
+    dropdown of those values rather than a free number - and, like every other
+    dependent pick, it is flagged when the unit changes underneath it.
+    """
+
+    @pytest.mark.parametrize("header", ["#", "Def. #"])
+    def test_the_count_is_a_dropdown(self, wb, header):
+        sim = wb["Simulation"]
+        col = get_column_letter(SIMULATION_COLUMNS.index(header) + 1)
+        targets = {
+            ref
+            for dv in sim.data_validations.dataValidation
+            for ref in str(dv.sqref).split()
+        }
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert f"{col}{row}" in targets
+
+    @pytest.mark.parametrize("header", ["#", "Def. #"])
+    def test_an_illegal_count_is_flagged(self, wb, header):
+        sim = wb["Simulation"]
+        col = get_column_letter(SIMULATION_COLUMNS.index(header) + 1)
+        ranges = {str(rng.sqref) for rng in sim.conditional_formatting._cf_rules}
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert f"{col}{row}" in ranges
+
+    @pytest.mark.parametrize(
+        "unit,offered",
+        [
+            ("Warriors", [5, 10]),      # size 5, so 5 or the doubled 10
+            ("Robot Snakes", [3, 6]),   # doubling follows the unit's own size
+            ("Robot Lord", [1, ""]),    # one model, and no doubled form
+        ],
+    )
+    def test_the_dropdown_offers_the_size_and_double_it(self, unit, offered):
+        """A single-model unit's second option blanks itself out, and a blank
+        cell is omitted from the dropdown rather than offered as an option.
+        """
+        wb = build_workbook()
+        sim = wb["Simulation"]
+        for header, value in (("Att. faction", "Robot Legions"), ("Attacker", unit)):
+            sim.cell(row=SIM_FIRST_ROW, column=SIMULATION_COLUMNS.index(header) + 1, value=value)
+
+        source = next(
+            str(dv.formula1)
+            for dv in sim.data_validations.dataValidation
+            if f"D{SIM_FIRST_ROW}" in str(dv.sqref).split()
+        )
+        assert source.startswith("Lists!")
+        column = source.split("!$")[1].split("$")[0]
+        evaluate = WorkbookEvaluator(wb, "Lists")
+        assert [evaluate.cell("Lists", f"{column}{r}") for r in (2, 3)] == offered
+
+
+class TestCostPerWound:
+    """Points spent per projected wound, from the attacker's own cost."""
+
+    def test_every_row_has_a_formula(self, wb):
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index("Cost/Wound") + 1
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert str(sim.cell(row=row, column=col).value).startswith("=")
+
+    def test_it_divides_by_the_averaged_wounds(self, wb):
+        """Not a per-branch step: cost/avg(wounds) is not avg(cost/wounds)."""
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index("Cost/Wound") + 1
+        wounds_col = SIMULATION_COLUMNS.index("Wounds") + 1
+        formula = sim.cell(row=SIM_FIRST_ROW, column=col).value
+        wounds = sim.cell(row=SIM_FIRST_ROW, column=wounds_col).value
+        shared = wounds[wounds.index("Calc!"):].rstrip(")")
+        assert shared in formula
+
+    def test_no_projected_wounds_shows_infinity(self, wb):
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index("Cost/Wound") + 1
+        assert "∞" in sim.cell(row=SIM_FIRST_ROW, column=col).value
+
+    def test_an_empty_row_stays_blank(self, wb):
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index("Cost/Wound") + 1
+        attacker = get_column_letter(SIMULATION_COLUMNS.index("Attacker") + 1)
+        formula = sim.cell(row=SIM_FIRST_ROW, column=col).value
+        assert f'${attacker}{SIM_FIRST_ROW}=""' in formula
 
 
 class TestTestsTab:

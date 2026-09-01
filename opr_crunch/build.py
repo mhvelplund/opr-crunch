@@ -243,6 +243,44 @@ def build_lists(wb: Workbook) -> Dict[int, Dict[str, str]]:
     return ranges
 
 
+#: (label, unit column, faction column) for the two model-count dropdowns.
+COUNT_SPECS = [
+    ("Attacker models", "Attacker", "Att. faction"),
+    ("Defender models", "Defender", "Def. faction"),
+]
+
+#: Simulation column each model-count dropdown fills.
+COUNT_COLUMN = {"Attacker models": "#", "Defender models": "Def. #"}
+
+
+def build_count_lists(wb: Workbook, start_column: int) -> Dict[int, Dict[str, str]]:
+    """One two-cell options column per Simulation row per side.
+
+    A unit is fielded at the size its book lists, or at double it; a
+    single-model unit has no doubled form. ``lookup`` returns 0 when the unit
+    cell is blank or names something the tab no longer has, so both cells blank
+    themselves out and the dropdown comes up empty rather than offering "0".
+    """
+    ws = wb["Lists"]
+    ranges: Dict[int, Dict[str, str]] = {}
+
+    for i, row in enumerate(range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1)):
+        ranges[row] = {}
+        for k, (label, unit_col, faction_col) in enumerate(COUNT_SPECS):
+            column = start_column + i * len(COUNT_SPECS) + k
+            letter = get_column_letter(column)
+            ws.cell(row=1, column=column, value=f"{label} r{row}")
+            size = lookup("Units", "E", sim(unit_col, row), sim(faction_col, row))
+            ws.cell(row=SRC_FIRST, column=column, value=f'=IF({size}<1,"",{size})')
+            ws.cell(
+                row=SRC_FIRST + 1,
+                column=column,
+                value=f'=IF(OR({size}<1,{size}=1),"",{size}*2)',
+            )
+            ranges[row][label] = f"Lists!${letter}${SRC_FIRST}:${letter}${SRC_FIRST + 1}"
+    return ranges
+
+
 #: Per-slot (melee state, range) pairing for the merged column's option list.
 #: Combat="Melee" shows the melee-state name; Combat="Ranged" shows Yes/No
 #: for the two slots YES_NO covers and nothing for the rest. Either way only
@@ -450,6 +488,59 @@ def build_weapon_stat_calc(wb: Workbook, start_col: int) -> Dict[int, Dict[str, 
     return cols
 
 
+#: The attacking unit's cost, broken out so the sheet shows its working.
+COST_FIELDS = ["size", "unit", "weapon", "upgrade", "total"]
+
+
+def build_cost_calc(wb: Workbook, start_col: int) -> Dict[int, str]:
+    """Per-row points cost of the attacking unit; returns the total's address.
+
+    Deliberately not a CALC_STEPS entry. Those are emitted once per resolution
+    branch and then averaged, but a cost per wound has to divide by the
+    *averaged* wounds - cost/avg(wounds) is not avg(cost/wounds), so computing
+    it per branch would produce the wrong number for any either/or rule.
+
+    A book prices a unit with its starting weapons included, so those cost 0 on
+    the Weapons tab and only a swap adds to the bill. Both a swap and an upgrade
+    are priced for one unit, so the whole total scales with the models fielded:
+    5 Warriors with Gauss Rifles cost 110, and 10 of them cost 220.
+    """
+    ws = wb["Calc"]
+    for offset, name in enumerate(COST_FIELDS):
+        cell = ws.cell(row=1, column=start_col + offset, value=f"cost:{name}")
+        cell.fill, cell.font = HEADER_FILL, HEADER_FONT
+
+    totals: Dict[int, str] = {}
+    for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
+        attacker, faction = sim("Attacker", row), sim("Att. faction", row)
+        parts = [
+            lookup("Units", "E", attacker, faction),
+            lookup("Units", "I", attacker, faction),
+            lookup("Weapons", "K", sim("Weapon", row), faction, unit_ref=attacker),
+            lookup("Upgrades", "I", sim("Att. upgrades", row), faction, unit_ref=attacker),
+        ]
+        cells: Dict[str, str] = {}
+        for offset, formula in enumerate(parts):
+            column = start_col + offset
+            ws.cell(row=row, column=column, value=f"={formula}")
+            cells[COST_FIELDS[offset]] = f"${get_column_letter(column)}{row}"
+
+        total_col = start_col + len(COST_FIELDS) - 1
+        # An unknown unit looks up as size 0; guard the division rather than
+        # letting a blank row read as an error.
+        ws.cell(
+            row=row,
+            column=total_col,
+            value=(
+                f'=IF({cells["size"]}<1,0,'
+                f'({cells["unit"]}+{cells["weapon"]}+{cells["upgrade"]})'
+                f'*{sim("#", row)}/{cells["size"]})'
+            ),
+        )
+        totals[row] = f"Calc!${get_column_letter(total_col)}{row}"
+    return totals
+
+
 def build_calc(wb: Workbook) -> Dict[str, object]:
     ws = wb.create_sheet("Calc")
     write_headers(ws, calc_headers(), width=13)
@@ -461,12 +552,14 @@ def build_calc(wb: Workbook) -> Dict[str, object]:
 
     final = len(INPUT_HEADERS) + 2 * len(CALC_STEPS) + 1
     weapon_stats = build_weapon_stat_calc(wb, start_col=final + 2)
+    costs = build_cost_calc(wb, start_col=final + 2 + len(WEAPON_STAT_FIELDS) + 1)
     return {
         "att_rules": get_column_letter(INPUT_HEADERS.index("att_rules") + 1),
         "def_rules": get_column_letter(INPUT_HEADERS.index("def_rules") + 1),
         "hits": get_column_letter(final),
         "wounds": get_column_letter(final + 1),
         "weapon_stats": weapon_stats,
+        "costs": costs,
     }
 
 
@@ -477,6 +570,42 @@ def build_calc(wb: Workbook) -> Dict[str, object]:
 def combat_formula(row: int, w: Dict[str, str]) -> str:
     """Ranged/Melee, derived from whether the chosen weapon has a Range."""
     return f'=IF({sim("Weapon", row)}="","",IF({w["range"]}>0,"Ranged","Melee"))'
+
+
+def _filtered_dropdown(ws: Worksheet, letter: str, row: int, source: str) -> None:
+    """Point one cell's dropdown at ``source``, and flag it when it goes stale.
+
+    Changing an ancestor - a faction, or the unit - can leave the pick beneath
+    it no longer valid. Formulas can't clear a sibling cell (that needs Apps
+    Script, which the design rules out), so the cell is flagged red against the
+    very list its own dropdown offers.
+    """
+    cell_ref = f"{letter}{row}"
+    dv = list_validation(source)
+    ws.add_data_validation(dv)
+    dv.add(cell_ref)
+
+    ws.conditional_formatting.add(
+        cell_ref,
+        FormulaRule(
+            formula=[f'AND(${letter}{row}<>"",COUNTIF({source},${letter}{row})=0)'],
+            fill=STALE_FILL,
+            font=STALE_FONT,
+        ),
+    )
+
+
+def cost_per_wound_formula(row: int, cost: str, wounds: str) -> str:
+    """Points spent per projected wound - lower is a better trade.
+
+    Blank on an empty row, as Hits and Wounds are. A matchup that projects no
+    wounds at all shows an infinity marker instead of a division error, so
+    "cannot hurt it" reads differently from "not filled in".
+    """
+    return (
+        f'=IF({sim("Attacker", row)}="","",'
+        f'IF({wounds}=0,"∞",{cost}/{wounds}))'
+    )
 
 
 def weapon_stats_formula(row: int, w: Dict[str, str]) -> str:
@@ -496,7 +625,7 @@ def weapon_stats_formula(row: int, w: Dict[str, str]) -> str:
     return f'=IF({sim("Weapon", row)}="","",{textjoin(", ", True, *parts)})'
 
 
-def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
+def build_simulation(wb: Workbook, ranges, state_ranges, count_ranges, calc_cols) -> None:
     ws = wb["Simulation"]
     write_headers(ws, layout.SIMULATION_COLUMNS, width=15)
     ws.column_dimensions[get_column_letter(layout.col_index("Attacker"))].width = 20
@@ -534,6 +663,16 @@ def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
             cell.alignment = Alignment(wrap_text=True)
             cell.fill = OUTPUT_FILL
 
+        cost_cell = ws.cell(
+            row=row,
+            column=layout.col_index("Cost/Wound"),
+            value=cost_per_wound_formula(
+                row, calc_cols["costs"][row], f"Calc!${calc_cols['wounds']}{row}"
+            ),
+        )
+        cost_cell.number_format = "0.00"
+        cost_cell.fill = OUTPUT_FILL
+
         w = calc_cols["weapon_stats"][row]
         combat_cell = ws.cell(row=row, column=layout.col_index("Combat"), value=combat_formula(row, w))
         combat_cell.fill = OUTPUT_FILL
@@ -562,22 +701,16 @@ def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
     }
     for row, per_label in ranges.items():
         for label, source in per_label.items():
-            dv = list_validation(source)
-            ws.add_data_validation(dv)
             letter = get_column_letter(layout.col_index(column_for_label[label]))
-            cell_ref = f"{letter}{row}"
-            dv.add(cell_ref)
-            # Changing an ancestor (faction, or unit) can leave this cell's
-            # existing pick no longer valid for that ancestor - formulas can't
-            # clear the stale value for the user, so flag it instead.
-            ws.conditional_formatting.add(
-                cell_ref,
-                FormulaRule(
-                    formula=[f'AND(${letter}{row}<>"",COUNTIF({source},${letter}{row})=0)'],
-                    fill=STALE_FILL,
-                    font=STALE_FONT,
-                ),
-            )
+            _filtered_dropdown(ws, letter, row, source)
+
+    # per-row model-count dropdowns: a unit is fielded at its listed size or at
+    # double it, and changing the unit can strand a count the same way it
+    # strands a weapon, so they get the same treatment.
+    for row, per_label in count_ranges.items():
+        for label, source in per_label.items():
+            letter = get_column_letter(layout.col_index(COUNT_COLUMN[label]))
+            _filtered_dropdown(ws, letter, row, source)
 
     # per-row Melee state / Range >9" dropdown, filtered by the row's derived Combat
     state_letter = get_column_letter(layout.col_index(STATE_COL))
@@ -674,9 +807,12 @@ def build_workbook() -> Workbook:
         build_data_tab(wb, title, columns, loader(), **options)
     ranges = build_lists(wb)
     state_ranges = build_state_lists(wb, start_column=layout.SIM_ROWS * len(LIST_SPECS) + 1)
+    count_ranges = build_count_lists(
+        wb, start_column=layout.SIM_ROWS * (len(LIST_SPECS) + 1) + 1
+    )
     calc_cols = build_calc(wb)
     build_tests(wb)
-    build_simulation(wb, ranges, state_ranges, calc_cols)
+    build_simulation(wb, ranges, state_ranges, count_ranges, calc_cols)
 
     for name in ("Lists", "Calc", "Tests"):
         wb[name].sheet_state = "hidden"

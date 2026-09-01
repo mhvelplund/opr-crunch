@@ -24,6 +24,17 @@ BOOK_HEADER = re.compile(r"^\s*[A-Za-z]{2,4}\s*-\s*(.+?)\s+V[\d.]+\s*$", re.M)
 #: Rules that get their own numeric column rather than a name in the text.
 PARAMETERISED = {"AP", "Blast", "Deadly", "Impact", "Ravage", "Tough"}
 
+#: Placeholder prices. A unit's own cost is read from its card, but the real
+#: price of a swap or an upgrade lives in the card's ``+Npts`` column, which
+#: ``pdftotext -layout`` does not keep aligned with the rows it prices - on
+#: some cards every price lands above the weapon it belongs to. Matching them
+#: by position would mis-assign prices silently, so they are seeded flat until
+#: the importer can read word coordinates. A weapon the unit starts with is
+#: already covered by the unit's own cost and so is free either way.
+STARTING_WEAPON_COST = 0
+SWAP_WEAPON_COST = 10
+UPGRADE_COST = 10
+
 #: Column bands. Unit cards are laid out two-up, rules three-up.
 CARD_GUTTER = 60
 RULE_COLUMNS = [(0, 57), (57, 115), (115, 999)]
@@ -179,12 +190,15 @@ def parse_units(pages: List[str]) -> List[dict]:
         lines = page.split("\n")
         cards, stats = [], []
         for i, line in enumerate(lines):
-            cards += [(i, m.start(), m.group(1), int(m.group(2))) for m in CARD.finditer(line)]
+            cards += [
+                (i, m.start(), m.group(1), int(m.group(2)), int(m.group(3)))
+                for m in CARD.finditer(line)
+            ]
             for m in STATS.finditer(line):
                 if d := DEFENSE.search(line[m.end():]):
                     stats.append((i, m.start(), int(m.group(1)), int(d.group(1))))
 
-        for line_no, column, name, size in cards:
+        for line_no, column, name, size, cost in cards:
             match = next(
                 (s for s in stats if s[0] > line_no and _band(s[1]) == _band(column)), None
             )
@@ -194,7 +208,7 @@ def parse_units(pages: List[str]) -> List[dict]:
             raw = _rules_near(lines, stat_line + 1, stat_col)
 
             unit = dict(
-                name=name, size=size, quality=quality, defense=defense,
+                name=name, size=size, cost=cost, quality=quality, defense=defense,
                 tough=0, ravage=0, rules=[],
             )
             for token in raw:
@@ -328,7 +342,7 @@ def linked_weapons(pages: List[str]) -> List[Tuple[str, str, dict]]:
     """
     spans, leftover = _partition(pages[3:])
     rows = [
-        (unit, name, profile)
+        (unit, name, dict(profile, cost=SWAP_WEAPON_COST))
         for unit, text in spans for name, profile in find_weapons(text).items()
     ]
 
@@ -337,23 +351,29 @@ def linked_weapons(pages: List[str]) -> List[Tuple[str, str, dict]]:
         for name in _default_weapon_names(text):
             profile = _pick_variant(name, roster_pool, text)
             if profile is not None:
-                rows.append((unit, name, profile))
+                # A pooled profile is shared between every unit that starts
+                # with the weapon, so price a copy rather than the pool's own.
+                rows.append((unit, name, dict(profile, cost=STARTING_WEAPON_COST)))
 
-    rows += [("", name, profile) for name, profile in find_weapons(leftover).items()]
+    rows += [
+        ("", name, dict(profile, cost=SWAP_WEAPON_COST))
+        for name, profile in find_weapons(leftover).items()
+    ]
 
     # The roster's base-weapon line and a card's own options can both name the
     # same weapon with the same profile for the same unit; only the source
-    # differs, so keep one row rather than a redundant duplicate key.
-    seen = set()
-    deduped = []
+    # differs, so keep one row rather than a redundant duplicate key. Price is
+    # left out of the key and the cheaper row wins, because a weapon found both
+    # ways is one the unit starts with - already paid for in the unit's cost.
+    best: Dict[tuple, Tuple[str, str, dict]] = {}
     for unit, name, profile in rows:
         key = (unit, name, tuple(sorted(
-            (k, tuple(v) if isinstance(v, list) else v) for k, v in profile.items()
+            (k, tuple(v) if isinstance(v, list) else v)
+            for k, v in profile.items() if k != "cost"
         )))
-        if key not in seen:
-            seen.add(key)
-            deduped.append((unit, name, profile))
-    return deduped
+        if key not in best or profile["cost"] < best[key][2]["cost"]:
+            best[key] = (unit, name, profile)
+    return list(best.values())
 
 
 def linked_upgrades(pages: List[str]) -> List[Tuple[str, str, List[str]]]:

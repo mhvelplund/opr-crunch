@@ -131,6 +131,10 @@ class TestParseUnits:
     def test_size_comes_from_the_bracket(self, units):
         assert units["Tri-Scorpion Lord"]["size"] == 1
 
+    def test_cost_comes_from_the_card(self, units):
+        assert units["Tri-Scorpion Lord"]["cost"] == 205
+        assert units["Robot Lord"]["cost"] == 45
+
     def test_rules_do_not_bleed_across_the_column_gutter(self, units):
         assert "Shielded" in units["Robot Lord"]["rules"]
         assert "Shielded" not in units["Tri-Scorpion Lord"]["rules"]
@@ -187,6 +191,48 @@ class TestLinkedWeaponsAndUpgrades:
         rows = [(unit, name) for unit, name, _ in upgrades]
         assert ("Warriors", "Sergeant") in rows
         assert not any(unit == "Eternals" and name == "Sergeant" for unit, name in rows)
+
+
+class TestWeaponCosts:
+    """A unit's listed price already includes its starting weapons.
+
+    Only a swap costs extra, so the two must be priced differently even though
+    both end up as rows on the Weapons tab.
+    """
+
+    ROSTER = 'Reaper Rifles (18", A1, AP(1), Shred)'
+    CARD = "\n".join([
+        "GF - ROBOT LEGIONS V3.5.3",
+        "",
+        "Warriors [5] - 100pts",
+        "Quality 4+ Defense 4+",
+        "Weapon                              RNG     ATK           AP SPE",
+        "5x Reaper Rifles",
+        "Replace all Reaper Rifles",
+        'Gauss Rifle (24", A1, Destructive)                                  +10pts',
+    ])
+
+    def costs_for(self, card):
+        rows = armybook.linked_weapons([self.ROSTER, "", "", card])
+        return {(unit, name): w["cost"] for unit, name, w in rows}
+
+    def test_a_starting_weapon_is_already_paid_for(self):
+        assert self.costs_for(self.CARD)[("Warriors", "Reaper Rifles")] == 0
+
+    def test_a_swap_option_costs_extra(self):
+        assert self.costs_for(self.CARD)[("Warriors", "Gauss Rifle")] == 10
+
+    def test_a_starting_weapon_printed_inline_too_stays_free(self):
+        """Both paths can find the same weapon; being a starting weapon wins."""
+        card = "\n".join([
+            "Warriors [5] - 100pts",
+            "Quality 4+ Defense 4+",
+            'Reaper Rifles (18", A1, AP(1), Shred)',
+            "Weapon                              RNG     ATK           AP SPE",
+            "5x Reaper Rifles",
+        ])
+        rows = armybook.linked_weapons([self.ROSTER, "", "", card])
+        assert [w["cost"] for _, name, w in rows if name == "Reaper Rifles"] == [0]
 
 
 class TestStartingWeapons:
