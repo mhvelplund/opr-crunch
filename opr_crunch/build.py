@@ -7,7 +7,8 @@ from pathlib import Path
 from typing import Dict, List
 
 from openpyxl import Workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.formatting.rule import FormulaRule
+from openpyxl.styles import Alignment, Font, PatternFill, Protection
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.worksheet import Worksheet
@@ -20,6 +21,15 @@ from opr_crunch.scenarios import TEST_SCENARIOS
 HEADER_FILL = PatternFill("solid", fgColor="1F3864")
 HEADER_FONT = Font(color="FFFFFF", bold=True)
 OUTPUT_FILL = PatternFill("solid", fgColor="E2EFDA")
+STALE_FILL = PatternFill("solid", fgColor="FFC7CE")
+STALE_FONT = Font(color="9C0006")
+
+#: Columns build_simulation fills with formulas rather than user input. These
+#: stay locked (and the Simulation tab protected) so a stray edit can't
+#: silently overwrite a derived value with a dead literal.
+DERIVED_SIMULATION_COLUMNS = [
+    "Combat", "Weapon stats", "Hits", "Wounds", "Att. Special Rules", "Def. Special Rules",
+]
 
 #: Inputs the calc block reads. On Calc these are lookups into the data tabs;
 #: on Tests they are literals. Either way the step formulas are identical.
@@ -540,6 +550,14 @@ def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
         stats_cell.alignment = Alignment(wrap_text=True)
         stats_cell.fill = OUTPUT_FILL
 
+    # lock derived columns and protect the sheet so the formulas above can't
+    # be overwritten by a stray edit; every other column stays unlocked
+    for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
+        for header in layout.SIMULATION_COLUMNS:
+            locked = header in DERIVED_SIMULATION_COLUMNS
+            ws.cell(row=row, column=layout.col_index(header)).protection = Protection(locked=locked)
+    ws.protection.sheet = True
+
     # faction dropdowns
     for header in ("Att. faction", "Def. faction"):
         dv = list_validation(
@@ -562,7 +580,19 @@ def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
             dv = list_validation(source)
             ws.add_data_validation(dv)
             letter = get_column_letter(layout.col_index(column_for_label[label]))
-            dv.add(f"{letter}{row}")
+            cell_ref = f"{letter}{row}"
+            dv.add(cell_ref)
+            # Changing an ancestor (faction, or unit) can leave this cell's
+            # existing pick no longer valid for that ancestor - formulas can't
+            # clear the stale value for the user, so flag it instead.
+            ws.conditional_formatting.add(
+                cell_ref,
+                FormulaRule(
+                    formula=[f'AND(${letter}{row}<>"",COUNTIF({source},${letter}{row})=0)'],
+                    fill=STALE_FILL,
+                    font=STALE_FONT,
+                ),
+            )
 
     # per-row Melee state / Range >9" dropdown, filtered by the row's derived Combat
     state_letter = get_column_letter(layout.col_index(STATE_COL))

@@ -2,9 +2,10 @@
 
 import pytest
 from openpyxl import load_workbook
+from openpyxl.utils import get_column_letter
 
 from opr_crunch import csvdata, layout
-from opr_crunch.build import build_workbook
+from opr_crunch.build import DERIVED_SIMULATION_COLUMNS, build_workbook
 from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS, last_row
 from opr_crunch.model import MODELLED_RULES
 
@@ -200,6 +201,58 @@ class TestValidation:
     def test_unit_dropdowns_read_from_the_lists_tab(self, wb):
         sources = [dv.formula1 for dv in wb["Simulation"].data_validations.dataValidation]
         assert any("Lists" in str(s) for s in sources)
+
+
+class TestReadOnlyDerivedFields:
+    """Formulas can't clear a stale dependent pick, so the sheet is protected
+    instead: derived columns are locked, everything else stays editable.
+    """
+
+    def test_sheet_protection_is_enabled(self, wb):
+        assert wb["Simulation"].protection.sheet is True
+
+    @pytest.mark.parametrize("header", DERIVED_SIMULATION_COLUMNS)
+    def test_derived_columns_are_locked(self, wb, header):
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index(header) + 1
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert sim.cell(row=row, column=col).protection.locked
+
+    @pytest.mark.parametrize(
+        "header", [h for h in SIMULATION_COLUMNS if h not in DERIVED_SIMULATION_COLUMNS]
+    )
+    def test_input_columns_stay_unlocked(self, wb, header):
+        sim = wb["Simulation"]
+        col = SIMULATION_COLUMNS.index(header) + 1
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert not sim.cell(row=row, column=col).protection.locked
+
+
+class TestStaleDependentPicks:
+    """Changing a faction or unit can't clear the now-invalid pick beneath it
+    (no Apps Script), so those cells are flagged with conditional formatting
+    instead - one rule per cell, keyed off the same filtered Lists range the
+    cell's own dropdown already uses.
+    """
+
+    @pytest.mark.parametrize(
+        "header", ["Attacker", "Att. upgrades", "Weapon", "Defender", "Def. upgrades"]
+    )
+    def test_every_dependent_cell_has_a_stale_check(self, wb, header):
+        sim = wb["Simulation"]
+        col = get_column_letter(SIMULATION_COLUMNS.index(header) + 1)
+        ranges = {str(rng.sqref) for rng in sim.conditional_formatting._cf_rules}
+        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
+            assert f"{col}{row}" in ranges
+
+    def test_stale_check_compares_against_the_row_s_own_filtered_list(self, wb):
+        sim = wb["Simulation"]
+        col = get_column_letter(SIMULATION_COLUMNS.index("Attacker") + 1)
+        rules_by_range = {
+            str(rng.sqref): rules for rng, rules in sim.conditional_formatting._cf_rules.items()
+        }
+        formula = rules_by_range[f"{col}{SIM_FIRST_ROW}"][0].formula[0]
+        assert formula == f'AND(${col}{SIM_FIRST_ROW}<>"",COUNTIF(Lists!$A$2:$A$121,${col}{SIM_FIRST_ROW})=0)'
 
 
 class TestTestsTab:
