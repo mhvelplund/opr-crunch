@@ -21,9 +21,18 @@ SIMULATION_COLUMNS = [
 
 UNITS_COLUMNS = ["Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules"]
 WEAPONS_COLUMNS = [
-    "Name", "Faction", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules",
+    "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Special Rules",
 ]
-UPGRADES_COLUMNS = ["Name", "Faction", "AP", "Blast", "Deadly", "Impact", "Special Rules"]
+UPGRADES_COLUMNS = ["Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules"]
+
+#: Tabs whose lookup key includes the owning Unit, not just Name|Faction.
+#: A weapon or upgrade option can belong to more than one unit; those are
+#: written as separate rows rather than merged, so Unit must join the key.
+KEY_PARTS = {
+    "Units": ["Name", "Faction"],
+    "Weapons": ["Name", "Faction", "Unit"],
+    "Upgrades": ["Name", "Faction", "Unit"],
+}
 SPECIAL_RULES_COLUMNS = ["Name", "Parameterised", "Applies to", "Modelled", "Text"]
 FACTIONS_COLUMNS = ["Name"]
 
@@ -36,7 +45,7 @@ SIM_ROWS = 20
 #: silently, so tests/test_build.py guards it.
 CAPACITY = {
     "Units": 120,
-    "Weapons": 320,
+    "Weapons": 400,
     "Upgrades": 120,
     "Factions": 40,
 }

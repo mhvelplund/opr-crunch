@@ -1,46 +1,95 @@
-Name,Faction,AP,Blast,Deadly,Impact,Special Rules
-Chronomancer,Robot Legions,0,0,0,0,Ambush Aura
-Combat Shield,Robot Legions,0,0,0,0,Shielded
-Combat Shields,Robot Legions,0,0,0,0,Shielded
-Controller,Robot Legions,0,0,0,0,Piercing Assault Aura
-Cyber-Palps,Robot Legions,0,0,0,0,Mend
-Elite Vanguard,Robot Legions,0,0,0,0,Scout
-Hyperspace Reapers,Robot Legions,0,0,0,0,Ambushing Piercing Shot
-Jetpack,Robot Legions,0,0,0,0,"Ambush, Flying, Swift"
-Jetpacks,Robot Legions,0,0,0,0,"Ambush, Flying, Swift"
-Machine-Horror,Robot Legions,0,0,0,0,Fear(1)
-Networked Target Lock,Robot Legions,0,0,0,0,Indirect Mark
-Overseer,Robot Legions,0,0,0,0,No Retreat Aura
-Pet Technoaide,Robot Legions,0,0,0,0,Repel Ambushers
-Phase Core,Robot Legions,0,0,0,0,Ambush
-Plasmabot,Robot Legions,0,0,0,0,Rending in Melee
-Psychomancer,Robot Legions,0,0,0,0,Stealth Aura
-Re-Animator,Robot Legions,0,0,0,0,Reanimation Aura
-Repair Nanobots,Robot Legions,0,0,0,0,Self-Repair Boost Buff
-Technomancer,Robot Legions,0,0,0,0,Caster(2)
-Technoward,Robot Legions,0,0,0,0,Casting Buff
-Tripod Queen,Robot Legions,0,0,0,0,Swift Buff
-Warden,Robot Legions,0,0,0,0,Relentless Aura
-Warp Gate,Robot Legions,0,0,0,0,Transport(21)
-Widowmaker,Robot Legions,0,0,0,0,Ambush
-Wraith-Shard Vault,Robot Legions,0,0,0,0,"Caster(4), Tough(6)"
-Agitator,Havoc Brothers,0,0,0,0,Scout Aura
-Apostle,Havoc Brothers,0,0,0,0,Relentless Aura
-Daemon Engine,Havoc Brothers,0,0,0,0,Resistance
-Daemonic Incursion,Havoc Brothers,0,0,0,0,Ambush
-Dark Smith,Havoc Brothers,0,0,0,0,Mend
-Dozer Blade,Havoc Brothers,0,0,0,0,Strider
-Executioner,Havoc Brothers,0,0,0,0,Furious Aura
-Havoc Favour,Havoc Brothers,0,0,0,0,Steadfast Aura
-Icon Bearer,Havoc Brothers,0,0,0,0,Resistance Aura
-Icon of Havoc,Havoc Brothers,0,0,0,0,Versatile Defense Aura
-Jetpack,Havoc Brothers,0,0,0,0,"Ambush, Flying"
-Lord of Havoc,Havoc Brothers,0,0,0,0,Havocbound Boost Aura
-Lore of Havoc,Havoc Brothers,0,0,0,0,Caster(3)
-Master Warlock,Havoc Brothers,0,0,0,0,Caster(3)
-Mutant Wings,Havoc Brothers,0,0,0,0,"Ambush, Flying"
-Psy-Witch,Havoc Brothers,0,0,0,0,Caster(2)
-Spiked Ram,Havoc Brothers,0,0,0,0,Impact(2)
-Summoned Tendrils,Havoc Brothers,0,0,0,0,Dangerous Terrain Debuff
-Warlock,Havoc Brothers,0,0,0,0,Caster(2)
-Wings,Havoc Brothers,0,0,0,0,Flying
+Name,Faction,Unit,AP,Blast,Deadly,Impact,Special Rules
+Chronomancer,Robot Legions,Robot Lord,0,0,0,0,Ambush Aura
+Chronomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Ambush Aura
+Combat Shield,Robot Legions,Annihilator Lord,0,0,0,0,Shielded
+Combat Shields,Robot Legions,Guardians,0,0,0,0,Shielded
+Controller,Robot Legions,Annihilator Lord,0,0,0,0,Piercing Assault Aura
+Controller,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Piercing Assault Aura
+Cyber-Palps,Robot Legions,Forge Spider,0,0,0,0,Mend
+Elite Vanguard,Robot Legions,Destroyer Snakes,0,0,0,0,Scout
+Hyperspace Reapers,Robot Legions,Snipers,0,0,0,0,Ambushing Piercing Shot
+Jetpack,Robot Legions,Robot Lord,0,0,0,0,"Ambush, Flying, Swift"
+Jetpacks,Robot Legions,Guardians,0,0,0,0,"Ambush, Flying, Swift"
+Machine-Horror,Robot Legions,Flesh-Eaters,0,0,0,0,Fear(1)
+Networked Target Lock,Robot Legions,Heavy Annihilator,0,0,0,0,Indirect Mark
+Networked Target Lock,Robot Legions,Support Platform,0,0,0,0,Indirect Mark
+Networked Target Lock,Robot Legions,Tri-Scorpion Pistoleer,0,0,0,0,Indirect Mark
+Networked Target Lock,Robot Legions,Tripod Walker,0,0,0,0,Indirect Mark
+Overseer,Robot Legions,Annihilator Lord,0,0,0,0,No Retreat Aura
+Overseer,Robot Legions,Robot Lord,0,0,0,0,No Retreat Aura
+Overseer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,No Retreat Aura
+Pet Technoaide,Robot Legions,Robot Lord,0,0,0,0,Repel Ambushers
+Phase Core,Robot Legions,Annihilator Lord,0,0,0,0,Ambush
+Phase Core,Robot Legions,Annihilators,0,0,0,0,Ambush
+Phase Core,Robot Legions,Heavy Annihilator,0,0,0,0,Ambush
+Plasmabot,Robot Legions,Destroyer Snakes,0,0,0,0,Rending in Melee
+Plasmabot,Robot Legions,Tri-Scorpions,0,0,0,0,Rending in Melee
+Psychomancer,Robot Legions,Annihilator Lord,0,0,0,0,Stealth Aura
+Psychomancer,Robot Legions,Robot Lord,0,0,0,0,Stealth Aura
+Psychomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Stealth Aura
+Re-Animator,Robot Legions,Annihilator Lord,0,0,0,0,Reanimation Aura
+Re-Animator,Robot Legions,Robot Lord,0,0,0,0,Reanimation Aura
+Re-Animator,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Reanimation Aura
+Repair Nanobots,Robot Legions,Forge Spider,0,0,0,0,Self-Repair Boost Buff
+Repair Nanobots,Robot Legions,Support Platform,0,0,0,0,Self-Repair Boost Buff
+Repair Nanobots,Robot Legions,Transport Tank,0,0,0,0,Self-Repair Boost Buff
+Repair Nanobots,Robot Legions,Tripod Walker,0,0,0,0,Self-Repair Boost Buff
+Technomancer,Robot Legions,Annihilator Lord,0,0,0,0,Caster(2)
+Technomancer,Robot Legions,Robot Lord,0,0,0,0,Caster(2)
+Technoward,Robot Legions,Great Monolith,0,0,0,0,Casting Buff
+Tripod Queen,Robot Legions,Tripod Walker,0,0,0,0,Swift Buff
+Warden,Robot Legions,Annihilator Lord,0,0,0,0,Relentless Aura
+Warden,Robot Legions,Robot Lord,0,0,0,0,Relentless Aura
+Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21)
+Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush
+Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)"
+Agitator,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Scout Aura
+Agitator,Havoc Brothers,Cultist Champion,0,0,0,0,Scout Aura
+Agitator,Havoc Brothers,Havoc Champion,0,0,0,0,Scout Aura
+Apostle,Havoc Brothers,Cultist Champion,0,0,0,0,Relentless Aura
+Apostle,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Relentless Aura
+Daemon Engine,Havoc Brothers,Spider Walker,0,0,0,0,Resistance
+Daemonic Incursion,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Ambush
+Dark Smith,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Mend
+Dark Smith,Havoc Brothers,Havoc Champion,0,0,0,0,Mend
+Dark Smith,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Mend
+Dozer Blade,Havoc Brothers,Havoc APC,0,0,0,0,Strider
+Dozer Blade,Havoc Brothers,Havoc Heavy Tank,0,0,0,0,Strider
+Dozer Blade,Havoc Brothers,Havoc Tank,0,0,0,0,Strider
+Executioner,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Furious Aura
+Executioner,Havoc Brothers,Cultist Champion,0,0,0,0,Furious Aura
+Executioner,Havoc Brothers,Havoc Champion,0,0,0,0,Furious Aura
+Executioner,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Furious Aura
+Havoc Favour,Havoc Brothers,Chosen Havoc Brothers,0,0,0,0,Steadfast Aura
+Havoc Favour,Havoc Brothers,Cultists,0,0,0,0,Steadfast Aura
+Havoc Favour,Havoc Brothers,Havoc Brothers,0,0,0,0,Steadfast Aura
+Havoc Favour,Havoc Brothers,Havoc Destroyers,0,0,0,0,Steadfast Aura
+Icon Bearer,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Resistance Aura
+Icon Bearer,Havoc Brothers,Cultist Champion,0,0,0,0,Resistance Aura
+Icon Bearer,Havoc Brothers,Havoc Champion,0,0,0,0,Resistance Aura
+Icon Bearer,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Resistance Aura
+Icon of Havoc,Havoc Brothers,Chosen Havoc Brothers,0,0,0,0,Versatile Defense Aura
+Icon of Havoc,Havoc Brothers,Cultists,0,0,0,0,Versatile Defense Aura
+Icon of Havoc,Havoc Brothers,Havoc Brothers,0,0,0,0,Versatile Defense Aura
+Icon of Havoc,Havoc Brothers,Havoc Destroyers,0,0,0,0,Versatile Defense Aura
+Jetpack,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,"Ambush, Flying"
+Jetpack,Havoc Brothers,Havoc Champion,0,0,0,0,"Ambush, Flying"
+Lord of Havoc,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Havocbound Boost Aura
+Lord of Havoc,Havoc Brothers,Havoc Champion,0,0,0,0,Havocbound Boost Aura
+Lord of Havoc,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Havocbound Boost Aura
+Lore of Havoc,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Caster(3)
+Master Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(3)
+Master Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(3)
+Master Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(3)
+Mutant Wings,Havoc Brothers,Mutated Brothers,0,0,0,0,"Ambush, Flying"
+Psy-Witch,Havoc Brothers,Cultist Champion,0,0,0,0,Caster(2)
+Spiked Ram,Havoc Brothers,Havoc APC,0,0,0,0,Impact(2)
+Spiked Ram,Havoc Brothers,Havoc Heavy Tank,0,0,0,0,Impact(2)
+Spiked Ram,Havoc Brothers,Havoc Tank,0,0,0,0,Impact(2)
+Summoned Tendrils,Havoc Brothers,Infernal Stalker,0,0,0,0,Dangerous Terrain Debuff
+Summoned Tendrils,Havoc Brothers,Mutated Destroyer,0,0,0,0,Dangerous Terrain Debuff
+Summoned Tendrils,Havoc Brothers,Spider Walker,0,0,0,0,Dangerous Terrain Debuff
+Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(2)
+Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(2)
+Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(2)
+Wings,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Flying

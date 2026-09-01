@@ -15,7 +15,7 @@ Two patterns carry almost all the information and survive the layout intact:
 
 import re
 from pathlib import PurePosixPath
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, Iterable, List, Optional, Tuple
 from urllib.parse import urlparse
 
 #: Every page of an army book carries "<system> - <FACTION> V<version>".
@@ -206,6 +206,133 @@ def parse_units(pages: List[str]) -> List[dict]:
                 unit["rules"].append(token)
             units.append(unit)
     return units
+
+
+# --------------------------------------------------------------------------
+# linking weapons and upgrades to the unit card they're printed under
+# --------------------------------------------------------------------------
+
+def _blank_other_band(line: str, band: int) -> str:
+    """Replace ``line``'s cells outside ``band`` with spaces.
+
+    Keeps every surviving character in its original column, so multi-space
+    cell gaps the profile parsers key on stay intact - unlike joining cell
+    text back together, which would collapse them.
+    """
+    chars = list(line)
+    for start, text in _chunks(line):
+        if _band(start) != band:
+            chars[start:start + len(text)] = " " * len(text)
+    return "".join(chars)
+
+
+def _partition(pages: List[str]) -> Tuple[List[Tuple[str, str]], str]:
+    """Split unit-card pages into per-card spans plus one leftover block.
+
+    A card's span runs from its own line to the next card's line in the same
+    column band, or to the end of the page - the same band-keeping rule
+    ``parse_units`` follows. A neighbouring unit's text on a shared line is
+    blanked rather than included, so its weapons and upgrades aren't credited
+    to this card too. Lines no card reaches (a shared armoury page, say)
+    become the leftover, returned separately so callers can treat what's
+    found there as generic rather than tied to whichever card is nearby.
+    """
+    spans: List[Tuple[str, str]] = []
+    leftovers: List[str] = []
+    for page in pages:
+        lines = page.split("\n")
+        cards = sorted(
+            {(i, _band(m.start()), m.group(1)) for i, line in enumerate(lines) for m in CARD.finditer(line)},
+            key=lambda c: (c[1], c[0]),
+        )
+        blanked = {band: [_blank_other_band(line, band) for line in lines] for band in (0, 1)}
+        covered = set()
+        for idx, (line_no, band, name) in enumerate(cards):
+            end = next((c[0] for c in cards[idx + 1:] if c[1] == band), len(lines))
+            covered.update(range(line_no, end))
+            spans.append((name, "\n".join(blanked[band][line_no:end])))
+        leftovers.append("\n".join(line for i, line in enumerate(lines) if i not in covered))
+    return spans, "\n".join(leftovers)
+
+
+def _roster_linked(text: str, known_units: Iterable[str]) -> List[Tuple[str, str, dict]]:
+    """Weapons on the roster page, attributed to the unit each row is under.
+
+    A unit's starting weapon(s) only ever appear in the inline ``Name (...)``
+    form ``find_weapons`` can match on the roster page - the per-unit cards
+    print them as a plain table with no parentheses at all, so they never
+    show up as a weapon match there. Card boundaries in the CARD/[size]-Npts
+    sense don't exist on the roster, but each row still starts with a known
+    unit's name, wrapping onto the next line for a second weapon - so the
+    most recently seen name is enough to attribute a row correctly.
+
+    Lines are grouped into one block per run of a unit's name before being
+    handed to ``find_weapons``, rather than matched one line at a time: some
+    books repeat an identical weapon across several of a unit's lines (a
+    multi-mount vehicle listing the same gun per hardpoint), and only a
+    single call sees enough of the text at once to dedupe that the way
+    ``find_weapons`` already does within a call.
+    """
+    names = sorted(set(known_units), key=len, reverse=True)
+    rows: List[Tuple[str, str, dict]] = []
+    current, block = "", []
+
+    def flush():
+        if block:
+            rows.extend((current, n, p) for n, p in find_weapons("\n".join(block)).items())
+
+    for line in text.split("\n"):
+        stripped = line.strip()
+        matched = next((n for n in names if stripped.startswith(n)), None)
+        if matched and matched != current:
+            flush()
+            current, block = matched, []
+        block.append(line)
+    flush()
+    return rows
+
+
+def linked_weapons(pages: List[str], known_units: Iterable[str] = ()) -> List[Tuple[str, str, dict]]:
+    """(unit name or "", weapon name, profile) for every profile in the book.
+
+    Scoped to the card - or, for a starting weapon, the roster row - it's
+    printed under, so the same name under two units becomes two rows rather
+    than one profile guessed to cover both. A profile found outside any of
+    that - e.g. on a shared armoury page - is generic and comes back with an
+    empty unit name.
+    """
+    spans, leftover = _partition(pages[3:])
+    rows = [
+        (unit, name, profile)
+        for unit, text in spans for name, profile in find_weapons(text).items()
+    ]
+    rows += _roster_linked("\n".join(pages[:3]), known_units)
+    rows += [("", name, profile) for name, profile in find_weapons(leftover).items()]
+
+    # The roster's base-weapon line and a card's own options can both name the
+    # same weapon with the same profile for the same unit; only the source
+    # differs, so keep one row rather than a redundant duplicate key.
+    seen = set()
+    deduped = []
+    for unit, name, profile in rows:
+        key = (unit, name, tuple(sorted(
+            (k, tuple(v) if isinstance(v, list) else v) for k, v in profile.items()
+        )))
+        if key not in seen:
+            seen.add(key)
+            deduped.append((unit, name, profile))
+    return deduped
+
+
+def linked_upgrades(pages: List[str]) -> List[Tuple[str, str, List[str]]]:
+    """(unit name or "", upgrade name, granted rules) for every option found."""
+    spans, leftover = _partition(pages[3:])
+    rows = [
+        (unit, name, granted)
+        for unit, text in spans for name, granted in parse_upgrades(text)
+    ]
+    rows += [("", name, granted) for name, granted in parse_upgrades(leftover)]
+    return rows
 
 
 # --------------------------------------------------------------------------

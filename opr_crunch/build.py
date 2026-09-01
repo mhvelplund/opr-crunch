@@ -59,19 +59,32 @@ def write_headers(ws: Worksheet, headers: List[str], width: int = 16) -> None:
     ws.freeze_panes = "A2"
 
 
+def _key_expr(name_ref: str, faction_ref: str, unit_ref: str = "") -> str:
+    parts = [name_ref, faction_ref] + ([unit_ref] if unit_ref else [])
+    return '&"|"&'.join(parts)
+
+
 def lookup(
-    sheet: str, value_col: str, name_ref: str, faction_ref: str, default: str = "0"
+    sheet: str, value_col: str, name_ref: str, faction_ref: str,
+    default: str = "0", unit_ref: str = "",
 ) -> str:
-    """INDEX/MATCH on the tab's Name|Faction key.
+    """INDEX/MATCH on the tab's key.
 
     Matching on the name alone would be ambiguous: a CCW or a Stomp exists in
     several army books, and the wrong faction's profile would be returned.
+
+    Weapons and Upgrades key on Name|Faction|Unit instead, since the same
+    weapon name can belong to more than one unit with a different profile;
+    those are written as separate rows. ``unit_ref`` is matched first, then
+    falls back to a blank-Unit row (gear generic to the whole faction).
     """
     key = KEY_COL[sheet]
-    return (
-        f"IFERROR(INDEX('{sheet}'!${value_col}:${value_col},"
-        f"MATCH({name_ref}&\"|\"&{faction_ref},'{sheet}'!${key}:${key},0)),{default})"
-    )
+    index = f"INDEX('{sheet}'!${value_col}:${value_col},MATCH({{key}},'{sheet}'!${key}:${key},0))"
+    specific = index.format(key=_key_expr(name_ref, faction_ref, unit_ref))
+    if not unit_ref:
+        return f"IFERROR({specific},{default})"
+    generic = index.format(key=_key_expr(name_ref, faction_ref, '""'))
+    return f"IFERROR({specific},IFERROR({generic},{default}))"
 
 
 RANGE_COL = 'Range >9"'
@@ -132,8 +145,10 @@ def build_data_tab(
         key = layout.key_column(columns)
         cell = ws.cell(row=1, column=key, value="Key")
         cell.fill, cell.font = HEADER_FILL, HEADER_FONT
+        letters = [get_column_letter(columns.index(part) + 1) for part in layout.KEY_PARTS[title]]
         for i in range(2, len(rows) + 2):
-            ws.cell(row=i, column=key, value=f'=$A{i}&"|"&$B{i}')
+            formula = '&"|"&'.join(f"${letter}{i}" for letter in letters)
+            ws.cell(row=i, column=key, value=f"={formula}")
         ws.column_dimensions[get_column_letter(key)].width = 28
 
 
@@ -142,9 +157,9 @@ DATA_TABS = [
     ("Units", layout.UNITS_COLUMNS, csvdata.units,
      dict(widths={"A": 22, "H": 34}, faction_column=2)),
     ("Weapons", layout.WEAPONS_COLUMNS, csvdata.weapons,
-     dict(width=11, widths={"A": 22, "I": 34}, faction_column=2)),
+     dict(width=11, widths={"A": 22, "J": 34}, faction_column=2)),
     ("Upgrades", layout.UPGRADES_COLUMNS, csvdata.upgrades,
-     dict(width=11, widths={"A": 22, "G": 34}, faction_column=2)),
+     dict(width=11, widths={"A": 22, "H": 34}, faction_column=2)),
     ("Special rules", layout.SPECIAL_RULES_COLUMNS, csvdata.special_rules,
      dict(width=14, widths={"A": 16, "D": 90}, wrap_column=4)),
     ("Factions", layout.FACTIONS_COLUMNS, csvdata.factions, dict(width=22)),
@@ -155,13 +170,16 @@ DATA_TABS = [
 # cascading dropdown source lists
 # --------------------------------------------------------------------------
 
-#: (label, source tab, Simulation column holding the faction to filter by)
+#: (label, source tab, Simulation column holding the faction to filter by,
+#: Simulation column holding the unit to filter by, or "" for tabs with no
+#: Unit column). A blank Unit cell in the source tab means "every unit", so
+#: it always matches too - that's how faction-generic gear stays selectable.
 LIST_SPECS = [
-    ("Attacker units", "Units", "Att. faction"),
-    ("Attacker upgrades", "Upgrades", "Att. faction"),
-    ("Weapons", "Weapons", "Att. faction"),
-    ("Defender units", "Units", "Def. faction"),
-    ("Defender upgrades", "Upgrades", "Def. faction"),
+    ("Attacker units", "Units", "Att. faction", ""),
+    ("Attacker upgrades", "Upgrades", "Att. faction", "Attacker"),
+    ("Weapons", "Weapons", "Att. faction", "Attacker"),
+    ("Defender units", "Units", "Def. faction", ""),
+    ("Defender upgrades", "Upgrades", "Def. faction", "Defender"),
 ]
 
 
@@ -178,17 +196,29 @@ def build_lists(wb: Workbook) -> Dict[int, Dict[str, str]]:
 
     for i, row in enumerate(range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1)):
         ranges[row] = {}
-        for k, (label, source, faction_col) in enumerate(LIST_SPECS):
+        for k, (label, source, faction_col, unit_col) in enumerate(LIST_SPECS):
             column = i * len(LIST_SPECS) + k + 1
             letter = get_column_letter(column)
             ws.cell(row=1, column=column, value=f"{label} r{row}")
-            key = sim(faction_col, row)
+            faction_key = sim(faction_col, row)
             last = layout.last_row(source)
+            if unit_col:
+                unit_key = sim(unit_col, row)
+                source_columns = layout.UPGRADES_COLUMNS if source == "Upgrades" else layout.WEAPONS_COLUMNS
+                unit_col_letter = get_column_letter(source_columns.index("Unit") + 1)
+                condition = (
+                    f"AND('{source}'!$B{{src}}={faction_key},"
+                    f"OR('{source}'!${unit_col_letter}{{src}}={unit_key},"
+                    f"'{source}'!${unit_col_letter}{{src}}=\"\"))"
+                )
+            else:
+                condition = f"'{source}'!$B{{src}}={faction_key}"
             for src in range(SRC_FIRST, last + 1):
+                cond = condition.format(src=src)
                 ws.cell(
                     row=src,
                     column=column,
-                    value=f"=IF('{source}'!$B{src}={key},'{source}'!$A{src},\"\")",
+                    value=f"=IF({cond},'{source}'!$A{src},\"\")",
                 )
             ranges[row][label] = f"Lists!${letter}${SRC_FIRST}:${letter}${last}"
     return ranges
@@ -209,8 +239,8 @@ def calc_inputs_for(row: int) -> List[str]:
 
     def pair(weapon_col: str, upgrade_col: str) -> str:
         return (
-            f"=MAX({lookup('Weapons', weapon_col, weapon, att_fac)},"
-            f"{lookup('Upgrades', upgrade_col, att_up, att_fac)})"
+            f"=MAX({lookup('Weapons', weapon_col, weapon, att_fac, unit_ref=attacker)},"
+            f"{lookup('Upgrades', upgrade_col, att_up, att_fac, unit_ref=attacker)})"
         )
 
     def input_cell(name: str) -> str:
@@ -224,24 +254,24 @@ def calc_inputs_for(row: int) -> List[str]:
 
     return [
         f"={sim('#', row)}",
-        f"={lookup('Weapons', 'D', weapon, att_fac)}",
+        f"={lookup('Weapons', 'E', weapon, att_fac, unit_ref=attacker)}",
         f"={lookup('Units', 'C', attacker, att_fac)}",
         f"={lookup('Units', 'D', defender, def_fac)}",
         f"={sim('Def. #', row)}",
-        f"={lookup('Weapons', 'E', weapon, att_fac)}"
-        f"+{lookup('Upgrades', 'C', att_up, att_fac)}",
-        pair("F", "D"),
+        f"={lookup('Weapons', 'F', weapon, att_fac, unit_ref=attacker)}"
+        f"+{lookup('Upgrades', 'D', att_up, att_fac, unit_ref=attacker)}",
         pair("G", "E"),
         pair("H", "F"),
+        pair("I", "G"),
         f"={lookup('Units', 'G', attacker, att_fac)}",
         f"={lookup('Units', 'F', defender, def_fac)}",
         # The attacking unit's own profile grants rules too (Relentless,
         # Piercing Assault, ...), so it joins the weapon's and the upgrade's.
         f'={lookup("Units", "H", attacker, att_fac, blank)}&", "'
-        f'&{lookup("Weapons", "I", weapon, att_fac, blank)}&", "'
-        f'&{lookup("Upgrades", "G", att_up, att_fac, blank)}',
+        f'&{lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker)}&", "'
+        f'&{lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker)}',
         f'={lookup("Units", "H", defender, def_fac, blank)}&", "'
-        f'&{lookup("Upgrades", "G", def_up, def_fac, blank)}',
+        f'&{lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender)}',
         # Rules granting "either AP(+1) or +1 to hit". Unpredictable Fighter
         # contains Unpredictable, so the longer name is excluded explicitly.
         f"=IF(OR(AND({fighter},{melee}),"

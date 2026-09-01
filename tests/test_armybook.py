@@ -148,6 +148,78 @@ class TestParseUnits:
         assert units["Tri-Scorpion Lord"]["rules"] == ["Hero", "Relentless", "Self-Repair", "Strider"]
 
 
+class TestLinkedWeaponsAndUpgrades:
+    """Weapons and upgrades are tagged with the unit card they're printed under."""
+
+    PAGE = "\n".join([
+        "GF - ROBOT LEGIONS V3.5.3",
+        "",
+        "Warriors [5] - 65pts",
+        "Quality 4+ Defense 3+",
+        'CCW (A1), Reaper Rifles (18", A1, AP(1), Shred), Sergeant (Relentless Aura)',
+        "",
+        "Eternals [5] - 90pts",
+        "Quality 3+ Defense 3+",
+        'CCW (A1), Flux Carbines (18", A1, AP(1), Surge)',
+    ])
+
+    @pytest.fixture
+    def weapons(self):
+        return armybook.linked_weapons(["", "", "", self.PAGE])
+
+    @pytest.fixture
+    def upgrades(self):
+        return armybook.linked_upgrades(["", "", "", self.PAGE])
+
+    def test_a_weapon_only_one_unit_has_is_tagged_to_that_unit(self, weapons):
+        owners = {unit for unit, name, _ in weapons if name == "Reaper Rifles"}
+        assert owners == {"Warriors"}
+
+    def test_a_name_shared_by_two_units_becomes_two_rows(self, weapons):
+        rows = [(unit, name) for unit, name, _ in weapons if name == "CCW"]
+        assert sorted(rows) == [("Eternals", "CCW"), ("Warriors", "CCW")]
+
+    def test_a_units_own_profile_does_not_bleed_into_its_neighbour(self, weapons):
+        eternals_weapons = {name for unit, name, _ in weapons if unit == "Eternals"}
+        assert "Reaper Rifles" not in eternals_weapons
+
+    def test_an_upgrade_is_tagged_to_its_unit(self, upgrades):
+        rows = [(unit, name) for unit, name, _ in upgrades]
+        assert ("Warriors", "Sergeant") in rows
+        assert not any(unit == "Eternals" and name == "Sergeant" for unit, name in rows)
+
+
+class TestRosterLinkedWeapons:
+    """A starting weapon only ever appears in ``Name (...)`` form on the roster.
+
+    The per-unit cards later in the book print it as a plain table row with
+    no parentheses, so ``find_weapons`` can't see it there at all - the
+    roster page is copied verbatim below, from Robot Legions v3.5.3.
+    """
+
+    ROSTER_PAGE = "\n".join([
+        "GF - ROBOT LEGIONS V3.5.3",
+        "",
+        'Warriors [5]            3+ 3+ 1x Lord Gauss Pistol (12", A2, Destructive)   Self-Repair, Slow   100pts',
+        "                                    2x CCWs (A2)",
+        'Eternals [5]            4+ 4+ 5x Reaper Rifles (18", A1, AP(1), Shred)      Self-Repair, Slow   150pts',
+    ])
+
+    def weapons(self):
+        pages = ["", "", self.ROSTER_PAGE, ""]
+        return armybook.linked_weapons(pages, known_units=["Warriors", "Eternals"])
+
+    def test_a_starting_weapon_is_linked_to_its_row(self):
+        owners = {(unit, name) for unit, name, _ in self.weapons()}
+        assert ("Warriors", "Lord Gauss Pistol") in owners
+        assert ("Eternals", "Reaper Rifles") in owners
+
+    def test_a_wrapped_second_weapon_stays_with_the_same_unit(self):
+        """CCWs wraps onto its own line below Warriors' row, with no name to anchor it."""
+        owners = {(unit, name) for unit, name, _ in self.weapons()}
+        assert ("Warriors", "CCWs") in owners
+
+
 class TestParseSpecialRules:
     PAGE = "\n".join([
         "GF - ROBOT LEGIONS V3.5.3",

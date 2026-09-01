@@ -3,7 +3,7 @@
 import pytest
 from openpyxl import load_workbook
 
-from opr_crunch import csvdata
+from opr_crunch import csvdata, layout
 from opr_crunch.build import build_workbook
 from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS, last_row
 from opr_crunch.model import MODELLED_RULES
@@ -74,13 +74,13 @@ class TestDataTabs:
 
     def test_weapons_headers(self, wb):
         assert headers(wb["Weapons"]) == [
-            "Name", "Faction", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
+            "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",
             "Special Rules", "Key",
         ]
 
     def test_upgrades_headers(self, wb):
         assert headers(wb["Upgrades"]) == [
-            "Name", "Faction", "AP", "Blast", "Deadly", "Impact", "Special Rules", "Key",
+            "Name", "Faction", "Unit", "AP", "Blast", "Deadly", "Impact", "Special Rules", "Key",
         ]
 
     def test_factions_are_seeded(self, wb):
@@ -109,12 +109,16 @@ class TestDataTabs:
 
     @pytest.mark.parametrize("tab", ["Units", "Weapons", "Upgrades"])
     def test_lookup_keys_are_unique(self, wb, tab):
-        """Names repeat across army books; Name|Faction is what must not.
+        """Names repeat across army books and across units; the full key must not.
 
-        Several books print a CCW or a Stomp, so lookups match on the pair.
+        Several books print a CCW or a Stomp, so lookups match on Name and
+        Faction. Weapons and Upgrades add Unit too, since the same weapon
+        name can belong to more than one unit as a separate row.
         """
+        cols = headers(wb[tab])
+        indices = [cols.index(part) for part in layout.KEY_PARTS[tab]]
         keys = [
-            (r[0].value, r[1].value)
+            tuple(r[i].value for i in indices)
             for r in wb[tab].iter_rows(min_row=2)
             if r[0].value
         ]

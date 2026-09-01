@@ -84,20 +84,23 @@ def import_book(text: str, faction: str) -> None:
     ]
     replace_faction("units.csv", faction, unit_rows)
 
-    # --- weapons ----------------------------------------------------------
-    weapons = armybook.find_weapons(text)
+    # --- weapons ------------------------------------------------------
+    # A weapon a book gives to more than one unit is written as one row per
+    # unit, not merged, so the Simulation dropdowns can offer each unit only
+    # the weapons it can actually take.
+    weapon_links = armybook.linked_weapons(pages, known_units=[u["name"] for u in units])
     weapon_rows = [
-        [name, faction, w["range"], w["attacks"], w["ap"], w["blast"],
+        [name, faction, unit, w["range"], w["attacks"], w["ap"], w["blast"],
          w["deadly"], w["impact"], ", ".join(w["rules"])]
-        for name, w in sorted(weapons.items())
+        for unit, name, w in sorted(weapon_links, key=lambda t: (t[1], t[0]))
     ]
     replace_faction("weapons.csv", faction, weapon_rows)
 
-    # --- upgrades ---------------------------------------------------------
-    upgrades = armybook.parse_upgrades("\n".join(unit_pages))
+    # --- upgrades -----------------------------------------------------
+    upgrade_links = armybook.linked_upgrades(pages)
     upgrade_rows = [
-        [name, faction, 0, 0, 0, 0, ", ".join(granted)]
-        for name, granted in upgrades
+        [name, faction, unit, 0, 0, 0, 0, ", ".join(granted)]
+        for unit, name, granted in sorted(upgrade_links, key=lambda t: (t[1], t[0]))
     ]
     replace_faction("upgrades.csv", faction, upgrade_rows)
 
@@ -128,14 +131,14 @@ def import_book(text: str, faction: str) -> None:
 
     unmodelled = sorted(
         {r for u in units for r in u["rules"]}
-        | {r for w in weapons.values() for r in w["rules"]}
+        | {r for _, _, w in weapon_links for r in w["rules"]}
     )
     unmodelled = [
         r for r in unmodelled
         if re.sub(r"\(\d+\)$", "", r) not in MODELLED_RULES
         and not any(m in r for m in MODELLED_RULES)
     ]
-    print(f"\n  {len(units)} units, {len(weapons)} weapons, {len(upgrades)} upgrades")
+    print(f"\n  {len(units)} units, {len(weapon_rows)} weapons, {len(upgrade_rows)} upgrades")
     print(f"  reference-only rules in use: {', '.join(unmodelled)}")
 
 
