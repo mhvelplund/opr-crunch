@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from itertools import zip_longest
 from pathlib import Path
 from typing import Dict, List
 
@@ -87,7 +88,22 @@ def lookup(
     return f"IFERROR({specific},IFERROR({generic},{default}))"
 
 
-RANGE_COL = 'Range >9"'
+#: The merged column that stands in for both the old "Melee state" and
+#: "Range >9\"" inputs - only one of the two ever applies to a given weapon,
+#: since Combat is now derived from it.
+STATE_COL = 'Melee state / Range >9"'
+
+
+def textjoin(delimiter: str, ignore_empty: bool, *parts: str) -> str:
+    """TEXTJOIN, prefixed for the OOXML "future function" convention.
+
+    openpyxl writes formula text verbatim; functions added after the base
+    Excel 2007 spec (TEXTJOIN among them) must be stored as ``_xlfn.NAME`` in
+    the file or readers - Excel and Google Sheets alike - reject the name and
+    show #NAME? instead of evaluating it.
+    """
+    flag = "TRUE" if ignore_empty else "FALSE"
+    return f'_xlfn.TEXTJOIN("{delimiter}",{flag},' + ",".join(parts) + ")"
 
 
 def sim(col: str, row: int) -> str:
@@ -224,6 +240,39 @@ def build_lists(wb: Workbook) -> Dict[int, Dict[str, str]]:
     return ranges
 
 
+#: Per-slot (melee state, range) pairing for the merged column's option list.
+#: Combat="Melee" shows the melee-state name; Combat="Ranged" shows Yes/No
+#: for the two slots YES_NO covers and nothing for the rest. Either way only
+#: the options relevant to the row's derived Combat ever appear - Sheets
+#: omits blank cells from a list-validation dropdown.
+STATE_SLOTS = list(zip_longest(layout.MELEE_STATE_OPTIONS, layout.YES_NO, fillvalue=""))
+
+
+def build_state_lists(wb: Workbook, start_column: int) -> Dict[int, str]:
+    """One filtered options column per Simulation row for STATE_COL."""
+    ws = wb["Lists"]
+    ranges: Dict[int, str] = {}
+    last = SRC_FIRST + len(STATE_SLOTS) - 1
+
+    for i, row in enumerate(range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1)):
+        column = start_column + i
+        letter = get_column_letter(column)
+        ws.cell(row=1, column=column, value=f"Melee state/Range r{row}")
+        combat = sim("Combat", row)
+        for offset, (melee_val, range_val) in enumerate(STATE_SLOTS, start=SRC_FIRST):
+            range_expr = f'"{range_val}"' if range_val else '""'
+            ws.cell(
+                row=offset,
+                column=column,
+                value=(
+                    f'=IF({combat}="Melee","{melee_val}",'
+                    f'IF({combat}="Ranged",{range_expr},""))'
+                ),
+            )
+        ranges[row] = f"Lists!${letter}${SRC_FIRST}:${letter}${last}"
+    return ranges
+
+
 # --------------------------------------------------------------------------
 # calc block
 # --------------------------------------------------------------------------
@@ -232,7 +281,7 @@ def calc_inputs_for(row: int) -> List[str]:
     """Formulas pulling one Simulation row's inputs out of the data tabs."""
     weapon, att_up = sim("Weapon", row), sim("Att. upgrades", row)
     defender, def_up = sim("Defender", row), sim("Def. upgrades", row)
-    combat, state = sim("Combat", row), sim("Melee state", row)
+    combat, state = sim("Combat", row), sim(STATE_COL, row)
     attacker = sim("Attacker", row)
     att_fac, def_fac = sim("Att. faction", row), sim("Def. faction", row)
     blank = chr(34) * 2
@@ -248,7 +297,7 @@ def calc_inputs_for(row: int) -> List[str]:
 
     att = input_cell("att_rules")
     melee = f'({combat}="Melee")'
-    far = f'({sim(RANGE_COL, row)}="Yes")'
+    far = f'({state}="Yes")'
     fighter = has(att, "Unpredictable Fighter")
     versatile = f'AND({has(att, "Versatile Attack")},{far})'
 
@@ -270,13 +319,17 @@ def calc_inputs_for(row: int) -> List[str]:
         # TEXTJOIN drops blank parts, so this also reads cleanly as the
         # Simulation tab's "Att./Def. Special Rules" columns, not just an
         # internal has()-searched blob.
-        f'=TEXTJOIN(", ",TRUE,'
-        f'{lookup("Units", "H", attacker, att_fac, blank)},'
-        f'{lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker)},'
-        f'{lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker)})',
-        f'=TEXTJOIN(", ",TRUE,'
-        f'{lookup("Units", "H", defender, def_fac, blank)},'
-        f'{lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender)})',
+        "=" + textjoin(
+            ", ", True,
+            lookup("Units", "H", attacker, att_fac, blank),
+            lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker),
+            lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker),
+        ),
+        "=" + textjoin(
+            ", ", True,
+            lookup("Units", "H", defender, def_fac, blank),
+            lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender),
+        ),
         # Rules granting "either AP(+1) or +1 to hit". Unpredictable Fighter
         # contains Unpredictable, so the longer name is excluded explicitly.
         f"=IF(OR(AND({fighter},{melee}),"
@@ -359,7 +412,42 @@ def calc_headers() -> List[str]:
     )
 
 
-def build_calc(wb: Workbook) -> Dict[str, str]:
+#: The weapon's own profile fields (not merged with any upgrade), each
+#: computed once per row on the Calc tab so the Simulation tab's derived
+#: Combat and Weapon stats columns can reference a plain cell instead of
+#: repeating the same INDEX/MATCH lookup for every condition and value.
+WEAPON_STAT_FIELDS = [
+    ("range", "D", "0"),
+    ("attacks", "E", "0"),
+    ("ap", "F", "0"),
+    ("blast", "G", "0"),
+    ("deadly", "H", "0"),
+    ("impact", "I", "0"),
+    ("rules", "J", '""'),
+]
+
+
+def build_weapon_stat_calc(wb: Workbook, start_col: int) -> Dict[int, Dict[str, str]]:
+    ws = wb["Calc"]
+    for offset, (name, _, _) in enumerate(WEAPON_STAT_FIELDS):
+        cell = ws.cell(row=1, column=start_col + offset, value=f"weapon:{name}")
+        cell.fill, cell.font = HEADER_FILL, HEADER_FONT
+
+    cols: Dict[int, Dict[str, str]] = {}
+    for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
+        weapon = sim("Weapon", row)
+        att_fac = sim("Att. faction", row)
+        attacker = sim("Attacker", row)
+        cols[row] = {}
+        for offset, (name, letter, default) in enumerate(WEAPON_STAT_FIELDS):
+            column = start_col + offset
+            formula = f"={lookup('Weapons', letter, weapon, att_fac, default, unit_ref=attacker)}"
+            ws.cell(row=row, column=column, value=formula)
+            cols[row][name] = f"Calc!${get_column_letter(column)}{row}"
+    return cols
+
+
+def build_calc(wb: Workbook) -> Dict[str, object]:
     ws = wb.create_sheet("Calc")
     write_headers(ws, calc_headers(), width=13)
 
@@ -369,11 +457,13 @@ def build_calc(wb: Workbook) -> Dict[str, str]:
         write_both_branches(ws, row, first_col=1)
 
     final = len(INPUT_HEADERS) + 2 * len(CALC_STEPS) + 1
+    weapon_stats = build_weapon_stat_calc(wb, start_col=final + 2)
     return {
         "att_rules": get_column_letter(INPUT_HEADERS.index("att_rules") + 1),
         "def_rules": get_column_letter(INPUT_HEADERS.index("def_rules") + 1),
         "hits": get_column_letter(final),
         "wounds": get_column_letter(final + 1),
+        "weapon_stats": weapon_stats,
     }
 
 
@@ -381,11 +471,34 @@ def build_calc(wb: Workbook) -> Dict[str, str]:
 # simulation tab
 # --------------------------------------------------------------------------
 
-def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
+def combat_formula(row: int, w: Dict[str, str]) -> str:
+    """Ranged/Melee, derived from whether the chosen weapon has a Range."""
+    return f'=IF({sim("Weapon", row)}="","",IF({w["range"]}>0,"Ranged","Melee"))'
+
+
+def weapon_stats_formula(row: int, w: Dict[str, str]) -> str:
+    """A readable summary of the chosen weapon's own profile, e.g. 18", A1, AP(1), Shred."""
+    rng, atk, ap = w["range"], w["attacks"], w["ap"]
+    blast, deadly, impact, rules = w["blast"], w["deadly"], w["impact"], w["rules"]
+
+    parts = [
+        f'IF({rng}>0,{rng}&"""","")',
+        f'"A"&{atk}',
+        f'IF({ap}>0,"AP("&{ap}&")","")',
+        f'IF({blast}>0,"Blast("&{blast}&")","")',
+        f'IF({deadly}>0,"Deadly("&{deadly}&")","")',
+        f'IF({impact}>0,"Impact("&{impact}&")","")',
+        rules,
+    ]
+    return f'=IF({sim("Weapon", row)}="","",{textjoin(", ", True, *parts)})'
+
+
+def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
     ws = wb["Simulation"]
     write_headers(ws, layout.SIMULATION_COLUMNS, width=15)
     ws.column_dimensions[get_column_letter(layout.col_index("Attacker"))].width = 20
     ws.column_dimensions[get_column_letter(layout.col_index("Defender"))].width = 20
+    ws.column_dimensions[get_column_letter(layout.col_index("Weapon stats"))].width = 26
     ws.column_dimensions[get_column_letter(layout.col_index("Att. Special Rules"))].width = 28
     ws.column_dimensions[get_column_letter(layout.col_index("Def. Special Rules"))].width = 28
 
@@ -418,6 +531,15 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
             cell.alignment = Alignment(wrap_text=True)
             cell.fill = OUTPUT_FILL
 
+        w = calc_cols["weapon_stats"][row]
+        combat_cell = ws.cell(row=row, column=layout.col_index("Combat"), value=combat_formula(row, w))
+        combat_cell.fill = OUTPUT_FILL
+        stats_cell = ws.cell(
+            row=row, column=layout.col_index("Weapon stats"), value=weapon_stats_formula(row, w)
+        )
+        stats_cell.alignment = Alignment(wrap_text=True)
+        stats_cell.fill = OUTPUT_FILL
+
     # faction dropdowns
     for header in ("Att. faction", "Def. faction"):
         dv = list_validation(
@@ -442,11 +564,15 @@ def build_simulation(wb: Workbook, ranges, calc_cols) -> None:
             letter = get_column_letter(layout.col_index(column_for_label[label]))
             dv.add(f"{letter}{row}")
 
+    # per-row Melee state / Range >9" dropdown, filtered by the row's derived Combat
+    state_letter = get_column_letter(layout.col_index(STATE_COL))
+    for row, source in state_ranges.items():
+        dv = list_validation(source)
+        ws.add_data_validation(dv)
+        dv.add(f"{state_letter}{row}")
+
     # fixed-option dropdowns
     for header, options in (
-        ("Combat", layout.COMBAT_OPTIONS),
-        ("Melee state", layout.MELEE_STATE_OPTIONS),
-        ('Range >9"', layout.YES_NO),
         ("In cover", layout.YES_NO),
         ("Variable effect", layout.VARIABLE_EFFECT_OPTIONS),
     ):
@@ -532,9 +658,10 @@ def build_workbook() -> Workbook:
     for title, columns, loader, options in DATA_TABS:
         build_data_tab(wb, title, columns, loader(), **options)
     ranges = build_lists(wb)
+    state_ranges = build_state_lists(wb, start_column=layout.SIM_ROWS * len(LIST_SPECS) + 1)
     calc_cols = build_calc(wb)
     build_tests(wb)
-    build_simulation(wb, ranges, calc_cols)
+    build_simulation(wb, ranges, state_ranges, calc_cols)
 
     for name in ("Lists", "Calc", "Tests"):
         wb[name].sheet_state = "hidden"

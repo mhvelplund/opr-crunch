@@ -16,7 +16,9 @@ SHEET = r"(?:'([^']+)'|([A-Za-z_][A-Za-z0-9_]*))!"
 COLUMN_RANGE = re.compile(rf"(?:{SHEET})?\$([A-Z]{{1,3}}):\$([A-Z]{{1,3}})")
 QUALIFIED_CELL = re.compile(rf"{SHEET}\$?([A-Z]{{1,3}})\$?(\d+)\b")
 LOCAL_CELL = re.compile(r"\$?([A-Z]{1,3})\$?(\d+)\b")
-STRING = re.compile(r'"[^"]*"')
+#: An Excel string literal, where "" inside the quotes is an escaped literal
+#: quote (used to build a single "" character, e.g. a range shown as 18").
+STRING = re.compile(r'"(?:[^"]|"")*"')
 COMPARISON = re.compile(r"(?<![<>=!])=(?!=)")
 
 FUNCTIONS = [
@@ -97,6 +99,33 @@ class Blank:
 BLANK = Blank()
 
 
+def _display(value) -> str:
+    """Excel's implicit text coercion for &, e.g. the number 18 becomes "18"."""
+    if isinstance(value, Blank):
+        return ""
+    if isinstance(value, bool):
+        return "TRUE" if value else "FALSE"
+    if isinstance(value, float) and value.is_integer():
+        return str(int(value))
+    return str(value)
+
+
+class Txt(str):
+    """A parked string literal, distinguished from a plain str.
+
+    & is translated to Python's + for reuse, but a bare int + str raises
+    TypeError where Excel would coerce the number to text. Wrapping every
+    string literal in Txt gives + something to dispatch to on either side,
+    exactly where a "&" chain features a literal next to a numeric cell.
+    """
+
+    def __add__(self, other):
+        return Txt(str(self) + _display(other))
+
+    def __radd__(self, other):
+        return Txt(_display(other) + str(self))
+
+
 def _search(needle, haystack):
     if not isinstance(haystack, str):
         return ERR
@@ -135,6 +164,7 @@ def _textjoin(delimiter, ignore_empty, *values):
 ENV = {
     "_ERR": ERR,
     "_BLANK": BLANK,
+    "_TXT": Txt,
     "_ISNUMBER": _isnumber,
     "_SEARCH": _search,
     "_MATCH": _match,
@@ -198,13 +228,24 @@ class WorkbookEvaluator:
         its name mistaken for a cell reference.
         """
         body = formula[1:] if formula.startswith("=") else formula
+        # openpyxl-emitted formulas prefix post-2007 functions (TEXTJOIN) with
+        # _xlfn. so Excel/Sheets recognise them; strip it before translating.
+        body = body.replace("_xlfn.", "")
         parked: List[str] = []
 
         def park(text: str) -> str:
             parked.append(text)
             return f"\x00{len(parked) - 1}\x00"
 
-        body = STRING.sub(lambda m: park(m.group(0)), body)
+        def on_string(m: "re.Match") -> str:
+            # Excel escapes a literal quote inside a string as "", which
+            # Python's repr() won't produce, so unescape it ourselves. Wrapped
+            # in _TXT so a later "&" (translated to +) against a numeric cell
+            # coerces the number to text instead of raising a TypeError.
+            content = m.group(0)[1:-1].replace('""', '"')
+            return park(f"_TXT({content!r})")
+
+        body = STRING.sub(on_string, body)
         body = COMPARISON.sub("==", body)
         body = body.replace("<>", "!=")
 

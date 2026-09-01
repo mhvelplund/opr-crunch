@@ -11,7 +11,7 @@ new army book cannot silently invalidate them.
 import pytest
 
 from opr_crunch import csvdata
-from opr_crunch.build import build_workbook
+from opr_crunch.build import STATE_COL, build_workbook
 from opr_crunch.layout import (
     SIMULATION_COLUMNS,
     UNITS_COLUMNS,
@@ -110,8 +110,7 @@ def rules_shown(wb, row):
 def picks(**overrides):
     base = {
         "Att. faction": "Robot Legions", "Attacker": "Eternals", "#": 10,
-        "Weapon": "Reaper Rifles", "Combat": "Ranged", "Melee state": "None",
-        'Range >9"': "Yes", "Def. faction": "Havoc Brothers",
+        "Weapon": "Reaper Rifles", STATE_COL: "Yes", "Def. faction": "Havoc Brothers",
         "Defender": "Havoc Brothers", "Def. #": 5, "In cover": "No",
         "Variable effect": "AP",
     }
@@ -171,7 +170,7 @@ class TestLookupsMatchTheModel:
             (8, {"Attacker": "Tri-Scorpions", "Weapon": "Flux Carbines"}, {}),  # Surge
             (9, {"Defender": "Warriors", "Def. faction": "Robot Legions"}, {}),  # Self-Repair
             (10, {"Attacker": "Annihilators", "Weapon": "Metal Claws",
-                  "Combat": "Melee", "Melee state": "Charging"},
+                  STATE_COL: "Charging"},
              dict(combat="Melee", melee_state="Charging")),
         ],
     )
@@ -181,7 +180,7 @@ class TestLookupsMatchTheModel:
         want = expected(
             units, weapons, chosen,
             models=chosen["#"], def_models=chosen["Def. #"],
-            long_range=chosen['Range >9"'] == "Yes",
+            long_range=chosen[STATE_COL] == "Yes",
             variable_choice=chosen["Variable effect"], **ctx,
         )
         hits, wounds = outputs(wb, row)
@@ -197,16 +196,24 @@ class TestUnitProfileRules:
     def test_the_attacking_units_rules_reach_the_calculation(self, wb, units):
         """Tri-Scorpion Lord has Relentless, which only bites over 9 inches."""
         assert "Relentless" in units[("Tri-Scorpion Lord", "Robot Legions")]["Special Rules"]
-        set_row(wb, 11, **picks(**self.LORD, **{"#": 1, 'Range >9"': "Yes"}))
-        set_row(wb, 12, **picks(**self.LORD, **{"#": 1, 'Range >9"': "No"}))
+        set_row(wb, 11, **picks(**self.LORD, **{"#": 1, STATE_COL: "Yes"}))
+        set_row(wb, 12, **picks(**self.LORD, **{"#": 1, STATE_COL: "No"}))
         assert outputs(wb, 11)[0] > outputs(wb, 12)[0]
 
     def test_the_attacking_units_ravage_reaches_the_calculation(self, wb, units):
-        """Ravage(4) adds direct wounds, but only in melee."""
-        assert units[("Tri-Scorpion Lord", "Robot Legions")]["Ravage"] == 4
-        set_row(wb, 13, **picks(**self.LORD, **{"#": 1},
-                                Combat="Melee", **{"Melee state": "None"}))
-        set_row(wb, 14, **picks(**self.LORD, **{"#": 1}))
+        """Ravage(2) adds direct wounds, but only in melee.
+
+        Combat is now derived from the weapon, so the two rows compare the
+        unit's own melee and ranged weapons rather than forcing one weapon
+        into both modes.
+        """
+        assert units[("Tri-Scorpions", "Robot Legions")]["Ravage"] == 2
+        set_row(wb, 13, **picks(
+            **{"Attacker": "Tri-Scorpions", "Weapon": "Heavy Reaper Blade", "#": 1, STATE_COL: "None"},
+        ))
+        set_row(wb, 14, **picks(
+            **{"Attacker": "Tri-Scorpions", "Weapon": "Flux Carbines", "#": 1},
+        ))
         assert outputs(wb, 13)[1] > outputs(wb, 14)[1]
 
     def test_the_defending_units_tough_caps_deadly(self, wb, units):
@@ -241,7 +248,7 @@ class TestNamesSharedAcrossFactions:
     def test_each_faction_gets_its_own_profile(self, wb, units, weapons, faction, attacker):
         chosen = picks(**{
             "Att. faction": faction, "Attacker": attacker, "Weapon": self.SHARED,
-            "#": 1, "Combat": "Melee", "Melee state": "None",
+            "#": 1, STATE_COL: "None",
         })
         set_row(wb, 15, **chosen)
         want = expected(
@@ -261,6 +268,6 @@ class TestNamesSharedAcrossFactions:
         """
         set_row(wb, 16, **picks(**{
             "Att. faction": "Havoc Brothers", "Attacker": "Havoc Dragon",
-            "Weapon": self.SHARED, "#": 1, "Combat": "Melee", "Melee state": "None",
+            "Weapon": self.SHARED, "#": 1, STATE_COL: "None",
         }))
         assert outputs(wb, 16)[0] == pytest.approx(8 * 4 / 6)

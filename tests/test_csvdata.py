@@ -45,9 +45,9 @@ class TestLoading:
         assert text.startswith("Ignores Regeneration, and when attacking")
 
     def test_quotes_inside_headers_survive(self):
-        """The Simulation tab has a column literally named 'Range >9"'."""
+        """The Simulation tab has a column literally named 'Melee state / Range >9"'."""
         row = csvdata.simulation()[0]
-        assert row[layout.SIMULATION_COLUMNS.index('Range >9"')] == "Yes"
+        assert row[layout.SIMULATION_COLUMNS.index('Melee state / Range >9"')] == "Yes"
 
     def test_simulation_carries_the_worked_example(self):
         row = csvdata.simulation()[0]

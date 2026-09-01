@@ -6,19 +6,19 @@ SIMULATION_COLUMNS = [
     "Att. upgrades",
     "#",
     "Weapon",
+    "Weapon stats",
     "Combat",
-    "Melee state",
-    'Range >9"',
+    'Melee state / Range >9"',
     "Def. faction",
     "Defender",
     "Def. upgrades",
     "Def. #",
     "In cover",
     "Variable effect",
-    "Att. Special Rules",
-    "Def. Special Rules",
     "Hits",
     "Wounds",
+    "Att. Special Rules",
+    "Def. Special Rules",
 ]
 
 UNITS_COLUMNS = ["Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules"]
@@ -63,7 +63,6 @@ def key_column(columns) -> int:
     """Index of the generated Name|Faction column, one past the CSV's own."""
     return len(columns) + 1
 
-COMBAT_OPTIONS = ["Ranged", "Melee"]
 VARIABLE_EFFECT_OPTIONS = ["AP", "To-hit"]
 MELEE_STATE_OPTIONS = ["None", "Charging", "Being charged", "Fatigued"]
 YES_NO = ["Yes", "No"]

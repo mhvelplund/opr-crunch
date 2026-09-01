@@ -50,8 +50,11 @@ class TestSimulationTab:
     def test_headers_match_the_spec(self, wb):
         assert headers(wb["Simulation"]) == SIMULATION_COLUMNS
 
-    def test_hits_and_wounds_are_the_last_two_columns(self, wb):
-        assert SIMULATION_COLUMNS[-2:] == ["Hits", "Wounds"]
+    def test_special_rules_columns_are_last(self, wb):
+        assert SIMULATION_COLUMNS[-2:] == ["Att. Special Rules", "Def. Special Rules"]
+
+    def test_hits_and_wounds_precede_special_rules(self, wb):
+        assert SIMULATION_COLUMNS[-4:-2] == ["Hits", "Wounds"]
 
     def test_every_row_has_a_hits_formula(self, wb):
         sim = wb["Simulation"]
