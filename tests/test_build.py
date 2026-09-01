@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 from openpyxl.utils import get_column_letter
 
 from opr_crunch import csvdata, layout
-from opr_crunch.build import DERIVED_SIMULATION_COLUMNS, build_workbook
+from opr_crunch.build import build_workbook
 from opr_crunch.layout import SIMULATION_COLUMNS, SIM_FIRST_ROW, SIM_ROWS, last_row
 from opr_crunch.model import MODELLED_RULES
 
@@ -203,29 +203,21 @@ class TestValidation:
         assert any("Lists" in str(s) for s in sources)
 
 
-class TestReadOnlyDerivedFields:
-    """Formulas can't clear a stale dependent pick, so the sheet is protected
-    instead: derived columns are locked, everything else stays editable.
+class TestSheetProtection:
+    """Simulation is the only tab meant for direct editing; every other tab
+    is either sourced from csv/ (edit + rebuild instead) or internal
+    plumbing, so it's protected against accidental edits.
     """
 
-    def test_sheet_protection_is_enabled(self, wb):
-        assert wb["Simulation"].protection.sheet is True
-
-    @pytest.mark.parametrize("header", DERIVED_SIMULATION_COLUMNS)
-    def test_derived_columns_are_locked(self, wb, header):
-        sim = wb["Simulation"]
-        col = SIMULATION_COLUMNS.index(header) + 1
-        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
-            assert sim.cell(row=row, column=col).protection.locked
+    def test_simulation_is_not_protected(self, wb):
+        assert wb["Simulation"].protection.sheet is False
 
     @pytest.mark.parametrize(
-        "header", [h for h in SIMULATION_COLUMNS if h not in DERIVED_SIMULATION_COLUMNS]
+        "name",
+        ["Units", "Weapons", "Upgrades", "Special rules", "Factions", "Lists", "Calc", "Tests"],
     )
-    def test_input_columns_stay_unlocked(self, wb, header):
-        sim = wb["Simulation"]
-        col = SIMULATION_COLUMNS.index(header) + 1
-        for row in range(SIM_FIRST_ROW, SIM_FIRST_ROW + SIM_ROWS):
-            assert not sim.cell(row=row, column=col).protection.locked
+    def test_other_tabs_are_protected(self, wb, name):
+        assert wb[name].protection.sheet is True
 
 
 class TestStaleDependentPicks:

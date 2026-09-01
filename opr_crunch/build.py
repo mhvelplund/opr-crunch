@@ -8,7 +8,7 @@ from typing import Dict, List
 
 from openpyxl import Workbook
 from openpyxl.formatting.rule import FormulaRule
-from openpyxl.styles import Alignment, Font, PatternFill, Protection
+from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.worksheet import Worksheet
@@ -23,13 +23,6 @@ HEADER_FONT = Font(color="FFFFFF", bold=True)
 OUTPUT_FILL = PatternFill("solid", fgColor="E2EFDA")
 STALE_FILL = PatternFill("solid", fgColor="FFC7CE")
 STALE_FONT = Font(color="9C0006")
-
-#: Columns build_simulation fills with formulas rather than user input. These
-#: stay locked (and the Simulation tab protected) so a stray edit can't
-#: silently overwrite a derived value with a dead literal.
-DERIVED_SIMULATION_COLUMNS = [
-    "Combat", "Weapon stats", "Hits", "Wounds", "Att. Special Rules", "Def. Special Rules",
-]
 
 #: Inputs the calc block reads. On Calc these are lookups into the data tabs;
 #: on Tests they are literals. Either way the step formulas are identical.
@@ -550,14 +543,6 @@ def build_simulation(wb: Workbook, ranges, state_ranges, calc_cols) -> None:
         stats_cell.alignment = Alignment(wrap_text=True)
         stats_cell.fill = OUTPUT_FILL
 
-    # lock derived columns and protect the sheet so the formulas above can't
-    # be overwritten by a stray edit; every other column stays unlocked
-    for row in range(layout.SIM_FIRST_ROW, LAST_SIM_ROW + 1):
-        for header in layout.SIMULATION_COLUMNS:
-            locked = header in DERIVED_SIMULATION_COLUMNS
-            ws.cell(row=row, column=layout.col_index(header)).protection = Protection(locked=locked)
-    ws.protection.sheet = True
-
     # faction dropdowns
     for header in ("Att. faction", "Def. faction"):
         dv = list_validation(
@@ -695,6 +680,13 @@ def build_workbook() -> Workbook:
 
     for name in ("Lists", "Calc", "Tests"):
         wb[name].sheet_state = "hidden"
+
+    # Simulation is the only tab meant for direct editing; everything else
+    # is either sourced from csv/ (source of truth, edit + rebuild instead)
+    # or internal plumbing, so protect it against accidental edits.
+    for name in wb.sheetnames:
+        if name != "Simulation":
+            wb[name].protection.sheet = True
     return wb
 
 
