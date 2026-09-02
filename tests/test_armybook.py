@@ -4,6 +4,8 @@ Snippets below are copied verbatim from `pdftotext -layout` output of
 GF - Robot Legions v3.5.3, including its column alignment.
 """
 
+from pathlib import Path
+
 import pytest
 
 from opr_crunch import armybook
@@ -555,3 +557,89 @@ class TestCardRegions:
         assert "Gauss Rifle +10pts" in joined
         assert "D-Marks" not in joined
         assert "+15pts" not in joined
+
+
+class _FakePage:
+    def __init__(self, words, height=800.0):
+        self._words = words
+        self.height = height
+
+    def extract_words(self, **kwargs):
+        return self._words
+
+
+class _FakePdf:
+    def __init__(self, pages):
+        self.pages = pages
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *exc):
+        return False
+
+
+class TestApplyRealPrices:
+    UNITS = [{"name": "Warriors", "size": 5, "cost": 100}]
+
+    PAGE_WORDS = [
+        {"text": "Warriors", "x0": 126, "top": 57},
+        {"text": "[5]", "x0": 156, "top": 57},
+        {"text": "-", "x0": 169, "top": 57},
+        {"text": "100pts", "x0": 173, "top": 57},
+        {"text": "Gauss", "x0": 126, "top": 163},
+        {"text": "Rifle", "x0": 155, "top": 163},
+        {"text": "+10pts", "x0": 300, "top": 163},
+    ]
+
+    def _apply(self, monkeypatch, weapon_rows, upgrade_names=()):
+        monkeypatch.setattr(
+            armybook.pdfplumber, "open", lambda path: _FakePdf([_FakePage(self.PAGE_WORDS)])
+        )
+        return armybook.apply_real_prices(
+            Path("fake.pdf"), self.UNITS, list(weapon_rows), list(upgrade_names)
+        )
+
+    def test_a_matched_swap_weapon_gets_its_real_price(self, monkeypatch):
+        rows = [("Warriors", "Gauss Rifle", dict(cost=armybook.SWAP_WEAPON_COST, attacks=1))]
+        new_weapons, _, misses = self._apply(monkeypatch, rows)
+        assert new_weapons == [("Warriors", "Gauss Rifle", dict(cost=10, attacks=1))]
+        assert misses == []
+
+    def test_a_starting_weapon_is_never_touched(self, monkeypatch):
+        rows = [("Warriors", "Reaper Rifles", dict(cost=armybook.STARTING_WEAPON_COST, attacks=1))]
+        new_weapons, _, misses = self._apply(monkeypatch, rows)
+        assert new_weapons == rows
+        assert misses == []
+
+    def test_an_unmatchable_option_falls_back_to_zero_and_is_reported(self, monkeypatch):
+        # "Gauss Rifle" rides along so it claims the card's one priced row via
+        # a direct name match first - without it, _match_prices's "one
+        # leftover name, one leftover price" pairing (meant for a name that
+        # wrapped onto its own row) would wrongly pair "Nonexistent Weapon"
+        # with that unrelated price instead of leaving it unmatched.
+        rows = [
+            ("Warriors", "Gauss Rifle", dict(cost=armybook.SWAP_WEAPON_COST, attacks=1)),
+            ("Warriors", "Nonexistent Weapon", dict(cost=armybook.SWAP_WEAPON_COST, attacks=1)),
+        ]
+        new_weapons, _, misses = self._apply(monkeypatch, rows)
+        assert new_weapons == [
+            ("Warriors", "Gauss Rifle", dict(cost=10, attacks=1)),
+            ("Warriors", "Nonexistent Weapon", dict(cost=0, attacks=1)),
+        ]
+        assert misses == [("Warriors", "Nonexistent Weapon")]
+
+    def test_upgrades_are_priced_the_same_way(self, monkeypatch):
+        _, upgrade_prices, misses = self._apply(monkeypatch, [], [("Warriors", "Gauss Rifle")])
+        assert upgrade_prices == {("Warriors", "Gauss Rifle"): 10}
+        assert misses == []
+
+    def test_an_unmatched_upgrade_is_reported_and_absent_from_the_price_dict(self, monkeypatch):
+        # Same reasoning as the weapon-miss test above: "Gauss Rifle" claims
+        # the card's only priced row directly, so "Nonexistent" is left with
+        # no leftover price to be wrongly paired with.
+        _, upgrade_prices, misses = self._apply(
+            monkeypatch, [], [("Warriors", "Gauss Rifle"), ("Warriors", "Nonexistent")]
+        )
+        assert upgrade_prices == {("Warriors", "Gauss Rifle"): 10}
+        assert misses == [("Warriors", "Nonexistent")]

@@ -14,9 +14,11 @@ Two patterns carry almost all the information and survive the layout intact:
 """
 
 import re
-from pathlib import PurePosixPath
+from pathlib import Path, PurePosixPath
 from typing import Dict, List, Optional, Tuple
 from urllib.parse import urlparse
+
+import pdfplumber
 
 #: Every page of an army book carries "<system> - <FACTION> V<version>".
 BOOK_HEADER = re.compile(r"^\s*[A-Za-z]{2,4}\s*-\s*(.+?)\s+V[\d.]+\s*$", re.M)
@@ -34,6 +36,13 @@ PARAMETERISED = {"AP", "Blast", "Deadly", "Impact", "Ravage", "Tough"}
 STARTING_WEAPON_COST = 0
 SWAP_WEAPON_COST = 10
 UPGRADE_COST = 10
+
+#: Written to the CSV when apply_real_prices can't confidently match a
+#: price - distinct from SWAP_WEAPON_COST/UPGRADE_COST (which stay internal
+#: "needs pricing" markers so linked_weapons's existing dedup, and the
+#: check below, can still tell a swap/upgrade option apart from a starting
+#: weapon even after this constant makes both read as 0 on the sheet).
+UNMATCHED_PRICE_FALLBACK = 0
 
 #: Column bands. Unit cards are laid out two-up, rules three-up.
 CARD_GUTTER = 60
@@ -636,3 +645,75 @@ def _card_regions(
             next_top = next((t for t in same_band_tops if t > top), page_heights[page_index])
             regions[name] = (page_index, x_min, x_max, top, next_top)
     return regions
+
+
+def apply_real_prices(
+    pdf_path: Path,
+    units: List[dict],
+    weapon_rows: List[Tuple[str, str, dict]],
+    upgrade_names: List[Tuple[str, str]],
+) -> Tuple[List[Tuple[str, str, dict]], Dict[Tuple[str, str], int], List[Tuple[str, str]]]:
+    """Replace the internal "needs pricing" marker cost with a real price
+    scraped from the PDF's word coordinates, where one can be matched.
+
+    A starting weapon (cost == STARTING_WEAPON_COST) is never touched - the
+    book prints no +Npts for it at all. A weapon row whose cost is
+    SWAP_WEAPON_COST needs a price; ``upgrade_names`` (every upgrade option
+    always needs one) is a separate (unit, name) list because linked_upgrades
+    carries no cost field to mark in the first place. Anything that can't be
+    confidently matched is returned in the third element (misses) for the
+    caller to fall back to UNMATCHED_PRICE_FALLBACK and report - this
+    function itself never substitutes that fallback into a weapon row's cost,
+    so a miss is always visible to the caller rather than silently written.
+    """
+    with pdfplumber.open(pdf_path) as pdf:
+        pages_words = [p.extract_words(use_text_flow=False, keep_blank_chars=False) for p in pdf.pages]
+        page_heights = [p.height for p in pdf.pages]
+    regions = _card_regions(units, pages_words, page_heights)
+
+    def card_rows(unit: str) -> List[Tuple[float, str]]:
+        region = regions.get(unit)
+        if region is None:
+            return []
+        page_index, x_min, x_max, top_min, top_max = region
+        return _rows_in_band(pages_words[page_index], x_min, x_max, top_min, top_max)
+
+    misses: List[Tuple[str, str]] = []
+
+    def price_weapons() -> List[Tuple[str, str, dict]]:
+        by_unit: Dict[str, List[str]] = {}
+        for unit, name, profile in weapon_rows:
+            if profile["cost"] == SWAP_WEAPON_COST:
+                by_unit.setdefault(unit, []).append(name)
+        matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
+
+        priced = []
+        for unit, name, profile in weapon_rows:
+            if profile["cost"] != SWAP_WEAPON_COST:
+                priced.append((unit, name, profile))
+                continue
+            price = matched[unit].get(name)
+            if price is None:
+                misses.append((unit, name))
+                price = UNMATCHED_PRICE_FALLBACK
+            priced.append((unit, name, dict(profile, cost=price)))
+        return priced
+
+    def price_upgrades() -> Dict[Tuple[str, str], int]:
+        by_unit: Dict[str, List[str]] = {}
+        for unit, name in upgrade_names:
+            by_unit.setdefault(unit, []).append(name)
+        matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
+
+        prices: Dict[Tuple[str, str], int] = {}
+        for unit, name in upgrade_names:
+            price = matched[unit].get(name)
+            if price is None:
+                misses.append((unit, name))
+            else:
+                prices[(unit, name)] = price
+        return prices
+
+    new_weapon_rows = price_weapons()
+    upgrade_prices = price_upgrades()
+    return new_weapon_rows, upgrade_prices, misses
