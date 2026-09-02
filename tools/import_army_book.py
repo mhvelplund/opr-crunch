@@ -79,7 +79,7 @@ def replace_faction(name: str, faction: str, columns: list[str], new_rows: list[
     write_csv(name, columns, kept + new_rows)
 
 
-def import_book(text: str, faction: str) -> None:
+def import_book(text: str, faction: str, pdf_path: Path | None = None) -> None:
     pages = text.split("\f")
     unit_pages = pages[3:]  # the per-unit cards; page 2's roster table is a grid
 
@@ -92,11 +92,20 @@ def import_book(text: str, faction: str) -> None:
     ]
     replace_faction("units.csv", faction, layout.UNITS_COLUMNS, unit_rows)
 
-    # --- weapons ------------------------------------------------------
+    # --- weapons and upgrades -------------------------------------------
     # A weapon a book gives to more than one unit is written as one row per
     # unit, not merged, so the Simulation dropdowns can offer each unit only
     # the weapons it can actually take.
     weapon_links = armybook.linked_weapons(pages)
+    upgrade_links = armybook.linked_upgrades(pages)
+
+    if pdf_path is not None:
+        weapon_links, upgrade_prices, misses = armybook.apply_real_prices(
+            pdf_path, units, weapon_links, [(unit, name) for unit, name, _ in upgrade_links]
+        )
+    else:
+        upgrade_prices, misses = {}, []
+
     weapon_rows = [
         [name, faction, unit, w["range"], w["attacks"], w["ap"], w["blast"],
          w["deadly"], w["impact"], ", ".join(w["rules"]), w["cost"]]
@@ -104,10 +113,9 @@ def import_book(text: str, faction: str) -> None:
     ]
     replace_faction("weapons.csv", faction, layout.WEAPONS_COLUMNS, weapon_rows)
 
-    # --- upgrades -----------------------------------------------------
-    upgrade_links = armybook.linked_upgrades(pages)
     upgrade_rows = [
-        [name, faction, unit, 0, 0, 0, 0, ", ".join(granted), armybook.UPGRADE_COST]
+        [name, faction, unit, 0, 0, 0, 0, ", ".join(granted),
+         upgrade_prices.get((unit, name), armybook.UPGRADE_COST)]
         for unit, name, granted in sorted(upgrade_links, key=lambda t: (t[1], t[0]))
     ]
     replace_faction("upgrades.csv", faction, layout.UPGRADES_COLUMNS, upgrade_rows)
@@ -148,6 +156,13 @@ def import_book(text: str, faction: str) -> None:
     ]
     print(f"\n  {len(units)} units, {len(weapon_rows)} weapons, {len(upgrade_rows)} upgrades")
     print(f"  reference-only rules in use: {', '.join(unmodelled)}")
+
+    if misses:
+        print(f"\n  price not found for {len(misses)} option(s):")
+        for unit, name in sorted(misses):
+            print(f"    {unit} / {name}")
+        print("  these were set to 0 - fill in the real +Npts value by hand in")
+        print("  csv/weapons.csv and csv/upgrades.csv")
 
 
 def fetch(url: str, refresh: bool = False) -> Path:
@@ -194,7 +209,7 @@ def main() -> None:
         print(f"  detected faction {faction!r}")
 
     print(f"Importing {source.name} as {faction!r}")
-    import_book(text, faction)
+    import_book(text, faction, pdf_path=source if source.suffix.lower() == ".pdf" else None)
 
 
 if __name__ == "__main__":

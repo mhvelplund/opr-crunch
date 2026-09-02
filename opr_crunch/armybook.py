@@ -650,7 +650,7 @@ def _card_regions(
 def apply_real_prices(
     pdf_path: Path,
     units: List[dict],
-    weapon_rows: List[Tuple[str, str, dict]],
+    weapon_links: List[Tuple[str, str, dict]],
     upgrade_names: List[Tuple[str, str]],
 ) -> Tuple[List[Tuple[str, str, dict]], Dict[Tuple[str, str], int], List[Tuple[str, str]]]:
     """Replace the internal "needs pricing" marker cost with a real price
@@ -682,13 +682,13 @@ def apply_real_prices(
 
     def price_weapons() -> List[Tuple[str, str, dict]]:
         by_unit: Dict[str, List[str]] = {}
-        for unit, name, profile in weapon_rows:
+        for unit, name, profile in weapon_links:
             if profile["cost"] == SWAP_WEAPON_COST:
                 by_unit.setdefault(unit, []).append(name)
         matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
 
         priced = []
-        for unit, name, profile in weapon_rows:
+        for unit, name, profile in weapon_links:
             if profile["cost"] != SWAP_WEAPON_COST:
                 priced.append((unit, name, profile))
                 continue
