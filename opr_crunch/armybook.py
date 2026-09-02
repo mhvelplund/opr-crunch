@@ -26,13 +26,16 @@ BOOK_HEADER = re.compile(r"^\s*[A-Za-z]{2,4}\s*-\s*(.+?)\s+V[\d.]+\s*$", re.M)
 #: Rules that get their own numeric column rather than a name in the text.
 PARAMETERISED = {"AP", "Blast", "Deadly", "Impact", "Ravage", "Tough"}
 
-#: Placeholder prices. A unit's own cost is read from its card, but the real
-#: price of a swap or an upgrade lives in the card's ``+Npts`` column, which
-#: ``pdftotext -layout`` does not keep aligned with the rows it prices - on
-#: some cards every price lands above the weapon it belongs to. Matching them
-#: by position would mis-assign prices silently, so they are seeded flat until
-#: the importer can read word coordinates. A weapon the unit starts with is
-#: already covered by the unit's own cost and so is free either way.
+#: Seed prices, written by linked_weapons before any price matching happens.
+#: A weapon the unit starts with is already covered by the unit's own cost, so
+#: STARTING_WEAPON_COST is its final price. SWAP_WEAPON_COST is an internal
+#: "needs pricing" marker, never a real cost: apply_real_prices replaces every
+#: row still carrying it with either the ``+Npts`` value scraped from the
+#: card's price column or UNMATCHED_PRICE_FALLBACK. Its value is deliberately
+#: not 0 so a swap option stays distinguishable from a starting weapon. Given
+#: a text source rather than a PDF there are no word coordinates to match
+#: against, so the importer has no prices to scrape and converts the marker
+#: straight to UNMATCHED_PRICE_FALLBACK.
 STARTING_WEAPON_COST = 0
 SWAP_WEAPON_COST = 10
 
@@ -587,10 +590,11 @@ def _band_bounds(
         if not anchors or x - anchors[-1] > gap:
             anchors.append(x)
 
-    edges = [
-        _gutter(words or [], a, b) or (a + b) / 2
-        for a, b in zip(anchors, anchors[1:])
-    ]
+    edges: List[float] = []
+    for a, b in zip(anchors, anchors[1:]):
+        centre = _gutter(words or [], a, b)
+        edges.append((a + b) / 2 if centre is None else centre)
+
     return [
         (-1.0 if i == 0 else edges[i - 1],
          float("inf") if i == len(anchors) - 1 else edges[i])
@@ -663,7 +667,7 @@ def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -
     for name in option_names:
         found = alone.get(name) or bundled.get(name) or set()
         if len(found) == 1:
-            matches[name] = found.pop()
+            matches[name] = next(iter(found))
 
     unclaimed_names = [n for n in option_names if n not in named_on_a_priced_row]
     if len(unclaimed_names) == 1 and len(unclaimed_prices) == 1:

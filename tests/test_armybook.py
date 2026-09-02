@@ -739,13 +739,13 @@ class TestApplyRealPrices:
     UNITS = [{"name": "Warriors", "size": 5, "cost": 100}]
 
     PAGE_WORDS = [
-        {"text": "Warriors", "x0": 126, "top": 57},
-        {"text": "[5]", "x0": 156, "top": 57},
-        {"text": "-", "x0": 169, "top": 57},
-        {"text": "100pts", "x0": 173, "top": 57},
-        {"text": "Gauss", "x0": 126, "top": 163},
-        {"text": "Rifle", "x0": 155, "top": 163},
-        {"text": "+10pts", "x0": 300, "top": 163},
+        _word("Warriors", 126, 57, 28),
+        _word("[5]", 156, 57, 10),
+        _word("-", 169, 57, 4),
+        _word("100pts", 173, 57, 25),
+        _word("Gauss", 126, 163, 27),
+        _word("Rifle", 155, 163, 22),
+        _word("+10pts", 300, 163, 25),
     ]
 
     def _apply(self, monkeypatch, weapon_rows, upgrade_names=()):

@@ -10,7 +10,9 @@ Every existing row for that faction is replaced; other factions are untouched.
 Special rules are merged rather than replaced, since the core rules live in the
 same tab as the book's.
 
-Requires `pdftotext` (poppler) when given a PDF.
+Requires `pdftotext` (poppler) when given a PDF. Weapon-swap and upgrade prices
+are matched from the PDF's word coordinates, so a .txt source forgoes price
+matching entirely and leaves every such price at 0 to be filled in by hand.
 """
 
 import argparse
@@ -104,7 +106,21 @@ def import_book(text: str, faction: str, pdf_path: Path | None = None) -> None:
             pdf_path, units, weapon_links, [(unit, name) for unit, name, _ in upgrade_links]
         )
     else:
+        # No word coordinates to match a ``+Npts`` token against, so nothing can
+        # be priced. Every swap row still carries the internal SWAP_WEAPON_COST
+        # marker; write it out as the same fallback upgrades already use, so no
+        # marker is mistaken for a real price on the sheet.
+        weapon_links = [
+            (unit, name, dict(w, cost=armybook.UNMATCHED_PRICE_FALLBACK)
+             if w["cost"] == armybook.SWAP_WEAPON_COST else w)
+            for unit, name, w in weapon_links
+        ]
         upgrade_prices, misses = {}, []
+        print(
+            "\n  no PDF given - every swap/upgrade price left at "
+            f"{armybook.UNMATCHED_PRICE_FALLBACK} (a text source carries no word "
+            "coordinates to match against)"
+        )
 
     weapon_rows = [
         [name, faction, unit, w["range"], w["attacks"], w["ap"], w["blast"],

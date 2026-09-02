@@ -16,7 +16,7 @@ cannot see or rules it does not model. Work the Verify section, don't skip to "i
 ## Import
 
 ```shell
-./.venv/Scripts/python.exe tools/import_army_book.py <url-or-pdf>
+uv run python tools/import_army_book.py <url-or-pdf>
 ```
 
 The faction comes from the book's page header (`GF - ROBOT LEGIONS V3.5.3` → `Robot Legions`). Pass `--faction` only to
@@ -29,11 +29,11 @@ Run every step. Each catches a different silent failure.
 1. **Read the `reference-only rules in use` line the importer prints.** These are rules the book uses that the engine
    does not model. Decide for each whether it can change a single round's hits or wounds. If one can, see below —
    importing it as text makes it look supported while doing nothing.
-2. **`./.venv/Scripts/python.exe -m pytest -q`** — guards duplicate Name|Faction keys, dropdown
+2. **`uv run pytest -q`** — guards duplicate Name|Faction keys, dropdown
    capacity, and seeded Simulation rows left pointing at data a later import deleted.
 3. **Check `csv/simulation.csv` still references rows that exist.** Replacing a faction deletes its old units and
    weapons; a seeded row pointing at a deleted name silently evaluates to zero.
-4. **Rebuild and spot-check one unit against the PDF**: `./.venv/Scripts/python.exe -m opr_crunch.build`. Compare
+4. **Rebuild and spot-check one unit against the PDF**: `uv run python -m opr_crunch.build`. Compare
    Quality, Defense and rules for one unit you can see on a card.
 5. **Check the importer's "price not found" summary, if it printed one.** Each listed
    `(unit, option)` needs its real price entered by hand in `csv/weapons.csv` or

@@ -94,6 +94,7 @@ scraped from the book. Weapon-swap and upgrade prices are also scraped, by readi
 second time with `pdfplumber` for word coordinates and matching each option's `+Npts` token to
 the option it prices, scoped to one unit's card at a time. A price that can't be confidently
 matched falls back to `0` (same as a starting weapon, which is never priced from a `+Npts`
-token at all - the unit's own cost already covers it) and is reported both immediately and in
-an end-of-run summary, so it can be filled in by hand in `csv/weapons.csv` or
-`csv/upgrades.csv`. See `docs/superpowers/specs/2026-09-02-real-weapon-upgrade-prices-design.md`.
+token at all - the unit's own cost already covers it) and is listed in the importer's
+end-of-run "price not found" summary, so it can be filled in by hand in `csv/weapons.csv` or
+`csv/upgrades.csv`. A `.txt` source carries no word coordinates, so that run prices nothing and
+says so. See `docs/superpowers/specs/2026-09-02-real-weapon-upgrade-prices-design.md`.

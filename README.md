@@ -62,7 +62,7 @@ unique for `Weapons`/`Upgrades`, and `Name` alone for `Units`.
 ## Importing an army book
 
 ```shell
-./.venv/Scripts/python.exe tools/import_army_book.py <url-or-book.pdf>
+uv run python tools/import_army_book.py <url-or-book.pdf>
 ```
 
 Takes an army-forge URL or a local file. The faction is read from the book's page header (`GF - ROBOT LEGIONS V3.5.3` ->
