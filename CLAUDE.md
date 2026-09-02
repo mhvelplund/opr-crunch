@@ -12,24 +12,26 @@ and confirm the summary cell reads `ALL PASS` — that's the check that the form
 ## Commands
 
 ```shell
-python -m venv .venv
-./.venv/Scripts/python.exe -m pip install openpyxl pytest   # Linux/macOS: .venv/bin/python
-./.venv/Scripts/python.exe -m pytest                          # full suite
-./.venv/Scripts/python.exe -m pytest tests/test_army_rules.py # single file
-./.venv/Scripts/python.exe -m pytest -k unpredictable          # single test by name
-./.venv/Scripts/python.exe -m opr_crunch.build                 # writes dist/opr_crunch.xlsx
+mise install                                    # installs uv
+uv sync                                         # creates .venv, installs openpyxl/pdfplumber/pytest
+uv run pytest                                    # full suite
+uv run pytest tests/test_army_rules.py           # single file
+uv run pytest -k unpredictable                   # single test by name
+uv run python -m opr_crunch.build                # writes dist/opr_crunch.xlsx
 ```
 
-`mise run build` does the same build once the venv exists (mise auto-activates `.venv` via `[env]` in `mise.toml`).
+`mise run build` does the same build (`uv sync && uv run python -m opr_crunch.build`).
 
 Importing an army book:
 
 ```shell
-./.venv/Scripts/python.exe tools/import_army_book.py <url-or-book.pdf>
+uv run python tools/import_army_book.py <url-or-book.pdf>
 ```
 
-Requires `pdftotext` (poppler) on PATH. See "Importing an army book" below — the `importing-army-books` skill covers
-the full workflow including the checks for its silent failure modes.
+Requires `pdftotext` (poppler) on PATH for the line-based parsing; word-coordinate price
+matching uses `pdfplumber` directly and needs no separate binary. See "Importing an army
+book" below — the `importing-army-books` skill covers the full workflow including the
+checks for its silent failure modes.
 
 ## Architecture
 

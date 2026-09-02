@@ -1,9 +1,6 @@
 [tools]
-python = "3"
-
-[env]
-_.python.venv = { path = ".venv", create = true }
+uv = "latest"
 
 [tasks.build]
 description = "Build dist/opr_crunch.xlsx from the CSVs"
-run = "python -m opr_crunch.build"
+run = "uv sync && uv run python -m opr_crunch.build"

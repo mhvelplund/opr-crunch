@@ -7,13 +7,13 @@ Builds a Google Sheet that projects **hits** and **wounds** for one combat round
 ## Build
 
 ```shell
-python -m venv .venv
-./.venv/Scripts/python.exe -m pip install openpyxl pytest   # Linux/macOS: .venv/bin/python
-./.venv/Scripts/python.exe -m pytest
-./.venv/Scripts/python.exe -m opr_crunch.build
+mise install
+uv sync
+uv run pytest
+uv run python -m opr_crunch.build
 ```
 
-That writes `dist/opr_crunch.xlsx`. Once the venv is set up, `mise run build` does the same thing.
+That writes `dist/opr_crunch.xlsx`. Once `uv sync` has run once, `mise run build` does the same thing.
 
 ## Import
 
