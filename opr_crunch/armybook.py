@@ -565,6 +565,12 @@ def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -
     Layer 1: a row naming both a price and one of the options is a direct
     match - the longer of two overlapping names wins, so 'Champion Storm
     Rifle' isn't stolen by a shorter 'Storm Rifle' option on the same card.
+    A row can carry more than one ``+Npts`` token when a neighbouring row's
+    price lands one bucket early (the same vertical mis-clustering the
+    module docstring warns about, just shifted a row rather than dropped
+    entirely) - when that happens the option's own price always trails its
+    name in reading order, so the first token *after* the matched name wins
+    over any stray token sitting ahead of it.
     Layer 2: if that leaves exactly one option and one price unclaimed, they
     are paired - the common case is a name too long for its own row, wrapping
     the price onto the next one. Anything else (zero, or more than one, of
@@ -575,17 +581,21 @@ def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -
     matches: Dict[str, int] = {}
 
     for _, text in card_rows:
-        found = PRICE.search(text)
-        if not found:
+        prices = list(PRICE.finditer(text))
+        if not prices:
             continue
-        price = 0 if found.group(0) == "Free" else int(found.group(1))
         candidates = [n for n in unclaimed_names if n in text]
         if candidates:
             name = max(candidates, key=len)
+            name_end = text.index(name) + len(name)
+            after = [p for p in prices if p.start() >= name_end]
+            found = after[0] if after else prices[-1]
+            price = 0 if found.group(0) == "Free" else int(found.group(1))
             matches[name] = price
             unclaimed_names.remove(name)
         else:
-            unclaimed_prices.append(price)
+            for found in prices:
+                unclaimed_prices.append(0 if found.group(0) == "Free" else int(found.group(1)))
 
     if len(unclaimed_names) == 1 and len(unclaimed_prices) == 1:
         matches[unclaimed_names[0]] = unclaimed_prices[0]

@@ -1,154 +1,154 @@
 Name,Faction,Unit,AP,Blast,Deadly,Impact,Special Rules,Cost
-Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(2),10
-Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(2),10
-Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(2),10
+Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(2),40
+Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(2),40
+Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(2),40
 Artillerist,Battle Brothers,Master Brother,0,0,0,0,Re-Position Artillery,10
 Artillerist,Battle Brothers,Veteran Master Brother,0,0,0,0,Re-Position Artillery,10
 Camo Cloak,Battle Brothers,Elite Pathfinder,0,0,0,0,Stealth,10
-Camo Cloaks,Battle Brothers,Pathfinders,0,0,0,0,Stealth,10
-Captain,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane when Shooting Aura,10
-Captain,Battle Brothers,Master Brother,0,0,0,0,Bane when Shooting Aura,10
-Captain,Battle Brothers,Master Destroyer,0,0,0,0,Bane when Shooting Aura,10
-Captain,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane when Shooting Aura,10
-Combat Shield,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Shielded,10
-Commander,Battle Brothers,Elite Pathfinder,0,0,0,0,Re-Deployment,10
-Commander,Battle Brothers,Master Brother,0,0,0,0,Re-Deployment,10
-Commander,Battle Brothers,Veteran Master Brother,0,0,0,0,Re-Deployment,10
+Camo Cloaks,Battle Brothers,Pathfinders,0,0,0,0,Stealth,15
+Captain,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane when Shooting Aura,25
+Captain,Battle Brothers,Master Brother,0,0,0,0,Bane when Shooting Aura,25
+Captain,Battle Brothers,Master Destroyer,0,0,0,0,Bane when Shooting Aura,25
+Captain,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane when Shooting Aura,25
+Combat Shield,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Shielded,5
+Commander,Battle Brothers,Elite Pathfinder,0,0,0,0,Re-Deployment,65
+Commander,Battle Brothers,Master Brother,0,0,0,0,Re-Deployment,65
+Commander,Battle Brothers,Veteran Master Brother,0,0,0,0,Re-Deployment,65
 Detachment Banner,Battle Brothers,Assault Brothers,0,0,0,0,Courage Aura,10
 Detachment Banner,Battle Brothers,Battle Brothers,0,0,0,0,Courage Aura,10
-Detachment Banner,Battle Brothers,Destroyers,0,0,0,0,Courage Aura,10
-Detachment Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Courage Aura,10
-Detachment Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Courage Aura,10
-Dozer Blade,Battle Brothers,APC,0,0,0,0,Strider,10
-Dozer Blade,Battle Brothers,Attack APC,0,0,0,0,Strider,10
-Dozer Blade,Battle Brothers,Battle Tank,0,0,0,0,Strider,10
-Dozer Blade,Battle Brothers,Heavy Tank,0,0,0,0,Strider,10
-Engineer,Battle Brothers,Master Brother,0,0,0,0,Mend,10
-Engineer,Battle Brothers,Veteran Master Brother,0,0,0,0,Mend,10
-Forward Sentries,Battle Brothers,Pathfinders,0,0,0,0,Scout,10
+Detachment Banner,Battle Brothers,Destroyers,0,0,0,0,Courage Aura,30
+Detachment Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Courage Aura,5
+Detachment Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Courage Aura,5
+Dozer Blade,Battle Brothers,APC,0,0,0,0,Strider,15
+Dozer Blade,Battle Brothers,Attack APC,0,0,0,0,Strider,15
+Dozer Blade,Battle Brothers,Battle Tank,0,0,0,0,Strider,30
+Dozer Blade,Battle Brothers,Heavy Tank,0,0,0,0,Strider,45
+Engineer,Battle Brothers,Master Brother,0,0,0,0,Mend,40
+Engineer,Battle Brothers,Veteran Master Brother,0,0,0,0,Mend,40
+Forward Sentries,Battle Brothers,Pathfinders,0,0,0,0,Scout,15
 Forward Sentry,Battle Brothers,Elite Pathfinder,0,0,0,0,Scout,10
-Guardian,Battle Brothers,Elite Pathfinder,0,0,0,0,Melee Shrouding Aura,10
-Guardian,Battle Brothers,Master Destroyer,0,0,0,0,Melee Shrouding Aura,10
-Jetpack,Battle Brothers,Master Brother,0,0,0,0,"Ambush, Flying",10
-Jetpack,Battle Brothers,Veteran Master Brother,0,0,0,0,"Ambush, Flying",10
-Jetpacks,Battle Brothers,Assault Brothers,0,0,0,0,"Ambush, Flying",10
-Jetpacks,Battle Brothers,Veteran Assault Brothers,0,0,0,0,"Ambush, Flying",10
-Lieutenant,Battle Brothers,Master Brother,0,0,0,0,Rapid Rush Aura,10
-Lieutenant,Battle Brothers,Master Destroyer,0,0,0,0,Rapid Rush Aura,10
-Lieutenant,Battle Brothers,Veteran Master Brother,0,0,0,0,Rapid Rush Aura,10
-Master Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(3),10
-Master Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(3),10
-Master Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(3),10
-Medical Training,Battle Brothers,Assault Brothers,0,0,0,0,Regeneration Aura,10
-Medical Training,Battle Brothers,Battle Brothers,0,0,0,0,Regeneration Aura,10
-Medical Training,Battle Brothers,Destroyers,0,0,0,0,Regeneration Aura,10
-Medical Training,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Regeneration Aura,10
-Medical Training,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Regeneration Aura,10
-Off-Road Tires,Battle Brothers,Pathfinder Bikers,0,0,0,0,"Scout, Strider",10
-Open Sides,Battle Brothers,Attack Speeder,0,0,0,0,Transport(6),10
-Preacher,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane in Melee Aura,10
-Preacher,Battle Brothers,Master Brother,0,0,0,0,Bane in Melee Aura,10
-Preacher,Battle Brothers,Master Destroyer,0,0,0,0,Bane in Melee Aura,10
-Preacher,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane in Melee Aura,10
-Targeting Array,Battle Brothers,Attack Speeder,0,0,0,0,Unstoppable Mark,10
-Targeting Array,Battle Brothers,Drop Pod,0,0,0,0,Unstoppable Mark,10
-Targeting Array,Battle Brothers,Support Bike,0,0,0,0,Unstoppable Mark,10
+Guardian,Battle Brothers,Elite Pathfinder,0,0,0,0,Melee Shrouding Aura,5
+Guardian,Battle Brothers,Master Destroyer,0,0,0,0,Melee Shrouding Aura,5
+Jetpack,Battle Brothers,Master Brother,0,0,0,0,"Ambush, Flying",20
+Jetpack,Battle Brothers,Veteran Master Brother,0,0,0,0,"Ambush, Flying",20
+Jetpacks,Battle Brothers,Assault Brothers,0,0,0,0,"Ambush, Flying",35
+Jetpacks,Battle Brothers,Veteran Assault Brothers,0,0,0,0,"Ambush, Flying",20
+Lieutenant,Battle Brothers,Master Brother,0,0,0,0,Rapid Rush Aura,25
+Lieutenant,Battle Brothers,Master Destroyer,0,0,0,0,Rapid Rush Aura,25
+Lieutenant,Battle Brothers,Veteran Master Brother,0,0,0,0,Rapid Rush Aura,25
+Master Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(3),65
+Master Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(3),65
+Master Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(3),65
+Medical Training,Battle Brothers,Assault Brothers,0,0,0,0,Regeneration Aura,20
+Medical Training,Battle Brothers,Battle Brothers,0,0,0,0,Regeneration Aura,20
+Medical Training,Battle Brothers,Destroyers,0,0,0,0,Regeneration Aura,55
+Medical Training,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Regeneration Aura,15
+Medical Training,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Regeneration Aura,15
+Off-Road Tires,Battle Brothers,Pathfinder Bikers,0,0,0,0,"Scout, Strider",20
+Open Sides,Battle Brothers,Attack Speeder,0,0,0,0,Transport(6),20
+Preacher,Battle Brothers,Elite Pathfinder,0,0,0,0,Bane in Melee Aura,15
+Preacher,Battle Brothers,Master Brother,0,0,0,0,Bane in Melee Aura,15
+Preacher,Battle Brothers,Master Destroyer,0,0,0,0,Bane in Melee Aura,15
+Preacher,Battle Brothers,Veteran Master Brother,0,0,0,0,Bane in Melee Aura,15
+Targeting Array,Battle Brothers,Attack Speeder,0,0,0,0,Unstoppable Mark,25
+Targeting Array,Battle Brothers,Drop Pod,0,0,0,0,Unstoppable Mark,25
+Targeting Array,Battle Brothers,Support Bike,0,0,0,0,Unstoppable Mark,25
 The Founder's Banner,Battle Brothers,Assault Brothers,0,0,0,0,Versatile Reach Aura,10
-The Founder's Banner,Battle Brothers,Battle Brothers,0,0,0,0,Versatile Reach Aura,10
+The Founder's Banner,Battle Brothers,Battle Brothers,0,0,0,0,Versatile Reach Aura,5
 The Founder's Banner,Battle Brothers,Destroyers,0,0,0,0,Versatile Reach Aura,10
-The Founder's Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Versatile Reach Aura,10
-The Founder's Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Versatile Reach Aura,10
-Agitator,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Scout Aura,10
-Agitator,Havoc Brothers,Cultist Champion,0,0,0,0,Scout Aura,10
-Agitator,Havoc Brothers,Havoc Champion,0,0,0,0,Scout Aura,10
+The Founder's Banner,Battle Brothers,Veteran Assault Brothers,0,0,0,0,Versatile Reach Aura,5
+The Founder's Banner,Battle Brothers,Veteran Battle Brothers,0,0,0,0,Versatile Reach Aura,5
+Agitator,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Scout Aura,35
+Agitator,Havoc Brothers,Cultist Champion,0,0,0,0,Scout Aura,35
+Agitator,Havoc Brothers,Havoc Champion,0,0,0,0,Scout Aura,35
 Apostle,Havoc Brothers,Cultist Champion,0,0,0,0,Relentless Aura,10
 Apostle,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Relentless Aura,10
-Daemon Engine,Havoc Brothers,Spider Walker,0,0,0,0,Resistance,10
-Daemonic Incursion,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Ambush,10
-Dark Smith,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Mend,10
-Dark Smith,Havoc Brothers,Havoc Champion,0,0,0,0,Mend,10
-Dark Smith,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Mend,10
-Dozer Blade,Havoc Brothers,Havoc APC,0,0,0,0,Strider,10
-Dozer Blade,Havoc Brothers,Havoc Heavy Tank,0,0,0,0,Strider,10
-Dozer Blade,Havoc Brothers,Havoc Tank,0,0,0,0,Strider,10
-Executioner,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Furious Aura,10
-Executioner,Havoc Brothers,Cultist Champion,0,0,0,0,Furious Aura,10
-Executioner,Havoc Brothers,Havoc Champion,0,0,0,0,Furious Aura,10
-Executioner,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Furious Aura,10
+Daemon Engine,Havoc Brothers,Spider Walker,0,0,0,0,Resistance,40
+Daemonic Incursion,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Ambush,20
+Dark Smith,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Mend,40
+Dark Smith,Havoc Brothers,Havoc Champion,0,0,0,0,Mend,40
+Dark Smith,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Mend,40
+Dozer Blade,Havoc Brothers,Havoc APC,0,0,0,0,Strider,15
+Dozer Blade,Havoc Brothers,Havoc Heavy Tank,0,0,0,0,Strider,45
+Dozer Blade,Havoc Brothers,Havoc Tank,0,0,0,0,Strider,30
+Executioner,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Furious Aura,5
+Executioner,Havoc Brothers,Cultist Champion,0,0,0,0,Furious Aura,5
+Executioner,Havoc Brothers,Havoc Champion,0,0,0,0,Furious Aura,5
+Executioner,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Furious Aura,5
 Havoc Favour,Havoc Brothers,Chosen Havoc Brothers,0,0,0,0,Steadfast Aura,10
-Havoc Favour,Havoc Brothers,Cultists,0,0,0,0,Steadfast Aura,10
-Havoc Favour,Havoc Brothers,Havoc Brothers,0,0,0,0,Steadfast Aura,10
-Havoc Favour,Havoc Brothers,Havoc Destroyers,0,0,0,0,Steadfast Aura,10
-Icon Bearer,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Resistance Aura,10
-Icon Bearer,Havoc Brothers,Cultist Champion,0,0,0,0,Resistance Aura,10
-Icon Bearer,Havoc Brothers,Havoc Champion,0,0,0,0,Resistance Aura,10
-Icon Bearer,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Resistance Aura,10
-Icon of Havoc,Havoc Brothers,Chosen Havoc Brothers,0,0,0,0,Versatile Defense Aura,10
-Icon of Havoc,Havoc Brothers,Cultists,0,0,0,0,Versatile Defense Aura,10
-Icon of Havoc,Havoc Brothers,Havoc Brothers,0,0,0,0,Versatile Defense Aura,10
-Icon of Havoc,Havoc Brothers,Havoc Destroyers,0,0,0,0,Versatile Defense Aura,10
-Jetpack,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,"Ambush, Flying",10
-Jetpack,Havoc Brothers,Havoc Champion,0,0,0,0,"Ambush, Flying",10
-Lord of Havoc,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Havocbound Boost Aura,10
-Lord of Havoc,Havoc Brothers,Havoc Champion,0,0,0,0,Havocbound Boost Aura,10
-Lord of Havoc,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Havocbound Boost Aura,10
-Lore of Havoc,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Caster(3),10
-Master Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(3),10
-Master Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(3),10
-Master Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(3),10
-Mutant Wings,Havoc Brothers,Mutated Brothers,0,0,0,0,"Ambush, Flying",10
-Psy-Witch,Havoc Brothers,Cultist Champion,0,0,0,0,Caster(2),10
+Havoc Favour,Havoc Brothers,Cultists,0,0,0,0,Steadfast Aura,25
+Havoc Favour,Havoc Brothers,Havoc Brothers,0,0,0,0,Steadfast Aura,15
+Havoc Favour,Havoc Brothers,Havoc Destroyers,0,0,0,0,Steadfast Aura,30
+Icon Bearer,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Resistance Aura,30
+Icon Bearer,Havoc Brothers,Cultist Champion,0,0,0,0,Resistance Aura,30
+Icon Bearer,Havoc Brothers,Havoc Champion,0,0,0,0,Resistance Aura,30
+Icon Bearer,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Resistance Aura,30
+Icon of Havoc,Havoc Brothers,Chosen Havoc Brothers,0,0,0,0,Versatile Defense Aura,15
+Icon of Havoc,Havoc Brothers,Cultists,0,0,0,0,Versatile Defense Aura,40
+Icon of Havoc,Havoc Brothers,Havoc Brothers,0,0,0,0,Versatile Defense Aura,25
+Icon of Havoc,Havoc Brothers,Havoc Destroyers,0,0,0,0,Versatile Defense Aura,55
+Jetpack,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,"Ambush, Flying",20
+Jetpack,Havoc Brothers,Havoc Champion,0,0,0,0,"Ambush, Flying",20
+Lord of Havoc,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Havocbound Boost Aura,65
+Lord of Havoc,Havoc Brothers,Havoc Champion,0,0,0,0,Havocbound Boost Aura,65
+Lord of Havoc,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Havocbound Boost Aura,65
+Lore of Havoc,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Caster(3),75
+Master Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(3),75
+Master Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(3),75
+Master Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(3),75
+Mutant Wings,Havoc Brothers,Mutated Brothers,0,0,0,0,"Ambush, Flying",20
+Psy-Witch,Havoc Brothers,Cultist Champion,0,0,0,0,Caster(2),50
 Spiked Ram,Havoc Brothers,Havoc APC,0,0,0,0,Impact(2),10
 Spiked Ram,Havoc Brothers,Havoc Heavy Tank,0,0,0,0,Impact(2),10
 Spiked Ram,Havoc Brothers,Havoc Tank,0,0,0,0,Impact(2),10
-Summoned Tendrils,Havoc Brothers,Infernal Stalker,0,0,0,0,Dangerous Terrain Debuff,10
-Summoned Tendrils,Havoc Brothers,Mutated Destroyer,0,0,0,0,Dangerous Terrain Debuff,10
-Summoned Tendrils,Havoc Brothers,Spider Walker,0,0,0,0,Dangerous Terrain Debuff,10
-Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(2),10
-Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(2),10
-Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(2),10
-Wings,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Flying,10
-Chronomancer,Robot Legions,Robot Lord,0,0,0,0,Ambush Aura,10
-Chronomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Ambush Aura,10
-Combat Shield,Robot Legions,Annihilator Lord,0,0,0,0,Shielded,10
-Combat Shields,Robot Legions,Guardians,0,0,0,0,Shielded,10
-Controller,Robot Legions,Annihilator Lord,0,0,0,0,Piercing Assault Aura,10
-Controller,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Piercing Assault Aura,10
-Cyber-Palps,Robot Legions,Forge Spider,0,0,0,0,Mend,10
-Elite Vanguard,Robot Legions,Destroyer Snakes,0,0,0,0,Scout,10
-Hyperspace Reapers,Robot Legions,Snipers,0,0,0,0,Ambushing Piercing Shot,10
-Jetpack,Robot Legions,Robot Lord,0,0,0,0,"Ambush, Flying, Swift",10
-Jetpacks,Robot Legions,Guardians,0,0,0,0,"Ambush, Flying, Swift",10
+Summoned Tendrils,Havoc Brothers,Infernal Stalker,0,0,0,0,Dangerous Terrain Debuff,35
+Summoned Tendrils,Havoc Brothers,Mutated Destroyer,0,0,0,0,Dangerous Terrain Debuff,35
+Summoned Tendrils,Havoc Brothers,Spider Walker,0,0,0,0,Dangerous Terrain Debuff,35
+Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(2),50
+Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(2),50
+Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(2),50
+Wings,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Flying,20
+Chronomancer,Robot Legions,Robot Lord,0,0,0,0,Ambush Aura,35
+Chronomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Ambush Aura,35
+Combat Shield,Robot Legions,Annihilator Lord,0,0,0,0,Shielded,5
+Combat Shields,Robot Legions,Guardians,0,0,0,0,Shielded,20
+Controller,Robot Legions,Annihilator Lord,0,0,0,0,Piercing Assault Aura,35
+Controller,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Piercing Assault Aura,35
+Cyber-Palps,Robot Legions,Forge Spider,0,0,0,0,Mend,5
+Elite Vanguard,Robot Legions,Destroyer Snakes,0,0,0,0,Scout,35
+Hyperspace Reapers,Robot Legions,Snipers,0,0,0,0,Ambushing Piercing Shot,15
+Jetpack,Robot Legions,Robot Lord,0,0,0,0,"Ambush, Flying, Swift",25
+Jetpacks,Robot Legions,Guardians,0,0,0,0,"Ambush, Flying, Swift",45
 Machine-Horror,Robot Legions,Flesh-Eaters,0,0,0,0,Fear(1),10
-Networked Target Lock,Robot Legions,Heavy Annihilator,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Support Platform,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Tri-Scorpion Pistoleer,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Tripod Walker,0,0,0,0,Indirect Mark,10
-Overseer,Robot Legions,Annihilator Lord,0,0,0,0,No Retreat Aura,10
-Overseer,Robot Legions,Robot Lord,0,0,0,0,No Retreat Aura,10
-Overseer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,No Retreat Aura,10
-Pet Technoaide,Robot Legions,Robot Lord,0,0,0,0,Repel Ambushers,10
-Phase Core,Robot Legions,Annihilator Lord,0,0,0,0,Ambush,10
-Phase Core,Robot Legions,Annihilators,0,0,0,0,Ambush,10
-Phase Core,Robot Legions,Heavy Annihilator,0,0,0,0,Ambush,10
-Plasmabot,Robot Legions,Destroyer Snakes,0,0,0,0,Rending in Melee,10
-Plasmabot,Robot Legions,Tri-Scorpions,0,0,0,0,Rending in Melee,10
-Psychomancer,Robot Legions,Annihilator Lord,0,0,0,0,Stealth Aura,10
-Psychomancer,Robot Legions,Robot Lord,0,0,0,0,Stealth Aura,10
-Psychomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Stealth Aura,10
-Re-Animator,Robot Legions,Annihilator Lord,0,0,0,0,Reanimation Aura,10
-Re-Animator,Robot Legions,Robot Lord,0,0,0,0,Reanimation Aura,10
-Re-Animator,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Reanimation Aura,10
-Repair Nanobots,Robot Legions,Forge Spider,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Support Platform,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Transport Tank,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Tripod Walker,0,0,0,0,Self-Repair Boost Buff,10
-Technomancer,Robot Legions,Annihilator Lord,0,0,0,0,Caster(2),10
-Technomancer,Robot Legions,Robot Lord,0,0,0,0,Caster(2),10
+Networked Target Lock,Robot Legions,Heavy Annihilator,0,0,0,0,Indirect Mark,35
+Networked Target Lock,Robot Legions,Support Platform,0,0,0,0,Indirect Mark,35
+Networked Target Lock,Robot Legions,Tri-Scorpion Pistoleer,0,0,0,0,Indirect Mark,35
+Networked Target Lock,Robot Legions,Tripod Walker,0,0,0,0,Indirect Mark,35
+Overseer,Robot Legions,Annihilator Lord,0,0,0,0,No Retreat Aura,35
+Overseer,Robot Legions,Robot Lord,0,0,0,0,No Retreat Aura,35
+Overseer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,No Retreat Aura,35
+Pet Technoaide,Robot Legions,Robot Lord,0,0,0,0,Repel Ambushers,15
+Phase Core,Robot Legions,Annihilator Lord,0,0,0,0,Ambush,20
+Phase Core,Robot Legions,Annihilators,0,0,0,0,Ambush,35
+Phase Core,Robot Legions,Heavy Annihilator,0,0,0,0,Ambush,20
+Plasmabot,Robot Legions,Destroyer Snakes,0,0,0,0,Rending in Melee,25
+Plasmabot,Robot Legions,Tri-Scorpions,0,0,0,0,Rending in Melee,25
+Psychomancer,Robot Legions,Annihilator Lord,0,0,0,0,Stealth Aura,30
+Psychomancer,Robot Legions,Robot Lord,0,0,0,0,Stealth Aura,30
+Psychomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Stealth Aura,30
+Re-Animator,Robot Legions,Annihilator Lord,0,0,0,0,Reanimation Aura,30
+Re-Animator,Robot Legions,Robot Lord,0,0,0,0,Reanimation Aura,30
+Re-Animator,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Reanimation Aura,30
+Repair Nanobots,Robot Legions,Forge Spider,0,0,0,0,Self-Repair Boost Buff,20
+Repair Nanobots,Robot Legions,Support Platform,0,0,0,0,Self-Repair Boost Buff,20
+Repair Nanobots,Robot Legions,Transport Tank,0,0,0,0,Self-Repair Boost Buff,20
+Repair Nanobots,Robot Legions,Tripod Walker,0,0,0,0,Self-Repair Boost Buff,20
+Technomancer,Robot Legions,Annihilator Lord,0,0,0,0,Caster(2),35
+Technomancer,Robot Legions,Robot Lord,0,0,0,0,Caster(2),35
 Technoward,Robot Legions,Great Monolith,0,0,0,0,Casting Buff,10
-Tripod Queen,Robot Legions,Tripod Walker,0,0,0,0,Swift Buff,10
+Tripod Queen,Robot Legions,Tripod Walker,0,0,0,0,Swift Buff,15
 Warden,Robot Legions,Annihilator Lord,0,0,0,0,Relentless Aura,10
 Warden,Robot Legions,Robot Lord,0,0,0,0,Relentless Aura,10
-Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21),10
-Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush,10
-Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)",10
+Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21),70
+Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush,15
+Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)",250

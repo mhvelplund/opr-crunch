@@ -507,6 +507,25 @@ class TestMatchPrices:
         assert matched == {"Plasma Caster": 10}
         assert "Ray Caster" not in matched
 
+    def test_a_stray_leading_price_does_not_steal_the_option_s_own_price(self):
+        """A price meant for the row above can land one bucket early when its
+        baseline is a hair off from the name text it prices (the same
+        mis-clustering the module docstring already warns about, just
+        shifted a row instead of dropped) - found via a real book where this
+        silently mispriced several auto-matched (non-miss) options. The
+        option's own price always trails its name in reading order, so that
+        one must win over any stray price sitting ahead of it on the row."""
+        rows = [(1.0, '+30pts Apostle (Relentless Aura) +10pts')]
+        assert armybook._match_prices(rows, ["Apostle"]) == {"Apostle": 10}
+
+    def test_every_stray_price_on_a_no_candidate_row_is_kept_for_layer_two(self):
+        """A row with no matching name can still carry more than one price
+        token (the same mis-clustering as above) - dropping all but the
+        first would make Layer 2 wrongly see just one leftover price and
+        pair it with an unrelated leftover name."""
+        rows = [(1.0, "+5pts +10pts"), (2.0, "Some Option")]
+        assert armybook._match_prices(rows, ["Some Option"]) == {}
+
 
 class TestCardRegions:
     UNITS = [

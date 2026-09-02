@@ -1,477 +1,477 @@
 Name,Faction,Unit,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules,Cost
-CCW,Battle Brothers,Brother Bikers,0,1,0,0,0,0,,10
+CCW,Battle Brothers,Brother Bikers,0,1,0,0,0,0,,5
 CCW,Battle Brothers,Destroyers,0,1,0,0,0,0,,10
 CCW,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,,0
 CCW,Battle Brothers,Master Brother,0,4,0,0,0,0,,0
 CCW,Battle Brothers,Master Destroyer,0,4,0,0,0,0,,0
-CCW,Battle Brothers,Pathfinder Bikers,0,1,0,0,0,0,,10
+CCW,Battle Brothers,Pathfinder Bikers,0,1,0,0,0,0,,5
 CCW,Battle Brothers,Pathfinders,0,1,0,0,0,0,,10
-CCW,Battle Brothers,Veteran Master Brother,0,2,0,0,0,0,,10
+CCW,Battle Brothers,Veteran Master Brother,0,2,0,0,0,0,,0
 CCWs,Battle Brothers,Brother Bikers,0,2,0,0,0,0,,0
 CCWs,Battle Brothers,Pathfinder Bikers,0,2,0,0,0,0,,0
 CCWs,Battle Brothers,Pathfinders,0,2,0,0,0,0,,0
 CCWs,Battle Brothers,Veteran Battle Brothers,0,2,0,0,0,0,,0
 Chain-Fist,Battle Brothers,Destroyers,0,1,2,0,3,0,,10
 Chain-Fist,Battle Brothers,Elite Pathfinder,0,1,2,0,3,0,,10
-Chain-Fist,Battle Brothers,Master Brother,0,1,2,0,3,0,,10
-Chain-Fist,Battle Brothers,Master Destroyer,0,2,2,0,3,0,,10
-Chain-Fist,Battle Brothers,Veteran Master Brother,0,1,2,0,3,0,,10
-Chest Missiles,Battle Brothers,Heavy Exo-Suit,24,1,2,0,0,0,Unstoppable,10
-Chest-Rifles,Battle Brothers,Heavy Exo-Suit,24,2,1,0,0,0,,10
-Combat Bike,Battle Brothers,Elite Pathfinder,0,0,0,0,0,0,Fast,10
-Combat Bike,Battle Brothers,Master Brother,0,0,0,0,0,0,Fast,10
-Combat Bike,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Fast,10
-Combat Shield,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Shielded,10
+Chain-Fist,Battle Brothers,Master Brother,0,1,2,0,3,0,,15
+Chain-Fist,Battle Brothers,Master Destroyer,0,2,2,0,3,0,,30
+Chain-Fist,Battle Brothers,Veteran Master Brother,0,1,2,0,3,0,,15
+Chest Missiles,Battle Brothers,Heavy Exo-Suit,24,1,2,0,0,0,Unstoppable,20
+Chest-Rifles,Battle Brothers,Heavy Exo-Suit,24,2,1,0,0,0,,30
+Combat Bike,Battle Brothers,Elite Pathfinder,0,0,0,0,0,0,Fast,80
+Combat Bike,Battle Brothers,Master Brother,0,0,0,0,0,0,Fast,95
+Combat Bike,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Fast,115
+Combat Shield,Battle Brothers,Veteran Master Brother,0,0,0,0,0,0,Shielded,0
 Crew,Battle Brothers,Artillery Gun,0,3,0,0,0,0,,0
-Cyclone Missiles,Battle Brothers,Destroyers,24,1,2,0,3,0,Unstoppable,10
+Cyclone Missiles,Battle Brothers,Destroyers,24,1,2,0,3,0,Unstoppable,50
 Death Launcher,Battle Brothers,Drop Pod,18,1,0,6,0,0,,0
-Demolition Cannon,Battle Brothers,Battle Tank,24,1,4,6,0,0,Indirect,10
-Dual Combat Drills,Battle Brothers,Heavy Exo-Suit,0,4,4,0,0,0,,10
-Dual Energy Claws,Battle Brothers,Assault Brothers,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Destroyers,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Master Brother,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Master Destroyer,0,8,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Veteran Assault Brothers,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Battle Brothers,Veteran Master Brother,0,4,0,0,0,0,Rending,10
-Dual Heavy Fists,Battle Brothers,Heavy Exo-Suit,0,2,0,3,0,0,,10
+Demolition Cannon,Battle Brothers,Battle Tank,24,1,4,6,0,0,Indirect,30
+Dual Combat Drills,Battle Brothers,Heavy Exo-Suit,0,4,4,0,0,0,,55
+Dual Energy Claws,Battle Brothers,Assault Brothers,0,4,0,0,0,0,Rending,5
+Dual Energy Claws,Battle Brothers,Destroyers,0,4,0,0,0,0,Rending,15
+Dual Energy Claws,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,Rending,5
+Dual Energy Claws,Battle Brothers,Master Brother,0,4,0,0,0,0,Rending,5
+Dual Energy Claws,Battle Brothers,Master Destroyer,0,8,0,0,0,0,Rending,20
+Dual Energy Claws,Battle Brothers,Veteran Assault Brothers,0,4,0,0,0,0,Rending,20
+Dual Energy Claws,Battle Brothers,Veteran Master Brother,0,4,0,0,0,0,Rending,15
+Dual Heavy Fists,Battle Brothers,Heavy Exo-Suit,0,2,0,3,0,0,,20
 Energy Fist,Battle Brothers,Assault Brothers,0,2,4,0,0,0,,10
 Energy Fist,Battle Brothers,Battle Brothers,0,2,4,0,0,0,,10
 Energy Fist,Battle Brothers,Brother Bikers,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Destroyers,0,3,4,0,0,0,,10
-Energy Fist,Battle Brothers,Elite Pathfinder,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Master Brother,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Master Destroyer,0,4,4,0,0,0,,10
-Energy Fist,Battle Brothers,Pathfinder Bikers,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Pathfinders,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Veteran Assault Brothers,0,2,4,0,0,0,,10
+Energy Fist,Battle Brothers,Destroyers,0,3,4,0,0,0,,25
+Energy Fist,Battle Brothers,Elite Pathfinder,0,2,4,0,0,0,,15
+Energy Fist,Battle Brothers,Master Brother,0,2,4,0,0,0,,15
+Energy Fist,Battle Brothers,Master Destroyer,0,4,4,0,0,0,,35
+Energy Fist,Battle Brothers,Pathfinder Bikers,0,2,4,0,0,0,,5
+Energy Fist,Battle Brothers,Pathfinders,0,2,4,0,0,0,,5
+Energy Fist,Battle Brothers,Veteran Assault Brothers,0,2,4,0,0,0,,15
 Energy Fist,Battle Brothers,Veteran Battle Brothers,0,2,4,0,0,0,,10
-Energy Fist,Battle Brothers,Veteran Master Brother,0,2,4,0,0,0,,10
-Energy Hammer,Battle Brothers,Assault Brothers,0,1,0,3,0,0,,10
-Energy Hammer,Battle Brothers,Destroyers,0,1,0,3,0,0,,10
-Energy Hammer,Battle Brothers,Elite Pathfinder,0,1,0,3,0,0,,10
-Energy Hammer,Battle Brothers,Master Brother,0,1,0,3,0,0,,10
-Energy Hammer,Battle Brothers,Master Destroyer,0,2,0,3,0,0,,10
-Energy Hammer,Battle Brothers,Veteran Master Brother,0,1,0,3,0,0,,10
-Energy Sword,Battle Brothers,Assault Brothers,0,2,1,0,0,0,Rending,10
-Energy Sword,Battle Brothers,Battle Brothers,0,2,1,0,0,0,Rending,10
+Energy Fist,Battle Brothers,Veteran Master Brother,0,2,4,0,0,0,,20
+Energy Hammer,Battle Brothers,Assault Brothers,0,1,0,3,0,0,,0
+Energy Hammer,Battle Brothers,Destroyers,0,1,0,3,0,0,,0
+Energy Hammer,Battle Brothers,Elite Pathfinder,0,1,0,3,0,0,,5
+Energy Hammer,Battle Brothers,Master Brother,0,1,0,3,0,0,,5
+Energy Hammer,Battle Brothers,Master Destroyer,0,2,0,3,0,0,,5
+Energy Hammer,Battle Brothers,Veteran Master Brother,0,1,0,3,0,0,,5
+Energy Sword,Battle Brothers,Assault Brothers,0,2,1,0,0,0,Rending,5
+Energy Sword,Battle Brothers,Battle Brothers,0,2,1,0,0,0,Rending,5
 Energy Sword,Battle Brothers,Brother Bikers,0,2,1,0,0,0,Rending,10
-Energy Sword,Battle Brothers,Destroyers,0,3,1,0,0,0,Rending,10
+Energy Sword,Battle Brothers,Destroyers,0,3,1,0,0,0,Rending,15
 Energy Sword,Battle Brothers,Elite Pathfinder,0,2,1,0,0,0,Rending,10
 Energy Sword,Battle Brothers,Master Brother,0,2,1,0,0,0,Rending,10
-Energy Sword,Battle Brothers,Master Destroyer,0,4,1,0,0,0,Rending,10
+Energy Sword,Battle Brothers,Master Destroyer,0,4,1,0,0,0,Rending,20
 Energy Sword,Battle Brothers,Pathfinder Bikers,0,2,1,0,0,0,Rending,10
 Energy Sword,Battle Brothers,Pathfinders,0,2,1,0,0,0,Rending,10
-Energy Sword,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,Rending,10
-Energy Sword,Battle Brothers,Veteran Battle Brothers,0,2,1,0,0,0,Rending,10
+Energy Sword,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,Rending,5
+Energy Sword,Battle Brothers,Veteran Battle Brothers,0,2,1,0,0,0,Rending,5
 Energy Sword,Battle Brothers,Veteran Master Brother,0,2,1,0,0,0,Rending,10
 Flamer,Battle Brothers,Assault Brothers,12,1,0,3,0,0,Reliable,10
-Flamer,Battle Brothers,Battle Brothers,12,1,0,3,0,0,Reliable,10
-Flamer,Battle Brothers,Brother Bikers,12,1,0,3,0,0,Reliable,10
-Flamer,Battle Brothers,Pathfinders,12,1,0,3,0,0,Reliable,10
-Flamer,Battle Brothers,Veteran Battle Brothers,12,1,0,3,0,0,Reliable,10
+Flamer,Battle Brothers,Battle Brothers,12,1,0,3,0,0,Reliable,5
+Flamer,Battle Brothers,Brother Bikers,12,1,0,3,0,0,Reliable,5
+Flamer,Battle Brothers,Pathfinders,12,1,0,3,0,0,Reliable,15
+Flamer,Battle Brothers,Veteran Battle Brothers,12,1,0,3,0,0,Reliable,5
 Flamer Pistol,Battle Brothers,Elite Pathfinder,6,1,0,3,0,0,Reliable,0
 Flamer Pistol,Battle Brothers,Master Brother,6,1,0,3,0,0,Reliable,0
-Flamer Pistol,Battle Brothers,Veteran Assault Brothers,6,1,0,3,0,0,Reliable,10
-Flamer Pistol,Battle Brothers,Veteran Master Brother,6,1,0,3,0,0,Reliable,10
-Flamer-Mod,Battle Brothers,Elite Pathfinder,12,1,0,3,0,0,"Limited, Reliable",10
-Flamer-Mod,Battle Brothers,Master Brother,12,1,0,3,0,0,"Limited, Reliable",10
+Flamer Pistol,Battle Brothers,Veteran Assault Brothers,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Battle Brothers,Veteran Master Brother,6,1,0,3,0,0,Reliable,5
+Flamer-Mod,Battle Brothers,Elite Pathfinder,12,1,0,3,0,0,"Limited, Reliable",5
+Flamer-Mod,Battle Brothers,Master Brother,12,1,0,3,0,0,"Limited, Reliable",5
 Flamer-Mod,Battle Brothers,Veteran Battle Brothers,12,1,0,3,0,0,"Limited, Reliable",10
 Flamer-Mod,Battle Brothers,Veteran Master Brother,12,1,0,3,0,0,"Limited, Reliable",10
-Fusion Pistol,Battle Brothers,Elite Pathfinder,6,1,4,0,3,0,,10
-Fusion Pistol,Battle Brothers,Master Brother,6,1,4,0,3,0,,10
+Fusion Pistol,Battle Brothers,Elite Pathfinder,6,1,4,0,3,0,,5
+Fusion Pistol,Battle Brothers,Master Brother,6,1,4,0,3,0,,5
 Fusion Pistol,Battle Brothers,Veteran Master Brother,6,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Assault Brothers,12,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Battle Brothers,12,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Brother Bikers,12,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Combat Walker,12,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,,10
-Fusion Rifle,Battle Brothers,Veteran Combat Walker,12,1,4,0,3,0,,10
+Fusion Rifle,Battle Brothers,Assault Brothers,12,1,4,0,3,0,,25
+Fusion Rifle,Battle Brothers,Battle Brothers,12,1,4,0,3,0,,20
+Fusion Rifle,Battle Brothers,Brother Bikers,12,1,4,0,3,0,,20
+Fusion Rifle,Battle Brothers,Combat Walker,12,1,4,0,3,0,,35
+Fusion Rifle,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,,20
+Fusion Rifle,Battle Brothers,Veteran Combat Walker,12,1,4,0,3,0,,40
 Fusion-Mod,Battle Brothers,Elite Pathfinder,12,1,4,0,3,0,Limited,10
 Fusion-Mod,Battle Brothers,Master Brother,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Battle Brothers,Veteran Master Brother,12,1,4,0,3,0,Limited,10
-Gravity Cannon,Battle Brothers,Battle Brothers,24,1,2,3,0,0,Lacerate,10
-Gravity Cannon,Battle Brothers,Support Brothers,24,1,2,3,0,0,Lacerate,10
-Gravity Cannon,Battle Brothers,Veteran Battle Brothers,24,1,2,3,0,0,Lacerate,10
+Fusion-Mod,Battle Brothers,Veteran Battle Brothers,12,1,4,0,3,0,Limited,15
+Fusion-Mod,Battle Brothers,Veteran Master Brother,12,1,4,0,3,0,Limited,15
+Gravity Cannon,Battle Brothers,Battle Brothers,24,1,2,3,0,0,Lacerate,40
+Gravity Cannon,Battle Brothers,Support Brothers,24,1,2,3,0,0,Lacerate,30
+Gravity Cannon,Battle Brothers,Veteran Battle Brothers,24,1,2,3,0,0,Lacerate,50
 Gravity Pistol,Battle Brothers,Assault Brothers,9,1,1,3,0,0,Lacerate,10
 Gravity Pistol,Battle Brothers,Battle Brothers,9,1,1,3,0,0,Lacerate,10
 Gravity Pistol,Battle Brothers,Brother Bikers,9,1,1,3,0,0,Lacerate,10
-Gravity Pistol,Battle Brothers,Elite Pathfinder,9,1,1,3,0,0,Lacerate,10
-Gravity Pistol,Battle Brothers,Master Brother,9,1,1,3,0,0,Lacerate,10
-Gravity Pistol,Battle Brothers,Pathfinder Bikers,9,1,1,3,0,0,Lacerate,10
-Gravity Pistol,Battle Brothers,Pathfinders,9,1,1,3,0,0,Lacerate,10
+Gravity Pistol,Battle Brothers,Elite Pathfinder,9,1,1,3,0,0,Lacerate,5
+Gravity Pistol,Battle Brothers,Master Brother,9,1,1,3,0,0,Lacerate,5
+Gravity Pistol,Battle Brothers,Pathfinder Bikers,9,1,1,3,0,0,Lacerate,5
+Gravity Pistol,Battle Brothers,Pathfinders,9,1,1,3,0,0,Lacerate,5
 Gravity Pistol,Battle Brothers,Veteran Assault Brothers,9,1,1,3,0,0,Lacerate,10
 Gravity Pistol,Battle Brothers,Veteran Battle Brothers,9,1,1,3,0,0,Lacerate,10
 Gravity Pistol,Battle Brothers,Veteran Master Brother,9,1,1,3,0,0,Lacerate,10
-Gravity Rifle,Battle Brothers,Battle Brothers,18,1,1,3,0,0,Lacerate,10
-Gravity Rifle,Battle Brothers,Brother Bikers,18,1,1,3,0,0,Lacerate,10
-Gravity Rifle,Battle Brothers,Pathfinders,18,1,1,3,0,0,Lacerate,10
-Gravity Rifle,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,Lacerate,10
+Gravity Rifle,Battle Brothers,Battle Brothers,18,1,1,3,0,0,Lacerate,15
+Gravity Rifle,Battle Brothers,Brother Bikers,18,1,1,3,0,0,Lacerate,15
+Gravity Rifle,Battle Brothers,Pathfinders,18,1,1,3,0,0,Lacerate,20
+Gravity Rifle,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,Lacerate,20
 Gravity-Mod,Battle Brothers,Elite Pathfinder,18,1,1,3,0,0,"Limited, Lacerate",10
 Gravity-Mod,Battle Brothers,Master Brother,18,1,1,3,0,0,"Limited, Lacerate",10
-Gravity-Mod,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,"Limited, Lacerate",10
-Gravity-Mod,Battle Brothers,Veteran Master Brother,18,1,1,3,0,0,"Limited, Lacerate",10
+Gravity-Mod,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,"Limited, Lacerate",15
+Gravity-Mod,Battle Brothers,Veteran Master Brother,18,1,1,3,0,0,"Limited, Lacerate",15
 Grenade Launchers,Battle Brothers,Pathfinder Bikers,24,1,0,3,0,0,,0
-Heavy CCW,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,,10
+Heavy CCW,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,,5
 Heavy CCWs,Battle Brothers,Assault Brothers,0,2,1,0,0,0,,0
-Heavy Chainsaw Sword,Battle Brothers,Assault Brothers,0,4,1,0,0,0,,10
-Heavy Chainsaw Sword,Battle Brothers,Elite Pathfinder,0,4,1,0,0,0,,10
-Heavy Chainsaw Sword,Battle Brothers,Master Brother,0,4,1,0,0,0,,10
-Heavy Chainsaw Sword,Battle Brothers,Veteran Assault Brothers,0,4,1,0,0,0,,10
-Heavy Chainsaw Sword,Battle Brothers,Veteran Master Brother,0,4,1,0,0,0,,10
-Heavy Crack Cannon,Battle Brothers,Artillery Gun,30,6,1,0,0,0,"Indirect, Rending",10
-Heavy Flak Cannon,Battle Brothers,Artillery Gun,30,2,3,0,3,0,Unstoppable,10
+Heavy Chainsaw Sword,Battle Brothers,Assault Brothers,0,4,1,0,0,0,,5
+Heavy Chainsaw Sword,Battle Brothers,Elite Pathfinder,0,4,1,0,0,0,,5
+Heavy Chainsaw Sword,Battle Brothers,Master Brother,0,4,1,0,0,0,,5
+Heavy Chainsaw Sword,Battle Brothers,Veteran Assault Brothers,0,4,1,0,0,0,,20
+Heavy Chainsaw Sword,Battle Brothers,Veteran Master Brother,0,4,1,0,0,0,,15
+Heavy Crack Cannon,Battle Brothers,Artillery Gun,30,6,1,0,0,0,"Indirect, Rending",100
+Heavy Flak Cannon,Battle Brothers,Artillery Gun,30,2,3,0,3,0,Unstoppable,60
 Heavy Flamer,Battle Brothers,Battle Brothers,12,1,1,3,0,0,Reliable,10
-Heavy Flamer,Battle Brothers,Combat Walker,12,1,1,3,0,0,Reliable,10
+Heavy Flamer,Battle Brothers,Combat Walker,12,1,1,3,0,0,Reliable,25
 Heavy Flamer,Battle Brothers,Veteran Battle Brothers,12,1,1,3,0,0,Reliable,10
-Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,1,1,3,0,0,Reliable,10
+Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,1,1,3,0,0,Reliable,30
 Heavy Flamers,Battle Brothers,Attack Speeder,12,1,1,3,0,0,Reliable,0
-Heavy Fusion Rifle,Battle Brothers,APC,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Attack Speeder,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Battle Brothers,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Battle Tank,18,1,4,0,3,0,,10
+Heavy Fusion Rifle,Battle Brothers,APC,18,1,4,0,3,0,,50
+Heavy Fusion Rifle,Battle Brothers,Attack Speeder,18,1,4,0,3,0,,25
+Heavy Fusion Rifle,Battle Brothers,Battle Brothers,18,1,4,0,3,0,,35
+Heavy Fusion Rifle,Battle Brothers,Battle Tank,18,1,4,0,3,0,,50
 Heavy Fusion Rifle,Battle Brothers,Heavy Gunship,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Heavy Tank,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Support Bike,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Support Brothers,18,1,4,0,3,0,,10
-Heavy Fusion Rifle,Battle Brothers,Veteran Battle Brothers,18,1,4,0,3,0,,10
+Heavy Fusion Rifle,Battle Brothers,Heavy Tank,18,1,4,0,3,0,,50
+Heavy Fusion Rifle,Battle Brothers,Support Bike,18,1,4,0,3,0,,25
+Heavy Fusion Rifle,Battle Brothers,Support Brothers,18,1,4,0,3,0,,25
+Heavy Fusion Rifle,Battle Brothers,Veteran Battle Brothers,18,1,4,0,3,0,,45
 Heavy Gatling Cannon,Battle Brothers,Artillery Gun,24,6,1,0,0,0,,0
-Heavy Machinegun,Battle Brothers,Attack Speeder,30,3,1,0,0,0,,10
-Heavy Machinegun,Battle Brothers,Battle Brothers,30,3,1,0,0,0,,10
+Heavy Machinegun,Battle Brothers,Attack Speeder,30,3,1,0,0,0,,25
+Heavy Machinegun,Battle Brothers,Battle Brothers,30,3,1,0,0,0,,35
 Heavy Machinegun,Battle Brothers,Heavy Gunship,30,3,1,0,0,0,,10
-Heavy Machinegun,Battle Brothers,Pathfinders,30,3,1,0,0,0,,10
-Heavy Machinegun,Battle Brothers,Support Bike,30,3,1,0,0,0,,10
-Heavy Machinegun,Battle Brothers,Support Brothers,30,3,1,0,0,0,,10
-Heavy Machinegun,Battle Brothers,Veteran Battle Brothers,30,3,1,0,0,0,,10
-Heavy Minigun,Battle Brothers,Combat Walker,24,6,2,0,0,0,,10
-Heavy Minigun,Battle Brothers,Veteran Combat Walker,24,6,2,0,0,0,,10
-Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,,10
+Heavy Machinegun,Battle Brothers,Pathfinders,30,3,1,0,0,0,,30
+Heavy Machinegun,Battle Brothers,Support Bike,30,3,1,0,0,0,,25
+Heavy Machinegun,Battle Brothers,Support Brothers,30,3,1,0,0,0,,25
+Heavy Machinegun,Battle Brothers,Veteran Battle Brothers,30,3,1,0,0,0,,45
+Heavy Minigun,Battle Brothers,Combat Walker,24,6,2,0,0,0,,60
+Heavy Minigun,Battle Brothers,Veteran Combat Walker,24,6,2,0,0,0,,80
+Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,,0
 Heavy Pistol,Battle Brothers,Support Bike,12,1,1,0,0,0,,0
 Heavy Pistol,Battle Brothers,Veteran Assault Brothers,12,1,1,0,0,0,,10
 Heavy Pistols,Battle Brothers,Assault Brothers,12,1,1,0,0,0,,0
 Heavy Pistols,Battle Brothers,Brother Bikers,12,1,1,0,0,0,,0
 Heavy Pistols,Battle Brothers,Pathfinder Bikers,12,1,1,0,0,0,,0
 Heavy Pistols,Battle Brothers,Pathfinders,12,1,1,0,0,0,,0
-Heavy Plasma Cannon,Battle Brothers,Combat Walker,30,1,4,6,0,0,,10
-Heavy Plasma Cannon,Battle Brothers,Veteran Combat Walker,30,1,4,6,0,0,,10
-Heavy Rifle,Battle Brothers,Brother Bikers,24,1,1,0,0,0,,10
-Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,1,1,0,0,0,,10
+Heavy Plasma Cannon,Battle Brothers,Combat Walker,30,1,4,6,0,0,,55
+Heavy Plasma Cannon,Battle Brothers,Veteran Combat Walker,30,1,4,6,0,0,,65
+Heavy Rifle,Battle Brothers,Brother Bikers,24,1,1,0,0,0,,5
+Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,1,1,0,0,0,,5
 Heavy Rifle,Battle Brothers,Pathfinders,24,1,1,0,0,0,,10
-Heavy Rifle,Battle Brothers,Support Bike,24,1,1,0,0,0,,10
-Heavy Rifle Array,Battle Brothers,Combat Walker,24,6,1,0,0,0,,10
-Heavy Rifle Array,Battle Brothers,Veteran Combat Walker,24,6,1,0,0,0,,10
+Heavy Rifle,Battle Brothers,Support Bike,24,1,1,0,0,0,,5
+Heavy Rifle Array,Battle Brothers,Combat Walker,24,6,1,0,0,0,,35
+Heavy Rifle Array,Battle Brothers,Veteran Combat Walker,24,6,1,0,0,0,,50
 Heavy Rifles,Battle Brothers,Veteran Battle Brothers,24,1,1,0,0,0,,0
-Heavy Thunder Cannon,Battle Brothers,Artillery Gun,30,2,2,3,0,0,Indirect,10
-Hunter Missiles,Battle Brothers,APC,24,1,2,0,3,0,"Limited, Unstoppable",10
-Hunter Missiles,Battle Brothers,Battle Tank,24,1,2,0,3,0,Limited,10
-Hunter Missiles,Battle Brothers,Heavy Tank,24,1,2,0,3,0,Limited,10
-Laser Cannon,Battle Brothers,Attack APC,36,1,3,0,3,0,,10
-Laser Cannon,Battle Brothers,Battle Brothers,36,1,3,0,3,0,,10
-Laser Cannon,Battle Brothers,Support Brothers,36,1,3,0,3,0,,10
-Laser Cannon,Battle Brothers,Veteran Battle Brothers,36,1,3,0,3,0,,10
-Laser Talon,Battle Brothers,Light Gunship,24,2,3,0,0,0,,10
+Heavy Thunder Cannon,Battle Brothers,Artillery Gun,30,2,2,3,0,0,Indirect,65
+Hunter Missiles,Battle Brothers,APC,24,1,2,0,3,0,"Limited, Unstoppable",15
+Hunter Missiles,Battle Brothers,Battle Tank,24,1,2,0,3,0,Limited,15
+Hunter Missiles,Battle Brothers,Heavy Tank,24,1,2,0,3,0,Limited,15
+Laser Cannon,Battle Brothers,Attack APC,36,1,3,0,3,0,,70
+Laser Cannon,Battle Brothers,Battle Brothers,36,1,3,0,3,0,,60
+Laser Cannon,Battle Brothers,Support Brothers,36,1,3,0,3,0,,50
+Laser Cannon,Battle Brothers,Veteran Battle Brothers,36,1,3,0,3,0,,70
+Laser Talon,Battle Brothers,Light Gunship,24,2,3,0,0,0,,50
 Light Heavy Rifle Array,Battle Brothers,Heavy Gunship,24,4,1,0,0,0,,0
-Master Heavy Pistol,Battle Brothers,Elite Pathfinder,12,2,1,0,0,0,,10
-Master Heavy Pistol,Battle Brothers,Master Brother,12,2,1,0,0,0,,10
+Master Heavy Pistol,Battle Brothers,Elite Pathfinder,12,2,1,0,0,0,,5
+Master Heavy Pistol,Battle Brothers,Master Brother,12,2,1,0,0,0,,5
 Master Heavy Pistol,Battle Brothers,Veteran Master Brother,12,2,1,0,0,0,,10
-Master Heavy Rifle,Battle Brothers,Elite Pathfinder,24,2,1,0,0,0,,10
-Master Heavy Rifle,Battle Brothers,Master Brother,24,2,1,0,0,0,,10
-Master Heavy Rifle,Battle Brothers,Veteran Master Brother,24,2,1,0,0,0,,10
+Master Heavy Rifle,Battle Brothers,Elite Pathfinder,24,2,1,0,0,0,,15
+Master Heavy Rifle,Battle Brothers,Master Brother,24,2,1,0,0,0,,20
+Master Heavy Rifle,Battle Brothers,Veteran Master Brother,24,2,1,0,0,0,,30
 Master Plasma Pistol,Battle Brothers,Elite Pathfinder,12,2,4,0,0,0,,10
-Master Plasma Pistol,Battle Brothers,Master Brother,12,2,4,0,0,0,,10
-Master Plasma Pistol,Battle Brothers,Veteran Master Brother,12,2,4,0,0,0,,10
-Master Shotgun,Battle Brothers,Elite Pathfinder,12,3,1,0,0,0,,10
-Master Sniper Rifle,Battle Brothers,Elite Pathfinder,30,2,1,0,0,0,"Reliable, Takedown",10
-Master Storm Rifle,Battle Brothers,Elite Pathfinder,24,4,1,0,0,0,,10
-Master Storm Rifle,Battle Brothers,Master Brother,24,4,1,0,0,0,,10
-Master Storm Rifle,Battle Brothers,Veteran Master Brother,24,4,1,0,0,0,,10
-Minigun,Battle Brothers,Attack Speeder,24,4,1,0,0,0,,10
-Minigun,Battle Brothers,Destroyers,24,4,1,0,0,0,,10
+Master Plasma Pistol,Battle Brothers,Master Brother,12,2,4,0,0,0,,15
+Master Plasma Pistol,Battle Brothers,Veteran Master Brother,12,2,4,0,0,0,,20
+Master Shotgun,Battle Brothers,Elite Pathfinder,12,3,1,0,0,0,,5
+Master Sniper Rifle,Battle Brothers,Elite Pathfinder,30,2,1,0,0,0,"Reliable, Takedown",50
+Master Storm Rifle,Battle Brothers,Elite Pathfinder,24,4,1,0,0,0,,35
+Master Storm Rifle,Battle Brothers,Master Brother,24,4,1,0,0,0,,50
+Master Storm Rifle,Battle Brothers,Veteran Master Brother,24,4,1,0,0,0,,65
+Minigun,Battle Brothers,Attack Speeder,24,4,1,0,0,0,,30
+Minigun,Battle Brothers,Destroyers,24,4,1,0,0,0,,15
 Minigun,Battle Brothers,Light Gunship,24,4,1,0,0,0,,0
-Missile Array,Battle Brothers,Combat Walker,30,4,2,0,0,0,Unstoppable,10
-Missile Array,Battle Brothers,Veteran Combat Walker,30,4,2,0,0,0,Unstoppable,10
-Missile Launcher,Battle Brothers,Battle Brothers,30,1,2,0,3,0,Unstoppable,10
-Missile Launcher,Battle Brothers,Pathfinders,30,1,2,0,3,0,Unstoppable,10
-Missile Launcher,Battle Brothers,Support Brothers,30,1,2,0,3,0,Unstoppable,10
-Missile Launcher,Battle Brothers,Veteran Battle Brothers,30,1,2,0,3,0,Unstoppable,10
-Plasma Cannon,Battle Brothers,Battle Brothers,30,1,4,3,0,0,,10
-Plasma Cannon,Battle Brothers,Support Brothers,30,1,4,3,0,0,,10
-Plasma Cannon,Battle Brothers,Veteran Battle Brothers,30,1,4,3,0,0,,10
-Plasma Pistol,Battle Brothers,Assault Brothers,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Battle Brothers,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Brother Bikers,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Pathfinder Bikers,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Pathfinders,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Veteran Assault Brothers,12,1,4,0,0,0,,10
-Plasma Pistol,Battle Brothers,Veteran Battle Brothers,12,1,4,0,0,0,,10
-Plasma Rifle,Battle Brothers,Assault Brothers,24,1,4,0,0,0,,10
+Missile Array,Battle Brothers,Combat Walker,30,4,2,0,0,0,Unstoppable,40
+Missile Array,Battle Brothers,Veteran Combat Walker,30,4,2,0,0,0,Unstoppable,50
+Missile Launcher,Battle Brothers,Battle Brothers,30,1,2,0,3,0,Unstoppable,40
+Missile Launcher,Battle Brothers,Pathfinders,30,1,2,0,3,0,Unstoppable,35
+Missile Launcher,Battle Brothers,Support Brothers,30,1,2,0,3,0,Unstoppable,30
+Missile Launcher,Battle Brothers,Veteran Battle Brothers,30,1,2,0,3,0,Unstoppable,50
+Plasma Cannon,Battle Brothers,Battle Brothers,30,1,4,3,0,0,,60
+Plasma Cannon,Battle Brothers,Support Brothers,30,1,4,3,0,0,,50
+Plasma Cannon,Battle Brothers,Veteran Battle Brothers,30,1,4,3,0,0,,70
+Plasma Pistol,Battle Brothers,Assault Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Battle Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Brother Bikers,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Pathfinder Bikers,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Pathfinders,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Veteran Assault Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Battle Brothers,Veteran Battle Brothers,12,1,4,0,0,0,,5
+Plasma Rifle,Battle Brothers,Assault Brothers,24,1,4,0,0,0,,20
 Plasma Rifle,Battle Brothers,Battle Brothers,24,1,4,0,0,0,,10
 Plasma Rifle,Battle Brothers,Brother Bikers,24,1,4,0,0,0,,10
-Plasma Rifle,Battle Brothers,Pathfinders,24,1,4,0,0,0,,10
-Plasma Rifle,Battle Brothers,Veteran Battle Brothers,24,1,4,0,0,0,,10
-Plasma-Mod,Battle Brothers,Elite Pathfinder,24,1,4,0,0,0,Limited,10
+Plasma Rifle,Battle Brothers,Pathfinders,24,1,4,0,0,0,,15
+Plasma Rifle,Battle Brothers,Veteran Battle Brothers,24,1,4,0,0,0,,15
+Plasma-Mod,Battle Brothers,Elite Pathfinder,24,1,4,0,0,0,Limited,5
 Plasma-Mod,Battle Brothers,Master Brother,24,1,4,0,0,0,Limited,10
 Plasma-Mod,Battle Brothers,Veteran Battle Brothers,24,1,4,0,0,0,Limited,10
 Plasma-Mod,Battle Brothers,Veteran Master Brother,24,1,4,0,0,0,Limited,10
-Quad Laser Cannon,Battle Brothers,Heavy Tank,36,4,3,0,3,0,,10
-Rapid Autocannon,Battle Brothers,Battle Tank,36,6,2,0,0,0,,10
-Rapid Storm Rifle,Battle Brothers,Drop Pod,24,6,1,0,0,0,,10
-Rapid Storm Rifle,Battle Brothers,Master Destroyer,24,6,1,0,0,0,,10
-Sgt. Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,,10
-Sgt. Heavy Pistol,Battle Brothers,Battle Brothers,12,1,1,0,0,0,,10
+Quad Laser Cannon,Battle Brothers,Heavy Tank,36,4,3,0,3,0,,130
+Rapid Autocannon,Battle Brothers,Battle Tank,36,6,2,0,0,0,,50
+Rapid Storm Rifle,Battle Brothers,Drop Pod,24,6,1,0,0,0,,60
+Rapid Storm Rifle,Battle Brothers,Master Destroyer,24,6,1,0,0,0,,70
+Sgt. Heavy Pistol,Battle Brothers,Assault Brothers,12,1,1,0,0,0,,5
+Sgt. Heavy Pistol,Battle Brothers,Battle Brothers,12,1,1,0,0,0,,5
 Sgt. Heavy Pistol,Battle Brothers,Brother Bikers,12,1,1,0,0,0,,10
 Sgt. Heavy Pistol,Battle Brothers,Pathfinder Bikers,12,1,1,0,0,0,,10
 Sgt. Heavy Pistol,Battle Brothers,Pathfinders,12,1,1,0,0,0,,10
-Sgt. Heavy Pistol,Battle Brothers,Veteran Assault Brothers,12,1,1,0,0,0,,10
-Sgt. Heavy Pistol,Battle Brothers,Veteran Battle Brothers,12,1,1,0,0,0,,10
+Sgt. Heavy Pistol,Battle Brothers,Veteran Assault Brothers,12,1,1,0,0,0,,15
+Sgt. Heavy Pistol,Battle Brothers,Veteran Battle Brothers,12,1,1,0,0,0,,5
 Shotgun,Battle Brothers,Pathfinders,12,2,1,0,0,0,,10
-Sniper Rifle,Battle Brothers,Pathfinders,30,1,1,0,0,0,"Reliable, Takedown",10
-Spear Missile Launcher,Battle Brothers,Battle Tank,30,1,3,0,6,0,,10
+Sniper Rifle,Battle Brothers,Pathfinders,30,1,1,0,0,0,"Reliable, Takedown",20
+Spear Missile Launcher,Battle Brothers,Battle Tank,30,1,3,0,6,0,,5
 Stomp,Battle Brothers,Combat Walker,0,2,1,0,0,0,,0
 Stomp,Battle Brothers,Heavy Exo-Suit,0,2,1,0,0,0,,0
 Stomp,Battle Brothers,Veteran Combat Walker,0,2,1,0,0,0,,0
-Storm Cannon,Battle Brothers,Light Gunship,30,2,2,0,0,0,Unstoppable,10
+Storm Cannon,Battle Brothers,Light Gunship,30,2,2,0,0,0,Unstoppable,50
 Storm Missiles,Battle Brothers,Heavy Gunship,36,1,3,0,3,0,,0
 Storm Rifle,Battle Brothers,APC,24,3,1,0,0,0,,0
-Storm Rifle,Battle Brothers,Battle Tank,24,3,1,0,0,0,,10
-Storm Rifle,Battle Brothers,Combat Walker,24,3,1,0,0,0,,10
-Storm Rifle,Battle Brothers,Destroyers,24,3,1,0,0,0,,10
-Storm Rifle,Battle Brothers,Heavy Tank,24,3,1,0,0,0,,10
-Storm Rifle,Battle Brothers,Veteran Combat Walker,24,3,1,0,0,0,,10
-Super-Heavy Fusion Rifle,Battle Brothers,Combat Walker,18,1,4,0,6,0,,10
-Super-Heavy Fusion Rifle,Battle Brothers,Veteran Combat Walker,18,1,4,0,6,0,,10
-Twin Autocannon,Battle Brothers,Combat Walker,36,6,2,0,0,0,,10
-Twin Autocannon,Battle Brothers,Veteran Combat Walker,36,6,2,0,0,0,,10
+Storm Rifle,Battle Brothers,Battle Tank,24,3,1,0,0,0,,45
+Storm Rifle,Battle Brothers,Combat Walker,24,3,1,0,0,0,,45
+Storm Rifle,Battle Brothers,Destroyers,24,3,1,0,0,0,,75
+Storm Rifle,Battle Brothers,Heavy Tank,24,3,1,0,0,0,,45
+Storm Rifle,Battle Brothers,Veteran Combat Walker,24,3,1,0,0,0,,60
+Super-Heavy Fusion Rifle,Battle Brothers,Combat Walker,18,1,4,0,6,0,,20
+Super-Heavy Fusion Rifle,Battle Brothers,Veteran Combat Walker,18,1,4,0,6,0,,25
+Twin Autocannon,Battle Brothers,Combat Walker,36,6,2,0,0,0,,90
+Twin Autocannon,Battle Brothers,Veteran Combat Walker,36,6,2,0,0,0,,120
 Twin Flamer,Battle Brothers,Heavy Exo-Suit,12,2,0,3,0,0,Reliable,0
-Twin Fusion Rifle,Battle Brothers,Heavy Exo-Suit,12,2,4,0,3,0,,10
-Twin Hammer Missiles,Battle Brothers,Light Gunship,36,2,3,0,3,0,Unstoppable,10
+Twin Fusion Rifle,Battle Brothers,Heavy Exo-Suit,12,2,4,0,3,0,,30
+Twin Hammer Missiles,Battle Brothers,Light Gunship,36,2,3,0,3,0,Unstoppable,65
 Twin Heavy Flamer,Battle Brothers,Attack APC,12,2,1,3,0,0,"Battleborn, Fear(2), Fearless",0
-Twin Heavy Flamer,Battle Brothers,Combat Walker,12,2,1,3,0,0,Reliable,10
+Twin Heavy Flamer,Battle Brothers,Combat Walker,12,2,1,3,0,0,Reliable,5
 Twin Heavy Flamer,Battle Brothers,Destroyers,12,2,1,3,0,0,Reliable,10
-Twin Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,2,1,3,0,0,Reliable,10
-Twin Heavy Machinegun,Battle Brothers,Attack APC,30,6,1,0,0,0,,10
+Twin Heavy Flamer,Battle Brothers,Veteran Combat Walker,12,2,1,3,0,0,Reliable,0
+Twin Heavy Machinegun,Battle Brothers,Attack APC,30,6,1,0,0,0,,45
 Twin Heavy Machinegun,Battle Brothers,Battle Tank,30,6,1,0,0,0,,0
-Twin Heavy Machinegun,Battle Brothers,Combat Walker,30,6,1,0,0,0,,10
-Twin Heavy Machinegun,Battle Brothers,Heavy Exo-Suit,30,6,1,0,0,0,,10
-Twin Heavy Machinegun,Battle Brothers,Light Gunship,30,6,1,0,0,0,,10
-Twin Heavy Machinegun,Battle Brothers,Veteran Combat Walker,30,6,1,0,0,0,,10
-Twin Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,2,1,0,0,0,,10
+Twin Heavy Machinegun,Battle Brothers,Combat Walker,30,6,1,0,0,0,,45
+Twin Heavy Machinegun,Battle Brothers,Heavy Exo-Suit,30,6,1,0,0,0,,65
+Twin Heavy Machinegun,Battle Brothers,Light Gunship,30,6,1,0,0,0,,20
+Twin Heavy Machinegun,Battle Brothers,Veteran Combat Walker,30,6,1,0,0,0,,65
+Twin Heavy Rifle,Battle Brothers,Pathfinder Bikers,24,2,1,0,0,0,,5
 Twin Heavy Rifle,Battle Brothers,Support Bike,24,2,1,0,0,0,,0
-Twin Heavy Rifle Array,Battle Brothers,Heavy Tank,24,12,1,0,0,0,,10
+Twin Heavy Rifle Array,Battle Brothers,Heavy Tank,24,12,1,0,0,0,,15
 Twin Heavy Rifles,Battle Brothers,Brother Bikers,24,2,1,0,0,0,,0
-Twin Laser Cannon,Battle Brothers,Attack APC,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Battle Tank,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Combat Walker,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Heavy Exo-Suit,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Heavy Gunship,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Light Gunship,36,2,3,0,3,0,,10
-Twin Laser Cannon,Battle Brothers,Veteran Combat Walker,36,2,3,0,3,0,,10
-Twin Light Gravity Cannon,Battle Brothers,Heavy Exo-Suit,24,2,2,3,0,0,Lacerate,10
-Twin Minigun,Battle Brothers,Attack APC,24,8,1,0,0,0,,10
+Twin Laser Cannon,Battle Brothers,Attack APC,36,2,3,0,3,0,,90
+Twin Laser Cannon,Battle Brothers,Battle Tank,36,2,3,0,3,0,,50
+Twin Laser Cannon,Battle Brothers,Combat Walker,36,2,3,0,3,0,,90
+Twin Laser Cannon,Battle Brothers,Heavy Exo-Suit,36,2,3,0,3,0,,110
+Twin Laser Cannon,Battle Brothers,Heavy Gunship,36,2,3,0,3,0,,20
+Twin Laser Cannon,Battle Brothers,Light Gunship,36,2,3,0,3,0,,60
+Twin Laser Cannon,Battle Brothers,Veteran Combat Walker,36,2,3,0,3,0,,115
+Twin Light Gravity Cannon,Battle Brothers,Heavy Exo-Suit,24,2,2,3,0,0,Lacerate,70
+Twin Minigun,Battle Brothers,Attack APC,24,8,1,0,0,0,,65
 Twin Minigun,Battle Brothers,Heavy Gunship,24,8,1,0,0,0,,0
-Twin Minigun,Battle Brothers,Heavy Tank,24,8,1,0,0,0,,10
-Twin Plasma Cannon,Battle Brothers,Heavy Gunship,30,2,4,3,0,0,,10
+Twin Minigun,Battle Brothers,Heavy Tank,24,8,1,0,0,0,,20
+Twin Plasma Cannon,Battle Brothers,Heavy Gunship,30,2,4,3,0,0,,25
 Twin Storm Cannon,Battle Brothers,Battle Tank,30,4,2,0,0,0,Unstoppable,0
-Twin Typhoon Missiles,Battle Brothers,Attack Speeder,24,4,2,0,0,0,Unstoppable,10
+Twin Typhoon Missiles,Battle Brothers,Attack Speeder,24,4,2,0,0,0,Unstoppable,55
 Twin Typhoon Missiles,Battle Brothers,Light Gunship,24,4,2,0,0,0,Unstoppable,0
 Typhoon Missiles,Battle Brothers,Heavy Gunship,24,2,2,0,0,0,Unstoppable,0
 Walker Fists,Battle Brothers,Combat Walker,0,4,4,0,0,0,,0
 Walker Fists,Battle Brothers,Veteran Combat Walker,0,4,4,0,0,0,,0
-Wind Missile Launcher,Battle Brothers,Battle Tank,36,2,1,3,0,0,Indirect,10
-Anti-Tank Cannon,Havoc Brothers,Despoiler Walker,30,1,3,0,6,0,,10
-Autocannon,Havoc Brothers,Chosen Havoc Brothers,36,3,2,0,0,0,,10
-Autocannon,Havoc Brothers,Havoc Brothers,36,3,2,0,0,0,,10
-Autocannon,Havoc Brothers,Havoc Support,36,3,2,0,0,0,,10
+Wind Missile Launcher,Battle Brothers,Battle Tank,36,2,1,3,0,0,Indirect,30
+Anti-Tank Cannon,Havoc Brothers,Despoiler Walker,30,1,3,0,6,0,,5
+Autocannon,Havoc Brothers,Chosen Havoc Brothers,36,3,2,0,0,0,,80
+Autocannon,Havoc Brothers,Havoc Brothers,36,3,2,0,0,0,,65
+Autocannon,Havoc Brothers,Havoc Support,36,3,2,0,0,0,,55
 Bane Flamethrower,Havoc Brothers,Infernal Stalker,18,1,1,3,0,0,Reliable,0
-Brute Axe,Havoc Brothers,Infernal Brute,0,2,2,0,3,0,,10
-Brute Fist,Havoc Brothers,Infernal Brute,0,4,4,0,0,0,,10
-Brute Flail,Havoc Brothers,Infernal Brute,0,4,1,0,0,0,Rending,10
+Brute Axe,Havoc Brothers,Infernal Brute,0,2,2,0,3,0,,25
+Brute Fist,Havoc Brothers,Infernal Brute,0,4,4,0,0,0,,25
+Brute Flail,Havoc Brothers,Infernal Brute,0,4,1,0,0,0,Rending,15
 Brute Hammers,Havoc Brothers,Infernal Brute,0,2,0,3,0,0,,0
 CCW,Havoc Brothers,Cultist Champion,0,4,0,0,0,0,,0
-CCW,Havoc Brothers,Cultists,0,2,0,0,0,0,,10
-CCW,Havoc Brothers,Havoc Bikers,0,1,0,0,0,0,,10
+CCW,Havoc Brothers,Cultists,0,2,0,0,0,0,,0
+CCW,Havoc Brothers,Havoc Bikers,0,1,0,0,0,0,,5
 CCW,Havoc Brothers,Havoc Champion,0,4,0,0,0,0,,0
 CCW,Havoc Brothers,Havoc Destroyer Champion,0,4,0,0,0,0,,0
-CCW,Havoc Brothers,Havoc Destroyers,0,1,0,0,0,0,,10
+CCW,Havoc Brothers,Havoc Destroyers,0,1,0,0,0,0,,0
 CCWs,Havoc Brothers,Cultists,0,1,0,0,0,0,,0
 CCWs,Havoc Brothers,Havoc Bikers,0,1,0,0,0,0,,0
 CCWs,Havoc Brothers,Havoc Brothers,0,1,0,0,0,0,,0
 CCWs,Havoc Brothers,Havoc Support,0,1,0,0,0,0,,0
 Champion Heavy Pistol,Havoc Brothers,Chosen Havoc Champion,12,2,1,0,0,0,,10
-Champion Heavy Pistol,Havoc Brothers,Havoc Champion,12,2,1,0,0,0,,10
-Champion Heavy Rifle,Havoc Brothers,Chosen Havoc Champion,24,2,1,0,0,0,,10
-Champion Heavy Rifle,Havoc Brothers,Havoc Champion,24,2,1,0,0,0,,10
+Champion Heavy Pistol,Havoc Brothers,Havoc Champion,12,2,1,0,0,0,,5
+Champion Heavy Rifle,Havoc Brothers,Chosen Havoc Champion,24,2,1,0,0,0,,30
+Champion Heavy Rifle,Havoc Brothers,Havoc Champion,24,2,1,0,0,0,,25
 Champion Heavy Rifle,Havoc Brothers,Havoc Destroyer Champion,24,2,1,0,0,0,,0
 Champion Pistol,Havoc Brothers,Cultist Champion,12,2,0,0,0,0,,0
-Champion Plasma Pistol,Havoc Brothers,Chosen Havoc Champion,12,2,4,0,0,0,,10
-Champion Plasma Pistol,Havoc Brothers,Havoc Champion,12,2,4,0,0,0,,10
-Champion Rifle,Havoc Brothers,Cultist Champion,24,2,0,0,0,0,,10
+Champion Plasma Pistol,Havoc Brothers,Chosen Havoc Champion,12,2,4,0,0,0,,20
+Champion Plasma Pistol,Havoc Brothers,Havoc Champion,12,2,4,0,0,0,,15
+Champion Rifle,Havoc Brothers,Cultist Champion,24,2,0,0,0,0,,5
 Champion Shotgun,Havoc Brothers,Cultist Champion,12,4,1,0,0,0,,10
-Champion Shred Pistol,Havoc Brothers,Cultist Champion,9,3,0,0,0,0,Rending,10
-Champion Sniper Rifle,Havoc Brothers,Cultist Champion,30,2,1,0,0,0,"Reliable, Takedown",10
-Champion Storm Rifle,Havoc Brothers,Chosen Havoc Champion,24,4,1,0,0,0,,10
-Champion Storm Rifle,Havoc Brothers,Havoc Champion,24,4,1,0,0,0,,10
+Champion Shred Pistol,Havoc Brothers,Cultist Champion,9,3,0,0,0,0,Rending,5
+Champion Sniper Rifle,Havoc Brothers,Cultist Champion,30,2,1,0,0,0,"Reliable, Takedown",70
+Champion Storm Rifle,Havoc Brothers,Chosen Havoc Champion,24,4,1,0,0,0,,75
+Champion Storm Rifle,Havoc Brothers,Havoc Champion,24,4,1,0,0,0,,60
 Claws,Havoc Brothers,Mutated Cultists,0,2,0,0,0,0,,0
-Combat Bike,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,0,0,Fast,10
-Combat Bike,Havoc Brothers,Havoc Champion,0,0,0,0,0,0,Fast,10
+Combat Bike,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,0,0,Fast,100
+Combat Bike,Havoc Brothers,Havoc Champion,0,0,0,0,0,0,Fast,90
 Cursed Blade,Havoc Brothers,Cultist Champion,0,3,2,0,0,0,Rending,10
-Daemon Chain,Havoc Brothers,Harbinger of Havoc,12,3,0,0,0,0,,10
-Daemon Gauntlet,Havoc Brothers,Harbinger of Havoc,0,3,4,0,0,0,,10
+Daemon Chain,Havoc Brothers,Harbinger of Havoc,12,3,0,0,0,0,,5
+Daemon Gauntlet,Havoc Brothers,Harbinger of Havoc,0,3,4,0,0,0,,30
 Daemon Hammers,Havoc Brothers,Harbinger of Havoc,0,1,0,3,0,0,,0
-Daemon Spear,Havoc Brothers,Harbinger of Havoc,0,1,2,0,3,0,,10
-Daemon Sword,Havoc Brothers,Harbinger of Havoc,0,3,1,0,0,0,Rending,10
+Daemon Spear,Havoc Brothers,Harbinger of Havoc,0,1,2,0,3,0,,15
+Daemon Sword,Havoc Brothers,Harbinger of Havoc,0,3,1,0,0,0,Rending,20
 Despoiler Claws,Havoc Brothers,Despoiler Walker,0,4,3,0,0,0,,0
-Dual Energy Claws,Havoc Brothers,Chosen Havoc Brothers,0,4,0,0,0,0,Rending,10
-Dual Energy Claws,Havoc Brothers,Chosen Havoc Champion,0,4,0,0,0,0,Rending,10
+Dual Energy Claws,Havoc Brothers,Chosen Havoc Brothers,0,4,0,0,0,0,Rending,15
+Dual Energy Claws,Havoc Brothers,Chosen Havoc Champion,0,4,0,0,0,0,Rending,15
 Dual Energy Claws,Havoc Brothers,Havoc Champion,0,4,0,0,0,0,Rending,10
 Dual Energy Claws,Havoc Brothers,Havoc Destroyer Champion,0,8,0,0,0,0,Rending,10
 Dual Energy Claws,Havoc Brothers,Talon Raptors,0,2,0,0,0,0,Rending,0
-Dual Maul Cutters,Havoc Brothers,Despoiler Walker,0,6,3,0,0,0,,10
-Dual Maul Cutters,Havoc Brothers,Havoc Mech-Fiend,0,6,3,0,0,0,,10
+Dual Maul Cutters,Havoc Brothers,Despoiler Walker,0,6,3,0,0,0,,75
+Dual Maul Cutters,Havoc Brothers,Havoc Mech-Fiend,0,6,3,0,0,0,,5
 Dual Mutated Claws,Havoc Brothers,Mutated Destroyer,0,6,1,0,0,0,,0
-Energy Axe,Havoc Brothers,Chosen Havoc Champion,0,1,2,0,3,0,,10
-Energy Axe,Havoc Brothers,Havoc Champion,0,1,2,0,3,0,,10
-Energy Axe,Havoc Brothers,Havoc Destroyer Champion,0,2,2,0,3,0,,10
-Energy Axe,Havoc Brothers,Havoc Destroyers,0,1,2,0,3,0,,10
+Energy Axe,Havoc Brothers,Chosen Havoc Champion,0,1,2,0,3,0,,15
+Energy Axe,Havoc Brothers,Havoc Champion,0,1,2,0,3,0,,15
+Energy Axe,Havoc Brothers,Havoc Destroyer Champion,0,2,2,0,3,0,,30
+Energy Axe,Havoc Brothers,Havoc Destroyers,0,1,2,0,3,0,,20
 Energy Fist,Havoc Brothers,Chosen Havoc Brothers,0,2,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Chosen Havoc Champion,0,2,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Havoc Bikers,0,2,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Havoc Brothers,0,2,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Havoc Champion,0,2,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Havoc Destroyer Champion,0,4,4,0,0,0,,10
-Energy Fist,Havoc Brothers,Havoc Destroyers,0,3,4,0,0,0,,10
-Energy Hammer,Havoc Brothers,Chosen Havoc Champion,0,1,0,3,0,0,,10
-Energy Hammer,Havoc Brothers,Havoc Champion,0,1,0,3,0,0,,10
-Energy Hammer,Havoc Brothers,Havoc Destroyer Champion,0,2,0,3,0,0,,10
+Energy Fist,Havoc Brothers,Chosen Havoc Champion,0,2,4,0,0,0,,20
+Energy Fist,Havoc Brothers,Havoc Bikers,0,2,4,0,0,0,,5
+Energy Fist,Havoc Brothers,Havoc Brothers,0,2,4,0,0,0,,5
+Energy Fist,Havoc Brothers,Havoc Champion,0,2,4,0,0,0,,15
+Energy Fist,Havoc Brothers,Havoc Destroyer Champion,0,4,4,0,0,0,,30
+Energy Fist,Havoc Brothers,Havoc Destroyers,0,3,4,0,0,0,,35
+Energy Hammer,Havoc Brothers,Chosen Havoc Champion,0,1,0,3,0,0,,5
+Energy Hammer,Havoc Brothers,Havoc Champion,0,1,0,3,0,0,,5
+Energy Hammer,Havoc Brothers,Havoc Destroyer Champion,0,2,0,3,0,0,,5
 Energy Hammer,Havoc Brothers,Havoc Destroyers,0,1,0,3,0,0,,10
-Energy Sword,Havoc Brothers,Chosen Havoc Brothers,0,2,1,0,0,0,,10
+Energy Sword,Havoc Brothers,Chosen Havoc Brothers,0,2,1,0,0,0,,5
 Energy Sword,Havoc Brothers,Chosen Havoc Champion,0,2,1,0,0,0,Rending,10
-Energy Sword,Havoc Brothers,Cultist Champion,0,2,1,0,0,0,Rending,10
+Energy Sword,Havoc Brothers,Cultist Champion,0,2,1,0,0,0,Rending,5
 Energy Sword,Havoc Brothers,Havoc Bikers,0,2,1,0,0,0,Rending,10
-Energy Sword,Havoc Brothers,Havoc Brothers,0,2,1,0,0,0,Rending,10
+Energy Sword,Havoc Brothers,Havoc Brothers,0,2,1,0,0,0,Rending,5
 Energy Sword,Havoc Brothers,Havoc Champion,0,2,1,0,0,0,Rending,10
-Energy Sword,Havoc Brothers,Havoc Destroyer Champion,0,4,1,0,0,0,Rending,10
-Energy Sword,Havoc Brothers,Havoc Destroyers,0,3,1,0,0,0,Rending,10
+Energy Sword,Havoc Brothers,Havoc Destroyer Champion,0,4,1,0,0,0,Rending,20
+Energy Sword,Havoc Brothers,Havoc Destroyers,0,3,1,0,0,0,Rending,25
 Fiend Claws,Havoc Brothers,Havoc Mech-Fiend,0,4,0,0,0,0,Rending,0
-Flamer,Havoc Brothers,Chosen Havoc Brothers,12,1,0,3,0,0,Reliable,10
-Flamer,Havoc Brothers,Cultists,12,1,0,3,0,0,Reliable,10
-Flamer,Havoc Brothers,Havoc Bikers,12,1,0,3,0,0,Reliable,10
-Flamer,Havoc Brothers,Havoc Brothers,12,1,0,3,0,0,Reliable,10
-Flamer,Havoc Brothers,Talon Raptors,12,1,0,3,0,0,Reliable,10
-Flamer Pistol,Havoc Brothers,Cultist Champion,6,1,0,3,0,0,Reliable,10
+Flamer,Havoc Brothers,Chosen Havoc Brothers,12,1,0,3,0,0,Reliable,5
+Flamer,Havoc Brothers,Cultists,12,1,0,3,0,0,Reliable,20
+Flamer,Havoc Brothers,Havoc Bikers,12,1,0,3,0,0,Reliable,5
+Flamer,Havoc Brothers,Havoc Brothers,12,1,0,3,0,0,Reliable,5
+Flamer,Havoc Brothers,Talon Raptors,12,1,0,3,0,0,Reliable,15
+Flamer Pistol,Havoc Brothers,Cultist Champion,6,1,0,3,0,0,Reliable,5
 Flamer Pistol,Havoc Brothers,Havoc Champion,6,1,0,3,0,0,Reliable,0
 Flamer-Mod,Havoc Brothers,Chosen Havoc Brothers,12,1,0,3,0,0,"Limited, Reliable",10
 Flamer-Mod,Havoc Brothers,Chosen Havoc Champion,12,1,0,3,0,0,"Limited, Reliable",10
-Flamer-Mod,Havoc Brothers,Havoc APC,12,1,0,0,0,0,"Limited, Reliable",10
+Flamer-Mod,Havoc Brothers,Havoc APC,12,1,0,0,0,0,"Limited, Reliable",45
 Flamer-Mod,Havoc Brothers,Havoc Champion,12,1,0,3,0,0,"Limited, Reliable",10
 Flamer-Mod,Havoc Brothers,Havoc Destroyer Champion,12,1,0,3,0,0,"Limited, Reliable",10
-Flamer-Mod,Havoc Brothers,Havoc Destroyers,12,1,0,3,0,0,"Limited, Reliable",10
-Flamer-Mod,Havoc Brothers,Havoc Heavy Tank,12,1,0,0,0,0,"Limited, Reliable",10
-Flamer-Mod,Havoc Brothers,Havoc Tank,12,1,0,0,0,0,"Limited, Reliable",10
-Forge Cannon,Havoc Brothers,Havoc Dragon,30,8,3,0,0,0,,10
-Fusion Rifle,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,3,0,,10
-Fusion Rifle,Havoc Brothers,Havoc Bikers,12,1,4,0,3,0,,10
-Fusion Rifle,Havoc Brothers,Havoc Brothers,12,1,4,0,3,0,,10
-Fusion Rifle,Havoc Brothers,Talon Raptors,12,1,4,0,3,0,,10
-Fusion-Mod,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Havoc Brothers,Chosen Havoc Champion,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Havoc Brothers,Havoc APC,12,1,4,0,3,0,Limited,10
+Flamer-Mod,Havoc Brothers,Havoc Destroyers,12,1,0,3,0,0,"Limited, Reliable",40
+Flamer-Mod,Havoc Brothers,Havoc Heavy Tank,12,1,0,0,0,0,"Limited, Reliable",45
+Flamer-Mod,Havoc Brothers,Havoc Tank,12,1,0,0,0,0,"Limited, Reliable",45
+Forge Cannon,Havoc Brothers,Havoc Dragon,30,8,3,0,0,0,,140
+Fusion Rifle,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,3,0,,20
+Fusion Rifle,Havoc Brothers,Havoc Bikers,12,1,4,0,3,0,,20
+Fusion Rifle,Havoc Brothers,Havoc Brothers,12,1,4,0,3,0,,20
+Fusion Rifle,Havoc Brothers,Talon Raptors,12,1,4,0,3,0,,25
+Fusion-Mod,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,3,0,Limited,15
+Fusion-Mod,Havoc Brothers,Chosen Havoc Champion,12,1,4,0,3,0,Limited,15
+Fusion-Mod,Havoc Brothers,Havoc APC,12,1,4,0,3,0,Limited,50
 Fusion-Mod,Havoc Brothers,Havoc Champion,12,1,4,0,3,0,Limited,10
 Fusion-Mod,Havoc Brothers,Havoc Destroyer Champion,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Havoc Brothers,Havoc Destroyers,12,1,4,0,3,0,Limited,10
-Fusion-Mod,Havoc Brothers,Havoc Heavy Tank,12,1,4,0,0,0,Limited,10
-Fusion-Mod,Havoc Brothers,Havoc Tank,12,1,4,0,0,0,Limited,10
+Fusion-Mod,Havoc Brothers,Havoc Destroyers,12,1,4,0,3,0,Limited,5
+Fusion-Mod,Havoc Brothers,Havoc Heavy Tank,12,1,4,0,0,0,Limited,50
+Fusion-Mod,Havoc Brothers,Havoc Tank,12,1,4,0,0,0,Limited,50
 Grenade Launcher,Havoc Brothers,Cultists,24,1,0,3,0,0,,10
-Havoc Missiles,Havoc Brothers,Despoiler Walker,24,2,2,0,3,0,Unstoppable,10
-Havoc Missiles,Havoc Brothers,Havoc APC,24,1,2,0,3,0,Unstoppable,10
-Havoc Missiles,Havoc Brothers,Havoc Heavy Tank,24,1,2,0,3,0,Unstoppable,10
-Havoc Missiles,Havoc Brothers,Havoc Tank,24,1,2,0,3,0,Unstoppable,10
-Heavy CCW,Havoc Brothers,Chosen Havoc Brothers,0,2,1,0,0,0,,10
+Havoc Missiles,Havoc Brothers,Despoiler Walker,24,2,2,0,3,0,Unstoppable,85
+Havoc Missiles,Havoc Brothers,Havoc APC,24,1,2,0,3,0,Unstoppable,55
+Havoc Missiles,Havoc Brothers,Havoc Heavy Tank,24,1,2,0,3,0,Unstoppable,55
+Havoc Missiles,Havoc Brothers,Havoc Tank,24,1,2,0,3,0,Unstoppable,55
+Heavy CCW,Havoc Brothers,Chosen Havoc Brothers,0,2,1,0,0,0,,5
 Heavy CCW,Havoc Brothers,Havoc Brothers,0,2,1,0,0,0,,10
-Heavy CCW,Havoc Brothers,Talon Raptors,0,2,1,0,0,0,,10
+Heavy CCW,Havoc Brothers,Talon Raptors,0,2,1,0,0,0,,40
 Heavy Claws,Havoc Brothers,Greater Mutated,0,4,1,0,0,0,,0
 Heavy Claws,Havoc Brothers,Mutated Brothers,0,2,1,0,0,0,,0
-Heavy Flamer,Havoc Brothers,Infernal Brute,12,1,1,3,0,0,Reliable,10
+Heavy Flamer,Havoc Brothers,Infernal Brute,12,1,1,3,0,0,Reliable,30
 Heavy Flamers,Havoc Brothers,Havoc Support,12,1,1,3,0,0,Reliable,0
-Heavy Fusion Rifle,Havoc Brothers,Havoc Support,18,1,4,0,3,0,,10
+Heavy Fusion Rifle,Havoc Brothers,Havoc Support,18,1,4,0,3,0,,25
 Heavy Havoc Sword,Havoc Brothers,Havoc Soul Spawn,0,3,0,0,0,0,Rending,10
-Heavy Machinegun,Havoc Brothers,Chosen Havoc Brothers,30,3,1,0,0,0,,10
-Heavy Machinegun,Havoc Brothers,Havoc Brothers,30,3,1,0,0,0,,10
-Heavy Machinegun,Havoc Brothers,Havoc Support,30,3,1,0,0,0,,10
-Heavy Maul Cutter,Havoc Brothers,Infernal Stalker,0,9,3,0,0,0,,10
-Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,,10
+Heavy Machinegun,Havoc Brothers,Chosen Havoc Brothers,30,3,1,0,0,0,,55
+Heavy Machinegun,Havoc Brothers,Havoc Brothers,30,3,1,0,0,0,,45
+Heavy Machinegun,Havoc Brothers,Havoc Support,30,3,1,0,0,0,,30
+Heavy Maul Cutter,Havoc Brothers,Infernal Stalker,0,9,3,0,0,0,,20
+Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,,5
 Heavy Pistol,Havoc Brothers,Havoc Brothers,12,1,1,0,0,0,,10
-Heavy Pistol,Havoc Brothers,Talon Raptors,12,1,1,0,0,0,,10
+Heavy Pistol,Havoc Brothers,Talon Raptors,12,1,1,0,0,0,,40
 Heavy Pistols,Havoc Brothers,Havoc Bikers,12,1,1,0,0,0,,0
 Heavy Plasma Cannon,Havoc Brothers,Despoiler Walker,30,1,4,6,0,0,,0
-Heavy Plasma Cannon,Havoc Brothers,Infernal Brute,30,1,4,6,0,0,,10
-Heavy Reaper Cannon,Havoc Brothers,Despoiler Walker,24,6,1,0,0,0,Shred,10
-Heavy Reaper Cannon,Havoc Brothers,Infernal Brute,24,6,1,0,0,0,Shred,10
-Heavy Rifle,Havoc Brothers,Havoc Bikers,24,1,1,0,0,0,,10
+Heavy Plasma Cannon,Havoc Brothers,Infernal Brute,30,1,4,6,0,0,,80
+Heavy Reaper Cannon,Havoc Brothers,Despoiler Walker,24,6,1,0,0,0,Shred,95
+Heavy Reaper Cannon,Havoc Brothers,Infernal Brute,24,6,1,0,0,0,Shred,90
+Heavy Rifle,Havoc Brothers,Havoc Bikers,24,1,1,0,0,0,,5
 Heavy Rifles,Havoc Brothers,Havoc Brothers,24,1,1,0,0,0,,0
 Hell Flails,Havoc Brothers,Despoiler Walker,0,4,0,0,0,0,,0
-Laser Cannon,Havoc Brothers,Chosen Havoc Brothers,36,1,3,0,3,0,,10
-Laser Cannon,Havoc Brothers,Havoc Brothers,36,1,3,0,3,0,,10
-Laser Cannon,Havoc Brothers,Havoc Support,36,1,3,0,3,0,,10
-Machinegun,Havoc Brothers,Cultists,30,3,0,0,0,0,,10
-Missile Array,Havoc Brothers,Infernal Brute,30,4,2,0,0,0,Unstoppable,10
-Missile Launcher,Havoc Brothers,Chosen Havoc Brothers,30,1,2,0,3,0,Unstoppable,10
-Missile Launcher,Havoc Brothers,Havoc Brothers,30,1,2,0,3,0,Unstoppable,10
-Missile Launcher,Havoc Brothers,Havoc Support,30,1,2,0,3,0,Unstoppable,10
-Mutated Claw,Havoc Brothers,Mutated Destroyer,0,3,1,0,0,0,,10
+Laser Cannon,Havoc Brothers,Chosen Havoc Brothers,36,1,3,0,3,0,,75
+Laser Cannon,Havoc Brothers,Havoc Brothers,36,1,3,0,3,0,,65
+Laser Cannon,Havoc Brothers,Havoc Support,36,1,3,0,3,0,,50
+Machinegun,Havoc Brothers,Cultists,30,3,0,0,0,0,,15
+Missile Array,Havoc Brothers,Infernal Brute,30,4,2,0,0,0,Unstoppable,75
+Missile Launcher,Havoc Brothers,Chosen Havoc Brothers,30,1,2,0,3,0,Unstoppable,55
+Missile Launcher,Havoc Brothers,Havoc Brothers,30,1,2,0,3,0,Unstoppable,45
+Missile Launcher,Havoc Brothers,Havoc Support,30,1,2,0,3,0,Unstoppable,35
+Mutated Claw,Havoc Brothers,Mutated Destroyer,0,3,1,0,0,0,,110
 Mutated Claws,Havoc Brothers,Havoc Soul Spawn,0,4,0,0,0,0,,0
-Mutated Gun,Havoc Brothers,Mutated Destroyer,24,6,1,0,0,0,,10
-Pistol,Havoc Brothers,Cultists,12,1,0,0,0,0,,10
-Plasma Cannon,Havoc Brothers,Havoc Support,30,1,4,3,0,0,,10
-Plasma Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,0,0,,10
-Plasma Pistol,Havoc Brothers,Havoc Bikers,12,1,4,0,0,0,,10
-Plasma Pistol,Havoc Brothers,Havoc Brothers,12,1,4,0,0,0,,10
-Plasma Pistol,Havoc Brothers,Talon Raptors,12,1,4,0,0,0,,10
-Plasma Rifle,Havoc Brothers,Chosen Havoc Brothers,24,1,4,0,0,0,,10
+Mutated Gun,Havoc Brothers,Mutated Destroyer,24,6,1,0,0,0,,110
+Pistol,Havoc Brothers,Cultists,12,1,0,0,0,0,,0
+Plasma Cannon,Havoc Brothers,Havoc Support,30,1,4,3,0,0,,45
+Plasma Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Havoc Brothers,Havoc Bikers,12,1,4,0,0,0,,5
+Plasma Pistol,Havoc Brothers,Havoc Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Havoc Brothers,Talon Raptors,12,1,4,0,0,0,,5
+Plasma Rifle,Havoc Brothers,Chosen Havoc Brothers,24,1,4,0,0,0,,15
 Plasma Rifle,Havoc Brothers,Cultists,24,1,4,0,0,0,,10
 Plasma Rifle,Havoc Brothers,Havoc Bikers,24,1,4,0,0,0,,10
 Plasma Rifle,Havoc Brothers,Havoc Brothers,24,1,4,0,0,0,,10
-Plasma Rifle,Havoc Brothers,Talon Raptors,24,1,4,0,0,0,,10
+Plasma Rifle,Havoc Brothers,Talon Raptors,24,1,4,0,0,0,,20
 Plasma-Mod,Havoc Brothers,Chosen Havoc Brothers,24,1,4,0,0,0,Limited,10
 Plasma-Mod,Havoc Brothers,Chosen Havoc Champion,24,1,4,0,0,0,Limited,10
-Plasma-Mod,Havoc Brothers,Havoc APC,24,1,4,0,0,0,Limited,10
+Plasma-Mod,Havoc Brothers,Havoc APC,24,1,4,0,0,0,Limited,45
 Plasma-Mod,Havoc Brothers,Havoc Champion,24,1,4,0,0,0,Limited,10
 Plasma-Mod,Havoc Brothers,Havoc Destroyer Champion,24,1,4,0,0,0,Limited,10
-Plasma-Mod,Havoc Brothers,Havoc Destroyers,24,1,4,0,0,0,Limited,10
-Plasma-Mod,Havoc Brothers,Havoc Heavy Tank,24,1,4,0,0,0,Limited,10
-Plasma-Mod,Havoc Brothers,Havoc Tank,24,1,4,0,0,0,Limited,10
+Plasma-Mod,Havoc Brothers,Havoc Destroyers,24,1,4,0,0,0,Limited,5
+Plasma-Mod,Havoc Brothers,Havoc Heavy Tank,24,1,4,0,0,0,Limited,45
+Plasma-Mod,Havoc Brothers,Havoc Tank,24,1,4,0,0,0,Limited,45
 Quad Laser Cannon,Havoc Brothers,Havoc Heavy Tank,36,4,3,0,3,0,,0
-Rapid Autocannon,Havoc Brothers,Havoc Tank,36,6,2,0,0,0,,10
-Rapid Autocannon,Havoc Brothers,Infernal Stalker,36,6,2,0,0,0,,10
-Rapid Heavy Rifle,Havoc Brothers,Havoc Destroyers,24,2,1,0,0,0,,10
-Rapid Heavy Rifle,Havoc Brothers,Havoc Heavy Tank,24,2,1,0,0,0,,10
-Rapid Heavy Rifle (A0),Havoc Brothers,Havoc APC,24,0,1,0,0,0,,10
-Rapid Heavy Rifle (A0),Havoc Brothers,Havoc Tank,24,0,1,0,0,0,,10
-Rapid Heavy Rifle (A2),Havoc Brothers,Havoc APC,24,2,1,0,0,0,,10
-Rapid Heavy Rifle (A2),Havoc Brothers,Havoc Tank,24,2,1,0,0,0,,10
-Rapid Storm Rifle,Havoc Brothers,Havoc Destroyer Champion,24,6,1,0,0,0,,10
-Reaper Cannon,Havoc Brothers,Chosen Havoc Brothers,24,4,0,0,0,0,Shred,10
-Reaper Cannon,Havoc Brothers,Havoc Brothers,24,4,0,0,0,0,Shred,10
+Rapid Autocannon,Havoc Brothers,Havoc Tank,36,6,2,0,0,0,,45
+Rapid Autocannon,Havoc Brothers,Infernal Stalker,36,6,2,0,0,0,,120
+Rapid Heavy Rifle,Havoc Brothers,Havoc Destroyers,24,2,1,0,0,0,,15
+Rapid Heavy Rifle,Havoc Brothers,Havoc Heavy Tank,24,2,1,0,0,0,,0
+Rapid Heavy Rifle (A0),Havoc Brothers,Havoc APC,24,0,1,0,0,0,,0
+Rapid Heavy Rifle (A0),Havoc Brothers,Havoc Tank,24,0,1,0,0,0,,0
+Rapid Heavy Rifle (A2),Havoc Brothers,Havoc APC,24,2,1,0,0,0,,0
+Rapid Heavy Rifle (A2),Havoc Brothers,Havoc Tank,24,2,1,0,0,0,,0
+Rapid Storm Rifle,Havoc Brothers,Havoc Destroyer Champion,24,6,1,0,0,0,,75
+Reaper Cannon,Havoc Brothers,Chosen Havoc Brothers,24,4,0,0,0,0,Shred,55
+Reaper Cannon,Havoc Brothers,Havoc Brothers,24,4,0,0,0,0,Shred,45
 Reaper Cannon,Havoc Brothers,Havoc Destroyers,24,4,0,0,0,0,Shred,10
-Reaper Cannon,Havoc Brothers,Havoc Support,24,4,0,0,0,0,Shred,10
+Reaper Cannon,Havoc Brothers,Havoc Support,24,4,0,0,0,0,Shred,35
 Rifles,Havoc Brothers,Cultists,24,1,0,0,0,0,,0
-Sgt. Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,,10
+Sgt. Heavy Pistol,Havoc Brothers,Chosen Havoc Brothers,12,1,1,0,0,0,,5
 Sgt. Heavy Pistol,Havoc Brothers,Havoc Bikers,12,1,1,0,0,0,,10
-Sgt. Heavy Pistol,Havoc Brothers,Havoc Brothers,12,1,1,0,0,0,,10
-Shotgun,Havoc Brothers,Cultists,12,2,1,0,0,0,,10
+Sgt. Heavy Pistol,Havoc Brothers,Havoc Brothers,12,1,1,0,0,0,,5
+Shotgun,Havoc Brothers,Cultists,12,2,1,0,0,0,,5
 Shred Rifle,Havoc Brothers,Chosen Havoc Brothers,18,2,0,0,0,0,Rending,10
 Shred Rifle,Havoc Brothers,Cultists,18,2,0,0,0,0,Rending,10
 Shred Rifle,Havoc Brothers,Havoc Brothers,18,2,0,0,0,0,Rending,10
 Shred-Mod,Havoc Brothers,Chosen Havoc Brothers,18,2,0,0,0,0,"Limited, Rending",10
 Shred-Mod,Havoc Brothers,Chosen Havoc Champion,18,2,0,0,0,0,"Limited, Rending",10
-Shred-Mod,Havoc Brothers,Havoc APC,18,2,0,0,0,0,Limited,10
+Shred-Mod,Havoc Brothers,Havoc APC,18,2,0,0,0,0,Limited,45
 Shred-Mod,Havoc Brothers,Havoc Champion,18,2,0,0,0,0,"Limited, Rending",10
 Shred-Mod,Havoc Brothers,Havoc Destroyer Champion,18,2,0,0,0,0,"Limited, Rending",10
-Shred-Mod,Havoc Brothers,Havoc Destroyers,18,2,0,0,0,0,"Limited, Rending",10
-Shred-Mod,Havoc Brothers,Havoc Heavy Tank,18,2,0,0,0,0,"Limited, Rending",10
-Shred-Mod,Havoc Brothers,Havoc Tank,18,2,0,0,0,0,Limited,10
-Sniper Rifle,Havoc Brothers,Cultists,30,1,1,0,0,0,"Reliable, Takedown",10
+Shred-Mod,Havoc Brothers,Havoc Destroyers,18,2,0,0,0,0,"Limited, Rending",5
+Shred-Mod,Havoc Brothers,Havoc Heavy Tank,18,2,0,0,0,0,"Limited, Rending",45
+Shred-Mod,Havoc Brothers,Havoc Tank,18,2,0,0,0,0,Limited,45
+Sniper Rifle,Havoc Brothers,Cultists,30,1,1,0,0,0,"Reliable, Takedown",30
 Spider Fangs,Havoc Brothers,Spider Walker,0,8,0,0,0,0,Rending,0
 Steel Tails,Havoc Brothers,Havoc Mech-Fiend,0,8,1,0,0,0,,0
 Stomp,Havoc Brothers,Despoiler Walker,0,2,1,0,0,0,,0
@@ -480,129 +480,129 @@ Stomp,Havoc Brothers,Infernal Brute,0,2,1,0,0,0,,0
 Stomp,Havoc Brothers,Infernal Stalker,0,4,1,0,0,0,,0
 Stomp,Havoc Brothers,Spider Walker,0,2,1,0,0,0,,0
 Storm Rifle,Havoc Brothers,Havoc APC,24,3,1,0,0,0,,0
-Storm Rifle,Havoc Brothers,Havoc Destroyers,24,3,1,0,0,0,,10
-Storm Rifle,Havoc Brothers,Havoc Heavy Tank,24,3,1,0,0,0,,10
-Storm Rifle,Havoc Brothers,Havoc Tank,24,3,1,0,0,0,,10
-Storm Rifle,Havoc Brothers,Infernal Brute,24,3,1,0,0,0,,10
-Super-Heavy Fusion Rifle,Havoc Brothers,Infernal Brute,18,1,4,0,6,0,,10
-Twin Ecto-Cannons,Havoc Brothers,Havoc Mech-Fiend,24,4,4,3,0,0,,10
-Twin Fiend Autocannon,Havoc Brothers,Havoc Mech-Fiend,36,8,2,0,0,0,,10
-Twin Heavy Flamer,Havoc Brothers,Despoiler Walker,12,2,1,3,0,0,Reliable,10
+Storm Rifle,Havoc Brothers,Havoc Destroyers,24,3,1,0,0,0,,70
+Storm Rifle,Havoc Brothers,Havoc Heavy Tank,24,3,1,0,0,0,,55
+Storm Rifle,Havoc Brothers,Havoc Tank,24,3,1,0,0,0,,55
+Storm Rifle,Havoc Brothers,Infernal Brute,24,3,1,0,0,0,,55
+Super-Heavy Fusion Rifle,Havoc Brothers,Infernal Brute,18,1,4,0,6,0,,50
+Twin Ecto-Cannons,Havoc Brothers,Havoc Mech-Fiend,24,4,4,3,0,0,,155
+Twin Fiend Autocannon,Havoc Brothers,Havoc Mech-Fiend,36,8,2,0,0,0,,110
+Twin Heavy Flamer,Havoc Brothers,Despoiler Walker,12,2,1,3,0,0,Reliable,40
 Twin Heavy Flamer,Havoc Brothers,Havoc Destroyers,12,2,1,3,0,0,Reliable,10
-Twin Heavy Machinegun,Havoc Brothers,Despoiler Walker,30,6,1,0,0,0,,10
+Twin Heavy Machinegun,Havoc Brothers,Despoiler Walker,30,6,1,0,0,0,,125
 Twin Heavy Machinegun,Havoc Brothers,Havoc Tank,30,6,1,0,0,0,,0
-Twin Heavy Machinegun,Havoc Brothers,Infernal Brute,30,6,1,0,0,0,,10
+Twin Heavy Machinegun,Havoc Brothers,Infernal Brute,30,6,1,0,0,0,,90
 Twin Heavy Rifles,Havoc Brothers,Havoc Bikers,24,2,1,0,0,0,,0
-Twin Laser Cannon,Havoc Brothers,Despoiler Walker,36,2,3,0,3,0,,10
-Twin Laser Cannon,Havoc Brothers,Havoc Tank,36,2,3,0,3,0,,10
-Twin Laser Cannon,Havoc Brothers,Infernal Brute,36,2,3,0,3,0,,10
-Twin Pain Cannons,Havoc Brothers,Despoiler Walker,24,2,0,3,0,0,,10
+Twin Laser Cannon,Havoc Brothers,Despoiler Walker,36,2,3,0,3,0,,135
+Twin Laser Cannon,Havoc Brothers,Havoc Tank,36,2,3,0,3,0,,40
+Twin Laser Cannon,Havoc Brothers,Infernal Brute,36,2,3,0,3,0,,130
+Twin Pain Cannons,Havoc Brothers,Despoiler Walker,24,2,0,3,0,0,,65
 Twin Pain Cannons,Havoc Brothers,Spider Walker,24,2,0,3,0,0,,0
 Virus Injector,Havoc Brothers,Infernal Stalker,0,3,3,0,3,0,,0
 Annihilation Gun,Robot Legions,Tri-Scorpion Lord,18,2,1,3,0,0,,0
-Atom-Beamer,Robot Legions,Forge Spider,24,3,1,0,0,0,,10
+Atom-Beamer,Robot Legions,Forge Spider,24,3,1,0,0,0,,5
 Atom-Beamer,Robot Legions,Hover Bikes,24,3,1,0,0,0,,10
 Atom-Casters,Robot Legions,Guardians,12,1,1,0,0,0,,0
-Atom-Scourge,Robot Legions,Death Fortress,24,9,4,0,0,0,,10
-CCW,Robot Legions,Annihilators,0,1,0,0,0,0,,10
+Atom-Scourge,Robot Legions,Death Fortress,24,9,4,0,0,0,,45
+CCW,Robot Legions,Annihilators,0,1,0,0,0,0,,70
 CCWs,Robot Legions,Annihilator Lord,0,2,0,0,0,0,,0
 CCWs,Robot Legions,Eternals,0,2,0,0,0,0,,0
 CCWs,Robot Legions,Hover Bikes,0,2,0,0,0,0,,0
 CCWs,Robot Legions,Snipers,0,1,0,0,0,0,,0
 CCWs,Robot Legions,Warriors,0,2,0,0,0,0,,0
 Close-Range Gauss Array,Robot Legions,Night Transport,12,6,0,0,0,0,Destructive,0
-Combat Staff,Robot Legions,Annihilator Lord,0,3,1,0,0,0,,10
-Combat Staff,Robot Legions,Robot Lord,0,3,1,0,0,0,,10
+Combat Staff,Robot Legions,Annihilator Lord,0,3,1,0,0,0,,40
+Combat Staff,Robot Legions,Robot Lord,0,3,1,0,0,0,,25
 Crushing Legs,Robot Legions,Spider Walker,0,2,2,0,0,0,,0
 D-Marks,Robot Legions,Snipers,24,1,1,0,0,0,"Reliable, Takedown",0
 Death Gaze,Robot Legions,Robot Snakes,12,2,4,0,0,0,,10
 Destruction Pulse,Robot Legions,Death Fortress,30,2,3,0,6,0,,0
 Doom Cannon,Robot Legions,Doom Tank,30,3,2,3,0,0,,0
 Doom Ray,Robot Legions,Doom Fighter,24,4,4,0,0,0,Unstoppable,0
-Doom Scythe,Robot Legions,Annihilator Lord,0,1,2,0,3,0,,10
-Doom Scythe,Robot Legions,Robot Lord,0,1,2,0,3,0,,10
-Dual Hyper Swords,Robot Legions,Annihilator Lord,0,4,1,0,0,0,Rending,10
+Doom Scythe,Robot Legions,Annihilator Lord,0,1,2,0,3,0,,15
+Doom Scythe,Robot Legions,Robot Lord,0,1,2,0,3,0,,15
+Dual Hyper Swords,Robot Legions,Annihilator Lord,0,4,1,0,0,0,Rending,5
 Dual Hyper Swords,Robot Legions,Annihilators,0,4,1,0,0,0,Rending,0
 Dual Reaper Blades,Robot Legions,Destroyer Snakes,0,4,1,0,0,0,Shred,0
 Dual Reaper Blades,Robot Legions,Tri-Scorpions,0,4,1,0,0,0,Shred,0
 Exterminator Cannon,Robot Legions,Heavy Annihilator,30,2,2,3,0,0,,10
 Flame Caster,Robot Legions,Warriors,12,1,0,3,0,0,Reliable,10
-Flux Cannon,Robot Legions,Support Platform,24,3,1,0,0,0,Surge,10
+Flux Cannon,Robot Legions,Support Platform,24,3,1,0,0,0,Surge,5
 Flux Carbines,Robot Legions,Eternals,18,2,0,0,0,0,Surge,0
 Flux Sphere Array,Robot Legions,Death Fortress,24,9,1,0,0,0,Surge,0
-Fusion Caster,Robot Legions,Warriors,12,1,4,0,3,0,,10
-Gauss Arc Array,Robot Legions,Death Fortress,24,12,0,0,0,0,Destructive,10
-Gauss Blaster,Robot Legions,Robot Lord,18,4,0,0,0,0,Destructive,10
-Gauss Cannon,Robot Legions,Annihilators,24,4,0,0,0,0,Destructive,10
-Gauss Cannon,Robot Legions,Support Platform,24,4,0,0,0,0,Destructive,10
+Fusion Caster,Robot Legions,Warriors,12,1,4,0,3,0,,15
+Gauss Arc Array,Robot Legions,Death Fortress,24,12,0,0,0,0,Destructive,25
+Gauss Blaster,Robot Legions,Robot Lord,18,4,0,0,0,0,Destructive,35
+Gauss Cannon,Robot Legions,Annihilators,24,4,0,0,0,0,Destructive,70
+Gauss Cannon,Robot Legions,Support Platform,24,4,0,0,0,0,Destructive,15
 Gauss Rifle,Robot Legions,Warriors,24,1,0,0,0,0,Destructive,10
 Gauss Rifle Array,Robot Legions,Doom Tank,24,3,0,0,0,0,Destructive,0
 Gauss Rifle Array,Robot Legions,Transport Tank,24,3,0,0,0,0,Destructive,0
-Great Wraith,Robot Legions,Great Wraith-Shard,0,0,0,0,0,0,Flying,10
+Great Wraith,Robot Legions,Great Wraith-Shard,0,0,0,0,0,0,Flying,135
 Great Wraith Strike,Robot Legions,Great Wraith-Shard,0,12,0,0,0,0,Rending,0
 Harvest Blade,Robot Legions,Tri-Scorpion Lord,0,2,2,0,3,0,,0
 Heavy CCW,Robot Legions,Heavy Annihilator,0,2,1,0,0,0,,0
-Heavy Doom Cannon,Robot Legions,Doom Tank,30,3,3,0,3,0,,10
-Heavy Gauss Cannon,Robot Legions,Annihilator Lord,30,6,0,0,0,0,Destructive,10
-Heavy Gauss Cannon,Robot Legions,Annihilators,30,6,0,0,0,0,Destructive,10
+Heavy Doom Cannon,Robot Legions,Doom Tank,30,3,3,0,3,0,,40
+Heavy Gauss Cannon,Robot Legions,Annihilator Lord,30,6,0,0,0,0,Destructive,80
+Heavy Gauss Cannon,Robot Legions,Annihilators,30,6,0,0,0,0,Destructive,40
 Heavy Gauss Cannon,Robot Legions,Heavy Annihilator,30,6,0,0,0,0,Destructive,0
-Heavy Gauss Rifle,Robot Legions,Eternals,24,2,0,0,0,0,Destructive,10
-Heavy Ray Cannon,Robot Legions,Heavy Annihilator,24,4,4,0,0,0,Unstoppable,10
-Heavy Reaper Blade,Robot Legions,Destroyer Snakes,0,1,3,0,6,0,Shred,10
-Heavy Reaper Blade,Robot Legions,Tri-Scorpions,0,1,3,0,6,0,Shred,10
-Hyper Sword,Robot Legions,Annihilator Lord,0,3,1,0,0,0,Rending,10
-Hyper Sword,Robot Legions,Guardians,0,2,1,0,0,0,Rending,10
-Hyper Sword,Robot Legions,Robot Lord,0,3,1,0,0,0,Rending,10
+Heavy Gauss Rifle,Robot Legions,Eternals,24,2,0,0,0,0,Destructive,60
+Heavy Ray Cannon,Robot Legions,Heavy Annihilator,24,4,4,0,0,0,Unstoppable,15
+Heavy Reaper Blade,Robot Legions,Destroyer Snakes,0,1,3,0,6,0,Shred,20
+Heavy Reaper Blade,Robot Legions,Tri-Scorpions,0,1,3,0,6,0,Shred,20
+Hyper Sword,Robot Legions,Annihilator Lord,0,3,1,0,0,0,Rending,20
+Hyper Sword,Robot Legions,Guardians,0,2,1,0,0,0,Rending,20
+Hyper Sword,Robot Legions,Robot Lord,0,3,1,0,0,0,Rending,20
 Lord Gauss Pistol,Robot Legions,Annihilator Lord,12,2,0,0,0,0,Destructive,0
-Lord Gauss Pistol,Robot Legions,Robot Lord,12,2,0,0,0,0,Destructive,10
+Lord Gauss Pistol,Robot Legions,Robot Lord,12,2,0,0,0,0,Destructive,5
 Lord Gauss Pistol,Robot Legions,Support Platform,12,2,0,0,0,0,Destructive,0
-Lord Gauss Rifle,Robot Legions,Robot Lord,24,2,0,0,0,0,Destructive,10
-Lord Reaper Rifle,Robot Legions,Robot Lord,18,2,1,0,0,0,Shred,10
+Lord Gauss Rifle,Robot Legions,Robot Lord,24,2,0,0,0,0,Destructive,20
+Lord Reaper Rifle,Robot Legions,Robot Lord,18,2,1,0,0,0,Shred,20
 Metal Claws,Robot Legions,Flesh-Eaters,0,2,1,0,0,0,,0
-Metal Fangs,Robot Legions,Robot Snakes,0,2,0,0,0,0,Rending,10
-Monolith Beam,Robot Legions,Great Monolith,18,3,3,0,6,0,,10
+Metal Fangs,Robot Legions,Robot Snakes,0,2,0,0,0,0,Rending,5
+Monolith Beam,Robot Legions,Great Monolith,18,3,3,0,6,0,,55
 Nanobot Shards,Robot Legions,Great Wraith-Shard,18,4,3,0,3,0,,0
 Nanobot Shards,Robot Legions,Wraith-Shard,18,4,3,0,3,0,,0
-Phase Glaive,Robot Legions,Annihilator Lord,0,3,4,0,0,0,,10
-Phase Glaive,Robot Legions,Robot Lord,0,3,4,0,0,0,,10
+Phase Glaive,Robot Legions,Annihilator Lord,0,3,4,0,0,0,,30
+Phase Glaive,Robot Legions,Robot Lord,0,3,4,0,0,0,,30
 Plasma Caster,Robot Legions,Warriors,24,1,4,0,0,0,,10
-Rapid Doom Blaster,Robot Legions,Tripod Walker,24,2,1,3,0,0,,10
+Rapid Doom Blaster,Robot Legions,Tripod Walker,24,2,1,3,0,0,,20
 Rapid Flux Carbines,Robot Legions,Hover Bikes,18,4,0,0,0,0,Surge,0
 Rapid Gauss Rifle,Robot Legions,Hover Bikes,24,3,0,0,0,0,Destructive,10
 Rapid Particle Beam,Robot Legions,Tripod Walker,12,2,1,3,0,0,Reliable,0
-Rapid Ray Caster,Robot Legions,Tripod Walker,18,4,4,0,0,0,Unstoppable,10
-Ray Cannon,Robot Legions,Annihilators,24,2,4,0,0,0,Unstoppable,10
+Rapid Ray Caster,Robot Legions,Tripod Walker,18,4,4,0,0,0,Unstoppable,30
+Ray Cannon,Robot Legions,Annihilators,24,2,4,0,0,0,Unstoppable,0
 Ray Caster,Robot Legions,Support Platform,18,2,4,0,0,0,Unstoppable,0
-Ray Caster,Robot Legions,Warriors,18,2,4,0,0,0,Unstoppable,10
+Ray Caster,Robot Legions,Warriors,18,2,4,0,0,0,Unstoppable,20
 Reaper Rifles,Robot Legions,Warriors,18,1,1,0,0,0,Shred,0
 Rod,Robot Legions,Guardians,0,1,0,0,0,0,,10
 Rod-Shots,Robot Legions,Guardians,12,2,1,0,0,0,,10
-Shock Whips,Robot Legions,Robot Snakes,0,4,1,0,0,0,Surge,10
+Shock Whips,Robot Legions,Robot Snakes,0,4,1,0,0,0,Surge,5
 Spider Fangs,Robot Legions,Forge Spider,0,6,0,0,0,0,Bane,0
-Staff-Shots,Robot Legions,Annihilator Lord,12,3,1,0,0,0,,10
-Staff-Shots,Robot Legions,Robot Lord,12,3,1,0,0,0,,10
+Staff-Shots,Robot Legions,Annihilator Lord,12,3,1,0,0,0,,40
+Staff-Shots,Robot Legions,Robot Lord,12,3,1,0,0,0,,25
 Stomp,Robot Legions,Great Wraith-Shard,0,2,1,0,0,0,,0
 Stomp,Robot Legions,Spider Walker,0,2,1,0,0,0,,0
 Stomp,Robot Legions,Tripod Walker,0,2,1,0,0,0,,0
 Stomp,Robot Legions,Wraith-Shard,0,4,1,0,0,0,,0
 Swarm Attacks,Robot Legions,Bot Swarms,0,3,0,0,0,0,Rending,0
 Twin Atom-Beamer,Robot Legions,Forge Spider,24,6,1,0,0,0,,0
-Twin Atom-Caster,Robot Legions,Robot Snakes,12,2,1,0,0,0,,10
-Twin Atom-Shredder,Robot Legions,Spider Walker,24,12,1,0,0,0,,10
-Twin Exterminator Cannon,Robot Legions,Spider Walker,30,4,2,3,0,0,,10
+Twin Atom-Caster,Robot Legions,Robot Snakes,12,2,1,0,0,0,,0
+Twin Atom-Shredder,Robot Legions,Spider Walker,24,12,1,0,0,0,,30
+Twin Exterminator Cannon,Robot Legions,Spider Walker,30,4,2,3,0,0,,55
 Twin Flux Cannon,Robot Legions,Night Transport,24,6,1,0,0,0,Surge,0
-Twin Flux Cannon,Robot Legions,Support Platform,24,6,1,0,0,0,Surge,10
+Twin Flux Cannon,Robot Legions,Support Platform,24,6,1,0,0,0,Surge,80
 Twin Fusion Ray,Robot Legions,Spider Walker,18,2,4,0,6,0,,0
-Twin Gauss Rifle,Robot Legions,Tripod Walker,24,2,0,0,0,0,Destructive,10
-Twin Heavy Gauss Cannon,Robot Legions,Spider Walker,24,12,0,0,0,0,Destructive,10
+Twin Gauss Rifle,Robot Legions,Tripod Walker,24,2,0,0,0,0,Destructive,30
+Twin Heavy Gauss Cannon,Robot Legions,Spider Walker,24,12,0,0,0,0,Destructive,20
 Void Blades,Robot Legions,Guardians,0,2,0,0,0,0,,0
-Void Shard,Robot Legions,Great Wraith-Shard,24,12,2,0,0,0,,10
-Void Shard,Robot Legions,Wraith-Shard,24,12,2,0,0,0,,10
-Void Sword,Robot Legions,Annihilator Lord,0,1,0,3,0,0,,10
-Void Sword,Robot Legions,Robot Lord,0,1,0,3,0,0,,10
+Void Shard,Robot Legions,Great Wraith-Shard,24,12,2,0,0,0,,85
+Void Shard,Robot Legions,Wraith-Shard,24,12,2,0,0,0,,85
+Void Sword,Robot Legions,Annihilator Lord,0,1,0,3,0,0,,5
+Void Sword,Robot Legions,Robot Lord,0,1,0,3,0,0,,5
 War Scythe,Robot Legions,Guardians,0,2,2,0,0,0,,10
 Wraith Strike,Robot Legions,Wraith-Shard,0,8,0,0,0,0,Rending,0
-Wrist-Flamer,Robot Legions,Annihilator Lord,12,1,0,3,0,0,Reliable,10
+Wrist-Flamer,Robot Legions,Annihilator Lord,12,1,0,3,0,0,Reliable,5
 Wrist-Flamer,Robot Legions,Robot Lord,12,1,0,3,0,0,Reliable,10
-Wrist-Plasma,Robot Legions,Annihilator Lord,24,1,4,0,0,0,,10
-Wrist-Plasma,Robot Legions,Robot Lord,24,1,4,0,0,0,,10
+Wrist-Plasma,Robot Legions,Annihilator Lord,24,1,4,0,0,0,,15
+Wrist-Plasma,Robot Legions,Robot Lord,24,1,4,0,0,0,,20
