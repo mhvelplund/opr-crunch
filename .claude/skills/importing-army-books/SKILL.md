@@ -35,6 +35,9 @@ Run every step. Each catches a different silent failure.
    weapons; a seeded row pointing at a deleted name silently evaluates to zero.
 4. **Rebuild and spot-check one unit against the PDF**: `./.venv/Scripts/python.exe -m opr_crunch.build`. Compare
    Quality, Defense and rules for one unit you can see on a card.
+5. **Check the importer's "price not found" summary, if it printed one.** Each listed
+   `(unit, option)` needs its real price entered by hand in `csv/weapons.csv` or
+   `csv/upgrades.csv` - the importer already set it to `0` rather than guess.
 
 ## Silent failures
 
@@ -46,6 +49,7 @@ Run every step. Each catches a different silent failure.
 | Wounds unchanged by a rule the book clearly gives the unit | The rule is imported as text but is not in `model.MODELLED_RULES`.             |
 | Hits/Wounds blank on a seeded row                          | `csv/simulation.csv` names a unit or weapon this import removed.               |
 | A weapon's stats look like another faction's | Two books print that name; lookups key on Name-plus-Faction, so check the tab has its generated `Key` column. |
+| A weapon/upgrade option's Cost is 0 when it shouldn't be | Its price couldn't be matched from the PDF - check the importer's end-of-run "price not found" summary and fill it in by hand. |
 
 ## Units come from the unit cards, not the roster
 
