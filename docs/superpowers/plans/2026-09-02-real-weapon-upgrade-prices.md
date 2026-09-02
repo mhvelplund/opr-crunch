@@ -609,7 +609,7 @@ EOF
 
 **Interfaces:**
 - Consumes: `_card_regions`, `_rows_in_band`, `_match_prices` from Tasks 2-4. `SWAP_WEAPON_COST`, `STARTING_WEAPON_COST`, `UPGRADE_COST` (existing module constants).
-- Produces: `apply_real_prices(pdf_path: Path, units: List[dict], weapon_rows: List[Tuple[str, str, dict]], upgrade_rows: List[Tuple[str, str, List[str]]]) -> Tuple[List[Tuple[str, str, dict]], List[Tuple[str, str, List[str]]], List[Tuple[str, str]]]` — patched `weapon_rows`, patched `upgrade_rows` (both same shape as the inputs, only `cost` fields changed), and a list of `(unit, option name)` pairs that fell back to `0` because no confident match was found. This is what `tools/import_army_book.py` calls in Task 6.
+- Produces: `apply_real_prices(pdf_path: Path, units: List[dict], weapon_rows: List[Tuple[str, str, dict]], upgrade_names: List[Tuple[str, str]]) -> Tuple[List[Tuple[str, str, dict]], Dict[Tuple[str, str], int], List[Tuple[str, str]]]` — patched `weapon_rows` (same shape as the input, only `cost` fields changed on rows that needed pricing), a `{(unit, name): price}` dict for every upgrade that matched (upgrades have no `cost` field on their own tuple, so this is returned separately rather than patched in place), and a list of `(unit, option name)` pairs that could not be matched (the caller applies the `UNMATCHED_PRICE_FALLBACK` fallback and reports these - `apply_real_prices` itself never writes that fallback into a weapon row, so a miss is always visible). This is what `tools/import_army_book.py` calls in Task 6. Also introduces the module constant `UNMATCHED_PRICE_FALLBACK = 0`, added next to the existing `STARTING_WEAPON_COST`/`SWAP_WEAPON_COST`/`UPGRADE_COST` block without changing those three values (see the note on that distinction below, before the implementation).
 
 This task takes a real PDF `Path` and calls `pdfplumber.open(...)`, so its own tests use a tiny real PDF fixture rather than synthetic dicts (unlike Tasks 2-4, which test pure functions). Build the fixture with `pdfplumber`'s own writer is not available, so instead this task's tests exercise `apply_real_prices`'s *routing* logic (which rows get touched, which don't, how misses are collected) by monkeypatching `pdfplumber.open` to return a small fake `Page`-like object exposing `.extract_words()` and `.height` — this keeps the test fast and avoids needing a real PDF fixture file in the repo.
 
@@ -699,6 +699,21 @@ Expected: FAIL with `AttributeError: module 'opr_crunch.armybook' has no attribu
 
 Add `import pdfplumber` to the top of `opr_crunch/armybook.py`'s import block (alongside the existing `import re` etc). Also add `Path` to its existing `from pathlib import PurePosixPath` line, making it `from pathlib import Path, PurePosixPath` - the module only imports `PurePosixPath` today (used by `cache_name`), and `apply_real_prices`'s signature below needs `Path`.
 
+**Note on `upgrade_rows`'s shape:** `linked_upgrades` (existing code) returns `(unit, name, granted_rules)` tuples with **no cost field at all** - `import_army_book.py` applies `UPGRADE_COST` as a separate literal when building the CSV row. So `apply_real_prices` takes just the `(unit, name)` pairs for upgrades (`upgrade_names`, extracted by the caller from `linked_upgrades`'s output) and returns their prices as a separate `Dict[Tuple[str, str], int]` rather than trying to rewrite a cost field that doesn't exist on the upgrade tuple.
+
+**Note on the `SWAP_WEAPON_COST`/`STARTING_WEAPON_COST` distinction:** `linked_weapons`'s existing dedup logic (in `opr_crunch/armybook.py`, already shipped, not touched by this plan) prefers a starting-weapon row over a swap row for the same `(unit, name, profile)` by comparing `profile["cost"] < best[key][2]["cost"]` - relying on `STARTING_WEAPON_COST (0) < SWAP_WEAPON_COST (10)`. `apply_real_prices` below also uses `profile["cost"] == SWAP_WEAPON_COST` to detect "this row needs a real price". Both of these break if `SWAP_WEAPON_COST` and `STARTING_WEAPON_COST` are ever made equal - so `SWAP_WEAPON_COST`/`UPGRADE_COST` **stay at their current value of `10`, unchanged**, used purely as an internal "not yet priced" marker that never reaches the CSV once this function runs. Add a new, distinct constant for the value actually written to CSV on a miss:
+
+```python
+#: Written to the CSV when apply_real_prices can't confidently match a
+#: price - distinct from SWAP_WEAPON_COST/UPGRADE_COST (which stay internal
+#: "needs pricing" markers so linked_weapons's existing dedup, and the
+#: check below, can still tell a swap/upgrade option apart from a starting
+#: weapon even after this constant makes both read as 0 on the sheet).
+UNMATCHED_PRICE_FALLBACK = 0
+```
+
+Add this constant directly below the existing `STARTING_WEAPON_COST`/`SWAP_WEAPON_COST`/`UPGRADE_COST` block (do not change those three constants' values).
+
 Add to `opr_crunch/armybook.py`, after `_card_regions`:
 
 ```python
@@ -706,15 +721,20 @@ def apply_real_prices(
     pdf_path: Path,
     units: List[dict],
     weapon_rows: List[Tuple[str, str, dict]],
-    upgrade_rows: List[Tuple[str, str, List[str]]],
-) -> Tuple[List[Tuple[str, str, dict]], List[Tuple[str, str, List[str]]], List[Tuple[str, str]]]:
-    """Replace the flat swap/upgrade placeholder cost with a real price
+    upgrade_names: List[Tuple[str, str]],
+) -> Tuple[List[Tuple[str, str, dict]], Dict[Tuple[str, str], int], List[Tuple[str, str]]]:
+    """Replace the internal "needs pricing" marker cost with a real price
     scraped from the PDF's word coordinates, where one can be matched.
 
     A starting weapon (cost == STARTING_WEAPON_COST) is never touched - the
-    book prints no +Npts for it at all. Everything else that can't be
-    confidently matched keeps cost 0 and is returned in the third element,
-    for the caller to warn about and summarise.
+    book prints no +Npts for it at all. A weapon row whose cost is
+    SWAP_WEAPON_COST needs a price; ``upgrade_names`` (every upgrade option
+    always needs one) is a separate (unit, name) list because linked_upgrades
+    carries no cost field to mark in the first place. Anything that can't be
+    confidently matched is returned in the third element (misses) for the
+    caller to fall back to UNMATCHED_PRICE_FALLBACK and report - this
+    function itself never substitutes that fallback into a weapon row's cost,
+    so a miss is always visible to the caller rather than silently written.
     """
     with pdfplumber.open(pdf_path) as pdf:
         pages_words = [p.extract_words(use_text_flow=False, keep_blank_chars=False) for p in pdf.pages]
@@ -745,46 +765,10 @@ def apply_real_prices(
             price = matched[unit].get(name)
             if price is None:
                 misses.append((unit, name))
-                price = 0
+                price = UNMATCHED_PRICE_FALLBACK
             priced.append((unit, name, dict(profile, cost=price)))
         return priced
 
-    def price_upgrades() -> List[Tuple[str, str, List[str]]]:
-        by_unit: Dict[str, List[str]] = {}
-        for unit, name, granted in upgrade_rows:
-            by_unit.setdefault(unit, []).append(name)
-        matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
-
-        priced = []
-        for unit, name, granted in upgrade_rows:
-            price = matched[unit].get(name)
-            if price is None:
-                misses.append((unit, name))
-                price = 0
-            priced.append((unit, name, granted))
-            # upgrade rows don't carry cost in their tuple - see import_army_book.py,
-            # which reads this function's misses list to decide UPGRADE_COST per row.
-        return priced
-
-    new_weapon_rows = price_weapons()
-    new_upgrade_rows = price_upgrades()
-    return new_weapon_rows, new_upgrade_rows, misses
-```
-
-Wait - stop here before running: `upgrade_rows` in the existing codebase is `(unit, name, granted_rules)` with **no cost field in the tuple at all** (`import_army_book.py` adds `UPGRADE_COST` as a separate literal when building the CSV row, not as part of the tuple `linked_upgrades` returns). Re-read `tools/import_army_book.py`'s upgrade-row construction before finalizing this function - `price_upgrades` above cannot patch a `cost` field that isn't there. Adjust the design so `apply_real_prices` returns prices for upgrades as a **separate `Dict[Tuple[str, str], int]`** (keyed by `(unit, name)`) instead of trying to rewrite the upgrade tuple shape, and `import_army_book.py` (Task 6) looks prices up in that dict when building each upgrade CSV row. Update this task's signature to:
-
-```python
-def apply_real_prices(
-    pdf_path: Path,
-    units: List[dict],
-    weapon_rows: List[Tuple[str, str, dict]],
-    upgrade_names: List[Tuple[str, str]],
-) -> Tuple[List[Tuple[str, str, dict]], Dict[Tuple[str, str], int], List[Tuple[str, str]]]:
-```
-
-where `upgrade_names` is `[(unit, name) for unit, name, _ in upgrade_rows]` (the caller extracts this), and the second return value is `{(unit, name): price}` for every upgrade that matched (misses are absent from the dict, not present with value 0 - the caller applies the 0 fallback and owns the "is this a miss" decision by checking dict membership). Rewrite `price_upgrades` accordingly:
-
-```python
     def price_upgrades() -> Dict[Tuple[str, str], int]:
         by_unit: Dict[str, List[str]] = {}
         for unit, name in upgrade_names:
@@ -799,17 +783,13 @@ where `upgrade_names` is `[(unit, name) for unit, name, _ in upgrade_rows]` (the
             else:
                 prices[(unit, name)] = price
         return prices
-```
 
-And the function's final lines become:
-
-```python
     new_weapon_rows = price_weapons()
     upgrade_prices = price_upgrades()
     return new_weapon_rows, upgrade_prices, misses
 ```
 
-Update the test file's `TestApplyRealPrices` to match this corrected signature before running:
+Update the test file's `TestApplyRealPrices` to match this signature before running:
 
 ```python
     def _apply(self, monkeypatch, weapon_rows, upgrade_names=()):
@@ -875,41 +855,12 @@ EOF
 - Test: manual verification against a real book (no new automated test - this task is orchestration; the logic it calls is already tested in Tasks 2-5)
 
 **Interfaces:**
-- Consumes: `armybook.apply_real_prices` from Task 5, `armybook.parse_units` (existing).
-- Produces: `import_book(text: str, faction: str, pdf_path: Optional[Path] = None)` — the existing function gains an optional `pdf_path` parameter; when given, real prices are applied and a summary is printed. When `None` (e.g. a cached `.txt` source has no PDF to open), behavior is unchanged from today (flat placeholders, no warnings) - documented explicitly since a `.txt`-sourced import silently forgoes price matching.
+- Consumes: `armybook.apply_real_prices` and `armybook.UNMATCHED_PRICE_FALLBACK` from Task 5, `armybook.parse_units` (existing).
+- Produces: `import_book(text: str, faction: str, pdf_path: Optional[Path] = None)` — the existing function gains an optional `pdf_path` parameter; when given, real prices are applied and a summary is printed. When `None` (e.g. a cached `.txt` source has no PDF to open), every swap/upgrade option falls back to `UNMATCHED_PRICE_FALLBACK` with no per-option warning (there's nothing to check it against) - documented explicitly since a `.txt`-sourced import silently forgoes price matching.
 
-- [ ] **Step 1: Update the cost-constant doc comment**
+Task 5 already added `UNMATCHED_PRICE_FALLBACK = 0` without changing `STARTING_WEAPON_COST`/`SWAP_WEAPON_COST`/`UPGRADE_COST`'s values (that task's plan text explains why: changing `SWAP_WEAPON_COST`/`UPGRADE_COST` to `0` would collide with `STARTING_WEAPON_COST` and break `linked_weapons`'s existing dedup as well as `apply_real_prices`'s own "does this need pricing" check). This task has no constant-value edit to make - it only *uses* `UNMATCHED_PRICE_FALLBACK` in the `.txt`-source fallback path below.
 
-In `opr_crunch/armybook.py`, replace:
-
-```python
-#: Placeholder prices. A unit's own cost is read from its card, but the real
-#: price of a swap or an upgrade lives in the card's ``+Npts`` column, which
-#: ``pdftotext -layout`` does not keep aligned with the rows it prices - on
-#: some cards every price lands above the weapon it belongs to. Matching them
-#: by position would mis-assign prices silently, so they are seeded flat until
-#: the importer can read word coordinates. A weapon the unit starts with is
-#: already covered by the unit's own cost and so is free either way.
-STARTING_WEAPON_COST = 0
-SWAP_WEAPON_COST = 10
-UPGRADE_COST = 10
-```
-
-with:
-
-```python
-#: A unit's own cost is read from its card. A swap weapon's or upgrade's real
-#: price comes from ``apply_real_prices`` (word-coordinate matching against the
-#: PDF) where it can be confidently found; these are the fallback values used
-#: when it can't, and when there is no PDF at all to check (a cached .txt
-#: source). A weapon the unit starts with is already covered by the unit's own
-#: cost, so it is free either way and is never priced from a +Npts token.
-STARTING_WEAPON_COST = 0
-SWAP_WEAPON_COST = 0
-UPGRADE_COST = 0
-```
-
-- [ ] **Step 2: Read the current `import_book` weapon/upgrade section**
+- [ ] **Step 1: Read the current `import_book` weapon/upgrade section**
 
 Before editing, re-read `tools/import_army_book.py`'s current `import_book` function (the `--- weapons ---` and `--- upgrades ---` blocks) to get the exact current row-building code to modify in place - it was last touched in this session's earlier Impact-column work, so confirm line numbers with:
 
@@ -917,7 +868,7 @@ Before editing, re-read `tools/import_army_book.py`'s current `import_book` func
 grep -n "weapon_links\|weapon_rows\|upgrade_links\|upgrade_rows\|def import_book" tools/import_army_book.py
 ```
 
-- [ ] **Step 3: Implement**
+- [ ] **Step 2: Implement**
 
 In `tools/import_army_book.py`:
 
@@ -979,14 +930,14 @@ And update `main()`'s call site:
     import_book(text, faction, pdf_path=source if source.suffix.lower() == ".pdf" else None)
 ```
 
-(`source` here is already the resolved local `Path` - either the downloaded/cached PDF or a local file passed on the command line; a `.txt` source has no PDF to open, matching the "no PDF at all" case documented in Step 1.)
+(`source` here is already the resolved local `Path` - either the downloaded/cached PDF or a local file passed on the command line; a `.txt` source has no PDF to open, matching the "no PDF at all" case described in this task's Interfaces section above.)
 
-- [ ] **Step 4: Run the existing suite**
+- [ ] **Step 3: Run the existing suite**
 
 Run: `uv run pytest -q`
 Expected: all tests pass. (No existing test exercises `import_book`'s new `pdf_path` parameter with a real PDF - Tasks 2-5's tests already cover the matching logic in isolation. This step is a regression check, not new coverage.)
 
-- [ ] **Step 5: Manual smoke test against a real book**
+- [ ] **Step 4: Manual smoke test against a real book**
 
 ```bash
 uv run python tools/import_army_book.py books/robot_legions_v3.5.3.pdf
@@ -994,7 +945,7 @@ uv run python tools/import_army_book.py books/robot_legions_v3.5.3.pdf
 
 Expected: the run prints unit/weapon/upgrade counts as before, plus (if any misses occur) a "price not found" summary. Inspect the freshly-rewritten `csv/weapons.csv` for the Robot Legions faction and spot-check `Gauss Rifle` (unit `Warriors`) - it should now read `10` (confirmed correct against the PDF earlier during design), and `Flame Caster` (unit `Warriors`) should read `10` (not `15`, correcting a value the old `pdftotext -layout`-based reading of this same page would have suggested - see the design investigation). **This will overwrite `csv/` with just this one book's data outside a clean isolated environment - do this against a scratch copy of `csv/`, not the repo's real `csv/` directory**, using the same `import_isolated.py` pattern from the last import (copy `csv/` to a scratch dir, monkeypatch `import_army_book.CSV_DIR`, then diff/inspect there) rather than running the importer directly against the repo.
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 5: Commit**
 
 ```bash
 git add opr_crunch/armybook.py tools/import_army_book.py
@@ -1185,3 +1136,4 @@ EOF
 - **Spec coverage:** §3 (tooling) → Task 1. §4.2-4.3 (scoping, two-layer matching) → Tasks 2-4. §4.4 (fallback/reporting) → Tasks 5-6. §4.5 (code shape) → Tasks 5-6, adjusted from the spec's rough sketch once the upgrade-row shape mismatch surfaced (documented inline in Task 6 rather than silently deviating). §5 (no CSV schema change) → confirmed, no task adds a column. §6 (re-import) → Task 8. §7 (docs) → Task 7. §8 (testing) → Tasks 2-5's synthetic-fixture tests, Task 8's real-book spot checks.
 - **Known deviation from the spec's exact wording:** §4.3's fallback rule ("if the two lists are the same length, zip them") is tightened in Task 3 to "exactly one leftover on each side" after the design investigation found a real PDF page (Havoc Brothers, the currently-unparsed "Bot Fabricator" nested-parens option) where a same-length coincidence could pair a price with the wrong, unrelated option. This is called out as a deliberate refinement, not an oversight.
 - **Type consistency:** `apply_real_prices`'s signature is corrected mid-plan (Task 5's step 3) once the mismatch between `linked_upgrades`' tuple shape (no `cost` field) and the naive first draft became clear. Task 6 uses the corrected signature throughout; Task 5's tests reflect it. Flagged explicitly in-place rather than silently rewritten, since a plan executor reading Task 5 top-to-bottom needs to see why the signature changed mid-task.
+- **Cross-task conflict found in the SDD pre-flight scan (fixed before dispatch):** the first draft of Task 6 had `SWAP_WEAPON_COST`/`UPGRADE_COST` becoming `0` (matching `STARTING_WEAPON_COST`). That would have broken two things silently: `linked_weapons`'s existing dedup (`profile["cost"] < best[key][2]["cost"]`, which relies on `STARTING_WEAPON_COST (0) < SWAP_WEAPON_COST`), and `apply_real_prices`'s own `profile["cost"] == SWAP_WEAPON_COST` check for "this row needs pricing" - both stop distinguishing a starting weapon from an unpriced swap once the two constants are equal. Fixed by keeping `SWAP_WEAPON_COST`/`UPGRADE_COST` at their current value (`10`, internal-only, never reaches the CSV) and introducing a separate `UNMATCHED_PRICE_FALLBACK = 0` for the value actually written on a miss. Task 5 now owns adding this constant; Task 6 only consumes it.
