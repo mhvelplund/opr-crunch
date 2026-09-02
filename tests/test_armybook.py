@@ -504,3 +504,54 @@ class TestMatchPrices:
         matched = armybook._match_prices(rows, ["Plasma Caster", "Ray Caster"])
         assert matched == {"Plasma Caster": 10}
         assert "Ray Caster" not in matched
+
+
+class TestCardRegions:
+    UNITS = [
+        {"name": "Warriors", "size": 5, "cost": 100},
+        {"name": "Snipers", "size": 3, "cost": 110},
+    ]
+
+    #: One page, two cards side by side - Warriors left, Snipers right -
+    #: each with one option row below its header, mirroring a real card page.
+    PAGE_WORDS = [
+        {"text": "Warriors", "x0": 126, "top": 57},
+        {"text": "[5]", "x0": 156, "top": 57},
+        {"text": "-", "x0": 169, "top": 57},
+        {"text": "100pts", "x0": 173, "top": 57},
+        {"text": "Snipers", "x0": 402, "top": 57},
+        {"text": "[3]", "x0": 427, "top": 57},
+        {"text": "-", "x0": 445, "top": 57},
+        {"text": "110pts", "x0": 449, "top": 57},
+        {"text": "Gauss", "x0": 126, "top": 163},
+        {"text": "Rifle", "x0": 155, "top": 163},
+        {"text": "+10pts", "x0": 200, "top": 163},
+        {"text": "D-Marks", "x0": 402, "top": 163},
+        {"text": "+15pts", "x0": 550, "top": 163},
+    ]
+
+    def test_both_cards_are_found(self):
+        regions = armybook._card_regions(self.UNITS, [self.PAGE_WORDS], [800.0])
+        assert set(regions) == {"Warriors", "Snipers"}
+
+    def test_each_card_is_scoped_to_its_own_band(self):
+        regions = armybook._card_regions(self.UNITS, [self.PAGE_WORDS], [800.0])
+        page_index, x_min, x_max, top_min, top_max = regions["Warriors"]
+        assert page_index == 0
+        assert x_min < 200 <= x_max  # Warriors' own price row (x0=300) is out of range...
+        # ...specifically, the band boundary falls between the two cards' anchors:
+        assert x_min < 126 and x_max <= 402
+
+    def test_a_card_not_found_verbatim_is_absent(self):
+        units = self.UNITS + [{"name": "Ghost Unit", "size": 1, "cost": 999}]
+        regions = armybook._card_regions(units, [self.PAGE_WORDS], [800.0])
+        assert "Ghost Unit" not in regions
+
+    def test_rows_in_each_region_only_see_that_cards_own_words(self):
+        regions = armybook._card_regions(self.UNITS, [self.PAGE_WORDS], [800.0])
+        page_index, x_min, x_max, top_min, top_max = regions["Warriors"]
+        rows = armybook._rows_in_band(self.PAGE_WORDS, x_min, x_max, top_min, top_max)
+        joined = " ".join(text for _, text in rows)
+        assert "Gauss Rifle +10pts" in joined
+        assert "D-Marks" not in joined
+        assert "+15pts" not in joined

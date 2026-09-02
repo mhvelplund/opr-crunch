@@ -581,3 +581,58 @@ def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -
     if len(unclaimed_names) == 1 and len(unclaimed_prices) == 1:
         matches[unclaimed_names[0]] = unclaimed_prices[0]
     return matches
+
+
+def _find_card_anchor(name: str, size: int, cost: int, words: List[dict]) -> Optional[Tuple[float, float]]:
+    """(x0, top) of this unit's card header on one page, or None.
+
+    Looks for the exact printed header - "Name [size] - costpts" - built the
+    same way CARD's own text is: a plain unit name never contains the
+    characters CARD's regex itself excludes, so this string is unambiguous.
+    """
+    needle = f"{name} [{size}] - {cost}pts"
+    first_word = name.split()[0]
+    rows: Dict[int, List[dict]] = {}
+    for w in words:
+        rows.setdefault(round(w["top"]), []).append(w)
+    for top, row_words in rows.items():
+        row_words = sorted(row_words, key=lambda w: w["x0"])
+        text = " ".join(w["text"] for w in row_words)
+        if needle in text:
+            anchor = next(w for w in row_words if w["text"] == first_word)
+            return anchor["x0"], top
+    return None
+
+
+def _card_regions(
+    units: List[dict], pages_words: List[List[dict]], page_heights: List[float]
+) -> Dict[str, Tuple[int, float, float, float, float]]:
+    """(page_index, x_min, x_max, top_min, top_max) per unit whose card header
+    could be found verbatim in ``pages_words``.
+
+    Mirrors ``_partition``'s card-to-card spanning (a card runs from its own
+    header to the next one in the same band, or the page's end) but in
+    ``pdfplumber`` point-space rather than text-line/character-column space,
+    since the two extractions don't share a coordinate system.
+    """
+    anchors: Dict[str, Tuple[int, float, float]] = {}
+    for u in units:
+        for page_index, words in enumerate(pages_words):
+            found = _find_card_anchor(u["name"], u["size"], u["cost"], words)
+            if found:
+                anchors[u["name"]] = (page_index, found[0], found[1])
+                break
+
+    by_page: Dict[int, List[Tuple[str, float, float]]] = {}
+    for name, (page_index, x0, top) in anchors.items():
+        by_page.setdefault(page_index, []).append((name, x0, top))
+
+    regions: Dict[str, Tuple[int, float, float, float, float]] = {}
+    for page_index, entries in by_page.items():
+        bounds = _band_bounds([x0 for _, x0, _ in entries])
+        for name, x0, top in entries:
+            x_min, x_max = next((lo, hi) for lo, hi in bounds if lo <= x0 < hi)
+            same_band_tops = sorted(t for n2, x2, t in entries if x_min <= x2 < x_max)
+            next_top = next((t for t in same_band_tops if t > top), page_heights[page_index])
+            regions[name] = (page_index, x_min, x_max, top, next_top)
+    return regions
