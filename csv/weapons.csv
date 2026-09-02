@@ -1,6 +1,6 @@
 Name,Faction,Unit,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules,Cost
 CCW,Battle Brothers,Brother Bikers,0,1,0,0,0,0,,5
-CCW,Battle Brothers,Destroyers,0,1,0,0,0,0,,10
+CCW,Battle Brothers,Destroyers,0,1,0,0,0,0,,75
 CCW,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,,0
 CCW,Battle Brothers,Master Brother,0,4,0,0,0,0,,0
 CCW,Battle Brothers,Master Destroyer,0,4,0,0,0,0,,0
@@ -44,7 +44,7 @@ Energy Fist,Battle Brothers,Master Brother,0,2,4,0,0,0,,15
 Energy Fist,Battle Brothers,Master Destroyer,0,4,4,0,0,0,,35
 Energy Fist,Battle Brothers,Pathfinder Bikers,0,2,4,0,0,0,,5
 Energy Fist,Battle Brothers,Pathfinders,0,2,4,0,0,0,,5
-Energy Fist,Battle Brothers,Veteran Assault Brothers,0,2,4,0,0,0,,15
+Energy Fist,Battle Brothers,Veteran Assault Brothers,0,2,4,0,0,0,,0
 Energy Fist,Battle Brothers,Veteran Battle Brothers,0,2,4,0,0,0,,10
 Energy Fist,Battle Brothers,Veteran Master Brother,0,2,4,0,0,0,,20
 Energy Hammer,Battle Brothers,Assault Brothers,0,1,0,3,0,0,,0
@@ -113,7 +113,7 @@ Gravity-Mod,Battle Brothers,Master Brother,18,1,1,3,0,0,"Limited, Lacerate",10
 Gravity-Mod,Battle Brothers,Veteran Battle Brothers,18,1,1,3,0,0,"Limited, Lacerate",15
 Gravity-Mod,Battle Brothers,Veteran Master Brother,18,1,1,3,0,0,"Limited, Lacerate",15
 Grenade Launchers,Battle Brothers,Pathfinder Bikers,24,1,0,3,0,0,,0
-Heavy CCW,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,,5
+Heavy CCW,Battle Brothers,Veteran Assault Brothers,0,2,1,0,0,0,,0
 Heavy CCWs,Battle Brothers,Assault Brothers,0,2,1,0,0,0,,0
 Heavy Chainsaw Sword,Battle Brothers,Assault Brothers,0,4,1,0,0,0,,5
 Heavy Chainsaw Sword,Battle Brothers,Elite Pathfinder,0,4,1,0,0,0,,5
@@ -261,7 +261,7 @@ Twin Heavy Rifle,Battle Brothers,Support Bike,24,2,1,0,0,0,,0
 Twin Heavy Rifle Array,Battle Brothers,Heavy Tank,24,12,1,0,0,0,,15
 Twin Heavy Rifles,Battle Brothers,Brother Bikers,24,2,1,0,0,0,,0
 Twin Laser Cannon,Battle Brothers,Attack APC,36,2,3,0,3,0,,90
-Twin Laser Cannon,Battle Brothers,Battle Tank,36,2,3,0,3,0,,50
+Twin Laser Cannon,Battle Brothers,Battle Tank,36,2,3,0,3,0,,0
 Twin Laser Cannon,Battle Brothers,Combat Walker,36,2,3,0,3,0,,90
 Twin Laser Cannon,Battle Brothers,Heavy Exo-Suit,36,2,3,0,3,0,,110
 Twin Laser Cannon,Battle Brothers,Heavy Gunship,36,2,3,0,3,0,,20
@@ -444,7 +444,7 @@ Plasma-Mod,Havoc Brothers,Havoc Tank,24,1,4,0,0,0,Limited,45
 Quad Laser Cannon,Havoc Brothers,Havoc Heavy Tank,36,4,3,0,3,0,,0
 Rapid Autocannon,Havoc Brothers,Havoc Tank,36,6,2,0,0,0,,45
 Rapid Autocannon,Havoc Brothers,Infernal Stalker,36,6,2,0,0,0,,120
-Rapid Heavy Rifle,Havoc Brothers,Havoc Destroyers,24,2,1,0,0,0,,15
+Rapid Heavy Rifle,Havoc Brothers,Havoc Destroyers,24,2,1,0,0,0,,40
 Rapid Heavy Rifle,Havoc Brothers,Havoc Heavy Tank,24,2,1,0,0,0,,0
 Rapid Heavy Rifle (A0),Havoc Brothers,Havoc APC,24,0,1,0,0,0,,0
 Rapid Heavy Rifle (A0),Havoc Brothers,Havoc Tank,24,0,1,0,0,0,,0
@@ -489,7 +489,7 @@ Twin Ecto-Cannons,Havoc Brothers,Havoc Mech-Fiend,24,4,4,3,0,0,,155
 Twin Fiend Autocannon,Havoc Brothers,Havoc Mech-Fiend,36,8,2,0,0,0,,110
 Twin Heavy Flamer,Havoc Brothers,Despoiler Walker,12,2,1,3,0,0,Reliable,40
 Twin Heavy Flamer,Havoc Brothers,Havoc Destroyers,12,2,1,3,0,0,Reliable,10
-Twin Heavy Machinegun,Havoc Brothers,Despoiler Walker,30,6,1,0,0,0,,125
+Twin Heavy Machinegun,Havoc Brothers,Despoiler Walker,30,6,1,0,0,0,,0
 Twin Heavy Machinegun,Havoc Brothers,Havoc Tank,30,6,1,0,0,0,,0
 Twin Heavy Machinegun,Havoc Brothers,Infernal Brute,30,6,1,0,0,0,,90
 Twin Heavy Rifles,Havoc Brothers,Havoc Bikers,24,2,1,0,0,0,,0

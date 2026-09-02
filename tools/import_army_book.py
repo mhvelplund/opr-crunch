@@ -115,7 +115,7 @@ def import_book(text: str, faction: str, pdf_path: Path | None = None) -> None:
 
     upgrade_rows = [
         [name, faction, unit, 0, 0, 0, 0, ", ".join(granted),
-         upgrade_prices.get((unit, name), armybook.UPGRADE_COST)]
+         upgrade_prices.get((unit, name), armybook.UNMATCHED_PRICE_FALLBACK)]
         for unit, name, granted in sorted(upgrade_links, key=lambda t: (t[1], t[0]))
     ]
     replace_faction("upgrades.csv", faction, layout.UPGRADES_COLUMNS, upgrade_rows)

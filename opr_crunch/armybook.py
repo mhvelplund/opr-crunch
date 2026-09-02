@@ -35,13 +35,14 @@ PARAMETERISED = {"AP", "Blast", "Deadly", "Impact", "Ravage", "Tough"}
 #: already covered by the unit's own cost and so is free either way.
 STARTING_WEAPON_COST = 0
 SWAP_WEAPON_COST = 10
-UPGRADE_COST = 10
 
 #: Written to the CSV when apply_real_prices can't confidently match a
-#: price - distinct from SWAP_WEAPON_COST/UPGRADE_COST (which stay internal
-#: "needs pricing" markers so linked_weapons's existing dedup, and the
-#: check below, can still tell a swap/upgrade option apart from a starting
-#: weapon even after this constant makes both read as 0 on the sheet).
+#: price - distinct from SWAP_WEAPON_COST (which stays an internal "needs
+#: pricing" marker so linked_weapons's existing dedup, and the check below,
+#: can still tell a swap option apart from a starting weapon even after this
+#: constant makes both read as 0 on the sheet). Never reuse SWAP_WEAPON_COST
+#: as a fallback: a marker written to the CSV is indistinguishable from a
+#: real 10-point price, so a miss stops being reportable.
 UNMATCHED_PRICE_FALLBACK = 0
 
 #: Column bands. Unit cards are laid out two-up, rules three-up.
@@ -538,65 +539,133 @@ def _rows_in_band(
     ]
 
 
-def _band_bounds(xs: List[float], gap: float = 40) -> List[Tuple[float, float]]:
+def _gutter(words: List[dict], lo: float, hi: float) -> Optional[float]:
+    """Centre of the widest blank vertical strip strictly between ``lo``/``hi``.
+
+    A card's own price column sits at its far right, well past the middle of
+    the two cards' *header* anchors - the headers are centred over their card,
+    so the midpoint between them lands inside the left card's price column
+    rather than in the gutter separating the two cards. Splitting there both
+    loses a card its own prices and hands them to its neighbour. The blank
+    strip the layout actually leaves between the cards is unambiguous in word
+    coordinates (30+ points wide on every card page of these books, against 19
+    for the widest gap that occurs *inside* a card), so the split is measured
+    from the page rather than guessed from the anchors.
+    """
+    if not words:
+        return None
+    best: Optional[Tuple[float, float]] = None
+    edge = lo
+    for x0, x1 in sorted((w["x0"], w["x1"]) for w in words):
+        if x0 >= hi:
+            break
+        if x0 > edge and (best is None or x0 - edge > best[1] - best[0]):
+            best = (edge, x0)
+        edge = max(edge, x1)
+    if edge < hi and (best is None or hi - edge > best[1] - best[0]):
+        best = (edge, hi)
+    return None if best is None else (best[0] + best[1]) / 2
+
+
+def _band_bounds(
+    xs: List[float], words: Optional[List[dict]] = None, gap: float = 40
+) -> List[Tuple[float, float]]:
     """One (low, high) span per clustered x-anchor, covering -inf..inf overall.
 
     Mirrors the character-column clustering ``_columns_of`` already does for
     the special-rules page, but in PDF point-space rather than text columns -
     the two are not on the same scale, so this is a separate small helper
     rather than a shared one.
+
+    Given ``words`` (the page's own words), neighbouring bands are split on the
+    blank strip actually between them - see ``_gutter``. Without them the split
+    falls back to the anchor midpoint, which is only ever right when the
+    anchors sit at their bands' left edges.
     """
     anchors: List[float] = []
     for x in sorted(xs):
         if not anchors or x - anchors[-1] > gap:
             anchors.append(x)
-    bounds = []
-    for i, a in enumerate(anchors):
-        lo = -1.0 if i == 0 else (anchors[i - 1] + a) / 2
-        hi = float("inf") if i == len(anchors) - 1 else (a + anchors[i + 1]) / 2
-        bounds.append((lo, hi))
-    return bounds
+
+    edges = [
+        _gutter(words or [], a, b) or (a + b) / 2
+        for a, b in zip(anchors, anchors[1:])
+    ]
+    return [
+        (-1.0 if i == 0 else edges[i - 1],
+         float("inf") if i == len(anchors) - 1 else edges[i])
+        for i in range(len(anchors))
+    ]
 
 
 def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -> Dict[str, int]:
     """Attach a scraped price to as many of ``option_names`` as can be done
     with confidence, out of one card's rows.
 
-    Layer 1: a row naming both a price and one of the options is a direct
-    match - the longer of two overlapping names wins, so 'Champion Storm
-    Rifle' isn't stolen by a shorter 'Storm Rifle' option on the same card.
-    A row can carry more than one ``+Npts`` token when a neighbouring row's
-    price lands one bucket early (the same vertical mis-clustering the
-    module docstring warns about, just shifted a row rather than dropped
-    entirely) - when that happens the option's own price always trails its
-    name in reading order, so the first token *after* the matched name wins
-    over any stray token sitting ahead of it.
+    Layer 1: a priced row is read as one printed option. Its price is the
+    first ``+Npts`` token *after* the longest option name on the row - the
+    card's price column is always to the right of its option text, so a token
+    sitting ahead of the name prices something else (a neighbouring row's
+    price can land one bucket early, the same vertical mis-clustering the
+    module docstring warns about) and taking one anyway invents a cost.
+
+    An option row often bundles several weapons for one price ("Storm Rifle
+    (24", A3, AP(1)), CCW (A1) +75pts"), and the sheet has one row per weapon
+    name with nowhere to record that they were bought together, so every name
+    the row bundles takes the printed price. A name merely *contained* in the
+    longest one is a spelling overlap rather than a second item ('Storm Rifle'
+    inside 'Champion Storm Rifle'), and takes nothing.
+
+    A name the book prices in more than one place has no single answer, so it
+    is reported unmatched unless the places agree. A row that prices the
+    option on its own outranks a bundle it also appears in, since that is the
+    option's own printed cost.
+
     Layer 2: if that leaves exactly one option and one price unclaimed, they
     are paired - the common case is a name too long for its own row, wrapping
-    the price onto the next one. Anything else (zero, or more than one, of
-    either) is left unmatched rather than guessed; the caller reports these.
+    the price onto the next one. Only an option named on no priced row at all
+    is eligible: one that *was* named on a priced row but lost it to a longer
+    or bundled-with name has already been seen to be priced somewhere, and
+    pairing it with a spare price from elsewhere on the card contradicts what
+    the page shows. Anything else (zero, or more than one, of either side) is
+    left unmatched rather than guessed; the caller reports these.
     """
-    unclaimed_names = list(option_names)
+    def value(found: "re.Match") -> int:
+        return 0 if found.group(0) == "Free" else int(found.group(1))
+
+    alone: Dict[str, set] = {}
+    bundled: Dict[str, set] = {}
+    named_on_a_priced_row: set = set()
     unclaimed_prices: List[int] = []
-    matches: Dict[str, int] = {}
 
     for _, text in card_rows:
         prices = list(PRICE.finditer(text))
         if not prices:
             continue
-        candidates = [n for n in unclaimed_names if n in text]
-        if candidates:
-            name = max(candidates, key=len)
-            name_end = text.index(name) + len(name)
-            after = [p for p in prices if p.start() >= name_end]
-            found = after[0] if after else prices[-1]
-            price = 0 if found.group(0) == "Free" else int(found.group(1))
-            matches[name] = price
-            unclaimed_names.remove(name)
-        else:
-            for found in prices:
-                unclaimed_prices.append(0 if found.group(0) == "Free" else int(found.group(1)))
+        candidates = [n for n in option_names if n in text]
+        if not candidates:
+            unclaimed_prices += [value(found) for found in prices]
+            continue
+        named_on_a_priced_row.update(candidates)
+        longest = max(candidates, key=len)
+        after = [
+            found for found in prices
+            if found.start() >= text.index(longest) + len(longest)
+        ]
+        if not after:
+            continue
+        priced = [longest] + [n for n in candidates if n not in longest]
+        for name in priced:
+            seen = alone if len(priced) == 1 else bundled
+            seen.setdefault(name, set()).add(value(after[0]))
 
+    matches = {}
+    for name in option_names:
+        found = alone.get(name) or bundled.get(name) or set()
+        if len(found) == 1:
+            matches[name] = found.pop()
+
+    unclaimed_names = [n for n in option_names if n not in named_on_a_priced_row]
     if len(unclaimed_names) == 1 and len(unclaimed_prices) == 1:
         matches[unclaimed_names[0]] = unclaimed_prices[0]
     return matches
@@ -608,17 +677,28 @@ def _find_card_anchor(name: str, size: int, cost: int, words: List[dict]) -> Opt
     Looks for the exact printed header - "Name [size] - costpts" - built the
     same way CARD's own text is: a plain unit name never contains the
     characters CARD's regex itself excludes, so this string is unambiguous.
+
+    The anchor is the word the *needle* starts at, located by character offset
+    rather than by name: two cards printed side by side share a row, and their
+    names routinely share a first word ("Havoc Bikers" next to "Havoc APC"),
+    so picking the row's first word of that spelling anchors the second card
+    on top of the first and hands it its neighbour's whole column.
     """
     needle = f"{name} [{size}] - {cost}pts"
-    first_word = name.split()[0]
     rows: Dict[int, List[dict]] = {}
     for w in words:
         rows.setdefault(round(w["top"]), []).append(w)
     for top, row_words in rows.items():
         row_words = sorted(row_words, key=lambda w: w["x0"])
-        text = " ".join(w["text"] for w in row_words)
-        if needle in text:
-            anchor = next(w for w in row_words if w["text"] == first_word)
+        starts, offset = [], 0
+        for w in row_words:
+            starts.append(offset)
+            offset += len(w["text"]) + 1
+        index = " ".join(w["text"] for w in row_words).find(needle)
+        if index >= 0:
+            anchor = max(
+                (p for p in zip(starts, row_words) if p[0] <= index), key=lambda p: p[0]
+            )[1]
             return anchor["x0"], top
     return None
 
@@ -648,7 +728,12 @@ def _card_regions(
 
     regions: Dict[str, Tuple[int, float, float, float, float]] = {}
     for page_index, entries in by_page.items():
-        bounds = _band_bounds([x0 for _, x0, _ in entries])
+        # Only the card area below the topmost header can belong to a card, and
+        # only it should shape the gutter - the running page header spans the
+        # full width and would blank the gutter out.
+        first_top = min(top for _, _, top in entries)
+        body = [w for w in pages_words[page_index] if w["top"] >= first_top]
+        bounds = _band_bounds([x0 for _, x0, _ in entries], body)
         for name, x0, top in entries:
             x_min, x_max = next((lo, hi) for lo, hi in bounds if lo <= x0 < hi)
             same_band_tops = sorted(t for n2, x2, t in entries if x_min <= x2 < x_max)
@@ -675,6 +760,11 @@ def apply_real_prices(
     caller to fall back to UNMATCHED_PRICE_FALLBACK and report - this
     function itself never substitutes that fallback into a weapon row's cost,
     so a miss is always visible to the caller rather than silently written.
+
+    Weapons and upgrades are matched together, in one pass per card, rather
+    than a pass each: they compete for the same printed prices, and a pass
+    that can't see the other category's names reads a price already spoken
+    for as unclaimed and hands it to a leftover name of its own.
     """
     with pdfplumber.open(pdf_path) as pdf:
         pages_words = [p.extract_words(use_text_flow=False, keep_blank_chars=False) for p in pdf.pages]
@@ -690,13 +780,18 @@ def apply_real_prices(
 
     misses: List[Tuple[str, str]] = []
 
-    def price_weapons() -> List[Tuple[str, str, dict]]:
-        by_unit: Dict[str, List[str]] = {}
-        for unit, name, profile in weapon_links:
-            if profile["cost"] == SWAP_WEAPON_COST:
-                by_unit.setdefault(unit, []).append(name)
-        matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
+    by_unit: Dict[str, set] = {}
+    for unit, name, profile in weapon_links:
+        if profile["cost"] == SWAP_WEAPON_COST:
+            by_unit.setdefault(unit, set()).add(name)
+    for unit, name in upgrade_names:
+        by_unit.setdefault(unit, set()).add(name)
+    matched = {
+        unit: _match_prices(card_rows(unit), sorted(names))
+        for unit, names in by_unit.items()
+    }
 
+    def price_weapons() -> List[Tuple[str, str, dict]]:
         priced = []
         for unit, name, profile in weapon_links:
             if profile["cost"] != SWAP_WEAPON_COST:
@@ -710,11 +805,6 @@ def apply_real_prices(
         return priced
 
     def price_upgrades() -> Dict[Tuple[str, str], int]:
-        by_unit: Dict[str, List[str]] = {}
-        for unit, name in upgrade_names:
-            by_unit.setdefault(unit, []).append(name)
-        matched = {unit: _match_prices(card_rows(unit), names) for unit, names in by_unit.items()}
-
         prices: Dict[Tuple[str, str], int] = {}
         for unit, name in upgrade_names:
             price = matched[unit].get(name)

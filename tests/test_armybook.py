@@ -450,6 +450,10 @@ class TestRowsInBand:
         assert rows == [(100, "A B")]
 
 
+def _word(text, x0, top, width=30.0):
+    return {"text": text, "x0": x0, "x1": x0 + width, "top": top}
+
+
 class TestBandBounds:
     def test_two_well_separated_anchors_split_at_the_midpoint(self):
         bounds = armybook._band_bounds([126.0, 402.0])
@@ -464,6 +468,45 @@ class TestBandBounds:
         not be mistaken for two separate cards."""
         bounds = armybook._band_bounds([126.0, 140.0, 402.0])
         assert len(bounds) == 2
+
+    #: One line of a real two-up card page, to scale: the left card's option
+    #: text runs x34-230 with its own price column at x253, the right card
+    #: starts at x308. The headers are centred over their cards, so their
+    #: anchors (126 and 402) have a midpoint of 264 - past the left card's
+    #: price column, not before it.
+    PAGE = [
+        _word("Flamer", 34.0, 191.0, 90.0),
+        _word("(12\",", 128.0, 191.0, 60.0),
+        _word("Reliable)", 190.0, 191.0, 40.0),
+        _word("+15pts", 253.0, 191.0, 25.0),
+        _word("Rapid", 310.0, 191.0, 40.0),
+        _word("Heavy", 352.0, 191.0, 40.0),
+        _word("Rifle", 394.0, 191.0, 40.0),
+        _word("+40pts", 527.0, 191.0, 25.0),
+    ]
+
+    def test_the_split_lands_in_the_gutter_not_in_a_price_column(self):
+        """The midpoint of the two anchors cuts through the left card's own
+        price column, which both robs that card of its prices and leaks them
+        into its neighbour's region. The blank strip between the two cards is
+        the real boundary."""
+        (_, left_max), (right_min, _) = armybook._band_bounds([126.0, 402.0], self.PAGE)
+        assert 278.0 <= left_max <= 308.0
+        assert left_max == right_min
+
+    def test_a_price_stays_in_the_card_that_printed_it(self):
+        bounds = armybook._band_bounds([126.0, 402.0], self.PAGE)
+        rows = dict(
+            left=armybook._rows_in_band(self.PAGE, *bounds[0], 0, 1000),
+            right=armybook._rows_in_band(self.PAGE, *bounds[1], 0, 1000),
+        )
+        assert "+15pts" in rows["left"][0][1]
+        assert "+15pts" not in rows["right"][0][1]
+        assert "+40pts" in rows["right"][0][1]
+
+    def test_without_words_the_split_still_falls_back_to_the_midpoint(self):
+        bounds = armybook._band_bounds([126.0, 402.0], [])
+        assert bounds[0][1] == pytest.approx(264.0)
 
 
 class TestMatchPrices:
@@ -526,6 +569,67 @@ class TestMatchPrices:
         rows = [(1.0, "+5pts +10pts"), (2.0, "Some Option")]
         assert armybook._match_prices(rows, ["Some Option"]) == {}
 
+    def test_a_price_ahead_of_the_only_name_is_not_taken(self):
+        """The price column is to the right of the option text, so a token
+        left of the name belongs to the neighbouring card or row - taking it
+        as a last resort is how 'Rapid Heavy Rifle' shipped at its
+        neighbour's 15pts instead of its own 40."""
+        rows = [(1.0, '+15pts Rapid Heavy Rifle (24", A2, AP(1)), Flamer-Mod')]
+        assert armybook._match_prices(rows, ["Rapid Heavy Rifle"]) == {}
+
+    def test_a_bundled_row_prices_every_option_it_names(self):
+        """One printed price covers the whole swap, and the sheet has a row
+        per weapon with nowhere to say they were bought together."""
+        rows = [(1.0, 'Storm Rifle (24", A3, AP(1)), CCW (A1) +75pts')]
+        assert armybook._match_prices(rows, ["Storm Rifle", "CCW"]) == {
+            "Storm Rifle": 75, "CCW": 75,
+        }
+
+    def test_a_name_contained_in_a_longer_one_is_not_a_bundled_option(self):
+        rows = [(1.0, 'Champion Storm Rifle (24", A4, AP(1)) +75pts')]
+        matched = armybook._match_prices(rows, ["Storm Rifle", "Champion Storm Rifle"])
+        assert matched == {"Champion Storm Rifle": 75}
+
+    def test_an_options_own_row_outranks_a_bundle_it_appears_in(self):
+        rows = [
+            (1.0, 'Sgt. Heavy Pistol (12", A1), Energy Sword (A2, AP(1)) +15pts'),
+            (2.0, "Energy Sword (A2, AP(1)) +5pts"),
+        ]
+        matched = armybook._match_prices(rows, ["Sgt. Heavy Pistol", "Energy Sword"])
+        assert matched == {"Sgt. Heavy Pistol": 15, "Energy Sword": 5}
+
+    def test_the_same_option_printed_at_two_prices_is_left_for_a_human(self):
+        """Despoiler Walker's card lists the identical profile under two
+        sections, at +95pts and +125pts. Which one won used to depend on
+        accidental band inclusion; there is no confident answer, so it is
+        reported as a miss instead."""
+        rows = [
+            (1.0, 'Twin Heavy Machinegun (30", A6, AP(1)) +95pts'),
+            (2.0, 'Twin Heavy Machinegun (30", A6, AP(1)) +125pts'),
+        ]
+        assert armybook._match_prices(rows, ["Twin Heavy Machinegun"]) == {}
+
+    def test_two_bundles_naming_the_same_option_at_different_prices_too(self):
+        rows = [
+            (1.0, 'Heavy Pistol (12", A1), Energy Hammer (A1) Free'),
+            (2.0, 'Heavy Pistol (12", A1), Energy Fist (A2, AP(4)) +10pts'),
+        ]
+        matched = armybook._match_prices(
+            rows, ["Heavy Pistol", "Energy Hammer", "Energy Fist"]
+        )
+        assert matched == {"Energy Hammer": 0, "Energy Fist": 10}
+
+    def test_an_option_that_lost_a_priced_row_is_not_paired_by_layer_two(self):
+        """'Rod' is spelled inside 'Rod-Shots' and takes nothing from their
+        shared row, but it has plainly been priced there - handing it an
+        unrelated spare price from elsewhere on the card would contradict the
+        page."""
+        rows = [
+            (1.0, 'Rod-Shots (12", A2, AP(1)), Rod (A1) +10pts'),
+            (2.0, "+45pts"),
+        ]
+        assert armybook._match_prices(rows, ["Rod-Shots", "Rod"]) == {"Rod-Shots": 10}
+
 
 class TestCardRegions:
     UNITS = [
@@ -534,21 +638,27 @@ class TestCardRegions:
     ]
 
     #: One page, two cards side by side - Warriors left, Snipers right -
-    #: each with one option row below its header, mirroring a real card page.
+    #: each with one option row below its header, to the real page's scale:
+    #: the left card's option text ends around x230 and its own price column
+    #: is at x253, past the midpoint of the two centred header anchors.
     PAGE_WORDS = [
-        {"text": "Warriors", "x0": 126, "top": 57},
-        {"text": "[5]", "x0": 156, "top": 57},
-        {"text": "-", "x0": 169, "top": 57},
-        {"text": "100pts", "x0": 173, "top": 57},
-        {"text": "Snipers", "x0": 402, "top": 57},
-        {"text": "[3]", "x0": 427, "top": 57},
-        {"text": "-", "x0": 445, "top": 57},
-        {"text": "110pts", "x0": 449, "top": 57},
-        {"text": "Gauss", "x0": 126, "top": 163},
-        {"text": "Rifle", "x0": 155, "top": 163},
-        {"text": "+10pts", "x0": 200, "top": 163},
-        {"text": "D-Marks", "x0": 402, "top": 163},
-        {"text": "+15pts", "x0": 550, "top": 163},
+        _word("Warriors", 126, 57, 40),
+        _word("[5]", 168, 57, 10),
+        _word("-", 180, 57, 4),
+        _word("100pts", 186, 57, 25),
+        _word("Snipers", 402, 57, 35),
+        _word("[3]", 439, 57, 10),
+        _word("-", 451, 57, 4),
+        _word("110pts", 457, 57, 25),
+        _word("Gauss", 34, 163, 30),
+        _word("Rifle", 66, 163, 25),
+        _word('(24",', 93, 163, 30),
+        _word("Destructive)", 125, 163, 100),
+        _word("+10pts", 253, 163, 25),
+        _word("D-Marks", 308, 163, 40),
+        _word("(Indirect", 350, 163, 45),
+        _word("Mark)", 397, 163, 40),
+        _word("+15pts", 527, 163, 25),
     ]
 
     def test_both_cards_are_found(self):
@@ -559,9 +669,9 @@ class TestCardRegions:
         regions = armybook._card_regions(self.UNITS, [self.PAGE_WORDS], [800.0])
         page_index, x_min, x_max, top_min, top_max = regions["Warriors"]
         assert page_index == 0
-        assert x_min < 200 <= x_max  # Warriors' own price row (x0=300) is out of range...
-        # ...specifically, the band boundary falls between the two cards' anchors:
-        assert x_min < 126 and x_max <= 402
+        assert x_min < 126  # ...its own header
+        assert x_min < 253 < x_max  # ...and its own price column
+        assert x_max <= 308  # ...but nothing of its neighbour's
 
     def test_a_card_not_found_verbatim_is_absent(self):
         units = self.UNITS + [{"name": "Ghost Unit", "size": 1, "cost": 999}]
@@ -573,9 +683,36 @@ class TestCardRegions:
         page_index, x_min, x_max, top_min, top_max = regions["Warriors"]
         rows = armybook._rows_in_band(self.PAGE_WORDS, x_min, x_max, top_min, top_max)
         joined = " ".join(text for _, text in rows)
-        assert "Gauss Rifle +10pts" in joined
+        assert 'Gauss Rifle (24", Destructive) +10pts' in joined
         assert "D-Marks" not in joined
         assert "+15pts" not in joined
+
+    def test_two_cards_sharing_a_first_word_anchor_to_their_own_headers(self):
+        """"Havoc Bikers" and "Havoc APC" print side by side on one row;
+        anchoring the second on the row's first word of its own spelling put
+        both cards in the left band, and gave the right one its neighbour's
+        options wholesale."""
+        units = [{"name": "Havoc Bikers", "size": 3, "cost": 290},
+                 {"name": "Havoc APC", "size": 1, "cost": 205}]
+        words = [
+            _word("Havoc", 120, 57, 30), _word("Bikers", 152, 57, 30),
+            _word("[3]", 184, 57, 10), _word("-", 196, 57, 4),
+            _word("290pts", 202, 57, 25),
+            _word("Havoc", 397, 57, 30), _word("APC", 429, 57, 20),
+            _word("[1]", 451, 57, 10), _word("-", 463, 57, 4),
+            _word("205pts", 469, 57, 25),
+            _word("Heavy", 34, 163, 30), _word("Rifle", 66, 163, 25),
+            _word('(24",', 93, 163, 30), _word("A1,", 125, 163, 20),
+            _word("AP(1)),", 147, 163, 40), _word("CCW", 189, 163, 30),
+            _word("(A1)", 221, 163, 30), _word("+5pts", 257, 163, 22),
+            _word("Storm", 308, 163, 30), _word("Rifle", 340, 163, 25),
+            _word('(24",', 367, 163, 30), _word("A3,", 399, 163, 20),
+            _word("AP(1))", 421, 163, 40), _word("+55pts", 527, 163, 25),
+        ]
+        regions = armybook._card_regions(units, [words], [800.0])
+        left, right = regions["Havoc Bikers"], regions["Havoc APC"]
+        assert left[1] < 120 < left[2] and left[2] <= 308
+        assert right[1] >= left[2] and right[1] <= 397
 
 
 class _FakePage:
