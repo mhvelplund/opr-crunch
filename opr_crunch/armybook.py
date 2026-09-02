@@ -547,3 +547,37 @@ def _band_bounds(xs: List[float], gap: float = 40) -> List[Tuple[float, float]]:
         hi = float("inf") if i == len(anchors) - 1 else (a + anchors[i + 1]) / 2
         bounds.append((lo, hi))
     return bounds
+
+
+def _match_prices(card_rows: List[Tuple[float, str]], option_names: List[str]) -> Dict[str, int]:
+    """Attach a scraped price to as many of ``option_names`` as can be done
+    with confidence, out of one card's rows.
+
+    Layer 1: a row naming both a price and one of the options is a direct
+    match - the longer of two overlapping names wins, so 'Champion Storm
+    Rifle' isn't stolen by a shorter 'Storm Rifle' option on the same card.
+    Layer 2: if that leaves exactly one option and one price unclaimed, they
+    are paired - the common case is a name too long for its own row, wrapping
+    the price onto the next one. Anything else (zero, or more than one, of
+    either) is left unmatched rather than guessed; the caller reports these.
+    """
+    unclaimed_names = list(option_names)
+    unclaimed_prices: List[int] = []
+    matches: Dict[str, int] = {}
+
+    for _, text in card_rows:
+        found = PRICE.search(text)
+        if not found:
+            continue
+        price = 0 if found.group(0) == "Free" else int(found.group(1))
+        candidates = [n for n in unclaimed_names if n in text]
+        if candidates:
+            name = max(candidates, key=len)
+            matches[name] = price
+            unclaimed_names.remove(name)
+        else:
+            unclaimed_prices.append(price)
+
+    if len(unclaimed_names) == 1 and len(unclaimed_prices) == 1:
+        matches[unclaimed_names[0]] = unclaimed_prices[0]
+    return matches

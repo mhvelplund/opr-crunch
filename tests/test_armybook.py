@@ -462,3 +462,45 @@ class TestBandBounds:
         not be mistaken for two separate cards."""
         bounds = armybook._band_bounds([126.0, 140.0, 402.0])
         assert len(bounds) == 2
+
+
+class TestMatchPrices:
+    def test_a_price_on_the_same_row_as_its_option_is_matched(self):
+        rows = [(191.0, 'Plasma Caster (24", A1, AP(4)) +10pts')]
+        assert armybook._match_prices(rows, ["Plasma Caster"]) == {"Plasma Caster": 10}
+
+    def test_free_prices_as_zero(self):
+        rows = [(410.0, "Twin Atom-Caster (12\", A2, AP(1)) Free")]
+        assert armybook._match_prices(rows, ["Twin Atom-Caster"]) == {"Twin Atom-Caster": 0}
+
+    def test_the_longer_of_two_overlapping_names_wins(self):
+        """'Storm Rifle' is a substring of 'Champion Storm Rifle' - the row
+        naming the longer, more specific option must not be stolen by the
+        shorter one."""
+        rows = [(1.0, 'Champion Storm Rifle (24", A4, AP(1)) +75pts')]
+        matched = armybook._match_prices(rows, ["Storm Rifle", "Champion Storm Rifle"])
+        assert matched == {"Champion Storm Rifle": 75}
+
+    def test_a_single_leftover_name_and_price_are_paired(self):
+        """A price that drifted onto its own row (the pdftotext-layout
+        wrapping artifact this whole feature exists to work around) - but
+        here recovered straight from pdfplumber's own row grouping, so this
+        covers the case where a name and its price still end up on separate
+        rows even in true coordinates (e.g. a very long option name)."""
+        rows = [
+            (1.0, "Some Very Long Option Name (A2, AP(1), Rending)"),
+            (2.0, "+35pts"),
+        ]
+        assert armybook._match_prices(rows, ["Some Very Long Option Name"]) == {
+            "Some Very Long Option Name": 35
+        }
+
+    def test_two_leftover_names_and_prices_are_not_guessed(self):
+        rows = [(1.0, "First Option"), (2.0, "+10pts"), (3.0, "Second Option"), (4.0, "+20pts")]
+        assert armybook._match_prices(rows, ["First Option", "Second Option"]) == {}
+
+    def test_an_option_with_no_price_row_at_all_is_left_unmatched(self):
+        rows = [(1.0, 'Plasma Caster (24", A1, AP(4)) +10pts')]
+        matched = armybook._match_prices(rows, ["Plasma Caster", "Ray Caster"])
+        assert matched == {"Plasma Caster": 10}
+        assert "Ray Caster" not in matched
