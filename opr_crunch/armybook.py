@@ -499,3 +499,51 @@ def cache_name(url: str) -> str:
     name = PurePosixPath(urlparse(url).path).name or "army-book"
     name = re.sub(r"[^A-Za-z0-9._-]", "_", name).lstrip(".")
     return name if name.lower().endswith(".pdf") else f"{name}.pdf"
+
+
+# --------------------------------------------------------------------------
+# real prices (word coordinates)
+# --------------------------------------------------------------------------
+
+#: A card's ``+Npts`` price, or the literal ``Free`` some first upgrade slots use.
+PRICE = re.compile(r"\+(\d+)pts|\bFree\b")
+
+
+def _rows_in_band(
+    words: List[dict], x_min: float, x_max: float, top_min: float, top_max: float
+) -> List[Tuple[float, str]]:
+    """Visual rows built only from words inside one card's box.
+
+    Filtering by position *before* joining words into a row is what keeps two
+    side-by-side cards' options from being concatenated into one row's text
+    when they happen to share a baseline - a real occurrence in these books'
+    two-up upgrade tables.
+    """
+    banded = [w for w in words if x_min <= w["x0"] < x_max and top_min <= w["top"] < top_max]
+    rows: Dict[int, List[dict]] = {}
+    for w in banded:
+        rows.setdefault(round(w["top"]), []).append(w)
+    return [
+        (top, " ".join(w["text"] for w in sorted(rows[top], key=lambda w: w["x0"])))
+        for top in sorted(rows)
+    ]
+
+
+def _band_bounds(xs: List[float], gap: float = 40) -> List[Tuple[float, float]]:
+    """One (low, high) span per clustered x-anchor, covering -inf..inf overall.
+
+    Mirrors the character-column clustering ``_columns_of`` already does for
+    the special-rules page, but in PDF point-space rather than text columns -
+    the two are not on the same scale, so this is a separate small helper
+    rather than a shared one.
+    """
+    anchors: List[float] = []
+    for x in sorted(xs):
+        if not anchors or x - anchors[-1] > gap:
+            anchors.append(x)
+    bounds = []
+    for i, a in enumerate(anchors):
+        lo = -1.0 if i == 0 else (anchors[i - 1] + a) / 2
+        hi = float("inf") if i == len(anchors) - 1 else (a + anchors[i + 1]) / 2
+        bounds.append((lo, hi))
+    return bounds

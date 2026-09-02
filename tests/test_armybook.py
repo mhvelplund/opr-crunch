@@ -409,3 +409,56 @@ class TestParseUpgrades:
     def test_the_previous_line_is_not_part_of_the_name(self):
         got = dict(armybook.parse_upgrades("Doom Ray\nWarp Gate (Ambush)"))
         assert list(got) == ["Warp Gate"]
+
+
+class TestRowsInBand:
+    WORDS = [
+        {"text": "Plasma", "x0": 10, "top": 100},
+        {"text": "Caster", "x0": 45, "top": 100},
+        {"text": "+10pts", "x0": 200, "top": 100},
+        {"text": "Flame", "x0": 10, "top": 120},
+        {"text": "Caster", "x0": 40, "top": 120},
+        {"text": "+15pts", "x0": 200, "top": 120},
+        {"text": "Other", "x0": 300, "top": 100},  # outside the x-range
+    ]
+
+    def test_words_join_into_one_row_by_rounded_top(self):
+        rows = armybook._rows_in_band(self.WORDS, x_min=0, x_max=250, top_min=0, top_max=1000)
+        assert rows == [
+            (100, "Plasma Caster +10pts"),
+            (120, "Flame Caster +15pts"),
+        ]
+
+    def test_words_outside_the_x_range_are_excluded(self):
+        rows = armybook._rows_in_band(self.WORDS, x_min=0, x_max=250, top_min=0, top_max=1000)
+        assert "Other" not in " ".join(text for _, text in rows)
+
+    def test_words_outside_the_top_range_are_excluded(self):
+        rows = armybook._rows_in_band(self.WORDS, x_min=0, x_max=250, top_min=0, top_max=110)
+        assert rows == [(100, "Plasma Caster +10pts")]
+
+    def test_a_row_close_but_not_identical_top_still_groups(self):
+        """pdfplumber tops within the same visual row can differ by a fraction
+        of a point between words; rounding to the nearest point groups them."""
+        words = [
+            {"text": "A", "x0": 0, "top": 100.2},
+            {"text": "B", "x0": 10, "top": 99.8},
+        ]
+        rows = armybook._rows_in_band(words, x_min=0, x_max=100, top_min=0, top_max=1000)
+        assert rows == [(100, "A B")]
+
+
+class TestBandBounds:
+    def test_two_well_separated_anchors_split_at_the_midpoint(self):
+        bounds = armybook._band_bounds([126.0, 402.0])
+        assert bounds[0] == (-1, pytest.approx(264.0))
+        assert bounds[1] == (pytest.approx(264.0), float("inf"))
+
+    def test_a_single_anchor_covers_everything(self):
+        assert armybook._band_bounds([126.0]) == [(-1, float("inf"))]
+
+    def test_anchors_closer_than_the_gap_merge_into_one_band(self):
+        """Two words of the same card's name (e.g. a two-word unit name) must
+        not be mistaken for two separate cards."""
+        bounds = armybook._band_bounds([126.0, 140.0, 402.0])
+        assert len(bounds) == 2
