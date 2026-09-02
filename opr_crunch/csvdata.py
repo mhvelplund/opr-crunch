@@ -18,7 +18,7 @@ CSV_DIR = Path(__file__).resolve().parent.parent / "csv"
 #: Columns parsed as integers. Everything else is kept as text.
 NUMERIC = {
     "simulation": {"#", "Def. #"},
-    "units": {"Quality", "Defense", "Size", "Tough", "Ravage", "Cost"},
+    "units": {"Quality", "Defense", "Size", "Tough", "Ravage", "Impact", "Cost"},
     "weapons": {"Range", "Attacks", "AP", "Blast", "Deadly", "Impact", "Cost"},
     "upgrades": {"AP", "Blast", "Deadly", "Impact", "Cost"},
     "special_rules": set(),

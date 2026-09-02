@@ -1,111 +1,4 @@
 Name,Faction,Unit,Range,Attacks,AP,Blast,Deadly,Impact,Special Rules,Cost
-Annihilation Gun,Robot Legions,Tri-Scorpion Lord,18,2,1,3,0,0,,0
-Atom-Beamer,Robot Legions,Forge Spider,24,3,1,0,0,0,,10
-Atom-Beamer,Robot Legions,Hover Bikes,24,3,1,0,0,0,,10
-Atom-Casters,Robot Legions,Guardians,12,1,1,0,0,0,,0
-Atom-Scourge,Robot Legions,Death Fortress,24,9,4,0,0,0,,10
-CCW,Robot Legions,Annihilators,0,1,0,0,0,0,,10
-CCWs,Robot Legions,Annihilator Lord,0,2,0,0,0,0,,0
-CCWs,Robot Legions,Eternals,0,2,0,0,0,0,,0
-CCWs,Robot Legions,Hover Bikes,0,2,0,0,0,0,,0
-CCWs,Robot Legions,Snipers,0,1,0,0,0,0,,0
-CCWs,Robot Legions,Warriors,0,2,0,0,0,0,,0
-Close-Range Gauss Array,Robot Legions,Night Transport,12,6,0,0,0,0,Destructive,0
-Combat Staff,Robot Legions,Annihilator Lord,0,3,1,0,0,0,,10
-Combat Staff,Robot Legions,Robot Lord,0,3,1,0,0,0,,10
-Crushing Legs,Robot Legions,Spider Walker,0,2,2,0,0,0,,0
-D-Marks,Robot Legions,Snipers,24,1,1,0,0,0,"Reliable, Takedown",0
-Death Gaze,Robot Legions,Robot Snakes,12,2,4,0,0,0,,10
-Destruction Pulse,Robot Legions,Death Fortress,30,2,3,0,6,0,,0
-Doom Cannon,Robot Legions,Doom Tank,30,3,2,3,0,0,,0
-Doom Ray,Robot Legions,Doom Fighter,24,4,4,0,0,0,Unstoppable,0
-Doom Scythe,Robot Legions,Annihilator Lord,0,1,2,0,3,0,,10
-Doom Scythe,Robot Legions,Robot Lord,0,1,2,0,3,0,,10
-Dual Hyper Swords,Robot Legions,Annihilator Lord,0,4,1,0,0,0,Rending,10
-Dual Hyper Swords,Robot Legions,Annihilators,0,4,1,0,0,0,Rending,0
-Dual Reaper Blades,Robot Legions,Destroyer Snakes,0,4,1,0,0,0,Shred,0
-Dual Reaper Blades,Robot Legions,Tri-Scorpions,0,4,1,0,0,0,Shred,0
-Exterminator Cannon,Robot Legions,Heavy Annihilator,30,2,2,3,0,0,,10
-Flame Caster,Robot Legions,Warriors,12,1,0,3,0,0,Reliable,10
-Flux Cannon,Robot Legions,Support Platform,24,3,1,0,0,0,Surge,10
-Flux Carbines,Robot Legions,Eternals,18,2,0,0,0,0,Surge,0
-Flux Sphere Array,Robot Legions,Death Fortress,24,9,1,0,0,0,Surge,0
-Fusion Caster,Robot Legions,Warriors,12,1,4,0,3,0,,10
-Gauss Arc Array,Robot Legions,Death Fortress,24,12,0,0,0,0,Destructive,10
-Gauss Blaster,Robot Legions,Robot Lord,18,4,0,0,0,0,Destructive,10
-Gauss Cannon,Robot Legions,Annihilators,24,4,0,0,0,0,Destructive,10
-Gauss Cannon,Robot Legions,Support Platform,24,4,0,0,0,0,Destructive,10
-Gauss Rifle,Robot Legions,Warriors,24,1,0,0,0,0,Destructive,10
-Gauss Rifle Array,Robot Legions,Doom Tank,24,3,0,0,0,0,Destructive,0
-Gauss Rifle Array,Robot Legions,Transport Tank,24,3,0,0,0,0,Destructive,0
-Great Wraith,Robot Legions,Great Wraith-Shard,0,0,0,0,0,0,Flying,10
-Great Wraith Strike,Robot Legions,Great Wraith-Shard,0,12,0,0,0,0,Rending,0
-Harvest Blade,Robot Legions,Tri-Scorpion Lord,0,2,2,0,3,0,,0
-Heavy CCW,Robot Legions,Heavy Annihilator,0,2,1,0,0,0,,0
-Heavy Doom Cannon,Robot Legions,Doom Tank,30,3,3,0,3,0,,10
-Heavy Gauss Cannon,Robot Legions,Annihilator Lord,30,6,0,0,0,0,Destructive,10
-Heavy Gauss Cannon,Robot Legions,Annihilators,30,6,0,0,0,0,Destructive,10
-Heavy Gauss Cannon,Robot Legions,Heavy Annihilator,30,6,0,0,0,0,Destructive,0
-Heavy Gauss Rifle,Robot Legions,Eternals,24,2,0,0,0,0,Destructive,10
-Heavy Ray Cannon,Robot Legions,Heavy Annihilator,24,4,4,0,0,0,Unstoppable,10
-Heavy Reaper Blade,Robot Legions,Destroyer Snakes,0,1,3,0,6,0,Shred,10
-Heavy Reaper Blade,Robot Legions,Tri-Scorpions,0,1,3,0,6,0,Shred,10
-Hyper Sword,Robot Legions,Annihilator Lord,0,3,1,0,0,0,Rending,10
-Hyper Sword,Robot Legions,Guardians,0,2,1,0,0,0,Rending,10
-Hyper Sword,Robot Legions,Robot Lord,0,3,1,0,0,0,Rending,10
-Lord Gauss Pistol,Robot Legions,Annihilator Lord,12,2,0,0,0,0,Destructive,0
-Lord Gauss Pistol,Robot Legions,Robot Lord,12,2,0,0,0,0,Destructive,10
-Lord Gauss Pistol,Robot Legions,Support Platform,12,2,0,0,0,0,Destructive,0
-Lord Gauss Rifle,Robot Legions,Robot Lord,24,2,0,0,0,0,Destructive,10
-Lord Reaper Rifle,Robot Legions,Robot Lord,18,2,1,0,0,0,Shred,10
-Metal Claws,Robot Legions,Flesh-Eaters,0,2,1,0,0,0,,0
-Metal Fangs,Robot Legions,Robot Snakes,0,2,0,0,0,0,Rending,10
-Monolith Beam,Robot Legions,Great Monolith,18,3,3,0,6,0,,10
-Nanobot Shards,Robot Legions,Great Wraith-Shard,18,4,3,0,3,0,,0
-Nanobot Shards,Robot Legions,Wraith-Shard,18,4,3,0,3,0,,0
-Phase Glaive,Robot Legions,Annihilator Lord,0,3,4,0,0,0,,10
-Phase Glaive,Robot Legions,Robot Lord,0,3,4,0,0,0,,10
-Plasma Caster,Robot Legions,Warriors,24,1,4,0,0,0,,10
-Rapid Doom Blaster,Robot Legions,Tripod Walker,24,2,1,3,0,0,,10
-Rapid Flux Carbines,Robot Legions,Hover Bikes,18,4,0,0,0,0,Surge,0
-Rapid Gauss Rifle,Robot Legions,Hover Bikes,24,3,0,0,0,0,Destructive,10
-Rapid Particle Beam,Robot Legions,Tripod Walker,12,2,1,3,0,0,Reliable,0
-Rapid Ray Caster,Robot Legions,Tripod Walker,18,4,4,0,0,0,Unstoppable,10
-Ray Cannon,Robot Legions,Annihilators,24,2,4,0,0,0,Unstoppable,10
-Ray Caster,Robot Legions,Support Platform,18,2,4,0,0,0,Unstoppable,0
-Ray Caster,Robot Legions,Warriors,18,2,4,0,0,0,Unstoppable,10
-Reaper Rifles,Robot Legions,Warriors,18,1,1,0,0,0,Shred,0
-Rod,Robot Legions,Guardians,0,1,0,0,0,0,,10
-Rod-Shots,Robot Legions,Guardians,12,2,1,0,0,0,,10
-Shock Whips,Robot Legions,Robot Snakes,0,4,1,0,0,0,Surge,10
-Spider Fangs,Robot Legions,Forge Spider,0,6,0,0,0,0,Bane,0
-Staff-Shots,Robot Legions,Annihilator Lord,12,3,1,0,0,0,,10
-Staff-Shots,Robot Legions,Robot Lord,12,3,1,0,0,0,,10
-Stomp,Robot Legions,Great Wraith-Shard,0,2,1,0,0,0,,0
-Stomp,Robot Legions,Spider Walker,0,2,1,0,0,0,,0
-Stomp,Robot Legions,Tripod Walker,0,2,1,0,0,0,,0
-Stomp,Robot Legions,Wraith-Shard,0,4,1,0,0,0,,0
-Swarm Attacks,Robot Legions,Bot Swarms,0,3,0,0,0,0,Rending,0
-Twin Atom-Beamer,Robot Legions,Forge Spider,24,6,1,0,0,0,,0
-Twin Atom-Caster,Robot Legions,Robot Snakes,12,2,1,0,0,0,,10
-Twin Atom-Shredder,Robot Legions,Spider Walker,24,12,1,0,0,0,,10
-Twin Exterminator Cannon,Robot Legions,Spider Walker,30,4,2,3,0,0,,10
-Twin Flux Cannon,Robot Legions,Night Transport,24,6,1,0,0,0,Surge,0
-Twin Flux Cannon,Robot Legions,Support Platform,24,6,1,0,0,0,Surge,10
-Twin Fusion Ray,Robot Legions,Spider Walker,18,2,4,0,6,0,,0
-Twin Gauss Rifle,Robot Legions,Tripod Walker,24,2,0,0,0,0,Destructive,10
-Twin Heavy Gauss Cannon,Robot Legions,Spider Walker,24,12,0,0,0,0,Destructive,10
-Void Blades,Robot Legions,Guardians,0,2,0,0,0,0,,0
-Void Shard,Robot Legions,Great Wraith-Shard,24,12,2,0,0,0,,10
-Void Shard,Robot Legions,Wraith-Shard,24,12,2,0,0,0,,10
-Void Sword,Robot Legions,Annihilator Lord,0,1,0,3,0,0,,10
-Void Sword,Robot Legions,Robot Lord,0,1,0,3,0,0,,10
-War Scythe,Robot Legions,Guardians,0,2,2,0,0,0,,10
-Wraith Strike,Robot Legions,Wraith-Shard,0,8,0,0,0,0,Rending,0
-Wrist-Flamer,Robot Legions,Annihilator Lord,12,1,0,3,0,0,Reliable,10
-Wrist-Flamer,Robot Legions,Robot Lord,12,1,0,3,0,0,Reliable,10
-Wrist-Plasma,Robot Legions,Annihilator Lord,24,1,4,0,0,0,,10
-Wrist-Plasma,Robot Legions,Robot Lord,24,1,4,0,0,0,,10
 CCW,Battle Brothers,Brother Bikers,0,1,0,0,0,0,,10
 CCW,Battle Brothers,Destroyers,0,1,0,0,0,0,,10
 CCW,Battle Brothers,Elite Pathfinder,0,4,0,0,0,0,,0
@@ -606,3 +499,110 @@ Twin Laser Cannon,Havoc Brothers,Infernal Brute,36,2,3,0,3,0,,10
 Twin Pain Cannons,Havoc Brothers,Despoiler Walker,24,2,0,3,0,0,,10
 Twin Pain Cannons,Havoc Brothers,Spider Walker,24,2,0,3,0,0,,0
 Virus Injector,Havoc Brothers,Infernal Stalker,0,3,3,0,3,0,,0
+Annihilation Gun,Robot Legions,Tri-Scorpion Lord,18,2,1,3,0,0,,0
+Atom-Beamer,Robot Legions,Forge Spider,24,3,1,0,0,0,,10
+Atom-Beamer,Robot Legions,Hover Bikes,24,3,1,0,0,0,,10
+Atom-Casters,Robot Legions,Guardians,12,1,1,0,0,0,,0
+Atom-Scourge,Robot Legions,Death Fortress,24,9,4,0,0,0,,10
+CCW,Robot Legions,Annihilators,0,1,0,0,0,0,,10
+CCWs,Robot Legions,Annihilator Lord,0,2,0,0,0,0,,0
+CCWs,Robot Legions,Eternals,0,2,0,0,0,0,,0
+CCWs,Robot Legions,Hover Bikes,0,2,0,0,0,0,,0
+CCWs,Robot Legions,Snipers,0,1,0,0,0,0,,0
+CCWs,Robot Legions,Warriors,0,2,0,0,0,0,,0
+Close-Range Gauss Array,Robot Legions,Night Transport,12,6,0,0,0,0,Destructive,0
+Combat Staff,Robot Legions,Annihilator Lord,0,3,1,0,0,0,,10
+Combat Staff,Robot Legions,Robot Lord,0,3,1,0,0,0,,10
+Crushing Legs,Robot Legions,Spider Walker,0,2,2,0,0,0,,0
+D-Marks,Robot Legions,Snipers,24,1,1,0,0,0,"Reliable, Takedown",0
+Death Gaze,Robot Legions,Robot Snakes,12,2,4,0,0,0,,10
+Destruction Pulse,Robot Legions,Death Fortress,30,2,3,0,6,0,,0
+Doom Cannon,Robot Legions,Doom Tank,30,3,2,3,0,0,,0
+Doom Ray,Robot Legions,Doom Fighter,24,4,4,0,0,0,Unstoppable,0
+Doom Scythe,Robot Legions,Annihilator Lord,0,1,2,0,3,0,,10
+Doom Scythe,Robot Legions,Robot Lord,0,1,2,0,3,0,,10
+Dual Hyper Swords,Robot Legions,Annihilator Lord,0,4,1,0,0,0,Rending,10
+Dual Hyper Swords,Robot Legions,Annihilators,0,4,1,0,0,0,Rending,0
+Dual Reaper Blades,Robot Legions,Destroyer Snakes,0,4,1,0,0,0,Shred,0
+Dual Reaper Blades,Robot Legions,Tri-Scorpions,0,4,1,0,0,0,Shred,0
+Exterminator Cannon,Robot Legions,Heavy Annihilator,30,2,2,3,0,0,,10
+Flame Caster,Robot Legions,Warriors,12,1,0,3,0,0,Reliable,10
+Flux Cannon,Robot Legions,Support Platform,24,3,1,0,0,0,Surge,10
+Flux Carbines,Robot Legions,Eternals,18,2,0,0,0,0,Surge,0
+Flux Sphere Array,Robot Legions,Death Fortress,24,9,1,0,0,0,Surge,0
+Fusion Caster,Robot Legions,Warriors,12,1,4,0,3,0,,10
+Gauss Arc Array,Robot Legions,Death Fortress,24,12,0,0,0,0,Destructive,10
+Gauss Blaster,Robot Legions,Robot Lord,18,4,0,0,0,0,Destructive,10
+Gauss Cannon,Robot Legions,Annihilators,24,4,0,0,0,0,Destructive,10
+Gauss Cannon,Robot Legions,Support Platform,24,4,0,0,0,0,Destructive,10
+Gauss Rifle,Robot Legions,Warriors,24,1,0,0,0,0,Destructive,10
+Gauss Rifle Array,Robot Legions,Doom Tank,24,3,0,0,0,0,Destructive,0
+Gauss Rifle Array,Robot Legions,Transport Tank,24,3,0,0,0,0,Destructive,0
+Great Wraith,Robot Legions,Great Wraith-Shard,0,0,0,0,0,0,Flying,10
+Great Wraith Strike,Robot Legions,Great Wraith-Shard,0,12,0,0,0,0,Rending,0
+Harvest Blade,Robot Legions,Tri-Scorpion Lord,0,2,2,0,3,0,,0
+Heavy CCW,Robot Legions,Heavy Annihilator,0,2,1,0,0,0,,0
+Heavy Doom Cannon,Robot Legions,Doom Tank,30,3,3,0,3,0,,10
+Heavy Gauss Cannon,Robot Legions,Annihilator Lord,30,6,0,0,0,0,Destructive,10
+Heavy Gauss Cannon,Robot Legions,Annihilators,30,6,0,0,0,0,Destructive,10
+Heavy Gauss Cannon,Robot Legions,Heavy Annihilator,30,6,0,0,0,0,Destructive,0
+Heavy Gauss Rifle,Robot Legions,Eternals,24,2,0,0,0,0,Destructive,10
+Heavy Ray Cannon,Robot Legions,Heavy Annihilator,24,4,4,0,0,0,Unstoppable,10
+Heavy Reaper Blade,Robot Legions,Destroyer Snakes,0,1,3,0,6,0,Shred,10
+Heavy Reaper Blade,Robot Legions,Tri-Scorpions,0,1,3,0,6,0,Shred,10
+Hyper Sword,Robot Legions,Annihilator Lord,0,3,1,0,0,0,Rending,10
+Hyper Sword,Robot Legions,Guardians,0,2,1,0,0,0,Rending,10
+Hyper Sword,Robot Legions,Robot Lord,0,3,1,0,0,0,Rending,10
+Lord Gauss Pistol,Robot Legions,Annihilator Lord,12,2,0,0,0,0,Destructive,0
+Lord Gauss Pistol,Robot Legions,Robot Lord,12,2,0,0,0,0,Destructive,10
+Lord Gauss Pistol,Robot Legions,Support Platform,12,2,0,0,0,0,Destructive,0
+Lord Gauss Rifle,Robot Legions,Robot Lord,24,2,0,0,0,0,Destructive,10
+Lord Reaper Rifle,Robot Legions,Robot Lord,18,2,1,0,0,0,Shred,10
+Metal Claws,Robot Legions,Flesh-Eaters,0,2,1,0,0,0,,0
+Metal Fangs,Robot Legions,Robot Snakes,0,2,0,0,0,0,Rending,10
+Monolith Beam,Robot Legions,Great Monolith,18,3,3,0,6,0,,10
+Nanobot Shards,Robot Legions,Great Wraith-Shard,18,4,3,0,3,0,,0
+Nanobot Shards,Robot Legions,Wraith-Shard,18,4,3,0,3,0,,0
+Phase Glaive,Robot Legions,Annihilator Lord,0,3,4,0,0,0,,10
+Phase Glaive,Robot Legions,Robot Lord,0,3,4,0,0,0,,10
+Plasma Caster,Robot Legions,Warriors,24,1,4,0,0,0,,10
+Rapid Doom Blaster,Robot Legions,Tripod Walker,24,2,1,3,0,0,,10
+Rapid Flux Carbines,Robot Legions,Hover Bikes,18,4,0,0,0,0,Surge,0
+Rapid Gauss Rifle,Robot Legions,Hover Bikes,24,3,0,0,0,0,Destructive,10
+Rapid Particle Beam,Robot Legions,Tripod Walker,12,2,1,3,0,0,Reliable,0
+Rapid Ray Caster,Robot Legions,Tripod Walker,18,4,4,0,0,0,Unstoppable,10
+Ray Cannon,Robot Legions,Annihilators,24,2,4,0,0,0,Unstoppable,10
+Ray Caster,Robot Legions,Support Platform,18,2,4,0,0,0,Unstoppable,0
+Ray Caster,Robot Legions,Warriors,18,2,4,0,0,0,Unstoppable,10
+Reaper Rifles,Robot Legions,Warriors,18,1,1,0,0,0,Shred,0
+Rod,Robot Legions,Guardians,0,1,0,0,0,0,,10
+Rod-Shots,Robot Legions,Guardians,12,2,1,0,0,0,,10
+Shock Whips,Robot Legions,Robot Snakes,0,4,1,0,0,0,Surge,10
+Spider Fangs,Robot Legions,Forge Spider,0,6,0,0,0,0,Bane,0
+Staff-Shots,Robot Legions,Annihilator Lord,12,3,1,0,0,0,,10
+Staff-Shots,Robot Legions,Robot Lord,12,3,1,0,0,0,,10
+Stomp,Robot Legions,Great Wraith-Shard,0,2,1,0,0,0,,0
+Stomp,Robot Legions,Spider Walker,0,2,1,0,0,0,,0
+Stomp,Robot Legions,Tripod Walker,0,2,1,0,0,0,,0
+Stomp,Robot Legions,Wraith-Shard,0,4,1,0,0,0,,0
+Swarm Attacks,Robot Legions,Bot Swarms,0,3,0,0,0,0,Rending,0
+Twin Atom-Beamer,Robot Legions,Forge Spider,24,6,1,0,0,0,,0
+Twin Atom-Caster,Robot Legions,Robot Snakes,12,2,1,0,0,0,,10
+Twin Atom-Shredder,Robot Legions,Spider Walker,24,12,1,0,0,0,,10
+Twin Exterminator Cannon,Robot Legions,Spider Walker,30,4,2,3,0,0,,10
+Twin Flux Cannon,Robot Legions,Night Transport,24,6,1,0,0,0,Surge,0
+Twin Flux Cannon,Robot Legions,Support Platform,24,6,1,0,0,0,Surge,10
+Twin Fusion Ray,Robot Legions,Spider Walker,18,2,4,0,6,0,,0
+Twin Gauss Rifle,Robot Legions,Tripod Walker,24,2,0,0,0,0,Destructive,10
+Twin Heavy Gauss Cannon,Robot Legions,Spider Walker,24,12,0,0,0,0,Destructive,10
+Void Blades,Robot Legions,Guardians,0,2,0,0,0,0,,0
+Void Shard,Robot Legions,Great Wraith-Shard,24,12,2,0,0,0,,10
+Void Shard,Robot Legions,Wraith-Shard,24,12,2,0,0,0,,10
+Void Sword,Robot Legions,Annihilator Lord,0,1,0,3,0,0,,10
+Void Sword,Robot Legions,Robot Lord,0,1,0,3,0,0,,10
+War Scythe,Robot Legions,Guardians,0,2,2,0,0,0,,10
+Wraith Strike,Robot Legions,Wraith-Shard,0,8,0,0,0,0,Rending,0
+Wrist-Flamer,Robot Legions,Annihilator Lord,12,1,0,3,0,0,Reliable,10
+Wrist-Flamer,Robot Legions,Robot Lord,12,1,0,3,0,0,Reliable,10
+Wrist-Plasma,Robot Legions,Annihilator Lord,24,1,4,0,0,0,,10
+Wrist-Plasma,Robot Legions,Robot Lord,24,1,4,0,0,0,,10

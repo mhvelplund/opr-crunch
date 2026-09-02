@@ -26,7 +26,8 @@ SIMULATION_COLUMNS = [
 #: compiles lookups against fixed column letters, so inserting one anywhere
 #: else would silently repoint every lookup after it.
 UNITS_COLUMNS = [
-    "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Special Rules", "Cost",
+    "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Impact",
+    "Special Rules", "Cost",
 ]
 WEAPONS_COLUMNS = [
     "Name", "Faction", "Unit", "Range", "Attacks", "AP", "Blast", "Deadly", "Impact",

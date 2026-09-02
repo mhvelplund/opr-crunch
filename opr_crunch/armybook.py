@@ -171,15 +171,28 @@ def _chunks(line: str) -> List[Tuple[int, str]]:
     return [(m.start(), m.group().strip()) for m in re.finditer(r"\S(?:.*?\S)?(?=\s{3,}|$)", line)]
 
 
+#: Single cells that can land alone in a card's rules band but are never a
+#: rule - the weapon table header splits into several single-word cells, and
+#: on some layouts only one of them falls in this band.
+_NOT_A_RULE = {"Weapon", "Upgrade", "Replace"}
+
+
 def _rules_near(lines: List[str], first: int, column: int) -> List[str]:
-    """Find the comma-separated rules cell below a unit's stats line."""
+    """Find the rules cell below a unit's stats line.
+
+    A unit with only one rule prints it with no comma at all (``Havocbound``),
+    so a lone cell is accepted the same as a comma-separated list - but only
+    when it is the *only* cell in this band on its line, since a table header
+    row splits into several single-word cells across the same band and would
+    otherwise be misread as a one-rule unit.
+    """
     for line in lines[first:first + 5]:
-        for start, text in _chunks(line):
-            if _band(start) != _band(column) or "," not in text:
-                continue
-            tokens = [t.strip() for t in text.split(",")]
-            if all(RULE_TOKEN.fullmatch(t) for t in tokens if t):
-                return [t for t in tokens if t]
+        in_band = [text for start, text in _chunks(line) if _band(start) == _band(column)]
+        if len(in_band) != 1 or in_band[0] in _NOT_A_RULE:
+            continue
+        tokens = [t.strip() for t in in_band[0].split(",")]
+        if all(RULE_TOKEN.fullmatch(t) for t in tokens if t):
+            return [t for t in tokens if t]
     return []
 
 
@@ -209,7 +222,7 @@ def parse_units(pages: List[str]) -> List[dict]:
 
             unit = dict(
                 name=name, size=size, cost=cost, quality=quality, defense=defense,
-                tough=0, ravage=0, rules=[],
+                tough=0, ravage=0, impact=0, rules=[],
             )
             for token in raw:
                 if param := re.fullmatch(r"(\w[\w \-]*)\((\d+)\)", token):

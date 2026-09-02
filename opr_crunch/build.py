@@ -174,7 +174,7 @@ def build_data_tab(
 #: (title, columns, loader, kwargs) for every tab sourced from csv/.
 DATA_TABS = [
     ("Units", layout.UNITS_COLUMNS, csvdata.units,
-     dict(widths={"A": 22, "H": 34}, faction_column=2)),
+     dict(widths={"A": 22, "I": 34}, faction_column=2)),
     ("Weapons", layout.WEAPONS_COLUMNS, csvdata.weapons,
      dict(width=11, widths={"A": 22, "J": 34}, faction_column=2)),
     ("Upgrades", layout.UPGRADES_COLUMNS, csvdata.upgrades,
@@ -352,7 +352,12 @@ def calc_inputs_for(row: int) -> List[str]:
         f"+{lookup('Upgrades', 'D', att_up, att_fac, unit_ref=attacker)}",
         pair("G", "E"),
         pair("H", "F"),
-        pair("I", "G"),
+        # Impact is a stat of the model, unlike AP/Blast/Deadly which are a
+        # weapon's - a book prints it alongside Tough and Ravage on the unit's
+        # own card - so the unit's own column joins the weapon's and upgrade's.
+        f"=MAX({lookup('Units', 'H', attacker, att_fac)},"
+        f"{lookup('Weapons', 'I', weapon, att_fac, unit_ref=attacker)},"
+        f"{lookup('Upgrades', 'G', att_up, att_fac, unit_ref=attacker)})",
         f"={lookup('Units', 'G', attacker, att_fac)}",
         f"={lookup('Units', 'F', defender, def_fac)}",
         # The attacking unit's own profile grants rules too (Relentless,
@@ -362,13 +367,13 @@ def calc_inputs_for(row: int) -> List[str]:
         # internal has()-searched blob.
         "=" + textjoin(
             ", ", True,
-            lookup("Units", "H", attacker, att_fac, blank),
+            lookup("Units", "I", attacker, att_fac, blank),
             lookup("Weapons", "J", weapon, att_fac, blank, unit_ref=attacker),
             lookup("Upgrades", "H", att_up, att_fac, blank, unit_ref=attacker),
         ),
         "=" + textjoin(
             ", ", True,
-            lookup("Units", "H", defender, def_fac, blank),
+            lookup("Units", "I", defender, def_fac, blank),
             lookup("Upgrades", "H", def_up, def_fac, blank, unit_ref=defender),
         ),
         # Rules granting "either AP(+1) or +1 to hit". Unpredictable Fighter
@@ -515,7 +520,7 @@ def build_cost_calc(wb: Workbook, start_col: int) -> Dict[int, str]:
         attacker, faction = sim("Attacker", row), sim("Att. faction", row)
         parts = [
             lookup("Units", "E", attacker, faction),
-            lookup("Units", "I", attacker, faction),
+            lookup("Units", "J", attacker, faction),
             lookup("Weapons", "K", sim("Weapon", row), faction, unit_ref=attacker),
             lookup("Upgrades", "I", sim("Att. upgrades", row), faction, unit_ref=attacker),
         ]

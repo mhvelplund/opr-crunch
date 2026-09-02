@@ -87,7 +87,7 @@ def import_book(text: str, faction: str) -> None:
     units = armybook.parse_units(unit_pages)
     unit_rows = [
         [u["name"], faction, u["quality"], u["defense"], u["size"],
-         u["tough"], u["ravage"], ", ".join(u["rules"]), u["cost"]]
+         u["tough"], u["ravage"], u["impact"], ", ".join(u["rules"]), u["cost"]]
         for u in sorted(units, key=lambda u: u["name"])
     ]
     replace_faction("units.csv", faction, layout.UNITS_COLUMNS, unit_rows)

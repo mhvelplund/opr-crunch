@@ -77,7 +77,7 @@ class TestSimulationTab:
 class TestDataTabs:
     def test_units_headers(self, wb):
         assert headers(wb["Units"]) == [
-            "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage",
+            "Name", "Faction", "Quality", "Defense", "Size", "Tough", "Ravage", "Impact",
             "Special Rules", "Cost", "Key",
         ]
 

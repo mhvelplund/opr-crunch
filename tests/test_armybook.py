@@ -152,6 +152,41 @@ class TestParseUnits:
         assert units["Tri-Scorpion Lord"]["rules"] == ["Hero", "Relentless", "Self-Repair", "Strider"]
 
 
+class TestSingleRuleUnits:
+    """A unit with only one rule prints it with no comma at all - taken verbatim
+    from Havoc Brothers v3.5.3, where this used to leave Cultists' rules blank.
+    """
+
+    PAGE = "\n".join([
+        "GF - HAVOC BROTHERS V3.5.3",
+        "",
+        "                               Cultists [10] - 140pts"
+        "                                            Chosen Havoc Brothers [3] - 120pts",
+        "",
+        "                          Quality 5+       Defense 5+"
+        "                                                    Quality 3+        Defense 3+",
+        "",
+        "Havocbound                                                                      "
+        "Havocbound, Versatile Attack",
+        "",
+        "Weapon                         RNG         ATK             AP        SPE        "
+        "Weapon                                RNG        ATK          AP    SPE",
+    ])
+
+    @pytest.fixture
+    def units(self):
+        return {u["name"]: u for u in armybook.parse_units([self.PAGE])}
+
+    def test_a_lone_rule_with_no_comma_is_still_read(self, units):
+        assert units["Cultists"]["rules"] == ["Havocbound"]
+
+    def test_the_comma_separated_neighbour_is_unaffected(self, units):
+        assert units["Chosen Havoc Brothers"]["rules"] == ["Havocbound", "Versatile Attack"]
+
+    def test_the_weapon_table_header_is_never_mistaken_for_a_rule(self, units):
+        assert "Weapon" not in units["Cultists"]["rules"]
+
+
 class TestLinkedWeaponsAndUpgrades:
     """Weapons and upgrades are tagged with the unit card they're printed under."""
 

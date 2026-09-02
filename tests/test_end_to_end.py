@@ -12,8 +12,10 @@ from fractions import Fraction
 
 import pytest
 
+from openpyxl.utils import get_column_letter
+
 from opr_crunch import csvdata
-from opr_crunch.build import STATE_COL, build_workbook
+from opr_crunch.build import INPUT_HEADERS, STATE_COL, build_workbook
 from opr_crunch.layout import (
     SIMULATION_COLUMNS,
     UNITS_COLUMNS,
@@ -76,7 +78,7 @@ def expected(units, weapons, chosen, models, def_models, **ctx):
         ap=w["AP"],
         blast=w["Blast"],
         deadly=w["Deadly"],
-        impact=w["Impact"],
+        impact=max(w["Impact"], a["Impact"]),
         ravage=a["Ravage"],
         tough=d["Tough"],
         att_rules=_rules(a["Special Rules"], w["Special Rules"]),
@@ -143,7 +145,7 @@ class TestWorkedExample:
     def test_the_att_special_rules_column_shows_the_unit_and_weapons_rules(self, wb):
         att, defn = rules_shown(wb, 2)
         assert att == "Self-Repair, Slow, Shred"
-        assert defn == ""
+        assert defn == "Havocbound"
 
 
 class TestSpecialRulesColumns:
@@ -231,6 +233,24 @@ class TestUnitProfileRules:
 
     def test_the_defending_units_tough_caps_deadly(self, wb, units):
         assert units[("Tri-Scorpion Lord", "Robot Legions")]["Tough"] == 6
+
+
+class TestUnitLevelImpact:
+    """Impact(X) is printed on a vehicle's own card, like Tough or Ravage, not
+    on any of its weapons - none of this book's weapon or upgrade rows carry a
+    non-zero Impact. The Calc tab's impact input has to read it from Units.
+    """
+
+    def test_the_units_own_impact_reaches_the_calc_tab(self, wb, units):
+        tank = units[("Heavy Tank", "Battle Brothers")]
+        assert tank["Impact"] > 0
+        set_row(wb, 14, **picks(**{
+            "Att. faction": "Battle Brothers", "Attacker": "Heavy Tank",
+            "Weapon": "Storm Rifle", "#": 1,
+        }))
+        ev = WorkbookEvaluator(wb, "Calc")
+        column = get_column_letter(INPUT_HEADERS.index("impact") + 1)
+        assert ev.cell("Calc", f"{column}14") == tank["Impact"]
 
 
 class TestBlankRows:

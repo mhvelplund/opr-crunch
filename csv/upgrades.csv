@@ -1,48 +1,4 @@
 Name,Faction,Unit,AP,Blast,Deadly,Impact,Special Rules,Cost
-Chronomancer,Robot Legions,Robot Lord,0,0,0,0,Ambush Aura,10
-Chronomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Ambush Aura,10
-Combat Shield,Robot Legions,Annihilator Lord,0,0,0,0,Shielded,10
-Combat Shields,Robot Legions,Guardians,0,0,0,0,Shielded,10
-Controller,Robot Legions,Annihilator Lord,0,0,0,0,Piercing Assault Aura,10
-Controller,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Piercing Assault Aura,10
-Cyber-Palps,Robot Legions,Forge Spider,0,0,0,0,Mend,10
-Elite Vanguard,Robot Legions,Destroyer Snakes,0,0,0,0,Scout,10
-Hyperspace Reapers,Robot Legions,Snipers,0,0,0,0,Ambushing Piercing Shot,10
-Jetpack,Robot Legions,Robot Lord,0,0,0,0,"Ambush, Flying, Swift",10
-Jetpacks,Robot Legions,Guardians,0,0,0,0,"Ambush, Flying, Swift",10
-Machine-Horror,Robot Legions,Flesh-Eaters,0,0,0,0,Fear(1),10
-Networked Target Lock,Robot Legions,Heavy Annihilator,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Support Platform,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Tri-Scorpion Pistoleer,0,0,0,0,Indirect Mark,10
-Networked Target Lock,Robot Legions,Tripod Walker,0,0,0,0,Indirect Mark,10
-Overseer,Robot Legions,Annihilator Lord,0,0,0,0,No Retreat Aura,10
-Overseer,Robot Legions,Robot Lord,0,0,0,0,No Retreat Aura,10
-Overseer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,No Retreat Aura,10
-Pet Technoaide,Robot Legions,Robot Lord,0,0,0,0,Repel Ambushers,10
-Phase Core,Robot Legions,Annihilator Lord,0,0,0,0,Ambush,10
-Phase Core,Robot Legions,Annihilators,0,0,0,0,Ambush,10
-Phase Core,Robot Legions,Heavy Annihilator,0,0,0,0,Ambush,10
-Plasmabot,Robot Legions,Destroyer Snakes,0,0,0,0,Rending in Melee,10
-Plasmabot,Robot Legions,Tri-Scorpions,0,0,0,0,Rending in Melee,10
-Psychomancer,Robot Legions,Annihilator Lord,0,0,0,0,Stealth Aura,10
-Psychomancer,Robot Legions,Robot Lord,0,0,0,0,Stealth Aura,10
-Psychomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Stealth Aura,10
-Re-Animator,Robot Legions,Annihilator Lord,0,0,0,0,Reanimation Aura,10
-Re-Animator,Robot Legions,Robot Lord,0,0,0,0,Reanimation Aura,10
-Re-Animator,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Reanimation Aura,10
-Repair Nanobots,Robot Legions,Forge Spider,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Support Platform,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Transport Tank,0,0,0,0,Self-Repair Boost Buff,10
-Repair Nanobots,Robot Legions,Tripod Walker,0,0,0,0,Self-Repair Boost Buff,10
-Technomancer,Robot Legions,Annihilator Lord,0,0,0,0,Caster(2),10
-Technomancer,Robot Legions,Robot Lord,0,0,0,0,Caster(2),10
-Technoward,Robot Legions,Great Monolith,0,0,0,0,Casting Buff,10
-Tripod Queen,Robot Legions,Tripod Walker,0,0,0,0,Swift Buff,10
-Warden,Robot Legions,Annihilator Lord,0,0,0,0,Relentless Aura,10
-Warden,Robot Legions,Robot Lord,0,0,0,0,Relentless Aura,10
-Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21),10
-Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush,10
-Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)",10
 Archivist,Battle Brothers,Master Brother,0,0,0,0,Caster(2),10
 Archivist,Battle Brothers,Master Destroyer,0,0,0,0,Caster(2),10
 Archivist,Battle Brothers,Veteran Master Brother,0,0,0,0,Caster(2),10
@@ -152,3 +108,47 @@ Warlock,Havoc Brothers,Chosen Havoc Champion,0,0,0,0,Caster(2),10
 Warlock,Havoc Brothers,Havoc Champion,0,0,0,0,Caster(2),10
 Warlock,Havoc Brothers,Havoc Destroyer Champion,0,0,0,0,Caster(2),10
 Wings,Havoc Brothers,Harbinger of Havoc,0,0,0,0,Flying,10
+Chronomancer,Robot Legions,Robot Lord,0,0,0,0,Ambush Aura,10
+Chronomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Ambush Aura,10
+Combat Shield,Robot Legions,Annihilator Lord,0,0,0,0,Shielded,10
+Combat Shields,Robot Legions,Guardians,0,0,0,0,Shielded,10
+Controller,Robot Legions,Annihilator Lord,0,0,0,0,Piercing Assault Aura,10
+Controller,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Piercing Assault Aura,10
+Cyber-Palps,Robot Legions,Forge Spider,0,0,0,0,Mend,10
+Elite Vanguard,Robot Legions,Destroyer Snakes,0,0,0,0,Scout,10
+Hyperspace Reapers,Robot Legions,Snipers,0,0,0,0,Ambushing Piercing Shot,10
+Jetpack,Robot Legions,Robot Lord,0,0,0,0,"Ambush, Flying, Swift",10
+Jetpacks,Robot Legions,Guardians,0,0,0,0,"Ambush, Flying, Swift",10
+Machine-Horror,Robot Legions,Flesh-Eaters,0,0,0,0,Fear(1),10
+Networked Target Lock,Robot Legions,Heavy Annihilator,0,0,0,0,Indirect Mark,10
+Networked Target Lock,Robot Legions,Support Platform,0,0,0,0,Indirect Mark,10
+Networked Target Lock,Robot Legions,Tri-Scorpion Pistoleer,0,0,0,0,Indirect Mark,10
+Networked Target Lock,Robot Legions,Tripod Walker,0,0,0,0,Indirect Mark,10
+Overseer,Robot Legions,Annihilator Lord,0,0,0,0,No Retreat Aura,10
+Overseer,Robot Legions,Robot Lord,0,0,0,0,No Retreat Aura,10
+Overseer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,No Retreat Aura,10
+Pet Technoaide,Robot Legions,Robot Lord,0,0,0,0,Repel Ambushers,10
+Phase Core,Robot Legions,Annihilator Lord,0,0,0,0,Ambush,10
+Phase Core,Robot Legions,Annihilators,0,0,0,0,Ambush,10
+Phase Core,Robot Legions,Heavy Annihilator,0,0,0,0,Ambush,10
+Plasmabot,Robot Legions,Destroyer Snakes,0,0,0,0,Rending in Melee,10
+Plasmabot,Robot Legions,Tri-Scorpions,0,0,0,0,Rending in Melee,10
+Psychomancer,Robot Legions,Annihilator Lord,0,0,0,0,Stealth Aura,10
+Psychomancer,Robot Legions,Robot Lord,0,0,0,0,Stealth Aura,10
+Psychomancer,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Stealth Aura,10
+Re-Animator,Robot Legions,Annihilator Lord,0,0,0,0,Reanimation Aura,10
+Re-Animator,Robot Legions,Robot Lord,0,0,0,0,Reanimation Aura,10
+Re-Animator,Robot Legions,Tri-Scorpion Lord,0,0,0,0,Reanimation Aura,10
+Repair Nanobots,Robot Legions,Forge Spider,0,0,0,0,Self-Repair Boost Buff,10
+Repair Nanobots,Robot Legions,Support Platform,0,0,0,0,Self-Repair Boost Buff,10
+Repair Nanobots,Robot Legions,Transport Tank,0,0,0,0,Self-Repair Boost Buff,10
+Repair Nanobots,Robot Legions,Tripod Walker,0,0,0,0,Self-Repair Boost Buff,10
+Technomancer,Robot Legions,Annihilator Lord,0,0,0,0,Caster(2),10
+Technomancer,Robot Legions,Robot Lord,0,0,0,0,Caster(2),10
+Technoward,Robot Legions,Great Monolith,0,0,0,0,Casting Buff,10
+Tripod Queen,Robot Legions,Tripod Walker,0,0,0,0,Swift Buff,10
+Warden,Robot Legions,Annihilator Lord,0,0,0,0,Relentless Aura,10
+Warden,Robot Legions,Robot Lord,0,0,0,0,Relentless Aura,10
+Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21),10
+Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush,10
+Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)",10

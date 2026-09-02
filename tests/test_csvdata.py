@@ -36,7 +36,7 @@ class TestLoading:
         assert field(rifles, layout.WEAPONS_COLUMNS, "Blast") == 0
 
     def test_blank_text_cells_become_empty_string(self):
-        plain = find(csvdata.units(), "Havoc Brothers")
+        plain = find(csvdata.units(), "Destroyers")
         assert field(plain, layout.UNITS_COLUMNS, "Special Rules") == ""
 
     def test_commas_inside_rule_text_survive(self):
@@ -88,16 +88,16 @@ class TestHeaderValidation:
 
     def test_a_matching_header_is_accepted(self, tmp_path):
         path = tmp_path / "units.csv"
-        self._write(path, "Ork,Greenskins,4,4,5,3,0,")
+        self._write(path, "Ork,Greenskins,4,4,5,3,0,0,")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 4, "4", "5", "3", "0", "", ""]
+            ["Ork", "Greenskins", 4, "4", "5", "3", "0", "0", "", ""]
         ]
 
     def test_short_rows_are_padded(self, tmp_path):
         path = tmp_path / "units.csv"
         self._write(path, "Ork,Greenskins")
         assert csvdata.load(path, layout.UNITS_COLUMNS, numeric={"Quality"}) == [
-            ["Ork", "Greenskins", 0, "", "", "", "", "", ""]
+            ["Ork", "Greenskins", 0, "", "", "", "", "", "", ""]
         ]
 
     def test_blank_lines_are_skipped(self, tmp_path):
