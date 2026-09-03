@@ -152,3 +152,516 @@ Warden,Robot Legions,Robot Lord,0,0,0,0,Relentless Aura,10
 Warp Gate,Robot Legions,Death Fortress,0,0,0,0,Transport(21),70
 Widowmaker,Robot Legions,Forge Spider,0,0,0,0,Ambush,15
 Wraith-Shard Vault,Robot Legions,Death Fortress,0,0,0,0,"Caster(4), Tough(6)",250
+Abbess,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Fast,25
+Abbess,Blessed Sisters,Fanatic Superior,0,0,0,0,Fast Aura,30
+Abbess,Blessed Sisters,High Destroyer Sister,0,0,0,0,Fast Aura,30
+Abbess,Blessed Sisters,Novice Leader,0,0,0,0,Fast Aura,30
+Canoness,Blessed Sisters,Celestial High Sister,0,0,0,0,Point-Blank Piercing Aura,50
+Canoness,Blessed Sisters,High Destroyer Sister,0,0,0,0,Point-Blank Piercing Aura,50
+Canoness,Blessed Sisters,High Sister,0,0,0,0,Point-Blank Piercing Aura,50
+Canoness,Blessed Sisters,Novice Leader,0,0,0,0,Point-Blank Piercing Aura,50
+Canticle Megaphone,Blessed Sisters,Celestial Warrior Sisters,0,0,0,0,Precision Target(1),25
+Canticle Megaphone,Blessed Sisters,Destroyer Sisters,0,0,0,0,Precision Target(1),25
+Canticle Megaphone,Blessed Sisters,Novice Sisters,0,0,0,0,Precision Target(1),25
+Canticle Megaphone,Blessed Sisters,Protector Sisters,0,0,0,0,Precision Target(1),25
+Canticle Megaphone,Blessed Sisters,Warrior Sisters,0,0,0,0,Precision Target(1),25
+Combat Bike,Blessed Sisters,Celestial High Sister,0,0,0,0,"Fast, Tough(3)",85
+Combat Bike,Blessed Sisters,High Sister,0,0,0,0,"Fast, Tough(3)",70
+Deacon,Blessed Sisters,Fanatic Superior,0,0,0,0,Spell Conduit,15
+Deacon,Blessed Sisters,Novice Leader,0,0,0,0,Spell Conduit,15
+Dozer Blade,Blessed Sisters,APC,0,0,0,0,Strider,10
+Dozer Blade,Blessed Sisters,Battle Tank,0,0,0,0,Strider,20
+Dozer Blade,Blessed Sisters,Infernal APC,0,0,0,0,Strider,15
+Dozer Blade,Blessed Sisters,Organ Tank,0,0,0,0,Strider,15
+Extended Cargo,Blessed Sisters,Procession Altar,0,0,0,0,Transport(6),20
+Flagellant,Blessed Sisters,Fanatic Superior,0,0,0,0,Regeneration,10
+Flagellants,Blessed Sisters,Fanatic Sisters,0,0,0,0,Regeneration,10
+God-Queen's Curse,Blessed Sisters,Exo-Suit,0,0,0,0,Casting Debuff,10
+God-Queen's Curse,Blessed Sisters,Organ Tank,0,0,0,0,Casting Debuff,10
+God-Queen's Curse,Blessed Sisters,Procession Altar,0,0,0,0,Casting Debuff,10
+Holy Wings,Blessed Sisters,Celestial High Sister,0,0,0,0,"Ambush, Flying, Tough(3)",75
+Holy Wings,Blessed Sisters,High Sister,0,0,0,0,"Ambush, Flying, Tough(3)",60
+Jetpack,Blessed Sisters,Celestial High Sister,0,0,0,0,"Ambush, Flying",20
+Jetpack,Blessed Sisters,High Sister,0,0,0,0,"Ambush, Flying",15
+Master Witch,Blessed Sisters,Celestial High Sister,0,0,0,0,Caster(3),70
+Master Witch,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Caster(3),70
+Master Witch,Blessed Sisters,High Destroyer Sister,0,0,0,0,Caster(3),70
+Master Witch,Blessed Sisters,High Sister,0,0,0,0,Caster(3),70
+Medical Training,Blessed Sisters,Celestial Warrior Sisters,0,0,0,0,Regeneration Aura,15
+Medical Training,Blessed Sisters,Destroyer Sisters,0,0,0,0,Regeneration Aura,55
+Medical Training,Blessed Sisters,Novice Sisters,0,0,0,0,Regeneration Aura,40
+Medical Training,Blessed Sisters,Protector Sisters,0,0,0,0,Regeneration Aura,20
+Medical Training,Blessed Sisters,Warrior Sisters,0,0,0,0,Regeneration Aura,20
+Priestess,Blessed Sisters,Celestial High Sister,0,0,0,0,Shred in Melee Aura,30
+Priestess,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Shred in Melee,20
+Priestess,Blessed Sisters,Fanatic Superior,0,0,0,0,Shred in Melee Aura,30
+Priestess,Blessed Sisters,High Destroyer Sister,0,0,0,0,Shred in Melee Aura,30
+Priestess,Blessed Sisters,High Sister,0,0,0,0,Shred in Melee Aura,30
+Priestess,Blessed Sisters,Novice Leader,0,0,0,0,Shred in Melee Aura,30
+Procession Banner,Blessed Sisters,Protector Sisters,0,0,0,0,Fear(2),20
+Reverend,Blessed Sisters,Celestial High Sister,0,0,0,0,Fortified Aura,10
+Reverend,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Fortified,25
+Reverend,Blessed Sisters,Fanatic Superior,0,0,0,0,Fortified Aura,10
+Reverend,Blessed Sisters,High Sister,0,0,0,0,Fortified Aura,10
+Reverend,Blessed Sisters,Novice Leader,0,0,0,0,Fortified Aura,10
+Sacred Banner,Blessed Sisters,Celestial Warrior Sisters,0,0,0,0,Courage Aura,5
+Sacred Banner,Blessed Sisters,Destroyer Sisters,0,0,0,0,Courage Aura,15
+Sacred Banner,Blessed Sisters,Novice Sisters,0,0,0,0,Courage Aura,10
+Sacred Banner,Blessed Sisters,Protector Sisters,0,0,0,0,Courage Aura,5
+Sacred Banner,Blessed Sisters,Warrior Sisters,0,0,0,0,Courage Aura,5
+Superior,Blessed Sisters,Celestial High Sister,0,0,0,0,Devout Boost Aura,15
+Superior,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Devout Boost,5
+Superior,Blessed Sisters,Fanatic Superior,0,0,0,0,Devout Boost Aura,15
+Superior,Blessed Sisters,High Destroyer Sister,0,0,0,0,Devout Boost Aura,15
+Superior,Blessed Sisters,High Sister,0,0,0,0,Devout Boost Aura,15
+Vanguard,Blessed Sisters,Celestial High Sister,0,0,0,0,"Scout, Strider",20
+Vanguard,Blessed Sisters,High Sister,0,0,0,0,"Scout, Strider",15
+Witch,Blessed Sisters,Celestial High Sister,0,0,0,0,Caster(2),45
+Witch,Blessed Sisters,Exo-Suit High Sister,0,0,0,0,Caster(2),45
+Witch,Blessed Sisters,High Destroyer Sister,0,0,0,0,Caster(2),45
+Witch,Blessed Sisters,High Sister,0,0,0,0,Caster(2),45
+Witch,Blessed Sisters,Novice Leader,0,0,0,0,Caster(2),45
+Accelerator Drone,Dao Union,Spotter Squad,0,0,0,0,Increased Shooting Range Aura,35
+Backpack Thrusters,Dao Union,Heavy Stealth Suit,0,0,0,0,Flying,35
+Backpack Thrusters,Dao Union,Stealth Suits,0,0,0,0,Flying,25
+Big Game Hunter,Dao Union,Battle Suit Elite,0,0,0,0,Ranged Slayer Aura,40
+Big Game Hunter,Dao Union,Grunt Leader,0,0,0,0,Ranged Slayer Aura,40
+Captain,Dao Union,Battle Suit Elite,0,0,0,0,Targeting Visor Boost Aura,25
+Captain,Dao Union,Grunt Leader,0,0,0,0,Targeting Visor Boost Aura,25
+Drone Controller,Dao Union,Sniper Drones,0,0,0,0,"Reliable, Takedown",75
+Drop-Thrusters,Dao Union,Battle Suit Elite,0,0,0,0,Ambush,15
+Drop-Thrusters,Dao Union,Battle Suits,0,0,0,0,Ambush,25
+Energy Shield,Dao Union,Battle Suit Elite,0,0,0,0,Shielded,30
+Energy Shield,Dao Union,Battle Suits,0,0,0,0,Shielded,5
+Ethereal Elder,Dao Union,Grunt Leader,0,0,0,0,Caster(2),40
+High Sage,Dao Union,Grunt Leader,0,0,0,0,Fortified Aura,10
+Inhibitor Drone,Dao Union,Security Grunts,0,0,0,0,Melee Shrouding Aura,5
+Inhibitor Drone,Dao Union,Spotter Squad,0,0,0,0,Melee Shrouding Aura,5
+Inhibitor System,Dao Union,Hover Attack Bike,0,0,0,0,Melee Shrouding,5
+Inhibitor System,Dao Union,Hover Tank,0,0,0,0,Melee Shrouding,5
+Inhibitor System,Dao Union,Hover Transport,0,0,0,0,Melee Shrouding,5
+Master Armorer,Dao Union,Battle Suit Elite,0,0,0,0,Counter-Attack Aura,35
+Master Armorer,Dao Union,Grunt Leader,0,0,0,0,Counter-Attack Aura,35
+Nova Shield,Dao Union,Tide Titan,0,0,0,0,Evasive,20
+Particle Wall,Dao Union,Grunt Leader,0,0,0,0,Shielded,5
+Particle Wall,Dao Union,Security Grunts,0,0,0,0,Shielded,5
+Precision Rounds,Dao Union,Gun Drones,0,0,0,0,Ignores Cover when Shooting,15
+Recon Drone,Dao Union,Security Grunts,0,0,0,0,Ambush Beacon,15
+Recon Drone,Dao Union,Spotter Squad,0,0,0,0,Ambush Beacon,15
+Recon Locator,Dao Union,Stealth Suits,0,0,0,0,Ambush Beacon,15
+Self-Repair,Dao Union,Gun Drones,0,0,0,0,Regeneration,10
+Shield Drone,Dao Union,Battle Suits,0,0,0,0,Stealth Aura,45
+Shield Drone,Dao Union,Heavy Battle Suit,0,0,0,0,Stealth,30
+Shield Drone,Dao Union,Security Grunts,0,0,0,0,Stealth Aura,25
+Shield Drone,Dao Union,Spotter Squad,0,0,0,0,Stealth Aura,25
+Shield Drone,Dao Union,Tactical Grunts,0,0,0,0,Stealth Aura,25
+Shock Rounds,Dao Union,Gun Drones,0,0,0,0,Shred when Shooting,20
+Spotter Drone,Dao Union,Battle Suits,0,0,0,0,Precision Spotter,15
+Spotter Drone,Dao Union,Tactical Grunts,0,0,0,0,Precision Spotter,15
+Spotter Leader,Dao Union,Grunt Leader,0,0,0,0,Scout,5
+Spotting Laser,Dao Union,Spotter Squad,0,0,0,0,Precision Spotter,15
+Spotting Laser,Dao Union,Stealth Suits,0,0,0,0,Precision Spotter,15
+Stealth Drone,Dao Union,Heavy Stealth Suit,0,0,0,0,Evasive,55
+Vision Scrambler,Dao Union,Hover Attack Bike,0,0,0,0,Stealth,15
+Vision Scrambler,Dao Union,Hover Tank,0,0,0,0,Stealth,30
+Vision Scrambler,Dao Union,Hover Transport,0,0,0,0,Stealth,15
+Weak Spot Locator,Dao Union,Heavy Stealth Suit,0,0,0,0,Piercing Shooting Mark,50
+Weak Spot Locator,Dao Union,Hover Attack Bike,0,0,0,0,Piercing Shooting Mark,50
+Agoniser,Dark Elf Raiders,Dark Lord,0,0,0,0,Furious Aura,5
+Agoniser,Dark Elf Raiders,Elite Raider,0,0,0,0,Furious Aura,5
+Agoniser,Dark Elf Raiders,Elite True Raider,0,0,0,0,Furious Aura,5
+Agoniser,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Furious Aura,5
+Alchemist,Dark Elf Raiders,Dark Lord,0,0,0,0,Melee Shrouding Aura,5
+Alchemist,Dark Elf Raiders,Elite Raider,0,0,0,0,Melee Shrouding Aura,5
+Alchemist,Dark Elf Raiders,Elite True Raider,0,0,0,0,Melee Shrouding Aura,5
+Alchemist,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Melee Shrouding Aura,5
+Combat Beast Handler,Dark Elf Raiders,Blood Hounds,0,0,0,0,Unpredictable Fighter,20
+Combat Beast Handler,Dark Elf Raiders,Clawed Beast,0,0,0,0,Unpredictable Fighter,20
+Combat Beast Handler,Dark Elf Raiders,Crow Swarms,0,0,0,0,Unpredictable Fighter,15
+Dark-Sails,Dark Elf Raiders,Heavy Jetbike,0,0,0,0,Agile,10
+Dark-Sails,Dark Elf Raiders,Heavy Skimmer,0,0,0,0,Agile,15
+Dark-Sails,Dark Elf Raiders,Light Skimmer,0,0,0,0,Agile,10
+Dread Ruler,Dark Elf Raiders,Elite Raider,0,0,0,0,Courage Aura,5
+Dread Ruler,Dark Elf Raiders,Elite True Raider,0,0,0,0,Courage Aura,5
+Dread Ruler,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Courage Aura,5
+Energy Ram,Dark Elf Raiders,Heavy Jetbike,0,0,0,0,Impact(5),30
+Energy Ram,Dark Elf Raiders,Heavy Skimmer,0,0,0,0,Impact(5),30
+Energy Ram,Dark Elf Raiders,Light Skimmer,0,0,0,0,Impact(5),30
+Expert Raider,Dark Elf Raiders,Dark Lord,0,0,0,0,Piercing Frenzy,5
+Expert Raider,Dark Elf Raiders,Elite Raider,0,0,0,0,Piercing Frenzy,5
+Expert Raider,Dark Elf Raiders,Elite True Raider,0,0,0,0,Piercing Frenzy,5
+Expert Raider,Dark Elf Raiders,Hoverboard Riders,0,0,0,0,Piercing Frenzy,25
+Expert Raider,Dark Elf Raiders,True Warriors,0,0,0,0,Piercing Frenzy,10
+Expert Raider,Dark Elf Raiders,True Witches,0,0,0,0,Piercing Frenzy,10
+Expert Raider,Dark Elf Raiders,Warriors,0,0,0,0,Piercing Frenzy,15
+Expert Raider,Dark Elf Raiders,Winged Warriors,0,0,0,0,Piercing Frenzy,20
+Expert Raider,Dark Elf Raiders,Witches,0,0,0,0,Piercing Frenzy,15
+Hoverboard,Dark Elf Raiders,Dark Lord,0,0,0,0,"Agile, Scout, Strider",25
+Hoverboard,Dark Elf Raiders,Elite Raider,0,0,0,0,"Agile, Scout, Strider",20
+Hoverboard,Dark Elf Raiders,Elite True Raider,0,0,0,0,"Agile, Scout, Strider",25
+Master Soul Carrier,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Caster(3),55
+Open Deck,Dark Elf Raiders,Heavy Jetbike,0,0,0,0,Transport(6),20
+Pain Fueled,Dark Elf Raiders,Engine of Suffering,0,0,0,0,Regenerative Strength,10
+Pathfinder Beast Handler,Dark Elf Raiders,Blood Hounds,0,0,0,0,Vanguard,10
+Pathfinder Beast Handler,Dark Elf Raiders,Clawed Beast,0,0,0,0,Vanguard,15
+Pathfinder Beast Handler,Dark Elf Raiders,Crow Swarms,0,0,0,0,Vanguard,10
+Raid Leader,Dark Elf Raiders,Dark Lord,0,0,0,0,Harassing Boost Aura,25
+Raid Leader,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Harassing Boost Aura,25
+Razor Caltrops,Dark Elf Raiders,Jetbike Riders,0,0,0,0,Impact(3),10
+Shield of Darkness,Dark Elf Raiders,Heavy Jetbike,0,0,0,0,Stealth,15
+Shield of Darkness,Dark Elf Raiders,Heavy Skimmer,0,0,0,0,Stealth,25
+Shield of Darkness,Dark Elf Raiders,Light Skimmer,0,0,0,0,Stealth,15
+Soul Carrier,Dark Elf Raiders,Gene-Tech Master,0,0,0,0,Caster(2),35
+Soul Conductor,Dark Elf Raiders,Leech Engine,0,0,0,0,Regeneration Buff,30
+Tormentor,Dark Elf Raiders,Dark Lord,0,0,0,0,Piercing Hunter Aura,40
+Tormentor,Dark Elf Raiders,Elite Raider,0,0,0,0,Piercing Hunter Aura,40
+Tormentor,Dark Elf Raiders,Elite True Raider,0,0,0,0,Piercing Hunter Aura,40
+Widow Maker,Dark Elf Raiders,Engine of Suffering,0,0,0,0,Precision Fighting Mark,20
+Widow Maker,Dark Elf Raiders,Leech Engine,0,0,0,0,Precision Fighting Mark,20
+Wings,Dark Elf Raiders,Dark Lord,0,0,0,0,"Ambush, Flying",20
+Wings,Dark Elf Raiders,Elite Raider,0,0,0,0,"Ambush, Flying",15
+Wings,Dark Elf Raiders,Elite True Raider,0,0,0,0,"Ambush, Flying",20
+Witch Master,Dark Elf Raiders,Dark Lord,0,0,0,0,Melee Evasion,5
+Witch Master,Dark Elf Raiders,Elite Raider,0,0,0,0,Melee Evasion,5
+Witch Master,Dark Elf Raiders,Elite True Raider,0,0,0,0,Melee Evasion,5
+Artillerist,Dwarf Guilds,Dwarf Champion,0,0,0,0,Re-Position Artillery,10
+Beamer Ammo,Dwarf Guilds,Sniper Team,0,0,0,0,Surge when Shooting,5
+Cyber-Augments,Dwarf Guilds,Berserker Veteran,0,0,0,0,Regeneration,10
+Cyber-Augments,Dwarf Guilds,Berserkers,0,0,0,0,Regeneration,10
+Deceleration Rune,Dwarf Guilds,Attack Vehicle,0,0,0,0,Speed Debuff,15
+Deceleration Rune,Dwarf Guilds,Dwarf Trike,0,0,0,0,Speed Debuff,15
+Elite,Dwarf Guilds,Dwarf Champion,0,0,0,0,"Fearless, Fortified",5
+Engineer,Dwarf Guilds,Dwarf Champion,0,0,0,0,Mend,40
+Foreman,Dwarf Guilds,Berserker Veteran,0,0,0,0,Swift Aura,15
+Foreman,Dwarf Guilds,Dwarf Champion,0,0,0,0,Swift Aura,15
+Foreman,Dwarf Guilds,Powersuit Champion,0,0,0,0,Swift Aura,15
+Forge Master,Dwarf Guilds,Dwarf Champion,0,0,0,0,Increased Shooting Range Aura,35
+Forge Master,Dwarf Guilds,Powersuit Champion,0,0,0,0,Increased Shooting Range Aura,35
+Guild Bounty,Dwarf Guilds,Berserker Veteran,0,0,0,0,Precision Frenzy,5
+Guild Bounty,Dwarf Guilds,Berserkers,0,0,0,0,Precision Frenzy,5
+Guild Bounty,Dwarf Guilds,Dwarf Bikers,0,0,0,0,Precision Frenzy,20
+Guild Bounty,Dwarf Guilds,Dwarf Champion,0,0,0,0,Precision Frenzy,5
+Guild Bounty,Dwarf Guilds,Jetpack Warriors,0,0,0,0,Precision Frenzy,10
+Guild Bounty,Dwarf Guilds,Miners,0,0,0,0,Precision Frenzy,15
+Guild Lord,Dwarf Guilds,Berserker Veteran,0,0,0,0,Sturdy Boost Aura,10
+Guild Lord,Dwarf Guilds,Dwarf Champion,0,0,0,0,Sturdy Boost Aura,10
+Guild Lord,Dwarf Guilds,Powersuit Champion,0,0,0,0,Sturdy Boost Aura,10
+Heat Ammo,Dwarf Guilds,Sniper Team,0,0,0,0,Shred when Shooting,10
+Jetpack,Dwarf Guilds,Dwarf Champion,0,0,0,0,"Ambush, Flying, Swift",25
+Medical Training,Dwarf Guilds,Dwarf Warriors,0,0,0,0,Regeneration Aura,20
+Medical Training,Dwarf Guilds,Iron Veterans,0,0,0,0,Regeneration Aura,20
+Mining Gear,Dwarf Guilds,Dwarf Champion,0,0,0,0,Infiltrate,15
+Pioneer,Dwarf Guilds,Dwarf Bikers,0,0,0,0,Scout,5
+Pioneer,Dwarf Guilds,Dwarf Trike,0,0,0,0,Scout,5
+Rage Lord,Dwarf Guilds,Berserker Veteran,0,0,0,0,Unpredictable Fighter Aura,30
+Rage Lord,Dwarf Guilds,Dwarf Champion,0,0,0,0,Unpredictable Fighter Aura,30
+Rune Master,Dwarf Guilds,Dwarf Champion,0,0,0,0,Caster(2),45
+Rune Master,Dwarf Guilds,Powersuit Champion,0,0,0,0,Caster(2),45
+Runesmith,Dwarf Guilds,Berserker Veteran,0,0,0,0,Stealth Aura,30
+Runesmith,Dwarf Guilds,Powersuit Champion,0,0,0,0,Stealth Aura,30
+Spectrum Scanner,Dwarf Guilds,Dwarf Trike,0,0,0,0,Ignores Cover when Shooting,5
+Spectrum Scanner,Dwarf Guilds,Dwarf Warriors,0,0,0,0,Ignores Cover when Shooting Aura,10
+Spectrum Scanner,Dwarf Guilds,Iron Veterans,0,0,0,0,Ignores Cover when Shooting Aura,5
+Spectrum Scanner,Dwarf Guilds,Thunder Support,0,0,0,0,Ignores Cover when Shooting Aura,0
+Transport Carriage,Dwarf Guilds,Land Train,0,0,0,0,"Tough(6), Transport(11)",160
+Acolyte Psy-Seer,High Elf Fleets,Elite Protector,0,0,0,0,Spell Conduit,15
+Ancient Commander,High Elf Fleets,Elven Noble,0,0,0,0,Highborn Boost Aura,25
+Armor,High Elf Fleets,Retributors,0,0,0,0,Shielded,10
+Banshee Howl,High Elf Fleets,Revenants,0,0,0,0,Fear(2),20
+Elemental Curse,High Elf Fleets,Elemental Avatar,0,0,0,0,Unwieldy Debuff,15
+Elemental Curse,High Elf Fleets,Great Elemental,0,0,0,0,Unwieldy Debuff,15
+Elemental Curse,High Elf Fleets,Titan Elemental,0,0,0,0,Unwieldy Debuff,15
+Elemental Hexer,High Elf Fleets,Elite Protector,0,0,0,0,Shred in Melee Aura,30
+Elemental Hexer,High Elf Fleets,Elven Noble,0,0,0,0,Shred in Melee Aura,30
+Elemental Seer,High Elf Fleets,Great Elemental,0,0,0,0,Caster(2),50
+Flicker Shield,High Elf Fleets,Jetbike Protectors,0,0,0,0,Regeneration Aura,55
+Flicker Shield,High Elf Fleets,Retributors,0,0,0,0,Regeneration Aura,15
+Glider Leader,High Elf Fleets,Elven Noble,0,0,0,0,"Ambush, Crossing Attack(1), Flying",25
+Great Shield,High Elf Fleets,Great Elemental,0,0,0,0,Fortified,45
+Grenade Packs,High Elf Fleets,Gliders,0,0,0,0,Crossing Attack(1),20
+Guardian Cleric,High Elf Fleets,Elite Protector,0,0,0,0,Resistance Aura,30
+Guardian Cleric,High Elf Fleets,Elven Noble,0,0,0,0,Resistance Aura,30
+High Oracle,High Elf Fleets,Elite Protector,0,0,0,0,Caster(2),50
+High Oracle,High Elf Fleets,Elven Noble,0,0,0,0,Caster(2),50
+Hologram Field,High Elf Fleets,Anti-Gravity APC,0,0,0,0,Stealth,15
+Hologram Field,High Elf Fleets,Anti-Gravity Tank,0,0,0,0,Stealth,30
+Hologram Field,High Elf Fleets,Combat Walker,0,0,0,0,Stealth,15
+Hologram Field,High Elf Fleets,Heavy Jetbike,0,0,0,0,Stealth,15
+Hologram Field,High Elf Fleets,Jetbike Protectors,0,0,0,0,Stealth Aura,45
+Hologram Field,High Elf Fleets,Jetbike Strikers,0,0,0,0,Stealth Aura,45
+Hologram Field,High Elf Fleets,Support Artillery,0,0,0,0,Stealth,10
+Hologram Platform,High Elf Fleets,Strikers,0,0,0,0,Stealth Aura,25
+Leader,High Elf Fleets,Elite Protector,0,0,0,0,Relentless,0
+Leader,High Elf Fleets,Elven Noble,0,0,0,0,Relentless,30
+Master High Oracle,High Elf Fleets,Elven Noble,0,0,0,0,Caster(3),80
+Master-Crafted Engines,High Elf Fleets,Jetbike Strikers,0,0,0,0,Scout Aura,65
+Psy-Artillerist,High Elf Fleets,Elite Protector,0,0,0,0,Re-Position Artillery,10
+Psy-Marker,High Elf Fleets,Gliders,0,0,0,0,Piercing Spotter,25
+Psy-Marker,High Elf Fleets,Retributors,0,0,0,0,Piercing Spotter,25
+Psy-Marker,High Elf Fleets,Snipers,0,0,0,0,Piercing Spotter,25
+Psy-Marker,High Elf Fleets,Vanquishers,0,0,0,0,Piercing Spotter,25
+Psy-Weaver,High Elf Fleets,Elite Protector,0,0,0,0,Increased Shooting Range Aura,35
+Retributor Leader,High Elf Fleets,Elven Noble,0,0,0,0,Fearless,5
+Revenant Leader,High Elf Fleets,Elven Noble,0,0,0,0,"Agile, Fear(1), Strider",25
+Sgt. Armor,High Elf Fleets,Retributors,0,0,0,0,Shielded,10
+Shield Projector,High Elf Fleets,Elite Protector,0,0,0,0,Stealth Aura,30
+Shield Projector,High Elf Fleets,Elven Noble,0,0,0,0,Stealth Aura,30
+Shifter Leader,High Elf Fleets,Elven Noble,0,0,0,0,"Ambush, Teleport",30
+Sniper Leader,High Elf Fleets,Elite Protector,0,0,0,0,"Scout, Stealth, Strider",20
+Stinger Leader,High Elf Fleets,Elven Noble,0,0,0,0,"Scout, Stealth",20
+Striker Leader,High Elf Fleets,Elite Protector,0,0,0,0,Scout,10
+Titan Shield,High Elf Fleets,Titan Elemental,0,0,0,0,Fortified,5
+Camo Gear,Human Defense Force,Company Leader,0,0,0,0,Stealth,10
+Camo Gear,Human Defense Force,Veterans,0,0,0,0,Stealth,15
+Camouflage Netting,Human Defense Force,Attack Vehicle,0,0,0,0,Stealth,25
+Camouflage Netting,Human Defense Force,Battle Tank,0,0,0,0,Stealth,30
+Camouflage Netting,Human Defense Force,Light APC,0,0,0,0,Stealth,15
+Camouflage Netting,Human Defense Force,Light Walker,0,0,0,0,Stealth,15
+Camouflage Netting,Human Defense Force,Support Vehicle,0,0,0,0,Stealth,15
+Camouflage Netting,Human Defense Force,Tank Company Leader,0,0,0,0,Stealth,40
+Combat Bike,Human Defense Force,Company Leader,0,0,0,0,"Fast, Impact(1)",15
+Commander,Human Defense Force,Company Leader,0,0,0,0,Rapid Advance Buff,30
+Commander,Human Defense Force,Storm Leader,0,0,0,0,Rapid Advance Buff,30
+Commander,Human Defense Force,Tank Company Leader,0,0,0,0,Rapid Advance Buff,30
+Company Standard,Human Defense Force,Infantry Squad,0,0,0,0,Hold the Line Boost Aura,10
+Company Standard,Human Defense Force,Storm Troopers,0,0,0,0,Hold the Line Boost Aura,5
+Company Standard,Human Defense Force,Veterans,0,0,0,0,Hold the Line Boost Aura,5
+Dozer Blade,Human Defense Force,Attack Vehicle,0,0,0,0,Strider,15
+Dozer Blade,Human Defense Force,Battle Tank,0,0,0,0,Strider,20
+Dozer Blade,Human Defense Force,Light APC,0,0,0,0,Strider,10
+Dozer Blade,Human Defense Force,Support Vehicle,0,0,0,0,Strider,10
+Dozer Blade,Human Defense Force,Tank Company Leader,0,0,0,0,Strider,30
+Drill Sergeant,Human Defense Force,Company Leader,0,0,0,0,Bane in Melee Buff,15
+Drill Sergeant,Human Defense Force,Storm Leader,0,0,0,0,Bane in Melee Buff,15
+Enforcer,Human Defense Force,Company Leader,0,0,0,0,No Retreat Buff,35
+Field Radio,Human Defense Force,GRUNT Robots,0,0,0,0,Extended Buff Range,5
+Field Radio,Human Defense Force,Infantry Squad,0,0,0,0,Extended Buff Range,5
+Field Radio,Human Defense Force,Storm Troopers,0,0,0,0,Extended Buff Range,5
+Field Radio,Human Defense Force,Veterans,0,0,0,0,Extended Buff Range,5
+Forward Observer,Human Defense Force,Company Leader,0,0,0,0,Entrenched Buff,30
+Forward Observer,Human Defense Force,Light Walker,0,0,0,0,Scout,15
+Forward Observer,Human Defense Force,Storm Leader,0,0,0,0,Entrenched Buff,30
+Forward Observer,Human Defense Force,Tank Company Leader,0,0,0,0,Entrenched Buff,30
+General,Human Defense Force,Company Leader,0,0,0,0,Coordinate,65
+General,Human Defense Force,Storm Leader,0,0,0,0,Coordinate,65
+General,Human Defense Force,Tank Company Leader,0,0,0,0,Coordinate,65
+Heavy Armor,Human Defense Force,Company Leader,0,0,0,0,Armor(4),5
+Heavy Armor,Human Defense Force,Veterans,0,0,0,0,Armor(4),5
+Medical Training,Human Defense Force,Infantry Squad,0,0,0,0,Regeneration Aura,40
+Medical Training,Human Defense Force,Storm Troopers,0,0,0,0,Regeneration Aura,20
+Medical Training,Human Defense Force,Veterans,0,0,0,0,Regeneration Aura,20
+Munitioner,Human Defense Force,Company Leader,0,0,0,0,Precision Shooter Buff,35
+Munitioner,Human Defense Force,Storm Leader,0,0,0,0,Precision Shooter Buff,35
+Orbital Drop,Human Defense Force,Storm Leader,0,0,0,0,Ambush,10
+Orbital Drop,Human Defense Force,Storm Troopers,0,0,0,0,Ambush,15
+Psy-Hacker,Human Defense Force,Company Leader,0,0,0,0,Caster(2),35
+Psy-Hacker,Human Defense Force,Storm Leader,0,0,0,0,Caster(2),35
+Recon Training,Human Defense Force,Company Leader,0,0,0,0,Scout,10
+Recon Training,Human Defense Force,Veterans,0,0,0,0,Scout,15
+Recon Vehicle,Human Defense Force,Armored Truck,0,0,0,0,Scout,15
+Shield,Human Defense Force,OGRE Robots,0,0,0,0,Shielded,0
+Sniper Leader,Human Defense Force,Company Leader,0,0,0,0,"Scout, Stealth",15
+Targeting Sights,Human Defense Force,Armored Truck,0,0,0,0,Relentless Mark,10
+Targeting Sights,Human Defense Force,Light Walker,0,0,0,0,Relentless Mark,10
+Vehicle Radio,Human Defense Force,Attack Vehicle,0,0,0,0,Extended Buff Range,5
+Vehicle Radio,Human Defense Force,Battle Tank,0,0,0,0,Extended Buff Range,5
+Vehicle Radio,Human Defense Force,Light APC,0,0,0,0,Extended Buff Range,5
+Vehicle Radio,Human Defense Force,Support Vehicle,0,0,0,0,Extended Buff Range,5
+Vehicle Radio,Human Defense Force,Tank Company Leader,0,0,0,0,Extended Buff Range,5
+Wolf-Dog Companion,Human Defense Force,Company Leader,0,0,0,0,Repel Ambushers,15
+Wolf-Dog Companion,Human Defense Force,Storm Leader,0,0,0,0,Repel Ambushers,15
+Battle Chief,Orc Marauders,Berserker Leader,0,0,0,0,Ferocious Boost Aura,15
+Battle Chief,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Ferocious Boost Aura,15
+Battle Chief,Orc Marauders,Veteran Leader,0,0,0,0,Ferocious Boost Aura,15
+Blood Mark,Orc Marauders,Assault Buggy,0,0,0,0,Rending Mark,95
+Blood Mark,Orc Marauders,Melee Walker,0,0,0,0,Rending Mark,95
+Blood Mark,Orc Marauders,Ranged Walker,0,0,0,0,Rending Mark,95
+Blood Mark,Orc Marauders,Trike,0,0,0,0,Rending Mark,95
+Boarding Rig,Orc Marauders,Battle Truck,0,0,0,0,Transport(6),20
+Boarding Rig,Orc Marauders,Beast Titan,0,0,0,0,Transport(6),20
+Boarding Rig,Orc Marauders,Great Battle Truck,0,0,0,0,Transport(6),20
+Boarding Rig,Orc Marauders,Great Walker,0,0,0,0,Transport(11),35
+Boarding Rig,Orc Marauders,Super-Heavy Battle Truck,0,0,0,0,Transport(6),20
+Boarding Rig,Orc Marauders,Truck,0,0,0,0,Transport(6),20
+Combat Shield,Orc Marauders,Berserker Beast Riders,0,0,0,0,Shielded,5
+Combat Shield,Orc Marauders,Berserker Leader,0,0,0,0,Shielded,0
+Combat Shield,Orc Marauders,Berserkers,0,0,0,0,Shielded,0
+Customizer,Orc Marauders,Berserker Leader,0,0,0,0,Ranged Shrouding Aura,35
+Customizer,Orc Marauders,Orc Leader,0,0,0,0,Ranged Shrouding Aura,35
+Customizer,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Ranged Shrouding Aura,35
+Customizer,Orc Marauders,Veteran Leader,0,0,0,0,Ranged Shrouding Aura,35
+Cyborg Body,Orc Marauders,Orc Leader,0,0,0,0,Regeneration,10
+Cyborg Body,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Regeneration,20
+Cyborg Body,Orc Marauders,Veteran Leader,0,0,0,0,Regeneration,10
+Field Doctor,Orc Marauders,Berserkers,0,0,0,0,Regeneration Aura,20
+Field Doctor,Orc Marauders,Orc Warriors,0,0,0,0,Regeneration Aura,40
+Field Doctor,Orc Marauders,Veterans,0,0,0,0,Regeneration Aura,20
+Force Field,Orc Marauders,Bomber Plane,0,0,0,0,Regeneration,20
+Force Field,Orc Marauders,Great Walker,0,0,0,0,Regeneration,70
+Great Psy-Totem,Orc Marauders,Super-Heavy Battle Truck,0,0,0,0,Caster(3),5
+Gun Master,Orc Marauders,Orc Leader,0,0,0,0,Unpredictable Shooter Aura,40
+Gun Master,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Unpredictable Shooter Aura,40
+Gun Master,Orc Marauders,Veteran Leader,0,0,0,0,Unpredictable Shooter Aura,40
+Infiltrator Gear,Orc Marauders,Orc Leader,0,0,0,0,"Scout, Stealth, Strider",20
+Infiltrator Gear,Orc Marauders,Veteran Leader,0,0,0,0,"Scout, Stealth, Strider",25
+Jump Pack,Orc Marauders,Orc Leader,0,0,0,0,"Ambush, Flying",15
+Jump Pack,Orc Marauders,Veteran Leader,0,0,0,0,"Ambush, Flying",20
+Master Psy-Shaman,Orc Marauders,Berserker Leader,0,0,0,0,Caster(3),55
+Mechanic,Orc Marauders,Orc Leader,0,0,0,0,Mend,40
+Mechanic,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Mend,40
+Mechanic,Orc Marauders,Veteran Leader,0,0,0,0,Mend,40
+Overclocked Engine,Orc Marauders,Assault Buggy,0,0,0,0,Agile,10
+Overclocked Engine,Orc Marauders,Battle Truck,0,0,0,0,Agile,15
+Overclocked Engine,Orc Marauders,Great Battle Truck,0,0,0,0,Agile,25
+Overclocked Engine,Orc Marauders,Super-Heavy Battle Truck,0,0,0,0,Agile,30
+Overclocked Engine,Orc Marauders,Trike,0,0,0,0,Agile,10
+Overclocked Engine,Orc Marauders,Truck,0,0,0,0,Agile,10
+Pet Beast,Orc Marauders,Orc Leader,0,0,0,0,Repel Ambushers,15
+Pet Beast,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Repel Ambushers,15
+Pet Beast,Orc Marauders,Veteran Leader,0,0,0,0,Repel Ambushers,15
+Psy-Shaman,Orc Marauders,Berserker Leader,0,0,0,0,Caster(2),35
+Psy-Shaman,Orc Marauders,Orc Leader,0,0,0,0,Caster(2),35
+Psy-Shaman,Orc Marauders,Veteran Leader,0,0,0,0,Caster(2),35
+Psy-Totem,Orc Marauders,Beast Titan,0,0,0,0,Caster(2),5
+Psy-Totem,Orc Marauders,Combat Beast,0,0,0,0,Caster(2),5
+Rotor Blade Attack,Orc Marauders,Hover Bikers,0,0,0,0,Impact(3),10
+Scary Banner,Orc Marauders,Berserkers,0,0,0,0,Fear(2),20
+Scary Banner,Orc Marauders,Orc Warriors,0,0,0,0,Fear(2),20
+Scary Banner,Orc Marauders,Ultra Veterans,0,0,0,0,Fear(2),20
+Scary Banner,Orc Marauders,Veterans,0,0,0,0,Fear(2),20
+Stomper,Orc Marauders,Berserker Leader,0,0,0,0,Piercing Fighter Aura,35
+Stomper,Orc Marauders,Orc Leader,0,0,0,0,Piercing Fighter Aura,35
+Stomper,Orc Marauders,Ultra Veteran Leader,0,0,0,0,Piercing Fighter Aura,35
+Tire Chains,Orc Marauders,Assault Buggy,0,0,0,0,Strider,15
+Tire Chains,Orc Marauders,Battle Truck,0,0,0,0,Strider,20
+Tire Chains,Orc Marauders,Great Battle Truck,0,0,0,0,Strider,35
+Tire Chains,Orc Marauders,Super-Heavy Battle Truck,0,0,0,0,Strider,45
+Tire Chains,Orc Marauders,Trike,0,0,0,0,Strider,10
+Tire Chains,Orc Marauders,Truck,0,0,0,0,Strider,10
+War Banner,Orc Marauders,Berserkers,0,0,0,0,Speed Feat Aura,10
+War Banner,Orc Marauders,Orc Warriors,0,0,0,0,Speed Feat Aura,20
+War Banner,Orc Marauders,Ultra Veterans,0,0,0,0,Speed Feat Aura,30
+War Banner,Orc Marauders,Veterans,0,0,0,0,Speed Feat Aura,15
+Wrecking Ram,Orc Marauders,Battle Truck,0,0,0,0,Impact(5),30
+Wrecking Ram,Orc Marauders,Beast Titan,0,0,0,0,Impact(5),30
+Wrecking Ram,Orc Marauders,Great Battle Truck,0,0,0,0,Impact(5),30
+Wrecking Ram,Orc Marauders,Super-Heavy Battle Truck,0,0,0,0,Impact(5),30
+Wrecking Ram,Orc Marauders,Truck,0,0,0,0,Impact(5),30
+Ancient Protector,Prime Brothers,Elite Raider,0,0,0,0,Melee Shrouding Aura,5
+Ancient Protector,Prime Brothers,Grave Prime Master,0,0,0,0,Melee Shrouding Aura,5
+Ancient Protector,Prime Brothers,Prime Master,0,0,0,0,Melee Shrouding Aura,5
+Ancient Protector,Prime Brothers,Veteran Prime Master,0,0,0,0,Melee Shrouding Aura,5
+Archivist,Prime Brothers,Elite Raider,0,0,0,0,Caster(2),40
+Archivist,Prime Brothers,Grave Prime Master,0,0,0,0,Caster(2),40
+Archivist,Prime Brothers,Prime Master,0,0,0,0,Caster(2),40
+Archivist,Prime Brothers,Veteran Prime Master,0,0,0,0,Caster(2),40
+Artillerist,Prime Brothers,Prime Master,0,0,0,0,Re-Position Artillery,10
+Artillerist,Prime Brothers,Veteran Prime Master,0,0,0,0,Re-Position Artillery,10
+Captain,Prime Brothers,Elite Raider,0,0,0,0,Bane when Shooting Aura,25
+Captain,Prime Brothers,Grave Prime Master,0,0,0,0,Bane when Shooting Aura,25
+Captain,Prime Brothers,Prime Master,0,0,0,0,Bane when Shooting Aura,25
+Captain,Prime Brothers,Veteran Prime Master,0,0,0,0,Bane when Shooting Aura,25
+Combat Shield,Prime Brothers,Veteran Assault Prime Brothers,0,0,0,0,Shielded,0
+Commander,Prime Brothers,Elite Raider,0,0,0,0,Re-Deployment,65
+Destroyer Armor,Prime Brothers,Grave Prime Master,0,0,0,0,Ambush,20
+Detachment Banner,Prime Brothers,Assault Prime Brothers,0,0,0,0,Courage Aura,10
+Detachment Banner,Prime Brothers,Grave Destroyers,0,0,0,0,Courage Aura,30
+Detachment Banner,Prime Brothers,Prime Brothers,0,0,0,0,Courage Aura,10
+Detachment Banner,Prime Brothers,Veteran Assault Prime Brothers,0,0,0,0,Courage Aura,5
+Detachment Banner,Prime Brothers,Veteran Prime Brothers,0,0,0,0,Courage Aura,5
+Engineer,Prime Brothers,Prime Master,0,0,0,0,Mend,40
+Engineer,Prime Brothers,Veteran Prime Master,0,0,0,0,Mend,40
+Honor Guard,Prime Brothers,Grave Prime Master,0,0,0,0,Ravage(3),10
+Honor Guard,Prime Brothers,Guard Brothers,0,0,0,0,Ravage(3),20
+Infiltration Gear,Prime Brothers,Elite Raider,0,0,0,0,Scout,10
+Jetpack,Prime Brothers,Grave Prime Master,0,0,0,0,"Ambush, Flying",45
+Jetpack,Prime Brothers,Prime Master,0,0,0,0,"Ambush, Flying",20
+Jetpack,Prime Brothers,Veteran Prime Master,0,0,0,0,"Ambush, Flying",20
+Jetpacks,Prime Brothers,Assault Prime Brothers,0,0,0,0,"Ambush, Flying",35
+Jetpacks,Prime Brothers,Veteran Assault Prime Brothers,0,0,0,0,"Ambush, Flying",20
+Judge,Prime Brothers,Elite Raider,0,0,0,0,Bane in Melee Aura,15
+Judge,Prime Brothers,Grave Prime Master,0,0,0,0,Bane in Melee Aura,15
+Judge,Prime Brothers,Prime Master,0,0,0,0,Bane in Melee Aura,15
+Judge,Prime Brothers,Veteran Prime Master,0,0,0,0,Bane in Melee Aura,15
+Lieutenant,Prime Brothers,Grave Prime Master,0,0,0,0,Rapid Rush Aura,25
+Lieutenant,Prime Brothers,Prime Master,0,0,0,0,Rapid Rush Aura,25
+Lieutenant,Prime Brothers,Veteran Prime Master,0,0,0,0,Rapid Rush Aura,25
+Master Archivist,Prime Brothers,Grave Prime Master,0,0,0,0,Caster(3),60
+Master Archivist,Prime Brothers,Prime Master,0,0,0,0,Caster(3),60
+Master Archivist,Prime Brothers,Veteran Prime Master,0,0,0,0,Caster(3),60
+Medical Training,Prime Brothers,Assault Prime Brothers,0,0,0,0,Regeneration Aura,20
+Medical Training,Prime Brothers,Grave Destroyers,0,0,0,0,Regeneration Aura,55
+Medical Training,Prime Brothers,Prime Brothers,0,0,0,0,Regeneration Aura,20
+Medical Training,Prime Brothers,Veteran Assault Prime Brothers,0,0,0,0,Regeneration Aura,15
+Medical Training,Prime Brothers,Veteran Prime Brothers,0,0,0,0,Regeneration Aura,15
+Orbital Drop,Prime Brothers,Elite Raider,0,0,0,0,Ambush,10
+Orbital Drop,Prime Brothers,Raider Brothers,0,0,0,0,Ambush,15
+Scope,Prime Brothers,Elite Raider,0,0,0,0,Precise,5
+Scope,Prime Brothers,Prime Master,0,0,0,0,Precise,10
+Scope,Prime Brothers,Veteran Prime Master,0,0,0,0,Precise,10
+Scopes,Prime Brothers,Infiltration Brothers,0,0,0,0,Precise,10
+Shield Projector,Prime Brothers,Anti-Grav APC,0,0,0,0,Stealth,75
+Targeting Array,Prime Brothers,Attack Speeder,0,0,0,0,Unstoppable Mark,25
+Targeting Array,Prime Brothers,Prime ATV,0,0,0,0,Unstoppable Mark,25
+Targeting Array,Prime Brothers,Prime Drop Pod,0,0,0,0,Unstoppable Mark,25
+Targeting Array,Prime Brothers,Support Turret,0,0,0,0,Unstoppable Mark,25
+The Founder's Avenger,Prime Brothers,Grave Prime Master,0,0,0,0,Retaliate(1),15
+The Founder's Avenger,Prime Brothers,Guard Brothers,0,0,0,0,Retaliate(1),10
+The Founder's Banner,Prime Brothers,Assault Prime Brothers,0,0,0,0,Versatile Reach Aura,10
+The Founder's Banner,Prime Brothers,Grave Destroyers,0,0,0,0,Versatile Reach Aura,10
+The Founder's Banner,Prime Brothers,Prime Brothers,0,0,0,0,Versatile Reach Aura,5
+The Founder's Banner,Prime Brothers,Veteran Assault Prime Brothers,0,0,0,0,Versatile Reach Aura,5
+The Founder's Banner,Prime Brothers,Veteran Prime Brothers,0,0,0,0,Versatile Reach Aura,5
+Xenos Hunter,Prime Brothers,Grave Prime Master,0,0,0,0,Melee Slayer,5
+Advanced Locator,Saurian Starhost,Ankylosaurus,0,0,0,0,Ambush Beacon,15
+Advanced Locator,Saurian Starhost,Chameleons,0,0,0,0,Ambush Beacon,15
+Chameleon Breed,Saurian Starhost,Gecko Champion,0,0,0,0,"Evasive, Good Shot, Scout",25
+Chief Rider,Saurian Starhost,Spinosaurus,0,0,0,0,Impact(3),15
+Combat Lizard Handlers,Saurian Starhost,Dragon Lizard,0,0,0,0,Relentless,5
+Combat Lizard Handlers,Saurian Starhost,Spiked Lizard,0,0,0,0,Relentless,5
+Crusader,Saurian Starhost,Frog-Mage,0,0,0,0,Rending when Shooting Aura,65
+Crusader,Saurian Starhost,Gator Veteran,0,0,0,0,Rending when Shooting Aura,65
+Crusader,Saurian Starhost,Saurian Veteran,0,0,0,0,Rending when Shooting Aura,65
+Deinonychus,Saurian Starhost,Gecko Champion,0,0,0,0,"Bounding, Impact(1)",15
+Energy Shield,Saurian Starhost,Gecko Champion,0,0,0,0,Shielded,0
+Energy Shields,Saurian Starhost,Pterodactyl Riders,0,0,0,0,Shielded,15
+Energy Shields,Saurian Starhost,Ripjawdactyl Riders,0,0,0,0,Shielded,15
+Enlightened Mage,Saurian Starhost,Frog-Mage,0,0,0,0,Caster(1),20
+Gecko Priest,Saurian Starhost,Triceratops,0,0,0,0,Caster(2),50
+Hardened Elite,Saurian Starhost,Saurian Veteran,0,0,0,0,Fortified,5
+Hardened Elites,Saurian Starhost,Saurian Guardians,0,0,0,0,Fortified,10
+Hunting Bait,Saurian Starhost,Ripjawdactyl Riders,0,0,0,0,Precision Target(1),25
+Magic Protection,Saurian Starhost,Frog-Mage,0,0,0,0,Fortified,15
+Phase Backpack,Saurian Starhost,Gecko Champion,0,0,0,0,Teleport,10
+Phase Backpacks,Saurian Starhost,Gecko Cohort,0,0,0,0,Teleport,15
+Poison Flechettes,Saurian Starhost,Ankylosaurus,0,0,0,0,Bane Mark,30
+Poison Flechettes,Saurian Starhost,Dragon Lizard,0,0,0,0,Bane Mark,30
+Poison Flechettes,Saurian Starhost,Spiked Lizard,0,0,0,0,Bane Mark,30
+Primal Guidance,Saurian Starhost,Frog-Mage,0,0,0,0,Primal Boost Buff,10
+Primal Hunter,Saurian Starhost,Gecko Champion,0,0,0,0,Primal Boost Buff,10
+Primal Roar,Saurian Starhost,Gator Veteran,0,0,0,0,Primal Boost Buff,10
+Primal Roar,Saurian Starhost,Spinosaurus,0,0,0,0,Primal Boost Buff,10
+Raptor,Saurian Starhost,Saurian Veteran,0,0,0,0,"Fast, Ravage(1)",15
+Sacred Destiny,Saurian Starhost,Frog-Mage,0,0,0,0,Protection Feat,10
+Sacred Destiny,Saurian Starhost,Gator Veteran,0,0,0,0,Protection Feat,10
+Sacred Destiny,Saurian Starhost,Gators,0,0,0,0,Protection Feat,20
+Sacred Destiny,Saurian Starhost,Gecko Champion,0,0,0,0,Protection Feat,5
+Sacred Destiny,Saurian Starhost,Gecko Cohort,0,0,0,0,Protection Feat,10
+Sacred Destiny,Saurian Starhost,Saurian Guardians,0,0,0,0,Protection Feat,10
+Sacred Destiny,Saurian Starhost,Saurian Veteran,0,0,0,0,Protection Feat,5
+Sacred Destiny,Saurian Starhost,Saurian Warriors,0,0,0,0,Protection Feat,10
+Sacred Priest,Saurian Starhost,Gecko Champion,0,0,0,0,Caster(2),30
+Storm Leader,Saurian Starhost,Gator Veteran,0,0,0,0,Rapid Charge Aura,15
+Storm Leader,Saurian Starhost,Gecko Champion,0,0,0,0,Rapid Charge Aura,15
+Storm Leader,Saurian Starhost,Saurian Veteran,0,0,0,0,Rapid Charge Aura,15
+Temple Guardian,Saurian Starhost,Frog-Mage,0,0,0,0,Counter-Attack Aura,35
+Temple Guardian,Saurian Starhost,Gecko Champion,0,0,0,0,Counter-Attack Aura,35
+Temple Guardian,Saurian Starhost,Saurian Veteran,0,0,0,0,Counter-Attack Aura,35
+Trample,Saurian Starhost,Triceratops,0,0,0,0,Impact(3),15
+Vanguard Lizard Handlers,Saurian Starhost,Dragon Lizard,0,0,0,0,Scout,15
+Vanguard Lizard Handlers,Saurian Starhost,Spiked Lizard,0,0,0,0,Scout,15
+Zealot,Saurian Starhost,Frog-Mage,0,0,0,0,Scout Aura,35
+Zealot,Saurian Starhost,Gator Veteran,0,0,0,0,Scout Aura,35
+Zealot,Saurian Starhost,Gecko Champion,0,0,0,0,Scout Aura,35
+Ripjawdactyl,Saurian Starhost,Gecko Champion,0,0,0,0,"Ambush, Flying, Heavy Impact(3), Precision Target(1)",90
+Zealot,Saurian Starhost,Saurian Veteran,0,0,0,0,Scout Aura,35

@@ -82,3 +82,243 @@ Tripod Walker,Robot Legions,3,2,1,6,0,0,"Fear(1), Self-Repair, Strider",185
 Warriors,Robot Legions,4,4,5,0,0,0,"Self-Repair, Slow",100
 Wraith-Shard,Robot Legions,2,2,1,12,0,0,"Caster(3), Fear(2), Fearless, Flying, Self-Repair",780
 Xyros-Z320,Robot Legions,3,3,1,3,0,0,"Hero, Self-Repair, Slow, Unique, Unstoppable when Shooting",80
+APC,Blessed Sisters,4,2,1,6,0,3,"Devout, Fast, Transport(11)",180
+Assault Sisters,Blessed Sisters,4,4,5,0,0,0,"Ambush, Devout, Flying",175
+Assault Walker,Blessed Sisters,4,2,1,9,0,0,"Devout, Fear(2), Fearless, Piercing Assault, Regeneration, Scout",275
+Battle Tank,Blessed Sisters,4,2,1,12,0,6,"Devout, Fast",355
+Biker Fanatics,Blessed Sisters,5,5,3,3,0,0,"Devout, Fast, Fearless, Piercing Assault",205
+Biker Sisters,Blessed Sisters,4,4,3,3,0,0,"Devout, Fast",205
+Blessed Titan,Blessed Sisters,3,2,1,24,0,0,"Devout, Fear(4), Fearless",785
+Celestial High Sister,Blessed Sisters,3,4,1,3,0,0,"Devout, Hero, Shielded",40
+Celestial Warrior Sisters,Blessed Sisters,3,4,3,0,0,0,Devout,80
+Constance,Blessed Sisters,4,4,1,3,0,0,"Devout, Hero, Increased Shooting Range Aura, Scout, Strider",100
+Destroyer Sisters,Blessed Sisters,4,4,3,3,0,0,"Ambush, Devout, Shielded",140
+Exo-Suit,Blessed Sisters,4,3,1,6,0,0,"Devout, Fear(1)",95
+Exo-Suit High Sister,Blessed Sisters,4,3,1,9,0,0,"Devout, Fear(2), Hero",185
+Fanatic Sisters,Blessed Sisters,5,5,5,0,0,0,,85
+Fanatic Superior,Blessed Sisters,5,5,1,3,0,0,"Devout, Fearless, Hero, Piercing Assault",30
+High Destroyer Sister,Blessed Sisters,4,4,1,6,0,0,"Ambush, Devout, Hero, Shielded",85
+High Sister,Blessed Sisters,4,4,1,3,0,0,"Devout, Hero, Shielded",35
+Infernal APC,Blessed Sisters,4,2,1,9,0,3,"Devout, Fast, Transport(6)",250
+Novice Leader,Blessed Sisters,5,6,1,3,0,0,"Devout, Hero, Shielded",20
+Novice Sisters,Blessed Sisters,5,6,10,0,0,0,Devout,85
+Organ Tank,Blessed Sisters,4,2,1,9,0,3,"Devout, Fast",320
+Pistoleer Sisters,Blessed Sisters,4,4,5,0,0,0,"Ambush, Devout, Flying, Point-Blank Surge",145
+Procession Altar,Blessed Sisters,4,2,1,0,0,3,"Courage Buff, Devout, Fast, Fearless, Guarded Buff, Precision",230
+Protector Sisters,Blessed Sisters,4,4,5,0,0,0,"Devout, Shielded",135
+Support Sisters,Blessed Sisters,4,4,3,0,0,0,"Devout, Devout Boost",110
+Support Walker,Blessed Sisters,4,2,1,9,0,0,"Devout, Devout Boost, Fear(2), Fearless, Fortified, Regeneration",250
+Vanguard Sisters,Blessed Sisters,4,4,5,0,0,0,"Devout, Scout, Strider",135
+Warrior Sisters,Blessed Sisters,4,4,5,0,0,0,Devout,110
+Battle Suit Elite,Dao Union,4,3,1,6,0,0,"Flying, Hero, Targeting Visor",155
+Battle Suits,Dao Union,4,3,3,3,0,0,"Flying, Targeting Visor",220
+Grunt Leader,Dao Union,5,4,1,3,0,0,"Good Shot, Hero, Targeting Visor",25
+Gun Drones,Dao Union,5,4,5,0,0,0,"Good Shot, Strider, Targeting Visor",150
+Heavy Battle Suit,Dao Union,4,2,1,12,0,0,"Fear(2), Targeting Visor",320
+Heavy Stealth Suit,Dao Union,4,2,1,12,0,0,"Ambush, Fear(2), Stealth, Targeting Visor",345
+Hover Attack Bike,Dao Union,4,2,1,0,0,0,,180
+Hover Tank,Dao Union,4,2,1,12,0,6,"Fast, Strider, Targeting Visor",370
+Hover Transport,Dao Union,4,2,1,6,0,3,"Fast, Strider, Targeting Visor, Transport(11)",220
+Razor Fighter,Dao Union,4,2,1,6,0,0,"Aircraft, Targeting Visor",270
+Security Grunts,Dao Union,5,4,5,0,0,0,"Good Shot, Targeting Visor",105
+Sniper Drones,Dao Union,5,4,3,0,0,0,"Good Shot, Strider, Targeting Visor",75
+Spotter Squad,Dao Union,5,5,5,0,0,0,"Good Shot, Scout, Targeting Visor",145
+Stealth Suits,Dao Union,4,4,3,3,0,0,"Ambush, Stealth, Targeting Visor",250
+Sun Bomber,Dao Union,4,2,1,6,0,0,"Aircraft, Targeting Visor",275
+Surge Titan,Dao Union,4,2,1,24,0,0,"Fear(4), Targeting Visor",710
+Tactical Grunts,Dao Union,5,4,5,0,0,0,"Good Shot, Targeting Visor",115
+Tide Titan,Dao Union,4,2,1,18,0,0,"Fear(3), Targeting Visor",505
+Blood Hounds,Dark Elf Raiders,4,5,5,0,0,0,"Fast, Harassing",90
+Clawed Beast,Dark Elf Raiders,3,4,1,6,0,0,"Furious, Harassing",115
+Court Henchmen,Dark Elf Raiders,3,4,3,0,0,0,"Harassing, Martial Prowess",130
+Crow Swarms,Dark Elf Raiders,5,6,3,3,0,0,"Flying, Harassing",100
+Dark Lord,Dark Elf Raiders,3,4,1,3,0,0,"Harassing, Hero",55
+Elite Raider,Dark Elf Raiders,4,5,1,3,0,0,"Harassing, Hero",40
+Elite True Raider,Dark Elf Raiders,3,5,1,3,0,0,"Harassing, Hero",50
+Engine of Suffering,Dark Elf Raiders,4,2,1,6,0,0,"Fear(1), Fearless, Harassing, Regeneration",160
+Gene-Brutes,Dark Elf Raiders,3,5,3,3,0,0,"Harassing, Regeneration",255
+Gene-Tech Master,Dark Elf Raiders,4,5,1,3,0,0,"Harassing, Hero, Regeneration",45
+Gene-Warriors,Dark Elf Raiders,4,5,5,0,0,0,"Harassing, Regeneration",80
+Heavy Jetbike,Dark Elf Raiders,4,2,1,6,0,3,"Fast, Harassing, Strider",175
+Heavy Skimmer,Dark Elf Raiders,3,2,1,9,0,3,"Fast, Harassing, Strider",335
+Hoverboard Riders,Dark Elf Raiders,4,5,5,0,0,0,"Agile, Harassing, Scout, Strider",185
+Jetbike Riders,Dark Elf Raiders,4,4,3,3,0,0,"Fast, Harassing, Strider",210
+Leech Engine,Dark Elf Raiders,4,2,1,6,0,0,"Fear(1), Fearless, Harassing, Relentless",165
+Light Skimmer,Dark Elf Raiders,3,2,1,6,0,3,"Fast, Harassing, Strider, Transport(11)",205
+Nightmares,Dark Elf Raiders,3,4,5,0,0,0,,155
+Raven Bomber,Dark Elf Raiders,3,2,1,6,0,0,Aircraft,320
+Razor Fighter,Dark Elf Raiders,3,2,1,0,0,0,,280
+Shadow Warriors,Dark Elf Raiders,3,5,5,0,0,0,"Harassing, Infiltrate, Stealth, Strider",265
+True Warriors,Dark Elf Raiders,3,5,3,0,0,0,Harassing,75
+True Witches,Dark Elf Raiders,3,5,3,0,0,0,"Harassing, Melee Evasion",75
+Warriors,Dark Elf Raiders,4,5,5,0,0,0,Harassing,95
+Winged Warriors,Dark Elf Raiders,4,4,5,0,0,0,"Ambush, Flying, Harassing",150
+Witches,Dark Elf Raiders,4,5,5,0,0,0,"Harassing, Melee Evasion",105
+APC,Dwarf Guilds,4,2,1,6,0,3,"Fast, Sturdy, Transport(11)",210
+Artillery Gun,Dwarf Guilds,4,3,1,3,0,0,"Artillery, Sturdy",130
+Assault Drill,Dwarf Guilds,4,2,1,12,0,6,"Ambush, Sturdy, Transport(11)",365
+Attack Vehicle,Dwarf Guilds,4,2,1,6,0,3,"Fast, Strider, Sturdy",200
+Battle Tank,Dwarf Guilds,4,2,1,12,0,6,"Fast, Sturdy",370
+Berserker Veteran,Dwarf Guilds,4,5,1,3,0,0,"Fearless, Furious, Hero, Melee Slayer, Slow, Sturdy",45
+Berserkers,Dwarf Guilds,4,5,5,0,0,0,"Fearless, Furious, Melee Slayer, Slow, Sturdy",75
+Combat Excavator,Dwarf Guilds,4,2,1,24,0,12,"Fearless, Sturdy",930
+Dwarf Bikers,Dwarf Guilds,4,4,3,3,0,0,"Fast, Sturdy",210
+Dwarf Champion,Dwarf Guilds,3,3,1,3,0,0,"Fortified, Hero, Slow, Sturdy",45
+Dwarf Trike,Dwarf Guilds,4,4,1,6,0,0,"Fast, Sturdy",135
+Dwarf Walker,Dwarf Guilds,3,2,1,12,0,0,"Fear(2), Sturdy",280
+Dwarf Warriors,Dwarf Guilds,4,4,5,0,0,0,"Slow, Sturdy",80
+Elites,Dwarf Guilds,3,3,5,0,0,0,"Fearless, Fortified, Slow, Sturdy",110
+Fortress Tank,Dwarf Guilds,4,2,1,18,0,9,"Fast, Sturdy, Transport(16)",640
+Guardians,Dwarf Guilds,4,4,5,0,0,0,"Fortified, Slow, Sturdy",70
+Hadrund oth Irnwuld,Dwarf Guilds,3,3,1,3,0,0,"Fearless, Fortified, Hero, Infiltrate Aura, Slow, Sturdy, Unique",140
+Iron Veterans,Dwarf Guilds,3,3,5,0,0,0,"Slow, Sturdy",110
+Jetpack Warriors,Dwarf Guilds,4,4,5,0,0,0,"Ambush, Flying, Sturdy",115
+Land Train,Dwarf Guilds,4,2,1,12,0,6,"Fast, Sturdy",430
+Mine-Bot Guard,Dwarf Guilds,3,3,3,3,0,0,"Fearless, Slow, Sturdy",230
+Miners,Dwarf Guilds,4,5,5,0,0,0,"Infiltrate, Slow, Sturdy",120
+Mining Titan,Dwarf Guilds,3,2,1,18,0,0,"Fear(3), Fearless, Sturdy",605
+Powersuit Champion,Dwarf Guilds,3,3,1,6,0,0,"Fortified, Hero, Infiltrate, Slow, Sturdy",125
+Powersuit Guard,Dwarf Guilds,3,3,3,3,0,0,"Fortified, Infiltrate, Slow, Sturdy",185
+Sniper Team,Dwarf Guilds,4,5,3,0,0,0,"Scout, Slow, Stealth, Sturdy",135
+Thunder Support,Dwarf Guilds,4,4,3,3,0,0,"Slow, Sturdy",170
+Acolytes,High Elf Fleets,4,4,3,0,0,0,"Caster Group, Highborn",150
+Anti-Gravity APC,High Elf Fleets,3,2,1,6,0,3,"Fast, Highborn, Strider, Transport(11)",195
+Anti-Gravity Tank,High Elf Fleets,3,2,1,12,0,6,"Fast, Highborn, Strider",520
+Combat Walker,High Elf Fleets,3,2,1,6,0,0,"Highborn, Scout",230
+Elemental Avatar,High Elf Fleets,2,2,1,18,0,0,"Caster(4), Fear(3), Fearless, Highborn, Regeneration",925
+Elemental Protectors,High Elf Fleets,3,3,3,3,0,0,"Fearless, Highborn, Relentless",215
+Elemental Strikers,High Elf Fleets,3,3,3,3,0,0,"Fearless, Furious, Highborn, Shielded",230
+Elite Protector,High Elf Fleets,4,5,1,3,0,0,"Hero, Highborn, Shielded",35
+Elven Noble,High Elf Fleets,3,4,1,3,0,0,"Hero, Highborn, Shielded",45
+Gliders,High Elf Fleets,3,4,5,0,0,0,"Ambush, Flying, Highborn",165
+Great Elemental,High Elf Fleets,3,2,1,12,0,0,"Fear(2), Fearless, Fortified, Highborn",360
+Heavy Jetbike,High Elf Fleets,3,2,1,6,0,3,"Fast, Highborn, Strider",210
+Jetbike Protectors,High Elf Fleets,3,4,3,3,0,0,"Fast, Highborn, Strider",230
+Jetbike Strikers,High Elf Fleets,3,4,3,3,0,1,"Fast, Highborn, Strider",250
+Protectors,High Elf Fleets,4,5,5,0,0,0,Highborn,100
+Retributors,High Elf Fleets,3,4,5,0,0,0,"Fearless, Highborn, Shielded",105
+Revenants,High Elf Fleets,3,4,5,0,0,0,"Agile, Highborn, Strider",190
+Scorchers,High Elf Fleets,3,4,3,0,0,0,Highborn,120
+Seer Plane,High Elf Fleets,3,2,1,6,0,0,"Aircraft, Caster(2), Highborn",380
+Shifters,High Elf Fleets,3,4,5,0,0,0,"Ambush, Highborn, Teleport",250
+Snipers,High Elf Fleets,4,5,3,0,0,0,"Highborn, Scout, Stealth, Strider",145
+Stingers,High Elf Fleets,3,4,5,0,0,0,"Highborn, Scout, Stealth",195
+Strikers,High Elf Fleets,4,5,5,0,0,0,"Highborn, Scout",105
+Support Artillery,High Elf Fleets,3,3,1,3,0,0,Artillery,145
+Titan Elemental,High Elf Fleets,3,2,1,24,0,0,"Fear(4), Fearless, Highborn",825
+Trasara Ioncrinius,High Elf Fleets,3,4,1,3,0,0,"Hero, Highborn, Unique",110
+Vanquishers,High Elf Fleets,3,4,3,0,0,0,"Highborn, Relentless",200
+Venator Plane,High Elf Fleets,3,2,1,6,0,0,"Aircraft, Highborn",495
+Armored Truck,Human Defense Force,4,2,1,6,0,3,"Fast, Hold the Line, Strider, Transport(11)",180
+Attack Vehicle,Human Defense Force,4,2,1,9,0,3,"Fast, Hold the Line",225
+Battle Tank,Human Defense Force,4,2,1,12,0,6,"Fast, Hold the Line",335
+Colonel Rixxon,Human Defense Force,4,5,1,3,0,0,"Hero, Hold the Line, Morale Debuff, Unique",50
+Combat Bikers,Human Defense Force,5,5,5,0,0,1,"Fast, Hold the Line",95
+Combat Walker,Human Defense Force,4,2,1,12,0,0,"Fear(2), Fortified, Furious, Hold the Line",265
+Company Leader,Human Defense Force,4,5,1,3,0,0,"Hero, Hold the Line",35
+Field Artillery,Human Defense Force,4,2,1,3,0,0,"Artillery, Hold the Line",115
+GRUNT Robots,Human Defense Force,5,5,5,0,0,0,"Fearless, Good Shot, Hold the Line",80
+Heavy Battle Tank,Human Defense Force,4,2,1,15,0,6,"Fast, Hold the Line",445
+Heavy Gunship,Human Defense Force,4,2,1,9,0,0,"Aircraft, Transport(6)",385
+Infantry Squad,Human Defense Force,5,5,10,0,0,0,Hold the Line,115
+Light APC,Human Defense Force,4,2,1,6,0,3,"Fast, Hold the Line, Transport(11)",200
+Light Gunship,Human Defense Force,4,2,1,6,0,0,"Aircraft, Transport(11)",285
+Light Walker,Human Defense Force,4,2,1,6,0,0,"Fear(1), Hold the Line",155
+OGRE Robots,Human Defense Force,4,4,3,3,0,0,"Fearless, Furious, Hold the Line",160
+Recruits,Human Defense Force,6,5,10,0,0,0,Hold the Line,75
+Sappers,Human Defense Force,5,5,3,0,0,0,"Hold the Line, Relentless",65
+Snipers,Human Defense Force,5,5,3,0,0,0,"Hold the Line, Scout, Stealth",125
+Storm Leader,Human Defense Force,4,4,1,3,0,0,"Hero, Hold the Line, Strider",45
+Storm Troopers,Human Defense Force,4,4,5,0,0,0,"Hold the Line, Strider",115
+Super Heavy Battle Tank,Human Defense Force,4,2,1,24,0,12,"Fast, Fearless, Hold the Line",890
+Support Vehicle,Human Defense Force,4,2,1,6,0,3,"Hold the Line, Mobile Artillery",255
+Tactical Titan,Human Defense Force,4,2,1,18,0,0,"Fear(3), Fearless, Hold the Line",545
+Tactical Walker,Human Defense Force,4,2,1,12,0,0,"Fear(2), Hold the Line",320
+Tank Company Leader,Human Defense Force,4,2,1,15,0,6,"Fast, Hero, Hold the Line",420
+Veterans,Human Defense Force,4,5,5,0,0,0,Hold the Line,80
+Weapon Teams,Human Defense Force,5,5,3,3,0,0,Hold the Line,120
+Assault Buggy,Orc Marauders,4,2,1,9,0,3,"Fast, Ferocious",205
+Attack Plane,Orc Marauders,4,2,1,6,0,0,"Aircraft, Ferocious",310
+Battle Truck,Orc Marauders,4,2,1,12,0,6,"Fast, Ferocious",385
+Beast Titan,Orc Marauders,4,2,1,24,0,0,"Ferocious, Transport(11), Transport(11)",780
+Berserker Beast Riders,Orc Marauders,4,6,3,3,0,0,"Bounding, Ferocious, Piercing Assault, Protected",170
+Berserker Leader,Orc Marauders,4,6,1,3,0,0,"Ferocious, Hero, Piercing Assault, Protected",40
+Berserkers,Orc Marauders,4,6,5,0,0,0,"Ferocious, Piercing Assault, Protected",85
+Bomber Plane,Orc Marauders,4,2,1,6,0,0,"Aircraft, Ferocious",285
+Combat Beast,Orc Marauders,4,2,1,18,0,0,"Ferocious, Transport(11), Transport(11)",525
+Great Battle Truck,Orc Marauders,4,2,1,18,0,9,"Fast, Ferocious, Transport(11), Transport(11)",555
+Great Walker,Orc Marauders,4,2,1,18,0,0,"Fear(4), Fearless, Ferocious",775
+Hover Bikers,Orc Marauders,4,5,3,3,0,0,"Bad Shot, Fast, Ferocious, Flying",205
+Infiltrators,Orc Marauders,4,5,5,0,0,0,"Bad Shot, Ferocious, Scout, Stealth, Strider",115
+Jump Pack Orcs,Orc Marauders,4,5,5,0,0,0,"Ambush, Bad Shot, Ferocious, Flying",105
+Melee Walker,Orc Marauders,4,2,1,12,0,0,"Fear(2), Ferocious",285
+Orc Bikers,Orc Marauders,4,5,3,3,0,0,"Bad Shot, Fast, Ferocious",165
+Orc Leader,Orc Marauders,4,5,1,3,0,0,"Bad Shot, Ferocious, Hero",30
+Orc Warriors,Orc Marauders,4,5,10,0,0,0,"Bad Shot, Ferocious",155
+Ranged Walker,Orc Marauders,4,2,1,12,0,0,"Fear(2), Ferocious, Ferocious Boost",310
+Rurthdeg,Orc Marauders,4,5,1,3,0,0,"Bad Shot, Ferocious, Hero, Precision Charge Aura, Unique",60
+Specialists,Orc Marauders,4,5,3,0,0,0,"Bad Shot, Ferocious, Ferocious Boost",65
+Super-Heavy Battle Truck,Orc Marauders,4,2,1,24,0,12,"Fast, Ferocious, Transport(11), Transport(16)",860
+Trike,Orc Marauders,4,4,1,6,0,0,"Fast, Ferocious",110
+Truck,Orc Marauders,4,2,1,6,0,3,"Fast, Ferocious, Transport(11)",190
+Ultra Veteran Leader,Orc Marauders,3,4,1,6,0,0,"Bad Shot, Ferocious, Hero",75
+Ultra Veterans,Orc Marauders,3,4,3,3,0,0,"Bad Shot, Ferocious",160
+Veteran Bikers,Orc Marauders,3,4,3,3,0,0,"Bad Shot, Fast, Ferocious",225
+Veteran Leader,Orc Marauders,3,4,1,3,0,0,"Bad Shot, Ferocious, Hero",40
+Veteran Specialists,Orc Marauders,3,4,3,0,0,0,"Bad Shot, Ferocious, Ferocious Boost",95
+Veterans,Orc Marauders,3,4,5,0,0,0,"Bad Shot, Ferocious",105
+Aggro Brothers,Prime Brothers,3,3,3,3,0,0,"Fearless, Primeborn",310
+Anti-Grav APC,Prime Brothers,3,2,1,9,0,3,"Fast, Fearless, Primeborn, Strider, Transport(11)",300
+Anti-Grav Tank,Prime Brothers,3,2,1,15,0,6,"Fast, Fearless, Primeborn, Strider",500
+Assault Prime Brothers,Prime Brothers,3,3,5,0,0,0,"Fearless, Primeborn",165
+Attack Speeder,Prime Brothers,3,2,1,9,0,3,"Ambush, Fast, Fearless, Primeborn, Strider",345
+Blaster Brothers,Prime Brothers,3,3,5,0,0,0,"Fearless, Primeborn, Relentless",220
+Combat Walker,Prime Brothers,3,2,1,15,0,0,"Fear(3), Fearless, Primeborn",490
+Desolator Brothers,Prime Brothers,3,3,5,0,0,0,"Fearless, Primeborn, Relentless",195
+Elimination Brothers,Prime Brothers,4,4,3,0,0,0,"Fearless, Primeborn, Scout, Stealth, Strider",150
+Elite Raider,Prime Brothers,4,4,1,3,0,0,"Fearless, Furious, Hero, Primeborn, Strider",55
+Eradication Brothers,Prime Brothers,3,3,3,3,0,0,"Fearless, Primeborn, Relentless",240
+Grave Destroyers,Prime Brothers,3,3,3,3,0,0,"Ambush, Fearless, Primeborn, Shielded",225
+Grave Prime Master,Prime Brothers,3,3,1,6,0,0,"Fearless, Hero, Primeborn, Shielded",125
+Guard Brothers,Prime Brothers,3,3,3,3,0,0,"Fearless, Melee Slayer, Primeborn, Shielded",255
+Heavy Anti-Grav Destroyer Tank,Prime Brothers,3,2,1,18,0,9,"Fast, Fearless, Primeborn, Strider, Transport(6)",825
+Heavy Anti-Grav Transport Tank,Prime Brothers,3,2,1,18,0,9,"Fast, Fearless, Primeborn, Strider, Transport(11)",735
+Heavy Prime Brothers,Prime Brothers,3,3,3,3,0,0,"Fearless, Primeborn",225
+Infernal Brothers,Prime Brothers,3,3,3,0,0,0,"Fearless, Primeborn, Relentless",105
+Infiltration Brothers,Prime Brothers,4,4,5,0,0,0,"Fearless, Primeborn, Scout, Strider",140
+Jetpack Brothers,Prime Brothers,3,3,3,3,0,0,"Ambush, Fearless, Flying, Primeborn",260
+Light Walker,Prime Brothers,3,2,1,9,0,0,"Fear(2), Fearless, Primeborn, Scout",315
+Prime ATV,Prime Brothers,3,2,1,6,0,3,"Fast, Fearless, Primeborn, Scout, Strider",245
+Prime Brother Bikers,Prime Brothers,3,3,3,3,0,0,"Fast, Fearless, Primeborn",295
+Prime Brothers,Prime Brothers,3,3,5,0,0,0,"Fearless, Primeborn",150
+Prime Drop Pod,Prime Brothers,3,2,1,9,0,0,"Ambush, Fearless, Immobile, Primeborn, Transport(11)",205
+Prime Master,Prime Brothers,3,3,1,3,0,0,"Fearless, Hero, Primeborn, Shielded",60
+Raider Brothers,Prime Brothers,4,4,5,0,0,0,"Fearless, Furious, Primeborn, Strider",120
+Support Turret,Prime Brothers,3,3,1,3,0,0,"Artillery, Fearless, Primeborn",215
+Suppression Brothers,Prime Brothers,3,3,3,0,0,0,"Ambush, Fearless, Flying, Primeborn, Relentless",205
+Veteran Assault Prime Brothers,Prime Brothers,3,3,3,0,0,0,"Fearless, Primeborn, Shielded, Versatile Attack",90
+Veteran Prime Brothers,Prime Brothers,3,3,3,0,0,0,"Fearless, Primeborn, Versatile Attack",110
+Veteran Prime Master,Prime Brothers,3,3,1,3,0,0,"Fearless, Hero, Primeborn, Shielded, Versatile Attack",65
+Ankylosaurus,Saurian Starhost,4,2,1,12,0,0,"Fear(2), Fearless, Fortified, Primal",415
+Chameleons,Saurian Starhost,5,5,5,0,0,0,"Evasive, Good Shot, Primal, Scout, Strider",130
+Cyber Swarms,Saurian Starhost,5,6,3,3,0,0,"Primal, Strider",70
+Deinonychus Riders,Saurian Starhost,5,5,5,0,0,1,"Bounding, Primal, Shielded, Strider",110
+Dragon Lizard,Saurian Starhost,4,3,1,6,0,0,"Fearless, Primal, Regeneration, Strider",170
+Dread Titan,Saurian Starhost,3,2,1,24,0,6,"Fear(4), Fearless, Primal, Primal Boost Buff, Unpredictable Fighter",840
+Frog-Mage,Saurian Starhost,3,3,1,6,0,0,"Caster(3), Fear(1), Fearless, Hero, Primal, Strider",200
+Gator Veteran,Saurian Starhost,4,3,1,6,0,0,"Fear(1), Fearless, Hero, Primal",115
+Gators,Saurian Starhost,4,3,3,3,0,0,"Fearless, Primal",155
+Gecko Champion,Saurian Starhost,5,5,1,3,0,0,"Hero, Primal, Strider",35
+Gecko Cohort,Saurian Starhost,5,5,5,0,0,0,"Primal, Shielded, Strider",80
+Gecko Snipers,Saurian Starhost,5,5,3,0,0,0,"Primal, Strider",120
+Pterodactyl Riders,Saurian Starhost,5,5,3,3,0,1,"Ambush, Flying, Primal, Shielded",130
+Raptor Riders,Saurian Starhost,4,3,5,0,1,0,"Fast, Fearless, Primal",130
+Ripjawdactyl Riders,Saurian Starhost,5,5,3,3,0,0,"Ambush, Flying, Heavy Impact(3), Primal, Shielded",170
+Saurian Guardians,Saurian Starhost,3,3,5,0,0,0,"Fearless, Primal",145
+Saurian Veteran,Saurian Starhost,3,3,1,3,0,0,"Fearless, Hero, Primal",55
+Saurian Warriors,Saurian Starhost,4,4,5,0,0,0,"Fearless, Primal",95
+Spiked Lizard,Saurian Starhost,4,3,1,6,0,0,"Fearless, Fortified, Primal, Strider",145
+Spinosaurus,Saurian Starhost,4,2,1,12,0,0,"Fear(2), Fearless, Primal",300
+Tehaxi,Saurian Starhost,4,5,1,6,0,0,"Breath Attack, Caster(2), Hero, Primal, Spell Conduit, Strider",150
+Triceratops,Saurian Starhost,4,2,1,12,0,0,"Fear(2), Fearless, Primal, Transport(11)",310
+Vulturedactyls,Saurian Starhost,5,6,3,3,0,0,"Ambush, Evasive, Flying, Primal",130

@@ -56,9 +56,9 @@ SIM_ROWS = 20
 #: A tab that outgrows its capacity loses the extra rows from the dropdowns
 #: silently, so tests/test_build.py guards it.
 CAPACITY = {
-    "Units": 120,
-    "Weapons": 650,
-    "Upgrades": 170,
+    "Units": 350,
+    "Weapons": 2450,
+    "Upgrades": 700,
     "Factions": 40,
 }
 SOURCE_FIRST_ROW = 2

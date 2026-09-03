@@ -280,7 +280,11 @@ class TestStaleDependentPicks:
             str(rng.sqref): rules for rng, rules in sim.conditional_formatting._cf_rules.items()
         }
         formula = rules_by_range[f"{col}{SIM_FIRST_ROW}"][0].formula[0]
-        assert formula == f'AND(${col}{SIM_FIRST_ROW}<>"",COUNTIF(Lists!$A$2:$A$121,${col}{SIM_FIRST_ROW})=0)'
+        units_last_row = last_row("Units")
+        assert formula == (
+            f'AND(${col}{SIM_FIRST_ROW}<>"",'
+            f'COUNTIF(Lists!$A$2:$A${units_last_row},${col}{SIM_FIRST_ROW})=0)'
+        )
 
 
 class TestModelCountDropdowns:

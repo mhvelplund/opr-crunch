@@ -1,41 +1,119 @@
 Name,Parameterised,Applies to,Modelled,Text
 AP,Yes,Attacker,Yes,Targets get -X to Defense rolls when blocking hits from this weapon.
+Agile,No,-,No,"Moves +1"" when using Advance, and +2"" when using Rush/Charge."
+Aircraft,No,Defender,Yes,"This model must deploy before all other units, and ignores terrain and other models when moving. It can't be moved into contact with, and units targeting it get -12"" range and -1 to hit rolls."
 Ambush Aura,No,-,No,This model and its unit get Ambush.
+Ambush Beacon,No,-,No,"Friendly units using Ambush may ignore distance restrictions from enemies if they are deployed within 6"" of this model."
 Ambushing Piercing Shot,No,-,No,"Counts as having Ambush, and its weapons get AP(+1) when shooting on the round in which it deploys via this rule."
+Artillery,No,Both,Yes,"May only use Hold actions. When this model shoots at enemies over 9"" away, it gets +1 to hit rolls. When enemy units shoot at this model from over 9"" away, they get -2 to hit rolls."
+Bad Shot,No,Attacker,Yes,This model gets -1 to hit rolls when shooting.
 Bane,No,Attacker,Yes,"Ignores Regeneration, and when attacking the target must re-roll unmodified Defense results of 6."
+Bane Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units gets Bane when attacking against once (next time the effect would apply)."
 Bane in Melee Aura,No,-,No,This model and its unit get Bane in melee.
+Bane in Melee Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Bane in melee once (next time the effect would apply)."
 Bane when Shooting Aura,No,-,No,This model and its unit get Bane when shooting. 3
 Battleborn,No,-,No,"If a unit where all models have this rule is Shaken at the beginning of the round, roll one die. On a 4+, it stops being Shaken."
 Blast,Yes,Attacker,Yes,"Ignores cover, and after resolving other special rules, each hit is multiplied by X, where X is up to as many hits as models in the target unit."
+Bounding,No,-,No,"When this unit is activated, you may place all models with this rule in it anywhere fully within D3+1"" of their position."
+Breath Attack,No,-,No,"Once per activation, before attacking, roll one die. On a 2+ one enemy unit within 6"" in line of sight takes 1 hit with Blast(3) and AP(1)."
+Brutal,No,-,No,"When attacking, unmodified results of 6 to hit deal 1 extra hit (only the original hit counts as a 6 for special rules)."
+Caster Group,No,-,No,"Pick one model with this rule in this unit to have Caster(X), where X is the total number of models with this rule in this unit. If the model is killed, pick another to be the new caster, and transfer all spell tokens to it. The caster loses all unspent spell tokens at the end of the round."
 Casting Buff,No,-,No,"Once per activation, before attacking, pick one friendly model within 12"" with Caster, which gets +1 to casting rolls once (next time the effect would apply)."
+Casting Debuff,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight with Caster, which gets -1 to casting rolls once (next time the effect would apply)."
+Coordinate,No,-,No,"At the end of this unit's activation, another friendly unit within 12"" that hasn't activated yet may be activated immediately. May not be used if this unit was activated via Coordinate."
 Counter,No,Defender,Yes,"Strikes first with this weapon when charged, and the charging unit gets -1 total Impact rolls per model with Counter."
+Counter-Attack,No,-,No,Strikes first when charged.
+Counter-Attack Aura,No,-,No,This model and its unit get Counter-Attack.
 Courage Aura,No,-,No,This model and its unit get +1 to morale test rolls.
+Courage Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets +1 to morale test rolls once (next time the effect would apply)."
+Courageous,No,-,No,Units where all models have this rule get +1 to morale test rolls triggered by shooting/melee.
+Crack,No,Attacker,Yes,"On unmodified results of 6 to hit, those hits get AP(+2)."
+Crossing Attack,No,-,No,"Once per activation, when this model moves through enemy units, pick one of them and roll X dice. For each 6+ the target takes one wound."
 Dangerous Terrain Debuff,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which counts as being in Dangerous Terrain once (next time the effect would apply)."
 Deadly,Yes,Attacker,Yes,"Assign each wound to one model, and multiply it by X. Hits from Deadly must be resolved first, and these wounds don't carry over to other models if the original target is killed."
 Destructive,No,Attacker,Yes,"On unmodified results of 6 to hit, those hits get AP(+4)."
-Evasive,No,-,No,Enemies get -1 to hit rolls when attacking units where all models have this rule.
+Devout,No,Attacker,Yes,"When attacking, unmodified results of 6 to hit deal 1 extra hit (only the original hit counts as a 6 for special rules)."
+Devout Boost,No,Attacker,Yes,"If this model has Devout, when it shoots or charges enemies over 9"" away, it deals extra hits on successful unmodified hit results of 5-6 from Devout (instead of only on 6)."
+Devout Boost Aura,No,-,No,This model and its unit get Devout Boost.
+Disintegrate,No,Attacker,Yes,"Ignores Regeneration, and against units where most models have Defense 2+ to Defense 3+, this weapon gets AP(+2)."
+Entrenched Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Entrenched once (next time the effect would apply)."
+Evasive,No,Defender,Yes,Enemies get -1 to hit rolls when attacking units where all models have this rule.
+Extended Buff Range,No,-,No,"If this unit is within 24"" of another friendly unit with this rule that has a Hero in it, then that Hero may use special rules that allow it to pick friendly units within 12"" (except for spells) on Rapid Advance: This model moves +4"" when using this unit as if it was in range."
+Fast Aura,No,-,No,"This model and its unit moves +2"" when using Advance actions and +4"" when using Rush/Charge actions."
+Ferocious,No,Attacker,Yes,"When attacking, unmodified results of 6 to hit deal 1 extra hit (only the original hit counts as a 6 for special rules)."
+Ferocious Boost,No,Attacker,Yes,"If this model has Ferocious, when it shoots or charges enemies over 9"" away, it deals extra hits on successful unmodified hit results of 5-6 from Ferocious (instead of only on 6)."
+Ferocious Boost Aura,No,-,No,This model and its unit get Ferocious Boost.
+Fortified,No,Defender,Yes,"When units where all models have this rule take hits, those hits count as having AP(-1), to a min. of AP(0)."
+Fortified Aura,No,-,No,This model and its unit get Fortified.
 Furious,No,Attacker,Yes,"When charging, unmodified results of 6 to hit in melee deal 1 extra hit (only the original hit counts as a 6 for special rules)."
 Furious Aura,No,-,No,This model and its unit get Furious.
+Good Shot,No,Attacker,Yes,This model gets +1 to hit rolls when shooting.
+Guarded,No,-,No,"When units where all models have this rule are shot or charged from over 9"" away, they get +1 to defense rolls."
+Guarded Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Guarded once (next time the effect would apply)."
+Harassing,No,-,No,"Once per round, units where all models have this rule may move by up to 3"" after shooting or being in melee."
+Harassing Boost,No,-,No,"If most models in this unit have Harassing, they may move by up to 6"" from Harassing (instead of only 3""). Hit & Run: Once per round, units where all models have this rule may move by up to 3"" after shooting or being in melee."
+Harassing Boost Aura,No,-,No,This model and its unit get Harassing Boost.
 Havocbound,No,Attacker,Yes,"When this model shoots at enemies over 9"" away, or when it charges, its weapons get AP(+1)."
 Havocbound Boost,No,-,No,"If this model has Havocbound, it always gets AP(+1) from Havocbound (instead of only when shooting over 9"" away, or when charging)."
 Havocbound Boost Aura,No,-,No,This model and its unit get Havocbound Boost. 3
+Heavy Impact,No,-,No,Counts as having Impact(X) with hits that have AP(1).
+Highborn,No,-,No,"Moves +2"" when using Advance, and +2"" when using Rush/Charge."
+Highborn Boost,No,-,No,"If this model has Highborn, it moves +4"" on Advance and +4"" on Rush/Charge from Highborn (instead of only +2"" and +2""). Hit & Run: Once per round, units where all models have this rule may move by up to 3"" after shooting or being in melee. Hit & Run Shooter: Once per round, units where all models have this rule may move by up to 3"" after shooting."
+Hold the Line,No,-,No,Units where all models have this rule get +1 to morale test rolls triggered by shooting/melee.
+Hold the Line Boost,No,-,No,"If all models in this unit have Hold the Line, they get +2 to morale test rolls from Hold the Line (instead of only +1)."
+Hold the Line Boost Aura,No,-,No,This model and its unit get Hold the Line Boost.
+Ignores Cover when Shooting Aura,No,-,No,This model and its unit get Ignores Cover when shooting.
 Impact,Yes,Attacker,Yes,"Roll X dice when attacking after charging, unless fatigued. For each 2+ the target takes one hit."
+Increased Shooting Range Aura,No,-,No,"This model and its unit get +6"" range when shooting."
 Indirect Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units gets Indirect against once (next time the effect would apply)."
 Infiltrate,No,-,No,"Counts as having Ambush, but may be deployed anywhere over 3"" away from enemy unit."
+Infiltrate Aura,No,-,No,This model and its unit get Infiltrate.
 Lacerate,No,Attacker,Yes,When attacking the target must re-roll unmodified Defense results of 6.
+Martial Prowess,No,-,No,"Once per game, if all models in this unit have this rule, it may be activated even if it had the number of markers on it. already activated this round (stops being fatigued when activated for the second time). Only up to one third of the units in the army with this rule at the beginning of the game (rounding up) may use it in a single round."
+Melee Evasion,No,Defender,Yes,Enemies get -1 to hit rolls in melee when attacking units where all models have this rule.
 Melee Shrouding,No,-,No,"Enemies get -3"" movement to a min. of 6"" when trying to charge units where all models have this rule."
 Melee Shrouding Aura,No,-,No,This model and its unit get Melee Shrouding.
+Melee Slayer,No,Attacker,Yes,"When this model charges, its weapons get AP(+2) if most models in the target have Tough(3) or higher."
 Mend,No,-,No,"Once per activation, before attacking, pick one friendly model within 3"" with Tough, and remove D3 wounds from it."
 Mobile Artillery,No,-,No,"When this model uses a Hold action and shoots at enemies over 9"" away, it gets +1 to hit rolls. As long this model hasn't moved during the round, when enemy units shoot at it from over 9"" away, they get -2 to hit rolls."
+Morale Debuff,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which gets -1 to morale test rolls once (next time the effect would apply)."
 No Retreat,No,-,No,"When a unit where most models have this rule fails a morale test that causes it to be Shaken or Routed, the test counts as passed instead. Then, roll as many dice as the number of wounds it would take to fully destroy it, and for each result of 1-3 the unit takes one wound, which can't be ignored."
 No Retreat Aura,No,-,No,This model and its unit get No Retreat.
+No Retreat Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets No Retreat once (next time the effect would apply)."
 Piercing Assault,No,Attacker,Yes,This model gets AP(+1) when charging.
 Piercing Assault Aura,No,-,No,This model and its unit get Piercing Assault.
+Piercing Frenzy,No,-,No,"Place one marker on this unit when it fully destroys an enemy unit, up to a max. of two markers. For each marker all models with this rule in this unit get AP(+1) on their weapons when attacking until the end of the game."
+Piercing Hunter,No,-,No,"When this model shoots at enemies over 9"" away, its weapons get AP(+1)."
+Piercing Hunter Aura,No,-,No,"This model and its unit get Psy-Adrenaline (1): Pick one friendly unit within 12"", which gets Harassing Boost once (next time the effect would apply). Snake Bite (1): Pick one enemy unit within 12"", which takes 2 hits with AP(1) and Lacerate. Raiding Drugs (2): Pick up to two enemy units within 18"", which friendly units get +1 to hit rolls in melee against once (next time the effect would apply). Art of Pain (2): Pick one enemy unit within 6"", which takes 2 hits with AP(2) and Deadly(3). Fade in the Dark (3): Pick up to three friendly units within 12"", which get Stealth once (next time the effect would apply). Holistic Suffering (3): Pick one enemy unit within 12"", which takes 9 hits."
+Piercing Shooting Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units gets AP(+1) when shooting against once (next time the effect would apply)."
+Piercing Spotter,No,-,No,"Once per activation, pick one enemy unit within 30"" and in line of sight of this model and roll one die, on a 4+ place a marker on it. When attacking, friendly units may remove markers from their target before rolling to block to get +AP(X) Highborn Boost Aura: This model and its unit get on their weapons, where X is the number of removed markers."
 Piercing Warrior,No,-,No,"When this model shoots at enemies over 9"" away, or when it charges, its weapons get AP(+1)."
+Point-Blank Piercing,No,-,No,"This model gets AP(+1) when shooting enemies within 12""."
+Point-Blank Piercing Aura,No,-,No,This model and its unit get Point-Blank Piercing.
+Point-Blank Surge,No,-,No,"When this model shoots at enemies within 12"", unmodified results of 6 to hit deal 1 extra hit (only the original hit counts as a 6 for special rules)."
+Precise,No,Attacker,Yes,Gets +1 to hit when attacking.
+Precision Charge Aura,No,Attacker,Yes,This model and its unit get +1 to hit rolls when charging.
+Precision Fighter Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets +1 to hit rolls in melee once (next time the effect would apply)."
+Precision Fighting Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units get +1 to hit rolls in melee Piercing Hunter. against once (next time the effect would apply)."
+Precision Frenzy,No,-,No,"Place one marker on this unit when it fully destroys an enemy unit, up to a max. of two markers. For each marker all models with this rule in this unit get +1 to hit rolls until the end of the game."
+Precision Hunter,No,-,No,"When this model shoots at enemies over 9"" away, it gets +1 to hit rolls."
+Precision Shooter Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets +1 to hit rolls when shooting once (next time the effect would apply)."
+Precision Spotter,No,-,No,"Once per activation, pick one enemy unit within 30"" and in line of sight of this model and roll one die, on a 4+ place a marker on it. Friendly units may remove markers from their target before rolling to hit to get +X to hit rolls when attacking, where X is the number of removed markers."
+Precision Target,No,-,No,"Once per game, during this model's activation, pick one enemy unit within 18"" and in line of sight of it, and place X markers on it. Friendly units get +X to hit rolls when attacking it."
+Predator,No,Attacker,Yes,"For each unmodified roll of 6 to hit when attacking, this model may roll +1 attack with that weapon. This rule doesn't apply to newly generated attacks."
+Primal,No,Attacker,Yes,"For each unmodified roll of 6 to hit when attacking, this model may roll +1 attack with that weapon. This rule doesn't apply to newly generated attacks."
+Primal Boost,No,-,No,"If this model has Primal, it gets extra attacks on successful unmodified hit results of 5-6 from Primal (instead of only on 6)."
+Primal Boost Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Primal Boost once (next time the effect would apply)."
+Primeborn,No,Defender,Yes,"When units where all models have this rule are shot or charged from over 9"" away and take hits, those hits count as having AP(-1), to a min. of AP(0)."
 Protected,No,Defender,Yes,"When a unit where all models have this rule takes wounds, roll one die for each. On a 6+ it is ignored."
 Protection Feat,No,-,No,"Once per game, when this unit takes wounds and all its models have this rule, you may use this rule and roll one die per wound, and on a 5+ it is ignored."
 Protection Feat Aura,No,-,No,This model and its unit get Protection Feat.
+Quick,No,-,No,"Moves +2"" when using Advance, and +2"" when using Rush/Charge."
+Ranged Slayer,No,-,No,"When this model shoots at enemies over 9"" away, its weapons get AP(+2) if most models in the target have Tough(3) or higher."
+Ranged Slayer Aura,No,-,No,This model and its unit get Ranged Slayer.
 Rapid Advance,No,-,No,"This model moves +4"" when using Advance actions."
+Rapid Advance Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Rapid Advance once (next time the effect would apply). 3"
+Rapid Charge Aura,No,-,No,"This model and its unit moves +4"" when using Charge actions."
 Rapid Rush,No,-,No,"This model moves +6"" when using Rush actions."
 Rapid Rush Aura,No,-,No,This model and its unit get Rapid
 Ravage,Yes,Attacker,Yes,"When it's this model's turn to attack in melee, roll X dice. For each 6+ the target takes one wound."
@@ -45,33 +123,59 @@ Reanimation,No,-,No,"When a unit where all models have this rule is activated, r
 Reanimation Aura,No,-,No,This model and its unit get Reanimation.
 Regeneration,No,Defender,Yes,"When a unit where all models have this rule takes wounds, roll one die for each. On a 5+ it is ignored."
 Regeneration Aura,No,-,No,This model and its unit get Regeneration.
+Regeneration Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Regeneration once (next time the effect would apply)."
+Regenerative Strength,No,-,No,"Place one marker on this model when it ignores a wound. When in melee, pick one of its weapons to get +X attacks, where X is"
 Relentless,No,Attacker,Yes,"When this model shoots at enemies over 9"" away, unmodified results of 6 to hit deal 1 extra hit (only the original hit counts as a 6 for special rules)."
 Relentless Aura,No,-,No,This model and its unit get Relentless.
+Relentless Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units gets Relentless against once (next time the effect would apply)."
 Reliable,No,Attacker,Yes,Attacks at Quality 2+.
 Rending,No,Attacker,Yes,"Ignores Regeneration, and on unmodified results of 6 to hit, those hits get AP(+4)."
+Rending when Shooting Aura,No,-,No,This model and its unit get Rending when shooting.
 Repel Ambushers,No,-,No,"Enemy units using Ambush must be set up over 12"" away from this model's unit."
 Resistance,No,-,No,"When a unit where all models have this rule takes wounds, roll one die for each. On a 6+ it is ignored. If the wounds were from a spell, then they are ignored on a 2+ instead."
 Resistance Aura,No,-,No,This model and its unit get Resistance.
+Retaliate,No,-,No,"When this model takes wounds in melee, the attacker takes X hits per wound taken."
 Scout Aura,No,-,No,This model and its unit get Scout.
 Self-Repair,No,Defender,Yes,"When a unit where all models have this rule takes wounds, roll one die for each. On a 6+ it is ignored."
 Self-Repair Boost,No,Defender,Yes,"If all models in this unit have Self- its unit get Unstoppable when shooting. Repair, they ignore wounds on rolls of 5-6 from Self- Repair (instead of only on 6+)."
 Self-Repair Boost Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Self-Repair Boost once (next time the effect would apply)."
+Shatter,No,Attacker,Yes,"Against units where most models have Tough(3) or higher, this weapon gets AP(+2)."
 Shielded,No,Defender,Yes,Units where all models have this rule get +1 to defense rolls against hits that are not from spells.
 Shred,No,Attacker,Yes,"On unmodified results of 1 to block hits, this weapon deals 1 extra wound."
+Shred in Melee Aura,No,-,No,"This model and its unit get Shred in melee. Burn the Heretic (1): Pick one enemy unit within 18"", which gets -3 to casting rolls once (next time the effect would apply). Righteous Wrath (1): Pick one enemy model within 24"", which takes 1 hit with AP(4). This effect is resolved as if the target was a unit of [1]. Holy Rage (2): Pick up to two friendly units within 12"", which get Piercing Hunter once (next time the effect would apply). Eternal Flame (2): Pick one enemy unit within 6"", which takes 6 hits with Disintegrate. Litanies of War (3): Pick up to three friendly units within 12"", which get Devout Boost once (next time the effect would apply). Searing Admonition (3): Pick one enemy unit within 18"", which takes 3 hits with Blast(3)."
+Slayer,No,-,No,"When this model shoots at enemies over 9"" away, or when it charges, its weapons get AP(+2) if most models in the target have Tough(3) or higher."
 Spawn,No,-,No,"Once per game, when this model is activated, you may place a new unit of X fully within 6"" of it."
+Speed Debuff,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which moves -2"" when using Advance actions and -4"" when using Rush/Charge actions once (next time the effect would apply)."
+Spell Conduit,No,-,No,"Casters within 12"" that are from other friendly units may cast spells as if they were in this model's position, and get +1 to casting rolls when doing so. Friendly casters may only use this rule if this unit isn't Shaken."
 Steadfast,No,-,No,"If a unit where all models have this rule is Shaken at the beginning of the round, roll one die. On a 4+, it stops being Shaken."
 Steadfast Aura,No,-,No,This model and its unit get Steadfast.
+Stealth,No,Defender,Yes,"When units where all models have this rule are shot from over 9"" away, enemy units get -1 to hit rolls."
 Stealth Aura,No,-,No,This model and its unit get Stealth.
+Strafing,No,-,No,"Once per activation, when this model moves through enemy units, pick one of them and attack it with this weapon as if it was shooting. This units within 12"", which get Targeting Visor Boost weapon may only be used in this way."
+Sturdy,No,Defender,Yes,"When units where all models have this rule are shot or charged from over 9"" away, they get +1 to defense rolls."
+Sturdy Boost,No,-,No,"If all models in this unit have Sturdy, they always get +1 to defense rolls from Sturdy (instead of only when being shot/charged from over 9"" away)."
+Sturdy Boost Aura,No,-,No,This model and its unit get Sturdy Boost.
 Surge,No,Attacker,Yes,"On unmodified results of 6 to hit, this weapon deals 1 extra hit (only the original hit counts as a 6 for special rules)."
 Swift,No,-,No,This model may ignore the Slow rule.
+Swift Aura,No,-,No,This model and its unit get Swift.
 Swift Buff,No,-,No,"Once per activation, before attacking, pick one friendly unit within 12"", which gets Swift once (next time the effect would apply)."
+Targeting Visor,No,Attacker,Yes,"When this model shoots at enemies over 9"" away, it gets +1 to hit rolls."
+Targeting Visor Boost,No,-,No,"If this model has Targeting Visor, it always gets +1 to hit rolls when shooting from Targeting Visor (instead of only when shooting over 9"" away)."
+Targeting Visor Boost Aura,No,-,No,"This model and its unit get Targeting Visor Boost. Aura of Peace (1): Pick one friendly unit within 12"", which gets Fearless once (next time the effect would apply). Killing Blow (1): Pick one enemy model within 18"", which takes 2 hits with AP(1). This effect is resolved as if the target was a unit of [1]. Psychic Stabilization (2): Pick up to two friendly once (next time the effect would apply). Deadly Surge (2): Pick one enemy unit within 6"", which takes 6 hits with Bane. Coordinated Aggression (3): Pick up to three enemy units within 18"", which friendly units gets AP(1) when shooting against once (next time the effect would apply). Devastating Strike (3): Pick one enemy unit within 12"", which takes 6 hits with Disintegrate."
+Tear,No,Attacker,Yes,"Against units where most models have Tough(9) or higher, this weapon gets AP(+4)."
+Teleport,No,-,No,"Once per activation, before attacking, you position when using Advance/Charge actions, or fully within 6"" of its position when using Rush actions."
 Thrust,No,Attacker,Yes,"When charging, gets +1 to hit rolls and AP(+1) in melee."
 Tough,Yes,Defender,Yes,"This model must take X wounds before being killed. If a model with tough joins a unit without it, then it is removed last when the unit takes wounds."
 Unpredictable,No,Attacker,Yes,"When attacking, roll one die and apply one effect to all models with this rule: on a 1-3 they get AP(+1), and on a 4-6 they get +1 to hit rolls instead."
 Unpredictable Fighter,No,Attacker,Yes,"When in melee, roll one die and apply one effect to all models with this rule: on a 1-3 they get AP(+1), and on a 4-6 they get +1 to hit rolls instead."
+Unpredictable Fighter Aura,No,-,No,"This model and its unit get Unpredictable Fighter. Battle Rune (1): Pick one friendly unit within 12"", which gets +6"" range when shooting once (next time the effect would apply). 24"", which takes 1 hit with AP(4). This effect is resolved as if the target was a unit of [1]. Armor Rune (2): Pick up to two friendly units within 12"", which get Sturdy Boost once (next time the effect would apply). Smiting Rune (2): Pick one enemy unit within 12"", which takes 4 hits with AP(1) and Shred. Deceleration Rune (3): Pick up to three enemy units within 18"", which moves -2"" when using Advance actions and -4"" when using Rush/Charge actions once (next time the effect would apply). Cleaving Rune (3): Pick one enemy unit within 18"", which takes 3 hits with Blast(3)."
+Unpredictable Shooter,No,-,No,"When shooting, roll one die and apply one effect to all models with this rule: on a 1-3 they get AP(+1), and on a 4-6 they get +1 to hit rolls instead."
 Unstoppable,No,Attacker,Yes,"Ignores Regeneration, and ignores all negative modifiers to this weapon."
 Unstoppable Mark,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which friendly units gets Unstoppable against once (next time the effect would apply)."
 Unstoppable when Shooting Aura,No,-,No,"This model and Triangulation Bots (1): Pick one enemy unit within 18"", which friendly units gets Indirect when shooting against once (next time the effect would apply). Piercing Bots (1): Pick one enemy unit within 12"", which takes 2 hits with AP(2). Inspiring Bots (2): Pick up to two friendly units within 12"", which get Rapid Advance once (next time the effect would apply). Flame Bots (2): Pick up to two enemy units within 9"", which take 4 hits each. Mending Bots (3): Pick up to three friendly units within 12"", which get Self-Repair Boost once (next time the effect would apply). Gauss Bots (3): Pick one enemy unit within 6"", which takes 9 hits with Destructive. Roll as many dice as hits to see if ""on rolls of 6"" effects trigger."
+Unwieldy,No,-,No,Strikes last when charging.
+Unwieldy Debuff,No,-,No,"Once per activation, before attacking, pick one enemy unit within 18"" in line of sight, which gets Unwieldy in melee once (next time the effect would apply). Highborn Boost. 3"
+Vanguard,No,-,No,"After this model is deployed, it may be placed anywhere fully within 9"" of its position."
 Versatile Attack,No,Attacker,Yes,"When this unit is activated, pick one effect: until the end of the activation, when shooting or charging enemies over 9"" away, all models with this rule in this unit either get AP(+1) or get +1 to hit rolls."
 Versatile Defense,No,-,No,"When a unit where all models have this rule is deployed or activated, pick one effect: when shot or charged from over 9"" away, the unit either gets +1 to defense rolls, or enemy units get -1 to hit rolls against it. This effect lasts until the 12"", which get Shred in melee once (next time the units' next activation."
 Versatile Defense Aura,No,-,No,"This model and its unit get Versatile Defense. Cursed Stride (1): Pick one enemy unit within 18"", which counts as being in Dangerous Terrain once (next time the effect would apply). Havoc Trauma (1): Pick one enemy unit within 12"", which takes 2 hits with AP(2). Dark Assault (2): Pick up to two friendly units within effect would apply). Havoc Terror (2): Pick up to two enemy units within 9"", which take 4 hits each. Havoc Boon (3): Pick up to three friendly units within 12"", which get Havocbound Boost once (next time the effect would apply). Havoc Fog (3): Pick one enemy unit within 12"", which takes 6 hits with AP(1) and Shred."

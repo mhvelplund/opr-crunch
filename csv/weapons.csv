@@ -606,3 +606,1804 @@ Wrist-Flamer,Robot Legions,Annihilator Lord,12,1,0,3,0,0,Reliable,5
 Wrist-Flamer,Robot Legions,Robot Lord,12,1,0,3,0,0,Reliable,10
 Wrist-Plasma,Robot Legions,Annihilator Lord,24,1,4,0,0,0,,15
 Wrist-Plasma,Robot Legions,Robot Lord,24,1,4,0,0,0,,20
+Angelic High Sister,Blessed Sisters,Procession Altar,0,0,0,0,0,0,,120
+Anti-Tank Cannon,Blessed Sisters,Battle Tank,30,1,3,0,6,0,,0
+Backpack Missiles,Blessed Sisters,Exo-Suit High Sister,24,1,1,3,0,0,Indirect,40
+Bash,Blessed Sisters,Assault Walker,0,1,0,0,0,0,,40
+Bash,Blessed Sisters,Support Walker,0,1,0,0,0,0,,80
+Battle Cannon,Blessed Sisters,Battle Tank,30,2,2,3,0,0,,5
+Blessed Flamer,Blessed Sisters,Celestial Warrior Sisters,12,1,0,3,0,0,"Reliable, Disintegrate",10
+Blessed Flamer,Blessed Sisters,Exo-Suit,12,1,0,3,0,0,"Reliable, Disintegrate",25
+Blessed Flamer,Blessed Sisters,Exo-Suit High Sister,12,1,0,3,0,0,"Reliable, Disintegrate",25
+Blessed Flamer,Blessed Sisters,Infernal APC,12,1,0,3,0,0,"Reliable, Disintegrate",0
+Blessed Flamer,Blessed Sisters,Organ Tank,12,1,0,3,0,0,"Reliable, Disintegrate",0
+Blessed Flamer,Blessed Sisters,Warrior Sisters,12,1,0,3,0,0,"Reliable, Disintegrate",15
+Blessed Flamer Pistol,Blessed Sisters,Assault Sisters,6,1,0,3,0,0,"Reliable, Disintegrate",5
+Blessed Flamer Pistol,Blessed Sisters,Protector Sisters,6,1,0,3,0,0,"Reliable, Disintegrate",5
+Blessed Flamers,Blessed Sisters,Battle Tank,12,1,0,3,0,0,"Reliable, Fear(2), Fearless, Piercing Assault, Regeneration",0
+Blessed Flamers,Blessed Sisters,Support Sisters,12,1,0,3,0,0,"Reliable, Fear(2), Fearless, Piercing Assault, Regeneration",0
+CCW,Blessed Sisters,Biker Sisters,0,1,0,0,0,0,,5
+CCW,Blessed Sisters,Celestial High Sister,0,4,0,0,0,0,,0
+CCW,Blessed Sisters,Destroyer Sisters,0,1,0,0,0,0,,75
+CCW,Blessed Sisters,High Destroyer Sister,0,4,0,0,0,0,,65
+CCW,Blessed Sisters,High Sister,0,4,0,0,0,0,,0
+CCW,Blessed Sisters,Novice Leader,0,4,0,0,0,0,,0
+CCW (A1),Blessed Sisters,Novice Sisters,0,1,0,0,0,0,,30
+CCW (A2),Blessed Sisters,Novice Sisters,0,2,0,0,0,0,,30
+CCWs,Blessed Sisters,Biker Sisters,0,1,0,0,0,0,,0
+CCWs,Blessed Sisters,Destroyer Sisters,0,1,0,0,0,0,,0
+CCWs,Blessed Sisters,Pistoleer Sisters,0,1,0,0,0,0,,0
+CCWs,Blessed Sisters,Support Sisters,0,1,0,0,0,0,,0
+CCWs,Blessed Sisters,Warrior Sisters,0,1,0,0,0,0,,0
+Chain-Fist,Blessed Sisters,Celestial High Sister,0,1,2,0,3,0,,15
+Chain-Fist,Blessed Sisters,Destroyer Sisters,0,1,2,0,3,0,,10
+Chain-Fist,Blessed Sisters,High Destroyer Sister,0,2,2,0,3,0,,25
+Chain-Fist,Blessed Sisters,High Sister,0,1,2,0,3,0,,10
+Chain-Fist,Blessed Sisters,Novice Leader,0,1,2,0,3,0,,10
+Crossbow-Mod,Blessed Sisters,Celestial High Sister,24,1,1,0,0,0,"Limited, Reliable, Takedown",10
+Crossbow-Mod,Blessed Sisters,High Sister,24,1,1,0,0,0,"Limited, Reliable, Takedown",10
+Crossbow-Mod,Blessed Sisters,Novice Leader,24,1,1,0,0,0,"Limited, Reliable, Takedown",10
+Dual Arc-Flails,Blessed Sisters,Fanatic Sisters,0,2,0,0,0,0,Rending,25
+Dual Energy Claws,Blessed Sisters,Destroyer Sisters,0,4,0,0,0,0,Rending,35
+Dual Energy Claws,Blessed Sisters,High Destroyer Sister,0,8,0,0,0,0,Rending,30
+Dual Force Whip,Blessed Sisters,Fanatic Superior,0,1,2,0,3,0,,10
+Dual Plasma Whip,Blessed Sisters,Fanatic Superior,0,2,4,0,0,0,,10
+Energy Fist,Blessed Sisters,Biker Sisters,0,2,4,0,0,0,,5
+Energy Fist,Blessed Sisters,Celestial High Sister,0,2,4,0,0,0,,20
+Energy Fist,Blessed Sisters,Celestial Warrior Sisters,0,2,4,0,0,0,,10
+Energy Fist,Blessed Sisters,Destroyer Sisters,0,3,4,0,0,0,,20
+Energy Fist,Blessed Sisters,High Destroyer Sister,0,4,4,0,0,0,,30
+Energy Fist,Blessed Sisters,High Sister,0,2,4,0,0,0,,15
+Energy Fist,Blessed Sisters,Novice Leader,0,2,4,0,0,0,,10
+Energy Fist,Blessed Sisters,Vanguard Sisters,0,2,4,0,0,0,,5
+Energy Fist,Blessed Sisters,Warrior Sisters,0,2,4,0,0,0,,5
+Energy Hammer,Blessed Sisters,Destroyer Sisters,0,1,0,3,0,0,,0
+Energy Lance,Blessed Sisters,Biker Sisters,0,2,1,0,0,0,Thrust,5
+Energy Mace,Blessed Sisters,Exo-Suit,0,1,2,3,0,0,,0
+Energy Sword,Blessed Sisters,Biker Sisters,0,2,1,0,0,0,Rending,10
+Energy Sword,Blessed Sisters,Celestial High Sister,0,2,1,0,0,0,Rending,10
+Energy Sword,Blessed Sisters,Celestial Warrior Sisters,0,2,1,0,0,0,Rending,5
+Energy Sword,Blessed Sisters,Destroyer Sisters,0,3,1,0,0,0,Rending,15
+Energy Sword,Blessed Sisters,Exo-Suit,0,3,1,0,0,0,Rending,10
+Energy Sword,Blessed Sisters,High Destroyer Sister,0,4,1,0,0,0,Rending,20
+Energy Sword,Blessed Sisters,High Sister,0,2,1,0,0,0,Rending,10
+Energy Sword,Blessed Sisters,Novice Leader,0,2,1,0,0,0,Rending,10
+Energy Sword,Blessed Sisters,Pistoleer Sisters,0,2,1,0,0,0,Rending,5
+Energy Sword,Blessed Sisters,Vanguard Sisters,0,2,1,0,0,0,Rending,5
+Energy Sword,Blessed Sisters,Warrior Sisters,0,2,1,0,0,0,Rending,5
+Energy Swords,Blessed Sisters,Assault Sisters,0,2,1,0,0,0,Rending,0
+Flamer,Blessed Sisters,APC,12,1,0,3,0,0,Reliable,20
+Flamer,Blessed Sisters,Battle Tank,12,1,0,3,0,0,Reliable,20
+Flamer,Blessed Sisters,Biker Sisters,12,1,0,3,0,0,Reliable,5
+Flamer,Blessed Sisters,Celestial Warrior Sisters,12,1,0,3,0,0,Reliable,5
+Flamer,Blessed Sisters,Infernal APC,12,1,0,3,0,0,Reliable,20
+Flamer,Blessed Sisters,Novice Sisters,12,1,0,3,0,0,Reliable,15
+Flamer,Blessed Sisters,Vanguard Sisters,12,1,0,3,0,0,Reliable,5
+Flamer,Blessed Sisters,Warrior Sisters,12,1,0,3,0,0,Reliable,5
+Flamer Pistol,Blessed Sisters,Celestial High Sister,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Blessed Sisters,High Sister,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Blessed Sisters,Novice Leader,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Blessed Sisters,Pistoleer Sisters,6,1,0,3,0,0,Reliable,5
+Flamer Sniper Rifle,Blessed Sisters,Vanguard Sisters,18,2,0,0,0,0,"Reliable, Disintegrate, Takedown",25
+Flamer-Mod,Blessed Sisters,Celestial High Sister,12,1,0,3,0,0,"Limited, Reliable",5
+Flamer-Mod,Blessed Sisters,High Sister,12,1,0,3,0,0,"Limited, Reliable",5
+Flamer-Mod,Blessed Sisters,Novice Leader,12,1,0,3,0,0,"Limited, Reliable",5
+Fusion Pistol,Blessed Sisters,Assault Sisters,6,1,4,0,3,0,,10
+Fusion Pistol,Blessed Sisters,Celestial High Sister,6,1,4,0,3,0,,15
+Fusion Pistol,Blessed Sisters,High Sister,6,1,4,0,3,0,,10
+Fusion Pistol,Blessed Sisters,Novice Leader,6,1,4,0,3,0,,5
+Fusion Pistol,Blessed Sisters,Pistoleer Sisters,6,1,4,0,3,0,,10
+Fusion Pistol,Blessed Sisters,Protector Sisters,6,1,4,0,3,0,,10
+Fusion Rifle,Blessed Sisters,APC,12,1,4,0,3,0,,30
+Fusion Rifle,Blessed Sisters,Battle Tank,12,1,4,0,3,0,,30
+Fusion Rifle,Blessed Sisters,Biker Sisters,12,1,4,0,3,0,,15
+Fusion Rifle,Blessed Sisters,Celestial Warrior Sisters,12,1,4,0,3,0,,20
+Fusion Rifle,Blessed Sisters,Infernal APC,12,1,4,0,3,0,,30
+Fusion Rifle,Blessed Sisters,Novice Sisters,12,1,4,0,3,0,,20
+Fusion Rifle,Blessed Sisters,Vanguard Sisters,12,1,4,0,3,0,,15
+Fusion Rifle,Blessed Sisters,Warrior Sisters,12,1,4,0,3,0,,15
+Fusion-Mod,Blessed Sisters,Celestial High Sister,12,1,4,0,3,0,Limited,10
+Fusion-Mod,Blessed Sisters,High Sister,12,1,4,0,3,0,Limited,10
+Fusion-Mod,Blessed Sisters,Novice Leader,12,1,4,0,3,0,Limited,5
+GL-Mod,Blessed Sisters,Exo-Suit,24,1,0,3,0,0,,20
+GL-Mod,Blessed Sisters,Exo-Suit High Sister,24,1,0,3,0,0,,20
+Great Energy Sword,Blessed Sisters,Exo-Suit High Sister,0,6,2,0,0,0,Rending,0
+Great Weapon,Blessed Sisters,Novice Sisters,0,2,1,0,0,0,,30
+Halberds,Blessed Sisters,Protector Sisters,0,2,0,0,0,0,Rending,0
+Heavy Chainsaw,Blessed Sisters,Assault Walker,0,1,4,0,3,0,,15
+Heavy Chainsaw,Blessed Sisters,Support Walker,0,1,4,0,3,0,,15
+Heavy Chainsaw Sword,Blessed Sisters,Celestial High Sister,0,4,1,0,0,0,,15
+Heavy Chainsaw Sword,Blessed Sisters,High Sister,0,4,1,0,0,0,,10
+Heavy Chainsaw Sword,Blessed Sisters,Novice Leader,0,4,1,0,0,0,,10
+Heavy Chainsaw Swords,Blessed Sisters,Biker Fanatics,0,4,1,0,0,0,,0
+Heavy Claw,Blessed Sisters,Assault Walker,0,4,1,0,0,0,Rending,25
+Heavy Claw,Blessed Sisters,Support Walker,0,4,1,0,0,0,Rending,25
+Heavy Energy Mace,Blessed Sisters,Exo-Suit,0,2,2,3,0,0,,20
+Heavy Energy Sword,Blessed Sisters,Exo-Suit,0,6,1,0,0,0,Rending,35
+Heavy Fist,Blessed Sisters,Assault Walker,0,4,4,0,0,0,,30
+Heavy Fist,Blessed Sisters,Support Walker,0,4,4,0,0,0,,35
+Heavy Flails,Blessed Sisters,Assault Walker,0,1,1,3,0,0,,0
+Heavy Flails,Blessed Sisters,Support Walker,0,1,1,3,0,0,,0
+Heavy Fusion Rifle,Blessed Sisters,Battle Tank,18,1,4,0,3,0,,15
+Heavy Fusion Rifle,Blessed Sisters,Celestial Warrior Sisters,18,1,4,0,3,0,,35
+Heavy Fusion Rifle,Blessed Sisters,Exo-Suit,18,1,4,0,3,0,,40
+Heavy Fusion Rifle,Blessed Sisters,Infernal APC,18,1,4,0,3,0,,15
+Heavy Fusion Rifle,Blessed Sisters,Organ Tank,18,1,4,0,3,0,,15
+Heavy Fusion Rifle,Blessed Sisters,Support Sisters,18,1,4,0,3,0,,20
+Heavy Fusion Rifle,Blessed Sisters,Warrior Sisters,18,1,4,0,3,0,,30
+Heavy Hull-Flamer,Blessed Sisters,Blessed Titan,12,1,1,3,0,0,Reliable,5
+Heavy Mace,Blessed Sisters,Celestial High Sister,0,1,2,3,0,0,,15
+Heavy Mace,Blessed Sisters,Destroyer Sisters,0,1,2,3,0,0,,5
+Heavy Mace,Blessed Sisters,High Destroyer Sister,0,2,2,3,0,0,,20
+Heavy Mace,Blessed Sisters,High Sister,0,1,2,3,0,0,,10
+Heavy Mace,Blessed Sisters,Novice Leader,0,1,2,3,0,0,,5
+Heavy Machinegun,Blessed Sisters,Battle Tank,30,3,1,0,0,0,,15
+Heavy Machinegun,Blessed Sisters,Celestial Warrior Sisters,30,3,1,0,0,0,,35
+Heavy Machinegun,Blessed Sisters,Exo-Suit,30,3,1,0,0,0,,40
+Heavy Machinegun,Blessed Sisters,Exo-Suit High Sister,30,3,1,0,0,0,,40
+Heavy Machinegun,Blessed Sisters,Infernal APC,30,3,1,0,0,0,,15
+Heavy Machinegun,Blessed Sisters,Organ Tank,30,3,1,0,0,0,,15
+Heavy Machinegun,Blessed Sisters,Support Sisters,30,3,1,0,0,0,,20
+Heavy Machinegun,Blessed Sisters,Warrior Sisters,30,3,1,0,0,0,,30
+Heavy Pistols,Blessed Sisters,Assault Sisters,12,1,1,0,0,0,,0
+Heavy Pistols,Blessed Sisters,Biker Sisters,12,1,1,0,0,0,,0
+Heavy Pistols,Blessed Sisters,Protector Sisters,12,1,1,0,0,0,,0
+Heavy Rifle,Blessed Sisters,Biker Sisters,24,1,1,0,0,0,,5
+Heavy Rifles,Blessed Sisters,Celestial Warrior Sisters,24,1,1,0,0,0,,0
+Heavy Rifles,Blessed Sisters,Warrior Sisters,24,1,1,0,0,0,,0
+Holy Spear,Blessed Sisters,Celestial High Sister,0,4,2,0,0,0,Reliable,45
+Holy Spear,Blessed Sisters,High Sister,0,4,2,0,0,0,Reliable,45
+Holy Spear,Blessed Sisters,Novice Leader,0,4,2,0,0,0,Reliable,50
+Holy Statue's Flame Blasts,Blessed Sisters,Procession Altar,12,2,0,3,0,0,"Reliable, Disintegrate",10
+Holy Statue's Flame Strikes,Blessed Sisters,Procession Altar,0,5,0,0,0,0,"Reliable, Precision Fighter Buff",0
+Hull-Fuser,Blessed Sisters,Blessed Titan,12,1,4,0,3,0,,10
+Hull-Machinegun,Blessed Sisters,Blessed Titan,30,3,1,0,0,0,,30
+Hunter Missiles,Blessed Sisters,APC,24,1,2,0,3,0,Limited,15
+Hunter Missiles,Blessed Sisters,Battle Tank,24,1,2,0,3,0,Limited,15
+Hunter Missiles,Blessed Sisters,Infernal APC,24,1,2,0,3,0,"Limited, Unstoppable",15
+Hunter Missiles,Blessed Sisters,Organ Tank,24,1,2,0,3,0,Limited,15
+Light Chainsaw,Blessed Sisters,Assault Walker,0,1,2,0,3,0,,20
+Light Chainsaw,Blessed Sisters,Support Walker,0,1,2,0,3,0,,15
+Light Claw,Blessed Sisters,Assault Walker,0,2,1,0,0,0,Rending,15
+Light Claw,Blessed Sisters,Support Walker,0,2,1,0,0,0,Rending,15
+Light Fist,Blessed Sisters,Assault Walker,0,2,4,0,0,0,,20
+Light Fist,Blessed Sisters,Support Walker,0,2,4,0,0,0,,20
+Light Flail,Blessed Sisters,Assault Walker,0,1,0,3,0,0,,5
+Light Flail,Blessed Sisters,Support Walker,0,1,0,3,0,0,,5
+Mace,Blessed Sisters,Protector Sisters,0,2,2,0,0,0,,10
+Master Flamer Sniper Rifle,Blessed Sisters,Celestial High Sister,18,3,0,0,0,0,"Reliable, Disintegrate, Takedown",55
+Master Flamer Sniper Rifle,Blessed Sisters,High Sister,18,3,0,0,0,0,"Reliable, Disintegrate, Takedown",55
+Master Flamer Sniper Rifle,Blessed Sisters,Novice Leader,18,3,0,0,0,0,"Reliable, Disintegrate, Takedown",55
+Master Heavy Pistol,Blessed Sisters,Celestial High Sister,12,2,1,0,0,0,,10
+Master Heavy Pistol,Blessed Sisters,High Sister,12,2,1,0,0,0,,10
+Master Heavy Pistol,Blessed Sisters,Novice Leader,12,2,1,0,0,0,,5
+Master Heavy Rifle,Blessed Sisters,Celestial High Sister,24,2,1,0,0,0,,25
+Master Heavy Rifle,Blessed Sisters,High Sister,24,2,1,0,0,0,,20
+Master Heavy Rifle,Blessed Sisters,Novice Leader,24,2,1,0,0,0,,15
+Master Plasma Pistol,Blessed Sisters,Celestial High Sister,12,2,4,0,0,0,,25
+Master Plasma Pistol,Blessed Sisters,High Sister,12,2,4,0,0,0,,20
+Master Plasma Pistol,Blessed Sisters,Novice Leader,12,2,4,0,0,0,,10
+Master Plasma Rifle,Blessed Sisters,Celestial High Sister,24,2,4,0,0,0,,50
+Master Plasma Rifle,Blessed Sisters,High Sister,24,2,4,0,0,0,,40
+Master Plasma Rifle,Blessed Sisters,Novice Leader,24,2,4,0,0,0,,30
+Master Shotgun,Blessed Sisters,Celestial High Sister,12,3,1,0,0,0,,20
+Master Shotgun,Blessed Sisters,High Sister,12,3,1,0,0,0,,15
+Master Shotgun,Blessed Sisters,Novice Leader,12,3,1,0,0,0,,10
+Master Shred Pistol,Blessed Sisters,Celestial High Sister,9,4,0,0,0,0,Rending,20
+Master Shred Pistol,Blessed Sisters,High Sister,9,4,0,0,0,0,Rending,15
+Master Shred Pistol,Blessed Sisters,Novice Leader,9,4,0,0,0,0,Rending,15
+Master Storm Rifle,Blessed Sisters,Celestial High Sister,24,4,1,0,0,0,,60
+Master Storm Rifle,Blessed Sisters,High Sister,24,4,1,0,0,0,,45
+Master Storm Rifle,Blessed Sisters,Novice Leader,24,4,1,0,0,0,,35
+Organ Mortar Array,Blessed Sisters,Organ Tank,36,3,1,3,0,0,Indirect,20
+Pistol,Blessed Sisters,Novice Sisters,12,1,0,0,0,0,,30
+Plasma Pistol,Blessed Sisters,Assault Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Biker Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Celestial Warrior Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Pistoleer Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Protector Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Vanguard Sisters,12,1,4,0,0,0,,5
+Plasma Pistol,Blessed Sisters,Warrior Sisters,12,1,4,0,0,0,,5
+Plasma Rifle,Blessed Sisters,Biker Sisters,24,1,4,0,0,0,,10
+Plasma Rifle,Blessed Sisters,Celestial Warrior Sisters,24,1,4,0,0,0,,15
+Plasma Rifle,Blessed Sisters,Vanguard Sisters,24,1,4,0,0,0,,10
+Plasma Rifle,Blessed Sisters,Warrior Sisters,24,1,4,0,0,0,,10
+Plasma-Mod,Blessed Sisters,Celestial High Sister,24,1,4,0,0,0,Limited,10
+Plasma-Mod,Blessed Sisters,High Sister,24,1,4,0,0,0,Limited,5
+Plasma-Mod,Blessed Sisters,Novice Leader,24,1,4,0,0,0,Limited,5
+Procession Sword,Blessed Sisters,Celestial High Sister,0,2,1,0,0,0,"Reliable, Rending",20
+Procession Sword,Blessed Sisters,High Sister,0,2,1,0,0,0,"Reliable, Rending",20
+Procession Sword,Blessed Sisters,Novice Leader,0,2,1,0,0,0,"Reliable, Rending",20
+Procession Sword,Blessed Sisters,Protector Sisters,0,2,1,0,0,0,"Reliable, Rending",40
+Rapid Blessed Flamer,Blessed Sisters,Assault Walker,12,2,0,3,0,0,"Reliable, Disintegrate",40
+Rapid Heavy Machinegun,Blessed Sisters,Support Walker,30,6,1,0,0,0,,80
+Rapid Storm Rifle,Blessed Sisters,High Destroyer Sister,24,6,1,0,0,0,,65
+Rifle,Blessed Sisters,Novice Sisters,24,1,0,0,0,0,,30
+Sacred Spear,Blessed Sisters,Protector Sisters,0,1,2,0,3,0,,5
+Sgt. Heavy Pistol,Blessed Sisters,Biker Sisters,12,1,1,0,0,0,,10
+Sgt. Heavy Pistol,Blessed Sisters,Celestial Warrior Sisters,12,1,1,0,0,0,,5
+Sgt. Heavy Pistol,Blessed Sisters,Pistoleer Sisters,12,1,1,0,0,0,,5
+Sgt. Heavy Pistol,Blessed Sisters,Vanguard Sisters,12,1,1,0,0,0,,5
+Sgt. Heavy Pistol,Blessed Sisters,Warrior Sisters,12,1,1,0,0,0,,5
+Shotgun,Blessed Sisters,Vanguard Sisters,12,2,1,0,0,0,,0
+Shred Pistol,Blessed Sisters,Biker Sisters,9,2,0,0,0,0,Rending,5
+Shred Pistol,Blessed Sisters,Celestial Warrior Sisters,9,2,0,0,0,0,Rending,5
+Shred Pistol,Blessed Sisters,Vanguard Sisters,9,2,0,0,0,0,Rending,5
+Shred Pistol,Blessed Sisters,Warrior Sisters,9,2,0,0,0,0,Rending,5
+Shred Rifle,Blessed Sisters,Celestial Warrior Sisters,18,2,0,0,0,0,Rending,10
+Shred Rifle,Blessed Sisters,Vanguard Sisters,18,2,0,0,0,0,Rending,10
+Shred Rifle,Blessed Sisters,Warrior Sisters,18,2,0,0,0,0,Rending,10
+Spear,Blessed Sisters,Protector Sisters,0,2,0,0,0,0,Counter,5
+Stomp,Blessed Sisters,Assault Walker,0,3,1,0,0,0,,0
+Stomp,Blessed Sisters,Blessed Titan,0,3,1,0,0,0,,0
+Stomp,Blessed Sisters,Exo-Suit,0,3,1,0,0,0,,0
+Stomp,Blessed Sisters,Exo-Suit High Sister,0,3,1,0,0,0,,0
+Stomp,Blessed Sisters,Support Walker,0,3,1,0,0,0,,0
+Storm Rifle,Blessed Sisters,APC,24,3,1,0,0,0,,35
+Storm Rifle,Blessed Sisters,Battle Tank,24,3,1,0,0,0,,10
+Storm Rifle,Blessed Sisters,Celestial Warrior Sisters,24,3,1,0,0,0,,30
+Storm Rifle,Blessed Sisters,Destroyer Sisters,24,3,1,0,0,0,,75
+Storm Rifle,Blessed Sisters,Infernal APC,24,3,1,0,0,0,,10
+Storm Rifle,Blessed Sisters,Organ Tank,24,3,1,0,0,0,,10
+Storm Rifle,Blessed Sisters,Vanguard Sisters,24,3,1,0,0,0,,25
+Storm Rifle,Blessed Sisters,Warrior Sisters,24,3,1,0,0,0,,25
+Storm-Mod,Blessed Sisters,Exo-Suit,18,3,1,0,0,0,,30
+Storm-Mod,Blessed Sisters,Exo-Suit High Sister,18,3,1,0,0,0,,30
+Super-Heavy Fusion Rifle,Blessed Sisters,Exo-Suit High Sister,18,1,4,0,6,0,,65
+Superior Chainsaw Sword,Blessed Sisters,Fanatic Superior,0,4,1,0,0,0,Rending,25
+Titan Anti-Tank Cannon,Blessed Sisters,Blessed Titan,30,2,3,0,6,0,,140
+Titan Autocannon,Blessed Sisters,Blessed Titan,36,12,2,0,0,0,,240
+Titan Battle Cannon,Blessed Sisters,Blessed Titan,30,4,2,3,0,0,,150
+Titan Chainsaw,Blessed Sisters,Blessed Titan,0,4,2,0,3,0,,35
+Titan Claw,Blessed Sisters,Blessed Titan,0,12,1,0,0,0,,25
+Titan Fist,Blessed Sisters,Blessed Titan,0,8,4,0,0,0,,45
+Titan Flails,Blessed Sisters,Blessed Titan,0,4,0,3,0,0,Rending,0
+Titan Missile Array,Blessed Sisters,Blessed Titan,30,4,2,0,3,0,Unstoppable,165
+Titan Sword,Blessed Sisters,Blessed Titan,0,10,1,0,0,0,Rending,35
+Twin Autocannon,Blessed Sisters,Battle Tank,36,6,2,0,0,0,,40
+Twin Blessed Flamer,Blessed Sisters,Destroyer Sisters,12,2,0,3,0,0,"Reliable, Disintegrate",15
+Twin Blessed Flamer Cannon,Blessed Sisters,Infernal APC,18,2,0,3,0,0,"Reliable, Disintegrate",25
+Twin Heavy Fusion Rifle,Blessed Sisters,Destroyer Sisters,18,2,4,0,3,0,,45
+Twin Heavy Fusion Rifle,Blessed Sisters,Infernal APC,18,2,4,0,3,0,,35
+Twin Heavy Machinegun,Blessed Sisters,Infernal APC,30,6,1,0,0,0,,35
+Twin Heavy Pistols,Blessed Sisters,Pistoleer Sisters,12,2,1,0,0,0,,0
+Twin Heavy Rifle,Blessed Sisters,Celestial High Sister,24,2,1,0,0,0,,85
+Twin Heavy Rifle,Blessed Sisters,High Sister,24,2,1,0,0,0,,70
+Twin Heavy Rifles,Blessed Sisters,Biker Fanatics,24,2,1,0,0,0,,0
+Twin Heavy Rifles,Blessed Sisters,Biker Sisters,24,2,1,0,0,0,,0
+Twin Light Blessed Flamer Pistols,Blessed Sisters,Pistoleer Sisters,6,2,0,0,0,0,"Reliable, Disintegrate",0
+Twin Light Fusion Pistols,Blessed Sisters,Pistoleer Sisters,6,2,4,0,0,0,,0
+Twin Light Plasma Pistols,Blessed Sisters,Pistoleer Sisters,12,2,2,0,0,0,,5
+AT-Missiles,Dao Union,Razor Fighter,30,1,2,0,3,0,Limited,20
+AT-Missiles,Dao Union,Sun Bomber,30,1,2,0,3,0,Limited,20
+Bash,Dao Union,Battle Suit Elite,0,4,1,0,0,0,,0
+Bashes,Dao Union,Battle Suits,0,2,0,0,0,0,,0
+Burst,Dao Union,Battle Suit Elite,18,2,0,0,0,0,Rending,10
+Burst Carbine,Dao Union,Hover Attack Bike,18,2,0,0,0,0,Rending,0
+Burst Carbine,Dao Union,Security Grunts,18,2,0,0,0,0,Rending,5
+Burst Carbine,Dao Union,Tactical Grunts,18,2,0,0,0,0,Rending,5
+CCW,Dao Union,Grunt Leader,0,2,0,0,0,0,,15
+CCWs,Dao Union,Security Grunts,0,1,0,0,0,0,,0
+CCWs,Dao Union,Stealth Suits,0,1,0,0,0,0,,0
+CCWs,Dao Union,Tactical Grunts,0,1,0,0,0,0,,0
+Cluster Rockets,Dao Union,Surge Titan,24,8,1,0,0,0,,0
+Destroyer Missiles,Dao Union,Surge Titan,30,1,2,0,3,0,,50
+Flamer,Dao Union,Security Grunts,12,1,0,3,0,0,Reliable,10
+Flamer,Dao Union,Tactical Grunts,12,1,0,3,0,0,Reliable,10
+Frag-Missiles,Dao Union,Razor Fighter,24,1,1,3,0,0,Limited,10
+Frag-Missiles,Dao Union,Sun Bomber,24,1,1,3,0,0,Limited,10
+Fusion Carbine,Dao Union,Hover Attack Bike,18,1,4,0,3,0,,25
+Fusion Carbine,Dao Union,Security Grunts,18,1,4,0,3,0,,35
+Fusion Carbine,Dao Union,Stealth Suits,18,1,4,0,3,0,,5
+Fusion Carbine,Dao Union,Tactical Grunts,18,1,4,0,3,0,,30
+Gun Drone,Dao Union,Battle Suit Elite,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Battle Suits,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Grunt Leader,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Heavy Battle Suit,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Security Grunts,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Spotter Squad,0,0,0,0,0,0,,5
+Gun Drone,Dao Union,Tactical Grunts,0,0,0,0,0,0,,5
+Heavy Burst Carbine,Dao Union,Hover Tank,18,2,1,0,0,0,Rending,5
+Heavy Burst Carbine,Dao Union,Hover Transport,18,2,1,0,0,0,Rending,0
+Heavy Frag Pod,Dao Union,Hover Tank,24,1,1,3,0,0,Indirect,20
+Heavy Fusion Carbine,Dao Union,Heavy Stealth Suit,18,1,4,0,6,0,,35
+Heavy Homing AT-Missile Array,Dao Union,Hover Tank,30,2,2,0,6,0,Indirect,80
+Heavy Homing Frag-Missile Array,Dao Union,Hover Tank,24,2,1,6,0,0,Indirect,5
+Heavy Ion Cannon,Dao Union,Hover Tank,30,2,2,6,0,0,,15
+Heavy Ion Carbine,Dao Union,Heavy Stealth Suit,18,1,1,6,0,0,,0
+Heavy Missile Pod,Dao Union,Hover Tank,30,2,1,0,0,0,"Disintegrate, Unstoppable",20
+Heavy Plasma Swords,Dao Union,Tide Titan,0,8,1,0,0,0,Rending,0
+Heavy Railgun,Dao Union,Hover Tank,36,2,4,0,6,0,,115
+Heavy Smart Missiles,Dao Union,Hover Tank,30,3,2,0,0,0,Indirect,60
+Heavy Sub-Railgun,Dao Union,Hover Tank,36,2,1,6,0,0,,15
+Holy Baton,Dao Union,Grunt Leader,0,1,0,3,0,0,,0
+Holy Dual-Spear,Dao Union,Grunt Leader,0,3,4,0,0,0,,15
+Holy Halberd,Dao Union,Grunt Leader,0,1,2,0,3,0,,5
+Holy Sword,Dao Union,Grunt Leader,0,3,1,0,0,0,Rending,10
+Homing AT-Missile Array,Dao Union,Hover Tank,30,2,2,0,3,0,Indirect,50
+Homing AT-Missiles,Dao Union,Heavy Battle Suit,30,1,2,0,3,0,Indirect,20
+Homing AT-Missiles,Dao Union,Hover Attack Bike,30,1,2,0,3,0,"Indirect, Limited",20
+Homing AT-Missiles,Dao Union,Hover Tank,30,1,2,0,3,0,"Indirect, Limited",20
+Homing AT-Missiles,Dao Union,Hover Transport,30,1,2,0,3,0,Indirect,20
+Homing Frag-Missile Array,Dao Union,Hover Tank,24,2,1,3,0,0,Indirect,5
+Homing Frag-Missiles,Dao Union,Heavy Battle Suit,24,1,1,3,0,0,Indirect,15
+Homing Frag-Missiles,Dao Union,Hover Attack Bike,24,1,1,3,0,0,"Indirect, Limited",15
+Homing Frag-Missiles,Dao Union,Hover Tank,24,1,1,3,0,0,"Indirect, Limited",15
+Homing Frag-Missiles,Dao Union,Hover Transport,24,1,1,3,0,0,Indirect,15
+Ion Cannon,Dao Union,Hover Tank,30,2,2,3,0,0,,10
+Ion Rifle,Dao Union,Spotter Squad,30,1,1,3,0,0,,0
+Ion Rifle,Dao Union,Sun Bomber,30,1,1,3,0,0,,0
+Leader Pulse Carbine,Dao Union,Grunt Leader,18,3,1,0,0,0,,15
+Leader Pulse Pistol,Dao Union,Grunt Leader,12,2,1,0,0,0,,15
+Leader Pulse Rifle,Dao Union,Grunt Leader,30,2,1,0,0,0,,15
+Leader Pulse Shotgun,Dao Union,Grunt Leader,12,3,1,0,0,0,,5
+Missile Pod,Dao Union,Sun Bomber,30,2,0,0,0,0,"Disintegrate, Unstoppable",0
+Plasma Gauntlet,Dao Union,Grunt Leader,0,2,4,0,0,0,,10
+Plasma Gauntlet,Dao Union,Security Grunts,0,2,4,0,0,0,,5
+Plasma Gauntlet,Dao Union,Tactical Grunts,0,2,4,0,0,0,,5
+Plasma Rifle,Dao Union,Security Grunts,24,1,4,0,0,0,,10
+Plasma Rifle,Dao Union,Tactical Grunts,24,1,4,0,0,0,,10
+Plasma Sword,Dao Union,Battle Suit Elite,0,4,1,0,0,0,Rending,30
+Plasma Sword,Dao Union,Battle Suits,0,2,1,0,0,0,Rending,5
+Plasma Sword,Dao Union,Grunt Leader,0,2,1,0,0,0,Rending,5
+Plasma Sword,Dao Union,Security Grunts,0,2,1,0,0,0,Rending,5
+Plasma Sword,Dao Union,Tactical Grunts,0,2,1,0,0,0,Rending,5
+Pulse Blaster,Dao Union,Surge Titan,24,3,2,3,0,0,,0
+Pulse Bombs,Dao Union,Sun Bomber,0,2,1,3,0,0,Strafing,0
+Pulse Carbine,Dao Union,Tactical Grunts,18,2,1,0,0,0,,25
+Pulse Driver,Dao Union,Surge Titan,36,3,3,0,3,0,,75
+Pulse Pistol,Dao Union,Security Grunts,12,1,1,0,0,0,,5
+Pulse Pistol,Dao Union,Tactical Grunts,12,1,1,0,0,0,,5
+Pulse Rifle,Dao Union,Tactical Grunts,30,1,1,0,0,0,,10
+Pulse Rifles,Dao Union,Sniper Drones,30,1,1,0,0,0,,0
+Pulse Rifles,Dao Union,Tactical Grunts,30,1,1,0,0,0,,0
+Pulse Shotguns,Dao Union,Security Grunts,12,2,1,0,0,0,,0
+Quad Missile Pod,Dao Union,Heavy Battle Suit,30,8,0,0,0,0,"Disintegrate, Unstoppable",5
+Rail Rifle,Dao Union,Spotter Squad,30,1,2,0,3,0,,10
+Railgun,Dao Union,Hover Tank,36,2,4,0,3,0,,70
+Rapid Burst Carbines,Dao Union,Stealth Suits,18,4,0,0,0,0,Rending,0
+Rapid Heavy Suit-Burst,Dao Union,Battle Suit Elite,24,6,1,0,0,0,Rending,65
+Rapid Suit-Burst,Dao Union,Battle Suit Elite,18,2,0,0,0,0,Rending,10
+Rapid Suit-Missiles,Dao Union,Battle Suit Elite,30,2,0,0,0,0,"Disintegrate, Unstoppable",10
+Rapid Suit-Plasma,Dao Union,Battle Suit Elite,24,2,4,0,0,0,,30
+Scoped Rifle,Dao Union,Spotter Squad,30,1,1,0,0,0,"Reliable, Takedown",20
+Stomp,Dao Union,Heavy Stealth Suit,0,4,1,0,0,0,,0
+Stomp,Dao Union,Surge Titan,0,4,1,0,0,0,,0
+Stomp,Dao Union,Tide Titan,0,4,1,0,0,0,,0
+Sub-Railgun,Dao Union,Hover Tank,36,2,1,3,0,0,,0
+Suit-Burst,Dao Union,Battle Suit Elite,18,1,0,0,0,0,Rending,5
+Suit-Bursts,Dao Union,Battle Suit Elite,18,1,0,0,0,0,Rending,0
+Suit-Bursts,Dao Union,Battle Suits,18,1,0,0,0,0,Rending,0
+Suit-Flamer,Dao Union,Battle Suits,12,1,0,3,0,0,Reliable,10
+Suit-Flamers,Dao Union,Battle Suit Elite,12,1,0,3,0,0,Reliable,0
+Suit-Frag,Dao Union,Battle Suit Elite,24,1,0,3,0,0,Indirect,10
+Suit-Frag,Dao Union,Battle Suits,24,1,0,3,0,0,Indirect,20
+Suit-Fuse,Dao Union,Battle Suit Elite,12,1,4,0,3,0,,10
+Suit-Fuse,Dao Union,Battle Suits,12,1,4,0,3,0,,20
+Suit-Ion,Dao Union,Battle Suit Elite,18,1,1,3,0,0,,5
+Suit-Ion,Dao Union,Battle Suits,18,1,1,3,0,0,,15
+Suit-Missiles,Dao Union,Battle Suits,30,1,0,0,0,0,"Disintegrate, Unstoppable",5
+Suit-Plasma,Dao Union,Battle Suits,24,1,4,0,0,0,,15
+Support Turret,Dao Union,Tactical Grunts,0,0,0,0,0,0,,45
+Tasers,Dao Union,Gun Drones,0,1,0,0,0,0,,0
+Tasers,Dao Union,Sniper Drones,0,1,0,0,0,0,,0
+Titan Burst Carbine,Dao Union,Tide Titan,18,12,1,0,0,0,Rending,100
+Twin Burst Carbine,Dao Union,Heavy Stealth Suit,18,4,0,0,0,0,Rending,0
+Twin Flamer,Dao Union,Heavy Stealth Suit,12,2,0,3,0,0,Reliable,5
+Twin Flamer,Dao Union,Surge Titan,12,2,0,3,0,0,Reliable,40
+Twin Frag Pod,Dao Union,Surge Titan,24,2,0,3,0,0,Indirect,15
+Twin Fusion Carbine,Dao Union,Heavy Stealth Suit,18,2,4,0,3,0,,50
+Twin Fusion Carbine,Dao Union,Tide Titan,18,2,4,0,3,0,,45
+Twin Heavy Burst Carbine,Dao Union,Hover Tank,18,4,1,0,0,0,Rending,15
+Twin Heavy Burst Carbine,Dao Union,Hover Transport,18,4,1,0,0,0,Rending,15
+Twin Heavy Burst Carbine,Dao Union,Surge Titan,18,4,1,0,0,0,Rending,10
+Twin Heavy Frag Pod,Dao Union,Hover Tank,24,2,1,3,0,0,Indirect,45
+Twin Heavy Frag Pod,Dao Union,Hover Transport,24,2,1,3,0,0,Indirect,45
+Twin Heavy Missile Pod,Dao Union,Hover Tank,30,4,1,0,0,0,"Disintegrate, Unstoppable",40
+Twin Heavy Missile Pod,Dao Union,Hover Transport,30,4,1,0,0,0,Disintegrate,40
+Twin Heavy Pulse-Gun,Dao Union,Hover Tank,18,4,1,0,0,0,,0
+Twin Heavy Pulse-Gun,Dao Union,Hover Transport,18,4,1,0,0,0,,0
+Twin Heavy Rail Rifle,Dao Union,Heavy Battle Suit,30,2,2,0,6,0,,35
+Twin Heavy Smart Missiles,Dao Union,Hover Tank,30,6,2,0,0,0,Indirect,120
+Twin Heavy Smart Missiles,Dao Union,Hover Transport,30,6,2,0,0,0,Indirect,120
+Twin Ion Cannon,Dao Union,Tide Titan,30,4,2,3,0,0,,130
+Twin Missile Pod,Dao Union,Razor Fighter,30,4,0,0,0,0,"Disintegrate, Unstoppable",15
+Twin Missile Pod,Dao Union,Surge Titan,30,4,0,0,0,0,"Disintegrate, Unstoppable",60
+Twin Missile Pod,Dao Union,Tide Titan,30,4,0,0,0,0,"Disintegrate, Unstoppable",10
+Twin Plasma Rifle,Dao Union,Heavy Battle Suit,24,2,4,0,0,0,,50
+Twin Plasma Rifle,Dao Union,Tide Titan,24,2,4,0,0,0,,0
+Twin Pulse-Guns,Dao Union,Gun Drones,18,2,0,0,0,0,Rending,0
+Twin Smart Missiles,Dao Union,Surge Titan,30,6,1,0,0,0,Indirect,125
+Twin Smart Missiles,Dao Union,Tide Titan,30,6,1,0,0,0,Indirect,75
+Twin Suit Missile Pod,Dao Union,Heavy Battle Suit,30,3,0,0,0,0,"Disintegrate, Unstoppable",45
+Twin Suit Smart Missiles,Dao Union,Heavy Battle Suit,30,4,1,0,0,0,Indirect,85
+Acid Gun,Dark Elf Raiders,Gene-Tech Master,12,1,0,3,0,0,"Reliable, Bane",15
+Acid Gun,Dark Elf Raiders,Gene-Warriors,12,1,0,3,0,0,"Reliable, Bane",20
+Acid Guns,Dark Elf Raiders,Gene-Brutes,12,1,0,3,0,0,"Reliable, Bane",0
+Acid Spewers,Dark Elf Raiders,Engine of Suffering,0,1,0,3,0,0,Bane,0
+Agony Whip,Dark Elf Raiders,Dark Lord,0,1,0,3,0,0,,5
+Agony Whip,Dark Elf Raiders,Elite Raider,0,1,0,3,0,0,,5
+Agony Whip,Dark Elf Raiders,Elite True Raider,0,1,0,3,0,0,,5
+Agony Whip,Dark Elf Raiders,Gene-Tech Master,0,1,0,3,0,0,,5
+Agony Whip,Dark Elf Raiders,Gene-Warriors,0,1,0,3,0,0,,5
+Agony Whip,Dark Elf Raiders,Hoverboard Riders,0,1,0,3,0,0,,0
+Arcane Rifle,Dark Elf Raiders,Gene-Tech Master,30,1,1,0,0,0,"Reliable, Takedown",20
+Arcane Rifle,Dark Elf Raiders,Gene-Warriors,30,1,1,0,0,0,"Reliable, Takedown",25
+Barb Cannon,Dark Elf Raiders,Heavy Jetbike,30,3,0,0,0,0,Lacerate,10
+Barb Cannon,Dark Elf Raiders,Light Skimmer,30,3,0,0,0,0,Lacerate,15
+Barb Cannon,Dark Elf Raiders,Razor Fighter,30,3,0,0,0,0,Lacerate,15
+Barb Cannon,Dark Elf Raiders,True Warriors,30,3,0,0,0,0,Lacerate,25
+Barb Cannon,Dark Elf Raiders,Warriors,30,3,0,0,0,0,Lacerate,20
+Barb Cannon,Dark Elf Raiders,Winged Warriors,30,3,0,0,0,0,Lacerate,15
+Barb Cannons,Dark Elf Raiders,Heavy Skimmer,30,3,0,0,0,0,Lacerate,0
+Barb Carbines,Dark Elf Raiders,Winged Warriors,18,2,0,0,0,0,Lacerate,0
+Barb Dagger,Dark Elf Raiders,Court Henchmen,0,1,0,0,0,0,Lacerate,0
+Barb Pistol,Dark Elf Raiders,Gene-Warriors,12,1,0,0,0,0,Lacerate,5
+Barb Pistols,Dark Elf Raiders,Jetbike Riders,12,1,0,0,0,0,Lacerate,0
+Barb Pistols,Dark Elf Raiders,True Witches,12,1,0,0,0,0,Lacerate,0
+Barb Pistols,Dark Elf Raiders,Witches,12,1,0,0,0,0,Lacerate,0
+Barb Rifles,Dark Elf Raiders,True Warriors,24,1,0,0,0,0,Lacerate,0
+Barb Rifles,Dark Elf Raiders,Warriors,24,1,0,0,0,0,Lacerate,0
+Barb-Pod,Dark Elf Raiders,Hoverboard Riders,18,1,0,0,0,0,Lacerate,10
+Bone Gun,Dark Elf Raiders,Gene-Warriors,18,2,0,0,0,0,Rending,15
+CCW,Dark Elf Raiders,Dark Lord,0,2,0,0,0,0,,0
+CCW,Dark Elf Raiders,Elite Raider,0,2,0,0,0,0,,0
+CCW,Dark Elf Raiders,Elite True Raider,0,2,0,0,0,0,,0
+CCW,Dark Elf Raiders,Gene-Tech Master,0,2,0,0,0,0,,5
+CCW,Dark Elf Raiders,Gene-Warriors,0,2,0,0,0,0,,5
+CCWs,Dark Elf Raiders,Jetbike Riders,0,2,0,0,0,0,Bane,0
+CCWs,Dark Elf Raiders,Shadow Warriors,0,2,0,0,0,0,Bane,0
+CCWs,Dark Elf Raiders,True Warriors,0,2,0,0,0,0,Bane,0
+CCWs,Dark Elf Raiders,True Witches,0,2,0,0,0,0,Bane,0
+CCWs,Dark Elf Raiders,Warriors,0,2,0,0,0,0,Bane,0
+CCWs,Dark Elf Raiders,Witches,0,2,0,0,0,0,Bane,0
+Courtesan's Swords,Dark Elf Raiders,Court Henchmen,0,4,0,0,0,0,Bane,0
+Dark Blasts,Dark Elf Raiders,Shadow Warriors,18,2,1,0,0,0,,0
+Destroyer Cannon,Dark Elf Raiders,Heavy Skimmer,36,3,2,0,0,0,,35
+Destroyer Cannon,Dark Elf Raiders,Light Skimmer,36,3,2,0,0,0,,50
+Destroyer Cannon,Dark Elf Raiders,Razor Fighter,36,3,2,0,0,0,,5
+Dual CCWs,Dark Elf Raiders,Gene-Warriors,0,2,0,0,0,0,,0
+Dual Crystal Claws,Dark Elf Raiders,Elite Raider,0,4,0,0,0,0,Rending,10
+Dual Crystal Claws,Dark Elf Raiders,Elite True Raider,0,4,0,0,0,0,Rending,10
+Dual Crystal Claws,Dark Elf Raiders,True Witches,0,4,0,0,0,0,Rending,15
+Dual Crystal Claws,Dark Elf Raiders,Witches,0,4,0,0,0,0,Rending,10
+Dual Scissor Claws,Dark Elf Raiders,Gene-Brutes,0,4,4,0,0,0,,5
+Dual Sword-Flails,Dark Elf Raiders,Elite Raider,0,1,2,3,0,0,,5
+Dual Sword-Flails,Dark Elf Raiders,Elite True Raider,0,1,2,3,0,0,,5
+Dual Sword-Flails,Dark Elf Raiders,True Witches,0,1,2,3,0,0,,5
+Dual Sword-Flails,Dark Elf Raiders,Witches,0,1,2,3,0,0,,5
+EMP Pistol,Dark Elf Raiders,True Warriors,9,2,0,0,0,0,Rending,5
+EMP Pistol,Dark Elf Raiders,True Witches,9,2,0,0,0,0,Rending,5
+EMP Pistol,Dark Elf Raiders,Warriors,9,2,0,0,0,0,Rending,5
+EMP Pistol,Dark Elf Raiders,Winged Warriors,9,2,0,0,0,0,Rending,5
+EMP Pistol,Dark Elf Raiders,Witches,9,2,0,0,0,0,Rending,5
+EMP Rifle,Dark Elf Raiders,True Warriors,18,2,0,0,0,0,Rending,10
+EMP Rifle,Dark Elf Raiders,Warriors,18,2,0,0,0,0,Rending,10
+EMP Rifle,Dark Elf Raiders,Winged Warriors,18,2,0,0,0,0,Rending,5
+Electro-Corroder,Dark Elf Raiders,Gene-Tech Master,0,2,1,0,0,0,Bane,5
+Electro-Corroder,Dark Elf Raiders,Gene-Warriors,0,2,1,0,0,0,Bane,5
+Elite Barb Pistol,Dark Elf Raiders,Dark Lord,12,2,0,0,0,0,Lacerate,0
+Elite Barb Pistol,Dark Elf Raiders,Elite Raider,12,2,0,0,0,0,Lacerate,0
+Elite Barb Pistol,Dark Elf Raiders,Gene-Tech Master,12,2,0,0,0,0,Lacerate,0
+Elite Barb Rifle,Dark Elf Raiders,Dark Lord,24,2,0,0,0,0,Lacerate,10
+Elite Barb Rifle,Dark Elf Raiders,Elite Raider,24,2,0,0,0,0,Lacerate,10
+Elite Barb Rifle,Dark Elf Raiders,Elite True Raider,24,2,0,0,0,0,Lacerate,10
+Elite EMP Pistol,Dark Elf Raiders,Dark Lord,9,3,0,0,0,0,Rending,5
+Elite EMP Pistol,Dark Elf Raiders,Elite Raider,9,3,0,0,0,0,Rending,5
+Elite EMP Pistol,Dark Elf Raiders,Elite True Raider,9,3,0,0,0,0,Rending,5
+Elite Plas-Blaster Pistol,Dark Elf Raiders,Dark Lord,6,3,4,0,0,0,,10
+Elite Plas-Blaster Pistol,Dark Elf Raiders,Elite Raider,6,3,4,0,0,0,,5
+Elite Plas-Blaster Pistol,Dark Elf Raiders,Elite True Raider,6,3,4,0,0,0,,10
+Energy Glaive,Dark Elf Raiders,Elite Raider,0,4,1,0,0,0,,5
+Energy Glaive,Dark Elf Raiders,Elite True Raider,0,4,1,0,0,0,,10
+Energy Glaive,Dark Elf Raiders,True Witches,0,4,1,0,0,0,,15
+Energy Glaive,Dark Elf Raiders,Witches,0,4,1,0,0,0,,10
+Energy Sword,Dark Elf Raiders,Dark Lord,0,2,1,0,0,0,Rending,10
+Energy Sword,Dark Elf Raiders,Elite Raider,0,2,1,0,0,0,Rending,10
+Energy Sword,Dark Elf Raiders,Elite True Raider,0,2,1,0,0,0,Rending,10
+Energy Sword,Dark Elf Raiders,Hoverboard Riders,0,2,1,0,0,0,Rending,5
+Energy Sword,Dark Elf Raiders,True Warriors,0,2,1,0,0,0,Rending,10
+Energy Sword,Dark Elf Raiders,True Witches,0,2,1,0,0,0,Rending,10
+Energy Sword,Dark Elf Raiders,Warriors,0,2,1,0,0,0,Rending,5
+Energy Sword,Dark Elf Raiders,Winged Warriors,0,2,1,0,0,0,Rending,5
+Energy Sword,Dark Elf Raiders,Witches,0,2,1,0,0,0,Rending,10
+Ghoulish Claws,Dark Elf Raiders,Court Henchmen,0,4,0,0,0,0,Rending,5
+Glaives,Dark Elf Raiders,Hoverboard Riders,0,2,1,0,0,0,,0
+Grapple Claw,Dark Elf Raiders,Hoverboard Riders,0,1,2,0,3,0,,5
+Heavy Claws,Dark Elf Raiders,Clawed Beast,0,6,1,0,0,0,,0
+Heavy Claws,Dark Elf Raiders,Engine of Suffering,0,3,1,0,0,0,,5
+Heavy Fusion Gun,Dark Elf Raiders,Jetbike Riders,18,1,4,0,3,0,,20
+Heavy Fusion Gun,Dark Elf Raiders,Winged Warriors,18,1,4,0,3,0,,25
+Jetbike,Dark Elf Raiders,Dark Lord,0,0,0,0,0,0,"Fast, Strider",95
+Jetbike,Dark Elf Raiders,Elite Raider,0,0,0,0,0,0,"Armor(4), Fast, Strider",80
+Jetbike,Dark Elf Raiders,Elite True Raider,0,0,0,0,0,0,"Armor(4), Fast, Strider",100
+Laser Cannon,Dark Elf Raiders,Heavy Skimmer,36,1,3,0,3,0,,35
+Laser Cannon,Dark Elf Raiders,Light Skimmer,36,1,3,0,3,0,,50
+Laser Cannon,Dark Elf Raiders,Razor Fighter,36,1,3,0,3,0,,0
+Laser Cannon,Dark Elf Raiders,True Warriors,36,1,3,0,3,0,,60
+Laser Cannon,Dark Elf Raiders,Warriors,36,1,3,0,3,0,,45
+Laser Cannon,Dark Elf Raiders,Winged Warriors,36,1,3,0,3,0,,40
+Leech Claw,Dark Elf Raiders,Gene-Tech Master,0,2,1,0,0,0,Rending,10
+Leech Claw,Dark Elf Raiders,Gene-Warriors,0,2,1,0,0,0,Rending,10
+Medusa's Gaze,Dark Elf Raiders,Court Henchmen,12,4,3,0,0,0,,35
+Naga Guns,Dark Elf Raiders,Court Henchmen,18,4,0,0,0,0,Lacerate,20
+Net & Spear,Dark Elf Raiders,Elite Raider,0,3,0,0,0,0,Thrust,5
+Net & Spear,Dark Elf Raiders,Elite True Raider,0,3,0,0,0,0,Thrust,5
+Net & Spear,Dark Elf Raiders,True Witches,0,3,0,0,0,0,Thrust,10
+Net & Spear,Dark Elf Raiders,Witches,0,3,0,0,0,0,Thrust,5
+Phantom-GL,Dark Elf Raiders,Dark Lord,18,1,0,3,0,0,,5
+Phantom-GL,Dark Elf Raiders,Elite Raider,18,1,0,3,0,0,,5
+Phantom-GL,Dark Elf Raiders,Elite True Raider,18,1,0,3,0,0,,5
+Phantom-GL,Dark Elf Raiders,Heavy Skimmer,18,1,0,3,0,0,,20
+Phantom-GL,Dark Elf Raiders,Hoverboard Riders,18,1,0,3,0,0,,10
+Phantom-GL,Dark Elf Raiders,Light Skimmer,18,1,0,3,0,0,,20
+Plas-Blaster,Dark Elf Raiders,Jetbike Riders,18,2,4,0,0,0,,15
+Plas-Blaster,Dark Elf Raiders,True Warriors,18,2,4,0,0,0,,30
+Plas-Blaster,Dark Elf Raiders,Warriors,18,2,4,0,0,0,,20
+Plas-Blaster,Dark Elf Raiders,Winged Warriors,18,2,4,0,0,0,,15
+Plas-Blaster Pistol,Dark Elf Raiders,True Warriors,6,2,4,0,0,0,,10
+Plas-Blaster Pistol,Dark Elf Raiders,True Witches,6,2,4,0,0,0,,10
+Plas-Blaster Pistol,Dark Elf Raiders,Warriors,6,2,4,0,0,0,,5
+Plas-Blaster Pistol,Dark Elf Raiders,Winged Warriors,6,2,4,0,0,0,,5
+Plas-Blaster Pistol,Dark Elf Raiders,Witches,6,2,4,0,0,0,,5
+Rapid Barb Cannon,Dark Elf Raiders,Engine of Suffering,30,6,0,0,0,0,Lacerate,50
+Scissor Claw,Dark Elf Raiders,Gene-Tech Master,0,2,4,0,0,0,,15
+Scissor Claw,Dark Elf Raiders,Gene-Warriors,0,2,4,0,0,0,,15
+Scissor Claws,Dark Elf Raiders,Gene-Brutes,0,2,4,0,0,0,,0
+Scrapper,Dark Elf Raiders,True Warriors,12,1,0,3,0,0,Reliable,5
+Scrapper,Dark Elf Raiders,Warriors,12,1,0,3,0,0,Reliable,10
+Scrapper,Dark Elf Raiders,Winged Warriors,12,1,0,3,0,0,Reliable,5
+Scythe Launcher,Dark Elf Raiders,Heavy Jetbike,30,1,3,0,0,0,Unstoppable,5
+Scythe Launcher,Dark Elf Raiders,True Warriors,30,1,3,0,0,0,Unstoppable,15
+Scythe Launcher,Dark Elf Raiders,Warriors,30,1,3,0,0,0,Unstoppable,15
+Scythe Missiles,Dark Elf Raiders,Razor Fighter,36,2,3,0,0,0,Unstoppable,25
+Sgt. Barb Pistol,Dark Elf Raiders,True Warriors,12,1,0,0,0,0,Lacerate,10
+Sgt. Barb Pistol,Dark Elf Raiders,True Witches,12,1,0,0,0,0,Lacerate,10
+Sgt. Barb Pistol,Dark Elf Raiders,Warriors,12,1,0,0,0,0,Lacerate,5
+Sgt. Barb Pistol,Dark Elf Raiders,Winged Warriors,12,1,0,0,0,0,Lacerate,5
+Sgt. Barb Pistol,Dark Elf Raiders,Witches,12,1,0,0,0,0,Lacerate,10
+Shatter Missiles,Dark Elf Raiders,Raven Bomber,36,1,0,6,0,0,,0
+Shatter Missiles,Dark Elf Raiders,Razor Fighter,36,1,0,6,0,0,,10
+Shell Sword,Dark Elf Raiders,Dark Lord,0,1,2,0,3,0,,15
+Shell Sword,Dark Elf Raiders,Elite Raider,0,1,2,0,3,0,,10
+Shell Sword,Dark Elf Raiders,Elite True Raider,0,1,2,0,3,0,,15
+Shred Flail,Dark Elf Raiders,Engine of Suffering,0,3,0,0,0,0,Rending,10
+Soul Blaster,Dark Elf Raiders,Leech Engine,24,2,1,3,0,0,Bane,25
+Soul Syphon,Dark Elf Raiders,Leech Engine,12,6,1,0,0,0,Bane,0
+Soul Vortex,Dark Elf Raiders,Leech Engine,18,2,1,0,3,0,Bane,10
+Spiked Talon,Dark Elf Raiders,Jetbike Riders,0,1,2,0,3,0,,10
+Stinger Cannon,Dark Elf Raiders,Engine of Suffering,24,2,0,3,0,0,,25
+Stomp,Dark Elf Raiders,Engine of Suffering,0,2,1,0,0,0,,0
+Stomp,Dark Elf Raiders,Leech Engine,0,2,1,0,0,0,,0
+Swarm Attacks,Dark Elf Raiders,Crow Swarms,0,3,0,0,0,0,Rending,0
+Syringe Claw,Dark Elf Raiders,Gene-Tech Master,0,1,2,0,3,0,,10
+Syringe Claw,Dark Elf Raiders,Gene-Warriors,0,1,2,0,3,0,,10
+Syringe Pistol,Dark Elf Raiders,Gene-Tech Master,12,1,0,0,3,0,,5
+Syringe Pistol,Dark Elf Raiders,Gene-Warriors,12,1,0,0,3,0,,5
+Toxin Claws,Dark Elf Raiders,Blood Hounds,0,2,0,0,0,0,Bane,0
+Toxin Missiles,Dark Elf Raiders,Razor Fighter,36,1,0,3,0,0,Bane,0
+Twin Barb Rifle,Dark Elf Raiders,Light Skimmer,24,2,0,0,0,0,Lacerate,0
+Twin Barb Rifle,Dark Elf Raiders,Razor Fighter,24,2,0,0,0,0,Lacerate,0
+Twin Barb Rifles,Dark Elf Raiders,Jetbike Riders,24,2,0,0,0,0,Lacerate,0
+Twin Barb-Pods,Dark Elf Raiders,Hoverboard Riders,18,2,0,0,0,0,Lacerate,0
+Twin EMP Rifle,Dark Elf Raiders,Engine of Suffering,18,4,0,0,0,0,Rending,25
+Twin Heavy Fusion Gun,Dark Elf Raiders,Engine of Suffering,18,2,4,0,3,0,,65
+Venom Injector,Dark Elf Raiders,Engine of Suffering,0,3,0,0,0,0,Bane,5
+Venom Sword,Dark Elf Raiders,Gene-Tech Master,0,2,0,0,0,0,Bane,5
+Venom Sword,Dark Elf Raiders,Gene-Warriors,0,2,0,0,0,0,Bane,5
+Void Bombs,Dark Elf Raiders,Raven Bomber,0,1,3,0,3,0,Strafing,0
+Void Cannon,Dark Elf Raiders,Raven Bomber,30,1,3,0,3,0,,0
+Void Missiles,Dark Elf Raiders,Raven Bomber,36,1,3,0,3,0,,25
+Anti-Tank Cannon,Dwarf Guilds,Battle Tank,30,1,3,0,6,0,,0
+Anti-Tank Cannon,Dwarf Guilds,Combat Excavator,30,1,3,0,6,0,,0
+Anti-Tank Cannon,Dwarf Guilds,Land Train,30,1,3,0,6,0,,0
+Assault Grenade Launcher,Dwarf Guilds,Berserkers,18,1,0,3,0,0,,15
+Auto H-Rifle,Dwarf Guilds,Dwarf Warriors,18,2,0,0,0,0,Rending,10
+Auto-Gun,Dwarf Guilds,Dwarf Trike,24,2,1,0,0,0,,0
+Autocannon,Dwarf Guilds,Thunder Support,36,3,2,0,0,0,,25
+Bash,Dwarf Guilds,Dwarf Champion,0,1,0,0,0,0,,10
+Bash,Dwarf Guilds,Jetpack Warriors,0,1,0,0,0,0,,0
+Bashes,Dwarf Guilds,Guardians,0,1,0,0,0,0,,0
+Battle Cannon,Dwarf Guilds,Battle Tank,30,2,2,3,0,0,,5
+Battle Cannon,Dwarf Guilds,Combat Excavator,30,2,2,3,0,0,,5
+Battle Cannon,Dwarf Guilds,Land Train,30,2,2,3,0,0,,5
+C-Beamer,Dwarf Guilds,Dwarf Trike,24,3,1,0,0,0,Surge,10
+C-Beamer,Dwarf Guilds,Iron Veterans,24,3,1,0,0,0,Surge,40
+C-Beamer,Dwarf Guilds,Thunder Support,24,3,1,0,0,0,Surge,10
+CCW,Dwarf Guilds,Berserkers,0,2,0,0,0,0,,15
+CCW,Dwarf Guilds,Dwarf Trike,0,2,0,0,0,0,,0
+CCW,Dwarf Guilds,Guardians,0,2,0,0,0,0,,0
+CCWs,Dwarf Guilds,Dwarf Warriors,0,1,0,0,0,0,,0
+CCWs,Dwarf Guilds,Iron Veterans,0,1,0,0,0,0,,0
+CCWs,Dwarf Guilds,Mine-Bot Guard,0,1,0,0,0,0,,0
+CCWs,Dwarf Guilds,Miners,0,1,0,0,0,0,,0
+CCWs,Dwarf Guilds,Sniper Team,0,1,0,0,0,0,,0
+CCWs,Dwarf Guilds,Thunder Support,0,1,0,0,0,0,,0
+Champion H-Pistol,Dwarf Guilds,Dwarf Champion,9,3,0,0,0,0,Rending,10
+Champion H-Pistol,Dwarf Guilds,Powersuit Champion,9,3,0,0,0,0,Rending,5
+Champion Iron Blaster,Dwarf Guilds,Dwarf Champion,18,3,1,0,0,0,,30
+Champion Iron Pistol,Dwarf Guilds,Dwarf Champion,9,4,1,0,0,0,,20
+Champion Iron Pistol,Dwarf Guilds,Powersuit Champion,9,4,1,0,0,0,,15
+Champion Iron Shotgun,Dwarf Guilds,Dwarf Champion,6,4,2,0,0,0,,15
+Champion Pistol,Dwarf Guilds,Dwarf Champion,12,2,0,0,0,0,,5
+Champion Plasma Pistol,Dwarf Guilds,Dwarf Champion,12,2,4,0,0,0,,20
+Champion Plasma Pistol,Dwarf Guilds,Powersuit Champion,12,2,4,0,0,0,,15
+Champion Rifle,Dwarf Guilds,Dwarf Champion,24,2,0,0,0,0,,15
+Champion Shotgun,Dwarf Guilds,Dwarf Champion,12,3,1,0,0,0,,20
+Champion Twin Glove-Pistols,Dwarf Guilds,Dwarf Champion,12,4,0,0,0,0,,10
+Combat Bike,Dwarf Guilds,Dwarf Champion,0,0,0,0,0,0,"Fast, Swift",100
+Crew,Dwarf Guilds,Artillery Gun,0,3,0,0,0,0,,0
+Drill A-Platform,Dwarf Guilds,Miners,0,1,4,0,3,0,,10
+Drill M-Platform,Dwarf Guilds,Miners,18,1,2,0,3,0,Shred,25
+Drill Mortar,Dwarf Guilds,Fortress Tank,24,1,2,0,3,0,Indirect,45
+Dual Berserker Axes,Dwarf Guilds,Berserkers,0,2,0,0,0,0,,10
+Dual Heavy Berserker Axes,Dwarf Guilds,Berserker Veteran,0,4,1,0,0,0,,5
+Dual Heavy Heat Axes,Dwarf Guilds,Berserker Veteran,0,4,1,0,0,0,Shred,15
+Exo-GL,Dwarf Guilds,Powersuit Champion,18,1,0,3,0,0,Limited,5
+Exo-GL,Dwarf Guilds,Powersuit Guard,18,1,0,3,0,0,Limited,20
+Flame Cannon,Dwarf Guilds,Battle Tank,18,2,1,3,0,0,Reliable,5
+Flame Cannon,Dwarf Guilds,Combat Excavator,18,2,1,3,0,0,Reliable,5
+Flame Cannon,Dwarf Guilds,Land Train,18,2,1,3,0,0,Reliable,5
+Flamer,Dwarf Guilds,Dwarf Walker,12,1,0,3,0,0,Reliable,20
+Flamer,Dwarf Guilds,Dwarf Warriors,12,1,0,3,0,0,Reliable,10
+Flamer,Dwarf Guilds,Miners,12,1,0,3,0,0,Reliable,10
+Flamer Pistol,Dwarf Guilds,Dwarf Champion,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Dwarf Guilds,Jetpack Warriors,6,1,0,3,0,0,Reliable,5
+Fusion Pistol,Dwarf Guilds,Dwarf Champion,6,1,4,0,3,0,,10
+Fusion Rifle,Dwarf Guilds,Dwarf Walker,12,1,4,0,3,0,,35
+Fusion Rifle,Dwarf Guilds,Dwarf Warriors,12,1,4,0,3,0,,20
+Fusion Rifle,Dwarf Guilds,Miners,12,1,4,0,3,0,,15
+Gravity H-Cannon,Dwarf Guilds,Thunder Support,24,4,0,0,0,0,Rending,20
+Great Axes,Dwarf Guilds,Berserkers,0,1,2,0,0,0,,0
+Great Heat Hammer,Dwarf Guilds,Berserker Veteran,0,1,2,3,0,0,Shred,5
+Great Heat Hammer,Dwarf Guilds,Dwarf Champion,0,1,2,3,0,0,Shred,15
+Great Heat Hammer,Dwarf Guilds,Elites,0,1,2,3,0,0,Shred,15
+H-Beam Cannon,Dwarf Guilds,APC,18,3,4,0,0,0,Surge,15
+H-Beam Cannon,Dwarf Guilds,Combat Excavator,18,3,4,0,0,0,Surge,15
+H-Beam Cannon,Dwarf Guilds,Land Train,18,3,4,0,0,0,Surge,15
+H-Pistol,Dwarf Guilds,Dwarf Warriors,9,2,0,0,0,0,Rending,5
+H-Pistol,Dwarf Guilds,Iron Veterans,9,2,0,0,0,0,Rending,0
+H-Pistol,Dwarf Guilds,Miners,9,2,0,0,0,0,Rending,5
+H-Pistol,Dwarf Guilds,Powersuit Guard,9,2,0,0,0,0,Rending,0
+Heat Axe,Dwarf Guilds,Elites,0,2,0,0,0,0,Shred,5
+Heat Hammers,Dwarf Guilds,Elites,0,1,2,0,0,0,Shred,0
+Heat Spear,Dwarf Guilds,Dwarf Champion,0,3,0,0,0,0,"Counter, Shred",20
+Heat Spear,Dwarf Guilds,Guardians,0,1,0,0,0,0,"Counter, Shred",5
+Heavy Burst Pistol,Dwarf Guilds,Mine-Bot Guard,12,3,1,0,0,0,,65
+Heavy C-Beamer,Dwarf Guilds,Fortress Tank,30,4,2,0,0,0,Surge,0
+Heavy Excavator,Dwarf Guilds,Combat Excavator,0,12,4,0,0,0,,0
+Heavy Flamer,Dwarf Guilds,Assault Drill,12,1,1,3,0,0,Reliable,0
+Heavy Flamer,Dwarf Guilds,Dwarf Trike,12,1,1,3,0,0,Reliable,0
+Heavy Flamer,Dwarf Guilds,Iron Veterans,12,1,1,3,0,0,Reliable,15
+Heavy Fusion Rifle,Dwarf Guilds,Dwarf Trike,18,1,4,0,3,0,,10
+Heavy Fusion Rifle,Dwarf Guilds,Iron Veterans,18,1,4,0,3,0,,40
+Heavy Great Axe,Dwarf Guilds,Berserker Veteran,0,1,2,0,3,0,,0
+Heavy Heat Axe,Dwarf Guilds,Berserkers,0,1,1,0,0,0,Shred,5
+Heavy Machinegun,Dwarf Guilds,APC,30,3,1,0,0,0,,0
+Heavy Machinegun,Dwarf Guilds,Assault Drill,30,3,1,0,0,0,,10
+Heavy Machinegun,Dwarf Guilds,Combat Excavator,30,3,1,0,0,0,,0
+Heavy Machinegun,Dwarf Guilds,Dwarf Trike,30,3,1,0,0,0,,10
+Heavy Machinegun,Dwarf Guilds,Dwarf Warriors,30,3,1,0,0,0,,30
+Heavy Machinegun,Dwarf Guilds,Powersuit Guard,30,3,1,0,0,0,,40
+Heavy Machinegun,Dwarf Guilds,Thunder Support,30,3,1,0,0,0,,10
+Heavy Spear,Dwarf Guilds,Dwarf Champion,0,3,1,0,0,0,Counter,25
+Heavy Spear,Dwarf Guilds,Guardians,0,1,1,0,0,0,Counter,10
+Iron Blaster,Dwarf Guilds,Dwarf Warriors,18,2,1,0,0,0,,45
+Iron Blaster,Dwarf Guilds,Iron Veterans,18,2,1,0,0,0,,65
+Iron Cannon,Dwarf Guilds,Fortress Tank,24,3,1,3,0,0,,10
+Iron Pistol,Dwarf Guilds,Dwarf Trike,9,2,1,0,0,0,,0
+Iron Pistol,Dwarf Guilds,Dwarf Warriors,9,2,1,0,0,0,,5
+Iron Pistol,Dwarf Guilds,Jetpack Warriors,9,2,1,0,0,0,,5
+Iron Pistol,Dwarf Guilds,Powersuit Guard,9,2,1,0,0,0,,20
+Iron Pistols,Dwarf Guilds,Miners,9,2,1,0,0,0,,0
+Iron Shotgun,Dwarf Guilds,Dwarf Bikers,6,2,2,0,0,0,,0
+Iron Shotgun,Dwarf Guilds,Jetpack Warriors,6,2,2,0,0,0,,5
+Iron Shotgun,Dwarf Guilds,Miners,6,2,2,0,0,0,,0
+Iron Shotguns,Dwarf Guilds,Iron Veterans,6,2,2,0,0,0,,0
+Light C-Beamer,Dwarf Guilds,Fortress Tank,24,2,1,0,0,0,Surge,5
+Light Iron Cannons,Dwarf Guilds,Mine-Bot Guard,24,1,1,3,0,0,,0
+Light Walker Fist,Dwarf Guilds,Dwarf Walker,0,4,2,0,0,0,,15
+Minigun,Dwarf Guilds,APC,24,4,1,0,0,0,,5
+Minigun,Dwarf Guilds,Combat Excavator,24,4,1,0,0,0,,5
+Minigun,Dwarf Guilds,Dwarf Trike,24,4,1,0,0,0,,20
+Minigun,Dwarf Guilds,Fortress Tank,24,4,1,0,0,0,,0
+Minigun,Dwarf Guilds,Land Train,24,4,1,0,0,0,,5
+Missile Launcher,Dwarf Guilds,APC,30,1,2,0,3,0,Unstoppable,5
+Missile Launcher,Dwarf Guilds,Combat Excavator,30,1,2,0,3,0,Unstoppable,5
+Missile Launcher,Dwarf Guilds,Dwarf Trike,30,1,2,0,3,0,Unstoppable,15
+Missile Launcher,Dwarf Guilds,Dwarf Warriors,30,1,2,0,3,0,Unstoppable,35
+Missile Launcher,Dwarf Guilds,Land Train,30,1,2,0,3,0,Unstoppable,5
+Missile Launcher,Dwarf Guilds,Thunder Support,30,1,2,0,3,0,Unstoppable,15
+Mortars,Dwarf Guilds,Thunder Support,30,1,0,3,0,0,Indirect,0
+Piercing M-Drill,Dwarf Guilds,Mining Titan,0,1,2,0,3,0,Shred,0
+Pioneer Bike,Dwarf Guilds,Dwarf Champion,0,0,0,0,0,0,"Scout, Swift",100
+Pistols,Dwarf Guilds,Guardians,12,1,0,0,0,0,,0
+Pistols,Dwarf Guilds,Jetpack Warriors,12,1,0,0,0,0,,0
+Plasma Axe,Dwarf Guilds,Dwarf Champion,0,1,2,0,3,0,,15
+Plasma Axe,Dwarf Guilds,Dwarf Walker,0,2,2,0,3,0,,25
+Plasma Axe,Dwarf Guilds,Jetpack Warriors,0,1,2,0,3,0,,10
+Plasma Axe,Dwarf Guilds,Powersuit Champion,0,2,2,0,3,0,,25
+Plasma Axe,Dwarf Guilds,Powersuit Guard,0,1,2,0,3,0,,15
+Plasma Cannon,Dwarf Guilds,Iron Veterans,30,1,4,3,0,0,,65
+Plasma Cannon,Dwarf Guilds,Powersuit Guard,30,1,4,3,0,0,,65
+Plasma Pistol,Dwarf Guilds,Dwarf Warriors,12,1,4,0,0,0,,5
+Plasma Pistol,Dwarf Guilds,Iron Veterans,12,1,4,0,0,0,,5
+Plasma Pistol,Dwarf Guilds,Jetpack Warriors,12,1,4,0,0,0,,5
+Plasma Pistol,Dwarf Guilds,Miners,12,1,4,0,0,0,,5
+Plasma Pistol,Dwarf Guilds,Powersuit Guard,12,1,4,0,0,0,,5
+Plasma Rifle,Dwarf Guilds,Dwarf Warriors,24,1,4,0,0,0,,15
+Plasma Sword,Dwarf Guilds,Dwarf Champion,0,2,1,0,0,0,Rending,10
+Plasma Sword,Dwarf Guilds,Dwarf Walker,0,4,1,0,0,0,Rending,15
+Plasma Sword,Dwarf Guilds,Dwarf Warriors,0,2,1,0,0,0,Rending,10
+Plasma Sword,Dwarf Guilds,Iron Veterans,0,2,1,0,0,0,Rending,15
+Plasma Sword,Dwarf Guilds,Jetpack Warriors,0,2,1,0,0,0,Rending,10
+Plasma Sword,Dwarf Guilds,Mine-Bot Guard,0,3,1,0,0,0,Rending,30
+Plasma Sword,Dwarf Guilds,Miners,0,2,1,0,0,0,Rending,10
+Plasma Sword,Dwarf Guilds,Powersuit Champion,0,4,1,0,0,0,Rending,15
+Plasma Sword,Dwarf Guilds,Powersuit Guard,0,3,1,0,0,0,Rending,15
+Quad Attack Machinegun,Dwarf Guilds,Attack Vehicle,30,8,1,0,0,0,,25
+Quad Attack Machinegun,Dwarf Guilds,Battle Tank,30,8,1,0,0,0,,25
+Quad Attack Machinegun,Dwarf Guilds,Combat Excavator,30,8,1,0,0,0,,25
+Quad Attack Machinegun,Dwarf Guilds,Land Train,30,8,1,0,0,0,,25
+Rail M-Cannon,Dwarf Guilds,Attack Vehicle,36,1,2,0,6,0,Shred,5
+Rail M-Cannon,Dwarf Guilds,Fortress Tank,36,1,2,0,6,0,Shred,5
+Rail M-Rifle,Dwarf Guilds,Dwarf Warriors,24,1,2,0,3,0,Shred,35
+Rail M-Rifle,Dwarf Guilds,Powersuit Guard,24,1,2,0,3,0,Shred,45
+Rapid Storm Rifle,Dwarf Guilds,Powersuit Champion,24,6,1,0,0,0,,80
+Rifles,Dwarf Guilds,Dwarf Warriors,24,1,0,0,0,0,,0
+Rocket Mortar,Dwarf Guilds,Fortress Tank,24,1,1,3,0,0,Indirect,35
+Sagittarius Missiles,Dwarf Guilds,APC,36,2,4,0,0,0,Unstoppable,15
+Sagittarius Missiles,Dwarf Guilds,Combat Excavator,36,2,4,0,0,0,Unstoppable,15
+Sagittarius Missiles,Dwarf Guilds,Land Train,36,2,4,0,0,0,Unstoppable,15
+Sgt. Iron Pistol,Dwarf Guilds,Iron Veterans,9,2,1,0,0,0,,15
+Sgt. Iron Pistol,Dwarf Guilds,Miners,9,2,1,0,0,0,,10
+Sgt. Pistol,Dwarf Guilds,Dwarf Warriors,12,1,0,0,0,0,,10
+Shock Gauntlet,Dwarf Guilds,Dwarf Champion,0,2,4,0,0,0,,15
+Shock Gauntlet,Dwarf Guilds,Dwarf Walker,0,4,4,0,0,0,,30
+Shock Gauntlet,Dwarf Guilds,Dwarf Warriors,0,2,4,0,0,0,,5
+Shock Gauntlet,Dwarf Guilds,Iron Veterans,0,2,4,0,0,0,,10
+Shock Gauntlet,Dwarf Guilds,Jetpack Warriors,0,2,4,0,0,0,,15
+Shock Gauntlet,Dwarf Guilds,Mine-Bot Guard,0,3,4,0,0,0,,65
+Shock Gauntlet,Dwarf Guilds,Miners,0,2,4,0,0,0,,5
+Shock Gauntlet,Dwarf Guilds,Powersuit Champion,0,4,4,0,0,0,,30
+Shock Gauntlet,Dwarf Guilds,Powersuit Guard,0,3,4,0,0,0,,30
+Shock Hammer,Dwarf Guilds,Dwarf Champion,0,1,0,3,0,0,,5
+Shock Hammer,Dwarf Guilds,Jetpack Warriors,0,1,0,3,0,0,,5
+Shock Hammer,Dwarf Guilds,Powersuit Champion,0,2,0,3,0,0,,0
+Shock Hammers,Dwarf Guilds,Dwarf Walker,0,1,0,3,0,0,,0
+Shock Hammers,Dwarf Guilds,Powersuit Guard,0,1,0,3,0,0,,0
+Shotgun,Dwarf Guilds,Dwarf Bikers,12,2,1,0,0,0,,5
+Shotgun,Dwarf Guilds,Dwarf Warriors,12,2,1,0,0,0,,20
+Sniper Rifles,Dwarf Guilds,Sniper Team,30,1,1,0,0,0,"Reliable, Takedown",0
+Stomp,Dwarf Guilds,Dwarf Walker,0,4,1,0,0,0,,0
+Stomp,Dwarf Guilds,Mining Titan,0,6,2,0,0,0,,0
+Storm Rifle,Dwarf Guilds,Dwarf Walker,24,3,1,0,0,0,,45
+Storm Rifle,Dwarf Guilds,Powersuit Guard,24,3,1,0,0,0,,35
+Super-Heavy Fusion Rifle,Dwarf Guilds,APC,18,1,4,0,6,0,,20
+Super-Heavy Fusion Rifle,Dwarf Guilds,Combat Excavator,18,1,4,0,6,0,,20
+Super-Heavy Fusion Rifle,Dwarf Guilds,Land Train,18,1,4,0,6,0,,20
+Swarm Mortar,Dwarf Guilds,Fortress Tank,24,3,0,0,0,0,Indirect,30
+Transport Carriage,Dwarf Guilds,Land Train,0,0,0,0,0,0,"Tough(6), Transport(11)",160
+Tunneling Drill,Dwarf Guilds,Assault Drill,0,6,4,0,0,0,,0
+Tunneling Drill,Dwarf Guilds,Combat Excavator,0,6,4,0,0,0,,0
+Twin AA-Cannon,Dwarf Guilds,Battle Tank,30,6,3,0,0,0,Unstoppable,50
+Twin AA-Cannon,Dwarf Guilds,Combat Excavator,30,6,3,0,0,0,Unstoppable,50
+Twin AA-Cannon,Dwarf Guilds,Land Train,30,6,3,0,0,0,Unstoppable,50
+Twin Autocannon,Dwarf Guilds,Attack Vehicle,36,6,2,0,0,0,,35
+Twin Autocannon,Dwarf Guilds,Dwarf Walker,36,6,2,0,0,0,,120
+Twin Fusion AA-Gun,Dwarf Guilds,Artillery Gun,24,2,4,0,3,0,Unstoppable,45
+Twin Glove-Pistols,Dwarf Guilds,Jetpack Warriors,12,2,0,0,0,0,,0
+Twin Heavy AA-Gun,Dwarf Guilds,Artillery Gun,30,6,1,0,0,0,Unstoppable,20
+Twin Heavy Fusion Rifle,Dwarf Guilds,Attack Vehicle,18,2,4,0,3,0,,0
+Twin Heavy Fusion Rifle,Dwarf Guilds,Battle Tank,18,2,4,0,3,0,,0
+Twin Heavy Fusion Rifle,Dwarf Guilds,Combat Excavator,18,2,4,0,3,0,,0
+Twin Heavy Fusion Rifle,Dwarf Guilds,Dwarf Walker,18,2,4,0,3,0,,80
+Twin Heavy Hail-Gun,Dwarf Guilds,Artillery Gun,24,6,1,0,0,0,Indirect,20
+Twin Heavy Machinegun,Dwarf Guilds,Battle Tank,30,6,1,0,0,0,,20
+Twin Heavy Machinegun,Dwarf Guilds,Dwarf Walker,30,6,1,0,0,0,,80
+Twin Heavy Rifle,Dwarf Guilds,APC,24,2,1,0,0,0,,0
+Twin Heavy Rifle,Dwarf Guilds,Land Train,24,2,1,0,0,0,,0
+Twin Heavy Rifles,Dwarf Guilds,Fortress Tank,24,2,1,0,0,0,,0
+Twin Light AA-Gun,Dwarf Guilds,Combat Excavator,30,6,1,0,0,0,Unstoppable,0
+Twin Light AA-Guns,Dwarf Guilds,Land Train,30,6,1,0,0,0,Unstoppable,0
+Twin Light Fusion AA-Gun,Dwarf Guilds,Combat Excavator,24,2,4,0,3,0,Unstoppable,20
+Twin Light Fusion AA-Gun,Dwarf Guilds,Land Train,24,2,4,0,3,0,Unstoppable,20
+Weapon Carriage,Dwarf Guilds,Land Train,18,2,4,0,3,0,Tough(6),200
+AA-Cannon,High Elf Fleets,Support Artillery,36,6,1,0,0,0,Unstoppable,60
+Arcing Rockets,High Elf Fleets,Vanquishers,30,1,1,3,0,0,Indirect,5
+Artillery Crew,High Elf Fleets,Support Artillery,0,3,0,0,0,0,,0
+Burst Laser,High Elf Fleets,Anti-Gravity APC,30,3,2,0,0,0,,15
+Burst Laser,High Elf Fleets,Heavy Jetbike,30,3,2,0,0,0,,15
+Burst Laser,High Elf Fleets,Jetbike Protectors,30,3,2,0,0,0,,20
+Burst Mortar,High Elf Fleets,Support Artillery,30,2,0,3,0,0,Indirect,0
+CCW,High Elf Fleets,Elite Protector,0,2,0,0,0,0,,5
+CCW,High Elf Fleets,Elven Noble,0,2,0,0,0,0,,0
+CCW,High Elf Fleets,Gliders,0,1,0,0,0,0,,10
+CCW,High Elf Fleets,Retributors,0,1,0,0,0,0,,65
+CCWs,High Elf Fleets,Elemental Protectors,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Gliders,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Jetbike Protectors,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Jetbike Strikers,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Protectors,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Shifters,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Snipers,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Strikers,0,1,0,0,0,0,,0
+CCWs,High Elf Fleets,Vanquishers,0,1,0,0,0,0,,0
+Dire Sword,High Elf Fleets,Elite Protector,0,1,0,3,0,0,,5
+Dire Sword,High Elf Fleets,Elven Noble,0,1,0,3,0,0,,5
+Dire Sword,High Elf Fleets,Retributors,0,1,0,3,0,0,,10
+Dual Energy Swords,High Elf Fleets,Elemental Strikers,0,4,1,0,0,0,Rending,20
+Dual Energy Swords,High Elf Fleets,Stingers,0,4,1,0,0,0,Rending,15
+Dual Shifter Picks,High Elf Fleets,Shifters,0,2,0,0,0,0,Bane,5
+Dual Titan Claws,High Elf Fleets,Titan Elemental,0,24,0,0,0,0,Rending,0
+Energy Lance,High Elf Fleets,Jetbike Strikers,0,2,1,0,0,0,Thrust,20
+Energy Spear,High Elf Fleets,Acolytes,0,2,4,0,0,0,,5
+Energy Spear,High Elf Fleets,Elemental Strikers,0,3,4,0,0,0,,15
+Energy Spear,High Elf Fleets,Elite Protector,0,2,4,0,0,0,,15
+Energy Spear,High Elf Fleets,Elven Noble,0,2,4,0,0,0,,15
+Energy Spear,High Elf Fleets,Jetbike Strikers,0,2,4,0,0,0,,5
+Energy Sword,High Elf Fleets,Elemental Strikers,0,3,1,0,0,0,Rending,5
+Energy Sword,High Elf Fleets,Elite Protector,0,2,1,0,0,0,Rending,10
+Energy Sword,High Elf Fleets,Elven Noble,0,2,1,0,0,0,Rending,10
+Energy Sword,High Elf Fleets,Jetbike Strikers,0,3,1,0,0,0,Rending,5
+Energy Sword,High Elf Fleets,Retributors,0,2,1,0,0,0,Rending,15
+Energy Sword,High Elf Fleets,Strikers,0,2,1,0,0,0,Rending,10
+Energy Sword (A2),High Elf Fleets,Gliders,0,2,1,0,0,0,Rending,10
+Energy Swords,High Elf Fleets,Acolytes,0,2,1,0,0,0,Rending,0
+Energy Swords,High Elf Fleets,Retributors,0,2,1,0,0,0,Rending,0
+Energy Swords,High Elf Fleets,Revenants,0,2,1,0,0,0,Rending,0
+Flamer,High Elf Fleets,Great Elemental,12,1,0,3,0,0,Reliable,5
+Flamer,High Elf Fleets,Strikers,12,1,0,3,0,0,Reliable,15
+Fusion Pike,High Elf Fleets,Scorchers,18,1,4,0,3,0,,25
+Fusion Rifle,High Elf Fleets,Scorchers,12,1,4,0,3,0,,20
+Fusion Rifle,High Elf Fleets,Strikers,12,1,4,0,3,0,,20
+Great Avatar,High Elf Fleets,Elemental Avatar,0,0,0,0,0,0,,40
+Great Axe,High Elf Fleets,Great Elemental,0,1,2,0,6,0,,20
+Great Claw,High Elf Fleets,Great Elemental,0,4,0,0,0,0,Rending,5
+Great Elemental Sword,High Elf Fleets,Great Elemental,0,6,1,0,0,0,Rending,60
+Great Flamer Axe,High Elf Fleets,Elite Protector,12,1,1,3,0,0,Reliable,15
+Great Flamer Axe,High Elf Fleets,Elven Noble,12,1,1,3,0,0,Reliable,15
+Great Fusion Axe,High Elf Fleets,Elite Protector,12,1,4,0,3,0,,15
+Great Fusion Axe,High Elf Fleets,Elven Noble,12,1,4,0,3,0,,20
+Great Spear,High Elf Fleets,Great Elemental,0,6,4,0,0,0,,45
+Gun Platform (Burst Laser),High Elf Fleets,Protectors,30,3,2,0,0,0,,40
+Gun Platform (Laser Cannon),High Elf Fleets,Protectors,36,1,3,0,3,0,,45
+Gun Platform (Missile Launcher),High Elf Fleets,Protectors,30,1,2,0,3,0,Unstoppable,30
+Gun Platform (Shard Cannon),High Elf Fleets,Protectors,24,3,1,0,0,0,Crack,30
+Gun Platform (Shatter Cannon),High Elf Fleets,Protectors,36,3,1,0,0,0,Rending,50
+Heavy Flamers,High Elf Fleets,Scorchers,12,1,1,3,0,0,Reliable,0
+Heavy Laser Blaster,High Elf Fleets,Gliders,18,3,2,0,0,0,,35
+Heavy Mortar,High Elf Fleets,Support Artillery,24,1,2,0,6,0,Indirect,25
+Heavy Web Spinner,High Elf Fleets,Shifters,12,4,4,0,0,0,,25
+Impact Rockets,High Elf Fleets,Elite Protector,30,1,3,0,3,0,,45
+Impact Rockets,High Elf Fleets,Elven Noble,30,1,3,0,3,0,,55
+Impact Rockets,High Elf Fleets,Vanquishers,30,1,3,0,3,0,,15
+Jetbike,High Elf Fleets,Acolytes,0,0,0,0,0,0,"Fast, Strider",125
+Jetbike,High Elf Fleets,Elite Protector,0,0,0,0,0,0,"Fast, Strider",65
+Jetbike,High Elf Fleets,Elven Noble,0,0,0,0,0,0,"Fast, Strider",85
+Killing Axe,High Elf Fleets,Elite Protector,0,1,2,0,3,0,,10
+Killing Axe,High Elf Fleets,Elven Noble,0,1,2,0,3,0,,15
+Killing Axe,High Elf Fleets,Jetbike Strikers,0,1,2,0,3,0,,5
+Killing Axe,High Elf Fleets,Revenants,0,1,2,0,3,0,,5
+Killing Axes,High Elf Fleets,Elemental Strikers,0,1,2,0,3,0,,0
+Laser Blaster,High Elf Fleets,Gliders,18,1,2,0,0,0,,10
+Laser Cannon,High Elf Fleets,Anti-Gravity APC,36,1,3,0,3,0,,20
+Laser Cannon,High Elf Fleets,Heavy Jetbike,36,1,3,0,3,0,,20
+Laser Pistol,High Elf Fleets,Gliders,9,1,2,0,0,0,,10
+Laser Pistols,High Elf Fleets,Gliders,9,1,2,0,0,0,,0
+Light Shard Cannon,High Elf Fleets,Anti-Gravity APC,24,2,1,0,0,0,Crack,20
+Light Shard Cannon,High Elf Fleets,Anti-Gravity Tank,24,2,1,0,0,0,Crack,20
+Light Shard Cannon,High Elf Fleets,Heavy Jetbike,24,2,1,0,0,0,Crack,20
+Master Laser Blaster,High Elf Fleets,Elite Protector,18,2,2,0,0,0,,10
+Master Laser Blaster,High Elf Fleets,Elven Noble,18,2,2,0,0,0,,15
+Master Laser Pistol,High Elf Fleets,Elite Protector,9,2,2,0,0,0,,5
+Master Laser Pistol,High Elf Fleets,Elven Noble,9,2,2,0,0,0,,5
+Master Shard Carbine,High Elf Fleets,Elite Protector,18,3,0,0,0,0,Crack,10
+Master Shard Carbine,High Elf Fleets,Elven Noble,18,3,0,0,0,0,Crack,15
+Master Shard Pistol,High Elf Fleets,Elite Protector,12,2,0,0,0,0,Crack,5
+Master Shard Pistol,High Elf Fleets,Elven Noble,12,2,0,0,0,0,Crack,10
+Master Sniper Rifle,High Elf Fleets,Elite Protector,30,2,1,0,0,0,"Reliable, Takedown",55
+Master Sniper Rifle,High Elf Fleets,Elven Noble,30,2,1,0,0,0,"Reliable, Takedown",50
+Master Stinger Blade,High Elf Fleets,Elite Protector,0,3,0,0,0,0,"Reliable, Bane",20
+Master Stinger Blade,High Elf Fleets,Elven Noble,0,3,0,0,0,0,"Reliable, Bane",15
+Master Web Spinner,High Elf Fleets,Elite Protector,12,3,4,0,0,0,,20
+Master Web Spinner,High Elf Fleets,Elven Noble,12,3,4,0,0,0,,30
+Mirror Scythe,High Elf Fleets,Revenants,0,4,0,0,0,0,Rending,5
+Missile Launcher,High Elf Fleets,Anti-Gravity APC,30,1,2,0,3,0,Unstoppable,5
+Missile Launcher,High Elf Fleets,Heavy Jetbike,30,1,2,0,3,0,Unstoppable,5
+Mounted Shardguns,High Elf Fleets,Anti-Gravity Tank,12,2,0,0,0,0,Crack,0
+Mounted Shardguns,High Elf Fleets,Jetbike Protectors,12,2,0,0,0,0,Crack,0
+Mounted Shardguns,High Elf Fleets,Jetbike Strikers,12,2,0,0,0,0,Crack,0
+Prism Cannon,High Elf Fleets,Anti-Gravity Tank,36,2,4,0,6,0,,45
+Rapid Burst Laser,High Elf Fleets,Anti-Gravity Tank,30,6,2,0,0,0,,30
+Rapid Burst Laser,High Elf Fleets,Combat Walker,30,6,2,0,0,0,,30
+Rapid Burst Laser,High Elf Fleets,Great Elemental,30,6,2,0,0,0,,130
+Rapid Burst Laser,High Elf Fleets,Titan Elemental,30,6,2,0,0,0,,130
+Rapid Laser Cannon,High Elf Fleets,Anti-Gravity Tank,36,2,3,0,3,0,,45
+Rapid Laser Cannon,High Elf Fleets,Combat Walker,36,2,3,0,3,0,,45
+Rapid Laser Cannon,High Elf Fleets,Great Elemental,36,2,3,0,3,0,,145
+Rapid Missile Launcher,High Elf Fleets,Anti-Gravity Tank,30,2,2,0,3,0,Unstoppable,10
+Rapid Missile Launcher,High Elf Fleets,Combat Walker,30,2,2,0,3,0,Unstoppable,10
+Rapid Missile Launcher,High Elf Fleets,Great Elemental,30,2,2,0,3,0,Unstoppable,110
+Rapid Pulse Laser,High Elf Fleets,Venator Plane,36,6,3,0,0,0,Unstoppable,0
+Rapid Shard Cannon,High Elf Fleets,Combat Walker,24,6,1,0,0,0,Crack,0
+Rapid Shard Cannon,High Elf Fleets,Great Elemental,24,6,1,0,0,0,Crack,100
+Rapid Shard Cannon,High Elf Fleets,Titan Elemental,24,6,1,0,0,0,Crack,100
+Rapid Shard Cannons,High Elf Fleets,Anti-Gravity Tank,24,6,1,0,0,0,Crack,0
+Rapid Shatter Cannon,High Elf Fleets,Anti-Gravity Tank,36,6,1,0,0,0,Rending,40
+Rapid Shatter Cannon,High Elf Fleets,Combat Walker,36,6,1,0,0,0,Rending,40
+Rapid Shatter Cannon,High Elf Fleets,Great Elemental,36,6,1,0,0,0,Rending,145
+Rapid Shatter Cannon,High Elf Fleets,Titan Elemental,36,6,1,0,0,0,Rending,145
+Scorpion Fist,High Elf Fleets,Stingers,12,3,0,0,0,0,Rending,15
+Sgt. Energy Sword,High Elf Fleets,Revenants,0,2,1,0,0,0,Rending,0
+Sgt. Shard Pistol,High Elf Fleets,Revenants,12,1,0,0,0,0,Crack,0
+Sgt. Shard Pistol,High Elf Fleets,Stingers,12,1,0,0,0,0,Crack,0
+Sgt. Stinger Blade,High Elf Fleets,Stingers,0,2,0,0,0,0,"Reliable, Bane",0
+Shard Cannon,High Elf Fleets,Anti-Gravity APC,24,3,1,0,0,0,Crack,100
+Shard Cannon,High Elf Fleets,Heavy Jetbike,24,3,1,0,0,0,Crack,0
+Shard Cannon,High Elf Fleets,Jetbike Protectors,24,3,1,0,0,0,Crack,5
+Shard Cannon,High Elf Fleets,Vanquishers,24,3,1,0,0,0,Crack,5
+Shard Carbine,High Elf Fleets,Retributors,18,2,0,0,0,0,Crack,65
+Shard Pistol,High Elf Fleets,Retributors,12,1,0,0,0,0,Crack,10
+Shard Pistols,High Elf Fleets,Acolytes,12,1,0,0,0,0,Crack,0
+Shard Pistols,High Elf Fleets,Jetbike Protectors,12,1,0,0,0,0,Crack,0
+Shard Pistols,High Elf Fleets,Jetbike Strikers,12,1,0,0,0,0,Crack,0
+Shard Pistols,High Elf Fleets,Revenants,12,1,0,0,0,0,Crack,0
+Shard Pistols,High Elf Fleets,Stingers,12,1,0,0,0,0,Crack,0
+Shard Pistols,High Elf Fleets,Strikers,12,1,0,0,0,0,Crack,0
+Shardguns,High Elf Fleets,Protectors,12,2,0,0,0,0,Crack,0
+Shatter Cannon,High Elf Fleets,Anti-Gravity APC,36,3,1,0,0,0,Rending,20
+Shatter Cannon,High Elf Fleets,Heavy Jetbike,36,3,1,0,0,0,Rending,20
+Shred Blaster,High Elf Fleets,Gliders,24,4,0,0,0,0,Rending,50
+Shred Blaster Pistol,High Elf Fleets,Gliders,12,2,0,0,0,0,Rending,15
+Sniper Rifle,High Elf Fleets,Jetbike Protectors,30,1,1,0,0,0,"Reliable, Takedown",30
+Sniper Rifles,High Elf Fleets,Snipers,30,1,1,0,0,0,"Reliable, Takedown",0
+Spinner Cannon,High Elf Fleets,Anti-Gravity Tank,30,4,4,3,0,0,Indirect,195
+Spinner Carbine,High Elf Fleets,Shifters,18,2,4,0,0,0,,15
+Stinger Blades,High Elf Fleets,Stingers,0,2,0,0,0,0,"Reliable, Bane",0
+Stinger Dagger,High Elf Fleets,Stingers,0,1,0,3,0,0,"Reliable, Bane",5
+Stomp,High Elf Fleets,Combat Walker,0,2,1,0,0,0,,0
+Stomp,High Elf Fleets,Great Elemental,0,2,1,0,0,0,,0
+Stomp,High Elf Fleets,Titan Elemental,0,2,1,0,0,0,,0
+Sun Cannon,High Elf Fleets,Titan Elemental,36,3,2,6,0,0,,100
+Surge Rockets,High Elf Fleets,Elite Protector,24,3,1,0,0,0,Unstoppable,35
+Surge Rockets,High Elf Fleets,Elven Noble,24,3,1,0,0,0,Unstoppable,40
+Sword,High Elf Fleets,Revenants,0,2,0,0,0,0,,20
+Titan Axe,High Elf Fleets,Titan Elemental,0,6,2,0,3,0,,5
+Titan Spear,High Elf Fleets,Titan Elemental,0,16,4,0,0,0,,70
+Titan Sword,High Elf Fleets,Titan Elemental,0,20,1,0,0,0,Rending,45
+Tri-Chakram,High Elf Fleets,Revenants,12,3,1,0,0,0,Reliable,20
+Twin Distortion Guns,High Elf Fleets,Seer Plane,18,4,3,3,0,0,,0
+Twin Heavy Wraith Cannon,High Elf Fleets,Titan Elemental,24,2,4,0,9,0,,125
+Twin Laser Cannon,High Elf Fleets,Venator Plane,36,2,3,0,3,0,,0
+Twin Shard Carbine,High Elf Fleets,Retributors,18,4,0,0,0,0,Crack,20
+Twin Shatter Cannon,High Elf Fleets,Venator Plane,36,6,1,0,0,0,Rending,0
+Web Spinners,High Elf Fleets,Shifters,12,2,4,0,0,0,,0
+Wraith Cannon,High Elf Fleets,Elemental Protectors,12,3,4,0,0,0,,55
+AA-Cannon,Human Defense Force,Support Vehicle,30,6,3,0,0,0,Unstoppable,25
+AA-Warheads,Human Defense Force,Light Walker,24,2,2,0,0,0,"Limited, Unstoppable",10
+AA-Warheads,Human Defense Force,Tactical Walker,24,2,2,0,0,0,"Limited, Unstoppable",10
+AA-Warheads Array,Human Defense Force,Tactical Titan,24,4,2,0,0,0,Unstoppable,25
+Acid Cannon,Human Defense Force,Attack Vehicle,18,6,0,0,0,0,Bane,10
+Anti-Tank Cannon,Human Defense Force,Battle Tank,30,1,3,0,6,0,,25
+Anti-Tank Cannon,Human Defense Force,Tank Company Leader,30,1,3,0,6,0,,25
+Anti-Tank Lance,Human Defense Force,Combat Bikers,0,1,1,0,3,0,Thrust,10
+Artillery Cannon,Human Defense Force,Support Vehicle,36,3,1,3,0,0,Indirect,45
+Artillery Crew,Human Defense Force,Field Artillery,0,3,0,0,0,0,,0
+Ballistic Missile,Human Defense Force,Support Vehicle,36,1,4,12,0,0,"Indirect, Limited, Reliable",35
+Bane Cannon,Human Defense Force,Super Heavy Battle Tank,30,4,2,3,0,0,,90
+Bash,Human Defense Force,OGRE Robots,0,1,0,0,0,0,,0
+Battle Cannon,Human Defense Force,Attack Vehicle,30,2,2,3,0,0,,45
+Battle Cannon,Human Defense Force,Battle Tank,30,2,2,3,0,0,,30
+Battle Cannon,Human Defense Force,Tank Company Leader,30,2,2,3,0,0,,30
+CCW,Human Defense Force,Company Leader,0,2,0,0,0,0,,0
+CCW,Human Defense Force,Storm Leader,0,2,0,0,0,0,,0
+CCWs,Human Defense Force,Sappers,0,1,0,0,0,0,,0
+CCWs,Human Defense Force,Snipers,0,1,0,0,0,0,,0
+CCWs,Human Defense Force,Storm Troopers,0,1,0,0,0,0,,0
+CCWs,Human Defense Force,Veterans,0,1,0,0,0,0,,0
+Cluster Missiles,Human Defense Force,Light Walker,24,1,0,3,0,0,Limited,5
+Cluster Missiles,Human Defense Force,Tactical Walker,24,1,0,3,0,0,Limited,5
+Cluster Missiles Array,Human Defense Force,Tactical Titan,24,2,0,3,0,0,,0
+Combat Axe,Human Defense Force,OGRE Robots,0,3,2,0,0,0,,30
+Crew,Human Defense Force,Infantry Squad,0,2,0,0,0,0,,0
+Crew,Human Defense Force,Veterans,0,2,0,0,0,0,,0
+Crews,Human Defense Force,Weapon Teams,0,2,0,0,0,0,,0
+Demo Charge,Human Defense Force,Company Leader,0,1,4,0,0,0,Limited,5
+Demo Charge,Human Defense Force,Veterans,0,1,4,0,0,0,Limited,15
+Doom Cannon,Human Defense Force,Super Heavy Battle Tank,30,6,3,0,3,0,,80
+Door Gunners,Human Defense Force,Heavy Gunship,30,3,1,0,0,0,,40
+Door Gunners,Human Defense Force,Light Gunship,30,3,1,0,0,0,,40
+Drum Pistol,Human Defense Force,Infantry Squad,9,2,0,0,0,0,Rending,5
+Drum Pistol,Human Defense Force,Storm Troopers,9,2,0,0,0,0,Rending,5
+Drum Pistol,Human Defense Force,Veterans,9,2,0,0,0,0,Rending,5
+Drum Rifle,Human Defense Force,Combat Bikers,18,2,0,0,0,0,Rending,10
+Drum Rifle,Human Defense Force,Infantry Squad,18,2,0,0,0,0,Rending,10
+Drum Rifle,Human Defense Force,Sappers,18,2,0,0,0,0,Rending,5
+Drum Rifle,Human Defense Force,Storm Troopers,18,2,0,0,0,0,Rending,5
+Drum Rifle,Human Defense Force,Veterans,18,2,0,0,0,0,Rending,10
+Eagle Rockets,Human Defense Force,Support Vehicle,30,2,2,3,0,0,Indirect,0
+Energy Axe (Gatling Gun),Human Defense Force,Combat Walker,0,6,4,0,0,0,,30
+Energy Axe (Combat Shield),Human Defense Force,Combat Walker,0,6,4,0,0,0,,50
+Energy Axe,Human Defense Force,Company Leader,0,2,4,0,0,0,,15
+Energy Axe,Human Defense Force,Infantry Squad,0,2,4,0,0,0,,10
+Energy Axe,Human Defense Force,Storm Leader,0,2,4,0,0,0,,15
+Energy Axe,Human Defense Force,Storm Troopers,0,2,4,0,0,0,,15
+Energy Axe,Human Defense Force,Veterans,0,2,4,0,0,0,,15
+Energy Sword,Human Defense Force,Combat Bikers,0,2,1,0,0,0,Rending,5
+Energy Sword (Gatling Gun),Human Defense Force,Combat Walker,0,6,1,0,0,0,Rending,20
+Energy Sword (Combat Shield),Human Defense Force,Combat Walker,0,6,1,0,0,0,Rending,35
+Energy Sword,Human Defense Force,Company Leader,0,2,1,0,0,0,Rending,10
+Energy Sword,Human Defense Force,Infantry Squad,0,2,1,0,0,0,Rending,5
+Energy Sword,Human Defense Force,Storm Leader,0,2,1,0,0,0,Rending,10
+Energy Sword,Human Defense Force,Storm Troopers,0,2,1,0,0,0,Rending,10
+Energy Sword,Human Defense Force,Veterans,0,2,1,0,0,0,Rending,10
+Field Cannon,Human Defense Force,Field Artillery,30,2,2,3,0,0,,35
+Flamer,Human Defense Force,Combat Bikers,12,1,0,3,0,0,Reliable,15
+Flamer,Human Defense Force,Combat Walker,12,1,0,3,0,0,Reliable,20
+Flamer,Human Defense Force,Infantry Squad,12,1,0,3,0,0,Reliable,15
+Flamer,Human Defense Force,Sappers,12,1,0,3,0,0,Reliable,5
+Flamer,Human Defense Force,Storm Troopers,12,1,0,3,0,0,Reliable,10
+Flamer,Human Defense Force,Veterans,12,1,0,3,0,0,Reliable,10
+Fury Missiles,Human Defense Force,Heavy Gunship,36,2,0,3,0,0,,0
+Fusion Array,Human Defense Force,Heavy Battle Tank,12,2,4,0,3,0,,0
+Fusion Cannon,Human Defense Force,Attack Vehicle,24,1,4,0,6,0,,40
+Fusion Rifle,Human Defense Force,Combat Bikers,12,1,4,0,3,0,,15
+Fusion Rifle,Human Defense Force,Combat Walker,12,1,4,0,3,0,,25
+Fusion Rifle,Human Defense Force,Infantry Squad,12,1,4,0,3,0,,10
+Fusion Rifle,Human Defense Force,Sappers,12,1,4,0,3,0,,5
+Fusion Rifle,Human Defense Force,Storm Troopers,12,1,4,0,3,0,,15
+Fusion Rifle,Human Defense Force,Veterans,12,1,4,0,3,0,,20
+Gatling Gun,Human Defense Force,Attack Vehicle,18,6,0,0,0,0,,0
+Gatling Gun,Human Defense Force,Combat Walker,18,6,0,0,0,0,,0
+Grenade Launcher,Human Defense Force,Combat Bikers,24,1,0,3,0,0,,10
+Grenade Launcher,Human Defense Force,Infantry Squad,24,1,0,3,0,0,,10
+Grenade Launcher,Human Defense Force,Storm Troopers,24,1,0,3,0,0,,10
+Grenade Launcher,Human Defense Force,Veterans,24,1,0,3,0,0,,10
+Grenade Launchers,Human Defense Force,Sappers,24,1,0,3,0,0,,0
+HE Autocannon,Human Defense Force,Heavy Battle Tank,36,3,1,0,0,0,Crack,35
+HE Autocannon,Human Defense Force,Super Heavy Battle Tank,36,3,1,0,0,0,Crack,90
+HE Autocannon,Human Defense Force,Weapon Teams,36,3,1,0,0,0,Crack,15
+Hammer Cannon,Human Defense Force,Super Heavy Battle Tank,30,6,1,3,0,0,Indirect,25
+Heavy CCWs,Human Defense Force,OGRE Robots,0,1,1,0,0,0,,0
+Heavy Flamer,Human Defense Force,Attack Vehicle,12,1,1,3,0,0,Reliable,0
+Heavy Flamer,Human Defense Force,Battle Tank,12,1,1,3,0,0,Reliable,25
+Heavy Flamer,Human Defense Force,Light APC,12,1,1,3,0,0,Reliable,0
+Heavy Flamer,Human Defense Force,Super Heavy Battle Tank,12,1,1,3,0,0,Reliable,25
+Heavy Flamer,Human Defense Force,Support Vehicle,12,1,1,3,0,0,Reliable,0
+Heavy Flamer,Human Defense Force,Tank Company Leader,12,1,1,3,0,0,Reliable,25
+Heavy Fusion Rifle,Human Defense Force,Attack Vehicle,18,1,4,0,3,0,,10
+Heavy HE Autocannon,Human Defense Force,Battle Tank,36,6,1,0,0,0,Crack,50
+Heavy HE Autocannon,Human Defense Force,Tank Company Leader,36,6,1,0,0,0,Crack,50
+Heavy Lance,Human Defense Force,Company Leader,0,3,2,0,0,0,,15
+Heavy Lances,Human Defense Force,Combat Bikers,0,1,2,0,0,0,,0
+Heavy Laser Cannon,Human Defense Force,Attack Vehicle,36,1,3,0,6,0,,50
+Heavy Laser Cannon,Human Defense Force,Field Artillery,36,1,3,0,6,0,,40
+Heavy Machinegun,Human Defense Force,Attack Vehicle,30,3,1,0,0,0,,10
+Heavy Machinegun,Human Defense Force,Battle Tank,30,3,1,0,0,0,,40
+Heavy Machinegun,Human Defense Force,Combat Walker,30,3,1,0,0,0,,40
+Heavy Machinegun,Human Defense Force,Heavy Battle Tank,30,3,1,0,0,0,,40
+Heavy Machinegun,Human Defense Force,Light APC,30,3,1,0,0,0,,10
+Heavy Machinegun,Human Defense Force,Super Heavy Battle Tank,30,3,1,0,0,0,,40
+Heavy Machinegun,Human Defense Force,Support Vehicle,30,3,1,0,0,0,,15
+Heavy Machinegun,Human Defense Force,Tank Company Leader,30,3,1,0,0,0,,40
+Heavy Machinegun,Human Defense Force,Weapon Teams,30,3,1,0,0,0,,5
+Heavy Machinegun Array,Human Defense Force,Heavy Battle Tank,30,6,1,0,0,0,,25
+Heavy Plasma Cannon,Human Defense Force,Battle Tank,30,1,4,6,0,0,,35
+Heavy Plasma Cannon,Human Defense Force,Tank Company Leader,30,1,4,6,0,0,,35
+Hell Cannon,Human Defense Force,Super Heavy Battle Tank,24,4,1,3,0,0,Unstoppable,0
+Hunter Missiles,Human Defense Force,Attack Vehicle,24,1,2,0,3,0,Limited,15
+Hunter Missiles,Human Defense Force,Battle Tank,24,1,2,0,3,0,"Limited, Unstoppable",15
+Hunter Missiles,Human Defense Force,Light APC,24,1,2,0,3,0,"Limited, Unstoppable",15
+Hunter Missiles,Human Defense Force,Tank Company Leader,24,1,2,0,3,0,"Limited, Unstoppable",15
+Hunting Lance,Human Defense Force,Combat Bikers,0,1,1,0,0,0,Thrust,5
+Hunting Lance,Human Defense Force,Company Leader,0,2,1,0,0,0,Thrust,10
+Laser Cannon,Human Defense Force,Battle Tank,36,1,3,0,3,0,,55
+Laser Cannon,Human Defense Force,Light Gunship,36,1,3,0,3,0,,0
+Laser Cannon,Human Defense Force,Tank Company Leader,36,1,3,0,3,0,,55
+Laser Cannon,Human Defense Force,Weapon Teams,36,1,3,0,3,0,,20
+Laser Machinegun,Human Defense Force,Light APC,30,3,3,0,0,0,,30
+Laser Machinegun,Human Defense Force,Light Gunship,30,3,3,0,0,0,,5
+Laser Rifle,Human Defense Force,Combat Bikers,30,1,3,0,0,0,,10
+Laser Rifle,Human Defense Force,Infantry Squad,30,1,3,0,0,0,,10
+Light AA-Cannon,Human Defense Force,Field Artillery,30,6,1,0,0,0,Unstoppable,40
+Light Battle Cannon,Human Defense Force,Armored Truck,24,1,2,3,0,0,,10
+Light Gatling Gun,Human Defense Force,Armored Truck,18,4,0,0,0,0,,0
+Light Gatling Gun,Human Defense Force,Heavy Battle Tank,18,4,0,0,0,0,,0
+Light Grenade Launcher,Human Defense Force,OGRE Robots,18,1,0,3,0,0,,0
+Light Shard Mortar,Human Defense Force,Field Artillery,18,2,0,3,0,0,"Indirect, Rending",0
+Lord Gatling Cannon,Human Defense Force,Super Heavy Battle Tank,30,18,1,0,0,0,Unstoppable,40
+Master Drum Pistol,Human Defense Force,Company Leader,9,3,0,0,0,0,Rending,5
+Master Drum Pistol,Human Defense Force,Storm Leader,9,3,0,0,0,0,Rending,5
+Master Heavy Pistol,Human Defense Force,Storm Leader,12,2,1,0,0,0,,0
+Master Heavy Rifle,Human Defense Force,Storm Leader,24,2,1,0,0,0,,10
+Master Pistol,Human Defense Force,Colonel Rixxon,12,2,0,0,0,0,,0
+Master Pistol,Human Defense Force,Company Leader,12,2,0,0,0,0,,0
+Master Plasma Pistol,Human Defense Force,Company Leader,12,2,4,0,0,0,,15
+Master Plasma Pistol,Human Defense Force,Storm Leader,12,2,4,0,0,0,,10
+Master Rifle,Human Defense Force,Company Leader,24,2,0,0,0,0,,5
+Master Shotgun,Human Defense Force,Company Leader,12,3,1,0,0,0,,10
+Master Sniper Rifle,Human Defense Force,Company Leader,30,2,1,0,0,0,"Reliable, Takedown",55
+Master Sniper Rifle,Human Defense Force,Storm Leader,30,2,1,0,0,0,"Reliable, Takedown",50
+Missile Launcher,Human Defense Force,Weapon Teams,30,1,2,0,3,0,Unstoppable,10
+Mortars,Human Defense Force,Weapon Teams,30,1,0,3,0,0,Indirect,0
+Nova Cannon,Human Defense Force,Battle Tank,36,1,1,6,0,0,,0
+Nova Cannon,Human Defense Force,Tank Company Leader,36,1,1,6,0,0,,0
+OGRE Gatling Guns,Human Defense Force,OGRE Robots,12,3,1,0,0,0,,0
+Pintle-Machinegun,Human Defense Force,Armored Truck,30,2,1,0,0,0,,5
+Pintle-Machinegun,Human Defense Force,Light APC,30,2,1,0,0,0,,25
+Pintle-Machinegun,Human Defense Force,Tank Company Leader,30,2,1,0,0,0,,0
+Pistols,Human Defense Force,Combat Bikers,12,1,0,0,0,0,,0
+Plasma Pistol,Human Defense Force,Infantry Squad,12,1,4,0,0,0,,5
+Plasma Pistol,Human Defense Force,Storm Troopers,12,1,4,0,0,0,,5
+Plasma Pistol,Human Defense Force,Veterans,12,1,4,0,0,0,,5
+Plasma Rifle,Human Defense Force,Combat Bikers,24,1,4,0,0,0,,10
+Plasma Rifle,Human Defense Force,Infantry Squad,24,1,4,0,0,0,,10
+Plasma Rifle,Human Defense Force,Storm Troopers,24,1,4,0,0,0,,10
+Plasma Rifle,Human Defense Force,Veterans,24,1,4,0,0,0,,15
+Pulverizer Gun,Human Defense Force,Heavy Battle Tank,24,1,3,3,0,0,,20
+Punisher Gatling Cannon,Human Defense Force,Battle Tank,24,6,0,0,0,0,Rending,25
+Punisher Gatling Cannon,Human Defense Force,Tank Company Leader,24,6,0,0,0,0,Rending,25
+Rapid Grenade Launcher,Human Defense Force,Combat Walker,24,2,0,3,0,0,,5
+Rapid HE Autocannon,Human Defense Force,Light Walker,36,6,1,0,0,0,Crack,45
+Rapid Heavy Flamer,Human Defense Force,Light Walker,12,2,1,3,0,0,,0
+Rapid Heavy Machinegun,Human Defense Force,Light Walker,30,6,1,0,0,0,,20
+Rapid Laser Cannon,Human Defense Force,Light Walker,36,2,3,0,3,0,,55
+Rapid Laser Machinegun,Human Defense Force,Light Walker,30,6,3,0,0,0,,65
+Rapid Laser Rifle,Human Defense Force,Sappers,30,2,3,0,0,0,,15
+Rapid Missile Launcher,Human Defense Force,Light Walker,30,2,2,0,3,0,Unstoppable,30
+Rapid Plasma Cannon,Human Defense Force,Light Walker,30,2,4,3,0,0,,60
+Rapid Plasma Rifle,Human Defense Force,Sappers,24,2,4,0,0,0,,20
+Rifles,Human Defense Force,Veterans,24,1,0,0,0,0,,0
+Rocket Battery,Human Defense Force,Field Artillery,24,2,1,3,0,0,Indirect,25
+Rocket Salvo,Human Defense Force,Light Walker,18,3,1,0,0,0,Limited,10
+Rocket Salvo,Human Defense Force,Tactical Walker,18,3,1,0,0,0,Limited,10
+Rocket Salvo Array,Human Defense Force,Tactical Titan,18,6,1,0,0,0,,15
+Sgt. Hand Weapon,Human Defense Force,Infantry Squad,0,2,0,0,0,0,,0
+Sgt. Hand Weapon,Human Defense Force,Storm Troopers,0,2,0,0,0,0,,0
+Sgt. Hand Weapon,Human Defense Force,Veterans,0,2,0,0,0,0,,0
+Sgt. Heavy Pistol,Human Defense Force,Storm Troopers,12,1,1,0,0,0,,0
+Sgt. Pistol,Human Defense Force,Infantry Squad,12,1,0,0,0,0,,0
+Sgt. Pistol,Human Defense Force,Veterans,12,1,0,0,0,0,,0
+Shadow Cannon,Human Defense Force,Super Heavy Battle Tank,36,3,4,0,6,0,,65
+Shard Mortar,Human Defense Force,Support Vehicle,24,3,0,3,0,0,"Indirect, Rending",5
+Shock Baton,Human Defense Force,OGRE Robots,0,3,0,0,0,0,Rending,20
+Shotgun,Human Defense Force,Veterans,12,2,1,0,0,0,,5
+Siege Cannon,Human Defense Force,Battle Tank,24,2,3,3,0,0,Indirect,55
+Siege Cannon,Human Defense Force,Tank Company Leader,24,2,3,3,0,0,Indirect,55
+Siege Mortar (Hell Cannon),Human Defense Force,Super Heavy Battle Tank,24,2,3,3,0,0,Indirect,0
+Siege Mortar (HE Autocannon + Bane Cannon),Human Defense Force,Super Heavy Battle Tank,24,2,3,3,0,0,Indirect,90
+Sniper Rifle,Human Defense Force,Infantry Squad,30,1,1,0,0,0,"Reliable, Takedown",25
+Sniper Rifle,Human Defense Force,Storm Troopers,30,1,1,0,0,0,"Reliable, Takedown",20
+Sniper Rifle,Human Defense Force,Veterans,30,1,1,0,0,0,"Reliable, Takedown",25
+Sniper Rifles,Human Defense Force,Snipers,30,1,1,0,0,0,"Reliable, Takedown",0
+Sponson-Array (Heavy Flamer),Human Defense Force,Super Heavy Battle Tank,36,1,3,0,3,0,,255
+Sponson-Array (Heavy Machinegun),Human Defense Force,Super Heavy Battle Tank,36,1,3,0,3,0,,270
+Stomp,Human Defense Force,Combat Walker,0,2,1,0,0,0,,0
+Stomp,Human Defense Force,Light Walker,0,2,1,0,0,0,,0
+Stomp,Human Defense Force,Tactical Titan,0,2,1,0,0,0,,0
+Stomp,Human Defense Force,Tactical Walker,0,2,1,0,0,0,,0
+Storm Cannon,Human Defense Force,Super Heavy Battle Tank,30,2,4,6,0,0,Indirect,0
+Storm Machinegun,Human Defense Force,Storm Troopers,24,4,1,0,0,0,,35
+Sword Cannon,Human Defense Force,Super Heavy Battle Tank,36,3,3,6,0,0,,5
+Taurus Missiles,Human Defense Force,Armored Truck,24,3,2,0,0,0,Unstoppable,25
+Turret Heavy Flamer,Human Defense Force,Light APC,12,1,1,3,0,0,,0
+Twin Flamer Cannon,Human Defense Force,Attack Vehicle,18,2,1,3,0,0,Reliable,45
+Twin Heavy Flamer,Human Defense Force,Battle Tank,12,2,1,3,0,0,,0
+Twin Heavy Flamer,Human Defense Force,Tank Company Leader,12,2,1,3,0,0,,0
+Twin Heavy Fusion Rifle,Human Defense Force,Battle Tank,18,2,4,0,3,0,,20
+Twin Heavy Fusion Rifle,Human Defense Force,Tank Company Leader,18,2,4,0,3,0,,20
+Twin Heavy Machinegun,Human Defense Force,Battle Tank,30,6,1,0,0,0,,20
+Twin Heavy Machinegun,Human Defense Force,Super Heavy Battle Tank,30,6,1,0,0,0,,0
+Twin Heavy Machinegun,Human Defense Force,Tank Company Leader,30,6,1,0,0,0,,20
+Twin Laser Cannon,Human Defense Force,Heavy Gunship,36,2,3,0,3,0,,0
+Twin Light Battle Cannon,Human Defense Force,Heavy Battle Tank,30,2,2,3,0,0,,0
+Twin Light HE Autocannon,Human Defense Force,Armored Truck,36,4,1,0,0,0,Crack,50
+Twin Plasma Cannon,Human Defense Force,Battle Tank,30,2,4,3,0,0,,60
+Twin Plasma Cannon,Human Defense Force,Tank Company Leader,30,2,4,3,0,0,,60
+Strike Missiles,Human Defense Force,Light Gunship,36,1,3,0,6,0,Unstoppable,45
+Twin Rocket Pod,Human Defense Force,Light Gunship,24,2,0,3,0,0,,0
+Twin Storm Machinegun,Human Defense Force,Armored Truck,24,4,1,0,0,0,,30
+Walker HE Autocannon,Human Defense Force,Tactical Titan,36,12,1,0,0,0,Crack,90
+Walker HE Autocannon,Human Defense Force,Tactical Walker,36,12,1,0,0,0,Crack,90
+Walker Heavy Flamer,Human Defense Force,Tactical Titan,12,4,1,3,0,0,Reliable,0
+Walker Heavy Flamer,Human Defense Force,Tactical Walker,12,4,1,3,0,0,Reliable,0
+Walker Heavy Machinegun,Human Defense Force,Tactical Titan,30,12,1,0,0,0,,45
+Walker Heavy Machinegun,Human Defense Force,Tactical Walker,30,12,1,0,0,0,,45
+Walker Laser Cannon,Human Defense Force,Tactical Titan,36,4,3,0,3,0,,110
+Walker Laser Cannon,Human Defense Force,Tactical Walker,36,4,3,0,3,0,,110
+Walker Laser Machinegun,Human Defense Force,Tactical Titan,30,12,3,0,0,0,,130
+Walker Laser Machinegun,Human Defense Force,Tactical Walker,30,12,3,0,0,0,,130
+Walker Missile Launcher,Human Defense Force,Tactical Titan,30,4,2,0,3,0,Unstoppable,60
+Walker Missile Launcher,Human Defense Force,Tactical Walker,30,4,2,0,3,0,,60
+Walker Plasma Cannon,Human Defense Force,Tactical Titan,30,4,4,3,0,0,,120
+Walker Plasma Cannon,Human Defense Force,Tactical Walker,30,4,4,3,0,0,,120
+Weapon Team (Mortar),Human Defense Force,Veterans,30,1,0,3,0,0,Indirect,40
+Weapon Team (Heavy Machinegun),Human Defense Force,Veterans,30,3,1,0,0,0,,45
+Weapon Team (Missile Launcher),Human Defense Force,Veterans,30,1,2,0,3,0,Unstoppable,50
+Weapon Team (HE Autocannon),Human Defense Force,Veterans,36,3,1,0,0,0,Crack,60
+Weapon Team (Laser Cannon),Human Defense Force,Veterans,36,1,3,0,3,0,,65
+Weapon Team (Mortar),Human Defense Force,Infantry Squad,30,1,0,3,0,0,Indirect,30
+Weapon Team (Heavy Machinegun),Human Defense Force,Infantry Squad,30,3,1,0,0,0,,35
+Weapon Team (Missile Launcher),Human Defense Force,Infantry Squad,30,1,2,0,3,0,Unstoppable,40
+Weapon Team (HE Autocannon),Human Defense Force,Infantry Squad,36,3,1,0,0,0,Crack,45
+Weapon Team (Laser Cannon),Human Defense Force,Infantry Squad,36,1,3,0,3,0,,45
+Basic Cannon,Orc Marauders,Beast Titan,24,1,2,3,0,0,,0
+Basic Cannon,Orc Marauders,Great Battle Truck,24,1,2,3,0,0,,0
+Beast Jaws,Orc Marauders,Berserker Beast Riders,0,2,1,0,0,0,,0
+Berserker Claws,Orc Marauders,Berserker Beast Riders,0,1,4,0,0,0,,0
+Berserker Claws,Orc Marauders,Berserker Leader,0,3,4,0,0,0,,15
+Berserker Claws,Orc Marauders,Berserkers,0,1,4,0,0,0,,0
+Blast-GL,Orc Marauders,Assault Buggy,6,1,0,3,0,0,,0
+Boost-Gun,Orc Marauders,Assault Buggy,30,2,0,3,0,0,,0
+Bomb Drone,Orc Marauders,Specialists,18,1,0,3,0,0,Limited,5
+Bomb Drone,Orc Marauders,Veteran Specialists,18,1,0,3,0,0,Limited,5
+Bomb Spear,Orc Marauders,Hover Bikers,0,1,4,0,3,0,,20
+Bomb Spear,Orc Marauders,Specialists,0,1,4,0,3,0,,15
+Boom-MG,Orc Marauders,Assault Buggy,18,3,1,0,0,0,Unstoppable,25
+Buster Cannon,Orc Marauders,Beast Titan,30,1,3,0,3,0,,15
+Buster Cannon,Orc Marauders,Bomber Plane,30,1,3,0,3,0,,10
+Buster Cannon,Orc Marauders,Great Battle Truck,30,1,3,0,3,0,,15
+CCW,Orc Marauders,Orc Leader,0,2,0,0,0,0,,0
+CCW,Orc Marauders,Orc Warriors,0,1,0,0,0,0,,15
+CCW,Orc Marauders,Trike,0,2,0,0,0,0,,0
+CCWs,Orc Marauders,Hover Bikers,0,2,0,0,0,0,,0
+CCWs,Orc Marauders,Infiltrators,0,2,0,0,0,0,,0
+CCWs,Orc Marauders,Jump Pack Orcs,0,2,0,0,0,0,,0
+CCWs,Orc Marauders,Orc Bikers,0,2,0,0,0,0,,0
+CCWs,Orc Marauders,Specialists,0,1,0,0,0,0,,0
+CCWs,Orc Marauders,Veteran Specialists,0,1,0,0,0,0,,0
+CCWs,Orc Marauders,Veterans,0,2,0,0,0,0,,0
+Carbine,Orc Marauders,Infiltrators,18,2,0,0,0,0,,30
+Carbine,Orc Marauders,Orc Leader,18,2,0,0,0,0,,0
+Carbine,Orc Marauders,Orc Warriors,18,2,0,0,0,0,,15
+Carbine,Orc Marauders,Ultra Veteran Leader,18,2,0,0,0,0,,0
+Carbine,Orc Marauders,Veteran Leader,18,2,0,0,0,0,,0
+Carbine,Orc Marauders,Veterans,18,2,0,0,0,0,,10
+Carbine-Mod,Orc Marauders,Orc Leader,18,2,0,0,0,0,,5
+Carbine-Mod,Orc Marauders,Ultra Veteran Leader,18,2,0,0,0,0,,5
+Carbine-Mod,Orc Marauders,Ultra Veterans,18,2,0,0,0,0,,5
+Carbine-Mod,Orc Marauders,Veteran Leader,18,2,0,0,0,0,,15
+Carbine-Mod,Orc Marauders,Veterans,18,2,0,0,0,0,,10
+Carbines,Orc Marauders,Ultra Veterans,18,2,0,0,0,0,,0
+Combat Beast,Orc Marauders,Berserker Leader,0,3,1,0,0,0,"Bounding, Tough(3)",65
+Combat Bike,Orc Marauders,Orc Leader,18,3,1,0,0,0,"Fast, Tough(3)",55
+Combat Bike,Orc Marauders,Veteran Leader,18,3,1,0,0,0,"Fast, Tough(3)",75
+Deathstorm Minigun,Orc Marauders,Great Walker,36,8,1,0,0,0,Rending,0
+Deathstorm Plasma Cannon,Orc Marauders,Great Walker,30,3,4,3,0,0,,10
+Disposable Heavy Flamer,Orc Marauders,Great Walker,12,2,1,3,0,0,"Limited, Reliable",20
+Disposable Heavy Flamer,Orc Marauders,Melee Walker,12,2,1,3,0,0,"Limited, Reliable",20
+Disposable Heavy Machinegun,Orc Marauders,Melee Walker,30,6,1,0,0,0,Limited,30
+Disposable Killer-Rocket Pod,Orc Marauders,Melee Walker,12,2,0,0,3,0,"Limited, Tear",15
+Disposable Plasma Cannon,Orc Marauders,Melee Walker,30,2,4,3,0,0,Limited,40
+Disposable Plasma Rifle,Orc Marauders,Great Walker,24,4,4,0,0,0,Limited,30
+Disposable Rocket Launcher,Orc Marauders,Melee Walker,18,2,2,0,3,0,Limited,20
+Dorsal Gunner,Orc Marauders,Bomber Plane,30,3,1,0,0,0,,0
+Dual Hand Weapons,Orc Marauders,Berserker Beast Riders,0,2,0,0,0,0,,0
+Dual Hand Weapons,Orc Marauders,Berserker Leader,0,4,0,0,0,0,,5
+Dual Hand Weapons,Orc Marauders,Berserkers,0,2,0,0,0,0,,0
+Dual Heavy Saws,Orc Marauders,Ultra Veterans,0,2,2,0,3,0,,15
+Explosive Payload,Orc Marauders,Hover Bikers,0,1,1,3,0,0,Strafing,5
+Flame Bombs,Orc Marauders,Bomber Plane,0,1,1,3,0,0,Strafing,0
+Flame Missiles,Orc Marauders,Bomber Plane,24,1,1,3,0,0,,0
+Flamer,Orc Marauders,Infiltrators,12,1,0,3,0,0,Reliable,10
+Flamer,Orc Marauders,Orc Warriors,12,1,0,3,0,0,Reliable,10
+Flamer Pistol,Orc Marauders,Jump Pack Orcs,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Orc Marauders,Orc Leader,6,1,0,3,0,0,Reliable,5
+Great Harpoon Cannon,Orc Marauders,Beast Titan,18,1,4,0,6,0,,10
+Great Harpoon Cannon,Orc Marauders,Combat Beast,18,1,4,0,6,0,,10
+Great Saw,Orc Marauders,Berserker Leader,0,1,2,0,3,0,,0
+Great Walker Claw,Orc Marauders,Great Walker,0,6,4,0,0,0,,5
+Great Walker Saw,Orc Marauders,Great Walker,0,3,2,0,3,0,,0
+Heavy Axe,Orc Marauders,Infiltrators,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Jump Pack Orcs,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Orc Bikers,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Orc Leader,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Orc Warriors,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Ultra Veteran Leader,0,4,1,0,0,0,Rending,30
+Heavy Axe,Orc Marauders,Ultra Veterans,0,3,1,0,0,0,Rending,20
+Heavy Axe,Orc Marauders,Veteran Bikers,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Veteran Leader,0,2,1,0,0,0,Rending,10
+Heavy Axe,Orc Marauders,Veterans,0,2,1,0,0,0,Rending,10
+Heavy Bombs,Orc Marauders,Bomber Plane,0,1,3,0,6,0,Strafing,15
+Heavy Cannon,Orc Marauders,Battle Truck,30,2,2,3,0,0,,15
+Heavy Cannon,Orc Marauders,Super-Heavy Battle Truck,30,4,2,3,0,0,,30
+Heavy Claw,Orc Marauders,Infiltrators,0,2,4,0,0,0,,15
+Heavy Claw,Orc Marauders,Jump Pack Orcs,0,2,4,0,0,0,,15
+Heavy Claw,Orc Marauders,Orc Bikers,0,2,4,0,0,0,,15
+Heavy Claw,Orc Marauders,Orc Leader,0,2,4,0,0,0,,15
+Heavy Claw,Orc Marauders,Orc Warriors,0,2,4,0,0,0,,15
+Heavy Claw,Orc Marauders,Ultra Veteran Leader,0,4,4,0,0,0,,45
+Heavy Claw,Orc Marauders,Ultra Veterans,0,3,4,0,0,0,,30
+Heavy Claw,Orc Marauders,Veteran Bikers,0,2,4,0,0,0,,20
+Heavy Claw,Orc Marauders,Veteran Leader,0,2,4,0,0,0,,20
+Heavy Claw,Orc Marauders,Veterans,0,2,4,0,0,0,,20
+Heavy Claws,Orc Marauders,Beast Titan,0,6,1,0,0,0,,0
+Heavy Claws,Orc Marauders,Combat Beast,0,6,1,0,0,0,,0
+Heavy Club,Orc Marauders,Infiltrators,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Jump Pack Orcs,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Orc Bikers,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Orc Leader,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Orc Warriors,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Veteran Bikers,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Veteran Leader,0,1,0,3,0,0,,5
+Heavy Club,Orc Marauders,Veterans,0,1,0,3,0,0,,5
+Heavy Clubs,Orc Marauders,Ultra Veteran Leader,0,1,0,3,0,0,,0
+Heavy Clubs,Orc Marauders,Ultra Veterans,0,1,0,3,0,0,,0
+Heavy Flamer-Mod,Orc Marauders,Orc Leader,12,1,1,3,0,0,"Limited, Reliable",10
+Heavy Flamer-Mod,Orc Marauders,Ultra Veteran Leader,12,1,1,3,0,0,"Limited, Reliable",5
+Heavy Flamer-Mod,Orc Marauders,Veteran Leader,12,1,1,3,0,0,"Limited, Reliable",10
+Heavy Flamer-Mod,Orc Marauders,Veterans,12,1,1,3,0,0,"Limited, Reliable",5
+Heavy Flamer-Mods,Orc Marauders,Ultra Veterans,12,1,1,3,0,0,"Limited, Reliable",0
+Heavy Flamers,Orc Marauders,Veteran Specialists,12,1,1,3,0,0,Reliable,0
+Heavy Great Weapon,Orc Marauders,Ultra Veteran Leader,0,6,2,0,0,0,Reliable,65
+Heavy Machinegun,Orc Marauders,Beast Titan,30,3,1,0,0,0,,0
+Heavy Machinegun,Orc Marauders,Great Battle Truck,30,3,1,0,0,0,,0
+Heavy Machinegun,Orc Marauders,Infiltrators,30,3,1,0,0,0,,25
+Heavy Machinegun,Orc Marauders,Orc Warriors,30,3,1,0,0,0,,25
+Heavy Machinegun,Orc Marauders,Super-Heavy Battle Truck,30,3,1,0,0,0,,20
+Heavy Machinegun,Orc Marauders,Veteran Specialists,30,3,1,0,0,0,,25
+Heavy Machinegun Array,Orc Marauders,Great Walker,30,6,1,0,0,0,,25
+Heavy Mortar,Orc Marauders,Beast Titan,24,1,1,6,0,0,Indirect,20
+Heavy Mortar,Orc Marauders,Great Battle Truck,24,1,1,6,0,0,Indirect,20
+Heavy Mortar,Orc Marauders,Super-Heavy Battle Truck,24,1,1,6,0,0,Indirect,5
+Heavy Mortars,Orc Marauders,Beast Titan,24,1,1,6,0,0,Indirect,0
+Heavy Mortars,Orc Marauders,Combat Beast,24,1,1,6,0,0,Indirect,0
+Heavy Rocket Launcher,Orc Marauders,Battle Truck,24,2,2,0,3,0,,10
+Heavy Rocket Launcher,Orc Marauders,Super-Heavy Battle Truck,24,4,2,0,3,0,,20
+Heavy Saw,Orc Marauders,Infiltrators,0,1,2,0,3,0,,10
+Heavy Saw,Orc Marauders,Jump Pack Orcs,0,1,2,0,3,0,,10
+Heavy Saw,Orc Marauders,Orc Bikers,0,1,2,0,3,0,,10
+Heavy Saw,Orc Marauders,Orc Leader,0,1,2,0,3,0,,10
+Heavy Saw,Orc Marauders,Orc Warriors,0,1,2,0,3,0,,10
+Heavy Saw,Orc Marauders,Ultra Veteran Leader,0,1,2,0,3,0,,15
+Heavy Saw,Orc Marauders,Ultra Veterans,0,1,2,0,3,0,,15
+Heavy Saw,Orc Marauders,Veteran Bikers,0,1,2,0,3,0,,15
+Heavy Saw,Orc Marauders,Veteran Leader,0,1,2,0,3,0,,15
+Heavy Saw,Orc Marauders,Veterans,0,1,2,0,3,0,,15
+Jump-Rocket Pod,Orc Marauders,Assault Buggy,18,3,1,0,0,0,Indirect,40
+Shock Launcher,Orc Marauders,Assault Buggy,18,6,1,0,0,0,Surge,40
+Killer Buster Cannon,Orc Marauders,Beast Titan,30,2,3,0,3,0,Indirect,65
+Killer-Rocket Pod,Orc Marauders,Infiltrators,12,1,0,0,3,0,Tear,15
+Killer-Rocket Pod,Orc Marauders,Orc Leader,12,1,0,0,3,0,Tear,10
+Killer-Rocket Pod,Orc Marauders,Orc Warriors,12,1,0,0,3,0,Tear,15
+Killer-Rocket Pod,Orc Marauders,Specialists,12,1,0,0,3,0,Tear,15
+Killer-Rocket Pod,Orc Marauders,Veteran Leader,12,1,0,0,3,0,Tear,15
+Killer-Rocket Pod,Orc Marauders,Veteran Specialists,12,1,0,0,3,0,Tear,5
+Killer-Rocket Pods,Orc Marauders,Hover Bikers,12,1,0,0,3,0,Tear,0
+Lance,Orc Marauders,Berserker Beast Riders,0,1,0,0,0,0,Thrust,5
+Lance,Orc Marauders,Berserker Leader,0,2,0,0,0,0,Thrust,0
+Leader Lightning Pistol,Orc Marauders,Orc Leader,12,3,0,0,0,0,"Rending, Unstoppable",10
+Leader Pistol,Orc Marauders,Orc Leader,12,2,0,0,0,0,,0
+Leader Plasma Pistol,Orc Marauders,Orc Leader,12,2,4,0,0,0,,10
+Leader Shotgun,Orc Marauders,Orc Leader,12,3,1,0,0,0,,5
+Leader Shotgun,Orc Marauders,Veteran Leader,12,3,1,0,0,0,,10
+Lightning Cannon,Orc Marauders,Beast Titan,36,6,0,0,0,0,"Rending, Unstoppable",65
+Lightning Cannon,Orc Marauders,Great Battle Truck,36,6,0,0,0,0,"Rending, Unstoppable",65
+Lightning Gun,Orc Marauders,Infiltrators,24,2,0,0,0,0,"Rending, Unstoppable",20
+Lightning Gun,Orc Marauders,Orc Warriors,24,2,0,0,0,0,"Rending, Unstoppable",20
+Lightning Pistol,Orc Marauders,Jump Pack Orcs,12,2,0,0,0,0,"Rending, Unstoppable",10
+Mega-MG,Orc Marauders,Assault Buggy,36,3,2,0,0,0,,70
+Pistols,Orc Marauders,Hover Bikers,12,1,0,0,0,0,,0
+Pistols,Orc Marauders,Infiltrators,12,1,0,0,0,0,,0
+Pistols,Orc Marauders,Orc Bikers,12,1,0,0,0,0,,0
+Pistols,Orc Marauders,Veteran Bikers,12,1,0,0,0,0,,0
+Pistols,Orc Marauders,Veterans,12,1,0,0,0,0,,0
+Plasma Cannon,Orc Marauders,Veteran Specialists,30,1,4,3,0,0,,45
+Plasma Pistol,Orc Marauders,Jump Pack Orcs,12,1,4,0,0,0,,5
+Plasma Rifle,Orc Marauders,Infiltrators,24,1,4,0,0,0,,15
+Plasma Rifle,Orc Marauders,Orc Warriors,24,1,4,0,0,0,,15
+Portal Cannon,Orc Marauders,Bomber Plane,30,6,0,0,0,0,Shred,0
+Portal Gun,Orc Marauders,Orc Leader,18,4,0,0,0,0,Shred,15
+Portal Gun,Orc Marauders,Veteran Leader,18,4,0,0,0,0,Shred,25
+Truck-Killer RPG,Orc Marauders,Assault Buggy,12,1,1,0,3,0,,25
+Railgun,Orc Marauders,Specialists,30,3,2,0,0,0,Unstoppable,85
+Rapid Heavy Flamer,Orc Marauders,Ranged Walker,12,2,1,3,0,0,Reliable,5
+Rapid Heavy Flamer,Orc Marauders,Trike,12,2,1,3,0,0,Reliable,20
+Rapid Heavy Machinegun,Orc Marauders,Battle Truck,30,6,1,0,0,0,,35
+Rapid Heavy Machinegun,Orc Marauders,Beast Titan,30,6,1,0,0,0,,35
+Rapid Heavy Machinegun,Orc Marauders,Great Battle Truck,30,6,1,0,0,0,,35
+Rapid Heavy Machinegun,Orc Marauders,Ranged Walker,30,6,1,0,0,0,,40
+Rapid Heavy Machinegun,Orc Marauders,Trike,30,6,1,0,0,0,,45
+Rapid Heavy Machinegun,Orc Marauders,Truck,30,6,1,0,0,0,,35
+Rapid Killer-Rocket Pod,Orc Marauders,Beast Titan,12,2,0,0,3,0,Tear,0
+Rapid Killer-Rocket Pod,Orc Marauders,Great Battle Truck,12,2,0,0,3,0,Tear,0
+Rapid Killer-Rocket Pod,Orc Marauders,Trike,12,2,0,0,3,0,Tear,10
+Rapid Killer-Rocket Pod,Orc Marauders,Truck,12,2,0,0,3,0,Tear,0
+Rapid Killer-Rocket Pods,Orc Marauders,Ranged Walker,12,2,0,0,3,0,Tear,0
+Rapid Plasma Cannon,Orc Marauders,Ranged Walker,30,2,4,3,0,0,,85
+Rapid Plasma Rifle,Orc Marauders,Hover Bikers,24,2,4,0,0,0,,15
+Rapid Plasma Rifle,Orc Marauders,Orc Leader,24,2,4,0,0,0,,25
+Rapid Plasma Rifle,Orc Marauders,Veteran Leader,24,2,4,0,0,0,,35
+Rapid Rocket Launcher,Orc Marauders,Battle Truck,18,2,2,0,3,0,,15
+Rapid Rocket Launcher,Orc Marauders,Beast Titan,18,2,2,0,3,0,,15
+Rapid Rocket Launcher,Orc Marauders,Great Battle Truck,18,2,2,0,3,0,,15
+Rapid Rocket Launcher,Orc Marauders,Ranged Walker,18,2,2,0,3,0,,15
+Rapid Rocket Launcher,Orc Marauders,Trike,18,2,2,0,3,0,,25
+Rapid Rocket Launcher,Orc Marauders,Truck,18,2,2,0,3,0,,15
+Rocket Launcher,Orc Marauders,Hover Bikers,18,1,2,0,3,0,,5
+Rocket Launcher,Orc Marauders,Infiltrators,18,1,2,0,3,0,,20
+Rocket Launcher,Orc Marauders,Orc Leader,18,1,2,0,3,0,,15
+Rocket Launcher,Orc Marauders,Orc Warriors,18,1,2,0,3,0,,20
+Rocket Launcher,Orc Marauders,Specialists,18,1,2,0,3,0,,30
+Rocket Launcher,Orc Marauders,Super-Heavy Battle Truck,18,1,2,0,3,0,,5
+Rocket Launcher,Orc Marauders,Veteran Leader,18,1,2,0,3,0,,20
+Rocket Launcher,Orc Marauders,Veteran Specialists,18,1,2,0,3,0,,10
+Rocket Launcher Arrays,Orc Marauders,Great Walker,18,2,2,0,3,0,,0
+Rocket Pistol,Orc Marauders,Jump Pack Orcs,9,1,2,0,3,0,,10
+Rocket Pistol,Orc Marauders,Orc Leader,9,1,2,0,3,0,,5
+Rocket-Mod,Orc Marauders,Orc Leader,18,1,2,0,3,0,Limited,5
+Rocket-Mod,Orc Marauders,Ultra Veteran Leader,18,1,2,0,3,0,Limited,5
+Rocket-Mod,Orc Marauders,Ultra Veterans,18,1,2,0,3,0,Limited,5
+Rocket-Mod,Orc Marauders,Veteran Leader,18,1,2,0,3,0,Limited,15
+Rocket-Mod,Orc Marauders,Veterans,18,1,2,0,3,0,Limited,10
+Ruck-Drone Launcher,Orc Marauders,Assault Buggy,24,2,1,0,3,0,,25
+Shock Cannon,Orc Marauders,Orc Leader,18,4,1,0,0,0,Surge,25
+Shock Cannon,Orc Marauders,Veteran Leader,18,4,1,0,0,0,Surge,30
+Shock Cannon,Orc Marauders,Veteran Specialists,18,4,1,0,0,0,Surge,20
+Shotgun,Orc Marauders,Infiltrators,12,2,1,0,0,0,,30
+Shotgun,Orc Marauders,Jump Pack Orcs,12,2,1,0,0,0,,30
+Shoulder-MG,Orc Marauders,Ultra Veteran Leader,30,3,1,0,0,0,,40
+Snazzy Gun-Array,Orc Marauders,Assault Buggy,24,6,0,0,0,0,,25
+Sniper Carbine,Orc Marauders,Infiltrators,18,1,1,0,0,0,"Reliable, Takedown",10
+Spear,Orc Marauders,Berserker Leader,0,2,0,0,0,0,Counter,5
+Spear,Orc Marauders,Berserkers,0,1,0,0,0,0,Counter,0
+Stomp,Orc Marauders,Beast Titan,0,6,2,0,0,0,,0
+Stomp,Orc Marauders,Combat Beast,0,6,2,0,0,0,,0
+Stomp,Orc Marauders,Great Walker,0,4,1,0,0,0,,0
+Stomp,Orc Marauders,Melee Walker,0,4,1,0,0,0,,0
+Stomp,Orc Marauders,Ranged Walker,0,4,1,0,0,0,,0
+Super-MG,Orc Marauders,Bomber Plane,30,3,1,0,0,0,Unstoppable,0
+Track-Loader RPG,Orc Marauders,Assault Buggy,18,2,2,0,3,0,,70
+Triple Heavy Shotgun,Orc Marauders,Trike,12,6,1,0,0,0,,0
+Twin Heavy Machinegun,Orc Marauders,Beast Titan,30,6,1,0,0,0,,50
+Twin Heavy Machinegun,Orc Marauders,Combat Beast,30,6,1,0,0,0,,50
+Twin Killer-Rocket Pod,Orc Marauders,Beast Titan,12,2,0,0,3,0,Tear,10
+Twin Killer-Rocket Pod,Orc Marauders,Combat Beast,12,2,0,0,3,0,Tear,10
+Twin Mini-MG,Orc Marauders,Hover Bikers,18,3,1,0,0,0,,5
+Twin Mini-MGs,Orc Marauders,Orc Bikers,18,3,1,0,0,0,,0
+Twin Mini-MGs,Orc Marauders,Veteran Bikers,18,3,1,0,0,0,,0
+Twin Plasma Cannon,Orc Marauders,Bomber Plane,30,2,4,3,0,0,,50
+Twin Rocket Launcher,Orc Marauders,Beast Titan,18,2,2,0,3,0,,25
+Twin Rocket Launcher,Orc Marauders,Combat Beast,18,2,2,0,3,0,,25
+Walker Claw,Orc Marauders,Melee Walker,0,4,4,0,0,0,,5
+Walker Saws,Orc Marauders,Melee Walker,0,2,2,0,3,0,,0
+AA-MG,Prime Brothers,Combat Walker,30,3,1,0,0,0,Unstoppable,55
+AA-Pod,Prime Brothers,Anti-Grav Tank,24,2,2,0,0,0,Unstoppable,40
+AA-Pod,Prime Brothers,Attack Speeder,24,2,2,0,0,0,Unstoppable,0
+AT-Launcher,Prime Brothers,Desolator Brothers,30,1,2,0,0,0,Unstoppable,5
+Anti-Gravity Pistol,Prime Brothers,Elite Raider,9,2,0,0,0,0,Shatter,5
+Anti-Gravity Pistol,Prime Brothers,Prime Brothers,9,2,0,0,0,0,Shatter,5
+Anti-Gravity Pistol,Prime Brothers,Prime Master,9,2,0,0,0,0,Shatter,5
+Anti-Gravity Pistol,Prime Brothers,Veteran Assault Prime Brothers,9,2,0,0,0,0,Shatter,10
+Anti-Gravity Pistol,Prime Brothers,Veteran Prime Brothers,9,2,0,0,0,0,Shatter,10
+Anti-Gravity Pistol,Prime Brothers,Veteran Prime Master,9,2,0,0,0,0,Shatter,5
+Anti-Gravity Rifle,Prime Brothers,Prime Brothers,18,1,0,0,0,0,Shatter,0
+Anti-Gravity Rifles,Prime Brothers,Veteran Prime Brothers,18,1,0,0,0,0,Shatter,0
+Anti-Gravity-Mod,Prime Brothers,Veteran Prime Brothers,18,2,0,0,0,0,"Limited, Shatter",10
+Artillery Relay,Prime Brothers,Anti-Grav APC,36,1,0,6,0,0,Indirect,65
+Assault Autocannons,Prime Brothers,Suppression Brothers,18,3,2,0,0,0,,0
+Auto-Rifle,Prime Brothers,Prime Brothers,18,2,0,0,0,0,,0
+Auto-Rifle,Prime Brothers,Veteran Prime Brothers,18,2,0,0,0,0,,5
+CCW,Prime Brothers,Grave Destroyers,0,1,0,0,0,0,,75
+CCW,Prime Brothers,Grave Prime Master,0,4,0,0,0,0,,0
+CCW,Prime Brothers,Prime Master,0,2,0,0,0,0,,0
+CCW,Prime Brothers,Veteran Prime Master,0,2,0,0,0,0,,5
+CCWs,Prime Brothers,Blaster Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Desolator Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Elimination Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Eradication Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Grave Destroyers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Heavy Prime Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Infernal Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Infiltration Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Prime Brother Bikers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Prime Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Raider Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Suppression Brothers,0,1,0,0,0,0,,0
+CCWs,Prime Brothers,Veteran Prime Brothers,0,1,0,0,0,0,,0
+Chain-Fist,Prime Brothers,Grave Destroyers,0,1,2,0,3,0,,10
+Chain-Fist,Prime Brothers,Grave Prime Master,0,2,2,0,3,0,,30
+Combat Shield,Prime Brothers,Grave Prime Master,0,0,0,0,0,0,Shielded,0
+Chest-Fuser,Prime Brothers,Combat Walker,12,1,4,0,3,0,,15
+Chest-GL,Prime Brothers,Combat Walker,18,1,0,3,0,0,,0
+Chest-Gun,Prime Brothers,Combat Walker,24,2,1,0,0,0,,10
+Chest-MG,Prime Brothers,Combat Walker,30,3,1,0,0,0,,30
+Combat Bike,Prime Brothers,Prime Master,24,2,1,0,0,0,"Fast, Tough(3)",105
+Combat Shield,Prime Brothers,Prime Master,0,0,0,0,0,0,Shielded,0
+Combat Bike,Prime Brothers,Veteran Prime Master,24,2,1,0,0,0,"Fast, Tough(3)",115
+Combat Shield,Prime Brothers,Veteran Prime Master,0,0,0,0,0,0,Shielded,0
+Cyclone Missiles,Prime Brothers,Grave Destroyers,24,1,2,0,3,0,Unstoppable,50
+Death Launcher,Prime Brothers,Prime Drop Pod,18,1,0,6,0,0,,0
+Dual Energy Claws,Prime Brothers,Grave Destroyers,0,4,0,0,0,0,Rending,15
+Dual Energy Claws,Prime Brothers,Grave Prime Master,0,8,0,0,0,0,Rending,20
+Dual Energy Claws,Prime Brothers,Veteran Assault Prime Brothers,0,4,0,0,0,0,Rending,20
+Dual Energy Claws,Prime Brothers,Veteran Prime Master,0,4,0,0,0,0,Rending,15
+Dual Energy Fists,Prime Brothers,Aggro Brothers,0,4,4,0,0,0,,0
+Dual Energy Swords,Prime Brothers,Grave Prime Master,0,8,1,0,0,0,Rending,40
+Dual Energy Swords,Prime Brothers,Guard Brothers,0,4,1,0,0,0,Rending,25
+Energy Fist,Prime Brothers,Assault Prime Brothers,0,2,4,0,0,0,,10
+Energy Fist,Prime Brothers,Elite Raider,0,2,4,0,0,0,,15
+Energy Fist,Prime Brothers,Grave Destroyers,0,3,4,0,0,0,,25
+Energy Fist,Prime Brothers,Grave Prime Master,0,4,4,0,0,0,,35
+Energy Fist,Prime Brothers,Prime Brothers,0,2,4,0,0,0,,10
+Energy Fist,Prime Brothers,Prime Master,0,2,4,0,0,0,,15
+Energy Fist,Prime Brothers,Raider Brothers,0,2,4,0,0,0,,15
+Energy Fist,Prime Brothers,Veteran Assault Prime Brothers,0,2,4,0,0,0,,20
+Energy Fist,Prime Brothers,Veteran Prime Brothers,0,2,4,0,0,0,,10
+Energy Fist,Prime Brothers,Veteran Prime Master,0,2,4,0,0,0,,20
+Energy Greatsword,Prime Brothers,Grave Prime Master,0,6,1,0,0,0,Rending,35
+Energy Hammer,Prime Brothers,Assault Prime Brothers,0,1,0,3,0,0,,0
+Energy Hammer,Prime Brothers,Elite Raider,0,1,0,3,0,0,,5
+Energy Hammer,Prime Brothers,Grave Destroyers,0,1,0,3,0,0,,0
+Energy Hammer,Prime Brothers,Grave Prime Master,0,2,0,3,0,0,,5
+Energy Hammer,Prime Brothers,Prime Master,0,1,0,3,0,0,,5
+Energy Hammer,Prime Brothers,Raider Brothers,0,1,0,3,0,0,,5
+Energy Hammer,Prime Brothers,Veteran Assault Prime Brothers,0,1,0,3,0,0,,0
+Energy Hammer,Prime Brothers,Veteran Prime Master,0,1,0,3,0,0,,5
+Energy Sword,Prime Brothers,Assault Prime Brothers,0,2,1,0,0,0,Rending,5
+Energy Sword,Prime Brothers,Elite Raider,0,2,1,0,0,0,Rending,10
+Energy Sword,Prime Brothers,Grave Destroyers,0,3,1,0,0,0,Rending,15
+Energy Sword,Prime Brothers,Guard Brothers,0,3,1,0,0,0,Rending,5
+Energy Sword,Prime Brothers,Prime Brothers,0,2,1,0,0,0,Rending,0
+Energy Sword,Prime Brothers,Prime Master,0,2,1,0,0,0,Rending,10
+Energy Sword,Prime Brothers,Raider Brothers,0,2,1,0,0,0,Rending,10
+Energy Sword,Prime Brothers,Veteran Assault Prime Brothers,0,2,1,0,0,0,Rending,10
+Energy Sword,Prime Brothers,Veteran Prime Brothers,0,2,1,0,0,0,Rending,0
+Energy Sword,Prime Brothers,Veteran Prime Master,0,2,1,0,0,0,Rending,10
+Fist-Flamer,Prime Brothers,Grave Prime Master,6,2,0,3,0,0,Reliable,55
+Fist-Pistol,Prime Brothers,Grave Prime Master,12,6,0,0,0,0,,65
+Flamer,Prime Brothers,Prime Brothers,12,1,0,3,0,0,Reliable,5
+Flamer,Prime Brothers,Veteran Prime Brothers,12,1,0,3,0,0,Reliable,5
+Flamer Pistol,Prime Brothers,Assault Prime Brothers,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Prime Brothers,Prime Master,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Prime Brothers,Veteran Assault Prime Brothers,6,1,0,3,0,0,Reliable,5
+Flamer Pistol,Prime Brothers,Veteran Prime Master,6,1,0,3,0,0,Reliable,5
+Flamer-Mod,Prime Brothers,Veteran Prime Brothers,12,1,0,3,0,0,"Limited, Reliable",10
+Flamers,Prime Brothers,Infernal Brothers,12,1,0,3,0,0,Reliable,0
+Frag-GL,Prime Brothers,Attack Speeder,18,1,0,3,0,0,,20
+Frag-GL,Prime Brothers,Light Walker,18,1,0,3,0,0,,20
+Fury Missiles,Prime Brothers,Attack Speeder,24,1,2,0,3,0,,50
+Fusion Destroyer,Prime Brothers,Attack Speeder,12,2,4,0,3,0,,20
+Fusion Rifle,Prime Brothers,Prime Brothers,12,1,4,0,3,0,,20
+Fusion Rifle,Prime Brothers,Veteran Prime Brothers,12,1,4,0,3,0,,25
+Fusion Rifles,Prime Brothers,Eradication Brothers,12,1,4,0,3,0,,0
+Fusion-Mod,Prime Brothers,Veteran Prime Brothers,12,1,4,0,3,0,Limited,15
+Gatling Gun,Prime Brothers,Attack Speeder,18,6,0,0,0,0,,0
+Gatling Gun,Prime Brothers,Heavy Anti-Grav Transport Tank,18,6,0,0,0,0,,45
+Gatling Gun,Prime Brothers,Prime ATV,18,6,0,0,0,0,,0
+Grave Auto-Rifle,Prime Brothers,Heavy Prime Brothers,18,4,0,0,0,0,,0
+Grave Heavy Machinegun,Prime Brothers,Heavy Prime Brothers,30,4,1,0,0,0,,35
+Grave Heavy Rifle,Prime Brothers,Heavy Prime Brothers,24,3,1,0,0,0,,15
+Grave Precision Rifles,Prime Brothers,Heavy Prime Brothers,24,2,0,0,0,0,Precise,0
+Grenade-Mod,Prime Brothers,Prime Brothers,24,1,0,3,0,0,Limited,10
+Grenade-Mod,Prime Brothers,Veteran Prime Brothers,24,1,0,3,0,0,Limited,10
+HE-Launchers,Prime Brothers,Desolator Brothers,30,2,0,0,0,0,,0
+Heavy Anti-Gravity Cannon,Prime Brothers,Combat Walker,24,6,0,0,0,0,Shatter,45
+Heavy Anti-Gravity Cannon,Prime Brothers,Heavy Anti-Grav Destroyer Tank,24,6,0,0,0,0,Shatter,0
+Heavy CCW,Prime Brothers,Veteran Assault Prime Brothers,0,2,1,0,0,0,,5
+Heavy Chainsaw Sword,Prime Brothers,Raider Brothers,0,4,1,0,0,0,,10
+Heavy Chainsaw Sword,Prime Brothers,Veteran Assault Prime Brothers,0,4,1,0,0,0,,20
+Heavy Chainsaw Sword,Prime Brothers,Veteran Prime Master,0,4,1,0,0,0,,15
+Heavy Flamer,Prime Brothers,Combat Walker,12,1,1,3,0,0,Reliable,25
+Heavy Flamer,Prime Brothers,Veteran Prime Brothers,12,1,1,3,0,0,Reliable,15
+Heavy Fusion Rifle,Prime Brothers,Eradication Brothers,18,1,4,0,3,0,,20
+Heavy Gatling Gun,Prime Brothers,Heavy Anti-Grav Destroyer Tank,18,8,0,0,0,0,,0
+Heavy Gatling Gun,Prime Brothers,Heavy Anti-Grav Transport Tank,18,8,0,0,0,0,,0
+Heavy Laser Cannon,Prime Brothers,Heavy Anti-Grav Destroyer Tank,36,1,3,0,6,0,,5
+Heavy Machinegun,Prime Brothers,Anti-Grav APC,30,3,1,0,0,0,,75
+Heavy Machinegun,Prime Brothers,Anti-Grav Tank,30,3,1,0,0,0,,50
+Heavy Machinegun,Prime Brothers,Attack Speeder,30,3,1,0,0,0,,5
+Heavy Machinegun,Prime Brothers,Heavy Anti-Grav Transport Tank,30,3,1,0,0,0,,50
+Heavy Machinegun,Prime Brothers,Prime Brothers,30,3,1,0,0,0,,35
+Heavy Machinegun,Prime Brothers,Veteran Prime Brothers,30,3,1,0,0,0,,50
+Heavy Pistol,Prime Brothers,Raider Brothers,12,1,1,0,0,0,,0
+Heavy Pistol,Prime Brothers,Veteran Assault Prime Brothers,12,1,1,0,0,0,,5
+Heavy Pistols,Prime Brothers,Guard Brothers,12,1,1,0,0,0,,0
+Heavy Pistols,Prime Brothers,Prime Brother Bikers,12,1,1,0,0,0,,0
+Heavy Pistols,Prime Brothers,Raider Brothers,12,1,1,0,0,0,,0
+Heavy Plasma Cannon,Prime Brothers,Combat Walker,30,1,4,6,0,0,,50
+Heavy Plasma Cannon,Prime Brothers,Heavy Anti-Grav Destroyer Tank,30,1,4,6,0,0,,5
+Heavy Plasma Rifle,Prime Brothers,Blaster Brothers,30,1,4,0,0,0,,5
+Heavy Rifle,Prime Brothers,Prime Brothers,24,1,1,0,0,0,,0
+Heavy Rifle,Prime Brothers,Veteran Prime Brothers,24,1,1,0,0,0,,5
+Incendiary Cannon,Prime Brothers,Light Walker,12,2,1,3,0,0,Reliable,0
+Laser Sniper Rifle,Prime Brothers,Elimination Brothers,30,1,2,0,3,0,"Reliable, Takedown",70
+Laser Talon,Prime Brothers,Attack Speeder,24,3,3,0,0,0,,25
+Light Fist,Prime Brothers,Light Walker,0,4,2,0,0,0,,10
+Light Gatling Cannon,Prime Brothers,Combat Walker,24,10,0,0,0,0,,40
+Light Gatling Gun,Prime Brothers,Combat Walker,18,4,0,0,0,0,,5
+Marksman Carbines,Prime Brothers,Infiltration Brothers,18,1,0,0,0,0,"Rending, Takedown",0
+Master Auto-Rifle,Prime Brothers,Elite Raider,18,3,0,0,0,0,,5
+Master Auto-Rifle,Prime Brothers,Prime Master,18,3,0,0,0,0,,15
+Master Auto-Rifle,Prime Brothers,Veteran Prime Master,18,3,0,0,0,0,,20
+Master Grave Auto-Rifle,Prime Brothers,Grave Prime Master,18,8,0,0,0,0,,30
+Master Grave Heavy Pistol,Prime Brothers,Grave Prime Master,12,4,1,0,0,0,,10
+Master Grave Heavy Rifle,Prime Brothers,Grave Prime Master,24,6,1,0,0,0,,60
+Master Grave Plasma Pistol,Prime Brothers,Grave Prime Master,12,4,4,0,0,0,,25
+Master Grave Precision Rifle,Prime Brothers,Grave Prime Master,24,4,0,0,0,0,Precise,30
+Master Heavy Pistol,Prime Brothers,Elite Raider,12,2,1,0,0,0,,5
+Master Heavy Pistol,Prime Brothers,Prime Master,12,2,1,0,0,0,,5
+Master Heavy Pistol,Prime Brothers,Veteran Prime Master,12,2,1,0,0,0,,10
+Master Heavy Rifle,Prime Brothers,Elite Raider,24,2,1,0,0,0,,15
+Master Heavy Rifle,Prime Brothers,Prime Master,24,2,1,0,0,0,,20
+Master Heavy Rifle,Prime Brothers,Veteran Prime Master,24,2,1,0,0,0,,30
+Master Marksman Carbine,Prime Brothers,Elite Raider,18,2,0,0,0,0,"Rending, Takedown",15
+Master Marksman Carbine,Prime Brothers,Prime Master,18,2,0,0,0,0,"Rending, Takedown",20
+Master Marksman Carbine,Prime Brothers,Veteran Prime Master,18,2,0,0,0,0,"Rending, Takedown",25
+Master Plasma Pistol,Prime Brothers,Elite Raider,12,2,4,0,0,0,,10
+Master Plasma Pistol,Prime Brothers,Prime Master,12,2,4,0,0,0,,15
+Master Plasma Pistol,Prime Brothers,Veteran Prime Master,12,2,4,0,0,0,,20
+Master Precision Rifle,Prime Brothers,Elite Raider,24,2,0,0,0,0,Precise,10
+Master Precision Rifle,Prime Brothers,Prime Master,24,2,0,0,0,0,Precise,20
+Master Precision Rifle,Prime Brothers,Veteran Prime Master,24,2,0,0,0,0,Precise,25
+Mini-GL,Prime Brothers,Desolator Brothers,18,1,0,0,0,0,"Indirect, Limited",15
+Minigun,Prime Brothers,Grave Destroyers,24,4,1,0,0,0,,15
+Missile Array,Prime Brothers,Anti-Grav APC,30,2,3,0,3,0,,130
+Missile Array,Prime Brothers,Combat Walker,30,4,2,0,0,0,Unstoppable,35
+Plasma Auto-Rifle,Prime Brothers,Blaster Brothers,24,2,4,0,0,0,,30
+Plasma Pistol,Prime Brothers,Assault Prime Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Prime Brothers,Guard Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Prime Brothers,Prime Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Prime Brothers,Veteran Assault Prime Brothers,12,1,4,0,0,0,,5
+Plasma Pistol,Prime Brothers,Veteran Prime Brothers,12,1,4,0,0,0,,5
+Plasma Rifle,Prime Brothers,Prime Brothers,24,1,4,0,0,0,,10
+Plasma Rifle,Prime Brothers,Veteran Prime Brothers,24,1,4,0,0,0,,15
+Plasma Rifles,Prime Brothers,Blaster Brothers,24,1,4,0,0,0,,0
+Plasma-Mod,Prime Brothers,Veteran Prime Brothers,24,1,4,0,0,0,Limited,10
+Precision Rifle,Prime Brothers,Veteran Prime Brothers,24,1,0,0,0,0,Precise,5
+Precision Rifles,Prime Brothers,Prime Brothers,24,1,0,0,0,0,Precise,0
+Proximity Defense Array,Prime Brothers,Heavy Anti-Grav Destroyer Tank,18,3,1,0,0,0,Unstoppable,0
+Proximity Defense Array,Prime Brothers,Heavy Anti-Grav Transport Tank,18,3,1,0,0,0,Unstoppable,0
+Rapid Laser Talon,Prime Brothers,Heavy Anti-Grav Destroyer Tank,24,6,3,0,0,0,,80
+Rapid Laser Talon,Prime Brothers,Heavy Anti-Grav Transport Tank,24,6,3,0,0,0,,80
+Rapid Storm Rifle,Prime Brothers,Prime Drop Pod,24,6,1,0,0,0,,60
+Relic Sword,Prime Brothers,Assault Prime Brothers,0,1,2,0,3,0,,10
+Relic Sword,Prime Brothers,Elite Raider,0,1,2,0,3,0,,10
+Relic Sword,Prime Brothers,Prime Master,0,1,2,0,3,0,,15
+Relic Sword,Prime Brothers,Raider Brothers,0,1,2,0,3,0,,10
+Relic Sword,Prime Brothers,Veteran Assault Prime Brothers,0,1,2,0,3,0,,15
+Relic Sword,Prime Brothers,Veteran Prime Master,0,1,2,0,3,0,,15
+Relic Swords,Prime Brothers,Guard Brothers,0,1,2,0,3,0,,0
+Rocket-GL,Prime Brothers,Attack Speeder,18,2,1,0,0,0,,20
+Sgt. Heavy Pistol,Prime Brothers,Prime Brothers,12,1,1,0,0,0,,5
+Sgt. Heavy Pistol,Prime Brothers,Veteran Prime Brothers,12,1,1,0,0,0,,10
+Shoulder-GL,Prime Brothers,Aggro Brothers,18,1,2,0,0,0,,45
+Sniper Rifles,Prime Brothers,Elimination Brothers,30,1,1,0,0,0,"Reliable, Takedown",0
+Stomp,Prime Brothers,Combat Walker,0,3,1,0,0,0,,0
+Stomp,Prime Brothers,Light Walker,0,3,1,0,0,0,,0
+Storm Rifle,Prime Brothers,Grave Destroyers,24,3,1,0,0,0,,75
+Strike Missiles,Prime Brothers,Attack Speeder,18,1,3,0,3,0,,0
+Super-Heavy Fusion Rifle,Prime Brothers,Eradication Brothers,18,1,4,0,6,0,,45
+Super-Heavy Fusion Rifle,Prime Brothers,Prime ATV,18,1,4,0,6,0,,30
+Turret Crew,Prime Brothers,Support Turret,0,3,0,0,0,0,,0
+Twin AA-MG,Prime Brothers,Anti-Grav APC,30,6,0,0,0,0,Unstoppable,75
+Twin Autocannon,Prime Brothers,Support Turret,36,6,2,0,0,0,,40
+Twin Crack Cannon,Prime Brothers,Support Turret,24,6,1,0,0,0,"Indirect, Rending",30
+Twin Fist-Flamers,Prime Brothers,Aggro Brothers,6,1,0,3,0,0,Reliable,0
+Twin Fist-Pistols,Prime Brothers,Aggro Brothers,12,3,0,0,0,0,,5
+Twin Frag-GL,Prime Brothers,Anti-Grav Tank,18,2,0,3,0,0,,0
+Twin Heavy Flamer,Prime Brothers,Grave Destroyers,12,2,1,3,0,0,Reliable,10
+Twin Heavy Fusion Rifle,Prime Brothers,Anti-Grav Tank,18,2,4,0,3,0,,65
+Twin Heavy Machinegun,Prime Brothers,Heavy Anti-Grav Destroyer Tank,30,6,1,0,0,0,,0
+Twin Heavy Machinegun,Prime Brothers,Heavy Anti-Grav Transport Tank,30,6,1,0,0,0,,0
+Twin Heavy Rifle,Prime Brothers,Combat Walker,24,2,1,0,0,0,,5
+Walker Fist,Prime Brothers,Combat Walker,0,4,4,0,0,0,,0
+Twin Heavy Rifle,Prime Brothers,Prime ATV,24,2,1,0,0,0,,0
+Twin Heavy Rifles,Prime Brothers,Prime Brother Bikers,24,2,1,0,0,0,,0
+Twin Iron-Cannon,Prime Brothers,Light Walker,36,6,2,0,0,0,,90
+Twin Light Gatling Gun,Prime Brothers,Anti-Grav Tank,18,8,0,0,0,0,,0
+Twin Laser Cannon,Prime Brothers,Anti-Grav Tank,36,2,3,0,3,0,,85
+Twin Laser Cannon,Prime Brothers,Combat Walker,36,2,3,0,3,0,,90
+Twin Laser Cannon,Prime Brothers,Heavy Anti-Grav Destroyer Tank,36,2,3,0,3,0,,45
+Twin Laser Cannon,Prime Brothers,Heavy Anti-Grav Transport Tank,36,2,3,0,3,0,,45
+Twin Laser Talon,Prime Brothers,Anti-Grav Tank,24,6,3,0,0,0,,80
+Twin Laser Talon,Prime Brothers,Support Turret,24,6,3,0,0,0,,35
+Twin Plasma Blaster,Prime Brothers,Jetpack Brothers,12,2,4,0,0,0,,20
+Twin Storm Rifle,Prime Brothers,Anti-Grav APC,24,6,1,0,0,0,,50
+Twin Storm Rifle,Prime Brothers,Anti-Grav Tank,24,6,1,0,0,0,,50
+Twin Tempest Rifle,Prime Brothers,Anti-Grav Tank,18,8,1,0,0,0,,50
+Twin Thunder Cannon,Prime Brothers,Support Turret,24,2,2,3,0,0,Indirect,0
+Twin Walker-MG,Prime Brothers,Light Walker,24,4,1,0,0,0,,60
+Vengeance AT-Launcher,Prime Brothers,Desolator Brothers,30,1,2,0,3,0,,35
+Vengeance HE-Launcher,Prime Brothers,Desolator Brothers,30,1,0,3,0,0,Indirect,15
+Walker Claws,Prime Brothers,Combat Walker,0,6,1,0,0,0,Rending,0
+Walker Pistol,Prime Brothers,Light Walker,18,2,2,0,0,0,,0
+Ancient Palanquin,Saurian Starhost,Frog-Mage,0,3,0,0,0,0,Caster(1),80
+Arch Rockets,Saurian Starhost,Spiked Lizard,18,2,0,3,0,0,Indirect,0
+Bash,Saurian Starhost,Gecko Champion,0,1,0,0,0,0,,5
+Bashes,Saurian Starhost,Gators,0,2,0,0,0,0,,0
+Beam Gun,Saurian Starhost,Saurian Warriors,12,1,2,0,3,0,Disintegrate,20
+Bludgeons,Saurian Starhost,Gators,0,1,0,0,0,0,Thrust,0
+Burst Guns,Saurian Starhost,Chameleons,12,2,1,0,0,0,,0
+CCW,Saurian Starhost,Deinonychus Riders,0,1,0,0,0,0,,0
+CCW,Saurian Starhost,Gecko Champion,0,2,0,0,0,0,,0
+CCW,Saurian Starhost,Gecko Cohort,0,2,0,0,0,0,,10
+Shock Pistols,Saurian Starhost,Gecko Cohort,12,1,4,0,0,0,,0
+Bashes,Saurian Starhost,Gecko Cohort,0,1,0,0,0,0,,0
+CCW,Saurian Starhost,Saurian Warriors,0,1,0,0,0,0,,0
+CCWs,Saurian Starhost,Chameleons,0,1,0,0,0,0,,0
+CCWs,Saurian Starhost,Pterodactyl Riders,0,1,0,0,0,0,,0
+CCWs,Saurian Starhost,Saurian Warriors,0,2,0,0,0,0,,0
+Pistols,Saurian Starhost,Saurian Warriors,12,1,0,0,0,0,,0
+Sniper Rifles,Saurian Starhost,Gecko Snipers,30,1,1,0,0,0,"Reliable, Takedown",0
+CCWs,Saurian Starhost,Gecko Snipers,0,1,0,0,0,0,,0
+Swarm Attacks,Saurian Starhost,Cyber Swarms,0,3,0,0,0,0,Bane,0
+CCWs,Saurian Starhost,Raptor Riders,0,2,0,0,0,0,,0
+CCWs,Saurian Starhost,Ripjawdactyl Riders,0,1,0,0,0,0,,0
+Carbine,Saurian Starhost,Saurian Warriors,18,2,0,0,0,0,,20
+Champion Burst Gun,Saurian Starhost,Gecko Champion,12,3,1,0,0,0,,0
+Champion Precision Carbine,Saurian Starhost,Gecko Champion,18,2,1,0,0,0,Precise,5
+Champion Shock Pistol,Saurian Starhost,Gecko Champion,12,2,4,0,0,0,,5
+Champion Shock Rifle,Saurian Starhost,Gecko Champion,18,2,4,0,0,0,,10
+Champion Sniper Rifle,Saurian Starhost,Gecko Champion,30,2,1,0,0,0,"Reliable, Takedown",50
+Claws,Saurian Starhost,Pterodactyl Riders,0,2,0,0,0,0,,0
+Claws,Saurian Starhost,Vulturedactyls,0,3,0,0,0,0,,0
+Dagger,Saurian Starhost,Gecko Champion,0,1,0,0,0,0,,0
+Disposable Bombs,Saurian Starhost,Gecko Champion,0,1,1,3,0,0,"Limited, Strafing",0
+Disposable Bombs,Saurian Starhost,Pterodactyl Riders,0,1,1,3,0,0,"Limited, Strafing",15
+Dread Behemoth,Saurian Starhost,Dread Titan,24,2,2,0,12,0,Disintegrate,230
+Dread Scorcher,Saurian Starhost,Dread Titan,18,8,1,3,0,0,Reliable,215
+Dread Tyrannosaur (Super-Heavy Laser Cannon),Saurian Starhost,Dread Titan,36,1,3,0,9,0,,190
+Dread Tyrannosaur (Heavy Arch Rockets),Saurian Starhost,Dread Titan,18,4,1,3,0,0,Indirect,0
+Vicious Jaws,Saurian Starhost,Dread Titan,0,4,4,0,0,0,Deadly(3),0
+Flame Burst,Saurian Starhost,Dragon Lizard,12,2,1,3,0,0,Reliable,0
+Flamer,Saurian Starhost,Saurian Warriors,12,1,0,3,0,0,Reliable,15
+Gecko Crew,Saurian Starhost,Triceratops,18,6,1,0,0,0,,15
+Great Hammer,Saurian Starhost,Saurian Guardians,0,1,2,3,0,0,,5
+Hammers,Saurian Starhost,Saurian Guardians,0,2,2,0,0,0,,0
+Heavy Claws,Saurian Starhost,Dragon Lizard,0,3,1,0,0,0,,0
+Heavy Claws,Saurian Starhost,Spiked Lizard,0,3,1,0,0,0,,0
+Heavy Maces,Saurian Starhost,Gator Veteran,0,1,1,3,0,0,,0
+Heavy Missile Launcher,Saurian Starhost,Triceratops,30,4,2,0,3,0,Unstoppable,140
+Heavy Plasma Burster,Saurian Starhost,Ankylosaurus,30,4,4,3,0,0,,105
+Heavy Pulse,Saurian Starhost,Frog-Mage,0,6,0,0,0,0,,0
+Heavy Rocket Launcher,Saurian Starhost,Triceratops,24,4,1,3,0,0,Indirect,110
+Heavy Shooter,Saurian Starhost,Gator Veteran,12,4,1,0,0,0,,10
+Heavy Shooter,Saurian Starhost,Gators,12,2,1,0,0,0,,5
+Horns,Saurian Starhost,Triceratops,0,6,0,0,0,0,Rending,0
+Mace,Saurian Starhost,Saurian Guardians,0,2,0,0,0,0,,0
+Mace Tail,Saurian Starhost,Ankylosaurus,0,4,2,0,0,0,,0
+Mace-Shots,Saurian Starhost,Saurian Guardians,12,2,1,0,0,0,,30
+Magic Beam,Saurian Starhost,Frog-Mage,12,1,2,0,3,0,Disintegrate,5
+Magic Blast,Saurian Starhost,Frog-Mage,12,3,0,0,0,0,Rending,0
+Magic Shock,Saurian Starhost,Frog-Mage,18,3,0,0,0,0,,0
+Missile Pod,Saurian Starhost,Gators,18,1,1,0,0,0,"Limited, Unstoppable",5
+Pistols,Saurian Starhost,Raptor Riders,12,1,0,0,0,0,,0
+Power Claw,Saurian Starhost,Gators,0,1,1,0,0,0,Rending,5
+Power Claw,Saurian Starhost,Raptor Riders,0,2,1,0,0,0,Rending,10
+Power Claw,Saurian Starhost,Saurian Veteran,0,2,1,0,0,0,Rending,10
+Power Knuckle,Saurian Starhost,Gator Veteran,0,3,2,0,0,0,,10
+Power Knuckle,Saurian Starhost,Gators,0,1,2,0,0,0,,5
+Power Mace,Saurian Starhost,Raptor Riders,0,2,4,0,0,0,,15
+Power Mace,Saurian Starhost,Saurian Veteran,0,2,4,0,0,0,,15
+Power Spear,Saurian Starhost,Raptor Riders,0,2,0,0,0,0,Thrust,5
+Power Spear,Saurian Starhost,Saurian Veteran,0,2,0,0,0,0,Thrust,5
+Power Spike,Saurian Starhost,Gator Veteran,0,1,4,0,3,0,,15
+Precision Carbine,Saurian Starhost,Chameleons,18,1,1,0,0,0,Precise,0
+Pterodactyl,Saurian Starhost,Gecko Champion,0,2,0,0,0,1,"Ambush, Flying",55
+Rapid Missile Pod,Saurian Starhost,Gator Veteran,18,3,1,0,0,0,"Limited, Unstoppable",10
+Sacred Mace,Saurian Starhost,Gecko Champion,0,1,0,3,0,0,,5
+Shock Charger,Saurian Starhost,Saurian Warriors,24,1,4,0,0,0,,15
+Shock Lance,Saurian Starhost,Gecko Champion,0,3,4,0,0,0,,10
+Shock Lances,Saurian Starhost,Deinonychus Riders,0,1,4,0,0,0,,0
+Shock Pistol,Saurian Starhost,Deinonychus Riders,12,1,4,0,0,0,,15
+Shock Pistol,Saurian Starhost,Pterodactyl Riders,12,1,4,0,0,0,,15
+Shock Pistol,Saurian Starhost,Ripjawdactyl Riders,12,1,4,0,0,0,,15
+Shock Rifle,Saurian Starhost,Pterodactyl Riders,18,1,4,0,0,0,,10
+Shock Rifle,Saurian Starhost,Ripjawdactyl Riders,18,1,4,0,0,0,,10
+Spike Pistol,Saurian Starhost,Raptor Riders,9,2,0,0,0,0,Rending,5
+Spike Shooter,Saurian Starhost,Saurian Warriors,18,2,0,0,0,0,Rending,15
+Spit Venom,Saurian Starhost,Spinosaurus,18,2,0,3,0,0,Bane,0
+Starseer Palanquin,Saurian Starhost,Gecko Champion,0,3,0,0,0,0,Spell Conduit,35
+Stomp,Saurian Starhost,Ankylosaurus,0,4,1,0,0,0,,0
+Stomp,Saurian Starhost,Dread Titan,0,8,2,0,0,0,,0
+Stomp,Saurian Starhost,Gator Veteran,0,2,1,0,0,0,,0
+Tyrannosaur (Stomp),Saurian Starhost,Saurian Veteran,0,4,1,0,0,0,"Armor(2), Fear(2), Primal Boost Buff",0
+Stomp,Saurian Starhost,Spinosaurus,0,2,1,0,0,0,,0
+Stomp,Saurian Starhost,Triceratops,0,4,1,0,0,0,,0
+Toxic Bite,Saurian Starhost,Spinosaurus,0,6,0,0,0,0,Bane,0
+Twin Beam Cannon,Saurian Starhost,Ankylosaurus,24,2,2,0,6,0,Disintegrate,0
+Tyrannosaur (Crushing Jaws),Saurian Starhost,Saurian Veteran,0,6,2,0,0,0,"Armor(2), Fear(2), Primal Boost Buff",350
+Veteran Carbine,Saurian Starhost,Saurian Veteran,18,3,0,0,0,0,,15
+Veteran Spike Pistol,Saurian Starhost,Saurian Veteran,9,3,0,0,0,0,Rending,5

@@ -294,3 +294,490 @@ class TestNoVariableRule:
     def test_the_choice_column_is_inert_without_one_of_these_rules(self):
         for choice in ("AP", "To-hit"):
             assert resolve(shooting(variable_choice=choice)).wounds == BASE_WOUNDS
+
+
+# ---------------------------------------------------------------------------
+# Blessed Sisters army book
+# ---------------------------------------------------------------------------
+
+
+class TestDevout:
+    """Devout: unmodified 6s to hit deal 1 extra hit. Unlike Relentless, this
+    applies to every attack, ranged or melee, at any range."""
+
+    def test_adds_a_hit_per_natural_six(self):
+        got = resolve(shooting(att_rules={"Devout"}))
+        assert got.hits == Fraction(5) + H6
+        assert got.wounds == (Fraction(5) + H6) * Fraction(1, 3)
+
+    def test_applies_in_melee_without_a_charge(self):
+        got = resolve(melee(att_rules={"Devout"}))
+        assert got.hits == Fraction(5) + H6
+
+
+class TestDevoutBoost:
+    """If this model has Devout, when it shoots or charges enemies over 9"
+    away, naturals 5-6 (instead of only 6) each deal an extra hit."""
+
+    def test_widens_the_bonus_to_naturals_five_and_six_past_nine_inches(self):
+        got = resolve(shooting(att_rules={"Devout Boost"}, long_range=True))
+        assert got.hits == Fraction(5) + 2 * H6
+        assert got.wounds == (Fraction(5) + 2 * H6) * Fraction(1, 3)
+
+    def test_is_inert_inside_nine_inches(self):
+        """Only plain Devout's unconditional bonus applies (via substring match)."""
+        got = resolve(shooting(att_rules={"Devout Boost"}, long_range=False))
+        assert got.hits == Fraction(5) + H6
+
+    def test_does_not_apply_in_melee_without_a_charge(self):
+        got = resolve(melee(att_rules={"Devout Boost"}, long_range=True))
+        assert got.hits == Fraction(5) + H6
+
+    def test_applies_on_a_charge_from_over_nine_inches(self):
+        got = resolve(
+            melee(melee_state="Charging", att_rules={"Devout Boost"}, long_range=True)
+        )
+        assert got.hits == Fraction(5) + 2 * H6
+
+
+class TestDisintegrate:
+    """Ignores Regeneration, and gets AP(+2) against Defense 2-3 targets."""
+
+    def test_bypasses_regeneration(self):
+        with_regen = resolve(shooting(att_rules={"Disintegrate"}, def_rules={"Regeneration"}))
+        without = resolve(shooting(att_rules={"Disintegrate"}))
+        assert with_regen.wounds == without.wounds
+
+    def test_adds_ap_two_against_defense_three(self):
+        # AP(+2) makes Defense 3 into a 5+, blocked on 2 of 6 faces.
+        got = resolve(shooting(att_rules={"Disintegrate"}))
+        assert got.wounds == Fraction(5) * Fraction(2, 3)
+
+    def test_adds_nothing_against_defense_four(self):
+        got = resolve(shooting(att_rules={"Disintegrate"}, defense=4))
+        plain = resolve(shooting(defense=4))
+        assert got.wounds == plain.wounds
+
+
+class TestFortified:
+    """When a Fortified unit takes hits, those hits count as AP(-1), min AP(0)."""
+
+    def test_reduces_incoming_ap_by_one(self):
+        got = resolve(shooting(ap=2, def_rules={"Fortified"}))
+        assert got.wounds == Fraction(5, 2)
+
+    def test_never_pushes_ap_below_zero(self):
+        assert resolve(shooting(def_rules={"Fortified"})).wounds == BASE_WOUNDS
+
+
+class TestPointBlankSurgeDoesNotGrantPlainSurge:
+    """"Point-Blank Surge" contains "Surge" but is a distinct, unmodelled,
+    range-gated rule - it must not silently grant the unconditional bonus."""
+
+    def test_is_inert(self):
+        got = resolve(shooting(att_rules={"Point-Blank Surge"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+# ---------------------------------------------------------------------------
+# Dao Union army book
+# ---------------------------------------------------------------------------
+
+
+class TestGoodShot:
+    """Good Shot: +1 to hit rolls when shooting (not in melee)."""
+
+    def test_adds_one_to_hit_when_shooting(self):
+        got = resolve(shooting(att_rules={"Good Shot"}))
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+    def test_does_not_apply_in_melee(self):
+        got = resolve(melee(att_rules={"Good Shot"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestTargetingVisor:
+    """Targeting Visor: +1 to hit rolls when shooting at enemies over 9" away."""
+
+    def test_adds_one_to_hit_past_nine_inches(self):
+        got = resolve(shooting(att_rules={"Targeting Visor"}, long_range=True))
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+    def test_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(att_rules={"Targeting Visor"}, long_range=False))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_does_not_apply_in_melee(self):
+        got = resolve(melee(att_rules={"Targeting Visor"}, long_range=True))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestStealth:
+    """Stealth: enemies shooting this unit from over 9" away get -1 to hit."""
+
+    def test_subtracts_one_to_hit_past_nine_inches(self):
+        got = resolve(shooting(def_rules={"Stealth"}, long_range=True))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+    def test_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(def_rules={"Stealth"}, long_range=False))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_does_not_apply_in_melee(self):
+        got = resolve(melee(def_rules={"Stealth"}, long_range=True))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestAircraft:
+    """Aircraft: unconditional -1 to hit for anyone shooting at it."""
+
+    def test_subtracts_one_to_hit_when_shot_at(self):
+        got = resolve(shooting(def_rules={"Aircraft"}))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+    def test_is_inert_in_melee(self):
+        got = resolve(melee(def_rules={"Aircraft"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestMeleeEvasion:
+    """Melee Evasion: -1 to hit rolls in melee only, Stealth's melee counterpart."""
+
+    def test_subtracts_one_to_hit_in_melee(self):
+        got = resolve(melee(def_rules={"Melee Evasion"}))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+    def test_does_not_apply_when_shooting(self):
+        got = resolve(shooting(def_rules={"Melee Evasion"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+# ---------------------------------------------------------------------------
+# Dwarf Guilds army book
+# ---------------------------------------------------------------------------
+
+
+class TestSturdy:
+    """Sturdy: +1 to defense rolls when shot or charged from over 9" away."""
+
+    def test_improves_defense_past_nine_inches(self):
+        # Defense 3 becomes a 2+, blocked on 5 of 6 faces.
+        got = resolve(shooting(def_rules={"Sturdy"}, long_range=True))
+        assert got.wounds == Fraction(5) * Fraction(1, 6)
+
+    def test_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(def_rules={"Sturdy"}, long_range=False))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_applies_on_a_charge_from_over_nine_inches(self):
+        got = resolve(
+            melee(melee_state="Charging", def_rules={"Sturdy"}, long_range=True)
+        )
+        assert got.wounds == Fraction(5) * Fraction(1, 6)
+
+    def test_does_not_apply_in_melee_without_a_charge(self):
+        got = resolve(melee(def_rules={"Sturdy"}, long_range=True))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestMeleeSlayer:
+    """Melee Slayer: on a charge, AP(+2) if the target has Tough(3) or higher."""
+
+    def test_adds_ap_two_on_a_charge_against_tough_three(self):
+        got = resolve(
+            melee(melee_state="Charging", att_rules={"Melee Slayer"}, tough=3)
+        )
+        assert got.wounds == Fraction(10, 3)
+
+    def test_adds_nothing_against_tough_two(self):
+        got = resolve(
+            melee(melee_state="Charging", att_rules={"Melee Slayer"}, tough=2)
+        )
+        assert got.wounds == BASE_WOUNDS
+
+    def test_does_not_apply_without_a_charge(self):
+        got = resolve(melee(att_rules={"Melee Slayer"}, tough=3))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestCrack:
+    """Crack: on unmodified results of 6 to hit, those hits get AP(+2)."""
+
+    def test_natural_sixes_get_ap_two(self):
+        expected = H6 * Fraction(4, 6) + Fraction(20, 6) * Fraction(2, 6)
+        assert resolve(shooting(att_rules={"Crack"})).wounds == expected
+
+    def test_unlike_rending_it_does_not_bypass_regeneration(self):
+        got = resolve(shooting(att_rules={"Crack"}, def_rules={"Regeneration"}))
+        without = resolve(shooting(att_rules={"Crack"}))
+        assert got.wounds == without.wounds * Fraction(2, 3)
+
+
+class TestArtillery:
+    """Artillery: +1 to hit shooting past 9"; enemies shooting it past 9" get -2 to hit."""
+
+    def test_adds_one_to_hit_shooting_past_nine_inches(self):
+        got = resolve(shooting(att_rules={"Artillery"}, long_range=True))
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+    def test_attacker_bonus_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(att_rules={"Artillery"}, long_range=False))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_attacker_bonus_does_not_apply_in_melee(self):
+        got = resolve(melee(att_rules={"Artillery"}, long_range=True))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_subtracts_two_from_enemy_hit_rolls_past_nine_inches(self):
+        got = resolve(shooting(def_rules={"Artillery"}, long_range=True))
+        assert got.hits == Fraction(5, 3)
+        assert got.wounds == Fraction(5, 9)
+
+    def test_defender_malus_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(def_rules={"Artillery"}, long_range=False))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_defender_malus_does_not_apply_in_melee(self):
+        got = resolve(melee(def_rules={"Artillery"}, long_range=True))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+# ---------------------------------------------------------------------------
+# Orc Marauders army book
+# ---------------------------------------------------------------------------
+
+
+class TestFerocious:
+    """Ferocious: unmodified 6s to hit deal 1 extra hit, in shooting or melee,
+    at any range."""
+
+    def test_adds_a_hit_per_natural_six(self):
+        got = resolve(shooting(att_rules={"Ferocious"}))
+        assert got.hits == Fraction(5) + H6
+        assert got.wounds == (Fraction(5) + H6) * Fraction(1, 3)
+
+    def test_applies_in_melee_without_a_charge(self):
+        got = resolve(melee(att_rules={"Ferocious"}))
+        assert got.hits == Fraction(5) + H6
+
+
+class TestFerociousBoost:
+    """If this model has Ferocious, when it shoots or charges enemies over 9"
+    away, naturals 5-6 (instead of only 6) each deal an extra hit."""
+
+    def test_widens_the_bonus_to_naturals_five_and_six_past_nine_inches(self):
+        got = resolve(
+            shooting(att_rules={"Ferocious", "Ferocious Boost"}, long_range=True)
+        )
+        assert got.hits == Fraction(5) + 2 * H6
+        assert got.wounds == (Fraction(5) + 2 * H6) * Fraction(1, 3)
+
+    def test_is_inert_inside_nine_inches(self):
+        """Only plain Ferocious's unconditional bonus applies (via substring match)."""
+        got = resolve(
+            shooting(att_rules={"Ferocious", "Ferocious Boost"}, long_range=False)
+        )
+        assert got.hits == Fraction(5) + H6
+
+    def test_does_not_apply_in_melee_without_a_charge(self):
+        got = resolve(
+            melee(att_rules={"Ferocious", "Ferocious Boost"}, long_range=True)
+        )
+        assert got.hits == Fraction(5) + H6
+
+    def test_applies_on_a_charge_from_over_nine_inches(self):
+        got = resolve(
+            melee(
+                melee_state="Charging",
+                att_rules={"Ferocious", "Ferocious Boost"},
+                long_range=True,
+            )
+        )
+        assert got.hits == Fraction(5) + 2 * H6
+
+
+class TestBadShot:
+    """Bad Shot: -1 to hit rolls when shooting."""
+
+    def test_subtracts_one_from_hit_rolls_when_shooting(self):
+        got = resolve(shooting(att_rules={"Bad Shot"}))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+    def test_does_not_apply_in_melee(self):
+        got = resolve(melee(att_rules={"Bad Shot"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestPrecisionChargeAura:
+    """Precision Charge Aura: +1 to hit rolls when charging."""
+
+    def test_adds_one_to_hit_rolls_when_charging(self):
+        got = resolve(
+            melee(melee_state="Charging", att_rules={"Precision Charge Aura"})
+        )
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+    def test_does_not_apply_without_a_charge(self):
+        got = resolve(melee(att_rules={"Precision Charge Aura"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+
+class TestTear:
+    """Tear: against targets where most models have Tough(9) or higher, the
+    weapon gets AP(+4). Not gated by charging, unlike Melee Slayer."""
+
+    def test_adds_ap_four_against_tough_nine(self):
+        got = resolve(shooting(att_rules={"Tear"}, tough=9))
+        assert got.hits == Fraction(5)
+        assert got.wounds == Fraction(25, 6)
+
+    def test_adds_nothing_against_tough_eight(self):
+        got = resolve(shooting(att_rules={"Tear"}, tough=8))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_applies_in_melee_without_a_charge(self):
+        got = resolve(melee(att_rules={"Tear"}, tough=9))
+        assert got.wounds == Fraction(25, 6)
+
+
+# ---------------------------------------------------------------------------
+# Prime Brothers army book
+# ---------------------------------------------------------------------------
+
+
+class TestPrecise:
+    """Precise: +1 to hit when attacking, shooting or melee."""
+
+    def test_adds_one_to_hit_when_shooting(self):
+        got = resolve(shooting(att_rules={"Precise"}))
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+    def test_adds_one_to_hit_in_melee_too(self):
+        got = resolve(melee(att_rules={"Precise"}))
+        assert got.hits == Fraction(20, 3)
+        assert got.wounds == Fraction(20, 9)
+
+
+class TestShatter:
+    """Shatter: against targets where most models have Tough(3) or higher,
+    the weapon gets AP(+2). Not gated by charging, unlike Melee Slayer."""
+
+    def test_adds_ap_two_against_tough_three(self):
+        got = resolve(shooting(att_rules={"Shatter"}, tough=3))
+        assert got.hits == Fraction(5)
+        assert got.wounds == Fraction(10, 3)
+
+    def test_adds_nothing_against_tough_two(self):
+        got = resolve(shooting(att_rules={"Shatter"}, tough=2))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS
+
+    def test_applies_in_melee_without_a_charge(self):
+        got = resolve(melee(att_rules={"Shatter"}, tough=3))
+        assert got.wounds == Fraction(10, 3)
+
+
+class TestPrimeborn:
+    """Primeborn: units where all models have this rule reduce incoming AP by
+    1 (min AP(0)) when shot or charged from over 9" away - same gating as
+    Sturdy, same maths as Fortified."""
+
+    def test_reduces_incoming_ap_by_one_past_nine_inches(self):
+        got = resolve(shooting(ap=2, def_rules={"Primeborn"}, long_range=True))
+        assert got.wounds == Fraction(5, 2)
+
+    def test_never_pushes_ap_below_zero(self):
+        got = resolve(shooting(def_rules={"Primeborn"}, long_range=True))
+        assert got.wounds == BASE_WOUNDS
+
+    def test_is_inert_inside_nine_inches(self):
+        got = resolve(shooting(ap=2, def_rules={"Primeborn"}, long_range=False))
+        assert got.wounds == Fraction(10, 3)
+
+    def test_applies_on_a_charge_from_over_nine_inches(self):
+        got = resolve(
+            melee(
+                melee_state="Charging",
+                ap=2,
+                def_rules={"Primeborn"},
+                long_range=True,
+            )
+        )
+        assert got.wounds == Fraction(5, 2)
+
+    def test_does_not_apply_in_melee_without_a_charge(self):
+        got = resolve(melee(ap=2, def_rules={"Primeborn"}, long_range=True))
+        assert got.wounds == Fraction(10, 3)
+
+
+# ---------------------------------------------------------------------------
+# Saurian Starhost army book
+# ---------------------------------------------------------------------------
+
+
+class TestEvasive:
+    """Evasive: enemies get -1 to hit rolls when attacking units where all
+    models have this rule. Unconditional, unlike Stealth (ranged, past 9")
+    or Melee Evasion (melee only)."""
+
+    def test_gives_minus_one_to_hit_when_shooting(self):
+        got = resolve(shooting(def_rules={"Evasive"}))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+    def test_gives_minus_one_to_hit_in_melee_too(self):
+        got = resolve(melee(def_rules={"Evasive"}))
+        assert got.hits == Fraction(10, 3)
+        assert got.wounds == Fraction(10, 9)
+
+
+class TestPrimal:
+    """Primal: for each unmodified roll of 6 to hit when attacking, this
+    model may roll +1 attack with that weapon (resolved at the normal hit
+    chance; the rule doesn't apply to the newly generated attacks, so there
+    is no further chaining). Predator is worded identically."""
+
+    def test_adds_an_extra_attack_per_unmodified_six(self):
+        got = resolve(shooting(att_rules={"Primal"}))
+        assert got.hits == Fraction(35, 6)
+        assert got.wounds == Fraction(35, 18)
+
+    def test_predator_behaves_exactly_like_primal(self):
+        got = resolve(shooting(att_rules={"Predator"}))
+        assert got.hits == Fraction(35, 6)
+        assert got.wounds == Fraction(35, 18)
+
+    def test_primal_boost_buff_does_not_stand_in_for_plain_primal(self):
+        """"Primal Boost Buff" contains "Primal" as a substring but is a
+        distinct rule (granting Primal Boost to another unit); it must not
+        trigger Primal's extra attack on its own."""
+        got = resolve(shooting(att_rules={"Primal Boost Buff"}))
+        assert got.hits == Fraction(5)
+        assert got.wounds == BASE_WOUNDS

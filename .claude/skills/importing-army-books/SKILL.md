@@ -1,6 +1,7 @@
 ---
 name: importing-army-books
 description: Use when adding or refreshing a faction in this repo from a One Page Rules army-book PDF or army-forge URL, or when a faction's units, weapons, upgrades or special rules are missing, stale or wrong.
+argument-hint: <url-or-pdf>
 ---
 
 # Importing Army Books
@@ -41,15 +42,15 @@ Run every step. Each catches a different silent failure.
 
 ## Silent failures
 
-| Symptom                                                    | Cause                                                                          |
-|------------------------------------------------------------|--------------------------------------------------------------------------------|
-| Faction appears twice, half the units unselectable         | `--faction` spelling differs from the existing rows. Prefer the detected name. |
-| A weapon is missing from the dropdown                      | Its tab outgrew `layout.CAPACITY[tab]`; the range stops mid-tab. Raise it.   |
-| A unit's stats belong to a different unit                  | Parsed from page 2's roster table instead of the page 4+ cards. See below.     |
-| Wounds unchanged by a rule the book clearly gives the unit | The rule is imported as text but is not in `model.MODELLED_RULES`.             |
-| Hits/Wounds blank on a seeded row                          | `csv/simulation.csv` names a unit or weapon this import removed.               |
-| A weapon's stats look like another faction's | Two books print that name; lookups key on Name-plus-Faction, so check the tab has its generated `Key` column. |
-| A weapon/upgrade option's Cost is 0 when it shouldn't be | Its price couldn't be matched from the PDF - check the importer's end-of-run "price not found" summary and fill it in by hand. |
+| Symptom                                                    | Cause                                                                                                                          |
+| ---------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Faction appears twice, half the units unselectable         | `--faction` spelling differs from the existing rows. Prefer the detected name.                                                 |
+| A weapon is missing from the dropdown                      | Its tab outgrew `layout.CAPACITY[tab]`; the range stops mid-tab. Raise it.                                                     |
+| A unit's stats belong to a different unit                  | Parsed from page 2's roster table instead of the page 4+ cards. See below.                                                     |
+| Wounds unchanged by a rule the book clearly gives the unit | The rule is imported as text but is not in `model.MODELLED_RULES`.                                                             |
+| Hits/Wounds blank on a seeded row                          | `csv/simulation.csv` names a unit or weapon this import removed.                                                               |
+| A weapon's stats look like another faction's               | Two books print that name; lookups key on Name-plus-Faction, so check the tab has its generated `Key` column.                  |
+| A weapon/upgrade option's Cost is 0 when it shouldn't be   | Its price couldn't be matched from the PDF - check the importer's end-of-run "price not found" summary and fill it in by hand. |
 
 ## Units come from the unit cards, not the roster
 
@@ -70,7 +71,7 @@ Rules are matched by **substring** in both the model and the sheet, so `Relentle
 two in step: `model.has()` exists to mirror the sheet's `SEARCH`. Watch for a rule whose name contains another's:
 `Unpredictable Fighter` contains `Unpredictable`, and had to be excluded explicitly.
 
-A rule granting *"either AP(+1) or +1 to hit"* does not fit a single pass. The engine resolves both branches and
+A rule granting _"either AP(+1) or +1 to hit"_ does not fit a single pass. The engine resolves both branches and
 takes a weighted sum: `var_active` switches the mixture on and `w_ap` weights it — 1/2 for a die roll like
 `Unpredictable`, or 0/1 for a player's choice like `Versatile Attack`, which reads the Simulation tab's
 `Variable effect` column.

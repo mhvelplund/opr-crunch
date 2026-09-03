@@ -16,23 +16,42 @@ CHARGING = "Charging"
 BEING_CHARGED = "Being charged"
 FATIGUED = "Fatigued"
 
-IGNORES_REGENERATION = frozenset({"Bane", "Rending", "Unstoppable"})
+IGNORES_REGENERATION = frozenset({"Bane", "Rending", "Unstoppable", "Disintegrate"})
 
 #: Rules this engine actually computes, and which side they act on. Anything
 #: else an army book defines is carried as reference text only, because it
 #: cannot change a single round's hits or wounds.
 MODELLED_RULES = {
     "AP": "Attacker",
+    "Aircraft": "Defender",
+    "Artillery": "Both",
+    "Bad Shot": "Attacker",
     "Bane": "Attacker",
     "Blast": "Attacker",
     "Counter": "Defender",
+    "Crack": "Attacker",
     "Deadly": "Attacker",
     "Destructive": "Attacker",
+    "Devout": "Attacker",
+    "Devout Boost": "Attacker",
+    "Disintegrate": "Attacker",
+    "Evasive": "Defender",
+    "Ferocious": "Attacker",
+    "Ferocious Boost": "Attacker",
+    "Fortified": "Defender",
     "Furious": "Attacker",
+    "Good Shot": "Attacker",
     "Havocbound": "Attacker",
     "Impact": "Attacker",
     "Lacerate": "Attacker",
+    "Melee Evasion": "Defender",
+    "Melee Slayer": "Attacker",
     "Piercing Assault": "Attacker",
+    "Precise": "Attacker",
+    "Precision Charge Aura": "Attacker",
+    "Predator": "Attacker",
+    "Primal": "Attacker",
+    "Primeborn": "Defender",
     "Protected": "Defender",
     "Ravage": "Attacker",
     "Regeneration": "Defender",
@@ -41,9 +60,14 @@ MODELLED_RULES = {
     "Rending": "Attacker",
     "Self-Repair": "Defender",
     "Self-Repair Boost": "Defender",
+    "Shatter": "Attacker",
     "Shielded": "Defender",
     "Shred": "Attacker",
+    "Stealth": "Defender",
+    "Sturdy": "Defender",
     "Surge": "Attacker",
+    "Targeting Visor": "Attacker",
+    "Tear": "Attacker",
     "Thrust": "Attacker",
     "Tough": "Defender",
     "Unpredictable": "Attacker",
@@ -174,19 +198,95 @@ def _resolve_branch(s: Scenario, extra_ap: int, extra_hit: int) -> Result:
     quality = 2 if has(att, "Reliable") else s.quality
     fatigued = s.is_melee and s.melee_state == FATIGUED and not unstoppable
     dice = s.models * s.attacks
-    p_hit = SIX if fatigued else p_success(quality - (1 if thrusting else 0) - extra_hit)
+    # Good Shot and Targeting Visor are +1-to-hit rules that only apply when
+    # shooting (not in melee); Targeting Visor is further gated past 9".
+    good_shot = has(att, "Good Shot") and not s.is_melee
+    targeting_visor = has(att, "Targeting Visor") and not s.is_melee and s.long_range
+    # Artillery gets +1 to hit shooting past 9", same gating as Targeting Visor.
+    artillery_bonus = has(att, "Artillery") and not s.is_melee and s.long_range
+    # Stealth is the mirror image on the defender's side: enemies shooting at
+    # this unit from over 9" away get -1 to hit.
+    stealth_malus = has(dfn, "Stealth") and not s.is_melee and s.long_range
+    # Aircraft: unconditional -1 to hit for anyone shooting at it (it cannot
+    # be engaged in melee, so the malus never applies there).
+    aircraft_malus = has(dfn, "Aircraft") and not s.is_melee
+    # Melee Evasion is Stealth's melee counterpart: -1 to hit only in melee.
+    melee_evasion_malus = has(dfn, "Melee Evasion") and s.is_melee
+    # Evasive: unconditional -1 to hit for anyone attacking this unit, shooting or melee.
+    evasive_malus = has(dfn, "Evasive")
+    # Artillery: -2 to hit for anyone shooting it from past 9".
+    artillery_malus = 2 if (has(dfn, "Artillery") and not s.is_melee and s.long_range) else 0
+    # Bad Shot: -1 to hit rolls when shooting (not in melee).
+    bad_shot_malus = has(att, "Bad Shot") and not s.is_melee
+    # Precision Charge Aura: +1 to hit rolls when charging.
+    precision_charge_bonus = has(att, "Precision Charge Aura") and s.is_charging
+    # Precise: unconditional +1 to hit, shooting or melee.
+    precise_bonus = has(att, "Precise")
+    hit_target = (
+        quality
+        - (1 if thrusting else 0)
+        - extra_hit
+        - (1 if good_shot else 0)
+        - (1 if targeting_visor else 0)
+        - (1 if artillery_bonus else 0)
+        - (1 if precision_charge_bonus else 0)
+        - (1 if precise_bonus else 0)
+        + (1 if stealth_malus else 0)
+        + (1 if aircraft_malus else 0)
+        + (1 if melee_evasion_malus else 0)
+        + (1 if bad_shot_malus else 0)
+        + (1 if evasive_malus else 0)
+        + artillery_malus
+    )
+    p_hit = SIX if fatigued else p_success(hit_target)
 
     natural_6 = Fraction(dice, 6)
     normal = dice * p_hit - natural_6
 
+    # "Point-Blank Surge" contains "Surge" but is a distinct, range-gated rule
+    # this engine does not model; it must not stand in for plain Surge.
+    surge = has(att, "Surge") and not has(att, "Point-Blank Surge")
     extra_per_6 = sum(
         (
-            has(att, "Surge"),
+            surge,
+            has(att, "Devout"),
+            has(att, "Ferocious"),
             has(att, "Relentless") and not s.is_melee and s.long_range,
             has(att, "Furious") and s.is_charging,
         )
     )
     normal += natural_6 * extra_per_6
+
+    # Devout Boost widens Devout's natural-6-only bonus to naturals 5-6, when
+    # shooting or charging enemies over 9" away.
+    devout_boost = (
+        has(att, "Devout Boost")
+        and (not s.is_melee or s.is_charging)
+        and s.long_range
+        and not fatigued
+        and hit_target <= 5
+    )
+    if devout_boost:
+        normal += Fraction(dice, 6)
+
+    # Ferocious Boost: same widening, keyed on Ferocious instead of Devout.
+    ferocious_boost = (
+        has(att, "Ferocious Boost")
+        and (not s.is_melee or s.is_charging)
+        and s.long_range
+        and not fatigued
+        and hit_target <= 5
+    )
+    if ferocious_boost:
+        normal += Fraction(dice, 6)
+
+    # Primal (and identically-worded Predator): for each unmodified 6 to hit,
+    # this model rolls one extra attack with the same weapon, resolved at the
+    # normal hit chance. "Primal Boost[ Buff]" is a different rule that
+    # happens to contain "Primal" as a substring, so it is excluded here.
+    primal = has(att, "Primal") and not has(att, "Primal Boost")
+    if primal or has(att, "Predator"):
+        normal += natural_6 * p_hit
 
     # --- Blast ------------------------------------------------------------
     blast_mult = min(s.blast, s.def_models) if s.blast >= 1 else 1
@@ -205,18 +305,41 @@ def _resolve_branch(s: Scenario, extra_ap: int, extra_hit: int) -> Result:
     havocbound = has(att, "Havocbound") and (
         (not s.is_melee and s.long_range) or s.is_charging
     )
+    disintegrate_ap = 2 if has(att, "Disintegrate") and s.defense in (2, 3) else 0
+    # Melee Slayer: AP(+2) on the charge against targets with Tough(3) or higher.
+    melee_slayer_ap = 2 if has(att, "Melee Slayer") and s.is_charging and s.tough >= 3 else 0
+    # Tear: AP(+4) against targets with Tough(9) or higher, any attack.
+    tear_ap = 4 if has(att, "Tear") and s.tough >= 9 else 0
+    # Shatter: AP(+2) against targets with Tough(3) or higher, any attack.
+    shatter_ap = 2 if has(att, "Shatter") and s.tough >= 3 else 0
     ap_base = (
         s.ap
         + (1 if thrusting else 0)
         + (1 if piercing else 0)
         + (1 if havocbound else 0)
+        + disintegrate_ap
+        + melee_slayer_ap
+        + tear_ap
+        + shatter_ap
         + extra_ap
     )
     cover = 1 if (not s.is_melee and s.in_cover and s.blast < 1) else 0
     shielded = 1 if has(dfn, "Shielded") else 0
+    # Sturdy: +1 to defense rolls when shot or charged from over 9" away;
+    # gated the same way as Devout Boost (shooting, or charging, past 9").
+    sturdy = 1 if (
+        has(dfn, "Sturdy") and (not s.is_melee or s.is_charging) and s.long_range
+    ) else 0
+    # Primeborn: same gating as Sturdy, but reduces AP by 1 (min AP(0))
+    # instead of boosting defense.
+    primeborn_reduce = (
+        has(dfn, "Primeborn") and (not s.is_melee or s.is_charging) and s.long_range
+    )
 
     def wounds_from(hits: Fraction, ap: int) -> Fraction:
-        target = s.defense + ap - cover - shielded
+        if has(dfn, "Fortified") or primeborn_reduce:
+            ap = max(0, ap - 1)
+        target = s.defense + ap - cover - shielded - sturdy
         if has(att, "Bane") or has(att, "Lacerate"):
             block = p_block_no6(target) + SIX * p_success(target)
         else:
@@ -224,8 +347,10 @@ def _resolve_branch(s: Scenario, extra_ap: int, extra_hit: int) -> Result:
         return hits * (1 - block)
 
     # Rending and Destructive both give unmodified 6s to hit AP(+4); only
-    # Rending also ignores Regeneration.
-    ap_6 = ap_base + (4 if has(att, "Rending") or has(att, "Destructive") else 0)
+    # Rending also ignores Regeneration. Crack is the same mechanic at AP(+2).
+    ap_6 = ap_base + (
+        4 if has(att, "Rending") or has(att, "Destructive") else 2 if has(att, "Crack") else 0
+    )
 
     # Deadly's wounds do not carry over, so a target can only absorb as many as
     # it has wounds to give: one, unless it has Tough.
